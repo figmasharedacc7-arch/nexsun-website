@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexsun.ai — Solar Icon Set</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:#FFFBF0;padding:60px 48px 80px;}
+header{margin-bottom:52px;}
+header h1{font-size:32px;font-weight:800;color:#1E3A8A;letter-spacing:-.5px;margin-bottom:8px;}
+header p{color:#64748b;font-size:14px;max-width:500px;line-height:1.65;}
+.tag{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#F59E0B;margin-bottom:20px;}
+.palette{display:flex;gap:12px;margin-bottom:48px;align-items:center;}
+.swatch{width:28px;height:28px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15);}
+.palette span{font-size:11px;color:#64748b;margin-right:8px;}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;gap:16px;}
+.card{background:white;border-radius:22px;padding:30px 14px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;box-shadow:0 2px 18px rgba(30,58,138,.07);transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s;cursor:default;}
+.card:hover{transform:translateY(-7px) scale(1.02);box-shadow:0 18px 48px rgba(30,58,138,.13);}
+.label{font-size:12px;font-weight:700;color:#1E3A8A;text-align:center;line-height:1.4;}
+.sun-name{font-size:9px;color:#94a3b8;text-align:center;letter-spacing:.6px;text-transform:uppercase;margin-top:-4px;}
+
+  /* ════ MOBILE RESPONSIVE ════ */
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;margin-left:auto;flex-shrink:0;}
+  .nav-hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;display:block;}
+  .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+  .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+  .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(245,158,11,0.12);font-size:15px;font-weight:500;color:#334155;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a:hover{color:var(--sun-deep);}
+  #nxs-mob-nav a:last-child{border-bottom:none;}
+  @media(max-width:960px){
+    .topbar-inner a{padding:0 10px;font-size:10px;}
+  }
+  @media(max-width:768px){
+    .topbar{display:none!important;}
+    .nav-links{display:none!important;}
+    .nav-hamburger{display:flex!important;}
+    .container{padding:0 18px!important;}
+    #hero{padding-top:82px!important;min-height:auto!important;padding-bottom:56px!important;}
+    .hero-grid{grid-template-columns:1fr!important;gap:32px!important;}
+    .hero-heading{font-size:clamp(30px,8vw,42px)!important;}
+    .hero-stats{gap:16px!important;flex-wrap:wrap!important;}
+    .hero-ctas{flex-direction:column!important;}
+    .hero-ctas a{text-align:center!important;}
+    .sun-visual{display:none!important;}
+    .section{padding:56px 0!important;}
+    .section-heading{font-size:clamp(24px,6vw,32px)!important;}
+    .strip-stats{gap:20px!important;}
+    .strip-stat .val{font-size:28px!important;}
+    #challenge .two-col{grid-template-columns:1fr!important;gap:36px!important;}
+    .ir-hero-grid{grid-template-columns:1fr!important;gap:36px!important;}
+    .ir-hero h1{font-size:clamp(28px,7vw,40px)!important;}
+    .hero-stats.ir-stats{grid-template-columns:1fr 1fr!important;}
+    .thesis-grid{grid-template-columns:1fr!important;}
+    .market-grid{grid-template-columns:1fr 1fr!important;gap:2px!important;}
+    .traction-grid{grid-template-columns:1fr!important;}
+    .team-grid{grid-template-columns:1fr 1fr!important;gap:12px!important;}
+    .funds-grid{grid-template-columns:1fr!important;}
+    .footer-top{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+    .footer-wordmark{font-size:clamp(44px,13vw,72px)!important;letter-spacing:-2px!important;}
+    .footer-bottom{flex-direction:column!important;align-items:flex-start!important;}
+    .footer-legal a:first-child{padding-left:0!important;}
+    #nxs-chat-panel{right:12px!important;left:12px!important;width:auto!important;}
+    #nxs-chat-bubble{bottom:20px!important;right:20px!important;}
+    .ind-wrap{padding:0 18px!important;}
+    @keyframes dividerGlow {
+    0%,100% { opacity:0.45; filter:blur(5px); }
+    50%      { opacity:0.9;  filter:blur(9px); }
+  }
+  .sun-divider {
+    height:5px;
+    background:linear-gradient(90deg,
+      transparent 0%,
+      #F59E0B 18%,
+      #1E3A8A 50%,
+      #22C55E 82%,
+      transparent 100%
+    );
+    position:relative; z-index:2; overflow:visible;
+  }
+  .sun-divider::after {
+    content:''; position:absolute; inset:-5px 0;
+    background:inherit; border-radius:6px;
+    filter:blur(6px); opacity:0.5;
+    animation:dividerGlow 2.8s ease-in-out infinite;
+  }
+  }
+  @media(max-width:480px){
+    .footer-top{grid-template-columns:1fr!important;}
+    .market-grid{grid-template-columns:1fr!important;}
+    .team-grid{grid-template-columns:1fr!important;}
+    .hero-stats{flex-direction:column!important;}
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <h1>☀️ Nexsun Solar Icon Set</h1>
+  <p>Clay-style icons built on Nexsun brand colours — navy, amber &amp; logo green. Each maps a solar structure to a platform concept.</p>
+</header>
+<div class="tag">Brand Palette</div>
+<div class="palette">
+  <div class="swatch" style="background:#1E3A8A;"></div><span>Navy #1E3A8A</span>
+  <div class="swatch" style="background:#F59E0B;"></div><span>Amber #F59E0B</span>
+  <div class="swatch" style="background:#16A34A;"></div><span>Green #16A34A</span>
+</div>
+<div class="tag">12 Icons — Solar Origins</div>
+<div class="grid">
+  <!-- Icon 1: AI Decision Engine / Core — Navy sphere, globe grid, green trend line + AI circuit dots -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic1_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.4"/>
+        </filter>
+        <radialGradient id="ic1_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#93c5fd"/>
+          <stop offset="40%" stop-color="#1d4ed8"/>
+          <stop offset="100%" stop-color="#0f172a"/>
+        </radialGradient>
+        <radialGradient id="ic1_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.85)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic1_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <!-- Sphere -->
+      <circle cx="50" cy="55" r="43" fill="#1e3a8a" opacity="0.12"/>
+      <circle cx="50" cy="50" r="38" fill="url(#ic1_a)" filter="url(#ic1_sh)"/>
+      <!-- Globe grid -->
+      <g clip-path="url(#ic1_cp)" fill="none" stroke="#93c5fd" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="33" rx="29" ry="7"/>
+        <ellipse cx="50" cy="67" rx="29" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Green trend line -->
+      <g clip-path="url(#ic1_cp)" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+        <polyline points="18,72 28,65 38,68 48,58 58,52 68,46 78,38"/>
+        <circle cx="78" cy="38" r="3" fill="#22C55E" stroke="none"/>
+      </g>
+      <!-- AI neural network circuit dots on sphere surface -->
+      <g clip-path="url(#ic1_cp)">
+        <line x1="28" y1="42" x2="40" y2="36" stroke="#1E3A8A" stroke-width="1.1" opacity="0.72"/>
+        <line x1="40" y1="36" x2="52" y2="44" stroke="#1E3A8A" stroke-width="1.1" opacity="0.72"/>
+        <line x1="52" y1="44" x2="28" y2="42" stroke="#1E3A8A" stroke-width="1.1" opacity="0.72"/>
+        <circle cx="28" cy="42" r="2" fill="#1E3A8A" opacity="0.9"/>
+        <circle cx="40" cy="36" r="2" fill="#1E3A8A" opacity="0.9"/>
+        <circle cx="52" cy="44" r="2" fill="#1E3A8A" opacity="0.9"/>
+      </g>
+      <!-- Highlight ellipse -->
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#ic1_b)"/>
+    </svg>
+    <div class="label">AI Decision Engine</div>
+    <div class="sun-name">Core</div>
+  </div>
+
+  <!-- Icon 2: Market Intelligence / Radiative Zone — Amber sphere + 3 rings, globe grid, zigzag scan -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic2_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#78350f" flood-opacity="0.35"/>
+        </filter>
+        <radialGradient id="ic2_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="50%" stop-color="#d97706"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic2_b" cx="38%" cy="30%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.87)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic2_cp"><circle cx="50" cy="50" r="26"/></clipPath>
+      </defs>
+      <!-- Concentric rings -->
+      <circle cx="50" cy="50" r="48" fill="none" stroke="#fde68a" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="50" cy="50" r="41" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.62"/>
+      <circle cx="50" cy="50" r="34" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0.72"/>
+      <!-- Inner sphere -->
+      <circle cx="50" cy="50" r="26" fill="url(#ic2_a)" filter="url(#ic2_sh)"/>
+      <!-- Globe grid on inner sphere -->
+      <g clip-path="url(#ic2_cp)" fill="none" stroke="#fef3c7" stroke-width="0.8" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="26" ry="7"/>
+        <ellipse cx="50" cy="42" rx="20" ry="5"/>
+        <ellipse cx="50" cy="58" rx="20" ry="5"/>
+        <ellipse cx="50" cy="50" rx="10" ry="26"/>
+        <ellipse cx="50" cy="50" rx="20" ry="26"/>
+      </g>
+      <!-- Radar sweep line: one straight line from center at ~45° + green signal dot -->
+      <g clip-path="url(#ic2_cp)">
+        <line x1="50" y1="50" x2="68" y2="32" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.88"/>
+        <circle cx="50" cy="50" r="2" fill="white" opacity="0.7"/>
+        <circle cx="68" cy="32" r="3" fill="#22C55E" opacity="1"/>
+      </g>
+      <!-- Highlight -->
+      <ellipse cx="41" cy="37" rx="9" ry="6" fill="url(#ic2_b)"/>
+    </svg>
+    <div class="label">Market Intelligence</div>
+    <div class="sun-name">Radiative Zone</div>
+  </div>
+
+  <!-- Icon 3: Live Analytics / Convective Zone — Amber/golden sphere, globe grid, rising green line chart -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic3_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#78350f" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic3_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fcd34d"/>
+          <stop offset="50%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic3_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.88)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic3_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <circle cx="50" cy="50" r="38" fill="url(#ic3_a)" filter="url(#ic3_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic3_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Rising green line chart going up-right across sphere -->
+      <g clip-path="url(#ic3_cp)" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+        <polyline points="18,74 26,68 36,64 44,56 54,50 62,42 72,34 80,28"/>
+        <circle cx="80" cy="28" r="3" fill="#22C55E" stroke="none"/>
+      </g>
+      <!-- LIVE indicator: red dot top-right -->
+      <circle cx="81" cy="18" r="3" fill="#ef4444" opacity="0.95"/>
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#ic3_b)"/>
+    </svg>
+    <div class="label">Live Analytics</div>
+    <div class="sun-name">Convective Zone</div>
+  </div>
+
+  <!-- Icon 4: Platform Dashboard / Photosphere — Warm golden sphere, globe grid, 3 bar chart in navy -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic4_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#78350f" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic4_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="50%" stop-color="#eab308"/>
+          <stop offset="100%" stop-color="#713f12"/>
+        </radialGradient>
+        <radialGradient id="ic4_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.88)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic4_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <circle cx="50" cy="50" r="38" fill="url(#ic4_a)" filter="url(#ic4_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic4_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- 3 vertical bar chart in navy, clipped inside sphere bottom area -->
+      <g clip-path="url(#ic4_cp)" opacity="0.82">
+        <rect x="32" y="62" width="7" height="14" rx="1.5" fill="#1e3a8a"/>
+        <rect x="44" y="55" width="7" height="21" rx="1.5" fill="#1e3a8a"/>
+        <rect x="56" y="58" width="7" height="18" rx="1.5" fill="#1e3a8a"/>
+        <!-- baseline -->
+        <line x1="27" y1="76" x2="68" y2="76" stroke="#1e3a8a" stroke-width="1.2" opacity="0.5"/>
+        <!-- live signal dot at tallest bar top -->
+        <circle cx="47" cy="55" r="2.5" fill="#22C55E" opacity="0.95"/>
+      </g>
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#ic4_b)"/>
+    </svg>
+    <div class="label">Platform Dashboard</div>
+    <div class="sun-name">Photosphere</div>
+  </div>
+
+  <!-- Icon 5: Analytics Layer / Chromosphere — Green donut, globe lines in center, amber polyline -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic5_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#14532d" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic5_ring" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#4ade80" stop-opacity="0"/>
+          <stop offset="48%" stop-color="#22c55e"/>
+          <stop offset="72%" stop-color="#16a34a"/>
+          <stop offset="100%" stop-color="#14532d"/>
+        </radialGradient>
+        <radialGradient id="ic5_hl" cx="32%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.82)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic5_inner"><circle cx="50" cy="50" r="22"/></clipPath>
+      </defs>
+      <circle cx="50" cy="55" r="44" fill="#22c55e" opacity="0.08"/>
+      <circle cx="50" cy="50" r="40" fill="url(#ic5_ring)" filter="url(#ic5_sh)"/>
+      <!-- White center circle -->
+      <circle cx="50" cy="50" r="23" fill="white"/>
+      <circle cx="50" cy="50" r="23" fill="none" stroke="#86efac" stroke-width="2" opacity="0.5"/>
+      <!-- Globe lines in white center area in green -->
+      <g clip-path="url(#ic5_inner)" fill="none" stroke="#22c55e" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="22" ry="6"/>
+        <ellipse cx="50" cy="44" rx="16" ry="4"/>
+        <ellipse cx="50" cy="56" rx="16" ry="4"/>
+        <ellipse cx="50" cy="50" rx="9" ry="22"/>
+        <ellipse cx="50" cy="50" rx="17" ry="22"/>
+      </g>
+      <!-- Analytics polyline in amber inside center circle -->
+      <g clip-path="url(#ic5_inner)" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+        <polyline points="32,56 38,50 43,54 48,44 53,50 58,43 64,48 68,44"/>
+        <circle cx="68" cy="44" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+      <ellipse cx="31" cy="29" rx="10" ry="6.5" fill="url(#ic5_hl)" opacity="0.85"/>
+    </svg>
+    <div class="label">Analytics Layer</div>
+    <div class="sun-name">Chromosphere</div>
+  </div>
+
+  <!-- Icon 6: Data Gateway / Transition Region — Half navy/half amber, globe grid, green flow arrow -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic6_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.38"/>
+        </filter>
+        <linearGradient id="ic6_L" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#93c5fd"/>
+          <stop offset="100%" stop-color="#1e3a8a"/>
+        </linearGradient>
+        <linearGradient id="ic6_R" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="100%" stop-color="#d97706"/>
+        </linearGradient>
+        <radialGradient id="ic6_hl" cx="36%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.84)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic6_cl"><rect x="12" y="12" width="38" height="76"/></clipPath>
+        <clipPath id="ic6_cr"><rect x="50" y="12" width="38" height="76"/></clipPath>
+        <clipPath id="ic6_full"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <!-- Split sphere -->
+      <circle cx="50" cy="50" r="38" fill="url(#ic6_L)" clip-path="url(#ic6_cl)" filter="url(#ic6_sh)"/>
+      <circle cx="50" cy="50" r="38" fill="url(#ic6_R)" clip-path="url(#ic6_cr)" filter="url(#ic6_sh)"/>
+      <!-- Globe lines on both halves -->
+      <g clip-path="url(#ic6_full)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Vertical divider line -->
+      <line x1="50" y1="13" x2="50" y2="87" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
+      <!-- Green horizontal flow arrow crossing divider -->
+      <g clip-path="url(#ic6_full)">
+        <line x1="30" y1="50" x2="68" y2="50" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="65,46 73,50 65,54" fill="#22C55E"/>
+        <circle cx="72" cy="50" r="2.5" fill="#22C55E"/>
+      </g>
+      <ellipse cx="36" cy="33" rx="11" ry="7" fill="url(#ic6_hl)"/>
+    </svg>
+    <div class="label">Data Gateway</div>
+    <div class="sun-name">Transition Region</div>
+  </div>
+
+  <!-- Icon 7: Platform Ecosystem / Corona — Amber sphere + 8 sun rays, globe grid, 3 orbital dots -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic7_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#78350f" flood-opacity="0.42"/>
+        </filter>
+        <radialGradient id="ic7_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="45%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic7_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic7_cp"><circle cx="50" cy="50" r="30"/></clipPath>
+      </defs>
+      <!-- 8 sun rays -->
+      <g opacity="0.22" fill="#f59e0b">
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(0 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(90 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(22.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(67.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(112.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(157.5 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="43" fill="#fbbf24" opacity="0.14"/>
+      <!-- Sphere -->
+      <circle cx="50" cy="50" r="30" fill="url(#ic7_a)" filter="url(#ic7_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic7_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="30" ry="8"/>
+        <ellipse cx="50" cy="50" rx="30" ry="18"/>
+        <ellipse cx="50" cy="38" rx="22" ry="6"/>
+        <ellipse cx="50" cy="62" rx="22" ry="6"/>
+        <ellipse cx="50" cy="50" rx="12" ry="30"/>
+        <ellipse cx="50" cy="50" rx="24" ry="30"/>
+      </g>
+      <!-- 4 navy ecosystem network dots radiating outward from sphere with connecting lines -->
+      <g stroke="#1E3A8A" stroke-width="1.4" opacity="0.88">
+        <line x1="50" y1="20" x2="50" y2="10"/>
+        <line x1="78" y1="44" x2="88" y2="40"/>
+        <line x1="70" y1="72" x2="78" y2="82"/>
+        <line x1="22" y1="60" x2="12" y2="64"/>
+      </g>
+      <circle cx="50" cy="9" r="4" fill="#1E3A8A"/>
+      <circle cx="89" cy="39" r="4" fill="#1E3A8A"/>
+      <circle cx="79" cy="83" r="4" fill="#1E3A8A"/>
+      <circle cx="11" cy="65" r="4" fill="#1E3A8A"/>
+      <ellipse cx="40" cy="37" rx="10" ry="7" fill="url(#ic7_b)"/>
+    </svg>
+    <div class="label">Platform Ecosystem</div>
+    <div class="sun-name">Corona</div>
+  </div>
+
+  <!-- Icon 8: Market Signals / Solar Wind — Navy sphere, signal lines, globe grid, candlestick tips -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic8_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.4"/>
+        </filter>
+        <radialGradient id="ic8_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#93c5fd"/>
+          <stop offset="50%" stop-color="#1d4ed8"/>
+          <stop offset="100%" stop-color="#0f172a"/>
+        </radialGradient>
+        <radialGradient id="ic8_b" cx="36%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.88)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic8_cp"><circle cx="34" cy="50" r="28"/></clipPath>
+      </defs>
+      <!-- Navy sphere -->
+      <circle cx="34" cy="50" r="28" fill="url(#ic8_a)" filter="url(#ic8_sh)"/>
+      <!-- Globe grid on sphere -->
+      <g clip-path="url(#ic8_cp)" fill="none" stroke="#93c5fd" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="34" cy="50" rx="28" ry="8"/>
+        <ellipse cx="34" cy="50" rx="28" ry="18"/>
+        <ellipse cx="34" cy="38" rx="20" ry="5"/>
+        <ellipse cx="34" cy="62" rx="20" ry="5"/>
+        <ellipse cx="34" cy="50" rx="11" ry="28"/>
+        <ellipse cx="34" cy="50" rx="21" ry="28"/>
+      </g>
+      <ellipse cx="25" cy="38" rx="9" ry="6" fill="url(#ic8_b)"/>
+      <!-- 3 OHLC candlestick bars extending right from sphere (green/red/green) -->
+      <!-- Candle 1: green -->
+      <g fill="#22C55E" stroke="#22C55E">
+        <line x1="66" y1="28" x2="66" y2="46" stroke-width="1.3"/>
+        <rect x="63" y="32" width="6" height="10" rx="1"/>
+        <circle cx="66" cy="28" r="2" fill="#22C55E" stroke="none"/>
+      </g>
+      <!-- Candle 2: red -->
+      <g fill="#ef4444" stroke="#ef4444">
+        <line x1="77" y1="36" x2="77" y2="58" stroke-width="1.3"/>
+        <rect x="74" y="40" width="6" height="12" rx="1"/>
+      </g>
+      <!-- Candle 3: green -->
+      <g fill="#22C55E" stroke="#22C55E">
+        <line x1="88" y1="30" x2="88" y2="50" stroke-width="1.3"/>
+        <rect x="85" y="33" width="6" height="11" rx="1"/>
+        <circle cx="88" cy="30" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+    </svg>
+    <div class="label">Market Signals</div>
+    <div class="sun-name">Solar Wind</div>
+  </div>
+
+  <!-- Icon 9: Anomaly Detection / Sunspots — Amber sphere, globe grid, flat baseline + dramatic red spike -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic9_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic9_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="50%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic9_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.88)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic9_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <circle cx="50" cy="50" r="38" fill="url(#ic9_a)" filter="url(#ic9_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic9_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Flat baseline with DRAMATIC red anomaly spike — 32px tall, clearly visible -->
+      <g clip-path="url(#ic9_cp)" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.97">
+        <!-- Flat baseline segments -->
+        <polyline points="14,74 26,74 30,74 34,74 38,73"/>
+        <!-- Spike up to y=42 (32px tall from baseline at y=74) -->
+        <polyline points="38,73 50,42 62,73"/>
+        <!-- Flat continuation -->
+        <polyline points="62,73 66,74 70,74 80,74 86,74"/>
+        <!-- Spike peak dot -->
+        <circle cx="50" cy="42" r="3.5" fill="#ef4444" stroke="none"/>
+      </g>
+      <!-- Green live dot at end of baseline -->
+      <circle cx="86" cy="74" r="2.5" fill="#22C55E" clip-path="url(#ic9_cp)"/>
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#ic9_b)"/>
+    </svg>
+    <div class="label">Anomaly Detection</div>
+    <div class="sun-name">Sunspots</div>
+  </div>
+
+  <!-- Icon 10: Price Events / Prominence — Amber sphere, globe grid, 3 candlesticks protruding above sphere -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic10_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#14532d" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic10_a" cx="42%" cy="34%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="50%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic10_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.86)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic10_cp"><circle cx="50" cy="58" r="34"/></clipPath>
+      </defs>
+      <!-- Amber sphere, shifted down to give room for candles above -->
+      <circle cx="50" cy="58" r="34" fill="url(#ic10_a)" filter="url(#ic10_sh)"/>
+      <!-- Globe grid on sphere -->
+      <g clip-path="url(#ic10_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="58" rx="34" ry="9"/>
+        <ellipse cx="50" cy="58" rx="34" ry="20"/>
+        <ellipse cx="50" cy="46" rx="25" ry="7"/>
+        <ellipse cx="50" cy="70" rx="25" ry="7"/>
+        <ellipse cx="50" cy="58" rx="13" ry="34"/>
+        <ellipse cx="50" cy="58" rx="25" ry="34"/>
+      </g>
+      <!-- 3 price-breakout candlesticks protruding ABOVE sphere top (sphere top ~y=24) -->
+      <!-- Candle 1: green, rises from y=40 to y=12 (protrudes above sphere) -->
+      <g fill="#22C55E" stroke="#22C55E">
+        <line x1="34" y1="10" x2="34" y2="44" stroke-width="1.5"/>
+        <rect x="30" y="18" width="8" height="18" rx="1.2"/>
+        <circle cx="34" cy="10" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+      <!-- Candle 2: red, center, rises most dramatically -->
+      <g fill="#ef4444" stroke="#ef4444">
+        <line x1="50" y1="6" x2="50" y2="38" stroke-width="1.5"/>
+        <rect x="46" y="12" width="8" height="18" rx="1.2"/>
+      </g>
+      <!-- Candle 3: green -->
+      <g fill="#22C55E" stroke="#22C55E">
+        <line x1="66" y1="10" x2="66" y2="44" stroke-width="1.5"/>
+        <rect x="62" y="16" width="8" height="20" rx="1.2"/>
+        <circle cx="66" cy="10" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+      <ellipse cx="37" cy="42" rx="11" ry="7" fill="url(#ic10_b)"/>
+    </svg>
+    <div class="label">Price Events</div>
+    <div class="sun-name">Prominence</div>
+  </div>
+
+  <!-- Icon 11: Risk Alerts / Solar Flare — Amber sun with 8 rays, globe grid on center, red risk signal -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic11_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#78350f" flood-opacity="0.5"/>
+        </filter>
+        <radialGradient id="ic11_a" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fef9c3"/>
+          <stop offset="38%" stop-color="#fbbf24"/>
+          <stop offset="100%" stop-color="#d97706"/>
+        </radialGradient>
+        <radialGradient id="ic11_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.92)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic11_cp"><circle cx="50" cy="50" r="23"/></clipPath>
+      </defs>
+      <!-- 8 pointed rays -->
+      <g fill="#f59e0b" opacity="0.65">
+        <polygon points="50,4 53,36 50,40 47,36"/>
+        <polygon points="96,50 64,53 60,50 64,47"/>
+        <polygon points="50,96 47,64 50,60 53,64"/>
+        <polygon points="4,50 36,47 40,50 36,53"/>
+        <polygon points="79,21 58,44 54,41 66,20"/>
+        <polygon points="79,79 56,59 59,55 80,68"/>
+        <polygon points="21,79 40,56 44,59 23,80"/>
+        <polygon points="21,21 44,40 42,44 22,34"/>
+      </g>
+      <g fill="#fde68a" opacity="0.4">
+        <polygon points="50,10 51.5,38 50,40 48.5,38"/>
+        <polygon points="90,50 62,51.5 60,50 62,48.5"/>
+        <polygon points="50,90 48.5,62 50,60 51.5,62"/>
+        <polygon points="10,50 38,48.5 40,50 38,51.5"/>
+      </g>
+      <!-- Sun center circle -->
+      <circle cx="50" cy="50" r="23" fill="url(#ic11_a)" filter="url(#ic11_sh)"/>
+      <!-- Globe grid on center circle -->
+      <g clip-path="url(#ic11_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="23" ry="6"/>
+        <ellipse cx="50" cy="50" rx="23" ry="14"/>
+        <ellipse cx="50" cy="42" rx="16" ry="4"/>
+        <ellipse cx="50" cy="58" rx="16" ry="4"/>
+        <ellipse cx="50" cy="50" rx="9" ry="23"/>
+        <ellipse cx="50" cy="50" rx="18" ry="23"/>
+      </g>
+      <!-- Bold red zigzag ALERT line inside sun — clearly visible risk signal -->
+      <g clip-path="url(#ic11_cp)" fill="none" stroke="#ef4444" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.98">
+        <polyline points="30,54 36,54 40,48 44,58 50,34 56,58 60,48 64,54 70,54"/>
+        <!-- Filled red circle at spike peak -->
+        <circle cx="50" cy="34" r="3.5" fill="#ef4444" stroke="none"/>
+      </g>
+      <!-- Small amber exclamation spike -->
+      <g clip-path="url(#ic11_cp)">
+        <line x1="50" y1="60" x2="50" y2="65" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="50" cy="67" r="1.5" fill="#F59E0B"/>
+      </g>
+      <ellipse cx="41" cy="39" rx="9" ry="6" fill="url(#ic11_b)"/>
+    </svg>
+    <div class="label">Risk Alerts</div>
+    <div class="sun-name">Solar Flare</div>
+  </div>
+
+  <!-- Icon 12: Market Disruption / Coronal Mass Ejection — Navy sphere, globe grid, amber shockwave arcs + disruption spike -->
+  <div class="card">
+    <svg width="88" height="88" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic12_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic12_a" cx="40%" cy="34%" r="58%">
+          <stop offset="0%" stop-color="#93c5fd"/>
+          <stop offset="50%" stop-color="#1d4ed8"/>
+          <stop offset="100%" stop-color="#0f172a"/>
+        </radialGradient>
+        <radialGradient id="ic12_b" cx="36%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.86)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic12_cp"><circle cx="40" cy="52" r="32"/></clipPath>
+      </defs>
+      <!-- Navy sphere centered slightly left to give room for shockwaves -->
+      <circle cx="40" cy="52" r="32" fill="url(#ic12_a)" filter="url(#ic12_sh)"/>
+      <!-- Globe grid on navy sphere -->
+      <g clip-path="url(#ic12_cp)" fill="none" stroke="#93c5fd" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="40" cy="52" rx="32" ry="9"/>
+        <ellipse cx="40" cy="52" rx="32" ry="20"/>
+        <ellipse cx="40" cy="40" rx="24" ry="6"/>
+        <ellipse cx="40" cy="64" rx="24" ry="6"/>
+        <ellipse cx="40" cy="52" rx="13" ry="32"/>
+        <ellipse cx="40" cy="52" rx="25" ry="32"/>
+      </g>
+      <!-- Disruption spike line on sphere surface -->
+      <g clip-path="url(#ic12_cp)" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.96">
+        <polyline points="14,66 20,66 26,66 30,66 34,65 36,44 40,32 44,44 48,58 54,66 60,66 68,66"/>
+        <circle cx="40" cy="32" r="3" fill="#F59E0B" stroke="none"/>
+      </g>
+      <!-- Green live signal dot at end -->
+      <circle cx="68" cy="66" r="2.5" fill="#22C55E" clip-path="url(#ic12_cp)"/>
+      <!-- Amber shockwave/ripple arcs emanating rightward from sphere (3 concentric arcs, fading) -->
+      <path d="M 70,30 Q 88,52 70,74" fill="none" stroke="#F59E0B" stroke-width="2.8" stroke-linecap="round" opacity="0.9"/>
+      <path d="M 76,34 Q 96,52 76,70" fill="none" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round" opacity="0.60"/>
+      <path d="M 82,38 Q 100,52 82,66" fill="none" stroke="#F59E0B" stroke-width="1.6" stroke-linecap="round" opacity="0.35"/>
+      <ellipse cx="28" cy="38" rx="10" ry="7" fill="url(#ic12_b)"/>
+    </svg>
+    <div class="label">Market Disruption</div>
+    <div class="sun-name">Coronal Mass Ejection</div>
+  </div>
+</div>
+
+<script>
+function toggleMobNav(){
+  var m=document.getElementById('nxs-mob-nav');
+  var b=document.getElementById('nxs-hamburger');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  if(b)b.classList.toggle('open',!open);
+}
+// Responsive inline-grid fixer
+function nxsResponsive(){
+  var isMob=window.innerWidth<=768;
+  document.querySelectorAll('[style*="grid-template-columns"]').forEach(function(el){
+    var s=el.getAttribute('style')||'';
+    if(!el.dataset.origGrid) el.dataset.origGrid=el.style.gridTemplateColumns;
+    if(isMob){
+      if(/repeat\([3-9]/.test(s)||/1fr 1\.8fr|1fr 1fr 1\.6fr|1fr 1fr 1\.5fr/.test(s)){
+        el.style.gridTemplateColumns='1fr';
+        el.style.gap='16px';
+      } else if(/repeat\([45]/.test(s)){
+        el.style.gridTemplateColumns='1fr 1fr';
+        el.style.gap='12px';
+      }
+    } else {
+      if(el.dataset.origGrid) el.style.gridTemplateColumns=el.dataset.origGrid;
+    }
+  });
+  // Fix min-height on mission/video sections
+  if(isMob){
+    document.querySelectorAll('[style*="min-height:460px"]').forEach(function(el){
+      el.style.minHeight='auto';
+    });
+  }
+}
+window.addEventListener('DOMContentLoaded',nxsResponsive);
+window.addEventListener('resize',nxsResponsive);
+</script>
+</body>
+</html>

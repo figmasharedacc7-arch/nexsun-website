@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexsun.ai — Brand Color Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500;600&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #FFFBF0;
+    color: #0F172A;
+    padding: 48px 0 80px;
+  }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+
+  /* Header */
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 48px;
+    padding-bottom: 28px;
+    border-bottom: 3px solid #F59E0B;
+  }
+  .brand { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 900; }
+  .brand span { color: #1E3A8A; }
+  .brand em { color: #0EA5E9; font-style: normal; }
+  .subtitle { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #64748B; }
+
+  /* Section */
+  .section { margin-bottom: 52px; }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+    color: #D97706; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::after { content:''; flex:1; height:1px; background: rgba(245,158,11,0.25); }
+
+  /* Color swatches */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; }
+  .swatch {
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .swatch-color { height: 80px; }
+  .swatch-info { padding: 12px 14px; background: #fff; }
+  .swatch-name { font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 3px; }
+  .swatch-hex  { font-size: 13px; font-family: monospace; color: #64748B; }
+  .swatch-role { font-size: 11px; color: #94A3B8; margin-top: 4px; }
+
+  /* Type scale */
+  .type-row {
+    display: flex; align-items: baseline; gap: 20px;
+    padding: 18px 0; border-bottom: 1px solid rgba(245,158,11,0.12);
+  }
+  .type-label { width: 130px; font-size: 11px; color: #94A3B8; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; flex-shrink: 0; }
+  .type-sample { line-height: 1.2; }
+  .type-spec { font-size: 11px; color: #94A3B8; margin-left: auto; white-space: nowrap; }
+
+  /* Usage table */
+  .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .usage-card {
+    background: #fff; border-radius: 12px; padding: 20px 22px;
+    border: 1px solid rgba(245,158,11,0.18);
+    box-shadow: 0 2px 12px rgba(245,158,11,0.06);
+  }
+  .usage-card h4 { font-size: 13px; font-weight: 700; color: #1E3A8A; margin-bottom: 10px; }
+  .usage-card ul { list-style: none; }
+  .usage-card li {
+    font-size: 13px; color: #475569; padding: 5px 0;
+    border-bottom: 1px solid #F1F5F9;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .usage-card li:last-child { border-bottom: none; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  /* Background options */
+  .bg-options { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .bg-card {
+    border-radius: 14px; padding: 24px 20px 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    border: 2px solid transparent;
+  }
+  .bg-card.primary { border-color: #F59E0B; }
+  .bg-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: #D97706; margin-bottom: 12px;
+  }
+  .bg-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .bg-card p  { font-size: 12px; color: #64748B; line-height: 1.5; }
+  .bg-hex { font-family: monospace; font-size: 12px; color: #94A3B8; margin-top: 10px; }
+
+  /* Gradient swatch */
+  .grad-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .grad-card { flex: 1; min-width: 200px; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  .grad-preview { height: 70px; }
+  .grad-info { background: #fff; padding: 10px 14px; }
+  .grad-name { font-size: 12px; font-weight: 700; color: #334155; }
+  .grad-css  { font-size: 10px; font-family: monospace; color: #94A3B8; margin-top: 2px; word-break: break-all; }
+
+  /* Do/Don't */
+  .dos-donts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .do-card, .dont-card { border-radius: 12px; padding: 20px 22px; }
+  .do-card { background: #F0FDF4; border: 1px solid #86EFAC; }
+  .dont-card { background: #FFF1F2; border: 1px solid #FDA4AF; }
+  .do-card h4 { color: #16A34A; font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+  .dont-card h4 { color: #E11D48; font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+  .do-card li, .dont-card li {
+    font-size: 13px; color: #475569; padding: 5px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05); list-style: none;
+  }
+  .do-card li:last-child, .dont-card li:last-child { border:none; }
+  .do-card li::before { content:'✓ '; color: #16A34A; font-weight: 700; }
+  .dont-card li::before { content:'✗ '; color: #E11D48; font-weight: 700; }
+
+  footer { text-align:center; font-size:12px; color:#94A3B8; margin-top:60px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="brand"><span>nexsun</span><em>.ai</em></div>
+      <div class="subtitle" style="margin-top:6px;">Brand Color Guide · 2026</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:12px;color:#64748B;">Align your artwork with</div>
+      <div style="font-size:12px;color:#64748B;">the nexsun.ai website</div>
+    </div>
+  </div>
+
+  <!-- PRIMARY PALETTE -->
+  <div class="section">
+    <div class="section-label">Primary Palette</div>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F59E0B;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sun</div>
+          <div class="swatch-hex">#F59E0B</div>
+          <div class="swatch-role">Primary accent</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FBBF24;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sun Bright</div>
+          <div class="swatch-hex">#FBBF24</div>
+          <div class="swatch-role">Glow / highlight</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#D97706;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sun Deep</div>
+          <div class="swatch-hex">#D97706</div>
+          <div class="swatch-role">CTAs / links</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FEF3C7;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sun Pale</div>
+          <div class="swatch-hex">#FEF3C7</div>
+          <div class="swatch-role">Backgrounds / bands</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0EA5E9;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sky</div>
+          <div class="swatch-hex">#0EA5E9</div>
+          <div class="swatch-role">".ai" / secondary</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#38BDF8;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sky Mid</div>
+          <div class="swatch-hex">#38BDF8</div>
+          <div class="swatch-role">Sky accent / icons</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEUTRAL PALETTE -->
+  <div class="section">
+    <div class="section-label">Neutral Palette</div>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1E3A8A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Navy</div>
+          <div class="swatch-hex">#1E3A8A</div>
+          <div class="swatch-role">Headings / logo</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0F172A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Text</div>
+          <div class="swatch-hex">#0F172A</div>
+          <div class="swatch-role">Body text</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#334155;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Text Mid</div>
+          <div class="swatch-hex">#334155</div>
+          <div class="swatch-role">Secondary text</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#64748B;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Text Muted</div>
+          <div class="swatch-hex">#64748B</div>
+          <div class="swatch-role">Captions / tagline</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FFFBF0; border:1px solid #F1E8CC;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Background</div>
+          <div class="swatch-hex">#FFFBF0</div>
+          <div class="swatch-role">Page / artwork bg</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FFFFFF; border:1px solid #E2E8F0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">White</div>
+          <div class="swatch-hex">#FFFFFF</div>
+          <div class="swatch-role">Cards / icons</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACKGROUNDS -->
+  <div class="section">
+    <div class="section-label">Background Styles</div>
+    <div class="bg-options">
+      <div class="bg-card primary" style="background:#FFFBF0;">
+        <div class="bg-tag">✦ Recommended</div>
+        <h4 style="color:#1E3A8A;">Warm Cream</h4>
+        <p>Flat warm ivory. Use as a base then layer amber radial glows on top.</p>
+        <div class="bg-hex">#FFFBF0</div>
+      </div>
+      <div class="bg-card" style="background:linear-gradient(145deg,#FFFBF0 0%,#FEF3C7 50%,#FFF7E6 100%);">
+        <div class="bg-tag">Gradient</div>
+        <h4 style="color:#1E3A8A;">Amber Gradient</h4>
+        <p>Shift from cream to sun-pale. Use 135–160° angle for warmth.</p>
+        <div class="bg-hex">#FFFBF0 → #FEF3C7</div>
+      </div>
+      <div class="bg-card" style="background:#1E3A8A;">
+        <div class="bg-tag" style="color:#FBBF24;">Dark Option</div>
+        <h4 style="color:#FBBF24;">Navy Dark</h4>
+        <p style="color:#93C5FD;">Use website navy as base — pair with amber + sky-blue accents only.</p>
+        <div class="bg-hex" style="color:#93C5FD;">#1E3A8A</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRADIENTS -->
+  <div class="section">
+    <div class="section-label">Key Gradients</div>
+    <div class="grad-row">
+      <div class="grad-card">
+        <div class="grad-preview" style="background:linear-gradient(135deg,#F59E0B,#D97706);"></div>
+        <div class="grad-info">
+          <div class="grad-name">CTA / Button</div>
+          <div class="grad-css">135deg, #F59E0B → #D97706</div>
+        </div>
+      </div>
+      <div class="grad-card">
+        <div class="grad-preview" style="background:radial-gradient(ellipse at 35% 35%,#FFF3CD 0%,#FBBF24 40%,#F59E0B 70%,#D97706 100%);"></div>
+        <div class="grad-info">
+          <div class="grad-name">Sun Orb</div>
+          <div class="grad-css">radial, #FFF3CD → #FBBF24 → #F59E0B → #D97706</div>
+        </div>
+      </div>
+      <div class="grad-card">
+        <div class="grad-preview" style="background:linear-gradient(160deg,#FFFBF0 0%,#FFF3CD 30%,#E0F2FE 60%,#FEF9C3 100%);"></div>
+        <div class="grad-info">
+          <div class="grad-name">Hero Background</div>
+          <div class="grad-css">160deg, #FFFBF0 → #FFF3CD → #E0F2FE → #FEF9C3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div class="section">
+    <div class="section-label">Typography</div>
+    <div class="type-row">
+      <div class="type-label">Brand / Logo</div>
+      <div class="type-sample" style="font-family:'Outfit',sans-serif;font-size:42px;font-weight:900;color:#1E3A8A;">nexsun<span style="color:#0EA5E9;">.ai</span></div>
+      <div class="type-spec">Outfit 900 · Navy + Sky</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Headline</div>
+      <div class="type-sample" style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;color:#1E3A8A;">Market Speed. AI Clarity.</div>
+      <div class="type-spec">Outfit 800 · Navy</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Subheading</div>
+      <div class="type-sample" style="font-size:18px;font-weight:600;color:#334155;">Empowering organizations at market speed</div>
+      <div class="type-spec">Inter 600 · Text Mid</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Body / Tagline</div>
+      <div class="type-sample" style="font-size:15px;color:#64748B;">While maintaining absolute accountability</div>
+      <div class="type-spec">Inter 400 · Text Muted</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Label / Tag</div>
+      <div class="type-sample" style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;background:#FEF3C7;padding:4px 12px;border-radius:20px;border:1px solid rgba(245,158,11,0.3);">☀ AI PLATFORM</div>
+      <div class="type-spec">Inter 700 · Uppercase · Sun Deep</div>
+    </div>
+  </div>
+
+  <!-- USAGE GUIDE -->
+  <div class="section">
+    <div class="section-label">Color Usage by Element</div>
+    <div class="usage-grid">
+      <div class="usage-card">
+        <h4>Artwork Elements</h4>
+        <ul>
+          <li><span class="dot" style="background:#F59E0B;"></span>Icons &amp; highlights → Sun #F59E0B</li>
+          <li><span class="dot" style="background:#1E3A8A;"></span>Logo, headings → Navy #1E3A8A</li>
+          <li><span class="dot" style="background:#0EA5E9;"></span>".ai" suffix → Sky #0EA5E9</li>
+          <li><span class="dot" style="background:#D97706;"></span>Links, URLs → Sun Deep #D97706</li>
+          <li><span class="dot" style="background:#64748B;"></span>Tagline text → Text Muted #64748B</li>
+          <li><span class="dot" style="background:#FFFBF0; border:1px solid #ccc;"></span>Background → #FFFBF0</li>
+        </ul>
+      </div>
+      <div class="usage-card">
+        <h4>Icon Circles</h4>
+        <ul>
+          <li><span class="dot" style="background:#F59E0B;"></span>Discovery → Sun #F59E0B</li>
+          <li><span class="dot" style="background:#D97706;"></span>Strategy → Sun Deep #D97706</li>
+          <li><span class="dot" style="background:#0EA5E9;"></span>Collaboration → Sky #0EA5E9</li>
+          <li><span class="dot" style="background:#1E3A8A;"></span>Governance → Navy #1E3A8A</li>
+          <li><span class="dot" style="background:#FFFFFF; border:1px solid #ccc;"></span>Icon glyphs → always White</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DO / DON'T -->
+  <div class="section">
+    <div class="section-label">Do's &amp; Don'ts</div>
+    <div class="dos-donts">
+      <div class="do-card">
+        <h4>✦ Do</h4>
+        <ul>
+          <li>Use amber as the dominant accent color</li>
+          <li>Keep backgrounds warm — cream or navy only</li>
+          <li>Use sky blue exclusively for ".ai" and secondary elements</li>
+          <li>Keep text either Navy or Text Muted</li>
+          <li>Add amber underline accents under "nexsun"</li>
+          <li>Use Outfit (900) for the brand name</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <h4>✗ Don't</h4>
+        <ul>
+          <li>Use green for "nexsun.ai" link text (old version)</li>
+          <li>Use a dark starfield background</li>
+          <li>Mix warm + cool backgrounds</li>
+          <li>Use sky blue for large fills or backgrounds</li>
+          <li>Use grey tones — keep neutrals warm</li>
+          <li>Use bold red or purple anywhere</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>nexsun.ai Brand Color Guide · Generated to match index.html design system · 2026</footer>
+</div>
+</body>
+</html>

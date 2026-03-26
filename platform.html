@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platform — Nexsun.ai</title>
+  <!-- ── SEO & Social ── -->
+  <meta name="description" content="Light on Complexity. Power in Decisions. Nexsun.ai delivers AI clarity for complex markets — turning market data into clear intelligence so you can make confident, high-impact decisions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nexsun.ai/platform.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Platform | Nexsun.ai">
+  <meta property="og:description" content="Light on Complexity. Power in Decisions. Nexsun.ai delivers AI clarity for complex markets — turning market data into clear intelligence so you can make confident, high-impact decisions.">
+  <meta property="og:image" content="https://nexsun.ai/og-image.jpg">
+  <meta property="og:url" content="https://nexsun.ai/platform.html">
+  <meta property="og:site_name" content="Nexsun.ai">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Platform | Nexsun.ai">
+  <meta name="twitter:description" content="Light on Complexity. Power in Decisions. Nexsun.ai delivers AI clarity for complex markets — turning market data into clear intelligence so you can make confident, high-impact decisions.">
+  <meta name="twitter:image" content="https://nexsun.ai/og-image.jpg">
+<style>
+  :root {
+    --sun:        #F59E0B;
+    --sun-bright: #FBBF24;
+    --sun-deep:   #D97706;
+    --sun-pale:   #FEF3C7;
+    --sky:        #0EA5E9;
+    --sky-mid:    #38BDF8;
+    --sky-light:  #E0F2FE;
+    --navy:       #1E3A8A;
+    --navy-mid:   #1D4ED8;
+    --green:      #16A34A;
+    --green-light:#DCFCE7;
+    --bg:         #FFFBF0;
+    --bg2:        #FFF7E6;
+    --white:      #FFFFFF;
+    --text:       #0F172A;
+    --text-mid:   #334155;
+    --text-muted: #64748B;
+    --border:     rgba(245,158,11,0.2);
+    --card-shadow:0 4px 24px rgba(245,158,11,0.08), 0 1px 4px rgba(0,0,0,0.06);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,sans-serif; overflow-x:hidden; }
+  a { color:inherit; text-decoration:none; }
+
+  /* ─── SUN CANVAS ─── */
+  #sun-canvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:.55; }
+
+  /* ─── SHARED ─── */
+  .container { max-width:1200px; margin:0 auto; padding:0 32px; position:relative; z-index:2; }
+  .section { padding:100px 0; }
+  .section-tag {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--sun-pale); border:1px solid rgba(245,158,11,0.3);
+    color:var(--sun-deep); font-size:11px; font-weight:700;
+    letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
+    border-radius:20px; margin-bottom:20px;
+  }
+  .section-tag::before { content:'☀'; font-size:12px; }
+  .section-heading { font-size:clamp(30px,4vw,52px); font-weight:800; line-height:1.15; margin-bottom:20px; color:var(--navy); }
+  .section-heading span { color:var(--sun-deep); }
+  .section-heading .sky { color:var(--sky); }
+  .section-sub { color:var(--text-muted); font-size:17px; line-height:1.75; max-width:680px; }
+
+    /* ─── TOPBAR ─── */
+  .topbar {
+    background:var(--navy);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .topbar-inner {
+    max-width:1200px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; justify-content:flex-end;
+    height:34px; gap:0;
+  }
+  .topbar-inner a {
+    font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+    color:var(--sun); text-decoration:none; padding:0 16px; transition:color .2s;
+    border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
+  }
+  .topbar-inner a:last-child { border-right:none; padding-right:0; }
+  .topbar-inner a:hover { color:#fff; }
+
+  /* ─── NAV ─── */
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,251,240,0.88); backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(245,158,11,0.15);
+    box-shadow:0 1px 20px rgba(245,158,11,0.08);
+    overflow:visible;
+  }
+  .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
+  .nav-links { display:flex; align-items:center; gap:32px; margin-left:auto; }
+  .nav-links a { font-size:14px; color:var(--text-mid); font-weight:500; transition:color .2s; }
+  .nav-links a:hover { color:var(--sun-deep); }
+  .btn-cta {
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:#fff; font-weight:700; padding:11px 24px; border-radius:8px;
+    font-size:14px; border:none; cursor:pointer; transition:all .2s;
+    box-shadow:0 4px 14px rgba(245,158,11,0.4); display:inline-block;
+  }
+  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(245,158,11,0.5); }
+
+  /* ─── PAGE HERO ─── */
+  .page-hero {
+    padding:140px 0 80px; text-align:center;
+    background:linear-gradient(160deg, #FFFBF0 0%, #FFF3CD 35%, #E0F2FE 100%);
+    position:relative; overflow:hidden;
+  }
+  .page-hero::after {
+    content:''; position:absolute; bottom:-80px; left:-80px; width:420px; height:420px;
+    border-radius:50%;
+    background:radial-gradient(ellipse, rgba(14,165,233,0.15) 0%, transparent 65%);
+    pointer-events:none;
+    animation:heroFloat2 11s ease-in-out infinite;
+  }
+  .page-hero::before {
+    content:''; position:absolute; top:-100px; right:-100px; width:500px; height:500px;
+    border-radius:50%;
+    background:radial-gradient(ellipse, rgba(251,191,36,0.25) 0%, transparent 65%);
+    pointer-events:none;
+    animation:heroFloat1 9s ease-in-out infinite;
+  }
+
+  /* ─── DIVIDER ─── */
+  @keyframes dividerGlow {
+    0%,100% { opacity:0.45; filter:blur(5px); }
+    50%      { opacity:0.9;  filter:blur(9px); }
+  }
+  .sun-divider {
+    height:5px;
+    background:linear-gradient(90deg,
+      transparent 0%,
+      #F59E0B 18%,
+      #1E3A8A 50%,
+      #22C55E 82%,
+      transparent 100%
+    );
+    position:relative; z-index:2; overflow:visible;
+  }
+  .sun-divider::after {
+    content:''; position:absolute; inset:-5px 0;
+    background:inherit; border-radius:6px;
+    filter:blur(6px); opacity:0.5;
+    animation:dividerGlow 2.8s ease-in-out infinite;
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    background:white; border:1px solid var(--border); border-radius:16px;
+    padding:28px; transition:all .3s; box-shadow:var(--card-shadow);
+  }
+  .card:hover { border-color:rgba(245,158,11,0.4); transform:translateY(-5px); box-shadow:0 12px 40px rgba(245,158,11,0.14); }
+  .card-icon {
+    width:80px; height:80px; border-radius:12px;
+    background:transparent;
+    border:none;
+    animation:iconFloat 4s ease-in-out infinite; overflow:visible;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px; }
+  .card h3 { font-size:18px; font-weight:700; margin-bottom:10px; color:var(--navy); }
+  .card p { color:var(--text-muted); font-size:14px; line-height:1.7; }
+
+  /* ─── VALUE ─── */
+  #value { background:linear-gradient(180deg,var(--bg) 0%,var(--sky-light) 100%); }
+  .five-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:20px; margin-top:48px; }
+  .quote-box {
+    background:linear-gradient(135deg,var(--sun-pale),rgba(14,165,233,0.05));
+    border-left:4px solid var(--sun); border-radius:0 12px 12px 0;
+    padding:20px 24px; margin:28px 0; font-style:italic;
+    color:var(--text-mid); font-size:15px; line-height:1.75;
+  }
+
+  /* ─── INTERACTIVE ─── */
+  #interactive {
+    background:linear-gradient(135deg,var(--navy) 0%,#1e40af 50%,#0369a1 100%);
+    padding:100px 0; text-align:center; position:relative; overflow:hidden;
+  }
+  #interactive::before {
+    content:''; position:absolute; top:-100px; left:50%; transform:translateX(-50%);
+    width:600px; height:600px; border-radius:50%;
+    background:radial-gradient(ellipse,rgba(251,191,36,0.15) 0%,transparent 65%);
+    pointer-events:none;
+  }
+  #interactive .section-tag { background:rgba(251,191,36,0.15); border-color:rgba(251,191,36,0.3); color:var(--sun-bright); }
+  #interactive .section-heading { color:white; }
+  #interactive .section-sub { color:rgba(255,255,255,0.65); }
+  .int-orb {
+    width:300px; height:300px; border-radius:50%; margin:48px auto;
+    background:radial-gradient(ellipse at 35% 30%,#FFF3CD 0%,#FBBF24 40%,#F59E0B 70%,#D97706 100%);
+    box-shadow:0 0 60px rgba(251,191,36,0.4); cursor:crosshair;
+    display:flex; align-items:center; justify-content:center;
+    transition:box-shadow .3s; animation:sunPulse 4s ease-in-out infinite;
+  }
+  .int-orb:hover { box-shadow:0 0 100px rgba(251,191,36,0.6); }
+  .int-orb-inner { text-align:center; }
+  .int-orb-inner p { font-size:12px; font-weight:700; letter-spacing:1px; color:rgba(30,58,138,0.8); text-transform:uppercase; }
+  .int-orb-inner h3 { font-size:20px; font-weight:800; color:var(--navy); }
+  .int-stats { display:flex; gap:48px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
+  .int-stat .val { font-size:32px; font-weight:900; color:var(--sun-bright); }
+  .int-stat .lbl { font-size:13px; color:rgba(255,255,255,0.6); }
+  @keyframes sunPulse {
+    0%,100%{box-shadow:0 0 0 20px rgba(251,191,36,0.12),0 0 0 50px rgba(251,191,36,0.07),0 0 0 90px rgba(251,191,36,0.04),0 20px 80px rgba(245,158,11,0.35);}
+    50%{box-shadow:0 0 0 30px rgba(251,191,36,0.15),0 0 0 70px rgba(251,191,36,0.09),0 0 0 120px rgba(251,191,36,0.05),0 20px 100px rgba(245,158,11,0.4);}
+  }
+  @keyframes rotateSun { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ─── PLATFORM ─── */
+  #platform { background:white; }
+  .tab-bar { display:flex; gap:8px; flex-wrap:wrap; margin:40px 0 28px; }
+  .tab-btn {
+    padding:10px 22px; border-radius:8px; border:1px solid var(--border);
+    background:var(--sun-pale); color:var(--sun-deep); cursor:pointer;
+    font-size:14px; font-weight:600; transition:all .2s;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    border-color:transparent; color:white; box-shadow:0 4px 12px rgba(245,158,11,0.3);
+  }
+  .tab-content { display:none; }
+  .tab-content.active { display:grid; grid-template-columns:1fr 1fr; gap:48px; animation:fadeIn .3s; }
+  .tab-main h4 { color:var(--sun-deep); font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:8px; }
+  .tab-main h2 { font-size:32px; font-weight:800; color:var(--navy); margin-bottom:16px; }
+  .tab-main p { color:var(--text-muted); font-size:15px; line-height:1.75; margin-bottom:24px; }
+  .tab-features { display:grid; gap:14px; }
+  .tab-feature { background:var(--sun-pale); border-radius:10px; padding:14px 16px; }
+  .tab-feature h5 { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+  .tab-feature p { font-size:13px; color:var(--text-muted); }
+  .tab-visual {
+    background:linear-gradient(135deg,var(--sun-pale),var(--sky-light));
+    border-radius:16px; border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    min-height:280px; font-size:64px;
+  }
+
+  /* ─── ANALYTICS ─── */
+  #analytics { background:var(--bg); }
+  .six-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:40px 0; }
+  .tiers-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:48px; }
+  .tier-card { background:white; border:1px solid var(--border); border-radius:14px; padding:24px; box-shadow:var(--card-shadow); }
+  .tier-card h4 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:10px; }
+  .tier-chip { display:inline-block; background:var(--sun-pale); color:var(--sun-deep); font-size:11px; font-weight:600; padding:3px 10px; border-radius:8px; margin:3px 2px 0 0; border:1px solid rgba(245,158,11,0.2); }
+  .data-layers { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:40px; }
+  .layer-card h4 { font-size:16px; font-weight:700; color:var(--sun-deep); margin-bottom:14px; }
+  .layer-card ul { list-style:none; }
+  .layer-card ul li { color:var(--text-muted); font-size:14px; padding:6px 0; border-bottom:1px solid rgba(245,158,11,0.1); display:flex; gap:8px; }
+  .layer-card ul li::before { content:'→'; color:var(--sun-deep); }
+
+              /* ─── FOOTER ─── */
+  footer { background:#0D1B3E; padding:64px 0 32px; border-top:3px solid var(--sun); }
+  .footer-top {
+    display:grid; grid-template-columns:1fr 1fr 1.6fr 1fr;
+    gap:40px; margin-bottom:48px; align-items:start;
+    padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; color:var(--sun-bright); }
+  .footer-col ul { list-style:none; }
+  .footer-col ul li { padding:5px 0; font-size:14px; color:rgba(255,255,255,0.75); cursor:pointer; transition:color .2s; }
+  .footer-col ul li:hover, .footer-col ul li a:hover { color:var(--sun-deep); }
+  .footer-col ul li a { color:rgba(255,255,255,0.75); }
+  .footer-contact-item { font-size:14px; color:rgba(255,255,255,0.75); padding:5px 0; line-height:1.6; }
+  .footer-contact-item a { color:rgba(255,255,255,0.75); }
+  .footer-contact-item a:hover { color:var(--sun-deep); }
+  /* Newsletter row */
+  .footer-newsletter-row {
+    display:grid; grid-template-columns:1fr 1fr; gap:64px;
+    padding:40px 48px; border-radius:16px; margin-bottom:48px; align-items:center;
+    background:linear-gradient(135deg,#FEFAE8 0%,#FFF8D6 50%,#FAF0B8 100%);
+  }
+  .footer-brand { display:flex; flex-direction:column; justify-content:center; }
+  .footer-brand p { color:var(--navy); font-size:14px; line-height:1.75; margin:16px 0 8px; }
+  .footer-brand .conf { font-size:12px; color:rgba(30,58,138,0.4); }
+  .footer-newsletter h3 { font-size:18px; font-weight:700; color:var(--navy); margin-bottom:10px; line-height:1.3; }
+  .footer-newsletter p { font-size:13px; color:rgba(30,58,138,0.65); margin-bottom:20px; line-height:1.6; }
+  .fn-field { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+  .fn-field input { background:#fff; border:1px solid rgba(30,58,138,0.15); border-radius:8px; padding:12px 14px; font-size:14px; color:var(--navy); outline:none; transition:border-color .2s; font-family:inherit; }
+  .fn-field input::placeholder { color:rgba(30,58,138,0.35); }
+  .fn-field input:focus { border-color:var(--sun); }
+  .fn-check { display:flex; align-items:flex-start; gap:10px; margin-bottom:14px; }
+  .fn-check input[type=checkbox] { margin-top:3px; accent-color:var(--sun); width:14px; height:14px; flex-shrink:0; cursor:pointer; }
+  .fn-check label { font-size:12px; color:rgba(30,58,138,0.6); line-height:1.5; cursor:pointer; }
+  .fn-legal { font-size:11px; color:rgba(30,58,138,0.45); margin-bottom:16px; line-height:1.5; }
+  .fn-btn { background:linear-gradient(135deg,var(--sun),var(--sun-deep)); color:#fff; border:none; border-radius:8px; padding:12px 24px; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer; width:100%; transition:opacity .2s, transform .2s; }
+  .fn-btn:hover { opacity:.88; transform:translateY(-1px); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+  .footer-bottom p { font-size:12px; color:rgba(255,255,255,0.4); }
+  /* ─── NAV DROPDOWN ─── */
+  .nav-dropdown { position:relative; display:flex; align-items:center; }
+  .nav-dropdown > a { display:flex; align-items:center; gap:4px; cursor:pointer; }
+  .nav-dropdown > a::after { content:''; display:inline-block; width:0; height:0;
+    border-left:4px solid transparent; border-right:4px solid transparent;
+    border-top:4px solid currentColor; margin-top:1px; transition:transform .2s; }
+  .nav-dropdown:hover > a::after { transform:rotate(180deg); }
+  .nav-dropdown-menu {
+    position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-6px);
+    background:white; border:1px solid rgba(245,158,11,0.2);
+    border-radius:12px; padding:6px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(245,158,11,0.08);
+    min-width:160px; opacity:0; visibility:hidden;
+    transition:opacity .2s, transform .2s, visibility .2s;
+    z-index:200;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu {
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a {
+    display:block; padding:9px 16px; border-radius:8px;
+    font-size:13.5px; color:var(--text-mid); font-weight:500;
+    transition:background .15s, color .15s; white-space:nowrap;
+  }
+  .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
+  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(245,158,11,0.1); margin:4px 8px; }
+
+  /* ─── SCROLL TO TOP ─── */
+  #scroll-top {
+    position:fixed; bottom:32px; right:32px; z-index:999;
+    width:44px; height:44px; border-radius:50%;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:white; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 16px rgba(245,158,11,0.45);
+    opacity:0; visibility:hidden; transform:translateY(12px);
+    transition:opacity .3s, visibility .3s, transform .3s;
+  }
+  #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
+  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(245,158,11,0.55); }
+  #scroll-top svg { width:18px; height:18px; }
+
+  /* ─── HERO AMBIENT ANIMATION ─── */
+  @keyframes heroFloat1 {
+    0%,100% { transform:translate(0,0) scale(1); opacity:.7; }
+    33%      { transform:translate(-40px,25px) scale(1.12); opacity:.9; }
+    66%      { transform:translate(20px,-20px) scale(.92); opacity:.6; }
+  }
+  @keyframes heroFloat2 {
+    0%,100% { transform:translate(0,0) scale(1); opacity:.5; }
+    40%     { transform:translate(30px,40px) scale(1.15); opacity:.8; }
+    70%     { transform:translate(-20px,10px) scale(.88); opacity:.5; }
+  }
+  @keyframes heroFloat3 {
+    0%,100% { transform:translate(0,0) scale(1); opacity:.4; }
+    50%     { transform:translate(-25px,-35px) scale(1.1); opacity:.65; }
+  }
+
+  /* ════ MOBILE RESPONSIVE ════ */
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;margin-left:auto;flex-shrink:0;}
+  .nav-hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;display:block;}
+  .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+  .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+  .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(245,158,11,0.12);font-size:15px;font-weight:500;color:#334155;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a:hover{color:var(--sun-deep);}
+  #nxs-mob-nav a:last-child{border-bottom:none;}
+  @media(max-width:960px){
+    .topbar-inner a{padding:0 10px;font-size:10px;}
+  }
+  @media(max-width:768px){
+    .topbar{display:none!important;}
+    .nav-links{display:none!important;}
+    .nav-hamburger{display:flex!important;}
+    .container{padding:0 18px!important;}
+    #hero{padding-top:82px!important;min-height:auto!important;padding-bottom:56px!important;}
+    .hero-grid{grid-template-columns:1fr!important;gap:32px!important;}
+    .hero-heading{font-size:clamp(30px,8vw,42px)!important;}
+    .hero-stats{gap:16px!important;flex-wrap:wrap!important;}
+    .hero-ctas{flex-direction:column!important;}
+    .hero-ctas a{text-align:center!important;}
+    .sun-visual{display:none!important;}
+    .section{padding:56px 0!important;}
+    .section-heading{font-size:clamp(24px,6vw,32px)!important;}
+    .strip-stats{gap:20px!important;}
+    .strip-stat .val{font-size:28px!important;}
+    #challenge .two-col{grid-template-columns:1fr!important;gap:36px!important;}
+    .ir-hero-grid{grid-template-columns:1fr!important;gap:36px!important;}
+    .ir-hero h1{font-size:clamp(28px,7vw,40px)!important;}
+    .hero-stats.ir-stats{grid-template-columns:1fr 1fr!important;}
+    .thesis-grid{grid-template-columns:1fr!important;}
+    .market-grid{grid-template-columns:1fr 1fr!important;gap:2px!important;}
+    .traction-grid{grid-template-columns:1fr!important;}
+    .team-grid{grid-template-columns:1fr 1fr!important;gap:12px!important;}
+    .funds-grid{grid-template-columns:1fr!important;}
+    .footer-top{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+    .footer-wordmark{font-size:clamp(44px,13vw,72px)!important;letter-spacing:-2px!important;}
+    .footer-bottom{flex-direction:column!important;align-items:flex-start!important;}
+    .footer-legal a:first-child{padding-left:0!important;}
+    #nxs-chat-panel{right:12px!important;left:12px!important;width:auto!important;}
+    #nxs-chat-bubble{bottom:20px!important;right:20px!important;}
+    .ind-wrap{padding:0 18px!important;}
+    .sun-divider{display:none;}
+  }
+  @media(max-width:480px){
+    .footer-top{grid-template-columns:1fr!important;}
+    .market-grid{grid-template-columns:1fr!important;}
+    .team-grid{grid-template-columns:1fr!important;}
+    .hero-stats{flex-direction:column!important;}
+  }
+
+  /* ─── HERO CANVAS ─── */
+  canvas.hero-canvas { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+  .page-hero .container { position:relative; z-index:1; }
+  .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
+  .footer-legal a { font-size:12px; color:rgba(255,255,255,0.45); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
+  .footer-legal a:last-child { border-right:none; }
+  .footer-legal a:hover { color:rgba(255,255,255,0.85); }
+
+  /* ── Solar Icon Float & Card Scroll Animations ── */
+  @keyframes iconFloat {
+    0%,100% { transform:translateY(0px); }
+    50%      { transform:translateY(-8px); }
+  }
+  .solar-icon-wrap {
+    display:flex; justify-content:center; align-items:center;
+    margin-bottom:18px;
+    animation:iconFloat 4s ease-in-out infinite;
+  }
+  .solar-card-animated {
+    opacity:0; transform:translateY(20px);
+    transition:opacity 0.55s ease, transform 0.55s ease;
+  }
+  .solar-card-animated.visible {
+    opacity:1; transform:translateY(0);
+  }
+
+</style>
+  <!-- ── Favicons ── -->
+  <link rel="icon" type="image/svg+xml" href="logo-color.svg">
+  <link rel="apple-touch-icon" href="logo-color.svg">
+  <meta name="theme-color" content="#1E3A8A">
+</head>
+<body>
+
+<canvas id="sun-canvas"></canvas>
+
+<!-- ══ NAV ══ -->
+<nav>
+    <div class="topbar">
+    <div class="topbar-inner">
+      <a href="https://AEPG.ca" target="_blank">AEPG.ca</a>
+      <a href="blog.html">Blog</a>
+      <a href="investors.html">Investor Centre</a>
+      <a href="trust.html">Trust &amp; Security</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+  <div class="nav-inner">
+    <a href="index.html">
+      <img src="logo-color.svg" alt="Nexsun.ai" style="height:120px;width:auto;display:block;">
+    </a>
+    <button class="nav-hamburger" id="nxs-hamburger" onclick="toggleMobNav()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="product.html">Platform</a>
+        <div class="nav-dropdown-menu">
+          <a href="product.html">Platform Overview</a>
+          <div class="menu-divider"></div>
+          <a href="modules.html">Modules</a>
+          <a href="technology.html">Technology</a>
+          <div class="menu-divider"></div>
+          <a href="trust.html">Trust &amp; Security</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="use-cases.html">Solutions</a>
+        <div class="nav-dropdown-menu" style="min-width:200px;">
+          <div class="menu-label">By Outcome</div>
+          <a href="solutions-market-intelligence.html">Market Intelligence</a>
+          <a href="solutions-risk-management.html">Risk Management</a>
+          <a href="solutions-contract-analytics.html">Contract Analytics</a>
+          <div class="menu-divider"></div>
+          <a href="use-cases.html" style="color:var(--sun-deep);font-weight:600;">All Use Cases &#8599;</a>
+        </div>
+      </div>
+      <a href="industries.html">Industries</a>
+      <a href="pricing.html">Pricing</a>
+      <div class="nav-dropdown">
+        <a href="resources.html">Resources</a>
+        <div class="nav-dropdown-menu">
+          <a href="blog.html">Blog</a>
+          <a href="resources.html">Insights &amp; Reports</a>
+          <div class="menu-divider"></div>
+          <a href="platform.html">Platform Guide</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="about.html">Company</a>
+        <div class="nav-dropdown-menu">
+          <a href="about.html">About Us</a>
+          <a href="investors.html">Investor Centre</a>
+          <a href="careers.html">Careers</a>
+          <a href="press.html">Press &amp; Media</a>
+          <div class="menu-divider"></div>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <a href="contact.html" class="btn-cta">Book a Discovery</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ PAGE HERO ══ -->
+<section style="background:linear-gradient(135deg,#0D1B3E 0%,#1E3A8A 55%,#1D4ED8 100%);min-height:560px;padding:130px 0 80px;position:relative;overflow:hidden;display:flex;align-items:center;">
+  <canvas id="plat-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+  <!-- Glow orbs -->
+  <div style="position:absolute;top:-120px;right:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(ellipse,rgba(245,158,11,0.18) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-100px;left:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(ellipse,rgba(34,197,94,0.12) 0%,transparent 65%);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div style="max-width:800px;">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.9);margin-bottom:28px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#F59E0B;display:inline-block;"></span>
+        The Nexsun.ai Platform
+      </div>
+      <h1 style="font-size:clamp(38px,5.5vw,66px);font-weight:900;color:#fff;line-height:1.08;letter-spacing:-2px;margin-bottom:24px;">One platform. Every signal.<br><span style="color:#F59E0B;">From data to decision.</span></h1>
+      <p style="font-size:18px;color:rgba(255,255,255,0.8);line-height:1.75;max-width:640px;margin-bottom:40px;">Nexsun.ai is the AI intelligence layer built for energy, commodity, and financial market teams — connecting real-time market signals to strategy, risk, and governance in one unified workspace.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="contact.html" style="background:#F59E0B;color:#fff;padding:15px 30px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:opacity .2s,transform .2s;" onmouseover="this.style.opacity='.88';this.style.transform='translateY(-2px)'" onmouseout="this.style.opacity='1';this.style.transform=''">Book a Discovery &rarr;</a>
+      <a href="mailto:partners@nexsun.ai" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;margin-top:16px;transition:color .2s;" onmouseover="this.style.color=\'rgba(255,255,255,0.95)\'" onmouseout="this.style.color=\'rgba(255,255,255,0.6)\'">&#9993; partners@nexsun.ai</a>
+        <a href="modules.html" style="background:rgba(255,255,255,0.1);color:#fff;padding:15px 30px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.25);transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Explore Modules</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS BAR ══ -->
+<section style="background:#0D1B3E;padding:0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,0.08);">
+      <div style="background:#0D1B3E;padding:28px 20px;text-align:center;">
+        <div style="font-size:28px;font-weight:900;color:#F59E0B;">$25T+</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:5px;letter-spacing:.5px;">Global Traded Market</div>
+      </div>
+      <div style="background:#0D1B3E;padding:28px 20px;text-align:center;">
+        <div style="font-size:28px;font-weight:900;color:#F59E0B;">500+</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:5px;letter-spacing:.5px;">Data Sources Integrated</div>
+      </div>
+      <div style="background:#0D1B3E;padding:28px 20px;text-align:center;">
+        <div style="font-size:28px;font-weight:900;color:#22C55E;">6</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:5px;letter-spacing:.5px;">Intent-Driven Modules</div>
+      </div>
+      <div style="background:#0D1B3E;padding:28px 20px;text-align:center;">
+        <div style="font-size:28px;font-weight:900;color:#F59E0B;">180-Day</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:5px;letter-spacing:.5px;">Pilot Programme</div>
+      </div>
+      <div style="background:#0D1B3E;padding:28px 20px;text-align:center;">
+        <div style="font-size:28px;font-weight:900;color:#22C55E;">99.9%</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:5px;letter-spacing:.5px;">Platform Uptime</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section style="background:#fff;padding:80px 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px;">
+      <div class="section-tag" style="margin:0 auto 16px;">How It Works</div>
+      <h2 class="section-heading" style="margin:0 auto 16px;">From signal to strategy <span>in three steps.</span></h2>
+      <p style="font-size:16px;color:#64748B;max-width:540px;margin:0 auto;line-height:1.7;">Nexsun.ai works the way your team thinks — continuously ingesting, analysing, and translating market intelligence into confident, defensible decisions.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 40px 1fr 40px 1fr;gap:0;align-items:center;max-width:900px;margin:0 auto;">
+
+      <div style="text-align:center;padding:36px 28px;background:#F8FAFF;border-radius:20px;border:1px solid rgba(30,58,138,0.08);">
+        <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1E3A8A,#1D4ED8);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;">📡</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#F59E0B;margin-bottom:8px;">Step 01</div>
+        <div style="font-size:17px;font-weight:800;color:#1E3A8A;margin-bottom:10px;">Ingest</div>
+        <p style="font-size:13px;color:#64748B;line-height:1.65;">500+ global sources — price feeds, news, policy, geopolitics, and internal data — continuously ingested and structured.</p>
+      </div>
+
+      <div style="text-align:center;color:rgba(30,58,138,0.2);font-size:28px;">&#8594;</div>
+
+      <div style="text-align:center;padding:36px 28px;background:#F8FAFF;border-radius:20px;border:1px solid rgba(30,58,138,0.08);">
+        <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#D97706,#F59E0B);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;">🧠</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#F59E0B;margin-bottom:8px;">Step 02</div>
+        <div style="font-size:17px;font-weight:800;color:#1E3A8A;margin-bottom:10px;">Analyse</div>
+        <p style="font-size:13px;color:#64748B;line-height:1.65;">Glassbox AI™ runs scenario models, surfaces patterns, and generates explainable insights — grounded in your own data.</p>
+      </div>
+
+      <div style="text-align:center;color:rgba(30,58,138,0.2);font-size:28px;">&#8594;</div>
+
+      <div style="text-align:center;padding:36px 28px;background:#F8FAFF;border-radius:20px;border:1px solid rgba(30,58,138,0.08);">
+        <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#15803D,#22C55E);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;">✅</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#22C55E;margin-bottom:8px;">Step 03</div>
+        <div style="font-size:17px;font-weight:800;color:#1E3A8A;margin-bottom:10px;">Decide</div>
+        <p style="font-size:13px;color:#64748B;line-height:1.65;">Every decision is recorded in an immutable SoDR — fully traceable, audit-ready, and linked back to the signals that drove it.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<script>
+(function(){
+  var c=document.getElementById('plat-canvas');
+  if(!c)return;
+  var ctx=c.getContext('2d');
+  function resize(){c.width=c.offsetWidth;c.height=c.offsetHeight;}
+  resize();
+  window.addEventListener('resize',resize);
+  var pts=[];
+  for(var i=0;i<60;i++){
+    pts.push({x:Math.random()*c.width,y:Math.random()*c.height,
+      vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,
+      r:Math.random()*2.2+.8,
+      col:Math.random()>.55?'rgba(245,158,11,0.7)':'rgba(34,197,94,0.5)'});
+  }
+  function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    pts.forEach(function(p){
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=p.col;ctx.globalAlpha=.6;ctx.fill();
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>c.width)p.vx*=-1;
+      if(p.y<0||p.y>c.height)p.vy*=-1;
+    });
+    ctx.globalAlpha=1;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+<!-- ══ PLATFORM SCREENSHOT TOUR ══ -->
+<section style="background:linear-gradient(180deg,#0D1B3E 0%,#0F2352 100%);padding:100px 0 90px;overflow:hidden;">
+  <div class="container">
+    <div class="section-tag" style="background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.3);color:#F59E0B;margin:0 auto 16px;">Live Platform</div>
+    <h2 class="section-heading" style="color:white;text-align:center;margin:0 auto 14px;">See it <span>in action.</span></h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.6);text-align:center;margin:0 auto 40px;">Real screens from the Nexsun.ai platform — built for energy traders, risk managers, and commercial teams.</p>
+
+    <!-- Tour tabs -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;" id="tour-tabs">
+      <button onclick="tourSwitch('copilot',this)" class="tour-tab-active" style="background:#F59E0B;color:#0D1B3E;border:none;padding:9px 20px;border-radius:24px;font-size:13px;font-weight:700;cursor:pointer;">🤖 CoPilot AI</button>
+      <button onclick="tourSwitch('discover',this)" class="tour-tab-inactive" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:none;padding:9px 20px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;">🌍 Market Discovery</button>
+      <button onclick="tourSwitch('analysis',this)" class="tour-tab-inactive" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:none;padding:9px 20px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;">📊 Analysis</button>
+      <button onclick="tourSwitch('strategy',this)" class="tour-tab-inactive" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:none;padding:9px 20px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;">♟️ Position &amp; Strategy</button>
+      <button onclick="tourSwitch('contracts',this)" class="tour-tab-inactive" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:none;padding:9px 20px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;">📄 Contract Intelligence</button>
+      <button onclick="tourSwitch('rooms',this)" class="tour-tab-inactive" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:none;padding:9px 20px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;">💬 Collaboration Rooms</button>
+    </div>
+
+    <!-- Browser frame -->
+    <div style="background:#1E293B;border-radius:14px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.08);max-width:1000px;margin:0 auto;">
+      <!-- Browser chrome bar -->
+      <div style="background:#334155;padding:12px 18px;display:flex;align-items:center;gap:8px;">
+        <div style="width:12px;height:12px;border-radius:50%;background:#FF5F56;flex-shrink:0;"></div>
+        <div style="width:12px;height:12px;border-radius:50%;background:#FFBD2E;flex-shrink:0;"></div>
+        <div style="width:12px;height:12px;border-radius:50%;background:#27C93F;flex-shrink:0;"></div>
+        <div style="flex:1;background:#1E293B;border-radius:6px;padding:5px 14px;font-size:12px;color:rgba(255,255,255,0.4);margin:0 14px;font-family:monospace;">app.nexsun.ai</div>
+      </div>
+      <!-- Screenshot display -->
+      <div style="position:relative;overflow:hidden;background:#0F172A;">
+        <img id="tour-screen" src="screenshots/ss-copilot.png" alt="Nexsun.ai Platform" style="width:100%;display:block;transition:opacity .3s ease;">
+      </div>
+    </div>
+
+    <!-- Caption -->
+    <div style="text-align:center;margin-top:24px;">
+      <p id="tour-caption" style="color:rgba(255,255,255,0.55);font-size:14px;line-height:1.6;max-width:600px;margin:0 auto 20px;"><strong style="color:#F59E0B;">CoPilot AI</strong> — Your personal market intelligence assistant. Ask anything about energy markets, positions, contracts, or risk exposure — in plain language.</p>
+      <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;background:#F59E0B;color:#0D1B3E;padding:12px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;">Book a Live Demo →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.tour-tab-active { transition:all .2s; }
+.tour-tab-inactive { transition:all .2s; }
+.tour-tab-inactive:hover { background:rgba(255,255,255,0.18)!important; color:#fff!important; }
+</style>
+
+<script>
+var tourData = {
+  copilot:   { img:'screenshots/ss-copilot.png',   caption:'<strong style="color:#F59E0B;">CoPilot AI</strong> — Your personal market intelligence assistant. Ask anything about energy markets, positions, contracts, or risk — in plain language.' },
+  discover:  { img:'screenshots/ss-discover.png',  caption:'<strong style="color:#F59E0B;">Market Discovery</strong> — Real-time global market signals mapped by region. EUA, NBP gas, Brent crude, TTF, German power, Nordic hydro — all surfaced automatically.' },
+  analysis:  { img:'screenshots/ss-analysis.png',  caption:'<strong style="color:#F59E0B;">Analysis Engine</strong> — Cross-market analysis with perspective-based filtering. Drill into sectors, exchanges, instruments, and analysis bundles tailored to your role.' },
+  strategy:  { img:'screenshots/ss-strategy.png',  caption:'<strong style="color:#F59E0B;">Position &amp; Strategy</strong> — Build structured market strategies with time horizons and risk profiles. Near-term tactical actions through long-term structural positioning.' },
+  contracts: { img:'screenshots/ss-contracts-overview.png', caption:'<strong style="color:#F59E0B;">Contract Intelligence</strong> — Full contract lifecycle from offer to obligation. Counterparty management, risk scores, clause analysis, and portfolio benchmarking in one place.' },
+  rooms:     { img:'screenshots/ss-rooms.png',     caption:'<strong style="color:#F59E0B;">Collaboration Rooms</strong> — Structured spaces for deal-specific collaboration. Share intelligence, coordinate on briefs, and engage market participants with full audit trails.' }
+};
+function tourSwitch(key, btn) {
+  var data = tourData[key];
+  if (!data) return;
+  var img = document.getElementById('tour-screen');
+  var cap = document.getElementById('tour-caption');
+  img.style.opacity = '0';
+  setTimeout(function(){ img.src = data.img; img.style.opacity = '1'; }, 200);
+  cap.innerHTML = data.caption;
+  document.querySelectorAll('#tour-tabs button').forEach(function(b){
+    b.style.background = 'rgba(255,255,255,0.1)';
+    b.style.color = 'rgba(255,255,255,0.75)';
+    b.style.fontWeight = '600';
+  });
+  btn.style.background = '#F59E0B';
+  btn.style.color = '#0D1B3E';
+  btn.style.fontWeight = '700';
+}
+</script>
+
+<!-- ══ VALUE PROP ══ -->
+<section id="value" class="section">
+  <div class="container">
+    <div class="section-tag">Value Proposition</div>
+    <h2 class="section-heading">Five Core Benefits That <span>Redefine</span> Decision-Making</h2>
+    <p class="section-sub">Nexsun.ai delivers structure and foresight by combining real-time data capture, contextual AI analytics, and collaborative intelligence into one unified platform.</p>
+    <div class="five-grid">
+      <div class="card solar-card-animated" style="transform:translateY(20px);"><div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic7_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#78350f" flood-opacity="0.42"/>
+        </filter>
+        <radialGradient id="ic7_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="45%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic7_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic7_cp"><circle cx="50" cy="50" r="30"/></clipPath>
+      </defs>
+      <!-- 8 sun rays -->
+      <g opacity="0.22" fill="#f59e0b">
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(0 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(90 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(22.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(67.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(112.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(157.5 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="43" fill="#fbbf24" opacity="0.14"/>
+      <!-- Sphere -->
+      <circle cx="50" cy="50" r="30" fill="url(#ic7_a)" filter="url(#ic7_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic7_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="30" ry="8"/>
+        <ellipse cx="50" cy="50" rx="30" ry="18"/>
+        <ellipse cx="50" cy="38" rx="22" ry="6"/>
+        <ellipse cx="50" cy="62" rx="22" ry="6"/>
+        <ellipse cx="50" cy="50" rx="12" ry="30"/>
+        <ellipse cx="50" cy="50" rx="24" ry="30"/>
+      </g>
+      <!-- 4 navy ecosystem network dots radiating outward from sphere with connecting lines -->
+      <g stroke="#1E3A8A" stroke-width="1.4" opacity="0.88">
+        <line x1="50" y1="20" x2="50" y2="10"/>
+        <line x1="78" y1="44" x2="88" y2="40"/>
+        <line x1="70" y1="72" x2="78" y2="82"/>
+        <line x1="22" y1="60" x2="12" y2="64"/>
+      </g>
+      <circle cx="50" cy="9" r="4" fill="#1E3A8A"/>
+      <circle cx="89" cy="39" r="4" fill="#1E3A8A"/>
+      <circle cx="79" cy="83" r="4" fill="#1E3A8A"/>
+      <circle cx="11" cy="65" r="4" fill="#1E3A8A"/>
+      <ellipse cx="40" cy="37" rx="10" ry="7" fill="url(#ic7_b)"/>
+    </svg></div><h3>Differentiated Market Intelligence</h3><p>Continuously ingests unstructured external information — policy, regulation, geopolitics, sentiment — and integrates it with internal enterprise data to reflect how markets actually evolve.</p></div>
+      <div class="card solar-card-animated" style="transform:translateY(20px);"><div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic5_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#14532d" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic5_ring" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#4ade80" stop-opacity="0"/>
+          <stop offset="48%" stop-color="#22c55e"/>
+          <stop offset="72%" stop-color="#16a34a"/>
+          <stop offset="100%" stop-color="#14532d"/>
+        </radialGradient>
+        <radialGradient id="ic5_hl" cx="32%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.82)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic5_inner"><circle cx="50" cy="50" r="22"/></clipPath>
+      </defs>
+      <circle cx="50" cy="55" r="44" fill="#22c55e" opacity="0.08"/>
+      <circle cx="50" cy="50" r="40" fill="url(#ic5_ring)" filter="url(#ic5_sh)"/>
+      <!-- White center circle -->
+      <circle cx="50" cy="50" r="23" fill="white"/>
+      <circle cx="50" cy="50" r="23" fill="none" stroke="#86efac" stroke-width="2" opacity="0.5"/>
+      <!-- Globe lines in white center area in green -->
+      <g clip-path="url(#ic5_inner)" fill="none" stroke="#22c55e" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="22" ry="6"/>
+        <ellipse cx="50" cy="44" rx="16" ry="4"/>
+        <ellipse cx="50" cy="56" rx="16" ry="4"/>
+        <ellipse cx="50" cy="50" rx="9" ry="22"/>
+        <ellipse cx="50" cy="50" rx="17" ry="22"/>
+      </g>
+      <!-- Analytics polyline in amber inside center circle -->
+      <g clip-path="url(#ic5_inner)" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+        <polyline points="32,56 38,50 43,54 48,44 53,50 58,43 64,48 68,44"/>
+        <circle cx="68" cy="44" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+      <ellipse cx="31" cy="29" rx="10" ry="6.5" fill="url(#ic5_hl)" opacity="0.85"/>
+    </svg></div><h3>Glassbox AI™</h3><p>Every AI-assisted insight, assumption, source, and reasoning path is logged, reviewable, and contextualized. Intelligence remains completely defensible — at the moment of decision and long after.</p></div>
+      <div class="card solar-card-animated" style="transform:translateY(20px);"><div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic1_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.4"/>
+        </filter>
+        <radialGradient id="ic1_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#93c5fd"/>
+          <stop offset="40%" stop-color="#1d4ed8"/>
+          <stop offset="100%" stop-color="#0f172a"/>
+        </radialGradient>
+        <radialGradient id="ic1_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.85)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic1_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <!-- Sphere -->
+      <circle cx="50" cy="55" r="43" fill="#1e3a8a" opacity="0.12"/>
+      <circle cx="50" cy="50" r="38" fill="url(#ic1_a)" filter="url(#ic1_sh)"/>
+      <!-- Globe grid -->
+      <g clip-path="url(#ic1_cp)" fill="none" stroke="#93c5fd" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="33" rx="29" ry="7"/>
+        <ellipse cx="50" cy="67" rx="29" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Green trend line -->
+      <g clip-path="url(#ic1_cp)" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+        <polyline points="18,72 28,65 38,68 48,58 58,52 68,46 78,38"/>
+        <circle cx="78" cy="38" r="3" fill="#22C55E" stroke="none"/>
+      </g>
+      <!-- AI neural network circuit dots on sphere surface -->
+      <g clip-path="url(#ic1_cp)">
+        <line x1="28" y1="42" x2="40" y2="36" stroke="#1E3A8A" stroke-width="1.1" opacity="0.72"/>
+        <line x1="40" y1="36" x2="52" y2="44" stroke="#1E3A8A" stroke-width="1.1" opacity="0.72"/>
+        <line x1="52" y1="44" x2="28" y2="42" stroke="#1E3A8A" stroke-width="1.1" opacity="0.72"/>
+        <circle cx="28" cy="42" r="2" fill="#1E3A8A" opacity="0.9"/>
+        <circle cx="40" cy="36" r="2" fill="#1E3A8A" opacity="0.9"/>
+        <circle cx="52" cy="44" r="2" fill="#1E3A8A" opacity="0.9"/>
+      </g>
+      <!-- Highlight ellipse -->
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#ic1_b)"/>
+    </svg></div><h3>Institutional Memory</h3><p>Captures the complete evolution of intent — linking initial market signals to analysis, scenarios, decisions, and outcomes. Institutional intelligence compounds over time.</p></div>
+      <div class="card solar-card-animated" style="transform:translateY(20px);"><div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic4_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#78350f" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic4_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="50%" stop-color="#eab308"/>
+          <stop offset="100%" stop-color="#713f12"/>
+        </radialGradient>
+        <radialGradient id="ic4_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.88)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic4_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <circle cx="50" cy="50" r="38" fill="url(#ic4_a)" filter="url(#ic4_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic4_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- 3 vertical bar chart in navy, clipped inside sphere bottom area -->
+      <g clip-path="url(#ic4_cp)" opacity="0.82">
+        <rect x="32" y="62" width="7" height="14" rx="1.5" fill="#1e3a8a"/>
+        <rect x="44" y="55" width="7" height="21" rx="1.5" fill="#1e3a8a"/>
+        <rect x="56" y="58" width="7" height="18" rx="1.5" fill="#1e3a8a"/>
+        <!-- baseline -->
+        <line x1="27" y1="76" x2="68" y2="76" stroke="#1e3a8a" stroke-width="1.2" opacity="0.5"/>
+        <!-- live signal dot at tallest bar top -->
+        <circle cx="47" cy="55" r="2.5" fill="#22C55E" opacity="0.95"/>
+      </g>
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#ic4_b)"/>
+    </svg></div><h3>Configurable to Your Needs</h3><p>Adapts to your organization's workflows, roles, and sector — from traders to risk managers, supply chain experts to strategy teams. Built for enterprise reality.</p></div>
+    </div>
+    <div class="quote-box" style="margin-top:48px;max-width:700px">"Nexsun.ai operates in the critical gap between traditional analytics platforms — which are often constrained and retrospective — and systems of record, which only capture what was decided, not how or why."</div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<!-- ══ INTERACTIVE ══ -->
+<section id="interactive">
+  <div class="container">
+    <div class="section-tag">Interactive Intelligence</div>
+    <h2 class="section-heading" style="color:white">Move your cursor to explore our<br><span>multi-dimensional</span> data platform</h2>
+    <div class="int-orb" id="int-orb">
+      <div class="int-orb-inner">
+        <p>AI-Powered</p>
+        <h3>Intelligence<br>Platform</h3>
+      </div>
+    </div>
+    <div class="int-stats">
+      <div class="int-stat"><div class="val">$25T+</div><div class="lbl">Market Volume</div></div>
+      <div class="int-stat"><div class="val">6</div><div class="lbl">Analytical Domains</div></div>
+      <div class="int-stat"><div class="val">180</div><div class="lbl">Day Pilot Access</div></div>
+      <div class="int-stat"><div class="val">Real-Time</div><div class="lbl">Market Intelligence</div></div>
+      <div class="int-stat"><div class="val">99.9%</div><div class="lbl">Uptime</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<!-- ══ PLATFORM MODULES ══ -->
+<section id="platform" class="section">
+  <div class="container">
+    <div class="section-tag">Platform Modules</div>
+    <h2 class="section-heading">A Unified Intelligence <span>Ecosystem</span></h2>
+    <p class="section-sub">Each module designed to mirror the way modern trading and investment organizations operate — seamlessly integrated, AI-powered, and explainable.</p>
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('signal',this)">Signal</button>
+      <button class="tab-btn" onclick="switchTab('analysis',this)">Analysis</button>
+      <button class="tab-btn" onclick="switchTab('scenario',this)">Scenario</button>
+      <button class="tab-btn" onclick="switchTab('decision',this)">Decision</button>
+      <button class="tab-btn" onclick="switchTab('offer',this)">Offer</button>
+      <button class="tab-btn" onclick="switchTab('contract',this)">Contract</button>
+      <button class="tab-btn" onclick="switchTab('obligations',this)">Obligations</button>
+      <button class="tab-btn" onclick="switchTab('connect',this)">Connect</button>
+    </div>
+
+<div id="tab-signal" class="tab-content active">
+  <div class="tab-main">
+    <h4>Intent Module 1</h4><h2>Signal</h2>
+    <p>Identify emerging market relevance. Integrated AI continuously evaluates unstructured and semi-structured external information — policy, regulation, geopolitics, sentiment, disclosures, and narrative shifts — contextualizing these signals against internal focus areas and exposures.</p>
+    <div class="tab-features">
+      <div class="tab-feature"><h5>Unstructured Data Ingestion</h5><p>Continuously processes policy, regulatory, geopolitical, and sentiment data from global sources.</p></div>
+      <div class="tab-feature"><h5>Contextual Relevance Scoring</h5><p>AI evaluates signals against your portfolio, mandates, and market exposures in real time.</p></div>
+      <div class="tab-feature"><h5>Narrative Shift Detection</h5><p>Surfaces emerging themes and narrative inflections before they become consensus market views.</p></div>
+    </div>
+  </div>
+  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,58,138,0.12);"><img src="screenshots/ss-discover.png" alt="Signal discovery — real-time market signals" style="width:100%;display:block;border-radius:14px;"></div>
+</div>
+
+<div id="tab-analysis" class="tab-content">
+  <div class="tab-main">
+    <h4>Intent Module 2</h4><h2>Analysis</h2>
+    <p>Convert information into structured understanding. AI-assisted reasoning synthesizes drivers, constraints, historical context, and comparable situations while preserving full transparency under the Glassbox AI model.</p>
+    <div class="tab-features">
+      <div class="tab-feature"><h5>Structured Reasoning</h5><p>Synthesizes external intelligence with internal market data, historical patterns, and known constraints.</p></div>
+      <div class="tab-feature"><h5>Glassbox Transparency</h5><p>Every assumption, source citation, and reasoning path is logged and reviewable — fully defensible.</p></div>
+    </div>
+  </div>
+  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,58,138,0.12);"><img src="screenshots/ss-analysis.png" alt="Analysis engine" style="width:100%;display:block;border-radius:14px;"></div>
+</div>
+
+<div id="tab-scenario" class="tab-content">
+  <div class="tab-main">
+    <h4>Intent Module 3</h4><h2>Scenario</h2>
+    <p>Test how understanding evolves under change. Explore alternative assumptions, constraints, and market conditions to assess feasibility, sensitivity, and risk — without forcing premature commitment.</p>
+    <div class="tab-features">
+      <div class="tab-feature"><h5>Alternative Assumption Testing</h5><p>Model policy shifts, pricing regimes, infrastructure constraints, and market participation changes.</p></div>
+      <div class="tab-feature"><h5>Sensitivity Analysis</h5><p>Assess portfolio impact under alternative market conditions and correlation effects.</p></div>
+    </div>
+  </div>
+  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,58,138,0.12);"><img src="screenshots/ss-strategy.png" alt="Scenario planning and strategy" style="width:100%;display:block;border-radius:14px;"></div>
+</div>
+
+<div id="tab-decision" class="tab-content">
+  <div class="tab-main">
+    <h4>Intent Module 4</h4><h2>Decision</h2>
+    <p>Formalize directional conviction. Decisions capture rationale, assumptions, constraints, and confidence levels at the point where intent becomes actionable — without implying premature execution.</p>
+    <div class="tab-features">
+      <div class="tab-feature"><h5>System of Decision Record (SoDR)</h5><p>Every decision is preserved with full context — immutable, auditable, and reproducible for review.</p></div>
+      <div class="tab-feature"><h5>Conviction Capture</h5><p>Records the specific logic across the full lifecycle from signal discovery to final outcome.</p></div>
+    </div>
+  </div>
+  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,58,138,0.12);"><img src="screenshots/ss-publish.png" alt="Decision and publish workflow" style="width:100%;display:block;border-radius:14px;"></div>
+</div>
+
+<div id="tab-offer" class="tab-content">
+  <div class="tab-main">
+    <h4>Execution Module 1</h4><h2>Offer</h2>
+    <p>Translate intent into market-facing propositions. Commercial or investment terms are structured and evolved while remaining directly linked to originating analyses, scenarios, and decisions.</p>
+    <div class="tab-features">
+      <div class="tab-feature"><h5>Intent-Linked Proposals</h5><p>Offers remain traceable to the intelligence and decisions that originated them — no context lost.</p></div>
+      <div class="tab-feature"><h5>Commercial Structuring</h5><p>Evolve commercial terms while preserving the full decision chain from discovery to proposition.</p></div>
+    </div>
+  </div>
+  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,58,138,0.12);"><img src="screenshots/ss-contracts-offers.png" alt="Contract offers management" style="width:100%;display:block;border-radius:14px;"></div>
+</div>
+
+<div id="tab-contract" class="tab-content">
+  <div class="tab-main">
+    <h4>Execution Module 2</h4><h2>Contract</h2>
+    <p>Preserve meaning as intent becomes binding. Glassbox AI analyzes clauses, risks, deviations, and obligations in context — preventing drift between what was intended and what was agreed.</p>
+    <div class="tab-features">
+      <div class="tab-feature"><h5>Clause Risk Analysis</h5><p>AI-assisted review of contract clauses with full context of the originating decision logic.</p></div>
+      <div class="tab-feature"><h5>Intent-Contract Alignment</h5><p>Ensures what was decided matches what is being agreed — preventing costly misalignment.</p></div>
+    </div>
+  </div>
+  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,58,138,0.12);"><img src="screenshots/ss-contracts-overview.png" alt="Contract overview dashboard" style="width:100%;display:block;border-radius:14px;"></div>
+</div>
+
+<div id="tab-obligations" class="tab-content">
+  <div class="tab-main">
+    <h4>Execution Module 3</h4><h2>Obligations</h2>
+    <p>Ensure follow-through without reinterpretation. Commitments, notices, deadlines, and dependencies are tracked. AI-assisted extraction is reviewable and verified before becoming operationally binding.</p>
+    <div class="tab-features">
+      <div class="tab-feature"><h5>Commitment Tracking</h5><p>All deadlines, notices, and dependencies monitored with verified AI-assisted extraction.</p></div>
+      <div class="tab-feature"><h5>Operational Continuity</h5><p>Ensures execution follows the intent established in Decision — no reinterpretation in the chain.</p></div>
+    </div>
+  </div>
+  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,58,138,0.12);"><img src="screenshots/ss-contract-activity.png" alt="Contract obligations and activity tracking" style="width:100%;display:block;border-radius:14px;"></div>
+</div>
+
+<div id="tab-connect" class="tab-content">
+  <div class="tab-main">
+    <h4>Market Engagement (OMNI)</h4><h2>Connect</h2>
+    <p>Extend intelligence outward into the market. Leverages OmniGTM.ai capabilities to support market positioning, relationship discovery, and outreach strategy — identifying counterparties, investors, and partners aligned with emerging intelligence.</p>
+    <div class="tab-features">
+      <div class="tab-feature"><h5>Counterparty Discovery</h5><p>Identify producers, consumers, intermediaries, or market participants aligned with your opportunity.</p></div>
+      <div class="tab-feature"><h5>Intelligence-Driven Outreach</h5><p>Engagement driven by intelligence and strategic positioning, not generic contact discovery.</p></div>
+    </div>
+  </div>
+  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,58,138,0.12);"><img src="screenshots/ss-rooms.png" alt="Collaboration Rooms" style="width:100%;display:block;border-radius:14px;"></div>
+</div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<div class="sun-divider"></div>
+<section id="users" class="section" style="background:linear-gradient(180deg,var(--bg) 0%,var(--sky-light) 100%);">
+  <div class="container">
+    <div class="section-tag">Who It's For</div>
+    <h2 class="section-heading">Built for <span>Decision-Accountable</span> Roles</h2>
+    <p class="section-sub">Nexsun.ai adapts to the needs of different decision-makers while preserving continuity of reasoning across time, function, and consequence.</p>
+    <div class="five-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));margin-top:48px;">
+      <div class="card solar-card-animated" style="transform:translateY(20px);">
+        <div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic3_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#78350f" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic3_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fcd34d"/>
+          <stop offset="50%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic3_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.88)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic3_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <circle cx="50" cy="50" r="38" fill="url(#ic3_a)" filter="url(#ic3_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic3_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Rising green line chart going up-right across sphere -->
+      <g clip-path="url(#ic3_cp)" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+        <polyline points="18,74 26,68 36,64 44,56 54,50 62,42 72,34 80,28"/>
+        <circle cx="80" cy="28" r="3" fill="#22C55E" stroke="none"/>
+      </g>
+      <!-- LIVE indicator: red dot top-right -->
+      <circle cx="81" cy="18" r="3" fill="#ef4444" opacity="0.95"/>
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#ic3_b)"/>
+    </svg></div>
+        <h3>Trade Analysts &amp; Traders</h3>
+        <p>Identify emerging market signals, conduct structured analysis, explore feasibility under alternative assumptions, and preserve reasoning as intent evolves toward execution.</p>
+      </div>
+      <div class="card solar-card-animated" style="transform:translateY(20px);">
+        <div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic11_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#78350f" flood-opacity="0.5"/>
+        </filter>
+        <radialGradient id="ic11_a" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fef9c3"/>
+          <stop offset="38%" stop-color="#fbbf24"/>
+          <stop offset="100%" stop-color="#d97706"/>
+        </radialGradient>
+        <radialGradient id="ic11_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.92)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic11_cp"><circle cx="50" cy="50" r="23"/></clipPath>
+      </defs>
+      <!-- 8 pointed rays -->
+      <g fill="#f59e0b" opacity="0.65">
+        <polygon points="50,4 53,36 50,40 47,36"/>
+        <polygon points="96,50 64,53 60,50 64,47"/>
+        <polygon points="50,96 47,64 50,60 53,64"/>
+        <polygon points="4,50 36,47 40,50 36,53"/>
+        <polygon points="79,21 58,44 54,41 66,20"/>
+        <polygon points="79,79 56,59 59,55 80,68"/>
+        <polygon points="21,79 40,56 44,59 23,80"/>
+        <polygon points="21,21 44,40 42,44 22,34"/>
+      </g>
+      <g fill="#fde68a" opacity="0.4">
+        <polygon points="50,10 51.5,38 50,40 48.5,38"/>
+        <polygon points="90,50 62,51.5 60,50 62,48.5"/>
+        <polygon points="50,90 48.5,62 50,60 51.5,62"/>
+        <polygon points="10,50 38,48.5 40,50 38,51.5"/>
+      </g>
+      <!-- Sun center circle -->
+      <circle cx="50" cy="50" r="23" fill="url(#ic11_a)" filter="url(#ic11_sh)"/>
+      <!-- Globe grid on center circle -->
+      <g clip-path="url(#ic11_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="23" ry="6"/>
+        <ellipse cx="50" cy="50" rx="23" ry="14"/>
+        <ellipse cx="50" cy="42" rx="16" ry="4"/>
+        <ellipse cx="50" cy="58" rx="16" ry="4"/>
+        <ellipse cx="50" cy="50" rx="9" ry="23"/>
+        <ellipse cx="50" cy="50" rx="18" ry="23"/>
+      </g>
+      <!-- Bold red zigzag ALERT line inside sun — clearly visible risk signal -->
+      <g clip-path="url(#ic11_cp)" fill="none" stroke="#ef4444" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.98">
+        <polyline points="30,54 36,54 40,48 44,58 50,34 56,58 60,48 64,54 70,54"/>
+        <!-- Filled red circle at spike peak -->
+        <circle cx="50" cy="34" r="3.5" fill="#ef4444" stroke="none"/>
+      </g>
+      <!-- Small amber exclamation spike -->
+      <g clip-path="url(#ic11_cp)">
+        <line x1="50" y1="60" x2="50" y2="65" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="50" cy="67" r="1.5" fill="#F59E0B"/>
+      </g>
+      <ellipse cx="41" cy="39" rx="9" ry="6" fill="url(#ic11_b)"/>
+    </svg></div>
+        <h3>Risk Analysts &amp; Portfolio Managers</h3>
+        <p>Trace how opportunities and decisions were formed. Assess portfolio impact under alternative market conditions. Grounded in explicit logic, not inferred intent.</p>
+      </div>
+      <div class="card solar-card-animated" style="transform:translateY(20px);">
+        <div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic10_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#14532d" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic10_a" cx="42%" cy="34%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="50%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic10_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.86)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic10_cp"><circle cx="50" cy="58" r="34"/></clipPath>
+      </defs>
+      <!-- Amber sphere, shifted down to give room for candles above -->
+      <circle cx="50" cy="58" r="34" fill="url(#ic10_a)" filter="url(#ic10_sh)"/>
+      <!-- Globe grid on sphere -->
+      <g clip-path="url(#ic10_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="58" rx="34" ry="9"/>
+        <ellipse cx="50" cy="58" rx="34" ry="20"/>
+        <ellipse cx="50" cy="46" rx="25" ry="7"/>
+        <ellipse cx="50" cy="70" rx="25" ry="7"/>
+        <ellipse cx="50" cy="58" rx="13" ry="34"/>
+        <ellipse cx="50" cy="58" rx="25" ry="34"/>
+      </g>
+      <!-- 3 price-breakout candlesticks protruding ABOVE sphere top (sphere top ~y=24) -->
+      <!-- Candle 1: green, rises from y=40 to y=12 (protrudes above sphere) -->
+      <g fill="#22C55E" stroke="#22C55E">
+        <line x1="34" y1="10" x2="34" y2="44" stroke-width="1.5"/>
+        <rect x="30" y="18" width="8" height="18" rx="1.2"/>
+        <circle cx="34" cy="10" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+      <!-- Candle 2: red, center, rises most dramatically -->
+      <g fill="#ef4444" stroke="#ef4444">
+        <line x1="50" y1="6" x2="50" y2="38" stroke-width="1.5"/>
+        <rect x="46" y="12" width="8" height="18" rx="1.2"/>
+      </g>
+      <!-- Candle 3: green -->
+      <g fill="#22C55E" stroke="#22C55E">
+        <line x1="66" y1="10" x2="66" y2="44" stroke-width="1.5"/>
+        <rect x="62" y="16" width="8" height="20" rx="1.2"/>
+        <circle cx="66" cy="10" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+      <ellipse cx="37" cy="42" rx="11" ry="7" fill="url(#ic10_b)"/>
+    </svg></div>
+        <h3>Investment Principals &amp; Allocators</h3>
+        <p>Surface emerging companies, sectors, and themes. Form and refine investment theses with preserved assumptions and strategic rationale. A conviction engine for high-stakes capital decisions.</p>
+      </div>
+    </div>
+    <div class="quote-box" style="margin-top:48px;max-width:760px">"Nexsun.ai is not a collection of role-specific tools. It is a unified intelligence system that adapts to the needs of different decision makers while preserving continuity of reasoning across time, function, and consequence."</div>
+    <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
+      <span class="tier-chip" style="font-size:12px;padding:5px 12px;">Energy Trading &amp; Utilities</span>
+      <span class="tier-chip" style="font-size:12px;padding:5px 12px;">Mining &amp; Metals</span>
+      <span class="tier-chip" style="font-size:12px;padding:5px 12px;">Agriculture</span>
+      <span class="tier-chip" style="font-size:12px;padding:5px 12px;">Manufacturing</span>
+      <span class="tier-chip" style="font-size:12px;padding:5px 12px;">Renewables &amp; Carbon Markets</span>
+      <span class="tier-chip" style="font-size:12px;padding:5px 12px;">Transportation &amp; Logistics</span>
+      <span class="tier-chip" style="font-size:12px;padding:5px 12px;">Financial Institutions</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ANALYTICS ══ -->
+<section id="analytics" class="section">
+  <div class="container">
+    <div class="section-tag">Analytics Framework</div>
+    <h2 class="section-heading">Six Analytical Domains. <span>One Unified Framework.</span></h2>
+    <p class="section-sub">Nexsun.ai's analytics framework combines AI-driven contextual analysis with fundamental, technical, and strategic intelligence layers.</p>
+    <div class="six-grid">
+      <div class="card solar-card-animated" style="transform:translateY(20px);"><div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic2_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#78350f" flood-opacity="0.35"/>
+        </filter>
+        <radialGradient id="ic2_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="50%" stop-color="#d97706"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic2_b" cx="38%" cy="30%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.87)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic2_cp"><circle cx="50" cy="50" r="26"/></clipPath>
+      </defs>
+      <!-- Concentric rings -->
+      <circle cx="50" cy="50" r="48" fill="none" stroke="#fde68a" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="50" cy="50" r="41" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.62"/>
+      <circle cx="50" cy="50" r="34" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0.72"/>
+      <!-- Inner sphere -->
+      <circle cx="50" cy="50" r="26" fill="url(#ic2_a)" filter="url(#ic2_sh)"/>
+      <!-- Globe grid on inner sphere -->
+      <g clip-path="url(#ic2_cp)" fill="none" stroke="#fef3c7" stroke-width="0.8" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="26" ry="7"/>
+        <ellipse cx="50" cy="42" rx="20" ry="5"/>
+        <ellipse cx="50" cy="58" rx="20" ry="5"/>
+        <ellipse cx="50" cy="50" rx="10" ry="26"/>
+        <ellipse cx="50" cy="50" rx="20" ry="26"/>
+      </g>
+      <!-- Radar sweep line: one straight line from center at ~45° + green signal dot -->
+      <g clip-path="url(#ic2_cp)">
+        <line x1="50" y1="50" x2="68" y2="32" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.88"/>
+        <circle cx="50" cy="50" r="2" fill="white" opacity="0.7"/>
+        <circle cx="68" cy="32" r="3" fill="#22C55E" opacity="1"/>
+      </g>
+      <!-- Highlight -->
+      <ellipse cx="41" cy="37" rx="9" ry="6" fill="url(#ic2_b)"/>
+    </svg></div><h3>Market Intelligence</h3><p>Captures and analyzes global market drivers, including supply, demand, policy, and geopolitical factors.</p></div>
+      <div class="card solar-card-animated" style="transform:translateY(20px);"><div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic3_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#78350f" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic3_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fcd34d"/>
+          <stop offset="50%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic3_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.88)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic3_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <circle cx="50" cy="50" r="38" fill="url(#ic3_a)" filter="url(#ic3_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic3_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Rising green line chart going up-right across sphere -->
+      <g clip-path="url(#ic3_cp)" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+        <polyline points="18,74 26,68 36,64 44,56 54,50 62,42 72,34 80,28"/>
+        <circle cx="80" cy="28" r="3" fill="#22C55E" stroke="none"/>
+      </g>
+      <!-- LIVE indicator: red dot top-right -->
+      <circle cx="81" cy="18" r="3" fill="#ef4444" opacity="0.95"/>
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#ic3_b)"/>
+    </svg></div><h3>Trading &amp; Commercial</h3><p>Models positions, exposures, and opportunities through predictive, scenario-based simulations.</p></div>
+      <div class="card solar-card-animated" style="transform:translateY(20px);"><div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic10_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#14532d" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic10_a" cx="42%" cy="34%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="50%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic10_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.86)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic10_cp"><circle cx="50" cy="58" r="34"/></clipPath>
+      </defs>
+      <!-- Amber sphere, shifted down to give room for candles above -->
+      <circle cx="50" cy="58" r="34" fill="url(#ic10_a)" filter="url(#ic10_sh)"/>
+      <!-- Globe grid on sphere -->
+      <g clip-path="url(#ic10_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="58" rx="34" ry="9"/>
+        <ellipse cx="50" cy="58" rx="34" ry="20"/>
+        <ellipse cx="50" cy="46" rx="25" ry="7"/>
+        <ellipse cx="50" cy="70" rx="25" ry="7"/>
+        <ellipse cx="50" cy="58" rx="13" ry="34"/>
+        <ellipse cx="50" cy="58" rx="25" ry="34"/>
+      </g>
+      <!-- 3 price-breakout candlesticks protruding ABOVE sphere top (sphere top ~y=24) -->
+      <!-- Candle 1: green, rises from y=40 to y=12 (protrudes above sphere) -->
+      <g fill="#22C55E" stroke="#22C55E">
+        <line x1="34" y1="10" x2="34" y2="44" stroke-width="1.5"/>
+        <rect x="30" y="18" width="8" height="18" rx="1.2"/>
+        <circle cx="34" cy="10" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+      <!-- Candle 2: red, center, rises most dramatically -->
+      <g fill="#ef4444" stroke="#ef4444">
+        <line x1="50" y1="6" x2="50" y2="38" stroke-width="1.5"/>
+        <rect x="46" y="12" width="8" height="18" rx="1.2"/>
+      </g>
+      <!-- Candle 3: green -->
+      <g fill="#22C55E" stroke="#22C55E">
+        <line x1="66" y1="10" x2="66" y2="44" stroke-width="1.5"/>
+        <rect x="62" y="16" width="8" height="20" rx="1.2"/>
+        <circle cx="66" cy="10" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+      <ellipse cx="37" cy="42" rx="11" ry="7" fill="url(#ic10_b)"/>
+    </svg></div><h3>Financial &amp; Strategic</h3><p>Integrates credit, investment, and competitive frameworks (PESTEL, SWOT, 5 Forces) for corporate strategy.</p></div>
+      <div class="card solar-card-animated" style="transform:translateY(20px);"><div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic7_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#78350f" flood-opacity="0.42"/>
+        </filter>
+        <radialGradient id="ic7_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="45%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#78350f"/>
+        </radialGradient>
+        <radialGradient id="ic7_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic7_cp"><circle cx="50" cy="50" r="30"/></clipPath>
+      </defs>
+      <!-- 8 sun rays -->
+      <g opacity="0.22" fill="#f59e0b">
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(0 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(90 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(22.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(67.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(112.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(157.5 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="43" fill="#fbbf24" opacity="0.14"/>
+      <!-- Sphere -->
+      <circle cx="50" cy="50" r="30" fill="url(#ic7_a)" filter="url(#ic7_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic7_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="30" ry="8"/>
+        <ellipse cx="50" cy="50" rx="30" ry="18"/>
+        <ellipse cx="50" cy="38" rx="22" ry="6"/>
+        <ellipse cx="50" cy="62" rx="22" ry="6"/>
+        <ellipse cx="50" cy="50" rx="12" ry="30"/>
+        <ellipse cx="50" cy="50" rx="24" ry="30"/>
+      </g>
+      <!-- 4 navy ecosystem network dots radiating outward from sphere with connecting lines -->
+      <g stroke="#1E3A8A" stroke-width="1.4" opacity="0.88">
+        <line x1="50" y1="20" x2="50" y2="10"/>
+        <line x1="78" y1="44" x2="88" y2="40"/>
+        <line x1="70" y1="72" x2="78" y2="82"/>
+        <line x1="22" y1="60" x2="12" y2="64"/>
+      </g>
+      <circle cx="50" cy="9" r="4" fill="#1E3A8A"/>
+      <circle cx="89" cy="39" r="4" fill="#1E3A8A"/>
+      <circle cx="79" cy="83" r="4" fill="#1E3A8A"/>
+      <circle cx="11" cy="65" r="4" fill="#1E3A8A"/>
+      <ellipse cx="40" cy="37" rx="10" ry="7" fill="url(#ic7_b)"/>
+    </svg></div><h3>Operational &amp; Physical</h3><p>Tracks production, consumption, logistics, and inventory dynamics with quantitative inputs.</p></div>
+      <div class="card solar-card-animated" style="transform:translateY(20px);"><div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic5_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#14532d" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic5_ring" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#4ade80" stop-opacity="0"/>
+          <stop offset="48%" stop-color="#22c55e"/>
+          <stop offset="72%" stop-color="#16a34a"/>
+          <stop offset="100%" stop-color="#14532d"/>
+        </radialGradient>
+        <radialGradient id="ic5_hl" cx="32%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.82)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic5_inner"><circle cx="50" cy="50" r="22"/></clipPath>
+      </defs>
+      <circle cx="50" cy="55" r="44" fill="#22c55e" opacity="0.08"/>
+      <circle cx="50" cy="50" r="40" fill="url(#ic5_ring)" filter="url(#ic5_sh)"/>
+      <!-- White center circle -->
+      <circle cx="50" cy="50" r="23" fill="white"/>
+      <circle cx="50" cy="50" r="23" fill="none" stroke="#86efac" stroke-width="2" opacity="0.5"/>
+      <!-- Globe lines in white center area in green -->
+      <g clip-path="url(#ic5_inner)" fill="none" stroke="#22c55e" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="22" ry="6"/>
+        <ellipse cx="50" cy="44" rx="16" ry="4"/>
+        <ellipse cx="50" cy="56" rx="16" ry="4"/>
+        <ellipse cx="50" cy="50" rx="9" ry="22"/>
+        <ellipse cx="50" cy="50" rx="17" ry="22"/>
+      </g>
+      <!-- Analytics polyline in amber inside center circle -->
+      <g clip-path="url(#ic5_inner)" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+        <polyline points="32,56 38,50 43,54 48,44 53,50 58,43 64,48 68,44"/>
+        <circle cx="68" cy="44" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+      <ellipse cx="31" cy="29" rx="10" ry="6.5" fill="url(#ic5_hl)" opacity="0.85"/>
+    </svg></div><h3>Risk &amp; Compliance</h3><p>Ensures transparency, auditability, and adherence to internal and external regulatory standards.</p></div>
+      <div class="card solar-card-animated" style="transform:translateY(20px);"><div class="card-icon"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic12_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic12_a" cx="40%" cy="34%" r="58%">
+          <stop offset="0%" stop-color="#93c5fd"/>
+          <stop offset="50%" stop-color="#1d4ed8"/>
+          <stop offset="100%" stop-color="#0f172a"/>
+        </radialGradient>
+        <radialGradient id="ic12_b" cx="36%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.86)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic12_cp"><circle cx="40" cy="52" r="32"/></clipPath>
+      </defs>
+      <!-- Navy sphere centered slightly left to give room for shockwaves -->
+      <circle cx="40" cy="52" r="32" fill="url(#ic12_a)" filter="url(#ic12_sh)"/>
+      <!-- Globe grid on navy sphere -->
+      <g clip-path="url(#ic12_cp)" fill="none" stroke="#93c5fd" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="40" cy="52" rx="32" ry="9"/>
+        <ellipse cx="40" cy="52" rx="32" ry="20"/>
+        <ellipse cx="40" cy="40" rx="24" ry="6"/>
+        <ellipse cx="40" cy="64" rx="24" ry="6"/>
+        <ellipse cx="40" cy="52" rx="13" ry="32"/>
+        <ellipse cx="40" cy="52" rx="25" ry="32"/>
+      </g>
+      <!-- Disruption spike line on sphere surface -->
+      <g clip-path="url(#ic12_cp)" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.96">
+        <polyline points="14,66 20,66 26,66 30,66 34,65 36,44 40,32 44,44 48,58 54,66 60,66 68,66"/>
+        <circle cx="40" cy="32" r="3" fill="#F59E0B" stroke="none"/>
+      </g>
+      <!-- Green live signal dot at end -->
+      <circle cx="68" cy="66" r="2.5" fill="#22C55E" clip-path="url(#ic12_cp)"/>
+      <!-- Amber shockwave/ripple arcs emanating rightward from sphere (3 concentric arcs, fading) -->
+      <path d="M 70,30 Q 88,52 70,74" fill="none" stroke="#F59E0B" stroke-width="2.8" stroke-linecap="round" opacity="0.9"/>
+      <path d="M 76,34 Q 96,52 76,70" fill="none" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round" opacity="0.60"/>
+      <path d="M 82,38 Q 100,52 82,66" fill="none" stroke="#F59E0B" stroke-width="1.6" stroke-linecap="round" opacity="0.35"/>
+      <ellipse cx="28" cy="38" rx="10" ry="7" fill="url(#ic12_b)"/>
+    </svg></div><h3>ESG &amp; Sustainability</h3><p>Evaluates ESG indicators to assess risk, reputation, and sustainability alignment across markets.</p></div>
+    </div>
+    <div class="section-tag" style="margin-top:64px">Integrated Tiers</div>
+    <h3 class="section-heading" style="font-size:clamp(24px,3vw,38px)">Four <span>Integrated</span> Tiers</h3>
+    <div class="tiers-grid">
+      <div class="tier-card"><h4>Front Office</h4><p style="color:var(--text-muted);font-size:13px;margin-bottom:12px">Market discovery, trading, and portfolio strategy.</p><span class="tier-chip">Explore</span><span class="tier-chip">Position</span><span class="tier-chip">Connect</span></div>
+      <div class="tier-card"><h4>Mid Office</h4><p style="color:var(--text-muted);font-size:13px;margin-bottom:12px">Analytics, risk, and compliance. Validates models, monitors exposure.</p><span class="tier-chip">Analytics</span><span class="tier-chip">Rooms</span></div>
+      <div class="tier-card"><h4>Back Office</h4><p style="color:var(--text-muted);font-size:13px;margin-bottom:12px">Integrity, auditability, and reporting accuracy.</p><span class="tier-chip">Admin</span></div>
+      <div class="tier-card"><h4>Operations Tier</h4><p style="color:var(--text-muted);font-size:13px;margin-bottom:12px">Executional backbone connecting strategy to daily workflow.</p><span class="tier-chip">Logistics</span><span class="tier-chip">Scheduling</span></div>
+    </div>
+    <div class="section-tag" style="margin-top:64px">Data Layers</div>
+    <h3 class="section-heading" style="font-size:clamp(24px,3vw,38px)">Three Layers of <span>Intelligence Input</span></h3>
+    <div class="data-layers">
+      <div class="card layer-card"><h4>Fundamental Inputs</h4><ul><li>Supply &amp; Demand</li><li>Weather</li><li>Production</li><li>Macroeconomic Drivers</li></ul></div>
+      <div class="card layer-card"><h4>Technical Inputs</h4><ul><li>Price &amp; Volume</li><li>Volatility</li><li>Basis Relationships</li><li>Forward &amp; Futures</li></ul></div>
+      <div class="card layer-card"><h4>Strategic Inputs</h4><ul><li>Policy &amp; Regulation</li><li>Credit &amp; ESG</li><li>Competitive Benchmarking</li><li>Geopolitical Factors</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+<!-- ENERGY TRIAD ARCHITECTURE -->
+<section id="architecture" class="section" style="background:linear-gradient(135deg,var(--navy) 0%,#1e40af 50%,#0369a1 100%);color:white;">
+  <div class="container">
+    <div class="section-tag" style="background:rgba(251,191,36,0.15);border-color:rgba(251,191,36,0.3);color:var(--sun-bright);">Architecture</div>
+    <h2 class="section-heading" style="color:white;">The Energy Intelligence <span style="color:var(--sun-bright);">Triad</span></h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.7);">A cloud-native microservices platform organized around three core intelligence layers — deployed on AWS with enterprise-grade security and scalability.</p>
+    <div class="six-grid" style="margin-top:48px;grid-template-columns:repeat(3,1fr);">
+      <div class="card" style="background:rgba(255,255,255,0.07);border-color:rgba(251,191,36,0.2);">
+        <div class="card-icon" style="background:rgba(251,191,36,0.15);border-color:rgba(251,191,36,0.3);"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic6_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.38"/>
+        </filter>
+        <linearGradient id="ic6_L" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#93c5fd"/>
+          <stop offset="100%" stop-color="#1e3a8a"/>
+        </linearGradient>
+        <linearGradient id="ic6_R" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="100%" stop-color="#d97706"/>
+        </linearGradient>
+        <radialGradient id="ic6_hl" cx="36%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.84)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic6_cl"><rect x="12" y="12" width="38" height="76"/></clipPath>
+        <clipPath id="ic6_cr"><rect x="50" y="12" width="38" height="76"/></clipPath>
+        <clipPath id="ic6_full"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <!-- Split sphere -->
+      <circle cx="50" cy="50" r="38" fill="url(#ic6_L)" clip-path="url(#ic6_cl)" filter="url(#ic6_sh)"/>
+      <circle cx="50" cy="50" r="38" fill="url(#ic6_R)" clip-path="url(#ic6_cr)" filter="url(#ic6_sh)"/>
+      <!-- Globe lines on both halves -->
+      <g clip-path="url(#ic6_full)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Vertical divider line -->
+      <line x1="50" y1="13" x2="50" y2="87" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
+      <!-- Green horizontal flow arrow crossing divider -->
+      <g clip-path="url(#ic6_full)">
+        <line x1="30" y1="50" x2="68" y2="50" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="65,46 73,50 65,54" fill="#22C55E"/>
+        <circle cx="72" cy="50" r="2.5" fill="#22C55E"/>
+      </g>
+      <ellipse cx="36" cy="33" rx="11" ry="7" fill="url(#ic6_hl)"/>
+    </svg></div>
+        <h3 style="color:var(--sun-bright);">Nexus</h3>
+        <p style="color:rgba(255,255,255,0.7);">The ingestion and normalization layer. Acquires structured and unstructured data from external and internal sources, converting signals into normalized "facts" for downstream processing.</p>
+      </div>
+      <div class="card" style="background:rgba(255,255,255,0.07);border-color:rgba(251,191,36,0.2);">
+        <div class="card-icon" style="background:rgba(251,191,36,0.15);border-color:rgba(251,191,36,0.3);"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic8_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.4"/>
+        </filter>
+        <radialGradient id="ic8_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#93c5fd"/>
+          <stop offset="50%" stop-color="#1d4ed8"/>
+          <stop offset="100%" stop-color="#0f172a"/>
+        </radialGradient>
+        <radialGradient id="ic8_b" cx="36%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.88)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic8_cp"><circle cx="34" cy="50" r="28"/></clipPath>
+      </defs>
+      <!-- Navy sphere -->
+      <circle cx="34" cy="50" r="28" fill="url(#ic8_a)" filter="url(#ic8_sh)"/>
+      <!-- Globe grid on sphere -->
+      <g clip-path="url(#ic8_cp)" fill="none" stroke="#93c5fd" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="34" cy="50" rx="28" ry="8"/>
+        <ellipse cx="34" cy="50" rx="28" ry="18"/>
+        <ellipse cx="34" cy="38" rx="20" ry="5"/>
+        <ellipse cx="34" cy="62" rx="20" ry="5"/>
+        <ellipse cx="34" cy="50" rx="11" ry="28"/>
+        <ellipse cx="34" cy="50" rx="21" ry="28"/>
+      </g>
+      <ellipse cx="25" cy="38" rx="9" ry="6" fill="url(#ic8_b)"/>
+      <!-- 3 OHLC candlestick bars extending right from sphere (green/red/green) -->
+      <!-- Candle 1: green -->
+      <g fill="#22C55E" stroke="#22C55E">
+        <line x1="66" y1="28" x2="66" y2="46" stroke-width="1.3"/>
+        <rect x="63" y="32" width="6" height="10" rx="1"/>
+        <circle cx="66" cy="28" r="2" fill="#22C55E" stroke="none"/>
+      </g>
+      <!-- Candle 2: red -->
+      <g fill="#ef4444" stroke="#ef4444">
+        <line x1="77" y1="36" x2="77" y2="58" stroke-width="1.3"/>
+        <rect x="74" y="40" width="6" height="12" rx="1"/>
+      </g>
+      <!-- Candle 3: green -->
+      <g fill="#22C55E" stroke="#22C55E">
+        <line x1="88" y1="30" x2="88" y2="50" stroke-width="1.3"/>
+        <rect x="85" y="33" width="6" height="11" rx="1"/>
+        <circle cx="88" cy="30" r="2.5" fill="#22C55E" stroke="none"/>
+      </g>
+    </svg></div>
+        <h3 style="color:var(--sun-bright);">Radar</h3>
+        <p style="color:rgba(255,255,255,0.7);">The analytical intelligence layer. Responsible for signal detection, pattern recognition, and AI-assisted interpretation of market-relevant information using NLP, knowledge graphs, and RAG.</p>
+      </div>
+      <div class="card" style="background:rgba(255,255,255,0.07);border-color:rgba(251,191,36,0.2);">
+        <div class="card-icon" style="background:rgba(251,191,36,0.15);border-color:rgba(251,191,36,0.3);"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic6_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.38"/>
+        </filter>
+        <linearGradient id="ic6_L" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#93c5fd"/>
+          <stop offset="100%" stop-color="#1e3a8a"/>
+        </linearGradient>
+        <linearGradient id="ic6_R" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#fde68a"/>
+          <stop offset="100%" stop-color="#d97706"/>
+        </linearGradient>
+        <radialGradient id="ic6_hl" cx="36%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.84)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic6_cl"><rect x="12" y="12" width="38" height="76"/></clipPath>
+        <clipPath id="ic6_cr"><rect x="50" y="12" width="38" height="76"/></clipPath>
+        <clipPath id="ic6_full"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <!-- Split sphere -->
+      <circle cx="50" cy="50" r="38" fill="url(#ic6_L)" clip-path="url(#ic6_cl)" filter="url(#ic6_sh)"/>
+      <circle cx="50" cy="50" r="38" fill="url(#ic6_R)" clip-path="url(#ic6_cr)" filter="url(#ic6_sh)"/>
+      <!-- Globe lines on both halves -->
+      <g clip-path="url(#ic6_full)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Vertical divider line -->
+      <line x1="50" y1="13" x2="50" y2="87" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
+      <!-- Green horizontal flow arrow crossing divider -->
+      <g clip-path="url(#ic6_full)">
+        <line x1="30" y1="50" x2="68" y2="50" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="65,46 73,50 65,54" fill="#22C55E"/>
+        <circle cx="72" cy="50" r="2.5" fill="#22C55E"/>
+      </g>
+      <ellipse cx="36" cy="33" rx="11" ry="7" fill="url(#ic6_hl)"/>
+    </svg></div>
+        <h3 style="color:var(--sun-bright);">Ledger</h3>
+        <p style="color:rgba(255,255,255,0.7);">The System of Decision Record (SoDR). Preserves final analytical outputs, evidence chains, and decision artifacts in an immutable, auditable structure — WORM compliant.</p>
+      </div>
+    </div>
+    <div style="margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+      <div style="background:rgba(255,255,255,0.07);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.1);">
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Frontend</div>
+        <div style="font-size:15px;font-weight:700;color:white;">React + TypeScript</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Real-time WebSocket collaboration</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.1);">
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Cloud</div>
+        <div style="font-size:15px;font-weight:700;color:white;">AWS (EKS, RDS, S3)</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Elastic Kubernetes microservices</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.1);">
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">AI Layer</div>
+        <div style="font-size:15px;font-weight:700;color:white;">NLP + RAG + KG</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Evidence-based insight generation</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.1);">
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Security</div>
+        <div style="font-size:15px;font-weight:700;color:white;">TLS + AWS KMS</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">OIDC auth · JWT · IAM · WORM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+
+    <!-- Links columns -->
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Important Links</h4>
+        <ul>
+          <li><a href="industries.html">Who We Serve</a></li>
+          <li><a href="modules.html">Modules</a></li>
+          <li><a href="product.html">How It Works</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="product.html">Capabilities</a></li>
+          <li><a href="use-cases.html">Why Nexsun.ai</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="industries.html">Industries &amp; Users</a></li>
+          <li><a href="trust.html">Trust &amp; Security</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="blog.html">Blog</a>
+      <a href="investors.html">Investor Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="industries.html">Energy Trading &amp; Utilities</a></li>
+          <li><a href="industries.html">Mining, Metals &amp; Agriculture</a></li>
+          <li><a href="industries.html">Renewables &amp; Carbon Markets</a></li>
+          <li><a href="industries.html">Transportation &amp; Logistics</a></li>
+          <li><a href="industries.html">Financial Institutions &amp; Investors</a></li>
+          <li><a href="industries.html">Governments &amp; Regulators</a></li>
+          <li><a href="industries.html">Consultants, Analysts &amp; Creators</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">130 5920 No. Two Road<br>Richmond BC V7C 4R9</div>
+        <div class="footer-contact-item"><a href="mailto:info@nexsun.ai" style="color:var(--sun-bright)">info@nexsun.ai</a></div>
+        <div class="footer-contact-item"><a href="tel:6047609015">1-604-760-9015</a></div>
+        <div class="footer-contact-item" style="margin-top:8px;"><a href="https://AEPG.ca">AEPG.ca &#8599;</a></div>
+        <div class="footer-contact-item"><a href="https://Nexsun.ai">Nexsun.ai &#8599;</a></div>
+      </div>
+    </div>
+
+    <!-- Brand + Newsletter row -->
+    <div class="footer-newsletter-row">
+      <div class="footer-brand">
+        <img src="logo-color.svg" alt="Nexsun.ai" style="width:100%;max-width:480px;height:auto;display:block;">
+        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sun-deep);margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
+      <!-- Social Icons -->
+      <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
+        <a href="https://www.linkedin.com/company/nexsun-ai" target="_blank" aria-label="LinkedIn"
+           style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
+           onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://x.com/NexsunAI" target="_blank" aria-label="X / Twitter"
+           style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
+           onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.726-8.851L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@Nexsun.aiplatform" target="_blank" aria-label="YouTube"
+           style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
+           onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/nexsun.ai/" target="_blank" aria-label="Instagram"
+           style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
+           onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Stay ahead of the market</h3>
+        <p>Get Nexsun's latest AI insights, platform updates, and energy market intelligence — delivered monthly.</p>
+        <div class="fn-field">
+          <input type="email" placeholder="Work email" id="fn-email">
+          <input type="text" placeholder="Company" id="fn-company">
+        </div>
+        <div class="fn-check">
+          <input type="checkbox" id="fn-updates">
+          <label for="fn-updates">Also send me platform release notes and product updates.</label>
+        </div>
+        <p class="fn-legal">By subscribing, you agree to receive email communications from Nexsun.ai. You can unsubscribe at any time.</p>
+        <button class="fn-btn" onclick="fnSubmit()">Subscribe Now</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookie Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      <p>&#169; 2026 Nexsun.ai. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function fnSubmit(){
+  var e=document.getElementById('fn-email');
+  if(!e||!e.value.includes('@')){alert('Please enter a valid email address.');return;}
+  var btn=document.querySelector('.fn-btn');
+  btn.textContent='Subscribed ✓';
+  btn.style.background='#16A34A';
+  btn.disabled=true;
+}
+</script>
+
+<script>
+// ── AMBIENT SUN PARTICLES ──
+const canvas = document.getElementById('sun-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
+function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+resize(); window.addEventListener('resize',()=>{ resize(); initP(); });
+function initP(){
+  particles=[];
+  const n = Math.floor(W*H/18000);
+  for(let i=0;i<n;i++) particles.push({
+    x:Math.random()*W, y:Math.random()*H,
+    vx:(Math.random()-.5)*.2, vy:(Math.random()-.5)*.2,
+    r:Math.random()*2+.5, op:Math.random()*.4+.1
+  });
+}
+initP();
+function drawP(){
+  ctx.clearRect(0,0,W,H);
+  for(const p of particles){
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W) p.vx*=-1;
+    if(p.y<0||p.y>H) p.vy*=-1;
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(245,158,11,${p.op})`; ctx.fill();
+  }
+  for(let i=0;i<particles.length;i++){
+    for(let j=i+1;j<particles.length;j++){
+      const a=particles[i],b=particles[j];
+      const d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<120){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle=`rgba(245,158,11,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
+    }
+  }
+  requestAnimationFrame(drawP);
+}
+drawP();
+
+// ── TABS ──
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── ORB TILT ──
+const intOrb = document.getElementById('int-orb');
+if(intOrb) {
+  intOrb.addEventListener('mousemove',e=>{
+    const r=intOrb.getBoundingClientRect();
+    const dx=(e.clientX-r.left-r.width/2)/r.width*20;
+    const dy=(e.clientY-r.top-r.height/2)/r.height*20;
+    intOrb.style.transform=`perspective(600px) rotateX(${-dy}deg) rotateY(${dx}deg)`;
+  });
+  intOrb.addEventListener('mouseleave',()=>intOrb.style.transform='');
+}
+
+// ── NAV ACTIVE ──
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{
+  const y = window.scrollY+80;
+  sections.forEach(s=>{
+    if(y>=s.offsetTop && y<s.offsetTop+s.offsetHeight){
+      document.querySelectorAll('.nav-links a').forEach(a=>{
+        a.style.color = a.getAttribute('href')==='#'+s.id ? 'var(--sun-deep)' : '';
+      });
+    }
+  });
+});
+</script>
+
+<!-- ── SCROLL TO TOP ── -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script>
+// ── SCROLL TO TOP VISIBILITY ──
+const scrollBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
+</script>
+
+<!-- ══ CHAT WIDGET ══ -->
+<style>
+  #nxs-chat-bubble {
+    position:fixed; bottom:88px; right:32px; z-index:998;
+    width:52px; height:52px; border-radius:50%;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    box-shadow:0 4px 20px rgba(245,158,11,0.5);
+    border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:transform .2s, box-shadow .2s;
+  }
+  #nxs-chat-bubble:hover { transform:scale(1.08); box-shadow:0 6px 28px rgba(245,158,11,0.65); }
+  #nxs-chat-bubble svg { width:24px; height:24px; color:white; }
+  #nxs-chat-bubble .nxs-notif {
+    position:absolute; top:-3px; right:-3px; width:14px; height:14px;
+    background:#EF4444; border-radius:50%; border:2px solid white;
+    animation:nxsPulse 2s ease-in-out infinite;
+  }
+  @keyframes nxsPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+  #nxs-chat-panel {
+    position:fixed; bottom:156px; right:32px; z-index:997;
+    width:320px; background:white; border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(245,158,11,0.1);
+    border:1px solid rgba(245,158,11,0.15);
+    opacity:0; visibility:hidden; transform:translateY(12px) scale(0.97);
+    transition:opacity .25s, visibility .25s, transform .25s;
+    transform-origin:bottom right; overflow:hidden;
+  }
+  #nxs-chat-panel.open { opacity:1; visibility:visible; transform:translateY(0) scale(1); }
+  .nxs-header { background:linear-gradient(135deg,var(--navy),#1D4ED8); padding:20px; display:flex; align-items:center; gap:12px; }
+  .nxs-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--sun),var(--sun-deep)); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .nxs-header-text h4 { font-size:14px; font-weight:700; color:white; margin-bottom:2px; }
+  .nxs-header-text p { font-size:11px; color:rgba(255,255,255,0.6); display:flex; align-items:center; gap:5px; }
+  .nxs-online-dot { width:7px; height:7px; background:#22C55E; border-radius:50%; display:inline-block; }
+  .nxs-close { margin-left:auto; background:none; border:none; color:rgba(255,255,255,0.6); cursor:pointer; font-size:18px; line-height:1; padding:4px; transition:color .2s; }
+  .nxs-close:hover { color:white; }
+  .nxs-body { padding:20px; }
+  .nxs-welcome { background:var(--sun-pale); border:1px solid rgba(245,158,11,0.2); border-radius:14px; padding:14px 16px; margin-bottom:16px; }
+  .nxs-welcome p { font-size:13px; color:var(--text-mid); line-height:1.6; }
+  .nxs-welcome strong { color:var(--navy); }
+  .nxs-actions { display:flex; flex-direction:column; gap:8px; }
+  .nxs-action-btn { width:100%; text-align:left; background:white; border:1px solid var(--border); border-radius:12px; padding:12px 16px; font-size:13px; font-weight:600; color:var(--navy); cursor:pointer; transition:all .18s; display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .nxs-action-btn:hover { background:var(--sun-pale); border-color:rgba(245,158,11,0.4); transform:translateX(3px); }
+  .nxs-action-btn .nxs-ico { font-size:16px; flex-shrink:0; }
+  .nxs-footer { padding:12px 20px; border-top:1px solid rgba(245,158,11,0.1); text-align:center; }
+  .nxs-footer a { font-size:11px; color:var(--text-muted); }
+  .nxs-footer a:hover { color:var(--sun-deep); }
+</style>
+<button id="nxs-chat-bubble" onclick="toggleChat()" aria-label="Chat with Nexsun.ai">
+  <svg id="nxs-icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <svg id="nxs-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  <div class="nxs-notif" id="nxs-notif"></div>
+</button>
+<div id="nxs-chat-panel">
+  <div class="nxs-header">
+    <div class="nxs-avatar">☀</div>
+    <div class="nxs-header-text">
+      <h4>Nexsun.ai Team</h4>
+      <p><span class="nxs-online-dot"></span> Typically replies within 1 business day</p>
+    </div>
+    <button class="nxs-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="nxs-body">
+    <div class="nxs-welcome">
+      <p>👋 Welcome to <strong>Nexsun.ai</strong> — the decision layer for traded markets.<br><br>How can we help you today?</p>
+    </div>
+    <div class="nxs-actions">
+      <a href="contact.html" class="nxs-action-btn"><span class="nxs-ico">🚀</span> Book a Live Demo</a>
+      <a href="pricing.html" class="nxs-action-btn"><span class="nxs-ico">💡</span> Pilot Program &amp; Pricing</a>
+      <a href="modules.html" class="nxs-action-btn"><span class="nxs-ico">🔍</span> Explore the Platform</a>
+      <a href="mailto:info@nexsun.ai" class="nxs-action-btn"><span class="nxs-ico">✉</span> Send Us a Message</a>
+    </div>
+  </div>
+  <div class="nxs-footer">
+    <a href="contact.html">Contact us · info@nexsun.ai · 1-604-760-9015</a>
+  </div>
+</div>
+<script>
+function toggleChat(){
+  var panel=document.getElementById('nxs-chat-panel');
+  var iconChat=document.getElementById('nxs-icon-chat');
+  var iconClose=document.getElementById('nxs-icon-close');
+  var notif=document.getElementById('nxs-notif');
+  var isOpen=panel.classList.toggle('open');
+  iconChat.style.display=isOpen?'none':'';
+  iconClose.style.display=isOpen?'':'none';
+  if(isOpen&&notif) notif.style.display='none';
+}
+setTimeout(function(){ var n=document.getElementById('nxs-notif'); if(n) n.style.display='block'; },3000);
+</script>
+
+<!-- ══ COOKIE CONSENT ══ -->
+<div id="cookie-banner" style="display:none;">
+<style>
+  #cookie-banner {
+    position:fixed; bottom:0; left:0; right:0; z-index:9999;
+    background:#0F172A; border-top:1px solid rgba(245,158,11,0.2);
+    box-shadow:0 -8px 40px rgba(0,0,0,0.25);
+    padding:20px 32px; display:flex; align-items:center;
+    justify-content:space-between; gap:24px; flex-wrap:wrap;
+    animation:cookieSlideUp .4s ease;
+  }
+  @keyframes cookieSlideUp { from{transform:translateY(100%);opacity:0} to{transform:translateY(0);opacity:1} }
+  #cookie-banner p { font-size:13.5px; color:rgba(255,255,255,0.7); line-height:1.6; margin:0; max-width:700px; }
+  #cookie-banner p a { color:#F59E0B; text-decoration:underline; }
+  #cookie-banner p a:hover { color:#FBBF24; }
+  .cookie-btns { display:flex; gap:10px; flex-shrink:0; }
+  .cookie-accept {
+    background:linear-gradient(135deg,#F59E0B,#D97706); color:#fff;
+    font-size:13px; font-weight:700; padding:10px 22px; border-radius:8px;
+    border:none; cursor:pointer; transition:all .2s;
+    box-shadow:0 4px 14px rgba(245,158,11,0.35);
+  }
+  .cookie-accept:hover { transform:translateY(-1px); box-shadow:0 6px 20px rgba(245,158,11,0.5); }
+  .cookie-decline {
+    background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.55);
+    font-size:13px; font-weight:600; padding:10px 18px; border-radius:8px;
+    border:1px solid rgba(255,255,255,0.12); cursor:pointer; transition:all .2s;
+  }
+  .cookie-decline:hover { background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.8); }
+</style>
+  <p>🍪 We use cookies to improve your experience, analyse site traffic, and personalise content. By clicking <strong style="color:#fff;">Accept All</strong>, you agree to our use of cookies. <a href="privacy.html">Privacy Policy</a> · <a href="cookies.html">Cookie Policy</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="cookieChoice(false)">Decline</button>
+    <button class="cookie-accept" onclick="cookieChoice(true)">Accept All</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('nxs_cookie_consent')){
+    document.getElementById('cookie-banner').style.display='flex';
+  }
+})();
+function cookieChoice(accepted){
+  localStorage.setItem('nxs_cookie_consent', accepted ? 'accepted' : 'declined');
+  var b = document.getElementById('cookie-banner');
+  b.style.transition='transform .35s ease, opacity .35s ease';
+  b.style.transform='translateY(100%)';
+  b.style.opacity='0';
+  setTimeout(function(){ b.style.display='none'; }, 370);
+}
+</script>
+</div>
+
+<script>
+function toggleMobNav(){
+  var m=document.getElementById('nxs-mob-nav');
+  var b=document.getElementById('nxs-hamburger');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  if(b)b.classList.toggle('open',!open);
+}
+// Responsive inline-grid fixer
+function nxsResponsive(){
+  var isMob=window.innerWidth<=768;
+  document.querySelectorAll('[style*="grid-template-columns"]').forEach(function(el){
+    var s=el.getAttribute('style')||'';
+    if(!el.dataset.origGrid) el.dataset.origGrid=el.style.gridTemplateColumns;
+    if(isMob){
+      if(/repeat\([3-9]/.test(s)||/1fr 1\.8fr|1fr 1fr 1\.6fr|1fr 1fr 1\.5fr/.test(s)){
+        el.style.gridTemplateColumns='1fr';
+        el.style.gap='16px';
+      } else if(/repeat\([45]/.test(s)){
+        el.style.gridTemplateColumns='1fr 1fr';
+        el.style.gap='12px';
+      }
+    } else {
+      if(el.dataset.origGrid) el.style.gridTemplateColumns=el.dataset.origGrid;
+    }
+  });
+  // Fix min-height on mission/video sections
+  if(isMob){
+    document.querySelectorAll('[style*="min-height:460px"]').forEach(function(el){
+      el.style.minHeight='auto';
+    });
+  }
+}
+window.addEventListener('DOMContentLoaded',nxsResponsive);
+window.addEventListener('resize',nxsResponsive);
+</script>
+<script>
+(function(){
+  var c = document.querySelector('canvas.hero-canvas');
+  if(!c) return;
+  var ctx = c.getContext('2d'), pts = [], t = 0;
+  function sz(){ c.width = c.offsetWidth; c.height = c.offsetHeight; }
+  sz(); window.addEventListener('resize', sz);
+  var cols = ['245,158,11','245,158,11','245,158,11','34,197,94','30,58,138'];
+  for(var i=0;i<55;i++) pts.push({
+    x:Math.random()*c.width, y:Math.random()*c.height,
+    vx:(Math.random()-.5)*.28, vy:(Math.random()-.5)*.28,
+    r:Math.random()*1.6+.5,
+    col:cols[Math.floor(Math.random()*cols.length)],
+    ph:Math.random()*Math.PI*2
+  });
+  function draw(){
+    t+=0.012; ctx.clearRect(0,0,c.width,c.height);
+    for(var k=0;k<pts.length;k++){
+      var p=pts[k];
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0||p.x>c.width) p.vx*=-1;
+      if(p.y<0||p.y>c.height) p.vy*=-1;
+      var al=.12+.12*Math.sin(t+p.ph);
+      var gw=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*6);
+      gw.addColorStop(0,'rgba('+p.col+','+(al*1.4)+')');
+      gw.addColorStop(1,'rgba('+p.col+',0)');
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r*6,0,Math.PI*2);
+      ctx.fillStyle=gw; ctx.fill();
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba('+p.col+','+(al*2.5)+')'; ctx.fill();
+    }
+    for(var i=0;i<pts.length;i++){
+      for(var j=i+1;j<pts.length;j++){
+        var a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<130){
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+          ctx.strokeStyle='rgba(30,58,138,'+(0.06*(1-d/130))+')';
+          ctx.lineWidth=.5; ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        setTimeout(function(){ e.target.classList.add('visible'); }, i*90);
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.solar-card-animated').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+</body>
+</html>
