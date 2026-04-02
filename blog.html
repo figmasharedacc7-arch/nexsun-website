@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Nexsun.ai</title>
+<title>Energy Intelligence Insights &amp; Resources | Nexsun.ai</title>
   <!-- ── SEO & Social ── -->
-  <meta name="description" content="Light on Complexity. Power in Decisions. Nexsun.ai delivers AI clarity for complex markets — turning market data into clear intelligence so you can make confident, high-impact decisions.">
+  <meta name="description" content="Resources, insights, use case briefs, platform briefs, case studies, and thought leadership from the Nexsun.ai team.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nexsun.ai/blog.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Blog | Nexsun.ai">
-  <meta property="og:description" content="Light on Complexity. Power in Decisions. Nexsun.ai delivers AI clarity for complex markets — turning market data into clear intelligence so you can make confident, high-impact decisions.">
+  <meta property="og:title" content="Energy Intelligence Insights & Resources | Nexsun.ai">
+  <meta property="og:description" content="Resources, insights, use case briefs, platform briefs, case studies, and thought leadership from the Nexsun.ai team.">
   <meta property="og:image" content="https://nexsun.ai/og-image.jpg">
   <meta property="og:url" content="https://nexsun.ai/blog.html">
   <meta property="og:site_name" content="Nexsun.ai">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blog | Nexsun.ai">
-  <meta name="twitter:description" content="Light on Complexity. Power in Decisions. Nexsun.ai delivers AI clarity for complex markets — turning market data into clear intelligence so you can make confident, high-impact decisions.">
+  <meta name="twitter:title" content="Energy Intelligence Insights & Resources | Nexsun.ai">
+  <meta name="twitter:description" content="Resources, insights, use case briefs, platform briefs, case studies, and thought leadership from the Nexsun.ai team.">
   <meta name="twitter:image" content="https://nexsun.ai/og-image.jpg">
 <style>
   :root {
@@ -157,14 +157,15 @@
   .posts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
   .post-card { background:white; border:1px solid var(--border); border-radius:20px; overflow:hidden; box-shadow:var(--card-shadow); transition:transform .3s, box-shadow .3s; display:flex; flex-direction:column; }
   .post-card:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(245,158,11,0.13); }
-  .post-thumb { height:180px; display:flex; align-items:center; justify-content:center; font-size:52px; position:relative; overflow:hidden; }
+  .post-thumb { height:180px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
   .thumb-ai { background:linear-gradient(135deg,#1E3A8A,#1D4ED8); }
   .thumb-market { background:linear-gradient(135deg,#D97706,#F59E0B); }
   .thumb-energy { background:linear-gradient(135deg,#16A34A,#0EA5E9); }
   .thumb-platform { background:linear-gradient(135deg,#0F172A,#1E3A8A); }
   .thumb-esg { background:linear-gradient(135deg,#0EA5E9,#16A34A); }
   .thumb-geo { background:linear-gradient(135deg,#7C3AED,#1D4ED8); }
-  .post-thumb::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.08); }
+  .post-thumb::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.05); }
+  .post-thumb svg { width:88px; height:88px; position:relative; z-index:1; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.15)); }
   .post-body { padding:28px; flex:1; display:flex; flex-direction:column; }
   .post-body h3 { font-size:17px; font-weight:800; color:var(--navy); line-height:1.35; margin:14px 0 10px; }
   .post-body p { font-size:13.5px; color:var(--text-mid); line-height:1.75; flex:1; margin-bottom:20px; }
@@ -318,6 +319,16 @@
   <link rel="icon" type="image/svg+xml" href="logo-color.svg">
   <link rel="apple-touch-icon" href="logo-color.svg">
   <meta name="theme-color" content="#1E3A8A">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Nexsun.ai Insights",
+  "url": "https://nexsun.ai/blog.html",
+  "description": "Expert insights on AI, energy markets, and decision intelligence from Nexsun.ai.",
+  "publisher": {"@type": "Organization", "name": "Nexsun.ai", "url": "https://nexsun.ai"}
+}
+</script>
 </head>
 <body>
 
@@ -325,12 +336,13 @@
 
 <!-- ══ NAV ══ -->
 <nav>
-  <div class="topbar">
+    <div class="topbar">
     <div class="topbar-inner">
-      <a href="https://AEPG.ca" target="_blank">AEPG.ca</a>
-      <a href="blog.html">Blog</a>
+      <a href="https://AEPG.ca" target="_blank" rel="noopener noreferrer">AEPG.ca</a>
+      <a href="blog.html">Resources</a>
       <a href="investors.html">Investor Centre</a>
-      <a href="trust.html">Trust &amp; Security</a>
+      <a href="partners.html">Partner Centre</a>
+      <a href="trust.html">Trust Centre</a>
       <a href="contact.html">Contact Us</a>
     </div>
   </div>
@@ -339,70 +351,63 @@
       <img src="logo-color.svg" alt="Nexsun.ai" style="height:120px;width:auto;display:block;">
     </a>
     <button class="nav-hamburger" id="nxs-hamburger" onclick="toggleMobNav()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <div class="nav-links">
+            <div class="nav-links">
       <div class="nav-dropdown">
-        <a href="product.html">Platform</a>
+        <a href="platform.html">Platform</a>
         <div class="nav-dropdown-menu">
-          <a href="product.html">Platform Overview</a>
+          <a href="platform.html">Platform Overview</a>
           <div class="menu-divider"></div>
           <a href="modules.html">Modules</a>
           <a href="technology.html">Technology</a>
           <div class="menu-divider"></div>
-          <a href="trust.html">Trust &amp; Security</a>
+          <a href="trust.html">Trust Centre</a>
         </div>
       </div>
-      <div class="nav-dropdown">
-        <a href="use-cases.html">Solutions</a>
-        <div class="nav-dropdown-menu" style="min-width:200px;">
-          <div class="menu-label">By Outcome</div>
-          <a href="solutions-market-intelligence.html">Market Intelligence</a>
-          <a href="solutions-risk-management.html">Risk Management</a>
-          <a href="solutions-contract-analytics.html">Contract Analytics</a>
-          <div class="menu-divider"></div>
-          <a href="use-cases.html" style="color:var(--sun-deep);font-weight:600;">All Use Cases &#8599;</a>
-        </div>
-      </div>
-      <a href="industries.html">Industries</a>
-      <a href="pricing.html">Pricing</a>
-      <div class="nav-dropdown">
-        <a href="resources.html">Resources</a>
-        <div class="nav-dropdown-menu">
-          <a href="blog.html">Blog</a>
-          <a href="resources.html">Insights &amp; Reports</a>
-          <div class="menu-divider"></div>
-          <a href="platform.html">Platform Guide</a>
-        </div>
-      </div>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="applications.html">Applications</a>
+      <a href="why-nexsun.html">Why Nexsun.ai</a>
       <div class="nav-dropdown">
         <a href="about.html">Company</a>
         <div class="nav-dropdown-menu">
           <a href="about.html">About Us</a>
           <a href="investors.html">Investor Centre</a>
-          <a href="careers.html">Careers</a>
           <a href="press.html">Press &amp; Media</a>
           <div class="menu-divider"></div>
           <a href="contact.html">Contact</a>
         </div>
       </div>
-      <a href="contact.html" class="btn-cta">Book a Discovery</a>
+      <a href="engage.html" class="btn-cta">Engage</a>
     </div>
-  </div>
+    </div>
 </nav>
+<!-- ══ MOBILE NAV PANEL ══ -->
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#fff;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,58,138,0.12);border-bottom:3px solid #F59E0B;">
+  <a href="platform.html">Platform</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="applications.html">Applications</a>
+  <a href="why-nexsun.html">Why Nexsun.ai</a>
+  <a href="about.html">Company</a>
+  <a href="blog.html">Resources</a>
+  <a href="investors.html">Investor Centre</a>
+  <a href="partners.html">Partner Centre</a>
+  <a href="trust.html">Trust Centre</a>
+  <a href="engage.html" style="color:#F59E0B;font-weight:700;">Engage</a>
+</div>
 
 <!-- ══ BLOG HERO ══ -->
 <section id="blog-hero">
   <canvas class="hero-canvas"></canvas>
   <div class="container">
-    <div class="section-tag">Insights &amp; Intelligence</div>
-    <h1>The Nexsun <span>Blog</span></h1>
-    <p>AI, energy markets, commodities intelligence, and the future of decision-making — from the team building it.</p>
+    <div class="section-tag">Resources</div>
+    <h1>Nexsun<span>.ai</span> Resources</h1>
+    <p>Insights, use case briefs, platform briefs, case studies, and thought leadership from the team building Decision Intelligence.</p>
     <div class="blog-filters">
       <button class="filter-btn active" onclick="filterPosts('all',this)">All</button>
-      <button class="filter-btn" onclick="filterPosts('ai',this)">AI &amp; Technology</button>
-      <button class="filter-btn" onclick="filterPosts('market',this)">Market Intelligence</button>
-      <button class="filter-btn" onclick="filterPosts('energy',this)">Energy</button>
-      <button class="filter-btn" onclick="filterPosts('platform',this)">Platform</button>
-      <button class="filter-btn" onclick="filterPosts('esg',this)">ESG &amp; Transition</button>
+      <button class="filter-btn" onclick="filterPosts('ai',this)">Insights</button>
+      <button class="filter-btn" onclick="filterPosts('market',this)">Use Cases</button>
+      <button class="filter-btn" onclick="filterPosts('platform',this)">Platform Briefs</button>
+      <button class="filter-btn" onclick="filterPosts('energy',this)">Case Studies</button>
+      <button class="filter-btn" onclick="filterPosts('esg',this)">Events &amp; Media</button>
     </div>
   </div>
 </section>
@@ -411,10 +416,19 @@
 <section id="featured">
   <div class="container">
     <div class="section-tag" style="margin-bottom:24px;">Featured</div>
-    <a href="#" class="featured-card" data-cat="ai">
+    <a href="blog/ai-energy-trading-2025.html" class="featured-card" data-cat="ai">
       <div class="featured-img">
         <div class="featured-img-inner" style="position:relative;z-index:2;">
-          <span class="featured-img-icon">🤖</span>
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" style="filter:drop-shadow(0 4px 16px rgba(0,0,0,0.2));">
+              <rect x="15" y="25" width="70" height="50" rx="8" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
+              <circle cx="38" cy="50" r="8" stroke="#FBBF24" stroke-width="2" fill="rgba(245,158,11,0.2)"/>
+              <circle cx="62" cy="50" r="8" stroke="#FBBF24" stroke-width="2" fill="rgba(245,158,11,0.2)"/>
+              <path d="M38 50h24" stroke="#FBBF24" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <path d="M30 42l8 8-8 8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/>
+              <path d="M70 42l-8 8 8 8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/>
+              <path d="M50 25V15M35 25V18M65 25V18" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+              <path d="M50 75V85M35 75V82M65 75V82" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            </svg>
           <div class="featured-img-label">AI &amp; Technology</div>
         </div>
       </div>
@@ -425,7 +439,7 @@
           <span class="post-read">8 min read</span>
         </div>
         <h2>Why "Glassbox AI" Is the Only Acceptable Standard for Energy Market Decisions</h2>
-        <p>In sectors where a single miscalculation can cost tens of millions, the black-box AI era is over. We explore why every insight, assumption, and reasoning path must be fully traceable — and how Nexsun's Glassbox architecture makes that possible at enterprise scale.</p>
+        <p>In sectors where a single miscalculation can cost tens of millions, the black-box AI era is over. We explore why every insight, assumption, and reasoning path must be fully traceable and how Nexsun's Glassbox architecture makes that possible at enterprise scale.</p>
         <span class="read-more">Read Article →</span>
       </div>
     </a>
@@ -435,11 +449,21 @@
 <!-- ══ BLOG GRID ══ -->
 <section id="blog-grid">
   <div class="container">
-    <div class="blog-grid-heading">Latest Posts</div>
+    <div class="blog-grid-heading">Latest Resources</div>
     <div class="posts-grid" id="posts-grid">
 
-      <a href="#" class="post-card" data-cat="market">
-        <div class="post-thumb thumb-market">📊</div>
+      <a href="blog/decision-intelligence-vs-analytics.html" class="post-card" data-cat="market">
+        <div class="post-thumb thumb-market">
+          <!-- Data streams converging into clarity -->
+          <svg viewBox="0 0 88 88" fill="none">
+            <path d="M12 66L28 46L40 54L56 32L76 20" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M12 72L32 56L48 62L64 44L76 36" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-dasharray="4 4"/>
+            <circle cx="56" cy="32" r="6" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1.5"/>
+            <circle cx="76" cy="20" r="4" fill="white" opacity="0.9"/>
+            <rect x="8" y="12" width="1.5" height="64" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <rect x="8" y="76" width="68" height="1.5" rx="1" fill="rgba(255,255,255,0.25)"/>
+          </svg>
+        </div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-cat cat-market">Market Intelligence</span>
@@ -457,34 +481,60 @@
         </div>
       </a>
 
-      <a href="#" class="post-card" data-cat="energy">
-        <div class="post-thumb thumb-energy">⚡</div>
+      <a href="blog/glassbox-ai-explainability.html" class="post-card" data-cat="energy">
+        <div class="post-thumb thumb-energy">
+          <!-- Wind turbine + solar panel: energy transition -->
+          <svg viewBox="0 0 88 88" fill="none">
+            <circle cx="36" cy="32" r="3" fill="rgba(255,255,255,0.9)"/>
+            <path d="M36 29L36 12M36 29L20 38M36 29L52 38" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/>
+            <rect x="32" y="35" width="8" height="36" rx="1" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+            <rect x="52" y="48" width="24" height="18" rx="2" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+            <line x1="64" y1="48" x2="64" y2="66" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <line x1="52" y1="57" x2="76" y2="57" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <circle cx="68" cy="28" r="10" stroke="#FBBF24" stroke-width="1.5" fill="rgba(251,191,36,0.15)"/>
+            <path d="M68 18V14M68 38V42M58 28H54M78 28H82M60.5 20.5L57.5 17.5M75.5 35.5L78.5 38.5M60.5 35.5L57.5 38.5M75.5 20.5L78.5 17.5" stroke="#FBBF24" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-cat cat-energy">Energy</span>
             <span class="post-date">February 2026</span>
           </div>
           <h3>The Energy Transition Intelligence Gap: What Most Organizations Are Missing</h3>
-          <p>As markets navigate the shift to renewables, the need for forward-looking, explainable intelligence has never been more urgent. Here's the gap — and how to close it.</p>
+          <p>As markets navigate the shift to renewables, the need for forward-looking, explainable intelligence has never been more urgent. Here's the gap and how to close it.</p>
           <div class="post-footer">
             <div class="post-author">
-              <div class="author-avatar">RE</div>
-              <div class="author-name">Ryan Elias</div>
+              <div class="author-avatar">RA</div>
+              <div class="author-name">Ryan Arian</div>
             </div>
             <span class="read-more" style="font-size:13px;">Read →</span>
           </div>
         </div>
       </a>
 
-      <a href="#" class="post-card" data-cat="platform">
-        <div class="post-thumb thumb-platform">🔧</div>
+      <a href="blog/geopolitics-commodity-markets.html" class="post-card" data-cat="platform">
+        <div class="post-thumb thumb-platform">
+          <!-- Network nodes: signal fusion / data sources -->
+          <svg viewBox="0 0 88 88" fill="none">
+            <circle cx="44" cy="44" r="10" fill="rgba(251,191,36,0.2)" stroke="#FBBF24" stroke-width="2"/>
+            <circle cx="18" cy="22" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+            <circle cx="70" cy="18" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+            <circle cx="14" cy="58" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+            <circle cx="74" cy="56" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+            <circle cx="44" cy="76" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+            <circle cx="26" cy="72" r="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+            <circle cx="66" cy="72" r="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+            <path d="M22 26L38 38M65 22L50 38M18 54L36 48M70 52L52 48M44 54L44 72M28 68L38 50M64 68L50 50" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+            <text x="44" y="48" text-anchor="middle" fill="#FBBF24" font-size="12" font-weight="800">500+</text>
+          </svg>
+        </div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-cat cat-platform">Platform</span>
             <span class="post-date">February 2026</span>
           </div>
           <h3>Introducing Signal Fusion: How Nexsun Combines 500+ Data Sources Into a Single Intelligence Layer</h3>
-          <p>A deep-dive into our data ingestion architecture — how we normalize, validate, and fuse structured and unstructured data from global markets in real time.</p>
+          <p>A deep-dive into our data ingestion architecture, how we normalize, validate, and fuse structured and unstructured data from global markets in real time.</p>
           <div class="post-footer">
             <div class="post-author">
               <div class="author-avatar">AE</div>
@@ -495,14 +545,24 @@
         </div>
       </a>
 
-      <a href="#" class="post-card" data-cat="esg">
-        <div class="post-thumb thumb-esg">🌿</div>
+      <a href="blog/energy-market-volatility-ai.html" class="post-card" data-cat="esg">
+        <div class="post-thumb thumb-esg">
+          <!-- Document + checkmark: ESG compliance traceability -->
+          <svg viewBox="0 0 88 88" fill="none">
+            <rect x="22" y="12" width="44" height="58" rx="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+            <path d="M32 28h24M32 36h18M32 44h22M32 52h14" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="58" cy="58" r="14" fill="rgba(34,197,94,0.25)" stroke="#4ADE80" stroke-width="2"/>
+            <path d="M51 58l4 4 8-8" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44 70V78" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <path d="M36 78h16" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-cat cat-esg">ESG &amp; Transition</span>
             <span class="post-date">January 2026</span>
           </div>
-          <h3>ESG Reporting Is No Longer Optional — AI-Powered Traceability Is the Answer</h3>
+          <h3>ESG Reporting Is No Longer Optional, AI-Powered Traceability Is the Answer</h3>
           <p>Regulatory mandates around emissions and sustainability disclosures are tightening globally. We examine how AI-native traceability tools are becoming table stakes for resource companies.</p>
           <div class="post-footer">
             <div class="post-author">
@@ -514,15 +574,30 @@
         </div>
       </a>
 
-      <a href="#" class="post-card" data-cat="ai">
-        <div class="post-thumb thumb-ai">🧠</div>
+      <a href="blog/system-decision-record.html" class="post-card" data-cat="ai">
+        <div class="post-thumb thumb-ai">
+          <!-- Neural network / LLM architecture -->
+          <svg viewBox="0 0 88 88" fill="none">
+            <circle cx="20" cy="24" r="4" fill="rgba(251,191,36,0.3)" stroke="#FBBF24" stroke-width="1.5"/>
+            <circle cx="20" cy="44" r="4" fill="rgba(251,191,36,0.3)" stroke="#FBBF24" stroke-width="1.5"/>
+            <circle cx="20" cy="64" r="4" fill="rgba(251,191,36,0.3)" stroke="#FBBF24" stroke-width="1.5"/>
+            <circle cx="44" cy="30" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+            <circle cx="44" cy="50" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+            <circle cx="44" cy="70" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+            <circle cx="68" cy="36" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+            <circle cx="68" cy="56" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+            <path d="M24 24L39 30M24 24L39 50M24 44L39 30M24 44L39 50M24 44L39 70M24 64L39 50M24 64L39 70" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <path d="M49 30L63 36M49 30L63 56M49 50L63 36M49 50L63 56M49 70L63 56" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <text x="44" y="15" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8" font-weight="700" letter-spacing="1">LLM</text>
+          </svg>
+        </div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-cat cat-ai">AI &amp; Technology</span>
             <span class="post-date">January 2026</span>
           </div>
           <h3>LLMs in Financial Markets: Promise, Peril, and the Path to Production</h3>
-          <p>Large language models are being piloted across trading floors worldwide. We separate the genuine breakthroughs from the hype — and outline what responsible deployment looks like.</p>
+          <p>Large language models are being piloted across trading floors worldwide. We separate the genuine breakthroughs from the hype and outline what responsible deployment looks like.</p>
           <div class="post-footer">
             <div class="post-author">
               <div class="author-avatar">AE</div>
@@ -533,8 +608,22 @@
         </div>
       </a>
 
-      <a href="#" class="post-card" data-cat="market">
-        <div class="post-thumb thumb-geo">🌐</div>
+      <a href="blog/post-7.html" class="post-card" data-cat="market">
+        <div class="post-thumb thumb-geo">
+          <!-- Globe with alert markers: geopolitical risk -->
+          <svg viewBox="0 0 88 88" fill="none">
+            <circle cx="44" cy="44" r="26" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="rgba(255,255,255,0.06)"/>
+            <ellipse cx="44" cy="44" rx="12" ry="26" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <path d="M18 44h52" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <path d="M22 32h44M22 56h44" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <circle cx="32" cy="32" r="5" fill="rgba(239,68,68,0.4)" stroke="#EF4444" stroke-width="1.5"/>
+            <path d="M32 30v3M32 35v1" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="58" cy="38" r="5" fill="rgba(239,68,68,0.4)" stroke="#EF4444" stroke-width="1.5"/>
+            <path d="M58 36v3M58 41v1" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="40" cy="56" r="4" fill="rgba(251,191,36,0.3)" stroke="#FBBF24" stroke-width="1.5"/>
+            <path d="M40 54v2.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-cat cat-market">Market Intelligence</span>
@@ -552,34 +641,56 @@
         </div>
       </a>
 
-      <a href="#" class="post-card" data-cat="energy">
-        <div class="post-thumb thumb-energy">☀️</div>
+      <a href="blog/post-8.html" class="post-card" data-cat="energy">
+        <div class="post-thumb thumb-energy">
+          <!-- Gas flame + chart: LNG forecasting -->
+          <svg viewBox="0 0 88 88" fill="none">
+            <path d="M36 68c0-16 8-20 4-32s8-16 8-16c0 8 6 12 8 20s-2 16-2 24c0 4-4 8-10 8s-8-2-8-4z" fill="rgba(251,191,36,0.2)" stroke="#FBBF24" stroke-width="1.5"/>
+            <path d="M40 68c0-6 2-10 4-14 2 4 4 8 4 14" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="rgba(255,255,255,0.1)"/>
+            <rect x="54" y="28" width="24" height="40" rx="2" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+            <path d="M58 60L62 50L66 56L70 38L74 44" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <text x="66" y="26" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="7" font-weight="700">LNG</text>
+          </svg>
+        </div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-cat cat-energy">Energy</span>
             <span class="post-date">December 2025</span>
           </div>
           <h3>Natural Gas, LNG, and the AI Advantage: Forecasting in a Volatile Market</h3>
-          <p>LNG pricing is notoriously complex — driven by weather, geopolitics, and storage cycles simultaneously. We explore how AI-driven forecasting is changing the game for gas traders.</p>
+          <p>LNG pricing is notoriously complex, driven by weather, geopolitics, and storage cycles simultaneously. We explore how AI-driven forecasting is changing the game for gas traders.</p>
           <div class="post-footer">
             <div class="post-author">
-              <div class="author-avatar">RE</div>
-              <div class="author-name">Ryan Elias</div>
+              <div class="author-avatar">RA</div>
+              <div class="author-name">Ryan Arian</div>
             </div>
             <span class="read-more" style="font-size:13px;">Read →</span>
           </div>
         </div>
       </a>
 
-      <a href="#" class="post-card" data-cat="platform">
-        <div class="post-thumb thumb-platform">📡</div>
+      <a href="blog/post-9.html" class="post-card" data-cat="platform">
+        <div class="post-thumb thumb-platform">
+          <!-- People + AI circle: collaborative intelligence -->
+          <svg viewBox="0 0 88 88" fill="none">
+            <circle cx="44" cy="44" r="18" stroke="#FBBF24" stroke-width="1.5" fill="rgba(251,191,36,0.1)" stroke-dasharray="4 3"/>
+            <circle cx="44" cy="20" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+            <path d="M38 18h12" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <circle cx="68" cy="44" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+            <circle cx="44" cy="68" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+            <circle cx="20" cy="44" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+            <circle cx="44" cy="44" r="6" fill="rgba(251,191,36,0.25)" stroke="#FBBF24" stroke-width="2"/>
+            <text x="44" y="47" text-anchor="middle" fill="#FBBF24" font-size="8" font-weight="800">AI</text>
+            <path d="M44 26L44 38M50 44L62 44M44 56L44 62M38 44L26 44" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          </svg>
+        </div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-cat cat-platform">Platform</span>
             <span class="post-date">November 2025</span>
           </div>
           <h3>Collaborative Intelligence: How Nexsun Keeps Humans at the Center of Every Decision</h3>
-          <p>AI should augment human judgment, not replace it. We explain the design principles behind Nexsun's collaborative workflow layer — and why it matters for enterprise adoption.</p>
+          <p>AI should augment human judgment, not replace it. We explain the design principles behind Nexsun's collaborative workflow layer and why it matters for enterprise adoption.</p>
           <div class="post-footer">
             <div class="post-author">
               <div class="author-avatar">AE</div>
@@ -590,15 +701,27 @@
         </div>
       </a>
 
-      <a href="#" class="post-card" data-cat="esg">
-        <div class="post-thumb thumb-esg">🌍</div>
+      <a href="blog/post-10.html" class="post-card" data-cat="esg">
+        <div class="post-thumb thumb-esg">
+          <!-- Leaf + CO2 arrow: carbon markets -->
+          <svg viewBox="0 0 88 88" fill="none">
+            <path d="M30 60C30 36 44 20 62 16c0 0-4 12-4 28s-10 24-28 24c0 0 0-4 0-8z" fill="rgba(74,222,128,0.15)" stroke="#4ADE80" stroke-width="2"/>
+            <path d="M44 58C40 48 42 36 50 26" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none"/>
+            <path d="M44 58C42 50 44 42 48 34" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
+            <text x="22" y="32" fill="rgba(255,255,255,0.5)" font-size="9" font-weight="700">CO</text>
+            <text x="34" y="34" fill="rgba(255,255,255,0.5)" font-size="6">2</text>
+            <path d="M20 36l6-4-2 4h6l-6 4 2-4h-6z" fill="rgba(255,255,255,0.3)"/>
+            <path d="M56 62h12M64 58l4 4-4 4" stroke="#4ADE80" stroke-width="1.5" stroke-linecap="round"/>
+            <text x="60" y="76" fill="rgba(255,255,255,0.4)" font-size="7" font-weight="600">NET ZERO</text>
+          </svg>
+        </div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-cat cat-esg">ESG &amp; Transition</span>
             <span class="post-date">November 2025</span>
           </div>
           <h3>Carbon Markets and AI: Building the Intelligence Layer for a Net-Zero Economy</h3>
-          <p>Voluntary and compliance carbon markets are scaling rapidly. Nexsun's approach to carbon intelligence — price discovery, credit validation, and portfolio optimization.</p>
+          <p>Voluntary and compliance carbon markets are scaling rapidly. Nexsun's approach to carbon intelligence: price discovery, credit validation, and portfolio optimization.</p>
           <div class="post-footer">
             <div class="post-author">
               <div class="author-avatar">BM</div>
@@ -622,13 +745,13 @@
       <div>
         <div class="section-tag" style="background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.3);color:var(--sun);">Stay Informed</div>
         <h2>Intelligence Delivered to <span>Your Inbox</span></h2>
-        <p>New articles, market insights, and platform updates — sent monthly. No spam, no noise. Just the intelligence that matters.</p>
+        <p>New resources, market insights, and platform updates sent monthly. No spam, no noise. Just the intelligence that matters.</p>
       </div>
       <div class="nl-form">
         <input type="text" placeholder="Your full name" id="nl-name">
         <input type="email" placeholder="Work email" id="nl-email">
         <input type="text" placeholder="Company (optional)" id="nl-company">
-        <button onclick="nlSubmit()">Subscribe to the Blog →</button>
+        <button onclick="nlSubmit()">Subscribe to Resources →</button>
       </div>
     </div>
   </div>
@@ -643,44 +766,40 @@
     <!-- Links columns -->
     <div class="footer-top">
       <div class="footer-col">
-        <h4>Important Links</h4>
+        <h4>Platform</h4>
         <ul>
-          <li><a href="industries.html">Who We Serve</a></li>
+          <li><a href="platform.html">Platform Overview</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
           <li><a href="modules.html">Modules</a></li>
-          <li><a href="product.html">How It Works</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="trust.html">Trust Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="why-nexsun.html">Why Nexsun.ai</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="partners.html">Partner Centre</a></li>
+          <li><a href="investors.html">Investor Centre</a></li>
+          <li><a href="press.html">Press &amp; Media</a></li>
           <li><a href="careers.html">Careers</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Useful Links</h4>
+        <h4>Resources</h4>
         <ul>
-          <li><a href="product.html">Capabilities</a></li>
-          <li><a href="use-cases.html">Why Nexsun.ai</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="industries.html">Industries &amp; Users</a></li>
-          <li><a href="trust.html">Trust &amp; Security</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a>
-      <a href="investors.html">Investor Centre</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Industries</h4>
-        <ul>
-          <li><a href="industries.html">Energy Trading &amp; Utilities</a></li>
-          <li><a href="industries.html">Mining, Metals &amp; Agriculture</a></li>
-          <li><a href="industries.html">Renewables &amp; Carbon Markets</a></li>
-          <li><a href="industries.html">Transportation &amp; Logistics</a></li>
-          <li><a href="industries.html">Financial Institutions &amp; Investors</a></li>
-          <li><a href="industries.html">Governments &amp; Regulators</a></li>
-          <li><a href="industries.html">Consultants, Analysts &amp; Creators</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="blog.html">Use Cases</a></li>
+          <li><a href="blog.html">Platform Briefs</a></li>
+          <li><a href="blog.html">Case Studies</a></li>
+          <li><a href="blog.html">Events &amp; Media</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact Us</h4>
-        <div class="footer-contact-item">130 5920 No. Two Road<br>Richmond BC V7C 4R9</div>
+        <div class="footer-contact-item">130, 5920 No. Two Road<br>Richmond BC V7C 4R9</div>
         <div class="footer-contact-item"><a href="mailto:info@nexsun.ai" style="color:var(--sun-bright)">info@nexsun.ai</a></div>
         <div class="footer-contact-item"><a href="tel:6047609015">1-604-760-9015</a></div>
         <div class="footer-contact-item" style="margin-top:8px;"><a href="https://AEPG.ca">AEPG.ca &#8599;</a></div>
@@ -695,25 +814,25 @@
         <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sun-deep);margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
       <!-- Social Icons -->
       <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
-        <a href="https://www.linkedin.com/company/nexsun-ai" target="_blank" aria-label="LinkedIn"
+        <a href="https://www.linkedin.com/company/nexsun-ai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
            style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
            onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
            onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <a href="https://x.com/NexsunAI" target="_blank" aria-label="X / Twitter"
+        <a href="https://x.com/NexsunAI" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
            style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
            onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
            onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.726-8.851L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <a href="https://www.youtube.com/@Nexsun.aiplatform" target="_blank" aria-label="YouTube"
+        <a href="https://www.youtube.com/@Nexsun.aiplatform" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
            style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
            onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
            onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </a>
-        <a href="https://www.instagram.com/nexsun.ai/" target="_blank" aria-label="Instagram"
+        <a href="https://www.instagram.com/nexsun.ai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
            style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
            onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
            onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
@@ -723,8 +842,9 @@
       </div>
       <div class="footer-newsletter">
         <h3>Stay ahead of the market</h3>
-        <p>Get Nexsun's latest AI insights, platform updates, and energy market intelligence — delivered monthly.</p>
+        <p>Get the latest AI insights from Nexsun.ai, platform updates, and energy market intelligence delivered monthly.</p>
         <div class="fn-field">
+          <input type="text" placeholder="Full name" id="fn-name">
           <input type="email" placeholder="Work email" id="fn-email">
           <input type="text" placeholder="Company" id="fn-company">
         </div>
@@ -891,7 +1011,7 @@ window.addEventListener('scroll', () => { scrollBtn.classList.toggle('visible', 
   </div>
   <div class="nxs-body">
     <div class="nxs-welcome">
-      <p>👋 Welcome to <strong>Nexsun.ai</strong> — the decision layer for traded markets.<br><br>How can we help you today?</p>
+      <p>👋 Welcome to <strong>Nexsun.ai</strong>, the decision layer for traded markets.<br><br>How can we help you today?</p>
     </div>
     <div class="nxs-actions">
       <a href="contact.html" class="nxs-action-btn"><span class="nxs-ico">🚀</span> Book a Live Demo</a>
@@ -948,7 +1068,7 @@ setTimeout(function(){ var n=document.getElementById('nxs-notif'); if(n) n.style
   }
   .cookie-decline:hover { background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.8); }
 </style>
-  <p>🍪 We use cookies to improve your experience, analyse site traffic, and personalise content. By clicking <strong style="color:#fff;">Accept All</strong>, you agree to our use of cookies. <a href="privacy.html">Privacy Policy</a> · <a href="cookies.html">Cookie Policy</a></p>
+  <p>🍪 We use cookies to improve your experience, analyze site traffic, and personalize content. By clicking <strong style="color:#fff;">Accept All</strong>, you agree to our use of cookies. <a href="privacy.html">Privacy Policy</a> · <a href="cookies.html">Cookie Policy</a></p>
   <div class="cookie-btns">
     <button class="cookie-decline" onclick="cookieChoice(false)">Decline</button>
     <button class="cookie-accept" onclick="cookieChoice(true)">Accept All</button>

@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Nexsun.ai - Defining the Decision Intelligence Layer</title>
+<meta name="description" content="Nexsun.ai defines the decision intelligence layer for complex markets. Learn why a dedicated decision layer is essential alongside ETRM, CTRM, and analytics platforms.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nexsun.ai/why-nexsun.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Why Nexsun.ai - Defining the Decision Intelligence Layer">
+<meta property="og:description" content="Nexsun.ai defines the decision intelligence layer for complex markets. Data has scaled. Systems have multiplied. Decision-making remains fragmented. Nexsun.ai addresses this gap.">
+<meta property="og:image" content="https://nexsun.ai/og-image.jpg">
+<meta property="og:url" content="https://nexsun.ai/why-nexsun.html">
+<meta property="og:site_name" content="Nexsun.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Nexsun.ai - Defining the Decision Intelligence Layer">
+<meta name="twitter:description" content="Nexsun.ai defines the decision intelligence layer for complex markets. Data has scaled. Systems have multiplied. Decision-making remains fragmented.">
+<meta name="twitter:image" content="https://nexsun.ai/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="logo-color.svg">
+<link rel="apple-touch-icon" href="logo-color.svg">
+<meta name="theme-color" content="#1E3A8A">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Why Nexsun.ai",
+  "url": "https://nexsun.ai/why-nexsun.html",
+  "description": "Nexsun.ai is built for a structural shift in how organizations operate in complex markets. It establishes a unified layer where market signals, strategy, and execution converge.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Nexsun.ai",
+    "url": "https://nexsun.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nexsun.ai",
+    "url": "https://nexsun.ai",
+    "logo": "https://nexsun.ai/logo.svg"
+  }
+}
+</script>
+<style>
+  :root {
+    --sun:        #F59E0B;
+    --sun-bright: #FBBF24;
+    --sun-deep:   #D97706;
+    --sun-pale:   #FEF3C7;
+    --sky:        #0EA5E9;
+    --sky-mid:    #38BDF8;
+    --sky-light:  #E0F2FE;
+    --navy:       #1E3A8A;
+    --navy-mid:   #1D4ED8;
+    --green:      #16A34A;
+    --green-light:#DCFCE7;
+    --logo-green:  #22C55E;
+    --logo-pale:   #F0FDF4;
+    --bg:         #FFFBF0;
+    --bg2:        #FFF7E6;
+    --white:      #FFFFFF;
+    --text:       #0F172A;
+    --text-mid:   #334155;
+    --text-muted: #64748B;
+    --border:     rgba(245,158,11,0.2);
+    --card-shadow:0 4px 24px rgba(245,158,11,0.08), 0 1px 4px rgba(0,0,0,0.06);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,sans-serif; overflow-x:hidden; }
+  a { color:inherit; text-decoration:none; }
+
+  /* SUN CANVAS */
+  #sun-canvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:.55; }
+
+  /* SHARED */
+  .container { max-width:1200px; margin:0 auto; padding:0 32px; position:relative; z-index:2; }
+  .section { padding:100px 0; }
+  .section-tag {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--sun-pale); border:1px solid rgba(245,158,11,0.3);
+    color:var(--sun-deep); font-size:11px; font-weight:700;
+    letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
+    border-radius:20px; margin-bottom:20px;
+  }
+  .section-tag::before { content:'☀'; font-size:12px; }
+  .section-heading { font-size:clamp(30px,4vw,52px); font-weight:800; line-height:1.15; margin-bottom:20px; color:var(--navy); }
+  .section-heading span { color:var(--sun-deep); }
+  .section-sub { color:var(--text-muted); font-size:17px; line-height:1.75; max-width:680px; }
+
+  /* TOPBAR */
+  .topbar {
+    background:var(--navy);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .topbar-inner {
+    max-width:1200px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; justify-content:flex-end;
+    height:34px; gap:0;
+  }
+  .topbar-inner a {
+    font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+    color:var(--sun); text-decoration:none; padding:0 16px; transition:color .2s;
+    border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
+  }
+  .topbar-inner a:last-child { border-right:none; padding-right:0; }
+  .topbar-inner a:hover { color:#fff; }
+
+  /* NAV */
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,251,240,0.88); backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(245,158,11,0.15);
+    box-shadow:0 1px 20px rgba(245,158,11,0.08);
+    overflow:visible;
+  }
+  .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
+  .nav-links { display:flex; align-items:center; gap:32px; margin-left:auto; }
+  .nav-links a { font-size:14px; color:var(--text-mid); font-weight:500; transition:color .2s; }
+  .nav-links a:hover { color:var(--sun-deep); }
+  .btn-cta {
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:#fff; font-weight:700; padding:11px 24px; border-radius:8px;
+    font-size:14px; border:none; cursor:pointer; transition:all .2s;
+    box-shadow:0 4px 14px rgba(245,158,11,0.4); display:inline-block;
+  }
+  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(245,158,11,0.5); }
+
+  /* NAV DROPDOWN */
+  .nav-dropdown { position:relative; display:flex; align-items:center; }
+  .nav-dropdown > a { display:flex; align-items:center; gap:4px; cursor:pointer; }
+  .nav-dropdown > a::after { content:''; display:inline-block; width:0; height:0;
+    border-left:4px solid transparent; border-right:4px solid transparent;
+    border-top:4px solid currentColor; margin-top:1px; transition:transform .2s; }
+  .nav-dropdown:hover > a::after { transform:rotate(180deg); }
+  .nav-dropdown-menu {
+    position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-6px);
+    background:white; border:1px solid rgba(245,158,11,0.2);
+    border-radius:12px; padding:6px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(245,158,11,0.08);
+    min-width:160px; opacity:0; visibility:hidden;
+    transition:opacity .2s, transform .2s, visibility .2s;
+    z-index:200;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu {
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a {
+    display:block; padding:9px 16px; border-radius:8px;
+    font-size:13.5px; color:var(--text-mid); font-weight:500;
+    transition:background .15s, color .15s; white-space:nowrap;
+  }
+  .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
+  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(245,158,11,0.1); margin:4px 8px; }
+
+  /* MOBILE NAV */
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;margin-left:auto;flex-shrink:0;}
+  .nav-hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;display:block;}
+  .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+  .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+  .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(245,158,11,0.12);font-size:15px;font-weight:500;color:#334155;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a:hover{color:var(--sun-deep);}
+  #nxs-mob-nav a:last-child{border-bottom:none;}
+
+  /* SCROLL TO TOP */
+  #scroll-top {
+    position:fixed; bottom:32px; right:32px; z-index:999;
+    width:44px; height:44px; border-radius:50%;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:white; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 16px rgba(245,158,11,0.45);
+    opacity:0; visibility:hidden; transform:translateY(12px);
+    transition:opacity .3s, visibility .3s, transform .3s;
+  }
+  #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
+  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(245,158,11,0.55); }
+  #scroll-top svg { width:18px; height:18px; }
+
+  /* FOOTER */
+  footer { background:#0D1B3E; padding:64px 0 32px; border-top:3px solid var(--sun); }
+  .footer-top {
+    display:grid; grid-template-columns:1fr 1fr 1.6fr 1fr;
+    gap:40px; margin-bottom:48px; align-items:start;
+    padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; color:var(--sun-bright); }
+  .footer-col ul { list-style:none; }
+  .footer-col ul li { padding:5px 0; font-size:14px; color:rgba(255,255,255,0.75); cursor:pointer; transition:color .2s; }
+  .footer-col ul li:hover, .footer-col ul li a:hover { color:var(--sun-deep); }
+  .footer-col ul li a { color:rgba(255,255,255,0.75); }
+  .footer-contact-item { font-size:14px; color:rgba(255,255,255,0.75); padding:5px 0; line-height:1.6; }
+  .footer-contact-item a { color:rgba(255,255,255,0.75); }
+  .footer-contact-item a:hover { color:var(--sun-deep); }
+  .footer-newsletter-row {
+    display:grid; grid-template-columns:1fr 1fr; gap:64px;
+    padding:40px 48px; border-radius:16px; margin-bottom:48px; align-items:center;
+    background:linear-gradient(135deg,#FEFAE8 0%,#FFF8D6 50%,#FAF0B8 100%);
+  }
+  .footer-brand { display:flex; flex-direction:column; justify-content:center; }
+  .footer-brand p { color:var(--navy); font-size:14px; line-height:1.75; margin:16px 0 8px; }
+  .footer-newsletter h3 { font-size:18px; font-weight:700; color:var(--navy); margin-bottom:10px; line-height:1.3; }
+  .footer-newsletter p { font-size:13px; color:rgba(30,58,138,0.65); margin-bottom:20px; line-height:1.6; }
+  .fn-field { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+  .fn-field input { background:#fff; border:1px solid rgba(30,58,138,0.15); border-radius:8px; padding:12px 14px; font-size:14px; color:var(--navy); outline:none; transition:border-color .2s; font-family:inherit; }
+  .fn-field input::placeholder { color:rgba(30,58,138,0.35); }
+  .fn-field input:focus { border-color:var(--sun); }
+  .fn-check { display:flex; align-items:flex-start; gap:10px; margin-bottom:14px; }
+  .fn-check input[type=checkbox] { margin-top:3px; accent-color:var(--sun); width:14px; height:14px; flex-shrink:0; cursor:pointer; }
+  .fn-check label { font-size:12px; color:rgba(30,58,138,0.6); line-height:1.5; cursor:pointer; }
+  .fn-legal { font-size:11px; color:rgba(30,58,138,0.45); margin-bottom:16px; line-height:1.5; }
+  .fn-btn { background:linear-gradient(135deg,var(--sun),var(--sun-deep)); color:#fff; border:none; border-radius:8px; padding:12px 24px; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer; width:100%; transition:opacity .2s, transform .2s; }
+  .fn-btn:hover { opacity:.88; transform:translateY(-1px); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+  .footer-bottom p { font-size:12px; color:rgba(255,255,255,0.4); }
+  .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
+  .footer-legal a { font-size:12px; color:rgba(255,255,255,0.45); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
+  .footer-legal a:last-child { border-right:none; }
+  .footer-legal a:hover { color:rgba(255,255,255,0.85); }
+
+  /* DIVIDER */
+  .sun-divider {
+    height:5px;
+    background:linear-gradient(90deg, transparent 0%, #F59E0B 18%, #1E3A8A 50%, #22C55E 82%, transparent 100%);
+    position:relative; z-index:2; overflow:visible;
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:#fff; font-weight:700; padding:16px 30px; border-radius:10px;
+    font-size:15px; border:none; cursor:pointer; transition:all .2s;
+    box-shadow:0 6px 20px rgba(245,158,11,0.4); display:inline-block;
+  }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(245,158,11,0.5); }
+  .btn-secondary {
+    background:transparent; color:var(--navy); font-weight:600;
+    padding:16px 30px; border-radius:10px; font-size:15px;
+    border:2px solid rgba(30,58,138,0.25); cursor:pointer; transition:all .2s; display:inline-block;
+  }
+  .btn-secondary:hover { background:rgba(30,58,138,0.05); border-color:var(--navy); }
+
+  /* SOLAR ANIMATIONS */
+  @keyframes iconFloat {
+    0%,100% { transform:translateY(0px); }
+    50%      { transform:translateY(-8px); }
+  }
+  .solar-card-animated {
+    opacity:0; transform:translateY(20px);
+    transition:opacity 0.55s ease, transform 0.55s ease;
+  }
+  .solar-card-animated.visible {
+    opacity:1; transform:translateY(0);
+  }
+
+  /* PAGE HERO */
+  .page-hero {
+    padding:180px 0 100px;
+    background:linear-gradient(160deg, #FFFBF0 0%, #FFF3CD 30%, #E0F2FE 60%, #FEF9C3 100%);
+    background-size:300% 300%;
+    animation:heroBgBreath 14s ease-in-out infinite;
+    position:relative; overflow:hidden;
+  }
+  @keyframes heroBgBreath {
+    0%,100% { background-position:0% 50%; }
+    33%      { background-position:60% 30%; }
+    66%      { background-position:100% 70%; }
+  }
+  canvas.hero-canvas { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+  .page-hero .container { position:relative; z-index:1; }
+  .page-hero-eyebrow {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--sun-pale); border:1px solid rgba(245,158,11,0.4);
+    color:var(--sun-deep); font-size:11px; font-weight:700;
+    letter-spacing:2.5px; text-transform:uppercase; padding:6px 16px;
+    border-radius:20px; margin-bottom:24px;
+  }
+  .page-hero h1 {
+    font-size:clamp(36px,5vw,64px); font-weight:900; line-height:1.08;
+    color:var(--navy); margin-bottom:24px;
+  }
+  .page-hero h1 span { color:var(--sun-deep); }
+  .page-hero-sub {
+    font-size:18px; line-height:1.75; color:var(--text-mid);
+    max-width:680px; margin-bottom:40px;
+  }
+  .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
+
+  /* CATEGORY SECTION */
+  #category { background:white; }
+  .category-intro { text-align:center; max-width:720px; margin:0 auto 48px; }
+  .category-intro p { font-size:17px; color:var(--text-mid); line-height:1.8; }
+  .category-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .category-card {
+    background:white; border:1px solid var(--border); border-radius:16px;
+    padding:28px 24px; text-align:center; box-shadow:var(--card-shadow);
+    transition:all .3s;
+  }
+  .category-card:hover { border-color:rgba(245,158,11,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(245,158,11,0.14); }
+  .category-card-icon { font-size:32px; margin-bottom:14px; }
+  .category-card h3 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px; }
+  .category-card p { font-size:13px; color:var(--text-muted); line-height:1.7; }
+  .category-statement {
+    margin-top:48px; padding:32px 40px; text-align:center;
+    background:linear-gradient(135deg,var(--navy) 0%,#1D4ED8 100%);
+    border-radius:20px;
+  }
+  .category-statement p { font-size:17px; color:rgba(255,255,255,0.85); line-height:1.8; }
+  .category-statement strong { color:var(--sun-bright); font-size:19px; display:block; margin-top:12px; font-weight:800; }
+
+  /* DIFFERENTIATOR SECTIONS */
+  .diff-section { padding:100px 0; }
+  .diff-section.light { background:var(--bg); }
+  .diff-section.dark { background:#0D1B3E; }
+  .diff-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+  .diff-grid.reverse { direction:rtl; }
+  .diff-grid.reverse > * { direction:ltr; }
+  .diff-content {}
+  .diff-content .section-tag-dark {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.3);
+    color:var(--sun-bright); font-size:11px; font-weight:700;
+    letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
+    border-radius:20px; margin-bottom:20px;
+  }
+  .diff-content .section-tag-dark::before { content:'☀'; font-size:12px; }
+  .diff-content h2 { font-size:clamp(26px,3.5vw,40px); font-weight:800; line-height:1.2; margin-bottom:20px; }
+  .diff-content p { font-size:16px; line-height:1.8; margin-bottom:16px; }
+  .diff-content ul { list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .diff-content ul li { font-size:15px; line-height:1.7; padding-left:22px; position:relative; }
+  .diff-content ul li::before { content:''; position:absolute; left:0; top:10px; width:8px; height:8px; border-radius:50%; }
+  .diff-visual {
+    border-radius:20px; padding:40px; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; min-height:320px;
+    position:relative; overflow:hidden;
+  }
+  .diff-visual-icon { font-size:80px; margin-bottom:20px; }
+  .diff-visual-label {
+    font-size:14px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+    text-align:center;
+  }
+
+  /* LIGHT DIFF */
+  .diff-section.light .diff-content h2 { color:var(--navy); }
+  .diff-section.light .diff-content p { color:var(--text-mid); }
+  .diff-section.light .diff-content ul li { color:var(--text-mid); }
+  .diff-section.light .diff-content ul li::before { background:var(--sun-deep); }
+  .diff-section.light .diff-visual { background:linear-gradient(135deg,var(--sun-pale),rgba(245,158,11,0.05)); border:1px solid rgba(245,158,11,0.2); }
+  .diff-section.light .diff-visual-label { color:var(--navy); }
+
+  /* DARK DIFF */
+  .diff-section.dark .diff-content h2 { color:white; }
+  .diff-section.dark .diff-content p { color:rgba(255,255,255,0.75); }
+  .diff-section.dark .diff-content ul li { color:rgba(255,255,255,0.7); }
+  .diff-section.dark .diff-content ul li::before { background:var(--sun); }
+  .diff-section.dark .diff-visual { background:rgba(255,255,255,0.04); border:1px solid rgba(245,158,11,0.15); }
+  .diff-section.dark .diff-visual-label { color:rgba(255,255,255,0.6); }
+
+  /* VISUAL FEATURE BOXES */
+  .feature-boxes { display:flex; flex-direction:column; gap:12px; width:100%; }
+  .feature-box {
+    border-radius:12px; padding:14px 18px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .feature-box-icon { font-size:20px; flex-shrink:0; }
+  .feature-box-text { font-size:13px; font-weight:600; }
+
+  /* LIGHT feature boxes */
+  .diff-section.light .feature-box { background:white; border:1px solid rgba(245,158,11,0.2); }
+  .diff-section.light .feature-box-text { color:var(--navy); }
+
+  /* DARK feature boxes */
+  .diff-section.dark .feature-box { background:rgba(255,255,255,0.06); border:1px solid rgba(245,158,11,0.15); }
+  .diff-section.dark .feature-box-text { color:rgba(255,255,255,0.85); }
+
+  /* COMPARISON TABLE */
+  #comparison { background:#0D1B3E; padding:100px 0; }
+  #comparison .section-heading { color:white; }
+  #comparison .section-sub { color:rgba(255,255,255,0.7); }
+  .comp-table-wrap { overflow-x:auto; margin-top:48px; border-radius:16px; }
+  .comp-table {
+    width:100%; border-collapse:collapse; background:rgba(255,255,255,0.03);
+    border:1px solid rgba(245,158,11,0.15); border-radius:16px; overflow:hidden;
+  }
+  .comp-table th {
+    background:rgba(245,158,11,0.12); padding:16px 20px;
+    font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--sun-bright); text-align:left; border-bottom:1px solid rgba(245,158,11,0.2);
+    white-space:nowrap;
+  }
+  .comp-table th:first-child { color:rgba(255,255,255,0.5); background:rgba(255,255,255,0.04); }
+  .comp-table th.highlight { background:rgba(245,158,11,0.2); border-left:2px solid rgba(245,158,11,0.4); }
+  .comp-table td {
+    padding:14px 20px; font-size:14px; color:rgba(255,255,255,0.7);
+    border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:top;
+    line-height:1.5;
+  }
+  .comp-table td:first-child { font-weight:600; color:rgba(255,255,255,0.85); background:rgba(255,255,255,0.02); }
+  .comp-table td.highlight { background:rgba(245,158,11,0.06); color:rgba(255,255,255,0.9); border-left:2px solid rgba(245,158,11,0.25); }
+  .comp-table td.highlight.strong { color:var(--sun-bright); font-weight:600; }
+  .comp-table tr:last-child td { border-bottom:none; }
+  .comp-table tr:hover td { background:rgba(255,255,255,0.03); }
+  .comp-table tr:hover td.highlight { background:rgba(245,158,11,0.1); }
+
+  /* OUTCOME SECTION */
+  #outcome { background:var(--bg); }
+  .outcome-cards { display:grid; grid-template-columns:repeat(5,1fr); gap:20px; margin-top:48px; }
+  .outcome-card {
+    background:white; border:1px solid var(--border); border-radius:16px;
+    padding:28px 20px; text-align:center; box-shadow:var(--card-shadow); transition:all .3s;
+  }
+  .outcome-card:hover { border-color:rgba(245,158,11,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(245,158,11,0.14); }
+  .outcome-card-icon { font-size:32px; margin-bottom:12px; }
+  .outcome-card h3 { font-size:15px; font-weight:700; color:var(--navy); }
+
+  /* CLOSING CTA */
+  #closing-cta {
+    background:linear-gradient(135deg,var(--navy) 0%,#1D4ED8 100%);
+    padding:100px 0; text-align:center;
+  }
+  #closing-cta h2 { font-size:clamp(28px,4vw,44px); font-weight:800; color:white; margin-bottom:16px; }
+  #closing-cta p { font-size:18px; color:rgba(255,255,255,0.75); margin-bottom:12px; max-width:600px; margin-left:auto; margin-right:auto; }
+  #closing-cta .closing-sub { font-size:16px; color:rgba(255,255,255,0.6); margin-bottom:40px; max-width:600px; margin-left:auto; margin-right:auto; }
+
+  /* RESPONSIVE */
+  @media(max-width:960px){
+    .topbar-inner a{padding:0 10px;font-size:10px;}
+    .category-cards{grid-template-columns:1fr 1fr!important;}
+    .diff-grid{grid-template-columns:1fr!important;gap:40px!important;}
+    .diff-grid.reverse{direction:ltr!important;}
+    .outcome-cards{grid-template-columns:repeat(3,1fr)!important;}
+  }
+  @media(max-width:768px){
+    .topbar{display:none!important;}
+    .nav-links{display:none!important;}
+    .nav-hamburger{display:flex!important;}
+    .container{padding:0 18px!important;}
+    .section{padding:56px 0!important;}
+    .section-heading{font-size:clamp(24px,6vw,32px)!important;}
+    .page-hero{padding:140px 0 60px!important;}
+    .page-hero h1{font-size:clamp(30px,8vw,42px)!important;}
+    .hero-ctas{flex-direction:column!important;}
+    .hero-ctas a{text-align:center!important;}
+    .category-cards{grid-template-columns:1fr!important;}
+    .outcome-cards{grid-template-columns:1fr 1fr!important;}
+    .footer-top{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+    .footer-bottom{flex-direction:column!important;align-items:flex-start!important;}
+    .footer-newsletter-row{grid-template-columns:1fr!important;gap:32px!important;padding:24px!important;}
+    .category-statement{padding:24px!important;}
+    .comp-table th,.comp-table td{padding:10px 12px!important;font-size:12px!important;}
+    .sun-divider{display:none;}
+    .diff-section{padding:56px 0!important;}
+  }
+  @media(max-width:480px){
+    .footer-top{grid-template-columns:1fr!important;}
+    .outcome-cards{grid-template-columns:1fr!important;}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="sun-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a href="https://AEPG.ca" target="_blank" rel="noopener noreferrer">AEPG.ca</a>
+      <a href="blog.html">Resources</a>
+      <a href="investors.html">Investor Centre</a>
+      <a href="partners.html">Partner Centre</a>
+      <a href="trust.html">Trust Centre</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+  <div class="nav-inner">
+    <a href="index.html">
+      <img src="logo-color.svg" alt="Nexsun.ai" style="height:120px;width:auto;display:block;">
+    </a>
+    <button class="nav-hamburger" id="nxs-hamburger" onclick="toggleMobNav()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="platform.html">Platform</a>
+        <div class="nav-dropdown-menu">
+          <a href="platform.html">Platform Overview</a>
+          <div class="menu-divider"></div>
+          <a href="modules.html">Modules</a>
+          <a href="technology.html">Technology</a>
+          <div class="menu-divider"></div>
+          <a href="trust.html">Trust Centre</a>
+        </div>
+      </div>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="applications.html">Applications</a>
+      <a href="why-nexsun.html" style="color:var(--sun-deep);font-weight:700;">Why Nexsun.ai</a>
+      <div class="nav-dropdown">
+        <a href="about.html">Company</a>
+        <div class="nav-dropdown-menu">
+          <a href="about.html">About Us</a>
+          <a href="investors.html">Investor Centre</a>
+          <a href="press.html">Press &amp; Media</a>
+          <div class="menu-divider"></div>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <a href="engage.html" class="btn-cta">Engage</a>
+    </div>
+  </div>
+</nav>
+<!-- MOBILE NAV PANEL -->
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#fff;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,58,138,0.12);border-bottom:3px solid #F59E0B;">
+  <a href="platform.html">Platform</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="applications.html">Applications</a>
+  <a href="why-nexsun.html">Why Nexsun.ai</a>
+  <a href="about.html">Company</a>
+  <a href="blog.html">Resources</a>
+  <a href="investors.html">Investor Centre</a>
+  <a href="partners.html">Partner Centre</a>
+  <a href="trust.html">Trust Centre</a>
+  <a href="engage.html" style="color:#F59E0B;font-weight:700;">Engage</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <canvas class="hero-canvas"></canvas>
+  <div class="container">
+    <div class="page-hero-eyebrow">Why Nexsun.ai</div>
+    <h1>Defining the<br><span>Decision Intelligence Layer</span></h1>
+    <p class="page-hero-sub">Nexsun.ai is built for a structural shift in how organizations operate in complex markets. Data has scaled. Systems have multiplied. Decision-making remains fragmented. Nexsun.ai addresses this gap by establishing a unified layer where market signals, strategy, and execution converge.</p>
+    <div class="hero-ctas">
+      <a href="engage.html" class="btn-primary">Book a Pilot</a>
+      <a href="how-it-works.html" class="btn-secondary">How It Works</a>
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<!-- CATEGORY SECTION -->
+<section id="category" class="section">
+  <div class="container">
+    <div class="category-intro">
+      <div class="section-tag" style="margin-bottom:24px;">A Different Category</div>
+      <h2 class="section-heading" style="text-align:center;">A Different Category</h2>
+      <p>Most platforms fall into three categories:</p>
+    </div>
+    <div class="category-cards">
+      <div class="category-card solar-card-animated">
+        <div class="category-card-icon">&#128451;</div>
+        <h3>Systems of Record (ETRM, CTRM, ERP)</h3>
+        <p>Manage data and transactions. Essential for operational accuracy and compliance record-keeping.</p>
+      </div>
+      <div class="category-card solar-card-animated">
+        <div class="category-card-icon">&#128202;</div>
+        <h3>Data and Analytics Platforms</h3>
+        <p>Aggregate and interpret data. Provide analytical support for understanding historical and predictive trends.</p>
+      </div>
+      <div class="category-card solar-card-animated">
+        <div class="category-card-icon">&#128101;</div>
+        <h3>Workflow and Collaboration Tools</h3>
+        <p>Manage processes and communication. Enable teams to coordinate tasks and share information.</p>
+      </div>
+    </div>
+    <div class="category-statement">
+      <p>These systems are necessary. They are not sufficient. They manage data and transactions. They do not manage decisions.</p>
+      <strong>Nexsun.ai defines the decision intelligence layer.</strong>
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<!-- DIFFERENTIATOR 1: Signal-to-Decision Architecture (light) -->
+<section class="diff-section light">
+  <div class="container">
+    <div class="diff-grid">
+      <div class="diff-content solar-card-animated">
+        <div class="section-tag">Differentiator 01</div>
+        <h2>Signal-to-Decision Architecture</h2>
+        <p>Nexsun.ai connects fragmented data, analysis, and workflows into a continuous decision system. It ingests structured and unstructured data, extracts high-value signals, and links them directly to decision formation and execution.</p>
+        <p>This reduces the gap between insight and action.</p>
+      </div>
+      <div class="diff-visual solar-card-animated">
+        <div class="feature-boxes">
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128268;</div>
+            <div class="feature-box-text">Continuous data ingestion across global markets</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#9889;</div>
+            <div class="feature-box-text">High-value signal extraction in real time</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128279;</div>
+            <div class="feature-box-text">Direct link from signal to decision structure</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128200;</div>
+            <div class="feature-box-text">Execution-ready outputs with full decision context</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR 2: Data-First, AI-Native (dark) -->
+<section class="diff-section dark">
+  <div class="container">
+    <div class="diff-grid reverse">
+      <div class="diff-content solar-card-animated">
+        <div class="section-tag-dark">Differentiator 02</div>
+        <h2>Data-First, AI-Native</h2>
+        <p>Nexsun.ai is designed to operate on the reality of modern markets:</p>
+        <ul>
+          <li>Large volumes of unstructured data (news, policy, logistics, sentiment)</li>
+          <li>Rapidly changing conditions across regions and value chains</li>
+          <li>The need for real-time interpretation, not static reporting</li>
+        </ul>
+        <p style="margin-top:16px;">The platform uses AI to continuously analyze and synthesize these inputs into decision-grade intelligence.</p>
+      </div>
+      <div class="diff-visual solar-card-animated">
+        <div class="feature-boxes">
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128240;</div>
+            <div class="feature-box-text">News, policy, logistics, and sentiment data</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#127758;</div>
+            <div class="feature-box-text">Global, multi-region market coverage</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#129302;</div>
+            <div class="feature-box-text">AI-powered synthesis and pattern recognition</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128248;</div>
+            <div class="feature-box-text">Real-time interpretation, not static dashboards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR 3: Glassbox (light) -->
+<section class="diff-section light">
+  <div class="container">
+    <div class="diff-grid">
+      <div class="diff-content solar-card-animated">
+        <div class="section-tag">Differentiator 03</div>
+        <h2>Explainable Intelligence (Glassbox)</h2>
+        <p>Every output is transparent and defensible. Nexsun.ai provides full visibility into:</p>
+        <ul>
+          <li>Source data</li>
+          <li>Analytical logic</li>
+          <li>Assumptions and reasoning</li>
+        </ul>
+        <p style="margin-top:16px;">This enables organizations to act with confidence while meeting governance and compliance requirements.</p>
+      </div>
+      <div class="diff-visual solar-card-animated">
+        <div class="feature-boxes">
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128271;</div>
+            <div class="feature-box-text">Full source data traceability</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128065;</div>
+            <div class="feature-box-text">Transparent analytical logic</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#9989;</div>
+            <div class="feature-box-text">Auditable assumptions and reasoning</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128206;</div>
+            <div class="feature-box-text">Governance and compliance ready</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR 4: SoDR (dark) -->
+<section class="diff-section dark">
+  <div class="container">
+    <div class="diff-grid reverse">
+      <div class="diff-content solar-card-animated">
+        <div class="section-tag-dark">Differentiator 04</div>
+        <h2>System of Decision Record (SoDR)</h2>
+        <p>Nexsun.ai captures the full lifecycle of decision-making:</p>
+        <ul>
+          <li>Inputs, signals, and analysis</li>
+          <li>Strategic positions and assumptions</li>
+          <li>Collaboration and approvals</li>
+          <li>Outcomes and evolution over time</li>
+        </ul>
+        <p style="margin-top:16px;">This creates a persistent, auditable record of how decisions are made.</p>
+      </div>
+      <div class="diff-visual solar-card-animated">
+        <div class="feature-boxes">
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128196;</div>
+            <div class="feature-box-text">Persistent decision logs from signal to outcome</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128218;</div>
+            <div class="feature-box-text">Full position and strategy version history</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128101;</div>
+            <div class="feature-box-text">Stakeholder collaboration and approval records</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128736;</div>
+            <div class="feature-box-text">Institutional memory for future decision-making</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR 5: Multi-Lens (light) -->
+<section class="diff-section light">
+  <div class="container">
+    <div class="diff-grid">
+      <div class="diff-content solar-card-animated">
+        <div class="section-tag">Differentiator 05</div>
+        <h2>Multi-Lens Market Analysis</h2>
+        <p>Markets are not one-dimensional. Nexsun.ai evaluates every situation across multiple perspectives:</p>
+        <ul>
+          <li>Buyer</li>
+          <li>Supplier</li>
+          <li>Intermediary</li>
+          <li>Regulator</li>
+        </ul>
+        <p style="margin-top:16px;">This provides a more complete understanding of positioning, risk, and opportunity.</p>
+      </div>
+      <div class="diff-visual solar-card-animated">
+        <div class="feature-boxes">
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128722;</div>
+            <div class="feature-box-text">Buyer perspective: demand signals and purchase strategy</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#127981;</div>
+            <div class="feature-box-text">Supplier perspective: capacity, pricing, and risk</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128275;</div>
+            <div class="feature-box-text">Intermediary perspective: spread and arbitrage dynamics</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#9878;</div>
+            <div class="feature-box-text">Regulator perspective: policy and compliance landscape</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR 6: Built for Real Workflows (dark) -->
+<section class="diff-section dark">
+  <div class="container">
+    <div class="diff-grid reverse">
+      <div class="diff-content solar-card-animated">
+        <div class="section-tag-dark">Differentiator 06</div>
+        <h2>Built for Real Workflows</h2>
+        <p>Nexsun.ai reflects how organizations actually operate:</p>
+        <ul>
+          <li>Trading and commercial strategy</li>
+          <li>Risk and portfolio management</li>
+          <li>Operations and supply chain</li>
+          <li>Strategy and capital allocation</li>
+        </ul>
+        <p style="margin-top:16px;">It connects these functions within a single decision framework.</p>
+      </div>
+      <div class="diff-visual solar-card-animated">
+        <div class="feature-boxes">
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128200;</div>
+            <div class="feature-box-text">Trading and commercial strategy</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128737;</div>
+            <div class="feature-box-text">Risk and portfolio management</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#9881;</div>
+            <div class="feature-box-text">Operations and supply chain</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#127919;</div>
+            <div class="feature-box-text">Strategy and capital allocation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR 7: Enterprise-Ready by Design (light) -->
+<section class="diff-section light">
+  <div class="container">
+    <div class="diff-grid">
+      <div class="diff-content solar-card-animated">
+        <div class="section-tag">Differentiator 07</div>
+        <h2>Enterprise-Ready by Design</h2>
+        <ul>
+          <li>Operates alongside ETRM, CTRM, ERP, and data platforms</li>
+          <li>Supports internal and external collaboration</li>
+          <li>Provides full traceability and auditability</li>
+          <li>Designed for multi-team, multi-region environments</li>
+        </ul>
+      </div>
+      <div class="diff-visual solar-card-animated">
+        <div class="feature-boxes">
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128451;</div>
+            <div class="feature-box-text">Operates alongside ETRM, CTRM, ERP, and data platforms</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128101;</div>
+            <div class="feature-box-text">Internal and external collaboration</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#128269;</div>
+            <div class="feature-box-text">Full traceability and auditability</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">&#127758;</div>
+            <div class="feature-box-text">Multi-team, multi-region environments</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<!-- COMPARISON TABLE -->
+<section id="comparison">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:8px;">
+      <div class="section-tag" style="background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.3);color:var(--sun-bright);">How Nexsun.ai Compares</div>
+      <h2 class="section-heading" style="color:white;text-align:center;">How Nexsun.ai Compares</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.7);margin:0 auto;text-align:center;">Modern enterprise stacks are built around data and transactions. Nexsun.ai introduces the missing layer: decisions.</p>
+    </div>
+    <div class="comp-table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Systems of Record (ETRM/CTRM/ERP)</th>
+            <th>Data &amp; Analytics Platforms</th>
+            <th class="highlight">Nexsun.ai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary Role</td>
+            <td>Manage transactions and operational data</td>
+            <td>Aggregate and analyze data</td>
+            <td class="highlight strong">Connect signals to decisions</td>
+          </tr>
+          <tr>
+            <td>Data Handling</td>
+            <td>Structured, internal data</td>
+            <td>Structured + some external data</td>
+            <td class="highlight strong">Structured + unstructured global data</td>
+          </tr>
+          <tr>
+            <td>Time Horizon</td>
+            <td>Historical and current state</td>
+            <td>Historical and predictive</td>
+            <td class="highlight strong">Real-time, continuous interpretation</td>
+          </tr>
+          <tr>
+            <td>Decision Support</td>
+            <td>Indirect</td>
+            <td>Analytical support</td>
+            <td class="highlight strong">Direct, structured decision-making</td>
+          </tr>
+          <tr>
+            <td>Workflow Integration</td>
+            <td>Operational workflows</td>
+            <td>Limited</td>
+            <td class="highlight strong">End-to-end decision workflows</td>
+          </tr>
+          <tr>
+            <td>Collaboration</td>
+            <td>Limited</td>
+            <td>Minimal</td>
+            <td class="highlight strong">Embedded (internal &amp; external)</td>
+          </tr>
+          <tr>
+            <td>Explainability</td>
+            <td>Low</td>
+            <td>Variable</td>
+            <td class="highlight strong">Full transparency (Glassbox)</td>
+          </tr>
+          <tr>
+            <td>Auditability</td>
+            <td>Transaction logs</td>
+            <td>Limited</td>
+            <td class="highlight strong">Full System of Decision Record (SoDR)</td>
+          </tr>
+          <tr>
+            <td>Outcome</td>
+            <td>Accurate records</td>
+            <td>Better analysis</td>
+            <td class="highlight strong">Faster, aligned, high-confidence decisions</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Simplified View -->
+    <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;margin-left:auto;margin-right:auto;">
+      <div style="background:rgba(255,255,255,0.06);border-radius:14px;padding:28px;border:1px solid rgba(255,255,255,0.1);">
+        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;">Traditional Stack</div>
+        <p style="color:rgba(255,255,255,0.8);font-size:15px;line-height:1.7;">Data → Reports → Interpretation → Decision</p>
+      </div>
+      <div style="background:rgba(245,158,11,0.1);border-radius:14px;padding:28px;border:1px solid rgba(245,158,11,0.25);">
+        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:12px;">Nexsun.ai</div>
+        <p style="color:rgba(255,255,255,0.9);font-size:15px;line-height:1.7;">Data → Signals → Structured Decisions → Execution Readiness → Record</p>
+      </div>
+    </div>
+
+    <!-- Architectural Positioning -->
+    <div style="text-align:center;margin-top:40px;">
+      <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.8;">Systems of record manage data.<br>Analytics platforms interpret data.<br><strong style="color:var(--sun-bright);">Nexsun.ai operationalizes decisions.</strong></p>
+    </div>
+
+    <!-- What This Means -->
+    <div style="margin-top:40px;max-width:700px;margin-left:auto;margin-right:auto;">
+      <h3 style="color:white;font-size:20px;text-align:center;margin-bottom:20px;">What This Means</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.1);">
+          <p style="color:rgba(255,255,255,0.85);font-size:14px;">Reduced latency between insight and action</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.1);">
+          <p style="color:rgba(255,255,255,0.85);font-size:14px;">Clear linkage between data, strategy, and execution</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.1);">
+          <p style="color:rgba(255,255,255,0.85);font-size:14px;">Alignment across teams and stakeholders</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.1);">
+          <p style="color:rgba(255,255,255,0.85);font-size:14px;">Decisions that are explainable, traceable, and repeatable</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Engage closing line -->
+    <div style="text-align:center;margin-top:40px;">
+      <p style="color:rgba(255,255,255,0.7);font-size:15px;">Nexsun.ai works with select organizations through structured pilot programs designed to demonstrate value in real operating environments.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<!-- OUTCOME SECTION -->
+<section id="outcome" class="section">
+  <div class="container" style="text-align:center;">
+    <div class="section-tag">The Outcome</div>
+    <h2 class="section-heading">The Outcome</h2>
+    <p class="section-sub" style="margin:0 auto;">Organizations move from fragmented analysis to structured decision-making.</p>
+    <div class="outcome-cards">
+      <div class="outcome-card solar-card-animated">
+        <div class="outcome-card-icon">&#9889;</div>
+        <h3>Faster Insight</h3>
+      </div>
+      <div class="outcome-card solar-card-animated">
+        <div class="outcome-card-icon">&#127919;</div>
+        <h3>Clearer Positioning</h3>
+      </div>
+      <div class="outcome-card solar-card-animated">
+        <div class="outcome-card-icon">&#128200;</div>
+        <h3>Aligned Execution</h3>
+      </div>
+      <div class="outcome-card solar-card-animated">
+        <div class="outcome-card-icon">&#128737;</div>
+        <h3>Reduced Risk</h3>
+      </div>
+      <div class="outcome-card solar-card-animated">
+        <div class="outcome-card-icon">&#128271;</div>
+        <h3>Full Transparency</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<!-- CLOSING CTA -->
+<section id="closing-cta">
+  <div class="container">
+    <h2>The Direction of the Market</h2>
+    <p>Markets are becoming more complex, more interconnected, and more time-sensitive. The ability to interpret signals and act decisively is becoming a core capability.</p>
+    <p class="closing-sub">Nexsun.ai is built for this environment.</p>
+    <a href="engage.html" class="btn-primary" style="font-size:16px;padding:18px 36px;">Book a Pilot</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="platform.html">Platform Overview</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="modules.html">Modules</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="trust.html">Trust Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="why-nexsun.html">Why Nexsun.ai</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="partners.html">Partner Centre</a></li>
+          <li><a href="investors.html">Investor Centre</a></li>
+          <li><a href="press.html">Press &amp; Media</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="blog.html">Use Cases</a></li>
+          <li><a href="blog.html">Platform Briefs</a></li>
+          <li><a href="blog.html">Case Studies</a></li>
+          <li><a href="blog.html">Events &amp; Media</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">130, 5920 No. Two Road<br>Richmond BC V7C 4R9</div>
+        <div class="footer-contact-item"><a href="mailto:info@nexsun.ai" style="color:var(--sun-bright)">info@nexsun.ai</a></div>
+        <div class="footer-contact-item"><a href="tel:6047609015">1-604-760-9015</a></div>
+        <div class="footer-contact-item" style="margin-top:8px;"><a href="https://AEPG.ca">AEPG.ca &#8599;</a></div>
+        <div class="footer-contact-item"><a href="https://Nexsun.ai">Nexsun.ai &#8599;</a></div>
+      </div>
+    </div>
+    <div class="footer-newsletter-row">
+      <div class="footer-brand">
+        <img src="logo-color.svg" alt="Nexsun.ai" style="width:100%;max-width:480px;height:auto;display:block;">
+        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sun-deep);margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
+        <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
+          <a href="https://www.linkedin.com/company/nexsun-ai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+             style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+             onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
+             onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://x.com/NexsunAI" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
+             style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+             onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
+             onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.726-8.851L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@Nexsun.aiplatform" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+             style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+             onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
+             onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/nexsun.ai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+             style="width:38px;height:38px;border-radius:8px;background:rgba(30,58,138,0.12);border:1px solid rgba(30,58,138,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+             onmouseover="this.style.background='rgba(30,58,138,0.22)';this.style.borderColor='rgba(30,58,138,0.5)'"
+             onmouseout="this.style.background='rgba(30,58,138,0.12)';this.style.borderColor='rgba(30,58,138,0.25)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E3A8A"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Stay ahead of the market</h3>
+        <p>Get the latest AI insights from Nexsun.ai, platform updates, and energy market intelligence delivered monthly.</p>
+        <div class="fn-field">
+          <input type="text" placeholder="Full name" id="fn-name">
+          <input type="email" placeholder="Work email" id="fn-email">
+          <input type="text" placeholder="Company" id="fn-company">
+        </div>
+        <div class="fn-check">
+          <input type="checkbox" id="fn-updates">
+          <label for="fn-updates">Also send me platform release notes and product updates.</label>
+        </div>
+        <p class="fn-legal">By subscribing, you agree to receive email communications from Nexsun.ai. You can unsubscribe at any time.</p>
+        <button class="fn-btn" onclick="fnSubmit()">Subscribe Now</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookie Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      <p>&#169; 2026 Nexsun.ai. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script>
+// SCROLL TO TOP
+const scrollBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
+
+// MOBILE NAV
+function toggleMobNav() {
+  var mob = document.getElementById('nxs-mob-nav');
+  var ham = document.getElementById('nxs-hamburger');
+  var isOpen = mob.style.display === 'block';
+  mob.style.display = isOpen ? 'none' : 'block';
+  ham.classList.toggle('open', !isOpen);
+}
+
+// FOOTER NEWSLETTER
+function fnSubmit(){
+  var e=document.getElementById('fn-email');
+  if(!e||!e.value.includes('@')){alert('Please enter a valid email address.');return;}
+  var btn=document.querySelector('.fn-btn');
+  btn.textContent='Subscribed \u2713';
+  btn.style.background='#16A34A';
+  btn.disabled=true;
+}
+
+// SUN CANVAS ANIMATION
+const canvas = document.getElementById('sun-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
+function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+resize(); window.addEventListener('resize',()=>{ resize(); initP(); });
+function initP(){
+  particles=[];
+  const n = Math.floor(W*H/18000);
+  for(let i=0;i<n;i++) particles.push({
+    x:Math.random()*W, y:Math.random()*H,
+    vx:(Math.random()-.5)*.2, vy:(Math.random()-.5)*.2,
+    r:Math.random()*2+.5, op:Math.random()*.4+.1
+  });
+}
+initP();
+function drawP(){
+  ctx.clearRect(0,0,W,H);
+  for(const p of particles){
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W) p.vx*=-1;
+    if(p.y<0||p.y>H) p.vy*=-1;
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(245,158,11,${p.op})`; ctx.fill();
+  }
+  for(let i=0;i<particles.length;i++){
+    for(let j=i+1;j<particles.length;j++){
+      const a=particles[i],b=particles[j];
+      const d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<120){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle=`rgba(245,158,11,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
+    }
+  }
+  requestAnimationFrame(drawP);
+}
+drawP();
+
+// SCROLL ANIMATIONS
+const animatedCards = document.querySelectorAll('.solar-card-animated');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+animatedCards.forEach(card => observer.observe(card));
+</script>
+<script>
+(function(){
+  var c = document.querySelector('canvas.hero-canvas');
+  if(!c) return;
+  var ctx = c.getContext('2d'), pts = [], t = 0;
+  function sz(){ c.width = c.offsetWidth; c.height = c.offsetHeight; }
+  sz(); window.addEventListener('resize', sz);
+  var cols = ['245,158,11','245,158,11','245,158,11','34,197,94','30,58,138'];
+  for(var i=0;i<55;i++) pts.push({
+    x:Math.random()*c.width, y:Math.random()*c.height,
+    vx:(Math.random()-.5)*.28, vy:(Math.random()-.5)*.28,
+    r:Math.random()*1.6+.5,
+    col:cols[Math.floor(Math.random()*cols.length)],
+    ph:Math.random()*Math.PI*2
+  });
+  function draw(){
+    t+=0.012; ctx.clearRect(0,0,c.width,c.height);
+    for(var k=0;k<pts.length;k++){
+      var p=pts[k];
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0||p.x>c.width) p.vx*=-1;
+      if(p.y<0||p.y>c.height) p.vy*=-1;
+      var al=.12+.12*Math.sin(t+p.ph);
+      var gw=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*6);
+      gw.addColorStop(0,'rgba('+p.col+','+(al*1.4)+')');
+      gw.addColorStop(1,'rgba('+p.col+',0)');
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r*6,0,Math.PI*2);
+      ctx.fillStyle=gw; ctx.fill();
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba('+p.col+','+(al*2.5)+')'; ctx.fill();
+    }
+    for(var i=0;i<pts.length;i++){
+      for(var j=i+1;j<pts.length;j++){
+        var a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<130){
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+          ctx.strokeStyle='rgba(30,58,138,'+(0.06*(1-d/130))+')';
+          ctx.lineWidth=.5; ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+</body>
+</html>
