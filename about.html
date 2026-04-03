@@ -224,6 +224,13 @@
     .founder-card{grid-template-columns:1fr!important;gap:24px!important;}
     .supply-chain-grid{grid-template-columns:1fr!important;}
     .supply-chain-grid .supply-arrow{display:none!important;}
+    /* ── Comparison table mobile ── */
+    table{font-size:12px!important;}
+    table th,table td{padding:10px 12px!important;min-width:120px!important;}
+    table th:first-child,table td:first-child{position:sticky!important;left:0!important;z-index:2!important;background:inherit!important;}
+    table thead th:first-child{background:var(--navy)!important;}
+    table tr[style*="background:var(--bg)"] td:first-child{background:var(--bg)!important;}
+    table tr[style*="background:white"] td:first-child{background:white!important;}
   }
   .btn-outline {
     border:2px solid var(--sun-deep); color:var(--sun-deep); background:transparent;
