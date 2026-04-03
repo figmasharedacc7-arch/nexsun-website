@@ -393,6 +393,10 @@
     .team-grid{grid-template-columns:1fr 1fr!important;gap:12px!important;}
     .funds-grid{grid-template-columns:1fr!important;}
     .footer-top{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+    .footer-newsletter-row{grid-template-columns:1fr!important;gap:32px!important;padding:24px!important;}
+    .page-hero{padding:140px 0 60px!important;}
+    .page-hero h1{font-size:clamp(30px,8vw,42px)!important;}
+    .form-row{grid-template-columns:1fr!important;}
     .footer-wordmark{font-size:clamp(44px,13vw,72px)!important;letter-spacing:-2px!important;}
     .footer-bottom{flex-direction:column!important;align-items:flex-start!important;}
     .footer-legal a:first-child{padding-left:0!important;}
@@ -400,12 +404,38 @@
     #nxs-chat-bubble{bottom:20px!important;right:20px!important;}
     .ind-wrap{padding:0 18px!important;}
     .sun-divider{display:none;}
+  
+    .footer-newsletter input,.footer-newsletter select{max-width:100%!important;box-sizing:border-box!important;}
+    .footer-brand img{max-width:280px!important;}
+    .fn-row{flex-direction:column!important;}
+    .fn-row input,.fn-row select{width:100%!important;}
+    /* ── Inline grid collapse (attribute selectors) ── */
+    [style*="grid-template-columns:260px 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:200px 1fr"]{grid-template-columns:1fr!important;gap:24px!important;}
+    [style*="grid-template-columns:1fr 1.8fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1fr 1.4fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1.4fr 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+    [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+    [style*="grid-template-columns:1fr auto 1fr auto 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
+    .module-grid{grid-template-columns:1fr!important;gap:32px!important;}
+    .founder-card{grid-template-columns:1fr!important;gap:24px!important;}
+    .supply-chain-grid{grid-template-columns:1fr!important;}
+    .supply-chain-grid .supply-arrow{display:none!important;}
   }
   @media(max-width:480px){
     .footer-top{grid-template-columns:1fr!important;}
     .market-grid{grid-template-columns:1fr!important;}
     .team-grid{grid-template-columns:1fr!important;}
     .hero-stats{flex-direction:column!important;}
+  
+    /* ── Further collapse at 480px ── */
+    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:1fr!important;}
   }
 
 
@@ -419,9 +449,9 @@
   .hero-stat:nth-child(2) .value { color:var(--logo-green) !important; }
 
   .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
-  .footer-legal a { font-size:12px; color:rgba(255,255,255,0.45); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
+  .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
   .footer-legal a:last-child { border-right:none; }
-  .footer-legal a:hover { color:rgba(255,255,255,0.85); }
+  .footer-legal a:hover { color:rgba(255,255,255,1); }
 </style>
   <style>
     .career-hero { background:linear-gradient(135deg,#0D1B3E 0%,#1E3A8A 55%,#1D4ED8 100%); min-height:520px; padding:130px 0 80px; position:relative; overflow:hidden; display:flex; align-items:center; }
@@ -433,9 +463,9 @@
     .tag-contract { background:#FEF3C7; color:#D97706; }
     .value-card { background:#F8FAFF; border:1px solid rgba(30,58,138,0.08); border-radius:16px; padding:32px 28px; }
     .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
-    .footer-legal a { font-size:12px; color:rgba(255,255,255,0.45); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
+    .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
     .footer-legal a:last-child { border-right:none; }
-    .footer-legal a:hover { color:rgba(255,255,255,0.85); }
+    .footer-legal a:hover { color:rgba(255,255,255,1); }
     .nav-dropdown-menu .menu-label { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:rgba(30,58,138,0.4); padding:8px 16px 4px; cursor:default; }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Careers at Nexsun.ai","description":"Join the team building Decision Intelligence for energy and commodities","url":"https://nexsun.ai/careers.html","isPartOf":{"@type":"WebSite","name":"Nexsun.ai","url":"https://nexsun.ai"}}</script>
@@ -870,6 +900,35 @@ function toggleMobNav(){
   }
   draw();
 })();
+// Responsive inline-grid fixer
+function nxsResponsive(){
+  var isMob=window.innerWidth<=768;
+  var isSm=window.innerWidth<=480;
+  document.querySelectorAll('[style*="grid-template-columns"]').forEach(function(el){
+    if(!el.dataset.origGrid) el.dataset.origGrid=el.style.gridTemplateColumns;
+    if(!el.dataset.origGap) el.dataset.origGap=el.style.gap;
+    var og=el.dataset.origGrid||'';
+    if(isSm){
+      if(/repeat\([2-9]/.test(og)||/1fr 1fr/.test(og)){
+        el.style.gridTemplateColumns='1fr';
+        el.style.gap='16px';
+      }
+    } else if(isMob){
+      if(/repeat\([3-9]/.test(og)||/1fr 1fr 1fr/.test(og)){
+        el.style.gridTemplateColumns='repeat(2,1fr)';
+        el.style.gap='16px';
+      } else if(/repeat\(4/.test(og)){
+        el.style.gridTemplateColumns='repeat(2,1fr)';
+        el.style.gap='12px';
+      }
+    } else {
+      if(el.dataset.origGrid) el.style.gridTemplateColumns=el.dataset.origGrid;
+      if(el.dataset.origGap) el.style.gap=el.dataset.origGap;
+    }
+  });
+}
+window.addEventListener('DOMContentLoaded',nxsResponsive);
+window.addEventListener('resize',nxsResponsive);
 </script>
 </body>
 </html>

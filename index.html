@@ -399,12 +399,42 @@
     #nxs-chat-bubble{bottom:20px!important;right:20px!important;}
     .ind-wrap{padding:0 18px!important;}
     .sun-divider{display:none;}
+    .footer-newsletter-row{grid-template-columns:1fr!important;gap:32px!important;padding:24px!important;}
+    .page-hero{padding:140px 0 60px!important;}
+    .page-hero h1{font-size:clamp(30px,8vw,42px)!important;}
+  
+    .footer-newsletter input,.footer-newsletter select{max-width:100%!important;box-sizing:border-box!important;}
+    .footer-brand img{max-width:280px!important;}
+    .fn-row{flex-direction:column!important;}
+    .fn-row input,.fn-row select{width:100%!important;}
+    /* ── Inline grid collapse (attribute selectors) ── */
+    [style*="grid-template-columns:260px 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:200px 1fr"]{grid-template-columns:1fr!important;gap:24px!important;}
+    [style*="grid-template-columns:1fr 1.8fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1fr 1.4fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1.4fr 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+    [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+    [style*="grid-template-columns:1fr auto 1fr auto 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
+    .module-grid{grid-template-columns:1fr!important;gap:32px!important;}
+    .founder-card{grid-template-columns:1fr!important;gap:24px!important;}
+    .supply-chain-grid{grid-template-columns:1fr!important;}
+    .supply-chain-grid .supply-arrow{display:none!important;}
   }
   @media(max-width:480px){
     .footer-top{grid-template-columns:1fr!important;}
     .market-grid{grid-template-columns:1fr!important;}
     .team-grid{grid-template-columns:1fr!important;}
     .hero-stats{flex-direction:column!important;}
+    .footer-newsletter-row{padding:20px!important;}
+  
+    /* ── Further collapse at 480px ── */
+    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:1fr!important;}
   }
 
 
@@ -418,9 +448,9 @@
   .hero-stat:nth-child(2) .value { color:var(--logo-green) !important; }
 
   .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
-  .footer-legal a { font-size:12px; color:rgba(255,255,255,0.45); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
+  .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
   .footer-legal a:last-child { border-right:none; }
-  .footer-legal a:hover { color:rgba(255,255,255,0.85); }
+  .footer-legal a:hover { color:rgba(255,255,255,1); }
 
   /* ── Solar Icon Float & Card Scroll Animations ── */
   @keyframes iconFloat {

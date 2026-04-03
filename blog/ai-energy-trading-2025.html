@@ -242,10 +242,26 @@
   }
 
   /* ── Responsive ── */
+  @media (max-width:768px) {
+    .article-wrap { padding:32px 18px 60px; }
+    .article-body { padding:0 18px !important; }
+    .author-bio { flex-direction:column; align-items:center; text-align:center; }
+    .top-bar { padding:14px 18px; }
+    .container { padding:0 18px !important; }
+    .footer-newsletter-row { grid-template-columns:1fr !important; gap:32px !important; padding:24px !important; }
+    .footer-top { grid-template-columns:1fr 1fr !important; gap:24px !important; }
+    .footer-bottom { flex-direction:column !important; align-items:flex-start !important; }
+    .footer-legal a:first-child { padding-left:0 !important; }
+  }
   @media (max-width:640px) {
     .article-wrap { padding:32px 20px 60px; }
     .author-bio { flex-direction:column; align-items:center; text-align:center; }
     .top-bar { padding:14px 20px; }
+  }
+  @media (max-width:480px) {
+    .article-wrap { padding:24px 14px 48px; }
+    h1 { font-size:1.5rem !important; }
+    .footer-top { grid-template-columns:1fr !important; }
   }
 </style>
 </head>
@@ -372,7 +388,7 @@
     <div class="author-avatar">AE</div>
     <div class="author-info">
       <h4>Aiman El-Ramly</h4>
-      <div class="author-title">CEO &amp; Co-Founder, Nexsun.ai</div>
+      <div class="author-title">CEO &amp; Founder, Nexsun.ai</div>
       <p>Aiman has spent over 15 years at the intersection of energy markets and enterprise technology. Before founding Nexsun, he led product and analytics teams at major energy trading firms, where he experienced firsthand the limitations of black-box AI systems in high-stakes decision environments. He is a frequent speaker on AI governance, commodity market structure, and the future of explainable intelligence in regulated industries.</p>
     </div>
   </div>
