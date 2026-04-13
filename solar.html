@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Energy Across Canada | City-by-City Solar Guide | Nexsun.ai</title>
+  <meta name="description" content="Explore solar energy potential in 50+ Canadian cities. Compare solar irradiance, costs, incentives, and ROI by city and province. Powered by Nexsun.ai decision intelligence.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nexsun.ai/solar.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solar Energy Across Canada | Nexsun.ai">
+  <meta property="og:description" content="City-by-city solar guide for Canada. Compare costs, incentives, and ROI across 50+ cities.">
+  <meta property="og:url" content="https://nexsun.ai/solar.html">
+  <meta property="og:image" content="https://nexsun.ai/og-solar-hub.jpg">
+  <meta property="og:site_name" content="Nexsun.ai">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Solar Energy Across Canada | Nexsun.ai">
+  <meta name="twitter:description" content="City-by-city solar guide for Canada. Compare costs, incentives, and ROI across 50+ cities.">
+  <meta name="twitter:image" content="https://nexsun.ai/og-solar-hub.jpg">
+  <style>
+    :root {
+      --navy:#1E3A8A; --sun:#F59E0B; --sun-deep:#D97706; --sun-pale:#FEF3C7;
+      --logo-green:#22C55E; --bg:#FFFBF0; --text:#0F172A; --text-mid:#334155;
+      --text-muted:#64748B; --border:rgba(245,158,11,0.2); --white:#FFFFFF;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,sans-serif; overflow-x:hidden; }
+    a { color:inherit; text-decoration:none; }
+    .container { max-width:1200px; margin:0 auto; padding:0 32px; }
+
+    /* ── Topbar ── */
+    .topbar { background:var(--navy); }
+    .topbar-inner {
+      max-width:1200px; margin:0 auto; padding:0 32px;
+      display:flex; align-items:center; justify-content:flex-end;
+      height:34px;
+    }
+    .topbar-inner a {
+      font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+      color:var(--sun); padding:0 16px; transition:color .2s;
+      border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
+    }
+    .topbar-inner a:last-child { border-right:none; padding-right:0; }
+    .topbar-inner a:hover { color:#fff; }
+
+    /* ── Nav ── */
+    nav {
+      position:sticky; top:0; z-index:100;
+      background:rgba(255,251,240,0.88); backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(245,158,11,0.15);
+      box-shadow:0 1px 20px rgba(245,158,11,0.08);
+    }
+    .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
+    .nav-links { display:flex; align-items:center; gap:32px; margin-left:auto; }
+    .nav-links a { font-size:14px; color:var(--text-mid); font-weight:500; transition:color .2s; }
+    .nav-links a:hover { color:var(--sun-deep); }
+    .btn-cta {
+      background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+      color:#fff; font-weight:700; padding:11px 24px; border-radius:8px;
+      font-size:14px; border:none; cursor:pointer; transition:all .2s;
+      box-shadow:0 4px 14px rgba(245,158,11,0.4); display:inline-block;
+    }
+    .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(245,158,11,0.5); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown-menu {
+      display:none; position:absolute; top:100%; left:0; min-width:200px;
+      background:white; border-radius:10px; box-shadow:0 8px 30px rgba(0,0,0,0.12);
+      padding:10px 0; z-index:200;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display:block; }
+    .nav-dropdown-menu a { display:block; padding:8px 20px; font-size:13px; color:var(--text-mid); }
+    .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
+    .menu-divider { height:1px; background:var(--border); margin:6px 16px; }
+
+    /* ── Hero ── */
+    .hub-hero {
+      padding:140px 0 80px;
+      background:linear-gradient(160deg, #FFFBF0 0%, #FFF3CD 30%, #E0F2FE 60%, #FEF9C3 100%);
+      text-align:center;
+    }
+    .hub-hero h1 {
+      font-size:clamp(36px,5vw,60px); font-weight:900; color:var(--navy); line-height:1.1; margin-bottom:20px;
+    }
+    .hub-hero h1 span { color:var(--sun-deep); }
+    .hub-hero p { font-size:18px; color:var(--text-mid); max-width:700px; margin:0 auto; line-height:1.7; }
+    .hub-hero .hub-stat-row {
+      display:flex; justify-content:center; gap:48px; margin-top:40px; flex-wrap:wrap;
+    }
+    .hub-hero .hub-stat-item .val { font-size:32px; font-weight:900; color:var(--navy); }
+    .hub-hero .hub-stat-item .lbl { font-size:13px; color:var(--text-muted); margin-top:4px; }
+
+    /* ── Province Sections ── */
+    .hub-provinces { padding:80px 0; }
+    .hub-province { margin-bottom:48px; }
+    .hub-province h3 {
+      font-size:24px; font-weight:800; color:var(--navy); margin-bottom:20px;
+      padding-bottom:12px; border-bottom:2px solid var(--border);
+    }
+    .hub-count { font-size:14px; font-weight:500; color:var(--text-muted); }
+    .hub-city-grid {
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px;
+    }
+    .hub-city-card {
+      background:white; border:1px solid var(--border); border-radius:12px;
+      padding:20px 24px; transition:all .2s; display:block;
+    }
+    .hub-city-card:hover {
+      border-color:var(--sun); box-shadow:0 4px 20px rgba(245,158,11,0.15);
+      transform:translateY(-2px);
+    }
+    .hub-city-card h4 { font-size:17px; font-weight:700; color:var(--navy); margin-bottom:8px; }
+    .hub-stats {
+      display:flex; gap:12px; flex-wrap:wrap;
+    }
+    .hub-stats span {
+      font-size:12px; color:var(--text-muted); background:var(--sun-pale);
+      padding:3px 10px; border-radius:20px; white-space:nowrap;
+    }
+
+    /* ── CTA ── */
+    .hub-cta {
+      background:var(--navy); padding:80px 0; text-align:center; color:white;
+    }
+    .hub-cta h2 { font-size:32px; font-weight:800; margin-bottom:16px; }
+    .hub-cta p { font-size:17px; opacity:0.85; margin-bottom:32px; max-width:600px; margin-left:auto; margin-right:auto; }
+
+    /* ── Footer ── */
+    footer {
+      background:var(--navy); padding:60px 0 30px; color:rgba(255,255,255,0.7); font-size:13px;
+    }
+    .footer-top { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; margin-bottom:48px; }
+    .footer-col h4 { color:var(--sun); font-size:13px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+    .footer-col ul { list-style:none; }
+    .footer-col li { margin-bottom:8px; }
+    .footer-col a { color:rgba(255,255,255,0.7); transition:color .2s; }
+    .footer-col a:hover { color:white; }
+    .footer-bottom {
+      border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+    }
+    .footer-legal { display:flex; gap:24px; }
+    .footer-legal a { color:rgba(255,255,255,0.75); transition:color .2s; }
+    .footer-legal a:hover { color:white; }
+
+    /* ── Mobile ── */
+    @media(max-width:768px) {
+      .topbar-inner { flex-wrap:wrap; height:auto; padding:6px 16px; justify-content:center; gap:8px; }
+      .topbar-inner a { border-right:none; padding:2px 8px; font-size:10px; }
+      .nav-inner { padding:0 16px; height:60px; }
+      .nav-links { display:none; }
+      .hub-hero { padding:100px 16px 60px; }
+      .hub-hero .hub-stat-row { gap:24px; }
+      .hub-hero .hub-stat-item .val { font-size:24px; }
+      .hub-provinces { padding:40px 0; }
+      .hub-city-grid { grid-template-columns:1fr; }
+      .footer-top { grid-template-columns:1fr 1fr; gap:24px; }
+      .footer-bottom { flex-direction:column; text-align:center; }
+      .container { padding:0 16px; }
+    }
+    @media(max-width:480px) {
+      .hub-hero h1 { font-size:28px; }
+      .hub-hero .hub-stat-row { flex-direction:column; gap:16px; }
+      .footer-top { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a href="https://AEPG.ca" target="_blank" rel="noopener noreferrer">AEPG.ca</a>
+      <a href="blog.html">Resources</a>
+      <a href="investors.html">Investor Centre</a>
+      <a href="partners.html">Partner Centre</a>
+      <a href="trust.html">Trust Centre</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+  <div class="nav-inner">
+    <a href="index.html">
+      <img src="logo-color.svg" alt="Nexsun.ai" style="height:120px;width:auto;display:block;">
+    </a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="platform.html">Platform</a>
+        <div class="nav-dropdown-menu">
+          <a href="platform.html">Platform Overview</a>
+          <div class="menu-divider"></div>
+          <a href="modules.html">Modules</a>
+          <a href="technology.html">Technology</a>
+          <div class="menu-divider"></div>
+          <a href="trust.html">Trust Centre</a>
+        </div>
+      </div>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="applications.html">Applications</a>
+      <a href="why-nexsun.html">Why Nexsun.ai</a>
+      <div class="nav-dropdown">
+        <a href="about.html">Company</a>
+        <div class="nav-dropdown-menu">
+          <a href="about.html">About Us</a>
+          <a href="investors.html">Investor Centre</a>
+          <a href="press.html">Press &amp; Media</a>
+          <div class="menu-divider"></div>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <a href="engage.html" class="btn-cta">Engage</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hub-hero">
+  <div class="container">
+    <h1>Solar Energy Across <span>Canada</span></h1>
+    <p>Explore solar potential in 50 Canadian cities. Compare irradiance, costs, incentives, and ROI, powered by Nexsun.ai's decision intelligence platform.</p>
+    <div class="hub-stat-row">
+      <div class="hub-stat-item">
+        <div class="val">50</div>
+        <div class="lbl">Cities Covered</div>
+      </div>
+      <div class="hub-stat-item">
+        <div class="val">10</div>
+        <div class="lbl">Provinces</div>
+      </div>
+      <div class="hub-stat-item">
+        <div class="val">1,080-1,400</div>
+        <div class="lbl">kWh/m&sup2; Range</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hub-provinces">
+  <div class="container">
+    
+      <div class="hub-province">
+        <h3>Ontario <span class="hub-count">(16 cities)</span></h3>
+        <div class="hub-city-grid">
+          
+          <a href="solar/toronto.html" class="hub-city-card">
+            <h4>Toronto</h4>
+            <div class="hub-stats">
+              <span>1230 kWh/m&sup2;</span>
+              <span>3.8 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/ottawa.html" class="hub-city-card">
+            <h4>Ottawa</h4>
+            <div class="hub-stats">
+              <span>1250 kWh/m&sup2;</span>
+              <span>3.9 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/mississauga.html" class="hub-city-card">
+            <h4>Mississauga</h4>
+            <div class="hub-stats">
+              <span>1230 kWh/m&sup2;</span>
+              <span>3.8 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/brampton.html" class="hub-city-card">
+            <h4>Brampton</h4>
+            <div class="hub-stats">
+              <span>1230 kWh/m&sup2;</span>
+              <span>3.8 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/hamilton.html" class="hub-city-card">
+            <h4>Hamilton</h4>
+            <div class="hub-stats">
+              <span>1220 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/london.html" class="hub-city-card">
+            <h4>London</h4>
+            <div class="hub-stats">
+              <span>1210 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/kitchener.html" class="hub-city-card">
+            <h4>Kitchener</h4>
+            <div class="hub-stats">
+              <span>1220 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/windsor.html" class="hub-city-card">
+            <h4>Windsor</h4>
+            <div class="hub-stats">
+              <span>1260 kWh/m&sup2;</span>
+              <span>3.9 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/oshawa.html" class="hub-city-card">
+            <h4>Oshawa</h4>
+            <div class="hub-stats">
+              <span>1230 kWh/m&sup2;</span>
+              <span>3.8 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/sudbury.html" class="hub-city-card">
+            <h4>Sudbury</h4>
+            <div class="hub-stats">
+              <span>1190 kWh/m&sup2;</span>
+              <span>3.6 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/barrie.html" class="hub-city-card">
+            <h4>Barrie</h4>
+            <div class="hub-stats">
+              <span>1220 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/guelph.html" class="hub-city-card">
+            <h4>Guelph</h4>
+            <div class="hub-stats">
+              <span>1220 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/cambridge.html" class="hub-city-card">
+            <h4>Cambridge</h4>
+            <div class="hub-stats">
+              <span>1220 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/kingston.html" class="hub-city-card">
+            <h4>Kingston</h4>
+            <div class="hub-stats">
+              <span>1240 kWh/m&sup2;</span>
+              <span>3.8 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/whitby.html" class="hub-city-card">
+            <h4>Whitby</h4>
+            <div class="hub-stats">
+              <span>1230 kWh/m&sup2;</span>
+              <span>3.8 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/thunder-bay.html" class="hub-city-card">
+            <h4>Thunder Bay</h4>
+            <div class="hub-stats">
+              <span>1200 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hub-province">
+        <h3>British Columbia <span class="hub-count">(11 cities)</span></h3>
+        <div class="hub-city-grid">
+          
+          <a href="solar/vancouver.html" class="hub-city-card">
+            <h4>Vancouver</h4>
+            <div class="hub-stats">
+              <span>1180 kWh/m&sup2;</span>
+              <span>3.6 hrs/day</span>
+              <span>14yr payback</span>
+            </div>
+          </a>
+          <a href="solar/surrey.html" class="hub-city-card">
+            <h4>Surrey</h4>
+            <div class="hub-stats">
+              <span>1190 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>14yr payback</span>
+            </div>
+          </a>
+          <a href="solar/victoria.html" class="hub-city-card">
+            <h4>Victoria</h4>
+            <div class="hub-stats">
+              <span>1250 kWh/m&sup2;</span>
+              <span>3.9 hrs/day</span>
+              <span>14yr payback</span>
+            </div>
+          </a>
+          <a href="solar/burnaby.html" class="hub-city-card">
+            <h4>Burnaby</h4>
+            <div class="hub-stats">
+              <span>1190 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>14yr payback</span>
+            </div>
+          </a>
+          <a href="solar/richmond.html" class="hub-city-card">
+            <h4>Richmond</h4>
+            <div class="hub-stats">
+              <span>1200 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>14yr payback</span>
+            </div>
+          </a>
+          <a href="solar/abbotsford.html" class="hub-city-card">
+            <h4>Abbotsford</h4>
+            <div class="hub-stats">
+              <span>1200 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>14yr payback</span>
+            </div>
+          </a>
+          <a href="solar/kelowna.html" class="hub-city-card">
+            <h4>Kelowna</h4>
+            <div class="hub-stats">
+              <span>1390 kWh/m&sup2;</span>
+              <span>4.4 hrs/day</span>
+              <span>12yr payback</span>
+            </div>
+          </a>
+          <a href="solar/nanaimo.html" class="hub-city-card">
+            <h4>Nanaimo</h4>
+            <div class="hub-stats">
+              <span>1260 kWh/m&sup2;</span>
+              <span>4.0 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/kamloops.html" class="hub-city-card">
+            <h4>Kamloops</h4>
+            <div class="hub-stats">
+              <span>1400 kWh/m&sup2;</span>
+              <span>4.5 hrs/day</span>
+              <span>12yr payback</span>
+            </div>
+          </a>
+          <a href="solar/chilliwack.html" class="hub-city-card">
+            <h4>Chilliwack</h4>
+            <div class="hub-stats">
+              <span>1230 kWh/m&sup2;</span>
+              <span>3.8 hrs/day</span>
+              <span>14yr payback</span>
+            </div>
+          </a>
+          <a href="solar/prince-george.html" class="hub-city-card">
+            <h4>Prince George</h4>
+            <div class="hub-stats">
+              <span>1200 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>14yr payback</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hub-province">
+        <h3>Alberta <span class="hub-count">(6 cities)</span></h3>
+        <div class="hub-city-grid">
+          
+          <a href="solar/calgary.html" class="hub-city-card">
+            <h4>Calgary</h4>
+            <div class="hub-stats">
+              <span>1350 kWh/m&sup2;</span>
+              <span>4.2 hrs/day</span>
+              <span>10yr payback</span>
+            </div>
+          </a>
+          <a href="solar/edmonton.html" class="hub-city-card">
+            <h4>Edmonton</h4>
+            <div class="hub-stats">
+              <span>1310 kWh/m&sup2;</span>
+              <span>4.0 hrs/day</span>
+              <span>10yr payback</span>
+            </div>
+          </a>
+          <a href="solar/red-deer.html" class="hub-city-card">
+            <h4>Red Deer</h4>
+            <div class="hub-stats">
+              <span>1320 kWh/m&sup2;</span>
+              <span>4.1 hrs/day</span>
+              <span>11yr payback</span>
+            </div>
+          </a>
+          <a href="solar/lethbridge.html" class="hub-city-card">
+            <h4>Lethbridge</h4>
+            <div class="hub-stats">
+              <span>1370 kWh/m&sup2;</span>
+              <span>4.3 hrs/day</span>
+              <span>10yr payback</span>
+            </div>
+          </a>
+          <a href="solar/medicine-hat.html" class="hub-city-card">
+            <h4>Medicine Hat</h4>
+            <div class="hub-stats">
+              <span>1400 kWh/m&sup2;</span>
+              <span>4.5 hrs/day</span>
+              <span>10yr payback</span>
+            </div>
+          </a>
+          <a href="solar/grande-prairie.html" class="hub-city-card">
+            <h4>Grande Prairie</h4>
+            <div class="hub-stats">
+              <span>1260 kWh/m&sup2;</span>
+              <span>3.9 hrs/day</span>
+              <span>11yr payback</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hub-province">
+        <h3>Nova Scotia <span class="hub-count">(4 cities)</span></h3>
+        <div class="hub-city-grid">
+          
+          <a href="solar/halifax.html" class="hub-city-card">
+            <h4>Halifax</h4>
+            <div class="hub-stats">
+              <span>1150 kWh/m&sup2;</span>
+              <span>3.5 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/cape-breton.html" class="hub-city-card">
+            <h4>Cape Breton</h4>
+            <div class="hub-stats">
+              <span>1120 kWh/m&sup2;</span>
+              <span>3.4 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/truro.html" class="hub-city-card">
+            <h4>Truro</h4>
+            <div class="hub-stats">
+              <span>1150 kWh/m&sup2;</span>
+              <span>3.5 hrs/day</span>
+              <span>12yr payback</span>
+            </div>
+          </a>
+          <a href="solar/yarmouth.html" class="hub-city-card">
+            <h4>Yarmouth</h4>
+            <div class="hub-stats">
+              <span>1140 kWh/m&sup2;</span>
+              <span>3.5 hrs/day</span>
+              <span>12yr payback</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hub-province">
+        <h3>Saskatchewan <span class="hub-count">(4 cities)</span></h3>
+        <div class="hub-city-grid">
+          
+          <a href="solar/saskatoon.html" class="hub-city-card">
+            <h4>Saskatoon</h4>
+            <div class="hub-stats">
+              <span>1340 kWh/m&sup2;</span>
+              <span>4.2 hrs/day</span>
+              <span>11yr payback</span>
+            </div>
+          </a>
+          <a href="solar/regina.html" class="hub-city-card">
+            <h4>Regina</h4>
+            <div class="hub-stats">
+              <span>1330 kWh/m&sup2;</span>
+              <span>4.2 hrs/day</span>
+              <span>11yr payback</span>
+            </div>
+          </a>
+          <a href="solar/prince-albert.html" class="hub-city-card">
+            <h4>Prince Albert</h4>
+            <div class="hub-stats">
+              <span>1300 kWh/m&sup2;</span>
+              <span>4.0 hrs/day</span>
+              <span>11yr payback</span>
+            </div>
+          </a>
+          <a href="solar/moose-jaw.html" class="hub-city-card">
+            <h4>Moose Jaw</h4>
+            <div class="hub-stats">
+              <span>1330 kWh/m&sup2;</span>
+              <span>4.2 hrs/day</span>
+              <span>11yr payback</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hub-province">
+        <h3>New Brunswick <span class="hub-count">(3 cities)</span></h3>
+        <div class="hub-city-grid">
+          
+          <a href="solar/moncton.html" class="hub-city-card">
+            <h4>Moncton</h4>
+            <div class="hub-stats">
+              <span>1160 kWh/m&sup2;</span>
+              <span>3.6 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/saint-john.html" class="hub-city-card">
+            <h4>Saint John</h4>
+            <div class="hub-stats">
+              <span>1150 kWh/m&sup2;</span>
+              <span>3.5 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+          <a href="solar/fredericton.html" class="hub-city-card">
+            <h4>Fredericton</h4>
+            <div class="hub-stats">
+              <span>1140 kWh/m&sup2;</span>
+              <span>3.5 hrs/day</span>
+              <span>13yr payback</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hub-province">
+        <h3>Quebec <span class="hub-count">(2 cities)</span></h3>
+        <div class="hub-city-grid">
+          
+          <a href="solar/montreal.html" class="hub-city-card">
+            <h4>Montreal</h4>
+            <div class="hub-stats">
+              <span>1200 kWh/m&sup2;</span>
+              <span>3.7 hrs/day</span>
+              <span>23yr payback</span>
+            </div>
+          </a>
+          <a href="solar/quebec-city.html" class="hub-city-card">
+            <h4>Quebec City</h4>
+            <div class="hub-stats">
+              <span>1180 kWh/m&sup2;</span>
+              <span>3.6 hrs/day</span>
+              <span>23yr payback</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hub-province">
+        <h3>Manitoba <span class="hub-count">(1 cities)</span></h3>
+        <div class="hub-city-grid">
+          
+          <a href="solar/winnipeg.html" class="hub-city-card">
+            <h4>Winnipeg</h4>
+            <div class="hub-stats">
+              <span>1290 kWh/m&sup2;</span>
+              <span>4.1 hrs/day</span>
+              <span>17yr payback</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hub-province">
+        <h3>Newfoundland and Labrador <span class="hub-count">(1 cities)</span></h3>
+        <div class="hub-city-grid">
+          
+          <a href="solar/st-johns.html" class="hub-city-card">
+            <h4>St. John's</h4>
+            <div class="hub-stats">
+              <span>1080 kWh/m&sup2;</span>
+              <span>3.3 hrs/day</span>
+              <span>14yr payback</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hub-province">
+        <h3>Prince Edward Island <span class="hub-count">(1 cities)</span></h3>
+        <div class="hub-city-grid">
+          
+          <a href="solar/charlottetown.html" class="hub-city-card">
+            <h4>Charlottetown</h4>
+            <div class="hub-stats">
+              <span>1160 kWh/m&sup2;</span>
+              <span>3.6 hrs/day</span>
+              <span>11yr payback</span>
+            </div>
+          </a>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="hub-cta">
+  <div class="container">
+    <h2>Ready to make a data-driven solar decision?</h2>
+    <p>Nexsun.ai's decision intelligence platform models your property's solar potential with precision. Get started today.</p>
+    <a href="engage.html" class="btn-cta" style="font-size:16px;padding:16px 36px;">Get Started</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="platform.html">Platform Overview</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="modules.html">Modules</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="trust.html">Trust Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="why-nexsun.html">Why Nexsun.ai</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="partners.html">Partner Centre</a></li>
+          <li><a href="investors.html">Investor Centre</a></li>
+          <li><a href="press.html">Press &amp; Media</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="solar.html">Solar Guide</a></li>
+          <li><a href="blog.html">Case Studies</a></li>
+          <li><a href="blog.html">Events &amp; Media</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div style="margin-bottom:8px;">130, 5920 No. Two Road<br>Richmond BC V7C 4R9</div>
+        <div style="margin-bottom:8px;"><a href="mailto:info@nexsun.ai" style="color:var(--sun);">info@nexsun.ai</a></div>
+        <div><a href="tel:6047609015">1-604-760-9015</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookie Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      <p>&copy; 2026 Nexsun.ai. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
