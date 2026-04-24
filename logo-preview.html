@@ -14,8 +14,8 @@
   .variant { display:flex; flex-direction:column; align-items:center; gap:16px; }
   .variant-label { font-size:10px; color:#94a3b8; letter-spacing:1px; text-transform:uppercase; }
   .on-light { background:#FFFBF0; padding:32px 40px; border-radius:16px; border:1px solid #e2e8f0; display:flex; align-items:center; justify-content:center; }
-  .on-dark  { background:#1E3A8A; padding:32px 40px; border-radius:16px; display:flex; align-items:center; justify-content:center; }
-  .on-black { background:#0f172a; padding:32px 40px; border-radius:16px; display:flex; align-items:center; justify-content:center; }
+  .on-dark  { background:#163E64; padding:32px 40px; border-radius:16px; display:flex; align-items:center; justify-content:center; }
+  .on-black { background:#3A3A3A; padding:32px 40px; border-radius:16px; display:flex; align-items:center; justify-content:center; }
   .divider { height:1px; background:linear-gradient(90deg,transparent,#e2e8f0,transparent); margin:24px 0; }
 </style>
 </head>
@@ -38,18 +38,18 @@
         <svg width="260" height="64" viewBox="0 0 260 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="aCore" cx="50%" cy="45%" r="55%">
-              <stop offset="0%" stop-color="#FBBF24"/>
-              <stop offset="55%" stop-color="#F59E0B"/>
-              <stop offset="100%" stop-color="#D97706"/>
+              <stop offset="0%" stop-color="#F6B707"/>
+              <stop offset="55%" stop-color="#F4920B"/>
+              <stop offset="100%" stop-color="#E95704"/>
             </radialGradient>
             <filter id="aGlow"><feGaussianBlur stdDeviation="1.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           </defs>
           <!-- Icon mark: 32px -->
           <g transform="translate(0,0)">
             <!-- Outer navy ring -->
-            <circle cx="32" cy="32" r="30" fill="#1E3A8A"/>
+            <circle cx="32" cy="32" r="30" fill="#163E64"/>
             <!-- Amber rays -->
-            <g fill="#F59E0B" filter="url(#aGlow)">
+            <g fill="#F4920B" filter="url(#aGlow)">
               <rect x="30" y="4"  width="4" height="10" rx="2" transform="rotate(0 32 32)"/>
               <rect x="30" y="4"  width="4" height="10" rx="2" transform="rotate(45 32 32)"/>
               <rect x="30" y="4"  width="4" height="10" rx="2" transform="rotate(90 32 32)"/>
@@ -64,11 +64,11 @@
             <!-- N letterform in white -->
             <text x="32" y="38" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-weight="900" font-size="18" fill="white" letter-spacing="-1">N</text>
             <!-- Green accent dot top-right -->
-            <circle cx="51" cy="13" r="5" fill="#22C55E"/>
+            <circle cx="51" cy="13" r="5" fill="#F4920B"/>
           </g>
           <!-- Wordmark -->
-          <text x="76" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#1E3A8A" letter-spacing="-0.5">Nexsun</text>
-          <text x="205" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#22C55E">.ai</text>
+          <text x="76" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#163E64" letter-spacing="-0.5">Nexsun</text>
+          <text x="205" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#F4920B">.ai</text>
         </svg>
       </div>
       <div class="variant-label">Light</div>
@@ -80,13 +80,13 @@
         <svg width="260" height="64" viewBox="0 0 260 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="aCoreD" cx="50%" cy="45%" r="55%">
-              <stop offset="0%" stop-color="#FBBF24"/>
-              <stop offset="100%" stop-color="#D97706"/>
+              <stop offset="0%" stop-color="#F6B707"/>
+              <stop offset="100%" stop-color="#E95704"/>
             </radialGradient>
           </defs>
           <g transform="translate(0,0)">
             <circle cx="32" cy="32" r="30" fill="rgba(255,255,255,0.12)"/>
-            <g fill="#FBBF24">
+            <g fill="#F6B707">
               <rect x="30" y="4"  width="4" height="10" rx="2" transform="rotate(0 32 32)"/>
               <rect x="30" y="4"  width="4" height="10" rx="2" transform="rotate(45 32 32)"/>
               <rect x="30" y="4"  width="4" height="10" rx="2" transform="rotate(90 32 32)"/>
@@ -98,10 +98,10 @@
             </g>
             <circle cx="32" cy="32" r="16" fill="url(#aCoreD)"/>
             <text x="32" y="38" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-weight="900" font-size="18" fill="white">N</text>
-            <circle cx="51" cy="13" r="5" fill="#22C55E"/>
+            <circle cx="51" cy="13" r="5" fill="#F4920B"/>
           </g>
           <text x="76" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="white" letter-spacing="-0.5">Nexsun</text>
-          <text x="205" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#22C55E">.ai</text>
+          <text x="205" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#F4920B">.ai</text>
         </svg>
       </div>
       <div class="variant-label">Dark</div>
@@ -113,12 +113,12 @@
         <svg width="80" height="80" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="aCoreI" cx="50%" cy="45%" r="55%">
-              <stop offset="0%" stop-color="#FBBF24"/>
-              <stop offset="100%" stop-color="#D97706"/>
+              <stop offset="0%" stop-color="#F6B707"/>
+              <stop offset="100%" stop-color="#E95704"/>
             </radialGradient>
           </defs>
-          <circle cx="32" cy="32" r="30" fill="#1E3A8A"/>
-          <g fill="#F59E0B">
+          <circle cx="32" cy="32" r="30" fill="#163E64"/>
+          <g fill="#F4920B">
             <rect x="30" y="3"  width="4" height="11" rx="2" transform="rotate(0 32 32)"/>
             <rect x="30" y="3"  width="4" height="11" rx="2" transform="rotate(45 32 32)"/>
             <rect x="30" y="3"  width="4" height="11" rx="2" transform="rotate(90 32 32)"/>
@@ -130,7 +130,7 @@
           </g>
           <circle cx="32" cy="32" r="17" fill="url(#aCoreI)"/>
           <text x="32" y="39" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-weight="900" font-size="20" fill="white">N</text>
-          <circle cx="52" cy="12" r="6" fill="#22C55E"/>
+          <circle cx="52" cy="12" r="6" fill="#F4920B"/>
         </svg>
       </div>
       <div class="variant-label">Icon Only</div>
@@ -153,31 +153,31 @@
         <svg width="260" height="64" viewBox="0 0 260 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="bGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#D97706"/>
-              <stop offset="100%" stop-color="#FBBF24"/>
+              <stop offset="0%" stop-color="#E95704"/>
+              <stop offset="100%" stop-color="#F6B707"/>
             </linearGradient>
             <clipPath id="bClip"><circle cx="32" cy="32" r="22"/></clipPath>
           </defs>
           <!-- Outer glow ring -->
-          <circle cx="32" cy="32" r="30" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.3"/>
-          <circle cx="32" cy="32" r="25" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.5"/>
+          <circle cx="32" cy="32" r="30" fill="none" stroke="#F4920B" stroke-width="1.5" opacity="0.3"/>
+          <circle cx="32" cy="32" r="25" fill="none" stroke="#F4920B" stroke-width="1" opacity="0.5"/>
           <!-- Core filled circle -->
-          <circle cx="32" cy="32" r="22" fill="#1E3A8A"/>
+          <circle cx="32" cy="32" r="22" fill="#163E64"/>
           <!-- Rising market line (clipped inside circle) -->
           <g clip-path="url(#bClip)">
             <polyline points="12,46 22,36 30,40 42,22 52,18" fill="none" stroke="url(#bGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
             <!-- Dots on line -->
-            <circle cx="22" cy="36" r="2.5" fill="#FBBF24"/>
-            <circle cx="30" cy="40" r="2.5" fill="#FBBF24"/>
-            <circle cx="42" cy="22" r="2.5" fill="#FBBF24"/>
+            <circle cx="22" cy="36" r="2.5" fill="#F6B707"/>
+            <circle cx="30" cy="40" r="2.5" fill="#F6B707"/>
+            <circle cx="42" cy="22" r="2.5" fill="#F6B707"/>
             <!-- Green endpoint -->
-            <circle cx="52" cy="18" r="3.5" fill="#22C55E"/>
+            <circle cx="52" cy="18" r="3.5" fill="#F4920B"/>
           </g>
           <!-- Ring border -->
-          <circle cx="32" cy="32" r="22" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+          <circle cx="32" cy="32" r="22" fill="none" stroke="#163E64" stroke-width="2"/>
           <!-- Wordmark -->
-          <text x="72" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#1E3A8A" letter-spacing="-0.5">Nexsun</text>
-          <text x="201" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#22C55E">.ai</text>
+          <text x="72" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#163E64" letter-spacing="-0.5">Nexsun</text>
+          <text x="201" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#F4920B">.ai</text>
         </svg>
       </div>
       <div class="variant-label">Light</div>
@@ -188,23 +188,23 @@
         <svg width="260" height="64" viewBox="0 0 260 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="bGradD" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#D97706"/>
-              <stop offset="100%" stop-color="#FBBF24"/>
+              <stop offset="0%" stop-color="#E95704"/>
+              <stop offset="100%" stop-color="#F6B707"/>
             </linearGradient>
             <clipPath id="bClipD"><circle cx="32" cy="32" r="22"/></clipPath>
           </defs>
-          <circle cx="32" cy="32" r="30" fill="none" stroke="#FBBF24" stroke-width="1.5" opacity="0.25"/>
-          <circle cx="32" cy="32" r="25" fill="none" stroke="#FBBF24" stroke-width="1" opacity="0.4"/>
+          <circle cx="32" cy="32" r="30" fill="none" stroke="#F6B707" stroke-width="1.5" opacity="0.25"/>
+          <circle cx="32" cy="32" r="25" fill="none" stroke="#F6B707" stroke-width="1" opacity="0.4"/>
           <circle cx="32" cy="32" r="22" fill="rgba(255,255,255,0.1)"/>
           <g clip-path="url(#bClipD)">
             <polyline points="12,46 22,36 30,40 42,22 52,18" fill="none" stroke="url(#bGradD)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="22" cy="36" r="2.5" fill="#FBBF24"/>
-            <circle cx="30" cy="40" r="2.5" fill="#FBBF24"/>
-            <circle cx="42" cy="22" r="2.5" fill="#FBBF24"/>
-            <circle cx="52" cy="18" r="3.5" fill="#22C55E"/>
+            <circle cx="22" cy="36" r="2.5" fill="#F6B707"/>
+            <circle cx="30" cy="40" r="2.5" fill="#F6B707"/>
+            <circle cx="42" cy="22" r="2.5" fill="#F6B707"/>
+            <circle cx="52" cy="18" r="3.5" fill="#F4920B"/>
           </g>
           <text x="72" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="white" letter-spacing="-0.5">Nexsun</text>
-          <text x="201" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#22C55E">.ai</text>
+          <text x="201" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#F4920B">.ai</text>
         </svg>
       </div>
       <div class="variant-label">Dark</div>
@@ -215,20 +215,20 @@
         <svg width="80" height="80" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="bGradI" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#D97706"/>
-              <stop offset="100%" stop-color="#FBBF24"/>
+              <stop offset="0%" stop-color="#E95704"/>
+              <stop offset="100%" stop-color="#F6B707"/>
             </linearGradient>
             <clipPath id="bClipI"><circle cx="32" cy="32" r="22"/></clipPath>
           </defs>
-          <circle cx="32" cy="32" r="30" fill="none" stroke="#FBBF24" stroke-width="1.5" opacity="0.3"/>
-          <circle cx="32" cy="32" r="25" fill="none" stroke="#FBBF24" stroke-width="1" opacity="0.45"/>
+          <circle cx="32" cy="32" r="30" fill="none" stroke="#F6B707" stroke-width="1.5" opacity="0.3"/>
+          <circle cx="32" cy="32" r="25" fill="none" stroke="#F6B707" stroke-width="1" opacity="0.45"/>
           <circle cx="32" cy="32" r="22" fill="rgba(255,255,255,0.08)"/>
           <g clip-path="url(#bClipI)">
             <polyline points="12,46 22,36 30,40 42,22 52,18" fill="none" stroke="url(#bGradI)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="22" cy="36" r="2.5" fill="#FBBF24"/>
-            <circle cx="30" cy="40" r="2.5" fill="#FBBF24"/>
-            <circle cx="42" cy="22" r="2.5" fill="#FBBF24"/>
-            <circle cx="52" cy="18" r="3.5" fill="#22C55E"/>
+            <circle cx="22" cy="36" r="2.5" fill="#F6B707"/>
+            <circle cx="30" cy="40" r="2.5" fill="#F6B707"/>
+            <circle cx="42" cy="22" r="2.5" fill="#F6B707"/>
+            <circle cx="52" cy="18" r="3.5" fill="#F4920B"/>
           </g>
         </svg>
       </div>
@@ -252,12 +252,12 @@
         <svg width="260" height="64" viewBox="0 0 260 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="cGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#1D4ED8"/>
-              <stop offset="100%" stop-color="#1E3A8A"/>
+              <stop offset="0%" stop-color="#215F9A"/>
+              <stop offset="100%" stop-color="#163E64"/>
             </linearGradient>
             <linearGradient id="cAmber" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FBBF24"/>
-              <stop offset="100%" stop-color="#F59E0B"/>
+              <stop offset="0%" stop-color="#F6B707"/>
+              <stop offset="100%" stop-color="#F4920B"/>
             </linearGradient>
           </defs>
           <!-- Hexagon-ish background -->
@@ -267,10 +267,10 @@
           <!-- Sun burst top-right corner -->
           <circle cx="48" cy="16" r="8" fill="url(#cAmber)"/>
           <!-- Green orbit ring around sun -->
-          <circle cx="48" cy="16" r="11" fill="none" stroke="#22C55E" stroke-width="2" stroke-dasharray="3 2"/>
+          <circle cx="48" cy="16" r="11" fill="none" stroke="#F4920B" stroke-width="2" stroke-dasharray="3 2"/>
           <!-- Wordmark -->
-          <text x="76" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#1E3A8A" letter-spacing="-0.5">Nexsun</text>
-          <text x="205" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#22C55E">.ai</text>
+          <text x="76" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#163E64" letter-spacing="-0.5">Nexsun</text>
+          <text x="205" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#F4920B">.ai</text>
         </svg>
       </div>
       <div class="variant-label">Light</div>
@@ -282,19 +282,19 @@
           <defs>
             <linearGradient id="cGradD" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#3B82F6"/>
-              <stop offset="100%" stop-color="#1D4ED8"/>
+              <stop offset="100%" stop-color="#215F9A"/>
             </linearGradient>
             <linearGradient id="cAmberD" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FBBF24"/>
-              <stop offset="100%" stop-color="#F59E0B"/>
+              <stop offset="0%" stop-color="#F6B707"/>
+              <stop offset="100%" stop-color="#F4920B"/>
             </linearGradient>
           </defs>
           <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#cGradD)"/>
           <path d="M 16,48 L 16,16 L 26,16 L 40,38 L 40,16 L 50,16 L 50,48 L 40,48 L 26,26 L 26,48 Z" fill="white"/>
           <circle cx="48" cy="16" r="8" fill="url(#cAmberD)"/>
-          <circle cx="48" cy="16" r="11" fill="none" stroke="#22C55E" stroke-width="2" stroke-dasharray="3 2"/>
+          <circle cx="48" cy="16" r="11" fill="none" stroke="#F4920B" stroke-width="2" stroke-dasharray="3 2"/>
           <text x="76" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="white" letter-spacing="-0.5">Nexsun</text>
-          <text x="205" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#22C55E">.ai</text>
+          <text x="205" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#F4920B">.ai</text>
         </svg>
       </div>
       <div class="variant-label">Dark</div>
@@ -305,18 +305,18 @@
         <svg width="80" height="80" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="cGradI" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#1D4ED8"/>
-              <stop offset="100%" stop-color="#1E3A8A"/>
+              <stop offset="0%" stop-color="#215F9A"/>
+              <stop offset="100%" stop-color="#163E64"/>
             </linearGradient>
             <linearGradient id="cAmberI" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FBBF24"/>
-              <stop offset="100%" stop-color="#F59E0B"/>
+              <stop offset="0%" stop-color="#F6B707"/>
+              <stop offset="100%" stop-color="#F4920B"/>
             </linearGradient>
           </defs>
           <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#cGradI)"/>
           <path d="M 16,48 L 16,16 L 26,16 L 40,38 L 40,16 L 50,16 L 50,48 L 40,48 L 26,26 L 26,48 Z" fill="white"/>
           <circle cx="48" cy="16" r="8" fill="url(#cAmberI)"/>
-          <circle cx="48" cy="16" r="11" fill="none" stroke="#22C55E" stroke-width="2" stroke-dasharray="3 2"/>
+          <circle cx="48" cy="16" r="11" fill="none" stroke="#F4920B" stroke-width="2" stroke-dasharray="3 2"/>
         </svg>
       </div>
       <div class="variant-label">Icon Only</div>
@@ -328,7 +328,7 @@
 
 <div style="margin-top:60px;padding-top:32px;border-top:1px solid #e2e8f0;font-size:12px;color:#94a3b8;line-height:1.8;">
   <strong style="color:#334155;">Colour palette used:</strong><br>
-  Navy #1E3A8A · Amber #F59E0B · Logo Green #22C55E · White · Gradients<br><br>
+  Navy #163E64 · Amber #F4920B · Logo Green #F4920B · White · Gradients<br><br>
   <strong style="color:#334155;">Concept A</strong> Solar Compass: Traditional sun mark with rays, N in the core. Premium & recognisable.<br>
   <strong style="color:#334155;">Concept B</strong> Market Signal: Rising line chart inside concentric rings. Energy + finance story.<br>
   <strong style="color:#334155;">Concept C</strong> Sun Node: Bold N in a rounded square, amber sun burst top-right. Clean & modern app icon.
