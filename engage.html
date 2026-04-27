@@ -779,6 +779,44 @@
 </div>
 
 <!-- FOOTER -->
+<!-- ══ MEMBERSHIPS ══ -->
+<section class="memberships-bar" aria-label="Memberships and affiliations">
+  <div class="memberships-inner">
+    <div class="memberships-label">Proud Member Of</div>
+    <div class="memberships-track">
+      <div class="memberships-row">
+        <a href="https://www.cim.org" target="_blank" rel="noopener" class="m-logo" aria-label="CIM, Canadian Institute of Mining"><img src="memberships/cim.png" alt="CIM" loading="lazy"></a>
+        <a href="https://www.boardoftrade.com/" target="_blank" rel="noopener" class="m-logo" aria-label="Greater Vancouver Board of Trade"><img src="memberships/gvbot.svg" alt="Greater Vancouver Board of Trade" loading="lazy"></a>
+        <a href="https://wearebctech.com" target="_blank" rel="noopener" class="m-logo" aria-label="We Are BC Tech"><img src="memberships/bctech.svg" alt="We Are BC Tech" loading="lazy"></a>
+        <a href="https://www.richmondchamber.ca/" target="_blank" rel="noopener" class="m-logo" aria-label="Richmond Chamber of Commerce"><img src="memberships/richmond.png" alt="Richmond Chamber of Commerce" loading="lazy"></a>
+        <!-- Duplicate for seamless scroll -->
+        <a href="https://www.cim.org" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/cim.png" alt="" loading="lazy"></a>
+        <a href="https://www.boardoftrade.com/" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/gvbot.svg" alt="" loading="lazy"></a>
+        <a href="https://wearebctech.com" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/bctech.svg" alt="" loading="lazy"></a>
+        <a href="https://www.richmondchamber.ca/" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/richmond.png" alt="" loading="lazy"></a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .memberships-bar { background:#FFFBF0; border-top:1px solid rgba(244,146,11,0.15); border-bottom:1px solid rgba(244,146,11,0.15); padding:28px 0; overflow:hidden; }
+  .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
+  .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#64748B; flex-shrink:0; min-width:140px; }
+  .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+  .memberships-row { display:flex; align-items:center; gap:64px; animation:memberships-scroll 30s linear infinite; width:max-content; }
+  .memberships-row:hover { animation-play-state:paused; }
+  .m-logo { display:flex; align-items:center; flex-shrink:0; opacity:.55; filter:grayscale(1); transition:opacity .25s, filter .25s; }
+  .m-logo:hover { opacity:1; filter:grayscale(0); }
+  .m-logo img { height:40px; width:auto; max-width:180px; object-fit:contain; }
+  @keyframes memberships-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  @media (max-width:768px) {
+    .memberships-inner { flex-direction:column; gap:14px; padding:0 16px; }
+    .memberships-label { min-width:auto; text-align:center; }
+    .memberships-row { gap:40px; }
+    .m-logo img { height:32px; }
+  }
+</style>
+
 <footer>
   <div class="container">
     <div class="footer-top">
