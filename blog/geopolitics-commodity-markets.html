@@ -226,7 +226,7 @@
         <p>Before discussing fusion, it is worth understanding the sheer diversity of data types that matter in commodity market intelligence. Our platform currently ingests from over 500 distinct sources, and they fall into several broad categories.</p>
 
         <h3>Structured Market Data</h3>
-        <p>This is the traditional backbone: real-time and delayed price feeds from exchanges (ICE, CME, LME, EEX, TOCOM), broker screens, OTC trade reports, and settlement data. It also includes fundamental data: inventory levels from EIA and IEA, production figures, refinery utilization rates, and forward curve term structures. These feeds arrive in well-defined formats, via APIs, FIX protocol, or CSV downloads, and present primarily an engineering challenge of scale and latency rather than an interpretation challenge.</p>
+        <p>This is the traditional backbone: continuous and delayed price feeds from exchanges (ICE, CME, LME, EEX, TOCOM), broker screens, OTC trade reports, and settlement data. It also includes fundamental data: inventory levels from EIA and IEA, production figures, refinery utilization rates, and forward curve term structures. These feeds arrive in well-defined formats, via APIs, FIX protocol, or CSV downloads, and present primarily an engineering challenge of scale and latency rather than an interpretation challenge.</p>
 
         <h3>Regulatory and Policy Data</h3>
         <p>This is where things get more complex. Regulatory filings from bodies like FERC, ACER, the European Commission, EPA, and national regulators arrive as PDF documents, HTML pages, and occasionally structured XML. They contain critical market-moving information, such as pipeline capacity allocations, emissions allowance auction results, tariff determinations, and policy consultations, but that information is embedded in natural language and legal terminology that requires extraction and interpretation.</p>
@@ -246,7 +246,7 @@
 
         <p><strong>Source-native connectors.</strong> Every data source has its own idiosyncrasies: authentication methods, rate limits, data formats, delivery schedules, error handling requirements. We build and maintain dedicated connectors for each source rather than relying on generic adapters. This means more upfront engineering work, but it ensures reliability and allows us to implement source-specific quality checks at the point of ingestion.</p>
 
-        <p><strong>Dual-track processing.</strong> Some data demands real-time processing. A breaking news headline about an OPEC+ emergency meeting or a pipeline explosion needs to reach the signal fusion layer in seconds. Other data, such as weekly EIA inventory reports or monthly IEA oil market reports, follows a batch processing pattern. Our architecture maintains both tracks, with a streaming layer (built on Apache Kafka) for real-time feeds and a batch processing pipeline (orchestrated through Apache Airflow) for scheduled data deliveries. Both tracks feed into the same normalized signal store.</p>
+        <p><strong>Dual-track processing.</strong> Some data demands continuous processing. A breaking news headline about an OPEC+ emergency meeting or a pipeline explosion needs to reach the signal fusion layer in seconds. Other data, such as weekly EIA inventory reports or monthly IEA oil market reports, follows a batch processing pattern. Our architecture maintains both tracks, with a streaming layer (built on Apache Kafka) for continuous feeds and a batch processing pipeline (orchestrated through Apache Airflow) for scheduled data deliveries. Both tracks feed into the same normalized signal store.</p>
 
         <p><strong>Provenance tracking.</strong> Every piece of data that enters the system carries a complete provenance record: its source, ingestion timestamp, any transformations applied, and a confidence score based on source reliability history. This is not just good data engineering practice, it is essential for the explainability requirements of production-grade AI systems in financial markets.</p>
 
@@ -262,7 +262,7 @@
 
         <p><strong>Entity resolution.</strong> The same real-world entity, whether it is a company, a pipeline, a trading hub, or a geographic region, appears under different names across different sources. "Brent crude" in a news headline, "ICE Brent" in a price feed, "Dated Brent" in a physical cargo report, and "North Sea crude benchmark" in a policy document all refer to related but distinct concepts. Our entity resolution system maintains a knowledge graph of commodity market entities, their relationships, and their aliases across sources. This graph currently contains over 180,000 entities and is continuously updated.</p>
 
-        <p><strong>Temporal alignment.</strong> Data arrives at different frequencies and with different latencies. A real-time price tick updates in milliseconds. A weather forecast updates every six hours. An EIA report comes weekly. A regulatory filing might reference conditions from weeks or months in the past. Fusing these signals requires a temporal alignment layer that understands the cadence of each source, handles the distinction between event time (when something happened) and processing time (when we learned about it), and can reconstruct the state of the world at any historical point in time.</p>
+        <p><strong>Temporal alignment.</strong> Data arrives at different frequencies and with different latencies. A continuous price tick updates in milliseconds. A weather forecast updates every six hours. An EIA report comes weekly. A regulatory filing might reference conditions from weeks or months in the past. Fusing these signals requires a temporal alignment layer that understands the cadence of each source, handles the distinction between event time (when something happened) and processing time (when we learned about it), and can reconstruct the state of the world at any historical point in time.</p>
 
         <p><strong>Semantic extraction.</strong> For unstructured sources, normalization requires extracting structured signals from natural language. Our NLP pipeline, built on transformer architectures fine-tuned specifically for commodity market language, performs named entity recognition, event extraction, sentiment analysis, and relationship mapping on incoming text. When a news article reports that "Kazakhstan's CPC pipeline blend exports fell by 200,000 barrels per day following storm damage at the Novorossiysk terminal," our system extracts the commodity (CPC blend crude), the direction (decrease), the magnitude (200 kbd), the cause (weather/infrastructure), the location (Novorossiysk), and the affected trade route (Caspian-to-Mediterranean), then links each element to the relevant entities in our knowledge graph.</p>
 
@@ -283,7 +283,7 @@
 
         <h2>Real-Time Versus Batch: A False Dichotomy</h2>
 
-        <p>There is a common assumption in market data technology that real-time is always better. In our experience, this is not the case. The value of latency depends entirely on the type of signal and the decision it informs.</p>
+        <p>There is a common assumption in market data technology that continuous is always better. In our experience, this is not the case. The value of latency depends entirely on the type of signal and the decision it informs.</p>
 
         <p>For breaking news and price movements, sub-second delivery is essential. But for signals derived from satellite imagery, the processing time to analyze the image (typically 15 to 45 minutes) far exceeds any delivery latency. For regulatory filings, the document may be hundreds of pages long, and the relevant extraction takes minutes. For weather models, the next forecast update is hours away regardless of how fast you process the current one.</p>
 
@@ -380,7 +380,7 @@
       </div>
       <div class="footer-newsletter">
         <h3>Stay ahead of the market</h3>
-        <p>Get the latest AI insights from Nexsun.ai, platform updates, and energy market intelligence delivered monthly.</p>
+        <p>Get the latest market briefings from Nexsun.ai, platform updates, and energy market intelligence delivered monthly.</p>
         <div class="fn-field">
           <input type="text" placeholder="Full name" id="fn-name">
           <input type="email" placeholder="Work email" id="fn-email">

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexsun.ai Character Concepts</title>
+<style>
+  :root {
+    --sun:        #F4920B;
+    --sun-bright: #F6B707;
+    --sun-deep:   #E95704;
+    --sun-pale:   #FEF3C7;
+    --sky:        #215F9A;
+    --navy:       #163E64;
+    --bg:         #FFFBF0;
+    --text:       #3A3A3A;
+    --text-muted: #64748B;
+    --border:     rgba(244,146,11,0.2);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--text); background: var(--bg); }
+  .lab-tag { position:fixed; top:14px; right:14px; z-index:9999; background:#163E64; color:#F6B707; font-size:11px; font-weight:700; letter-spacing:1.5px; padding:6px 14px; border-radius:20px; text-transform:uppercase; }
+
+  header {
+    background: linear-gradient(135deg, #163E64 0%, #0d2843 100%);
+    color:#fff;
+    padding:80px 24px 60px;
+    text-align:center;
+  }
+  header .kicker { display:inline-block; color:var(--sun-bright); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; padding:5px 14px; background:rgba(246,183,7,0.12); border-radius:20px; }
+  header h1 { font-size:clamp(34px,4vw,56px); font-weight:900; line-height:1.05; margin-bottom:18px; }
+  header h1 .accent { color:var(--sun-bright); }
+  header p { font-size:17px; color:rgba(255,255,255,0.78); max-width:700px; margin:0 auto; line-height:1.7; }
+
+  .container { max-width:1280px; margin:0 auto; padding:60px 24px; }
+  .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; }
+
+  .card {
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(22,62,100,0.08), 0 4px 12px rgba(0,0,0,0.04);
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* Visual placeholder area */
+  .visual {
+    height:300px;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+  }
+
+  /* SOLIS, robed oracle */
+  .visual.solis {
+    background: radial-gradient(ellipse at 50% 30%, #1a3a5c 0%, #0a1a30 100%);
+  }
+  .solis .star-bg {
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, #F6B707 50%, transparent),
+      radial-gradient(1px 1px at 60% 20%, #fff 50%, transparent),
+      radial-gradient(1px 1px at 80% 50%, #F6B707 50%, transparent),
+      radial-gradient(1px 1px at 30% 70%, #fff 50%, transparent),
+      radial-gradient(1px 1px at 75% 80%, #F6B707 50%, transparent),
+      radial-gradient(1px 1px at 15% 60%, #fff 50%, transparent);
+    opacity:0.7;
+  }
+  .solis .robe {
+    position:relative; z-index:2;
+    width:200px; height:280px;
+    background: linear-gradient(180deg, rgba(22,62,100,0.95) 0%, rgba(13,40,67,1) 100%);
+    clip-path: polygon(35% 0%, 65% 0%, 100% 100%, 0% 100%);
+  }
+  .solis .face-sun {
+    position:absolute; top:20px; left:50%; transform:translateX(-50%);
+    width:88px; height:88px; z-index:3;
+    filter: drop-shadow(0 0 24px rgba(246,183,7,0.7));
+    animation: sunGlow 4s ease-in-out infinite;
+  }
+  @keyframes sunGlow {
+    0%,100% { filter: drop-shadow(0 0 24px rgba(246,183,7,0.7)); }
+    50% { filter: drop-shadow(0 0 36px rgba(246,183,7,1)); }
+  }
+
+  /* SOL, senior analyst */
+  .visual.sol {
+    background: linear-gradient(180deg, #FEF3C7 0%, #FDE0A8 100%);
+  }
+  .sol .figure {
+    position:relative;
+    width:180px; height:260px;
+  }
+  .sol .head {
+    position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:70px; height:70px; border-radius:50%;
+    background: linear-gradient(180deg, #d4a574 0%, #b88a5a 100%);
+  }
+  .sol .torso {
+    position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+    width:160px; height:180px;
+    background: linear-gradient(180deg, var(--navy) 0%, #0d2843 100%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  }
+  .sol .lapel-pin {
+    position:absolute; top:90px; left:38%;
+    width:24px; height:24px; z-index:3;
+    filter: drop-shadow(0 2px 4px rgba(244,146,11,0.5));
+  }
+  .sol .glasses {
+    position:absolute; top:34px; left:50%; transform:translateX(-50%);
+    width:50px; height:14px; border:2px solid #2a2a2a; border-radius:8px; z-index:2;
+  }
+  .sol .desk-light {
+    position:absolute; bottom:0; left:0; right:0; height:60px;
+    background:radial-gradient(ellipse at center, rgba(244,146,11,0.25) 0%, transparent 70%);
+  }
+
+  /* AURORA, lighthouse keeper */
+  .visual.aurora {
+    background: linear-gradient(180deg, #ff9a76 0%, #ffd2a4 40%, #4a6584 100%);
+  }
+  .aurora .horizon {
+    position:absolute; bottom:30%; left:0; right:0; height:1px; background:rgba(0,0,0,0.15);
+  }
+  .aurora .figure {
+    position:relative; z-index:2;
+    width:120px; height:240px;
+  }
+  .aurora .coat {
+    position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+    width:120px; height:200px;
+    background: linear-gradient(180deg, #2a3f5c 0%, #15233a 100%);
+    clip-path: polygon(30% 0%, 70% 0%, 90% 100%, 10% 100%);
+  }
+  .aurora .head {
+    position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:50px; height:50px; border-radius:50%;
+    background: linear-gradient(180deg, #d4a574 0%, #b88a5a 100%);
+  }
+  .aurora .lantern {
+    position:absolute; bottom:80px; right:-40px; z-index:3;
+    width:60px; height:60px;
+    filter: drop-shadow(0 0 30px rgba(246,183,7,0.9));
+    animation: lanternPulse 3s ease-in-out infinite;
+  }
+  @keyframes lanternPulse {
+    0%,100% { filter: drop-shadow(0 0 30px rgba(246,183,7,0.9)); }
+    50% { filter: drop-shadow(0 0 50px rgba(246,183,7,1)); }
+  }
+
+  .info { padding:32px 28px; }
+  .name {
+    font-size:32px;
+    font-weight:900;
+    letter-spacing:-0.5px;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .archetype {
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+    color:var(--sun-deep);
+    margin-bottom:18px;
+  }
+  .tagline {
+    font-size:15px;
+    line-height:1.6;
+    color:var(--text);
+    margin-bottom:24px;
+    font-style:italic;
+    border-left:3px solid var(--sun);
+    padding-left:14px;
+  }
+  .section-label {
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-bottom:10px;
+    margin-top:22px;
+  }
+  .section-label:first-child { margin-top:0; }
+  .voice-list { list-style:none; }
+  .voice-list li {
+    font-size:14px;
+    line-height:1.55;
+    color:var(--text);
+    padding:8px 0;
+    border-bottom:1px dashed rgba(22,62,100,0.1);
+    position:relative;
+    padding-left:18px;
+  }
+  .voice-list li::before {
+    content:'\201C';
+    position:absolute;
+    left:0; top:6px;
+    color:var(--sun);
+    font-size:18px;
+    font-weight:700;
+  }
+  .voice-list li:last-child { border-bottom:none; }
+  .voice-list li .ctx { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--sun-deep); display:block; margin-top:4px; padding-left:0; }
+
+  .palette { display:flex; gap:6px; margin-top:6px; }
+  .swatch { width:36px; height:36px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); position:relative; }
+  .swatch::after { content:attr(data-hex); position:absolute; bottom:-18px; left:0; font-size:9px; color:var(--text-muted); font-family:monospace; }
+
+  .where {
+    background:rgba(244,146,11,0.05);
+    border:1px solid rgba(244,146,11,0.15);
+    border-radius:12px;
+    padding:14px 16px;
+    margin-top:8px;
+  }
+  .where .yes { color:#16a34a; font-weight:700; font-size:13px; margin-bottom:4px; }
+  .where .no { color:#dc2626; font-weight:700; font-size:13px; }
+  .where p { font-size:13px; color:var(--text); line-height:1.55; margin:2px 0 8px; }
+  .where p:last-child { margin-bottom:0; }
+
+  .prompt-block {
+    background:#163E64;
+    color:#fff;
+    border-radius:14px;
+    padding:18px;
+    margin-top:24px;
+  }
+  .prompt-block .lbl { color:var(--sun-bright); font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; display:block; }
+  .prompt-block code {
+    display:block;
+    font-family: "SF Mono", Monaco, Consolas, monospace;
+    font-size:12px;
+    line-height:1.6;
+    color:rgba(255,255,255,0.92);
+    white-space:pre-wrap;
+    word-break:break-word;
+  }
+
+  .footer-note {
+    text-align:center;
+    padding:60px 24px 80px;
+    color:var(--text-muted);
+    font-size:14px;
+    line-height:1.7;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .footer-note strong { color:var(--navy); }
+
+  @media (max-width:980px) {
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lab-tag">Concepts, not live</div>
+
+<header>
+  <div class="kicker">Brand Character Exploration</div>
+  <h1>Nexsun.ai needs a face.<br>Here are <span class="accent">three candidates</span>.</h1>
+  <p>One unified character to live in product (PIA) and across the brand (marketing, social, briefings). Below are three archetypes, fully fleshed. Pick one, remix, or push back.</p>
+</header>
+
+<div class="container">
+<div class="grid">
+
+  <!-- ━━━━━━━━━━━ SOLIS ━━━━━━━━━━━ -->
+  <div class="card">
+    <div class="visual solis">
+      <div class="star-bg"></div>
+      <div class="robe"></div>
+      <img class="face-sun" src="../Logos 2/Nexsun Mini.svg" alt="">
+    </div>
+    <div class="info">
+      <div class="archetype">The Oracle</div>
+      <div class="name">SOLIS</div>
+      <div class="tagline">"The signal you seek has already arrived. We have only to look."</div>
+
+      <div class="section-label">Identity</div>
+      <p style="font-size:14px;line-height:1.65;color:var(--text);">Ageless. Has seen every market cycle since Rome traded grain. Doesn't predict, reveals what was already there. Closer to a Delphic figure than a fortune teller.</p>
+
+      <div class="section-label">Voice in context</div>
+      <ul class="voice-list">
+        <li>The signal you seek has already arrived. We have only to look.<span class="ctx">Brand film hero copy</span></li>
+        <li>What returns is not the same. What returns is what you must now see.<span class="ctx">Quarterly outlook intro</span></li>
+        <li>Three patterns have completed. Two remain forming.<span class="ctx">Email open</span></li>
+      </ul>
+
+      <div class="section-label">Visual style</div>
+      <p style="font-size:14px;line-height:1.65;color:var(--text);">Robed figure, hood up, body partially translucent. No face, instead a radiant sun-disc where the face would be. Always backlit. Star charts, not screens.</p>
+
+      <div class="section-label">Palette</div>
+      <div class="palette">
+        <div class="swatch" style="background:#0a1a30;" data-hex="#0a1a30"></div>
+        <div class="swatch" style="background:#163E64;" data-hex="#163E64"></div>
+        <div class="swatch" style="background:#F6B707;" data-hex="#F6B707"></div>
+        <div class="swatch" style="background:#FEF3C7;" data-hex="#FEF3C7"></div>
+      </div>
+
+      <div class="section-label" style="margin-top:32px;">Where it works</div>
+      <div class="where">
+        <div class="yes">Works</div>
+        <p>Brand films. Annual letters. Investor decks. Big-stage moments. Social posts that begin "From the watchtower."</p>
+        <div class="no">Fails</div>
+        <p>Daily briefings. PIA chat. Demos. Voice too elevated for routine product use.</p>
+      </div>
+
+      <div class="prompt-block">
+        <span class="lbl">AI image prompt</span>
+        <code>Editorial illustration of a tall robed celestial figure, hood drawn up, face entirely replaced by a glowing radiant sun disc emitting warm amber light. Body silhouette in deep navy, partially translucent. Background: deep night sky with subtle constellation marks and golden stars. Mood: ancient, calm, oracle-like. Style: stylized digital painting, similar to The Economist editorial covers. Color palette: deep navy #163E64, dawn amber #F6B707, cream highlight #FEF3C7. No text. Vertical composition.</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━ SOL ━━━━━━━━━━━ -->
+  <div class="card">
+    <div class="visual sol">
+      <div class="figure">
+        <div class="torso"></div>
+        <div class="head"></div>
+        <div class="glasses"></div>
+        <img class="lapel-pin" src="../Logos 2/Nexsun Mini.svg" alt="">
+      </div>
+      <div class="desk-light"></div>
+    </div>
+    <div class="info">
+      <div class="archetype">The Senior Analyst</div>
+      <div class="name">SOL</div>
+      <div class="tagline">"Three things matter today. Let's go."</div>
+
+      <div class="section-label">Identity</div>
+      <p style="font-size:14px;line-height:1.65;color:var(--text);">Thirty years on trading floors. Was at Lehman. Came up under one of the legends, now mentors juniors. Sharp, dry, no patience for jargon. Sun emblem on a small lapel pin.</p>
+
+      <div class="section-label">Voice in context</div>
+      <ul class="voice-list">
+        <li>I've watched markets for thirty years. The job hasn't changed. Find the signal. Tell the truth. Move.<span class="ctx">Brand film</span></li>
+        <li>Three things matter today. LNG is moving on the Algeria news. The Fed minutes drop at 2. Your contract review is overdue. Start with the third.<span class="ctx">Daily briefing</span></li>
+        <li>Position risk just shifted. You're still inside limits, but the path tightens by Thursday.<span class="ctx">In-product alert</span></li>
+        <li>Reminder: your model is wrong. Mine too. The question is which direction.<span class="ctx">Social post</span></li>
+      </ul>
+
+      <div class="section-label">Visual style</div>
+      <p style="font-size:14px;line-height:1.65;color:var(--text);">Humanoid, 50s-60s, any gender or ethnicity. Dressed sharply but lived-in: rolled sleeves, glasses pushed up, sun pin on lapel. Editorial illustration style. Stands among floating market chips.</p>
+
+      <div class="section-label">Palette</div>
+      <div class="palette">
+        <div class="swatch" style="background:#163E64;" data-hex="#163E64"></div>
+        <div class="swatch" style="background:#F4920B;" data-hex="#F4920B"></div>
+        <div class="swatch" style="background:#FEF3C7;" data-hex="#FEF3C7"></div>
+        <div class="swatch" style="background:#3A3A3A;" data-hex="#3A3A3A"></div>
+      </div>
+
+      <div class="section-label" style="margin-top:32px;">Where it works</div>
+      <div class="where">
+        <div class="yes">Works</div>
+        <p>PIA chat. Daily briefings. Demos. Sales decks. Webinars. The voice of the platform inside the product.</p>
+        <div class="no">Fails</div>
+        <p>Abstract brand work. Mythic moments. Sol is too grounded for the dreamy stuff.</p>
+      </div>
+
+      <div class="prompt-block">
+        <span class="lbl">AI image prompt</span>
+        <code>Editorial illustration of a sharp, weathered senior trading-floor analyst, mid-50s, looking straight at viewer with a dry knowing expression. Wearing a tailored navy suit, white shirt with rolled sleeves, glasses pushed up on forehead, small glowing sun-disc pin on lapel. Background: subtle floating market data chips, warm amber desk light. Style: editorial illustration like The Economist or NYT Op-Ed. Color palette: navy #163E64, amber #F4920B, cream #FEF3C7. Mood: trustworthy, sharp, ageless. No text. Portrait orientation.</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━ AURORA ━━━━━━━━━━━ -->
+  <div class="card">
+    <div class="visual aurora">
+      <div class="horizon"></div>
+      <div class="figure">
+        <div class="coat"></div>
+        <div class="head"></div>
+      </div>
+      <img class="lantern" src="../Logos 2/Nexsun Mini.svg" alt="">
+    </div>
+    <div class="info">
+      <div class="archetype">The Lighthouse Keeper</div>
+      <div class="name">AURORA</div>
+      <div class="tagline">"I've been watching since 4am. You should know."</div>
+
+      <div class="section-label">Identity</div>
+      <p style="font-size:14px;line-height:1.65;color:var(--text);">Watches over the ports. Up before the markets, awake long after. The first to see the storm forming, the last to leave the post. Practical, deliberate, speaks plainly about what they've observed.</p>
+
+      <div class="section-label">Voice in context</div>
+      <ul class="voice-list">
+        <li>I've been watching this coast for twenty years. The light I tend is yours now.<span class="ctx">Brand film</span></li>
+        <li>I've been watching since 4am. Three things shifted overnight. Two of them touch your book.<span class="ctx">Morning briefing</span></li>
+        <li>Heads up. The signal I've tracked for six weeks just turned. Look now.<span class="ctx">Alert</span></li>
+        <li>Quiet morning on the wires. Quiet is data too.<span class="ctx">Social post</span></li>
+      </ul>
+
+      <div class="section-label">Visual style</div>
+      <p style="font-size:14px;line-height:1.65;color:var(--text);">Stylized figure tending a celestial beacon. Maritime overtones, long coat, weathered hands. The lantern they hold is the Nexsun sun mark, glowing. Often silhouetted against dawn horizon.</p>
+
+      <div class="section-label">Palette</div>
+      <div class="palette">
+        <div class="swatch" style="background:#15233a;" data-hex="#15233a"></div>
+        <div class="swatch" style="background:#ff9a76;" data-hex="#ff9a76"></div>
+        <div class="swatch" style="background:#F6B707;" data-hex="#F6B707"></div>
+        <div class="swatch" style="background:#4a6584;" data-hex="#4a6584"></div>
+      </div>
+
+      <div class="section-label" style="margin-top:32px;">Where it works</div>
+      <div class="where">
+        <div class="yes">Works</div>
+        <p>Daily and weekly briefings, alert notifications, email digests, nighttime and early-morning content. The "quiet vigilance" thread of the brand.</p>
+        <div class="no">Fails</div>
+        <p>Sharp tactical content. Live demos with energy. Anything that needs urgency or wit.</p>
+      </div>
+
+      <div class="prompt-block">
+        <span class="lbl">AI image prompt</span>
+        <code>Editorial illustration of a calm, weathered lighthouse keeper standing on a rocky coastal outpost, silhouetted against a pre-dawn horizon. Long navy coat, scarf, hands wrapped around a glowing celestial lantern shaped like a stylized sun emitting warm amber light. Subtle maritime details. Mood: vigilant, patient, the first watcher of the day. Style: stylized digital painting like a New York Times editorial illustration or Apple Today commercial. Color palette: navy #15233a, dawn coral #ff9a76, amber #F6B707, twilight blue #4a6584. No text. Wide composition.</code>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-note">
+  <strong>Each card includes an AI image prompt at the bottom.</strong> Paste the prompt into Midjourney, DALL-E, or Stable Diffusion to generate real character art for the one you pick. The CSS shapes above are placeholders, not the final character.
+  <br><br>
+  <strong>To pick:</strong> reply with a name (Solis, Sol, or Aurora), or remix elements from any.
+</div>
+
+</div>
+
+</body>
+</html>

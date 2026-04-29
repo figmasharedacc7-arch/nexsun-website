@@ -1,3 +1,6 @@
 .DS_Store
 *.log
 .claude/
+.photo-backups/
+.logo-backups/
+docs/SESSION-CONTEXT.md
