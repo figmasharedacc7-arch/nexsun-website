@@ -1,0 +1,190 @@
+<!--
+  Nexsun Newsletter Template - "The Nexsun Brief"
+  HubSpot-compatible HTML email, table-based layout, inline CSS.
+
+  TO USE IN HUBSPOT:
+  1. Marketing > Email > Create > HTML email and paste this file's contents
+  2. Logo is hosted at nexsun.ai. If your audience uses Outlook desktop heavily, upload a PNG to HubSpot File Manager and swap the SVG URL.
+  3. HubSpot auto-fills {{ contact.firstname }}, {{ owner.firstname }}, {{ unsubscribe_link }}
+  4. Bracketed placeholders like [topic], [Stat], [LINK] are content fields you fill per send
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <title>The Nexsun Brief</title>
+  <!--[if mso]>
+  <style type="text/css">
+    body, table, td { font-family: Arial, sans-serif !important; }
+  </style>
+  <![endif]-->
+</head>
+<body style="margin:0; padding:0; background-color:#FFFBF0; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color:#3A3A3A;">
+
+  <!-- Preheader (hidden preview text) -->
+  <div style="display:none; font-size:1px; color:#FFFBF0; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden;">
+    What worked for SMBs running AI marketing this month, in 4 minutes.
+  </div>
+
+  <!-- Wrapper -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#FFFBF0;">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+
+        <!-- Container -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px; background-color:#FFFFFF; border-radius:12px; box-shadow:0 4px 24px rgba(244,146,11,0.08);">
+
+          <!-- Header bar -->
+          <tr>
+            <td style="background-color:#163E64; padding:24px 32px; border-radius:12px 12px 0 0;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td align="left">
+                    <img src="../../../logo-horizontal-white.png" alt="Nexsun.ai" width="120" height="25" style="display:block; border:0; outline:none; text-decoration:none;" />
+                  </td>
+                  <td align="right" style="color:#FEF3C7; font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase;">
+                    The Brief, [Month Year]
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Hero -->
+          <tr>
+            <td style="padding:40px 32px 16px 32px;">
+              <h1 style="margin:0 0 12px 0; font-size:28px; line-height:1.25; color:#163E64; font-weight:700;">
+                Three things from Nexsun this month.
+              </h1>
+              <p style="margin:0; font-size:16px; line-height:1.6; color:#64748B;">
+                Hi {{ contact.firstname }}, here's what we learned, what worked, and one thing we got wrong.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Section 1: The play -->
+          <tr>
+            <td style="padding:24px 32px 8px 32px;">
+              <p style="margin:0 0 8px 0; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#F4920B;">
+                The play that worked
+              </p>
+              <h2 style="margin:0 0 12px 0; font-size:20px; line-height:1.35; color:#163E64; font-weight:700;">
+                [Headline of the play]
+              </h2>
+              <p style="margin:0 0 12px 0; font-size:16px; line-height:1.6; color:#3A3A3A;">
+                [One sentence setup]. [What we did]. Result: <strong style="color:#E95704;">[number]</strong>.
+              </p>
+              <p style="margin:0;">
+                <a href="[LINK]" style="color:#215F9A; font-weight:600; text-decoration:underline;">See the full breakdown &rsaquo;</a>
+              </p>
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr><td style="padding:24px 32px;"><div style="height:1px; background-color:#FEF3C7; line-height:1px; font-size:1px;">&nbsp;</div></td></tr>
+
+          <!-- Section 2: The number -->
+          <tr>
+            <td style="padding:0 32px 8px 32px;">
+              <p style="margin:0 0 8px 0; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#F4920B;">
+                The number worth knowing
+              </p>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#FFF7E6; border-radius:8px;">
+                <tr>
+                  <td style="padding:24px;">
+                    <p style="margin:0 0 8px 0; font-size:36px; font-weight:800; color:#E95704; line-height:1;">[Stat]</p>
+                    <p style="margin:0; font-size:15px; line-height:1.5; color:#3A3A3A;">
+                      of SMBs are now using AI for [thing], up from [X] last year. <strong>What that means for you:</strong> [1 sentence].
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr><td style="padding:24px 32px;"><div style="height:1px; background-color:#FEF3C7; line-height:1px; font-size:1px;">&nbsp;</div></td></tr>
+
+          <!-- Section 3: What we got wrong -->
+          <tr>
+            <td style="padding:0 32px 8px 32px;">
+              <p style="margin:0 0 8px 0; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#F4920B;">
+                What we got wrong
+              </p>
+              <h2 style="margin:0 0 12px 0; font-size:20px; line-height:1.35; color:#163E64; font-weight:700;">
+                [The honest miss]
+              </h2>
+              <p style="margin:0; font-size:16px; line-height:1.6; color:#3A3A3A;">
+                [Brief context]. Here's what we changed: [the fix].
+              </p>
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr><td style="padding:24px 32px;"><div style="height:1px; background-color:#FEF3C7; line-height:1px; font-size:1px;">&nbsp;</div></td></tr>
+
+          <!-- Quick reads -->
+          <tr>
+            <td style="padding:0 32px 8px 32px;">
+              <p style="margin:0 0 12px 0; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#F4920B;">
+                Quick reads
+              </p>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr><td style="padding:6px 0; font-size:15px; color:#3A3A3A;"><a href="[LINK1]" style="color:#163E64; text-decoration:none; font-weight:600;">&rarr; [Headline 1]</a></td></tr>
+                <tr><td style="padding:6px 0; font-size:15px; color:#3A3A3A;"><a href="[LINK2]" style="color:#163E64; text-decoration:none; font-weight:600;">&rarr; [Headline 2]</a></td></tr>
+                <tr><td style="padding:6px 0; font-size:15px; color:#3A3A3A;"><a href="[LINK3]" style="color:#163E64; text-decoration:none; font-weight:600;">&rarr; [Headline 3]</a></td></tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- CTA Button -->
+          <tr>
+            <td align="center" style="padding:32px 32px 8px 32px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="background-color:#F4920B; border-radius:8px;">
+                    <a href="[CTA_LINK]" style="display:inline-block; padding:14px 28px; font-size:16px; font-weight:700; color:#FFFFFF; text-decoration:none; border-radius:8px;">
+                      Read all three on the blog
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Sign-off -->
+          <tr>
+            <td style="padding:24px 32px 32px 32px;">
+              <p style="margin:0 0 8px 0; font-size:16px; line-height:1.6; color:#3A3A3A;">
+                Reply and tell me what you're working on. I read every one.
+              </p>
+              <p style="margin:0; font-size:16px; line-height:1.6; color:#3A3A3A;">
+                {{ owner.firstname }}<br/>
+                <span style="color:#64748B; font-size:14px;">Nexsun</span>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Container -->
+
+        <!-- Footer -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px; margin-top:16px;">
+          <tr>
+            <td align="center" style="padding:16px 32px; font-size:12px; color:#64748B; line-height:1.5;">
+              You're getting this because you signed up for the Nexsun Brief.<br/>
+              <a href="{{ unsubscribe_link }}" style="color:#64748B; text-decoration:underline;">Unsubscribe</a> &nbsp;&middot;&nbsp;
+              <a href="{{ subscription_preferences_url }}" style="color:#64748B; text-decoration:underline;">Manage preferences</a><br/><br/>
+              Nexsun.ai &middot; 130, 5920 No. Two Road, Richmond BC V7C 4R9, Canada
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
