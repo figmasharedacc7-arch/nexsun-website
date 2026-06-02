@@ -195,9 +195,15 @@
 
   /* Right column: orbital visualization */
   .orbital-stage {
-    position:relative; aspect-ratio:1/1;
-    max-width:640px; margin-left:auto;
+    position:relative;
+    width:100%; max-width:640px;
+    height:min(640px, 60vh);
+    margin-left:auto;
     overflow:visible;
+  }
+  /* fallback to keep it square on wide screens */
+  @supports (aspect-ratio: 1) {
+    .orbital-stage { aspect-ratio:1/1; height:auto; min-height:480px; }
   }
 
   /* Subtle starfield deep background */
