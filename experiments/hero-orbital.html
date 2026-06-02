@@ -225,29 +225,29 @@
   /* Soft halo behind gold sun */
   .halo-gold {
     position:absolute;
-    top:-2%; left:6%;
-    width:64%; height:64%;
+    top:-8%; left:-2%;
+    width:82%; height:82%;
     border-radius:50%;
     background: radial-gradient(circle at 50% 50%,
-      rgba(246,215,122,0.32) 0%,
-      rgba(230,192,99,0.18) 30%,
+      rgba(246,215,122,0.36) 0%,
+      rgba(230,192,99,0.20) 30%,
       rgba(184,147,46,0.08) 55%,
       transparent 75%);
-    filter: blur(12px);
+    filter: blur(16px);
     animation: haloPulse 7s ease-in-out infinite;
     pointer-events:none;
   }
   .halo-orange {
     position:absolute;
-    bottom:0%; right:0%;
-    width:42%; height:42%;
+    bottom:-4%; right:-4%;
+    width:54%; height:54%;
     border-radius:50%;
     background: radial-gradient(circle at 50% 50%,
-      rgba(255,142,95,0.36) 0%,
-      rgba(232,93,47,0.18) 35%,
+      rgba(255,142,95,0.40) 0%,
+      rgba(232,93,47,0.20) 35%,
       rgba(179,59,18,0.08) 60%,
       transparent 80%);
-    filter: blur(10px);
+    filter: blur(14px);
     animation: haloPulse 9s ease-in-out infinite -3s;
     pointer-events:none;
   }
@@ -263,8 +263,8 @@
     transition:transform 1.4s ease;
   }
   .sun-gold-orb {
-    top:4%; left:10%;
-    width:56%; height:56%;
+    top:0%; left:4%;
+    width:70%; height:70%;
     background:
       radial-gradient(circle at 32% 25%, #FFF8DA 0%, transparent 18%),
       radial-gradient(circle at 32% 28%, rgba(255,255,255,0.7) 0%, transparent 12%),
@@ -289,8 +289,8 @@
     transform:rotate(-22deg);
   }
   .sun-orange-orb {
-    bottom:4%; right:6%;
-    width:34%; height:34%;
+    bottom:2%; right:2%;
+    width:42%; height:42%;
     background:
       radial-gradient(circle at 32% 25%, #FFDDC4 0%, transparent 18%),
       radial-gradient(circle at 32% 28%, rgba(255,255,255,0.7) 0%, transparent 12%),
@@ -317,7 +317,7 @@
   /* Anchor dot on orbit */
   .anchor-dot {
     position:absolute;
-    top:30%; left:74%;
+    top:18%; left:82%;
     width:12px; height:12px;
     border-radius:50%;
     background:#fff;
@@ -437,20 +437,20 @@
               <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0.10"/>
             </linearGradient>
           </defs>
-          <!-- Main orbit, tilted -->
-          <ellipse cx="50" cy="50" rx="48" ry="26"
-                   transform="rotate(-18 50 50)"
+          <!-- Main orbit, steeper tilt -->
+          <ellipse cx="50" cy="50" rx="49" ry="22"
+                   transform="rotate(-32 50 50)"
                    fill="none"
                    stroke="url(#orbit-stroke)"
-                   stroke-width="0.25"/>
-          <!-- Inner orbit, subtler -->
-          <ellipse cx="50" cy="50" rx="36" ry="18"
-                   transform="rotate(-18 50 50)"
+                   stroke-width="0.28"/>
+          <!-- Inner orbit, subtler, different angle for parallax depth -->
+          <ellipse cx="50" cy="50" rx="34" ry="14"
+                   transform="rotate(-44 50 50)"
                    fill="none"
                    stroke="#B8932E"
-                   stroke-width="0.18"
-                   stroke-opacity="0.35"
-                   stroke-dasharray="0.7 1.2"/>
+                   stroke-width="0.2"
+                   stroke-opacity="0.38"
+                   stroke-dasharray="0.8 1.4"/>
         </svg>
 
         <!-- Halos behind suns -->
