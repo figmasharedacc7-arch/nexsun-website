@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns, Data Observatory</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg: #0E1116;
+    --panel: #161B22;
+    --ink: #E6EDF3;
+    --muted: #8B949E;
+    --line: #30363D;
+    --accent: #F7B500;
+    --accent-2: #FF6B35;
+    --green: #3FB950;
+    --mono: 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    overflow-x:hidden;
+    line-height:1.5;
+  }
+  .lab-tag {
+    position:fixed; top:14px; right:14px; z-index:99;
+    background:#163E64; color:#F6B707;
+    font-size:9px; font-weight:700; letter-spacing:1.5px;
+    padding:5px 11px; border-radius:20px; text-transform:uppercase;
+  }
+  nav {
+    padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+    border-bottom:1px solid var(--line);
+    font-family: var(--mono);
+    font-size:12px;
+  }
+  nav .brand {
+    display:flex; align-items:center; gap:10px;
+    color:var(--ink); font-weight:600;
+    text-transform:uppercase; letter-spacing:1.5px;
+  }
+  nav .brand .pulse {
+    width:8px; height:8px; border-radius:50%; background:var(--green);
+    box-shadow:0 0 8px var(--green);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+  nav .meta-bits { display:flex; gap:24px; color:var(--muted); }
+  nav .meta-bits span b { color:var(--ink); font-weight:600; margin-left:6px; }
+
+  #hero {
+    padding:48px 32px;
+    display:grid; grid-template-columns:1fr 1.3fr; gap:48px;
+    min-height:calc(100vh - 50px);
+    align-items:center;
+  }
+
+  /* Left side: data console */
+  .console {
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:32px;
+    font-family:-apple-system, sans-serif;
+  }
+  .console .tag {
+    font-family: var(--mono);
+    font-size:10px; font-weight:600; letter-spacing:2px; color:var(--accent);
+    text-transform:uppercase; margin-bottom:18px;
+    display:inline-block;
+    padding:4px 10px; background:rgba(247,181,0,0.10); border:1px solid rgba(247,181,0,0.25);
+    border-radius:4px;
+  }
+  .console h1 {
+    font-size:clamp(32px, 3.5vw, 52px);
+    font-weight:700; line-height:1.1; letter-spacing:-1px;
+    margin-bottom:18px;
+  }
+  .console h1 .v1 { color:var(--accent); }
+  .console h1 .v2 { color:var(--accent-2); }
+  .console .sub {
+    color:var(--muted); font-size:15px; line-height:1.6; margin-bottom:32px;
+  }
+  .console .ctas { display:flex; gap:10px; margin-bottom:24px; }
+  .console .btn-primary {
+    background: var(--accent); color:#1a1a1a;
+    padding:10px 18px; border-radius:6px; font-weight:600; font-size:13px;
+    text-decoration:none; font-family: var(--mono);
+    text-transform:uppercase; letter-spacing:1px;
+  }
+  .console .btn-primary:hover { background:#FFCB3F; }
+  .console .btn-secondary {
+    background:transparent; color:var(--ink);
+    border:1px solid var(--line); padding:10px 18px; border-radius:6px;
+    font-family: var(--mono); font-size:13px; font-weight:500;
+    text-decoration:none; text-transform:uppercase; letter-spacing:1px;
+  }
+  .console .btn-secondary:hover { border-color:var(--ink); }
+  .terminal {
+    font-family: var(--mono); font-size:11.5px; line-height:1.7;
+    background: rgba(0,0,0,0.3); border:1px solid var(--line);
+    border-radius:6px; padding:14px;
+    color:var(--muted);
+  }
+  .terminal .ts { color:var(--accent); margin-right:8px; }
+  .terminal .ok { color:var(--green); }
+  .terminal .key { color:var(--accent-2); }
+
+  /* Right side: observatory chart */
+  .observatory {
+    position:relative;
+    height:75vh; min-height:520px;
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    overflow:hidden;
+  }
+  .obs-header {
+    padding:16px 20px;
+    display:flex; justify-content:space-between; align-items:center;
+    border-bottom:1px solid var(--line);
+    font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase;
+  }
+  .obs-header .title { color:var(--ink); font-weight:600; }
+  .obs-stage {
+    position:absolute; inset:50px 0 0 0;
+  }
+  /* Grid lines */
+  .grid-lines {
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  /* Axis labels */
+  .axis-y, .axis-x {
+    position:absolute; font-family:var(--mono); font-size:9px;
+    color:var(--muted); letter-spacing:1px;
+  }
+  .axis-y { left:16px; top:50%; transform: translateY(-50%) rotate(-90deg); transform-origin:left center; }
+  .axis-x { bottom:14px; left:50%; transform:translateX(-50%); }
+
+  /* Two suns on coordinate plane */
+  .sun {
+    position:absolute; border-radius:50%;
+  }
+  .sun-1 {
+    top:18%; left:32%;
+    width:180px; height:180px;
+    background:radial-gradient(circle at 32% 28%,
+      #FFF2C0 0%, #F7B500 22%, #BB7A00 60%, #4A2F00 100%);
+    box-shadow:
+      inset -20px -22px 50px rgba(0,0,0,0.5),
+      0 0 60px rgba(247,181,0,0.40);
+  }
+  .sun-2 {
+    bottom:18%; right:18%;
+    width:110px; height:110px;
+    background:radial-gradient(circle at 32% 28%,
+      #FFD0B0 0%, #FF6B35 35%, #8B2A0A 100%);
+    box-shadow:
+      inset -16px -18px 36px rgba(0,0,0,0.5),
+      0 0 50px rgba(255,107,53,0.40);
+  }
+  /* Data labels next to suns */
+  .data-label {
+    position:absolute;
+    font-family:var(--mono); font-size:10.5px;
+    background:rgba(0,0,0,0.6); backdrop-filter:blur(4px);
+    border:1px solid var(--line);
+    border-radius:4px; padding:8px 10px;
+    color:var(--ink);
+    min-width:140px;
+  }
+  .data-label .k { color:var(--muted); display:block; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; }
+  .data-label .v { color:var(--accent); font-weight:700; font-size:13px; }
+  .data-label .v.warm { color:var(--accent-2); }
+  .label-1 { top:5%; left:24%; }
+  .label-2 { bottom:5%; right:8%; }
+
+  /* Connecting line between suns */
+  .connector {
+    position:absolute; inset:0;
+    pointer-events:none;
+  }
+  .connector svg { width:100%; height:100%; }
+
+  /* Live ticker bottom of observatory */
+  .ticker {
+    position:absolute; bottom:0; left:0; right:0;
+    padding:10px 20px;
+    background:rgba(0,0,0,0.5); backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);
+    font-family:var(--mono); font-size:11px; color:var(--muted);
+    display:flex; gap:24px; align-items:center;
+    overflow:hidden; white-space:nowrap;
+  }
+  .ticker b { color:var(--ink); }
+  .ticker .green { color:var(--green); }
+  .ticker .red { color:var(--accent-2); }
+
+  @media (max-width:900px) {
+    #hero { grid-template-columns:1fr; padding:24px; }
+    .observatory { height:60vh; }
+    nav { padding:14px 20px; }
+    nav .meta-bits { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lab-tag">Concept 03 · Data Observatory</div>
+
+<nav>
+  <div class="brand">
+    <span class="pulse"></span>
+    TwoSuns / Coordination Observatory
+  </div>
+  <div class="meta-bits">
+    <span>System: <b>Operational</b></span>
+    <span>Signals: <b>847 live</b></span>
+    <span>Latency: <b>12ms</b></span>
+  </div>
+</nav>
+
+<section id="hero">
+
+  <div class="console">
+    <div class="tag">Coordination Infrastructure</div>
+    <h1>Two <span class="v1">signals.</span><br>One <span class="v2">layer.</span><br>Continuous execution.</h1>
+    <p class="sub">TwoSuns is the operating layer that coordinates market-facing and operational activity across complex enterprises, with persistent context, full traceability, and AI-assisted decisions.</p>
+    <div class="ctas">
+      <a href="#" class="btn-primary">Request Discovery</a>
+      <a href="#" class="btn-secondary">View Platform</a>
+    </div>
+    <div class="terminal">
+      <div><span class="ts">10:42:17</span><span class="ok">▸</span> Signal received: <span class="key">geopolitical.event.eu</span></div>
+      <div><span class="ts">10:42:18</span><span class="ok">▸</span> Coordination context updated across 14 workflows</div>
+      <div><span class="ts">10:42:19</span><span class="ok">▸</span> Decision Pack <span class="key">supply.alignment</span> notified</div>
+      <div><span class="ts">10:42:20</span><span class="ok">▸</span> 3 stakeholders aligned in Rooms</div>
+    </div>
+  </div>
+
+  <div class="observatory">
+    <div class="obs-header">
+      <span class="title">Live Coordination Map</span>
+      <span>UTC 10:42:21</span>
+    </div>
+    <div class="obs-stage">
+      <div class="grid-lines"></div>
+
+      <svg class="connector" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <line x1="40" y1="32" x2="76" y2="72" stroke="#F7B500" stroke-width="0.18" stroke-dasharray="0.8 1" opacity="0.55"/>
+      </svg>
+
+      <div class="sun sun-1"></div>
+      <div class="sun sun-2"></div>
+
+      <div class="data-label label-1">
+        <span class="k">Horizon · Market Sun</span>
+        <span class="v">+4.2%  ↗</span>
+        <span class="k" style="margin-top:6px;">Signals coordinated</span>
+        <span class="v" style="font-size:14px;">2,431</span>
+      </div>
+
+      <div class="data-label label-2">
+        <span class="k">Forge · Operational Sun</span>
+        <span class="v warm">98.7%  active</span>
+        <span class="k" style="margin-top:6px;">Workflows aligned</span>
+        <span class="v warm" style="font-size:14px;">816</span>
+      </div>
+
+      <span class="axis-y">Market Coordination →</span>
+      <span class="axis-x">← Operational Coordination →</span>
+
+      <div class="ticker">
+        <span><b>LIVE</b> · Coordination layer operating ·</span>
+        <span class="green">+12 signals/sec</span>
+        <span>·</span>
+        <span class="green">▲ 4.2%  market alignment</span>
+        <span>·</span>
+        <span class="red">▼ 0.8%  operational drift</span>
+        <span>·</span>
+        <span class="green">847 stakeholders connected</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns, Cinematic Minimal</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg: #fafaf7;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --sun-gold: #D9A954;
+    --sun-orange: #E85D2F;
+  }
+  body {
+    font-family: 'Cormorant Garamond', "Times New Roman", Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    overflow-x:hidden;
+  }
+  .nav-fixed {
+    position:fixed; top:0; left:0; right:0;
+    padding:28px 48px;
+    display:flex; align-items:center; justify-content:space-between;
+    z-index:10;
+    font-family:-apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  }
+  .nav-fixed .brand {
+    font-family:-apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    font-size:18px; font-weight:600; letter-spacing:-0.3px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .nav-fixed .brand .dot {
+    width:10px; height:10px; border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, #FFE89A, var(--sun-gold) 60%, #8C6918 100%);
+  }
+  .nav-fixed .links { display:flex; gap:36px; font-size:14px; font-weight:500; }
+  .nav-fixed .links a { color:var(--ink); text-decoration:none; opacity:0.75; transition:opacity .2s; }
+  .nav-fixed .links a:hover { opacity:1; }
+
+  .lab-tag {
+    position:fixed; top:14px; right:14px; z-index:99;
+    background:#163E64; color:#F6B707;
+    font-size:9px; font-weight:700; letter-spacing:1.5px;
+    padding:5px 11px; border-radius:20px; text-transform:uppercase;
+    font-family:-apple-system, sans-serif;
+  }
+
+  #hero {
+    min-height:100vh;
+    display:grid; grid-template-columns:1.4fr 1fr;
+    align-items:center;
+    padding:0 96px;
+    position:relative;
+  }
+
+  .copy {
+    max-width:680px;
+  }
+  .eyebrow {
+    font-family:-apple-system, sans-serif;
+    font-size:11px; font-weight:600; letter-spacing:3px;
+    color:var(--muted); text-transform:uppercase;
+    margin-bottom:32px;
+    display:inline-block;
+    border-top:1px solid var(--ink); padding-top:14px; min-width:60px;
+  }
+  h1 {
+    font-size:clamp(56px, 7vw, 108px);
+    font-weight:500;
+    line-height:0.96; letter-spacing:-3px;
+    margin-bottom:36px;
+    color:var(--ink);
+  }
+  h1 em { font-style:italic; color:var(--sun-orange); font-weight:400; }
+  .sub {
+    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+    font-size:18px; line-height:1.6; color:var(--muted);
+    margin-bottom:48px; max-width:480px; font-weight:400;
+  }
+  .cta {
+    font-family:-apple-system, sans-serif;
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:15px; font-weight:600; color:var(--ink); text-decoration:none;
+    border-bottom:1px solid var(--ink); padding-bottom:6px;
+    transition: all .25s;
+  }
+  .cta:hover { gap:18px; color:var(--sun-orange); border-color:var(--sun-orange); }
+  .cta .arrow { transition: transform .25s; }
+  .cta:hover .arrow { transform:translateX(4px); }
+
+  /* Sun graphic */
+  .stage { position:relative; height:80vh; display:flex; align-items:center; justify-content:center; }
+  .sun {
+    width:min(440px, 38vw); aspect-ratio:1/1;
+    border-radius:50%;
+    background: radial-gradient(circle at 30% 28%,
+      #FFF3D2 0%, #F4D67E 18%, #D9A954 42%, #B8862C 70%, #6E5111 100%);
+    box-shadow:
+      inset -40px -50px 100px rgba(0,0,0,0.35),
+      inset 20px 16px 60px rgba(255,243,210,0.5),
+      0 60px 140px rgba(184,134,44,0.25);
+    position:relative;
+    animation: breathe 12s ease-in-out infinite;
+  }
+  .sun::after {
+    content:''; position:absolute;
+    top:18%; left:24%;
+    width:18%; height:14%;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.65) 0%, transparent 70%);
+    border-radius:50%;
+    filter:blur(4px);
+    transform:rotate(-20deg);
+  }
+  @keyframes breathe {
+    0%,100% { transform:scale(1); }
+    50%     { transform:scale(1.025); }
+  }
+
+  /* Tiny meta footer */
+  .meta {
+    position:absolute; bottom:32px; left:48px;
+    font-family:-apple-system, sans-serif;
+    font-size:11px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase;
+  }
+  .meta-right {
+    position:absolute; bottom:32px; right:48px;
+    font-family:-apple-system, sans-serif;
+    font-size:11px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase;
+  }
+
+  @media (max-width:900px) {
+    #hero { grid-template-columns:1fr; padding:120px 32px 80px; }
+    .nav-fixed { padding:18px 24px; }
+    .nav-fixed .links { display:none; }
+    .stage { height:auto; padding:48px 0; }
+    .meta, .meta-right { position:relative; bottom:auto; left:auto; right:auto; padding:12px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lab-tag">Concept 01</div>
+
+<nav class="nav-fixed">
+  <div class="brand">
+    <span class="dot"></span> TwoSuns
+  </div>
+  <div class="links">
+    <a href="#">Platform</a>
+    <a href="#">Applications</a>
+    <a href="#">Company</a>
+    <a href="#">Engage</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="copy">
+    <div class="eyebrow">Coordination Infrastructure</div>
+    <h1>The intelligent <em>operating</em><br>layer for complex enterprises.</h1>
+    <p class="sub">TwoSuns coordinates market activity, operational execution, and enterprise continuity across complex environments. Persistent. Contextual. Aligned.</p>
+    <a href="#" class="cta">Request a Discovery Session <span class="arrow">→</span></a>
+  </div>
+
+  <div class="stage">
+    <div class="sun"></div>
+  </div>
+
+  <div class="meta">TwoSuns · Coordination Infrastructure</div>
+  <div class="meta-right">© 2026</div>
+</section>
+
+</body>
+</html>

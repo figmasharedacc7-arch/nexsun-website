@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns, Flow Architecture</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg: #0B0E14;
+    --bg-grad-1: #11151F;
+    --bg-grad-2: #0B0E14;
+    --ink: #F3F4F6;
+    --muted: #9CA3AF;
+    --line: #1F2530;
+    --sun-gold: #F59E0B;
+    --sun-orange: #EF4444;
+    --flow-1: #38BDF8;
+    --flow-2: #A78BFA;
+    --flow-3: #34D399;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    overflow-x:hidden;
+    line-height:1.55;
+  }
+  .lab-tag {
+    position:fixed; top:14px; right:14px; z-index:99;
+    background:#163E64; color:#F6B707;
+    font-size:9px; font-weight:700; letter-spacing:1.5px;
+    padding:5px 11px; border-radius:20px; text-transform:uppercase;
+  }
+
+  nav {
+    padding:22px 48px;
+    display:flex; align-items:center; justify-content:space-between;
+    position:relative; z-index:5;
+  }
+  nav .brand {
+    display:flex; align-items:center; gap:12px;
+    font-size:18px; font-weight:700; letter-spacing:-0.4px;
+  }
+  nav .brand .mark { display:flex; align-items:center; gap:-3px; }
+  nav .brand .m1 { width:14px; height:14px; border-radius:50%; background:var(--sun-gold); box-shadow:0 0 10px var(--sun-gold); }
+  nav .brand .m2 { width:9px; height:9px; border-radius:50%; background:var(--sun-orange); margin-left:-4px; box-shadow:0 0 8px var(--sun-orange); }
+  nav .links { display:flex; gap:32px; font-size:14px; }
+  nav .links a { color:var(--muted); text-decoration:none; transition:color .2s; font-weight:500; }
+  nav .links a:hover { color:var(--ink); }
+  nav .links .pill {
+    background:linear-gradient(135deg, var(--sun-orange), #B91C1C);
+    color:#fff; padding:9px 18px; border-radius:8px;
+    box-shadow:0 4px 16px rgba(239,68,68,0.3);
+  }
+
+  #hero {
+    position:relative;
+    min-height:calc(100vh - 76px);
+    padding:80px 48px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 20% 40%, rgba(56,189,248,0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 60%, rgba(245,158,11,0.12) 0%, transparent 50%),
+      linear-gradient(180deg, var(--bg-grad-1), var(--bg-grad-2));
+  }
+
+  .hero-content {
+    position:relative; z-index:3;
+    max-width:1200px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1.1fr;
+    gap:48px; align-items:center; min-height:calc(100vh - 240px);
+  }
+
+  .copy h1 {
+    font-size:clamp(40px, 5vw, 76px);
+    font-weight:700; letter-spacing:-2px; line-height:1.04;
+    margin-bottom:24px;
+  }
+  .copy h1 .grad {
+    background: linear-gradient(135deg, var(--sun-gold), var(--sun-orange));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .copy .eyebrow {
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--flow-1); margin-bottom:24px;
+    padding:6px 14px; border:1px solid rgba(56,189,248,0.3);
+    background:rgba(56,189,248,0.08); border-radius:30px;
+  }
+  .copy .eyebrow::before {
+    content:''; display:inline-block; width:6px; height:6px;
+    border-radius:50%; background:var(--flow-1);
+    box-shadow:0 0 8px var(--flow-1);
+  }
+  .copy .sub {
+    color:var(--muted); font-size:17px; line-height:1.65;
+    margin-bottom:36px; max-width:480px;
+  }
+  .copy .ctas { display:flex; gap:12px; margin-bottom:28px; }
+  .btn-primary {
+    background:linear-gradient(135deg, var(--sun-orange), #B91C1C);
+    color:#fff; padding:14px 28px; border-radius:10px;
+    font-weight:600; font-size:14px; text-decoration:none;
+    box-shadow:0 8px 24px rgba(239,68,68,0.30);
+    transition:all .2s;
+  }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(239,68,68,0.45); }
+  .btn-secondary {
+    background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.16);
+    color:var(--ink); padding:14px 24px; border-radius:10px;
+    font-weight:500; font-size:14px; text-decoration:none;
+  }
+  .btn-secondary:hover { background:rgba(255,255,255,0.10); }
+
+  .signals-strip {
+    display:flex; gap:12px; flex-wrap:wrap; margin-top:32px;
+  }
+  .signal-pill {
+    font-family: 'SF Mono', 'JetBrains Mono', monospace;
+    font-size:11px; color:var(--muted);
+    padding:6px 10px; border-radius:4px;
+    background:rgba(255,255,255,0.03); border:1px solid var(--line);
+  }
+  .signal-pill .dot { display:inline-block; width:6px; height:6px; border-radius:50%; margin-right:6px; }
+  .signal-pill .d1 { background:var(--flow-1); box-shadow:0 0 6px var(--flow-1); }
+  .signal-pill .d2 { background:var(--flow-2); box-shadow:0 0 6px var(--flow-2); }
+  .signal-pill .d3 { background:var(--flow-3); box-shadow:0 0 6px var(--flow-3); }
+
+  /* Flow visualization */
+  .flow-stage {
+    position:relative;
+    width:100%; aspect-ratio:1/1; max-width:560px; margin-left:auto;
+  }
+  .flow-svg {
+    position:absolute; inset:0; width:100%; height:100%;
+  }
+  .sun-node {
+    position:absolute; border-radius:50%;
+    z-index:2;
+  }
+  .sun-node.gold {
+    top:8%; left:54%;
+    width:170px; height:170px;
+    background:radial-gradient(circle at 30% 28%, #FEF3C7 0%, #FBBF24 25%, #D97706 65%, #78350F 100%);
+    box-shadow:
+      inset -22px -26px 50px rgba(0,0,0,0.5),
+      0 0 60px rgba(245,158,11,0.5);
+    animation: float1 14s ease-in-out infinite;
+  }
+  .sun-node.orange {
+    bottom:18%; left:10%;
+    width:120px; height:120px;
+    background:radial-gradient(circle at 30% 28%, #FED7AA 0%, #F97316 30%, #DC2626 70%, #7F1D1D 100%);
+    box-shadow:
+      inset -16px -20px 40px rgba(0,0,0,0.5),
+      0 0 50px rgba(239,68,68,0.5);
+    animation: float1 16s ease-in-out infinite -8s;
+  }
+  @keyframes float1 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+
+  /* Animated flow particles */
+  @keyframes particleFlow {
+    0%   { offset-distance: 0%; opacity:0; }
+    10%  { opacity:1; }
+    90%  { opacity:1; }
+    100% { offset-distance: 100%; opacity:0; }
+  }
+  .particle {
+    position:absolute; width:8px; height:8px; border-radius:50%;
+    offset-rotate: 0deg;
+  }
+
+  /* Floating data label */
+  .flow-label {
+    position:absolute;
+    background:rgba(11,14,20,0.85); backdrop-filter:blur(8px);
+    border:1px solid var(--line); border-radius:8px;
+    padding:8px 12px;
+    font-family: 'SF Mono', monospace;
+    font-size:10.5px; color:var(--muted);
+    z-index:3;
+  }
+  .flow-label b { color:var(--ink); }
+  .label-a { top:0; left:18%; }
+  .label-b { bottom:8%; right:8%; }
+
+  @media (max-width:900px) {
+    .hero-content { grid-template-columns:1fr; }
+    .flow-stage { margin:48px auto 0; max-width:380px; }
+    nav { padding:18px 24px; }
+    nav .links a:not(.pill) { display:none; }
+    #hero { padding:40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lab-tag">Concept 04 · Flow Architecture</div>
+
+<nav>
+  <div class="brand">
+    <span class="mark"><span class="m1"></span><span class="m2"></span></span>
+    TwoSuns
+  </div>
+  <div class="links">
+    <a href="#">Platform</a>
+    <a href="#">Architecture</a>
+    <a href="#">Customers</a>
+    <a href="#">Docs</a>
+    <a href="#" class="pill">Engage →</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-content">
+    <div class="copy">
+      <div class="eyebrow">Coordination Infrastructure</div>
+      <h1>Signals in.<br><span class="grad">Coordinated execution</span><br>out.</h1>
+      <p class="sub">TwoSuns ingests market and operational signals into a persistent coordination layer, then routes coordinated decisions back to the systems and teams that need them.</p>
+      <div class="ctas">
+        <a href="#" class="btn-primary">Request a Discovery</a>
+        <a href="#" class="btn-secondary">View architecture →</a>
+      </div>
+      <div class="signals-strip">
+        <span class="signal-pill"><span class="dot d1"></span>ERP · 12 streams</span>
+        <span class="signal-pill"><span class="dot d2"></span>CRM · 8 streams</span>
+        <span class="signal-pill"><span class="dot d3"></span>Market · 23 feeds</span>
+        <span class="signal-pill"><span class="dot d1"></span>Ops · 17 systems</span>
+      </div>
+    </div>
+
+    <div class="flow-stage">
+      <svg class="flow-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="flow1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"  stop-color="#38BDF8" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.5"/>
+          </linearGradient>
+          <linearGradient id="flow2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"  stop-color="#A78BFA" stop-opacity="0.5"/>
+            <stop offset="50%" stop-color="#A78BFA" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#EF4444" stop-opacity="0.5"/>
+          </linearGradient>
+          <linearGradient id="flow3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"  stop-color="#34D399" stop-opacity="0.5"/>
+            <stop offset="50%" stop-color="#34D399" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.5"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Flowing curved lines -->
+        <path d="M 0,30 Q 30,50 65,18" fill="none" stroke="url(#flow1)" stroke-width="0.6">
+          <animate attributeName="stroke-dasharray" values="0 100; 30 70; 0 100" dur="6s" repeatCount="indefinite"/>
+        </path>
+        <path d="M 0,55 Q 35,40 65,18" fill="none" stroke="url(#flow2)" stroke-width="0.6">
+          <animate attributeName="stroke-dasharray" values="0 100; 30 70; 0 100" dur="7s" repeatCount="indefinite"/>
+        </path>
+        <path d="M 0,75 Q 40,75 65,18" fill="none" stroke="url(#flow3)" stroke-width="0.6">
+          <animate attributeName="stroke-dasharray" values="0 100; 30 70; 0 100" dur="8s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Outflow lines from gold sun to orange sun -->
+        <path d="M 65,30 Q 50,45 25,72" fill="none" stroke="#F59E0B" stroke-width="0.4" opacity="0.7">
+          <animate attributeName="stroke-dasharray" values="0 60; 20 40; 0 60" dur="5s" repeatCount="indefinite"/>
+        </path>
+        <path d="M 70,35 Q 55,55 30,75" fill="none" stroke="#EF4444" stroke-width="0.35" opacity="0.6">
+          <animate attributeName="stroke-dasharray" values="0 60; 20 40; 0 60" dur="6s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Output flow from orange sun -->
+        <path d="M 25,75 Q 50,90 100,75" fill="none" stroke="#34D399" stroke-width="0.5" opacity="0.6">
+          <animate attributeName="stroke-dasharray" values="0 80; 25 55; 0 80" dur="6s" repeatCount="indefinite"/>
+        </path>
+        <path d="M 20,80 Q 60,95 100,90" fill="none" stroke="#F59E0B" stroke-width="0.5" opacity="0.6">
+          <animate attributeName="stroke-dasharray" values="0 80; 25 55; 0 80" dur="7s" repeatCount="indefinite"/>
+        </path>
+      </svg>
+
+      <div class="flow-label label-a">
+        Signals in: <b>2.4k/min</b>
+      </div>
+      <div class="flow-label label-b">
+        Decisions out: <b>187/min</b>
+      </div>
+
+      <div class="sun-node gold"></div>
+      <div class="sun-node orange"></div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

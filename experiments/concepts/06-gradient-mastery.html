@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns, Gradient Mastery</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --ink: #0A2540;
+    --muted: #525f7f;
+    --sun-gold: #F6B736;
+    --sun-orange: #FF5C39;
+    --sun-pink: #FF80A0;
+    --indigo: #5851DB;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    overflow-x:hidden;
+    line-height:1.55;
+  }
+  .lab-tag {
+    position:fixed; top:14px; right:14px; z-index:99;
+    background:rgba(10,37,64,0.9); color:#FFD27B;
+    font-size:9px; font-weight:700; letter-spacing:1.5px;
+    padding:5px 11px; border-radius:20px; text-transform:uppercase;
+    backdrop-filter:blur(8px);
+  }
+
+  /* Mesh gradient background, breathing */
+  #hero {
+    position:relative;
+    min-height:100vh;
+    overflow:hidden;
+    background:
+      radial-gradient(at 8%  20%,  #FFE0B5 0%, transparent 45%),
+      radial-gradient(at 78% 18%,  #FFB8A0 0%, transparent 45%),
+      radial-gradient(at 92% 60%,  #F6B736 0%, transparent 50%),
+      radial-gradient(at 12% 78%,  #FFD9C2 0%, transparent 50%),
+      radial-gradient(at 50% 50%,  #FFEDD5 0%, transparent 60%),
+      radial-gradient(at 60% 95%,  #FFC4A8 0%, transparent 55%),
+      linear-gradient(180deg, #FFF8EE, #FFF1E0 60%, #FFE8D6 100%);
+    background-size:200% 200%;
+    animation: meshBreath 22s ease-in-out infinite;
+  }
+  @keyframes meshBreath {
+    0%,100% { background-position: 0% 50%; }
+    33%     { background-position: 50% 30%; }
+    66%     { background-position: 100% 70%; }
+  }
+
+  /* Glassmorphic nav */
+  nav {
+    position:relative; z-index:10;
+    margin:18px 18px 0;
+    padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(255,255,255,0.65); backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.7);
+    border-radius:14px;
+    box-shadow:0 8px 32px rgba(10,37,64,0.06);
+  }
+  nav .brand {
+    display:flex; align-items:center; gap:10px;
+    font-size:17px; font-weight:700; letter-spacing:-0.4px;
+  }
+  nav .brand .mark { display:inline-flex; gap:-3px; }
+  nav .brand .m1 { width:14px; height:14px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #FFF2C0, var(--sun-gold) 60%, #875E07 100%); box-shadow:0 4px 12px rgba(246,183,54,0.4); }
+  nav .brand .m2 { width:10px; height:10px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #FFD2B4, var(--sun-orange) 60%, #8C2A12 100%); margin-left:-4px; box-shadow:0 4px 12px rgba(255,92,57,0.4); }
+  nav .links { display:flex; gap:30px; font-size:13.5px; }
+  nav .links a { color:var(--ink); text-decoration:none; font-weight:500; opacity:0.75; transition:opacity .15s; }
+  nav .links a:hover { opacity:1; }
+  nav .cta {
+    background:var(--ink); color:#fff; padding:10px 18px; border-radius:8px;
+    font-weight:600; font-size:13px;
+    box-shadow:0 4px 16px rgba(10,37,64,0.30);
+  }
+  nav .cta:hover { background:var(--sun-orange); }
+
+  /* Hero content */
+  .hero-inner {
+    position:relative; z-index:3;
+    max-width:1280px; margin:0 auto;
+    padding:80px 48px;
+    display:grid; grid-template-columns:1.1fr 1fr; gap:48px;
+    align-items:center; min-height:calc(100vh - 140px);
+  }
+  .copy .eyebrow {
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+    color:var(--sun-orange);
+    padding:7px 16px;
+    background:rgba(255,255,255,0.85); backdrop-filter:blur(8px);
+    border:1px solid rgba(255,92,57,0.20);
+    border-radius:30px;
+    margin-bottom:32px;
+    box-shadow:0 4px 16px rgba(255,92,57,0.10);
+  }
+  .copy .eyebrow .dot { width:5px; height:5px; border-radius:50%; background:var(--sun-orange); }
+  h1 {
+    font-size:clamp(44px, 6vw, 92px);
+    font-weight:700; line-height:1.0; letter-spacing:-3px;
+    margin-bottom:28px;
+    color:var(--ink);
+  }
+  h1 .grad-orange {
+    background: linear-gradient(120deg, #FF5C39 0%, #F6B736 50%, #FF5C39 100%);
+    background-size:200% auto;
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    animation: gradShift 6s ease-in-out infinite;
+  }
+  @keyframes gradShift {
+    0%,100% { background-position: 0% center; }
+    50%     { background-position: 100% center; }
+  }
+  .sub {
+    font-size:18px; line-height:1.65; color:var(--muted);
+    margin-bottom:40px; max-width:480px;
+  }
+  .ctas { display:flex; gap:14px; align-items:center; }
+  .btn-primary {
+    background:linear-gradient(135deg, #FF5C39, #F6B736);
+    color:#fff; padding:15px 30px; border-radius:10px;
+    font-weight:600; font-size:14px; text-decoration:none;
+    box-shadow:0 10px 30px rgba(255,92,57,0.35);
+    transition:all .2s;
+  }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 14px 38px rgba(255,92,57,0.5); }
+  .btn-secondary {
+    background:rgba(255,255,255,0.7); backdrop-filter:blur(8px);
+    color:var(--ink); border:1px solid rgba(10,37,64,0.15);
+    padding:15px 26px; border-radius:10px;
+    font-weight:600; font-size:14px; text-decoration:none;
+  }
+  .btn-secondary:hover { background:rgba(255,255,255,0.95); }
+
+  /* Right side: liquid suns suspended */
+  .liquid-stage {
+    position:relative; width:100%; aspect-ratio:1/1; max-width:560px; margin-left:auto;
+  }
+  .liquid-bg {
+    position:absolute; inset:-10%;
+    border-radius:50%;
+    background:radial-gradient(circle at 50% 50%,
+      rgba(255,255,255,0.6) 0%,
+      rgba(255,237,213,0.4) 30%,
+      transparent 70%);
+    filter:blur(20px);
+    animation: liquidPulse 9s ease-in-out infinite;
+  }
+  @keyframes liquidPulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.1);} }
+
+  .sun {
+    position:absolute; border-radius:50%;
+    filter: drop-shadow(0 30px 60px rgba(255,92,57,0.30));
+  }
+  .sun.big {
+    top:6%; left:8%;
+    width:64%; height:64%;
+    background:
+      radial-gradient(circle at 28% 22%, rgba(255,255,255,0.7) 0%, transparent 15%),
+      radial-gradient(circle at 32% 28%, #FFF2C0 0%, #FFD56B 18%, #F6B736 42%, #C77D0A 78%, #4F2D02 100%);
+    box-shadow:
+      inset -40px -50px 100px rgba(0,0,0,0.32),
+      inset 22px 18px 60px rgba(255,242,192,0.55);
+    animation: floatLiquid 14s ease-in-out infinite;
+  }
+  .sun.small {
+    bottom:8%; right:6%;
+    width:38%; height:38%;
+    background:
+      radial-gradient(circle at 28% 22%, rgba(255,255,255,0.7) 0%, transparent 15%),
+      radial-gradient(circle at 32% 28%, #FFD7BC 0%, #FF9A6B 22%, #FF5C39 55%, #962F12 100%);
+    box-shadow:
+      inset -28px -34px 60px rgba(0,0,0,0.32),
+      inset 14px 12px 36px rgba(255,215,188,0.55);
+    animation: floatLiquid 16s ease-in-out infinite -8s;
+  }
+  @keyframes floatLiquid {
+    0%,100% { transform:translate(0,0); }
+    50%     { transform:translate(-8px,-14px); }
+  }
+
+  /* Soft gradient ring around suns */
+  .glow-ring {
+    position:absolute; inset:0;
+    border-radius:50%;
+    border:1px solid;
+    border-image: linear-gradient(135deg, rgba(255,92,57,0.4), rgba(246,183,54,0.4)) 1;
+    transform: rotate(-25deg) scaleY(0.5);
+    transform-origin: center;
+    opacity:0.4;
+  }
+
+  @media (max-width:900px) {
+    .hero-inner { grid-template-columns:1fr; padding:48px 24px; }
+    .liquid-stage { margin:48px auto 0; max-width:380px; }
+    nav { margin:12px; padding:12px 18px; }
+    nav .links a:not(.cta) { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lab-tag">Concept 06 · Gradient Mastery</div>
+
+<section id="hero">
+
+  <nav>
+    <div class="brand">
+      <span class="mark"><span class="m1"></span><span class="m2"></span></span>
+      TwoSuns
+    </div>
+    <div class="links">
+      <a href="#">Platform</a>
+      <a href="#">Applications</a>
+      <a href="#">Pricing</a>
+      <a href="#">Customers</a>
+      <a href="#" class="cta">Engage →</a>
+    </div>
+  </nav>
+
+  <div class="hero-inner">
+    <div class="copy">
+      <div class="eyebrow"><span class="dot"></span> Coordination Infrastructure</div>
+      <h1>The <span class="grad-orange">operating layer</span> for complex enterprises.</h1>
+      <p class="sub">TwoSuns coordinates market activity, operational execution, and enterprise continuity into a single persistent layer. So your organization moves like one thing, even when it isn't.</p>
+      <div class="ctas">
+        <a href="#" class="btn-primary">Request a Discovery</a>
+        <a href="#" class="btn-secondary">Explore the Platform</a>
+      </div>
+    </div>
+
+    <div class="liquid-stage">
+      <div class="liquid-bg"></div>
+      <div class="glow-ring"></div>
+      <div class="sun big"></div>
+      <div class="sun small"></div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

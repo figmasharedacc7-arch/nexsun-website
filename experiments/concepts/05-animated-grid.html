@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns, Animated Grid</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg: #000;
+    --ink: #fff;
+    --muted: #999;
+    --line: rgba(255,255,255,0.06);
+    --line-bright: rgba(255,255,255,0.18);
+    --sun-gold: #FACC15;
+    --sun-orange: #F97316;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    overflow-x:hidden;
+    line-height:1.55;
+  }
+  .lab-tag {
+    position:fixed; top:14px; right:14px; z-index:99;
+    background:rgba(255,255,255,0.08); color:var(--sun-gold);
+    font-size:9px; font-weight:700; letter-spacing:1.5px;
+    padding:5px 11px; border-radius:20px; text-transform:uppercase;
+  }
+
+  nav {
+    position:relative; z-index:10;
+    padding:20px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+    border-bottom:1px solid var(--line);
+  }
+  nav .brand {
+    display:flex; align-items:center; gap:10px;
+    font-size:15px; font-weight:600; letter-spacing:-0.3px;
+  }
+  nav .brand .mark { display:inline-flex; gap:-3px; }
+  nav .brand .m1 { width:12px; height:12px; border-radius:50%; background:var(--sun-gold); box-shadow:0 0 12px var(--sun-gold); }
+  nav .brand .m2 { width:8px; height:8px; border-radius:50%; background:var(--sun-orange); margin-left:-4px; box-shadow:0 0 10px var(--sun-orange); }
+  nav .links { display:flex; gap:28px; font-size:13px; }
+  nav .links a { color:var(--muted); text-decoration:none; transition:color .15s; }
+  nav .links a:hover { color:var(--ink); }
+  nav .cta {
+    background:var(--ink); color:#000; padding:7px 14px; border-radius:6px;
+    font-weight:600; font-size:13px;
+  }
+  nav .cta:hover { background:var(--sun-gold); color:#000; }
+
+  #hero {
+    position:relative;
+    min-height:calc(100vh - 60px);
+    overflow:hidden;
+    background:#000;
+  }
+
+  /* Animated grid background */
+  .grid-bg {
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 80px 80px;
+    background-position: -1px -1px;
+    mask-image: radial-gradient(ellipse at 60% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+  }
+  /* Scanning gradient sweep */
+  .grid-sweep {
+    position:absolute; inset:0;
+    background: radial-gradient(circle at var(--mx, 60%) var(--my, 50%),
+      rgba(250,204,21,0.15) 0%,
+      rgba(250,204,21,0.05) 20%,
+      transparent 40%);
+    pointer-events:none;
+    animation: sweep 12s ease-in-out infinite;
+  }
+  @keyframes sweep {
+    0% { --mx: 20%; --my: 40%; }
+    50% { --mx: 80%; --my: 60%; }
+    100% { --mx: 20%; --my: 40%; }
+  }
+
+  .hero-inner {
+    position:relative; z-index:3;
+    max-width:1280px; margin:0 auto;
+    padding:80px 48px;
+    display:grid; grid-template-columns:1.1fr 1fr; gap:48px;
+    align-items:center; min-height:calc(100vh - 220px);
+  }
+
+  .copy {}
+  .eyebrow {
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+    color:var(--sun-gold);
+    padding:6px 14px; border:1px solid rgba(250,204,21,0.30); border-radius:30px;
+    background:rgba(250,204,21,0.06);
+    margin-bottom:32px;
+  }
+  .eyebrow .dot { width:5px; height:5px; border-radius:50%; background:var(--sun-gold); box-shadow:0 0 6px var(--sun-gold); }
+  h1 {
+    font-size:clamp(44px, 6vw, 92px);
+    font-weight:700; line-height:0.98; letter-spacing:-3px;
+    margin-bottom:28px;
+  }
+  h1 .a { color:var(--sun-gold); }
+  h1 .b { color:var(--sun-orange); }
+  .sub {
+    color:var(--muted); font-size:17px; line-height:1.65;
+    margin-bottom:40px; max-width:480px;
+  }
+  .ctas { display:flex; gap:12px; align-items:center; }
+  .btn-primary {
+    background:var(--ink); color:#000;
+    padding:14px 26px; border-radius:8px;
+    font-weight:600; font-size:14px; text-decoration:none;
+    transition: all .2s;
+  }
+  .btn-primary:hover { background:var(--sun-gold); transform:translateY(-2px); }
+  .btn-link {
+    color:var(--ink); font-size:14px; font-weight:500; text-decoration:none;
+    display:inline-flex; align-items:center; gap:6px;
+    padding:14px 8px; transition: color .2s;
+  }
+  .btn-link:hover { color:var(--sun-gold); }
+  .btn-link .arr { transition:transform .2s; }
+  .btn-link:hover .arr { transform:translateX(4px); }
+
+  /* Two suns as glowing nodes on grid */
+  .nodes-stage {
+    position:relative; width:100%; aspect-ratio:1/1; max-width:520px; margin-left:auto;
+  }
+
+  .node {
+    position:absolute; border-radius:50%;
+    z-index:2;
+  }
+  .node-gold {
+    top:8%; left:18%;
+    width:140px; height:140px;
+    background:radial-gradient(circle at 30% 28%, #FFFBEB 0%, var(--sun-gold) 30%, #CA8A04 70%, #4F1F00 100%);
+    box-shadow:
+      inset -20px -22px 44px rgba(0,0,0,0.55),
+      0 0 0 1px rgba(250,204,21,0.25),
+      0 0 60px rgba(250,204,21,0.50),
+      0 0 120px rgba(250,204,21,0.25);
+    animation: nodePulse 5s ease-in-out infinite;
+  }
+  .node-orange {
+    bottom:14%; right:14%;
+    width:96px; height:96px;
+    background:radial-gradient(circle at 30% 28%, #FFEDD5 0%, var(--sun-orange) 30%, #C2410C 70%, #7C2D12 100%);
+    box-shadow:
+      inset -16px -18px 32px rgba(0,0,0,0.55),
+      0 0 0 1px rgba(249,115,22,0.25),
+      0 0 50px rgba(249,115,22,0.50),
+      0 0 100px rgba(249,115,22,0.25);
+    animation: nodePulse 6s ease-in-out infinite -3s;
+  }
+  @keyframes nodePulse {
+    0%,100% { transform:scale(1); }
+    50%     { transform:scale(1.05); }
+  }
+  /* Connection between nodes */
+  .connect-svg {
+    position:absolute; inset:0; pointer-events:none; z-index:1;
+  }
+
+  /* Floating data widget */
+  .widget {
+    position:absolute; z-index:3;
+    background:rgba(0,0,0,0.85); backdrop-filter:blur(12px);
+    border:1px solid var(--line-bright);
+    border-radius:10px;
+    padding:14px 16px;
+    font-size:12px;
+    box-shadow:0 12px 32px rgba(0,0,0,0.5);
+    min-width:170px;
+  }
+  .widget .key { font-size:10px; font-weight:600; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6px; }
+  .widget .val { font-size:22px; font-weight:700; color:var(--ink); font-family: 'SF Mono', monospace; }
+  .widget .val .up { color:var(--sun-gold); margin-left:6px; font-size:13px; font-weight:500; }
+  .widget-1 { top:0%; right:-8%; }
+  .widget-2 { bottom:2%; left:-12%; }
+
+  /* Grid corner ticks */
+  .corner-ticks {
+    position:absolute; inset:0; pointer-events:none;
+    font-family: 'SF Mono', monospace; font-size:10px; color:var(--muted); letter-spacing:1px;
+  }
+  .corner-ticks .tl { position:absolute; top:14px; left:14px; }
+  .corner-ticks .tr { position:absolute; top:14px; right:14px; }
+  .corner-ticks .bl { position:absolute; bottom:14px; left:14px; }
+  .corner-ticks .br { position:absolute; bottom:14px; right:14px; }
+
+  @media (max-width:900px) {
+    .hero-inner { grid-template-columns:1fr; padding:40px 24px; }
+    .nodes-stage { margin:48px auto 0; max-width:380px; }
+    nav { padding:14px 20px; }
+    nav .links a:not(.cta) { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lab-tag">Concept 05 · Animated Grid</div>
+
+<nav>
+  <div class="brand">
+    <span class="mark"><span class="m1"></span><span class="m2"></span></span>
+    TwoSuns
+  </div>
+  <div class="links">
+    <a href="#">Platform</a>
+    <a href="#">Architecture</a>
+    <a href="#">Pricing</a>
+    <a href="#">Docs</a>
+    <a href="#" class="cta">Engage</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="grid-bg"></div>
+  <div class="grid-sweep"></div>
+
+  <div class="corner-ticks">
+    <span class="tl">0,0</span>
+    <span class="tr">∞,0</span>
+    <span class="bl">0,∞</span>
+    <span class="br">TwoSuns / Coordination Layer</span>
+  </div>
+
+  <div class="hero-inner">
+    <div class="copy">
+      <div class="eyebrow"><span class="dot"></span> Coordination Infrastructure</div>
+      <h1>The <span class="a">operating</span><br>layer for <span class="b">complex</span><br>enterprises.</h1>
+      <p class="sub">TwoSuns coordinates execution across market and operational systems, with persistent context, full traceability, and AI-assisted decisions at every step.</p>
+      <div class="ctas">
+        <a href="#" class="btn-primary">Request a Discovery</a>
+        <a href="#" class="btn-link">View architecture <span class="arr">→</span></a>
+      </div>
+    </div>
+
+    <div class="nodes-stage">
+      <svg class="connect-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="conn-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FACC15" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#F97316" stop-opacity="0.5"/>
+          </linearGradient>
+        </defs>
+        <line x1="32" y1="22" x2="72" y2="74"
+              stroke="url(#conn-grad)" stroke-width="0.5" stroke-dasharray="1 1.5">
+          <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="8s" repeatCount="indefinite"/>
+        </line>
+      </svg>
+
+      <div class="node node-gold"></div>
+      <div class="node node-orange"></div>
+
+      <div class="widget widget-1">
+        <div class="key">Market Coordination</div>
+        <div class="val">2,431 <span class="up">↗ 4.2%</span></div>
+      </div>
+      <div class="widget widget-2">
+        <div class="key">Operational Alignment</div>
+        <div class="val">98.7% <span class="up">↗ live</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

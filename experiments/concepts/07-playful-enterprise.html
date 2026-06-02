@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns, Playful Enterprise</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg: #FFF8EC;
+    --bg-alt: #FCEFD4;
+    --ink: #2A1810;
+    --muted: #6E5743;
+    --sun-gold: #FFB627;
+    --sun-orange: #FF6B35;
+    --teal: #2A9D8F;
+    --pink: #FF9AAE;
+    --line: rgba(42,24,16,0.12);
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    overflow-x:hidden;
+    line-height:1.55;
+  }
+  .lab-tag {
+    position:fixed; top:14px; right:14px; z-index:99;
+    background:#2A1810; color:#FFB627;
+    font-size:9px; font-weight:700; letter-spacing:1.5px;
+    padding:5px 11px; border-radius:20px; text-transform:uppercase;
+  }
+
+  nav {
+    padding:18px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+    border-bottom:2px solid var(--ink);
+    background:var(--bg);
+    position:sticky; top:0; z-index:10;
+  }
+  nav .brand {
+    display:flex; align-items:center; gap:12px;
+    font-size:20px; font-weight:800; letter-spacing:-0.5px;
+  }
+  nav .brand .mark { display:inline-flex; gap:-3px; align-items:center; }
+  nav .brand .m1 {
+    width:18px; height:18px; border-radius:50%;
+    background:var(--sun-gold);
+    border:2px solid var(--ink);
+  }
+  nav .brand .m2 {
+    width:13px; height:13px; border-radius:50%;
+    background:var(--sun-orange);
+    border:2px solid var(--ink);
+    margin-left:-5px; margin-top:5px;
+  }
+  nav .links { display:flex; gap:28px; font-size:14px; font-weight:600; }
+  nav .links a { color:var(--ink); text-decoration:none; transition:color .15s; }
+  nav .links a:hover { color:var(--sun-orange); }
+  nav .cta {
+    background:var(--ink); color:#fff; padding:10px 20px; border-radius:30px;
+    font-weight:700; font-size:13px;
+    border:2px solid var(--ink);
+    box-shadow:4px 4px 0 var(--sun-orange);
+    transition:all .15s;
+  }
+  nav .cta:hover {
+    background:var(--sun-orange);
+    box-shadow:4px 4px 0 var(--ink);
+    transform:translate(-2px, -2px);
+  }
+
+  #hero {
+    position:relative;
+    min-height:calc(100vh - 70px);
+    padding:60px 32px 80px;
+    overflow:hidden;
+  }
+  /* Squiggle/dot pattern background */
+  .bg-pattern {
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle, rgba(42,24,16,0.10) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    background-position: 0 0;
+    opacity:0.5;
+    pointer-events:none;
+  }
+  /* Scattered decorative shapes */
+  .deco {
+    position:absolute; pointer-events:none;
+  }
+  .deco.s1 { top:14%; left:6%; transform:rotate(-15deg); }
+  .deco.s2 { top:8%; right:32%; transform:rotate(20deg); }
+  .deco.s3 { bottom:18%; left:36%; transform:rotate(45deg); }
+  .deco.s4 { top:62%; right:8%; transform:rotate(-30deg); }
+  .deco svg { display:block; }
+  .deco-text {
+    font-size:13px; font-weight:600; color:var(--muted);
+    background:#fff; border:2px solid var(--ink);
+    padding:6px 12px; border-radius:24px;
+    box-shadow:3px 3px 0 var(--sun-gold);
+    transform:rotate(var(--rot, 0deg));
+  }
+
+  .hero-inner {
+    position:relative; z-index:3;
+    max-width:1200px; margin:0 auto;
+    display:grid; grid-template-columns:1.1fr 1fr; gap:48px;
+    align-items:center; min-height:calc(100vh - 220px);
+  }
+
+  .badge {
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
+    color:var(--ink); background:var(--sun-gold);
+    padding:8px 16px; border:2px solid var(--ink); border-radius:30px;
+    margin-bottom:28px;
+    box-shadow:4px 4px 0 var(--ink);
+    transform:rotate(-2deg);
+  }
+  .badge .emoji { font-size:14px; }
+
+  h1 {
+    font-size:clamp(48px, 6.5vw, 96px);
+    font-weight:800; line-height:0.98; letter-spacing:-2.5px;
+    margin-bottom:28px;
+  }
+  h1 .highlight {
+    position:relative; display:inline-block;
+    color:var(--ink); z-index:1;
+  }
+  h1 .highlight::before {
+    content:''; position:absolute; left:-6px; right:-6px; bottom:6px;
+    height:18px; background:var(--sun-gold);
+    z-index:-1; transform:skew(-4deg);
+    border-radius:4px;
+  }
+  h1 .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--sun-orange);
+    text-decoration-thickness: 6px;
+    text-underline-offset: 8px;
+  }
+
+  .sub {
+    font-size:18px; line-height:1.65; color:var(--muted);
+    margin-bottom:36px; max-width:480px;
+  }
+
+  .ctas { display:flex; gap:14px; align-items:center; }
+  .btn-primary {
+    background:var(--sun-orange); color:#fff;
+    padding:16px 30px; border-radius:30px;
+    font-weight:700; font-size:15px; text-decoration:none;
+    border:2px solid var(--ink);
+    box-shadow:5px 5px 0 var(--ink);
+    transition:all .15s;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-primary:hover {
+    background:var(--sun-gold); color:var(--ink);
+    transform:translate(-2px, -2px);
+    box-shadow:7px 7px 0 var(--ink);
+  }
+  .btn-secondary {
+    background:transparent; color:var(--ink);
+    padding:16px 24px; border-radius:30px;
+    font-weight:700; font-size:14px; text-decoration:none;
+    border:2px solid var(--ink);
+    transition:all .15s;
+  }
+  .btn-secondary:hover { background:var(--ink); color:#fff; }
+
+  /* Illustrative suns scene */
+  .scene {
+    position:relative; width:100%; aspect-ratio:1/1; max-width:540px; margin-left:auto;
+  }
+  .sun-illustration {
+    position:absolute; border-radius:50%;
+    border:3px solid var(--ink);
+  }
+  .sun-illustration.big {
+    top:8%; left:14%;
+    width:64%; height:64%;
+    background: radial-gradient(circle at 32% 28%, #FFE2B0 0%, var(--sun-gold) 30%, #D8910A 80%);
+    box-shadow: 8px 8px 0 var(--ink);
+    animation: tiltLeft 8s ease-in-out infinite;
+  }
+  .sun-illustration.small {
+    bottom:8%; right:8%;
+    width:38%; height:38%;
+    background: radial-gradient(circle at 32% 28%, #FFD6BD 0%, var(--sun-orange) 38%, #C2410C 90%);
+    box-shadow: 6px 6px 0 var(--ink);
+    animation: tiltRight 9s ease-in-out infinite;
+  }
+  @keyframes tiltLeft  { 0%,100%{transform:rotate(-2deg);} 50%{transform:rotate(2deg);} }
+  @keyframes tiltRight { 0%,100%{transform:rotate(2deg);} 50%{transform:rotate(-3deg);} }
+
+  /* Hand-drawn rays around big sun */
+  .rays {
+    position:absolute; top:8%; left:14%;
+    width:64%; height:64%;
+    pointer-events:none;
+  }
+  .ray {
+    position:absolute; background:var(--ink);
+    transform-origin: center;
+  }
+  /* Doodle around */
+  .doodle {
+    position:absolute;
+    font-size:14px; color:var(--ink);
+    font-weight:700;
+  }
+  .doodle.d1 { top:0; right:18%; transform:rotate(15deg); }
+  .doodle.d2 { bottom:-2%; left:8%; transform:rotate(-12deg); }
+  .doodle.d3 { top:42%; right:-2%; transform:rotate(8deg); }
+
+  .doodle .bubble {
+    background:#fff; border:2px solid var(--ink);
+    padding:8px 14px; border-radius:24px;
+    box-shadow:3px 3px 0 var(--teal);
+    font-size:12px;
+  }
+  .doodle.d2 .bubble { box-shadow:3px 3px 0 var(--pink); }
+  .doodle.d3 .bubble { box-shadow:3px 3px 0 var(--sun-orange); }
+
+  @media (max-width:900px) {
+    .hero-inner { grid-template-columns:1fr; padding:32px 0; }
+    .scene { margin:48px auto 0; max-width:360px; }
+    nav { padding:14px 20px; }
+    nav .links a:not(.cta) { display:none; }
+    .deco { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lab-tag">Concept 07 · Playful Enterprise</div>
+
+<nav>
+  <div class="brand">
+    <span class="mark"><span class="m1"></span><span class="m2"></span></span>
+    TwoSuns
+  </div>
+  <div class="links">
+    <a href="#">Platform</a>
+    <a href="#">Customers</a>
+    <a href="#">Pricing</a>
+    <a href="#">About</a>
+    <a href="#" class="cta">Get a demo →</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="bg-pattern"></div>
+
+  <div class="deco s1" style="--rot:-15deg;">
+    <div class="deco-text">★ no jargon, just coordination</div>
+  </div>
+  <div class="deco s4" style="--rot:-30deg;">
+    <div class="deco-text">✦ trusted by enterprise teams</div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="copy">
+      <div class="badge"><span class="emoji">☀</span> Coordination, made simple</div>
+      <h1>Hello, <span class="highlight">enterprise</span>.<br>Goodbye, <span class="underline">chaos</span>.</h1>
+      <p class="sub">TwoSuns is the friendly, AI-enhanced operating layer that coordinates your market activity, operations, and teams. Built for serious enterprises that don't take themselves too seriously.</p>
+      <div class="ctas">
+        <a href="#" class="btn-primary">Request a demo <span>→</span></a>
+        <a href="#" class="btn-secondary">See how it works</a>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="sun-illustration big"></div>
+      <div class="sun-illustration small"></div>
+
+      <div class="doodle d1">
+        <div class="bubble">market 🌍</div>
+      </div>
+      <div class="doodle d2">
+        <div class="bubble">ops ⚡</div>
+      </div>
+      <div class="doodle d3">
+        <div class="bubble">aligned ✓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

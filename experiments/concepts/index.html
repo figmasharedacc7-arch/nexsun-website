@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns Hero Concepts</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", sans-serif;
+    background:#0a0a0a; color:#fff;
+    -webkit-font-smoothing: antialiased;
+    line-height:1.55;
+  }
+  .container { max-width:1200px; margin:0 auto; padding:80px 32px; }
+  header h1 {
+    font-size:clamp(36px, 5vw, 64px); font-weight:900;
+    letter-spacing:-2px; margin-bottom:14px;
+  }
+  header h1 .accent { background:linear-gradient(90deg, #E85D2F, #E6C063); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  header p { color:#999; font-size:17px; max-width:680px; margin-bottom:48px; }
+
+  .grid {
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(360px, 1fr));
+    gap:24px;
+  }
+  a.card {
+    display:block;
+    background:#161616;
+    border:1px solid #222;
+    border-radius:16px;
+    overflow:hidden;
+    text-decoration:none;
+    color:#fff;
+    transition: all .25s;
+  }
+  a.card:hover {
+    border-color:#E85D2F; transform:translateY(-4px);
+    box-shadow:0 16px 40px rgba(232,93,47,0.15);
+  }
+  .card .preview {
+    aspect-ratio: 16/10;
+    background:#0d0d0d;
+    overflow:hidden;
+    position:relative;
+    border-bottom:1px solid #222;
+  }
+  .card .preview iframe {
+    width:200%; height:200%;
+    transform: scale(0.5); transform-origin: top left;
+    border:none; pointer-events:none;
+  }
+  .card .body { padding:20px 22px; }
+  .card .num {
+    font-size:10px; font-weight:700; letter-spacing:2.5px;
+    color:#666; text-transform:uppercase; margin-bottom:6px;
+  }
+  .card h3 {
+    font-size:20px; font-weight:800; letter-spacing:-0.5px; margin-bottom:6px;
+  }
+  .card .ref { font-size:12px; color:#999; margin-bottom:10px; }
+  .card .desc { font-size:13px; color:#bbb; line-height:1.55; }
+
+  footer { margin-top:80px; padding-top:32px; border-top:1px solid #222; color:#666; font-size:13px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>TwoSuns Hero <span class="accent">Concepts</span></h1>
+    <p>Seven distinct hero directions, each committing hard to a different aesthetic. Click through, react, pick the winner. We polish that one.</p>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="01-cinematic-minimal.html">
+      <div class="preview"><iframe src="01-cinematic-minimal.html" loading="lazy"></iframe></div>
+      <div class="body">
+        <div class="num">Concept 01</div>
+        <h3>Cinematic Minimal</h3>
+        <div class="ref">Reference: Anthropic · Cohere</div>
+        <p class="desc">Single focal point. Calm. Lots of white space. Sharp typography. Confidence through restraint.</p>
+      </div>
+    </a>
+
+    <a class="card" href="02-dark-cosmic.html">
+      <div class="preview"><iframe src="02-dark-cosmic.html" loading="lazy"></iframe></div>
+      <div class="body">
+        <div class="num">Concept 02</div>
+        <h3>Dark Cosmic</h3>
+        <div class="ref">Reference: Palantir · Arc</div>
+        <p class="desc">Deep navy void. Two suns glow against black space. Weighty serif headline. Confident.</p>
+      </div>
+    </a>
+
+    <a class="card" href="03-data-observatory.html">
+      <div class="preview"><iframe src="03-data-observatory.html" loading="lazy"></iframe></div>
+      <div class="body">
+        <div class="num">Concept 03</div>
+        <h3>Data Observatory</h3>
+        <div class="ref">Reference: Scale · Observable</div>
+        <p class="desc">Two suns as data points on a coordinate plane. Live metrics. Scientific instrument feel.</p>
+      </div>
+    </a>
+
+    <a class="card" href="04-flow-architecture.html">
+      <div class="preview"><iframe src="04-flow-architecture.html" loading="lazy"></iframe></div>
+      <div class="body">
+        <div class="num">Concept 04</div>
+        <h3>Flow Architecture</h3>
+        <div class="ref">Reference: Databricks</div>
+        <p class="desc">Two suns connected by flowing data streams. Signals enter, decisions flow out. Living diagram.</p>
+      </div>
+    </a>
+
+    <a class="card" href="05-animated-grid.html">
+      <div class="preview"><iframe src="05-animated-grid.html" loading="lazy"></iframe></div>
+      <div class="body">
+        <div class="num">Concept 05</div>
+        <h3>Animated Grid</h3>
+        <div class="ref">Reference: Vercel · Linear</div>
+        <p class="desc">Geometric grid background. Two suns as glowing nodes. Sharp lines. Polished motion.</p>
+      </div>
+    </a>
+
+    <a class="card" href="06-gradient-mastery.html">
+      <div class="preview"><iframe src="06-gradient-mastery.html" loading="lazy"></iframe></div>
+      <div class="body">
+        <div class="num">Concept 06</div>
+        <h3>Gradient Mastery</h3>
+        <div class="ref">Reference: Stripe</div>
+        <p class="desc">Mesh gradient background that breathes. Soft suns suspended in a liquid color field.</p>
+      </div>
+    </a>
+
+    <a class="card" href="07-playful-enterprise.html">
+      <div class="preview"><iframe src="07-playful-enterprise.html" loading="lazy"></iframe></div>
+      <div class="body">
+        <div class="num">Concept 07</div>
+        <h3>Playful Enterprise</h3>
+        <div class="ref">Reference: Dust · Notion</div>
+        <p class="desc">Warm, illustrative, slightly hand-drawn. Friendly without being childish. Enterprise with a smile.</p>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    Built as experiments. None of these are live. Pick one and we polish it for nexsun.ai.
+  </footer>
+</div>
+
+</body>
+</html>
