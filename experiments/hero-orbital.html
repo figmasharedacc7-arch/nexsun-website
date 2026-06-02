@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns Hero, Orbital Experiment</title>
+<style>
+  :root {
+    --bg: #FAF7F0;
+    --navy: #163E64;
+    --ink: #1a1a1a;
+    --sun-gold: #E6C063;
+    --sun-gold-deep: #B8932E;
+    --sun-orange: #E85D2F;
+    --sun-orange-deep: #B33B12;
+    --muted: #707680;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { height:100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    overflow:hidden;
+  }
+
+  /* Top gold rule */
+  .top-rule {
+    position:fixed; top:0; left:0; right:0; height:3px;
+    background: linear-gradient(90deg, var(--sun-gold) 0%, var(--sun-orange) 50%, var(--sun-gold) 100%);
+    z-index:10;
+  }
+
+  .lab-tag {
+    position:fixed; top:14px; right:14px; z-index:20;
+    background:#163E64; color:#F6B707;
+    font-size:10px; font-weight:700; letter-spacing:1.5px;
+    padding:5px 12px; border-radius:20px; text-transform:uppercase;
+  }
+
+  /* AEPG-style logo top-left */
+  .top-logo {
+    position:fixed; top:48px; left:64px; z-index:5;
+    width:56px; height:56px;
+  }
+  .top-logo svg { width:100%; height:100%; }
+
+  /* Main stage */
+  .stage {
+    position:relative;
+    width:100%; height:100vh;
+    padding:0 64px 80px;
+    display:flex; flex-direction:column; justify-content:flex-end;
+  }
+
+  /* Orbital visualization, right side */
+  .orbital {
+    position:absolute;
+    top:50%; right:8%;
+    transform:translateY(-55%);
+    width:min(640px, 45vw);
+    height:min(640px, 45vw);
+    pointer-events:none;
+  }
+  .orbit-path {
+    position:absolute;
+    inset:0;
+    border:1px solid rgba(0,0,0,0.55);
+    border-radius:50%;
+    transform: rotate(-15deg) scaleY(0.58);
+    transform-origin:center;
+  }
+  .sun-3d {
+    position:absolute;
+    border-radius:50%;
+    animation: gentleDrift 14s ease-in-out infinite;
+  }
+  .sun-gold-orb {
+    top:8%; left:18%;
+    width:54%; height:54%;
+    background: radial-gradient(circle at 30% 28%,
+      #FFF2C8 0%, #F2D77A 18%, #D9B252 45%, #B8932E 78%, #7A5E15 100%);
+    box-shadow:
+      inset -28px -32px 60px rgba(0,0,0,0.35),
+      0 30px 80px rgba(217,178,82,0.25);
+  }
+  .sun-orange-orb {
+    bottom:8%; right:12%;
+    width:30%; height:30%;
+    background: radial-gradient(circle at 30% 28%,
+      #FFC8A6 0%, #FF8E5F 22%, #E85D2F 55%, #B33B12 90%);
+    box-shadow:
+      inset -18px -22px 40px rgba(0,0,0,0.4),
+      0 24px 60px rgba(232,93,47,0.30);
+    animation-delay:-7s;
+  }
+  /* Anchor dot on orbit */
+  .anchor-dot {
+    position:absolute;
+    top:35%; left:62%;
+    width:14px; height:14px;
+    border-radius:50%;
+    background:#fff;
+    border:1.5px solid rgba(0,0,0,0.55);
+    box-shadow:0 0 0 3px var(--bg);
+  }
+  @keyframes gentleDrift {
+    0%,100% { transform:translateY(0); }
+    50%     { transform:translateY(-12px); }
+  }
+
+  /* Headline + sub */
+  .copy {
+    position:relative; z-index:2;
+    max-width:1000px;
+    margin-bottom:60px;
+  }
+  h1 {
+    font-size:clamp(48px, 8vw, 104px);
+    font-weight:800;
+    letter-spacing:-3.5px;
+    line-height:1.0;
+    color:var(--ink);
+    margin-bottom:30px;
+  }
+  h1 .two { color: var(--sun-orange); }
+  h1 .suns { color: var(--sun-gold-deep); }
+  .subtitle {
+    font-size:clamp(20px, 2vw, 28px);
+    color:var(--ink);
+    font-weight:400;
+    letter-spacing:-0.4px;
+  }
+
+  /* Footer */
+  .footer-row {
+    position:absolute; bottom:32px; left:64px; right:64px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:11px; font-weight:600; letter-spacing:2.5px;
+    color:var(--muted); text-transform:uppercase;
+  }
+  .meta-left {
+    display:flex; gap:18px; align-items:center;
+  }
+  .meta-left .sep { color:#cbb88a; font-size:8px; }
+  .page-num {
+    border:1px solid var(--sun-gold); padding:6px 14px;
+    color:var(--sun-gold-deep); font-weight:700; letter-spacing:2px;
+    border-radius:2px;
+  }
+
+  @media (max-width: 768px) {
+    .stage { padding:0 32px 80px; }
+    .top-logo { left:32px; top:32px; width:44px; height:44px; }
+    .orbital { top:auto; bottom:48%; right:-10%; width:80vw; height:80vw; transform:none; opacity:0.7; }
+    .footer-row { left:32px; right:32px; flex-direction:column; gap:14px; align-items:flex-start; }
+    h1 { letter-spacing:-2px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-rule"></div>
+<div class="lab-tag">Experiment, not live</div>
+
+<!-- AEPG-style top-left mark (placeholder, 4 colored dots in a small grid) -->
+<div class="top-logo" aria-label="TwoSuns mark">
+  <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+    <!-- Two stacked rectangles suggesting twin suns scaffold -->
+    <rect x="6" y="2" width="44" height="40" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+    <circle cx="18" cy="14" r="6" fill="#E85D2F"/>
+    <circle cx="38" cy="14" r="6" fill="#E6C063"/>
+    <circle cx="18" cy="30" r="6" fill="#163E64"/>
+    <circle cx="38" cy="30" r="6" fill="#3B82F6"/>
+  </svg>
+</div>
+
+<div class="stage">
+
+  <div class="orbital">
+    <div class="orbit-path"></div>
+    <div class="sun-3d sun-gold-orb"></div>
+    <div class="anchor-dot"></div>
+    <div class="sun-3d sun-orange-orb"></div>
+  </div>
+
+  <div class="copy">
+    <h1><span class="two">Two</span><span class="suns">Suns</span><span style="color:var(--ink);">: Beyond Nexsun</span></h1>
+    <p class="subtitle">The intelligent operating layer.</p>
+  </div>
+
+  <div class="footer-row">
+    <div class="meta-left">
+      <span>Confidential</span>
+      <span class="sep">●</span>
+      <span>May 2026</span>
+      <span class="sep">●</span>
+      <span>Chief Digital &amp; Product Office</span>
+    </div>
+    <div class="page-num">01 / 26</div>
+  </div>
+
+</div>
+
+</body>
+</html>
