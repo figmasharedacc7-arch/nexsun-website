@@ -6,201 +6,396 @@
 <title>TwoSuns Hero, Orbital Experiment</title>
 <style>
   :root {
-    --bg: #FAF7F0;
-    --navy: #163E64;
-    --ink: #1a1a1a;
-    --sun-gold: #E6C063;
+    --sun:           #F4920B;
+    --sun-bright:    #F6B707;
+    --sun-deep:      #E95704;
+    --sun-pale:      #FEF3C7;
+    --sun-gold:      #E6C063;
     --sun-gold-deep: #B8932E;
-    --sun-orange: #E85D2F;
-    --sun-orange-deep: #B33B12;
-    --muted: #707680;
+    --sun-orange:    #E85D2F;
+    --navy:          #163E64;
+    --navy-deep:     #0D1B3E;
+    --sky:           #215F9A;
+    --bg:            #FAF7F0;
+    --white:         #FFFFFF;
+    --text:          #1a1a1a;
+    --text-mid:      #334155;
+    --text-muted:    #64748B;
+    --border:        rgba(244,146,11,0.2);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  html, body { height:100%; }
+  html { scroll-behavior:smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", "Segoe UI", sans-serif;
     background: var(--bg);
-    color: var(--ink);
-    overflow:hidden;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    line-height:1.6;
+    overflow-x:hidden;
   }
+  .container { max-width:1280px; margin:0 auto; padding:0 32px; }
 
-  /* Top gold rule */
-  .top-rule {
-    position:fixed; top:0; left:0; right:0; height:3px;
-    background: linear-gradient(90deg, var(--sun-gold) 0%, var(--sun-orange) 50%, var(--sun-gold) 100%);
-    z-index:10;
-  }
-
+  /* Lab tag */
   .lab-tag {
-    position:fixed; top:14px; right:14px; z-index:20;
+    position:fixed; top:14px; right:14px; z-index:9999;
     background:#163E64; color:#F6B707;
     font-size:10px; font-weight:700; letter-spacing:1.5px;
     padding:5px 12px; border-radius:20px; text-transform:uppercase;
+    box-shadow:0 4px 16px rgba(0,0,0,0.15);
   }
 
-  /* AEPG-style logo top-left */
-  .top-logo {
-    position:fixed; top:48px; left:64px; z-index:5;
-    width:56px; height:56px;
+  /* ─── TOPBAR ─── */
+  .topbar { background:var(--navy); border-bottom:1px solid rgba(255,255,255,0.06); }
+  .topbar-inner {
+    max-width:1280px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; justify-content:flex-end;
+    height:34px;
   }
-  .top-logo svg { width:100%; height:100%; }
+  .topbar-inner a {
+    font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+    color:var(--sun); text-decoration:none; padding:0 16px;
+    border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
+    transition:color .2s;
+  }
+  .topbar-inner a:last-child { border-right:none; padding-right:0; }
+  .topbar-inner a:hover { color:#fff; }
 
-  /* Main stage */
-  .stage {
-    position:relative;
-    width:100%; height:100vh;
-    padding:0 64px 80px;
-    display:flex; flex-direction:column; justify-content:flex-end;
+  /* ─── NAV ─── */
+  nav.main-nav {
+    position:sticky; top:0; z-index:100;
+    background:rgba(250,247,240,0.88); backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(244,146,11,0.12);
+    box-shadow:0 1px 20px rgba(0,0,0,0.04);
   }
+  .nav-inner {
+    max-width:1280px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; height:70px;
+  }
+  .nav-brand {
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none; font-size:22px; font-weight:900;
+    letter-spacing:-0.5px;
+  }
+  .nav-brand .two { color: var(--sun-orange); }
+  .nav-brand .suns { color: var(--sun-gold-deep); }
+  .nav-brand .mark { display:inline-flex; gap:-4px; margin-right:4px; }
+  .nav-brand .mark svg { display:block; }
+  .nav-links { display:flex; align-items:center; gap:30px; margin-left:auto; }
+  .nav-links a {
+    font-size:14px; color:var(--text-mid); text-decoration:none;
+    font-weight:500; transition:color .2s;
+  }
+  .nav-links a:hover { color:var(--sun-deep); }
+  .btn-cta {
+    background:linear-gradient(135deg,var(--sun-orange),#C2410C);
+    color:#fff; font-weight:700; padding:11px 22px; border-radius:8px;
+    font-size:13px; text-decoration:none; transition:all .2s;
+    box-shadow:0 4px 14px rgba(232,93,47,0.30); display:inline-block;
+  }
+  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(232,93,47,0.45); }
 
-  /* Orbital visualization, right side */
-  .orbital {
-    position:absolute;
-    top:50%; right:8%;
-    transform:translateY(-55%);
-    width:min(640px, 45vw);
-    height:min(640px, 45vw);
-    pointer-events:none;
+  /* ─── HERO ─── */
+  @keyframes heroBgBreath {
+    0%,100% { background-position:0% 50%; }
+    33%     { background-position:60% 30%; }
+    66%     { background-position:100% 70%; }
   }
-  .orbit-path {
-    position:absolute;
-    inset:0;
-    border:1px solid rgba(0,0,0,0.55);
+  #hero {
+    min-height:calc(100vh - 104px);
+    display:flex; align-items:center;
+    padding:80px 0 120px;
+    background: linear-gradient(160deg, #FAF7F0 0%, #FFF3CD 30%, #FDE7C8 60%, #FAF7F0 100%);
+    background-size:300% 300%;
+    animation: heroBgBreath 16s ease-in-out infinite;
+    position:relative; overflow:hidden;
+  }
+  /* Background sun-glow blobs */
+  @keyframes glowDrift1 {
+    0%,100% { transform:translate(0,0) scale(1); opacity:.55; }
+    50%     { transform:translate(-30px,28px) scale(1.08); opacity:.7; }
+  }
+  @keyframes glowDrift2 {
+    0%,100% { transform:translate(0,0) scale(1); opacity:.35; }
+    50%     { transform:translate(20px,-25px) scale(1.1); opacity:.5; }
+  }
+  .glow-1 {
+    position:absolute; top:-80px; right:-60px; width:520px; height:520px;
     border-radius:50%;
-    transform: rotate(-15deg) scaleY(0.58);
+    background:radial-gradient(ellipse, rgba(230,192,99,0.40) 0%, rgba(184,147,46,0.10) 50%, transparent 75%);
+    pointer-events:none; animation:glowDrift1 12s ease-in-out infinite;
+  }
+  .glow-2 {
+    position:absolute; bottom:-100px; right:18%; width:380px; height:380px;
+    border-radius:50%;
+    background:radial-gradient(ellipse, rgba(232,93,47,0.25) 0%, rgba(232,93,47,0.05) 50%, transparent 75%);
+    pointer-events:none; animation:glowDrift2 15s ease-in-out infinite;
+  }
+  /* Hero grid */
+  .hero-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:64px;
+    align-items:center; width:100%; position:relative; z-index:2;
+  }
+
+  /* Left column */
+  .hero-eyebrow {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(232,93,47,0.08); border:1px solid rgba(232,93,47,0.30);
+    color:var(--sun-orange); font-size:11px; font-weight:700;
+    letter-spacing:2.2px; text-transform:uppercase; padding:7px 16px;
+    border-radius:20px; margin-bottom:28px;
+  }
+  .hero-eyebrow .dot {
+    width:6px; height:6px; border-radius:50%; background:var(--sun-orange);
+    animation:blink 1.6s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:0.35;} 50%{opacity:1;} }
+
+  h1.hero-heading {
+    font-size:clamp(44px, 5.4vw, 78px);
+    font-weight:800; line-height:1.02; letter-spacing:-2.8px;
+    color:var(--text); margin-bottom:24px;
+  }
+  h1.hero-heading .two { color: var(--sun-orange); }
+  h1.hero-heading .suns { color: var(--sun-gold-deep); }
+  h1.hero-heading .colon { color:var(--text); }
+
+  .hero-tag {
+    font-size:13px; font-weight:700; letter-spacing:0.18em;
+    text-transform:uppercase; color:var(--sun-orange);
+    margin:0 0 22px;
+  }
+  .hero-sub {
+    font-size:18px; line-height:1.65; color:var(--text-mid);
+    margin-bottom:36px; max-width:540px;
+  }
+  .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:22px; }
+  .btn-primary {
+    background:linear-gradient(135deg, var(--sun-orange), #C2410C);
+    color:#fff; padding:15px 32px; border-radius:10px;
+    font-size:14px; font-weight:700; text-decoration:none;
+    display:inline-block; transition:all .25s;
+    box-shadow:0 4px 18px rgba(232,93,47,0.32);
+  }
+  .btn-primary:hover {
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(232,93,47,0.45);
+  }
+  .btn-secondary {
+    background:transparent; color:var(--navy);
+    padding:15px 28px; border-radius:10px;
+    font-size:14px; font-weight:700; text-decoration:none;
+    border:2px solid rgba(22,62,100,0.30);
+    display:inline-block; transition:all .25s;
+  }
+  .btn-secondary:hover {
+    background:rgba(22,62,100,0.05); border-color:var(--navy);
+  }
+  .hero-note { font-size:12.5px; color:var(--text-muted); line-height:1.6; }
+  .hero-note .icon { color:var(--sun-orange); }
+
+  /* Right column: orbital visualization */
+  .orbital-stage {
+    position:relative; aspect-ratio:1/1;
+    max-width:560px; margin-left:auto;
+  }
+  /* Orbit ring(s) */
+  .orbit-ring {
+    position:absolute; inset:0;
+    border:1.2px solid rgba(26,26,26,0.55);
+    border-radius:50%;
+    transform: rotate(-18deg) scaleY(0.56);
     transform-origin:center;
   }
-  .sun-3d {
-    position:absolute;
-    border-radius:50%;
-    animation: gentleDrift 14s ease-in-out infinite;
+  .orbit-ring.inner {
+    inset:14% 14%;
+    border:1px dashed rgba(184,147,46,0.45);
+    transform: rotate(-18deg) scaleY(0.56);
   }
+  /* 3D suns */
+  .sun-3d { position:absolute; border-radius:50%; }
   .sun-gold-orb {
-    top:8%; left:18%;
+    top:6%; left:14%;
     width:54%; height:54%;
-    background: radial-gradient(circle at 30% 28%,
-      #FFF2C8 0%, #F2D77A 18%, #D9B252 45%, #B8932E 78%, #7A5E15 100%);
+    background: radial-gradient(circle at 30% 26%,
+      #FFF6D2 0%, #F2D77A 16%, #D9B252 42%, #B8932E 75%, #6E5611 100%);
     box-shadow:
-      inset -28px -32px 60px rgba(0,0,0,0.35),
-      0 30px 80px rgba(217,178,82,0.25);
+      inset -32px -36px 70px rgba(0,0,0,0.40),
+      inset 14px 10px 40px rgba(255,246,210,0.4),
+      0 36px 100px rgba(184,147,46,0.30),
+      0 0 0 1px rgba(184,147,46,0.18);
+    animation: gentleFloat 14s ease-in-out infinite;
   }
   .sun-orange-orb {
-    bottom:8%; right:12%;
-    width:30%; height:30%;
-    background: radial-gradient(circle at 30% 28%,
-      #FFC8A6 0%, #FF8E5F 22%, #E85D2F 55%, #B33B12 90%);
+    bottom:6%; right:8%;
+    width:32%; height:32%;
+    background: radial-gradient(circle at 30% 26%,
+      #FFD2B4 0%, #FF8E5F 22%, #E85D2F 55%, #B33B12 88%, #6B1F03 100%);
     box-shadow:
-      inset -18px -22px 40px rgba(0,0,0,0.4),
-      0 24px 60px rgba(232,93,47,0.30);
-    animation-delay:-7s;
+      inset -20px -24px 44px rgba(0,0,0,0.45),
+      inset 8px 6px 22px rgba(255,210,180,0.45),
+      0 26px 70px rgba(232,93,47,0.36);
+    animation: gentleFloat 16s ease-in-out infinite -8s;
   }
   /* Anchor dot on orbit */
   .anchor-dot {
     position:absolute;
-    top:35%; left:62%;
+    top:30%; left:70%;
     width:14px; height:14px;
     border-radius:50%;
     background:#fff;
-    border:1.5px solid rgba(0,0,0,0.55);
-    box-shadow:0 0 0 3px var(--bg);
+    border:1.6px solid rgba(26,26,26,0.65);
+    box-shadow:0 0 0 3px var(--bg), 0 2px 4px rgba(0,0,0,0.1);
   }
-  @keyframes gentleDrift {
+  @keyframes gentleFloat {
+    0%,100% { transform:translate(0,0); }
+    50%     { transform:translate(0,-14px); }
+  }
+
+  /* Status chips floating around the orbital */
+  .chip {
+    position:absolute;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(184,147,46,0.20);
+    border-radius:12px;
+    padding:10px 14px;
+    box-shadow:0 8px 28px rgba(184,147,46,0.18), 0 2px 6px rgba(0,0,0,0.04);
+    font-size:12px; font-weight:700;
+    color:var(--navy); white-space:nowrap;
+    animation: floatChip 4s ease-in-out infinite;
+    z-index:3;
+  }
+  .chip .v { display:block; color:var(--sun-orange); font-size:14.5px; margin-top:2px; }
+  .chip:nth-child(1) { top:8%; left:-12%; animation-delay:0s; }
+  .chip:nth-child(2) { top:34%; right:-10%; animation-delay:.9s; }
+  .chip:nth-child(3) { bottom:24%; left:-8%; animation-delay:1.6s; }
+  @keyframes floatChip {
     0%,100% { transform:translateY(0); }
-    50%     { transform:translateY(-12px); }
+    50%     { transform:translateY(-10px); }
   }
 
-  /* Headline + sub */
-  .copy {
-    position:relative; z-index:2;
-    max-width:1000px;
-    margin-bottom:60px;
-  }
-  h1 {
-    font-size:clamp(48px, 8vw, 104px);
-    font-weight:800;
-    letter-spacing:-3.5px;
-    line-height:1.0;
-    color:var(--ink);
-    margin-bottom:30px;
-  }
-  h1 .two { color: var(--sun-orange); }
-  h1 .suns { color: var(--sun-gold-deep); }
-  .subtitle {
-    font-size:clamp(20px, 2vw, 28px);
-    color:var(--ink);
-    font-weight:400;
-    letter-spacing:-0.4px;
-  }
-
-  /* Footer */
-  .footer-row {
-    position:absolute; bottom:32px; left:64px; right:64px;
+  /* Footer row inside hero */
+  .hero-foot {
+    position:absolute; bottom:32px; left:0; right:0;
+    padding:0 32px;
     display:flex; justify-content:space-between; align-items:center;
-    font-size:11px; font-weight:600; letter-spacing:2.5px;
-    color:var(--muted); text-transform:uppercase;
+    font-size:11px; font-weight:600; letter-spacing:2.2px;
+    color:var(--text-muted); text-transform:uppercase;
+    z-index:3;
   }
-  .meta-left {
-    display:flex; gap:18px; align-items:center;
-  }
-  .meta-left .sep { color:#cbb88a; font-size:8px; }
+  .meta-left { display:flex; gap:14px; align-items:center; max-width:1216px; margin:0 auto; }
+  .meta-left .sep { color:#cbb88a; font-size:7px; }
   .page-num {
-    border:1px solid var(--sun-gold); padding:6px 14px;
+    border:1px solid var(--sun-gold); padding:5px 12px;
     color:var(--sun-gold-deep); font-weight:700; letter-spacing:2px;
-    border-radius:2px;
+    border-radius:2px; font-size:10.5px;
+  }
+  .hero-foot-inner {
+    max-width:1216px; margin:0 auto;
+    display:flex; justify-content:space-between; align-items:center; width:100%;
   }
 
-  @media (max-width: 768px) {
-    .stage { padding:0 32px 80px; }
-    .top-logo { left:32px; top:32px; width:44px; height:44px; }
-    .orbital { top:auto; bottom:48%; right:-10%; width:80vw; height:80vw; transform:none; opacity:0.7; }
-    .footer-row { left:32px; right:32px; flex-direction:column; gap:14px; align-items:flex-start; }
-    h1 { letter-spacing:-2px; }
+  @media (max-width:980px) {
+    .hero-grid { grid-template-columns:1fr; gap:40px; }
+    .orbital-stage { max-width:420px; margin:0 auto; }
+    .nav-links a:not(.btn-cta) { display:none; }
+    .hero-foot { position:relative; bottom:auto; margin-top:48px; }
+    .hero-foot-inner { flex-direction:column; gap:14px; align-items:flex-start; }
+    h1.hero-heading { letter-spacing:-1.5px; }
   }
 </style>
 </head>
 <body>
 
-<div class="top-rule"></div>
 <div class="lab-tag">Experiment, not live</div>
 
-<!-- AEPG-style top-left mark (placeholder, 4 colored dots in a small grid) -->
-<div class="top-logo" aria-label="TwoSuns mark">
-  <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-    <!-- Two stacked rectangles suggesting twin suns scaffold -->
-    <rect x="6" y="2" width="44" height="40" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
-    <circle cx="18" cy="14" r="6" fill="#E85D2F"/>
-    <circle cx="38" cy="14" r="6" fill="#E6C063"/>
-    <circle cx="18" cy="30" r="6" fill="#163E64"/>
-    <circle cx="38" cy="30" r="6" fill="#3B82F6"/>
-  </svg>
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="#">Resources</a>
+    <a href="#">Investor &amp; Partner Centre</a>
+    <a href="#">Trust Centre</a>
+    <a href="#">Contact</a>
+  </div>
 </div>
 
-<div class="stage">
-
-  <div class="orbital">
-    <div class="orbit-path"></div>
-    <div class="sun-3d sun-gold-orb"></div>
-    <div class="anchor-dot"></div>
-    <div class="sun-3d sun-orange-orb"></div>
-  </div>
-
-  <div class="copy">
-    <h1><span class="two">Two</span><span class="suns">Suns</span><span style="color:var(--ink);">: Beyond Nexsun</span></h1>
-    <p class="subtitle">The intelligent operating layer.</p>
-  </div>
-
-  <div class="footer-row">
-    <div class="meta-left">
-      <span>Confidential</span>
-      <span class="sep">●</span>
-      <span>May 2026</span>
-      <span class="sep">●</span>
-      <span>Chief Digital &amp; Product Office</span>
+<!-- Main nav -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <span class="mark">
+        <svg width="40" height="32" viewBox="0 0 40 32" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="ng1" cx="35%" cy="35%" r="65%"><stop offset="0%" stop-color="#FFE89A"/><stop offset="55%" stop-color="#E6C063"/><stop offset="100%" stop-color="#B8932E"/></radialGradient>
+            <radialGradient id="ng2" cx="35%" cy="35%" r="65%"><stop offset="0%" stop-color="#FFB48E"/><stop offset="55%" stop-color="#E85D2F"/><stop offset="100%" stop-color="#B33B12"/></radialGradient>
+          </defs>
+          <circle cx="14" cy="14" r="12" fill="url(#ng1)"/>
+          <circle cx="28" cy="20" r="8" fill="url(#ng2)" opacity="0.95"/>
+        </svg>
+      </span>
+      <span><span class="two">Two</span><span class="suns">Suns</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#">Platform</a>
+      <a href="#">How It Works</a>
+      <a href="#">Applications</a>
+      <a href="#">Why TwoSuns</a>
+      <a href="#">Company</a>
+      <a href="#" class="btn-cta">Engage</a>
     </div>
-    <div class="page-num">01 / 26</div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- LEFT: copy and CTAs -->
+      <div>
+        <div class="hero-eyebrow"><span class="dot"></span> Coordination Infrastructure for the Enterprise</div>
+        <h1 class="hero-heading"><span class="two">Two</span><span class="suns">Suns</span><span class="colon">:</span><br>Beyond Nexsun.</h1>
+        <div class="hero-tag">The intelligent operating layer.</div>
+        <p class="hero-sub">TwoSuns coordinates market activity, operational execution, workflows, and enterprise continuity across complex environments. A secure, AI-enhanced platform designed to maintain contextual continuity across teams, systems, and initiatives.</p>
+        <div class="hero-ctas">
+          <a href="#" class="btn-primary">Request a Discovery Session</a>
+          <a href="#" class="btn-secondary">Explore the Platform →</a>
+        </div>
+        <p class="hero-note"><span class="icon">☀</span> Market-facing coordination, operational orchestration, persistent enterprise continuity</p>
+      </div>
+
+      <!-- RIGHT: orbital visualization with floating chips -->
+      <div class="orbital-stage">
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring inner"></div>
+        <div class="sun-3d sun-gold-orb"></div>
+        <div class="anchor-dot"></div>
+        <div class="sun-3d sun-orange-orb"></div>
+
+        <div class="chip">🌍 Geopolitical Signal<span class="v">Live</span></div>
+        <div class="chip">⚡ Supply Chain<span class="v">Action Needed</span></div>
+        <div class="chip">📊 Compliance Review<span class="v">In Progress</span></div>
+      </div>
+
+    </div>
   </div>
 
-</div>
+  <!-- Footer strip -->
+  <div class="hero-foot">
+    <div class="hero-foot-inner">
+      <div class="meta-left">
+        <span>Confidential</span>
+        <span class="sep">●</span>
+        <span>May 2026</span>
+        <span class="sep">●</span>
+        <span>Chief Digital &amp; Product Office</span>
+      </div>
+      <div class="page-num">01 / 26</div>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
