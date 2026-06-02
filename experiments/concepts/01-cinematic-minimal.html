@@ -4,173 +4,265 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TwoSuns, Cinematic Minimal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=GT+Sectra+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   :root {
-    --bg: #fafaf7;
-    --ink: #1a1a1a;
-    --muted: #6b6b6b;
-    --sun-gold: #D9A954;
-    --sun-orange: #E85D2F;
+    --bg: #fafaf6;
+    --bg-warm: #f5f0e8;
+    --ink: #14110e;
+    --ink-soft: #3a3530;
+    --muted: #7a7268;
+    --line: #d8d2c8;
+    --sun-gold: #B8862C;
+    --sun-orange: #C9492E;
+    --serif: "Cormorant Garamond", "GT Sectra Display", "Times New Roman", Georgia, serif;
+    --sans: "Inter", -apple-system, "Helvetica Neue", sans-serif;
   }
+  html { -webkit-text-size-adjust:100%; }
   body {
-    font-family: 'Cormorant Garamond', "Times New Roman", Georgia, serif;
+    font-family: var(--sans);
     background: var(--bg);
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x:hidden;
+    line-height: 1.55;
+    font-feature-settings: "ss01", "cv11";
   }
-  .nav-fixed {
-    position:fixed; top:0; left:0; right:0;
-    padding:28px 48px;
-    display:flex; align-items:center; justify-content:space-between;
-    z-index:10;
-    font-family:-apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-  }
-  .nav-fixed .brand {
-    font-family:-apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-    font-size:18px; font-weight:600; letter-spacing:-0.3px;
-    display:flex; align-items:center; gap:10px;
-  }
-  .nav-fixed .brand .dot {
-    width:10px; height:10px; border-radius:50%;
-    background: radial-gradient(circle at 30% 30%, #FFE89A, var(--sun-gold) 60%, #8C6918 100%);
-  }
-  .nav-fixed .links { display:flex; gap:36px; font-size:14px; font-weight:500; }
-  .nav-fixed .links a { color:var(--ink); text-decoration:none; opacity:0.75; transition:opacity .2s; }
-  .nav-fixed .links a:hover { opacity:1; }
+  ::selection { background: rgba(184,134,44,0.20); color: var(--ink); }
 
   .lab-tag {
     position:fixed; top:14px; right:14px; z-index:99;
-    background:#163E64; color:#F6B707;
-    font-size:9px; font-weight:700; letter-spacing:1.5px;
-    padding:5px 11px; border-radius:20px; text-transform:uppercase;
-    font-family:-apple-system, sans-serif;
+    background:#14110e; color:#E6C063;
+    font-size:9px; font-weight:500; letter-spacing:1.8px;
+    padding:5px 11px; border-radius:0;
+    text-transform:uppercase;
   }
 
-  #hero {
-    min-height:100vh;
-    display:grid; grid-template-columns:1.4fr 1fr;
-    align-items:center;
-    padding:0 96px;
+  /* === Cream paper texture, very subtle === */
+  body::before {
+    content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity:0.8;
+  }
+
+  /* === NAV, ultra-restrained === */
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:10;
+    padding:36px 56px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  nav .brand {
+    display:flex; align-items:center; gap:12px;
+    font-size:17px; font-weight:500; letter-spacing:-0.4px;
+    color:var(--ink); text-decoration:none;
+  }
+  nav .brand .mark {
+    width:14px; height:14px; border-radius:50%;
+    background: radial-gradient(circle at 30% 28%, #FFE8B0, var(--sun-gold) 55%, #4F3A0B 100%);
+  }
+  nav .links {
+    display:flex; gap:36px; font-size:13px; font-weight:500;
+  }
+  nav .links a {
+    color:var(--ink); text-decoration:none; opacity:0.65;
+    transition: opacity .2s;
     position:relative;
+  }
+  nav .links a:hover { opacity:1; }
+  nav .links a.cta {
+    color:var(--ink); opacity:1; font-weight:600;
+    border-bottom:1.5px solid var(--ink); padding-bottom:2px;
+  }
+  nav .links a.cta:hover { color: var(--sun-orange); border-color: var(--sun-orange); }
+
+  /* === HERO === */
+  #hero {
+    position:relative; z-index:2;
+    min-height:100vh;
+    padding: 0 96px;
+    display:grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items:center;
+    gap: 48px;
   }
 
   .copy {
-    max-width:680px;
+    max-width: 720px;
+    padding-top: 100px;
   }
+
   .eyebrow {
-    font-family:-apple-system, sans-serif;
-    font-size:11px; font-weight:600; letter-spacing:3px;
+    font-size:11px; font-weight:500; letter-spacing:3.5px;
     color:var(--muted); text-transform:uppercase;
-    margin-bottom:32px;
-    display:inline-block;
-    border-top:1px solid var(--ink); padding-top:14px; min-width:60px;
+    margin-bottom: 56px;
+    display:flex; align-items:center; gap:12px;
   }
+  .eyebrow::before {
+    content:''; width:32px; height:1px; background: var(--ink);
+  }
+
   h1 {
-    font-size:clamp(56px, 7vw, 108px);
-    font-weight:500;
-    line-height:0.96; letter-spacing:-3px;
-    margin-bottom:36px;
-    color:var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(62px, 8.2vw, 142px);
+    font-weight: 400;
+    line-height: 0.94;
+    letter-spacing: -3.5px;
+    margin-bottom: 44px;
+    color: var(--ink);
   }
-  h1 em { font-style:italic; color:var(--sun-orange); font-weight:400; }
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--sun-orange);
+  }
+  h1 .soft {
+    color: var(--ink-soft);
+  }
+
   .sub {
-    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
-    font-size:18px; line-height:1.6; color:var(--muted);
-    margin-bottom:48px; max-width:480px; font-weight:400;
+    font-family: var(--sans);
+    font-size: 17px; line-height: 1.65; color: var(--muted);
+    margin-bottom: 56px;
+    max-width: 500px;
+    font-weight: 400;
   }
-  .cta {
-    font-family:-apple-system, sans-serif;
-    display:inline-flex; align-items:center; gap:10px;
-    font-size:15px; font-weight:600; color:var(--ink); text-decoration:none;
+
+  .cta-row {
+    display:flex; gap:28px; align-items:center;
+  }
+  .cta-primary {
+    font-family: var(--sans);
+    display:inline-flex; align-items:center; gap:12px;
+    font-size:14px; font-weight:600; color:var(--ink); text-decoration:none;
+    padding: 14px 24px;
+    background: var(--ink); color: var(--bg);
+    transition: all .25s ease;
+    letter-spacing: -0.1px;
+  }
+  .cta-primary:hover {
+    background: var(--sun-orange); color: #fff;
+    transform: translateY(-1px);
+  }
+  .cta-primary .arrow { transition: transform .25s ease; }
+  .cta-primary:hover .arrow { transform: translateX(4px); }
+
+  .cta-link {
+    font-family: var(--sans);
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:14px; font-weight:500; color:var(--ink); text-decoration:none;
     border-bottom:1px solid var(--ink); padding-bottom:6px;
-    transition: all .25s;
+    transition: all .2s ease;
   }
-  .cta:hover { gap:18px; color:var(--sun-orange); border-color:var(--sun-orange); }
-  .cta .arrow { transition: transform .25s; }
-  .cta:hover .arrow { transform:translateX(4px); }
+  .cta-link:hover { color: var(--sun-orange); border-color: var(--sun-orange); }
 
-  /* Sun graphic */
-  .stage { position:relative; height:80vh; display:flex; align-items:center; justify-content:center; }
-  .sun {
-    width:min(440px, 38vw); aspect-ratio:1/1;
-    border-radius:50%;
-    background: radial-gradient(circle at 30% 28%,
-      #FFF3D2 0%, #F4D67E 18%, #D9A954 42%, #B8862C 70%, #6E5111 100%);
-    box-shadow:
-      inset -40px -50px 100px rgba(0,0,0,0.35),
-      inset 20px 16px 60px rgba(255,243,210,0.5),
-      0 60px 140px rgba(184,134,44,0.25);
+  /* === SINGLE SUN STAGE === */
+  .stage {
     position:relative;
-    animation: breathe 12s ease-in-out infinite;
+    height: 88vh;
+    display:flex; align-items:center; justify-content:center;
+    padding-top: 60px;
   }
-  .sun::after {
+  /* Soft halo */
+  .stage::before {
     content:''; position:absolute;
-    top:18%; left:24%;
-    width:18%; height:14%;
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0.65) 0%, transparent 70%);
+    top:50%; left:50%;
+    width: 75%; aspect-ratio:1/1;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 50% 50%,
+      rgba(232,201,122,0.35) 0%,
+      rgba(184,134,44,0.16) 30%,
+      rgba(184,134,44,0.04) 55%,
+      transparent 75%);
     border-radius:50%;
-    filter:blur(4px);
-    transform:rotate(-20deg);
+    filter: blur(20px);
+    animation: halo 12s ease-in-out infinite;
   }
-  @keyframes breathe {
-    0%,100% { transform:scale(1); }
-    50%     { transform:scale(1.025); }
+  @keyframes halo {
+    0%, 100% { opacity:1; transform: translate(-50%, -50%) scale(1); }
+    50%      { opacity:0.85; transform: translate(-50%, -50%) scale(1.08); }
   }
 
-  /* Tiny meta footer */
-  .meta {
-    position:absolute; bottom:32px; left:48px;
-    font-family:-apple-system, sans-serif;
-    font-size:11px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase;
+  .sun {
+    position:relative; z-index:2;
+    width:min(520px, 42vw); aspect-ratio:1/1;
+    filter:
+      drop-shadow(0 50px 100px rgba(184,134,44,0.25))
+      drop-shadow(0 8px 20px rgba(0,0,0,0.06));
+    animation: breathe 14s ease-in-out infinite;
   }
-  .meta-right {
-    position:absolute; bottom:32px; right:48px;
-    font-family:-apple-system, sans-serif;
-    font-size:11px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase;
+  .sun img { width:100%; height:100%; display:block; }
+  @keyframes breathe {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50%      { transform: translateY(-10px) scale(1.018); }
   }
+
+  /* === BOTTOM FOOTER STRIP === */
+  .foot {
+    position:fixed; bottom:0; left:0; right:0;
+    padding: 28px 56px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:10.5px; color:var(--muted); letter-spacing:2.5px; text-transform:uppercase;
+    font-weight:500;
+    z-index:5;
+  }
+  .foot .right { display:flex; gap:18px; align-items:center; }
+  .foot .dot { width:5px; height:5px; border-radius:50%; background: var(--sun-orange); }
 
   @media (max-width:900px) {
-    #hero { grid-template-columns:1fr; padding:120px 32px 80px; }
-    .nav-fixed { padding:18px 24px; }
-    .nav-fixed .links { display:none; }
-    .stage { height:auto; padding:48px 0; }
-    .meta, .meta-right { position:relative; bottom:auto; left:auto; right:auto; padding:12px 32px; }
+    nav { padding:24px 24px; }
+    nav .links a:not(.cta) { display:none; }
+    #hero { grid-template-columns:1fr; padding: 120px 24px 80px; gap: 0; }
+    .stage { height:auto; padding: 48px 0 0; }
+    .foot { padding: 16px 24px; flex-direction:column; gap:8px; }
+    h1 { letter-spacing: -2px; }
   }
 </style>
 </head>
 <body>
 
-<div class="lab-tag">Concept 01</div>
+<div class="lab-tag">Concept 01 · Cinematic Minimal</div>
 
-<nav class="nav-fixed">
-  <div class="brand">
-    <span class="dot"></span> TwoSuns
-  </div>
+<nav>
+  <a href="#" class="brand">
+    <span class="mark"></span>
+    TwoSuns
+  </a>
   <div class="links">
     <a href="#">Platform</a>
     <a href="#">Applications</a>
+    <a href="#">Customers</a>
     <a href="#">Company</a>
-    <a href="#">Engage</a>
+    <a href="#" class="cta">Engage</a>
   </div>
 </nav>
 
 <section id="hero">
   <div class="copy">
     <div class="eyebrow">Coordination Infrastructure</div>
-    <h1>The intelligent <em>operating</em><br>layer for complex enterprises.</h1>
-    <p class="sub">TwoSuns coordinates market activity, operational execution, and enterprise continuity across complex environments. Persistent. Contextual. Aligned.</p>
-    <a href="#" class="cta">Request a Discovery Session <span class="arrow">→</span></a>
+    <h1>The intelligent <em>operating layer</em> <span class="soft">for complex enterprises.</span></h1>
+    <p class="sub">TwoSuns coordinates market activity, operational execution, and enterprise continuity into a single persistent layer. Built for organizations where alignment, traceability, and decision quality directly impact outcomes.</p>
+    <div class="cta-row">
+      <a href="#" class="cta-primary">Request a Discovery Session <span class="arrow">→</span></a>
+      <a href="#" class="cta-link">Explore the platform</a>
+    </div>
   </div>
 
   <div class="stage">
-    <div class="sun"></div>
+    <div class="sun"><img src="assets/sun-cinema-gold.png" alt=""></div>
   </div>
-
-  <div class="meta">TwoSuns · Coordination Infrastructure</div>
-  <div class="meta-right">© 2026</div>
 </section>
+
+<div class="foot">
+  <div>TwoSuns · The intelligent operating layer for complex enterprises</div>
+  <div class="right">
+    <span class="dot"></span>
+    <span>2026 · Coordination at scale</span>
+  </div>
+</div>
 
 </body>
 </html>
