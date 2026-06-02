@@ -299,68 +299,6 @@
     50%     { transform:translate(0,-12px); }
   }
 
-  /* Rotating sun rays behind the gold sun */
-  .sun-rays-svg {
-    position:absolute;
-    top:0; left:4%;
-    width:70%; height:70%;
-    z-index:0;
-    pointer-events:none;
-    animation: raysSpin 60s linear infinite;
-    opacity:0.55;
-  }
-  @keyframes raysSpin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
-
-  /* Center label overlay on the gold sun */
-  .sun-label-overlay {
-    position:absolute;
-    top:0; left:4%;
-    width:70%; height:70%;
-    display:flex; flex-direction:column;
-    align-items:center; justify-content:center;
-    text-align:center;
-    z-index:5;
-    pointer-events:none;
-    animation: gentleFloat 14s ease-in-out infinite;
-  }
-  .sun-label-overlay .small {
-    font-size:11px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase;
-    color:rgba(255,255,255,0.85);
-    text-shadow:0 1px 6px rgba(0,0,0,0.30);
-    margin-bottom:4px;
-  }
-  .sun-label-overlay .big {
-    font-size:clamp(28px, 3.4vw, 44px);
-    font-weight:900; letter-spacing:-1px;
-    color:#fff;
-    text-shadow:0 2px 12px rgba(0,0,0,0.35);
-    line-height:1;
-  }
-
-  /* Floating data chips around the orbital */
-  .chip {
-    position:absolute;
-    background:rgba(255,255,255,0.98);
-    backdrop-filter:blur(8px);
-    border:1px solid rgba(184,147,46,0.18);
-    border-radius:12px;
-    padding:10px 14px;
-    box-shadow:0 12px 32px rgba(184,147,46,0.18), 0 2px 6px rgba(0,0,0,0.05);
-    font-size:12px; font-weight:700;
-    color:var(--navy); white-space:nowrap;
-    animation: chipFloat 3.6s ease-in-out infinite;
-    z-index:6;
-  }
-  .chip .v { display:block; color:var(--sun-orange); font-size:14.5px; margin-top:2px; }
-  .chip:nth-of-type(1) { top:18%; left:-12%; animation-delay:0s; }
-  .chip:nth-of-type(2) { top:8%; right:-8%; animation-delay:.8s; }
-  .chip:nth-of-type(3) { bottom:34%; left:-10%; animation-delay:1.6s; }
-  .chip:nth-of-type(4) { bottom:12%; right:-2%; animation-delay:.4s; }
-  @keyframes chipFloat {
-    0%,100% { transform:translateY(0); }
-    50%     { transform:translateY(-10px); }
-  }
-
   /* Footer row inside hero */
   .hero-foot {
     position:absolute; bottom:32px; left:0; right:0;
@@ -487,36 +425,10 @@
         <div class="halo-gold"></div>
         <div class="halo-orange"></div>
 
-        <!-- Rotating sun rays behind the primary sun -->
-        <svg class="sun-rays-svg" viewBox="0 0 500 500" aria-hidden="true">
-          <g stroke="#E85D2F" stroke-width="2" opacity="0.65">
-            <line x1="250" y1="-20" x2="250" y2="520"/>
-            <line x1="-20" y1="250" x2="520" y2="250"/>
-            <line x1="63" y1="63" x2="437" y2="437"/>
-            <line x1="437" y1="63" x2="63" y2="437"/>
-            <line x1="-20" y1="160" x2="520" y2="340"/>
-            <line x1="-20" y1="340" x2="520" y2="160"/>
-            <line x1="160" y1="-20" x2="340" y2="520"/>
-            <line x1="340" y1="-20" x2="160" y2="520"/>
-          </g>
-        </svg>
-
         <!-- The two suns, photorealistic PNG renders -->
         <div class="sun-3d sun-gold-orb"><img src="assets/sun-gold.png" alt=""></div>
         <div class="anchor-dot"></div>
         <div class="sun-3d sun-orange-orb"><img src="assets/sun-orange.png" alt=""></div>
-
-        <!-- Centered label overlay on the gold sun -->
-        <div class="sun-label-overlay">
-          <div class="small">Coordinating</div>
-          <div class="big">Execution</div>
-        </div>
-
-        <!-- Floating status chips -->
-        <div class="chip">🌍 Geopolitical Risk<span class="v">Live Signal</span></div>
-        <div class="chip">⚡ Supply Chain Risk<span class="v">Detected</span></div>
-        <div class="chip">🛡️ Cyber Risk<span class="v">Watching</span></div>
-        <div class="chip">📊 Compliance Review<span class="v">Action Needed</span></div>
       </div>
 
     </div>
