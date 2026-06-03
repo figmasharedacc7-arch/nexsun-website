@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns, Coordinating Execution (Two-Sun Edition)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --sun-bright: #FFD068;
+    --sun:        #F4920B;
+    --sun-deep:   #E95704;
+    --sun-pale:   #FEF3C7;
+    --sun-orange: #FF6600;
+    --navy:       #0A2540;
+    --navy-soft:  #163E64;
+    --sky-light:  #E0F2FE;
+    --bg-cream:   #FFFBF0;
+    --text:       #1a2238;
+    --text-mid:   #3a4a66;
+    --text-muted: #6b7a93;
+    --border:     rgba(244,146,11,0.18);
+    --sans:       "Inter", -apple-system, sans-serif;
+    --serif:      "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  }
+  body {
+    font-family: var(--sans);
+    background: var(--bg-cream);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x:hidden;
+    line-height: 1.55;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection { background: rgba(244,146,11,0.25); color: var(--text); }
+
+  .lab-tag {
+    position:fixed; top:14px; right:14px; z-index:99;
+    background:rgba(10,37,64,0.92); color:#FFD27B;
+    font-size:9px; font-weight:600; letter-spacing:1.8px;
+    padding:5px 11px; border-radius:20px; text-transform:uppercase;
+    backdrop-filter:blur(10px);
+  }
+
+  /* ─── TOPBAR ─── */
+  .topbar { background:var(--navy); }
+  .topbar-inner {
+    max-width:1280px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; justify-content:flex-end;
+    height:36px;
+  }
+  .topbar-inner a {
+    font-size:11px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase;
+    color:var(--sun); text-decoration:none; padding:0 16px;
+    border-right:1px solid rgba(255,255,255,0.08); line-height:36px;
+    transition:color .15s;
+  }
+  .topbar-inner a:last-child { border-right:none; padding-right:0; }
+  .topbar-inner a:hover { color:#fff; }
+
+  /* ─── NAV ─── */
+  nav.main-nav {
+    position:sticky; top:0; z-index:50;
+    background: rgba(255,251,240,0.88); backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(244,146,11,0.10);
+    box-shadow:0 1px 24px rgba(244,146,11,0.06);
+  }
+  .nav-inner {
+    max-width:1280px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; height:72px;
+  }
+  .nav-brand {
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none; font-size:21px; font-weight:800;
+    letter-spacing:-0.5px; color:var(--navy);
+  }
+  .nav-brand .mark { display:inline-flex; gap:0; align-items:center; }
+  .nav-brand .m1 {
+    width:14px; height:14px; border-radius:50%;
+    background: radial-gradient(circle at 30% 28%, #FFE89A, #D9B341 60%, #8C6918 100%);
+    box-shadow:0 2px 10px rgba(217,179,65,0.45);
+  }
+  .nav-brand .m2 {
+    width:10px; height:10px; border-radius:50%;
+    background: radial-gradient(circle at 30% 28%, #FFB48E, var(--sun-orange) 60%, #6B1F03 100%);
+    box-shadow:0 2px 10px rgba(255,102,0,0.45);
+    margin-left:-4px;
+  }
+  .nav-brand .two-text { color: var(--sun-orange); }
+  .nav-brand .suns-text { color: var(--navy); }
+  .nav-links { display:flex; gap:32px; align-items:center; margin-left:auto; }
+  .nav-links a {
+    font-size:14px; color: var(--text-mid); text-decoration:none;
+    font-weight:500; transition:color .15s;
+  }
+  .nav-links a:hover { color:var(--sun-deep); }
+  .btn-cta {
+    background: linear-gradient(135deg, var(--sun), var(--sun-deep));
+    color:#fff; font-weight:700; padding:11px 22px; border-radius:8px;
+    font-size:13.5px; text-decoration:none;
+    box-shadow: 0 4px 16px rgba(244,146,11,0.36);
+    transition: all .25s;
+  }
+  .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(244,146,11,0.50); }
+
+  /* ─── HERO ─── */
+  @keyframes bgBreath {
+    0%,100% { background-position: 0% 50%; }
+    33%     { background-position: 60% 30%; }
+    66%     { background-position: 100% 70%; }
+  }
+  #hero {
+    position:relative;
+    min-height: calc(100vh - 108px);
+    padding: 60px 0 100px;
+    display:flex; align-items:center;
+    background:
+      radial-gradient(ellipse 1000px 760px at 70% 50%, rgba(246,183,7,0.20) 0%, transparent 65%),
+      radial-gradient(ellipse 600px 400px at 78% 70%, rgba(255,102,0,0.10) 0%, transparent 65%),
+      linear-gradient(160deg, var(--bg-cream) 0%, #FEF3C7 25%, #FDE7C8 55%, var(--sky-light) 100%);
+    background-size: 200% 200%;
+    animation: bgBreath 18s ease-in-out infinite;
+    overflow:hidden;
+  }
+  /* Animated particle dust */
+  .particles {
+    position:absolute; inset:0; pointer-events:none; z-index:1;
+    background-image:
+      radial-gradient(1px 1px at 12% 22%, rgba(244,146,11,0.30), transparent 60%),
+      radial-gradient(1px 1px at 78% 18%, rgba(244,146,11,0.25), transparent 60%),
+      radial-gradient(1.2px 1.2px at 28% 78%, rgba(255,102,0,0.30), transparent 60%),
+      radial-gradient(1px 1px at 86% 64%, rgba(244,146,11,0.30), transparent 60%),
+      radial-gradient(1.4px 1.4px at 50% 8%, rgba(244,146,11,0.25), transparent 60%),
+      radial-gradient(1px 1px at 8% 56%, rgba(255,102,0,0.30), transparent 60%),
+      radial-gradient(1.2px 1.2px at 64% 90%, rgba(244,146,11,0.25), transparent 60%),
+      radial-gradient(0.8px 0.8px at 38% 36%, rgba(244,146,11,0.25), transparent 60%),
+      radial-gradient(0.8px 0.8px at 92% 44%, rgba(255,102,0,0.25), transparent 60%);
+    animation: drift 70s linear infinite;
+  }
+  @keyframes drift { from { transform: translate(0,0); } to { transform: translate(-2%, -1%); } }
+
+  .hero-grid {
+    position:relative; z-index:2;
+    max-width:1320px; margin:0 auto; padding:0 32px;
+    display:grid; grid-template-columns: 1fr 1.3fr; gap: 56px;
+    align-items:center; width:100%;
+  }
+
+  /* ─── LEFT COPY ─── */
+  .eyebrow {
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:11px; font-weight:600; letter-spacing:2.2px; text-transform:uppercase;
+    color:var(--sun-deep);
+    background:rgba(244,146,11,0.10);
+    border:1px solid rgba(244,146,11,0.30);
+    padding:7px 16px; border-radius:30px;
+    margin-bottom:28px;
+  }
+  .eyebrow .dot {
+    width:6px; height:6px; border-radius:50%; background: var(--sun-deep);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.45; transform:scale(1.45); } }
+
+  h1.headline {
+    font-size: clamp(46px, 5.6vw, 82px);
+    font-weight: 800; line-height: 1.0; letter-spacing: -2.5px;
+    color: var(--navy);
+    margin-bottom: 22px;
+  }
+  h1.headline .accent {
+    position:relative; display:inline-block;
+    color: var(--sun-deep);
+  }
+  h1.headline .accent::after {
+    content:''; position:absolute; left:0; right:0; bottom:-6px;
+    height:5px; border-radius:3px;
+    background: linear-gradient(90deg, var(--sun), var(--sun-deep));
+  }
+  .tag-line {
+    font-size:13px; font-weight:700; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--sun-deep);
+    margin: 0 0 22px;
+  }
+  .sub {
+    font-size: 17px; line-height: 1.7; color: var(--text-mid);
+    margin-bottom: 36px; max-width: 540px;
+  }
+  .ctas { display:flex; gap:14px; flex-wrap:wrap; margin-bottom: 22px; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--sun), var(--sun-deep));
+    color:#fff; padding:16px 32px; border-radius:10px;
+    font-weight:700; font-size:14px; text-decoration:none;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.18) inset,
+      0 10px 28px rgba(244,146,11,0.36);
+    transition: all .25s;
+    letter-spacing: -0.1px;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.25) inset,
+      0 14px 36px rgba(244,146,11,0.50);
+  }
+  .btn-secondary {
+    background: rgba(255,255,255,0.7); backdrop-filter:blur(10px);
+    color: var(--navy);
+    border: 2px solid rgba(10,37,64,0.16);
+    padding: 14px 26px; border-radius:10px;
+    font-weight:700; font-size:14px; text-decoration:none;
+    transition: all .2s;
+    letter-spacing: -0.1px;
+  }
+  .btn-secondary:hover { background:#fff; border-color: var(--navy); transform: translateY(-1px); }
+  .foot-note {
+    font-size:12.5px; color: var(--text-muted); line-height:1.6;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .foot-note .glyph { color: var(--sun-deep); }
+
+  /* ─── RIGHT TWO-SUN VISUAL ─── */
+  .visual-stage {
+    position:relative;
+    width:100%; aspect-ratio:1/1; max-width: 620px;
+    margin-left:auto;
+  }
+
+  /* Ambient halo behind whole composition */
+  .ambient-halo {
+    position:absolute; inset:-8% -8% -8% -8%;
+    pointer-events:none;
+    background: radial-gradient(circle at 42% 38%,
+      rgba(255,244,196,0.45) 0%,
+      rgba(246,183,7,0.20) 25%,
+      rgba(244,146,11,0.06) 50%,
+      transparent 75%);
+    filter: blur(28px);
+    animation: ambientPulse 9s ease-in-out infinite;
+    z-index:1;
+  }
+  @keyframes ambientPulse {
+    0%,100% { opacity:0.85; transform:scale(1); }
+    50%     { opacity:1; transform:scale(1.06); }
+  }
+
+  /* Rotating ray lines behind the big gold sphere */
+  .rays-svg {
+    position:absolute;
+    top:2%; left:0%;
+    width:65%; height:65%;
+    z-index:2; pointer-events:none;
+    animation: raysSpin 60s linear infinite;
+    opacity:0.7;
+  }
+  @keyframes raysSpin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+
+  /* Orbital path between the two suns */
+  .orbit-svg {
+    position:absolute; inset:0; width:100%; height:100%;
+    z-index:3; pointer-events:none;
+  }
+
+  /* Anchor dot on orbit */
+  .anchor-dot {
+    position:absolute;
+    top:48%; right:24%;
+    width:14px; height:14px; border-radius:50%;
+    background:#fff; border:2px solid rgba(10,37,64,0.55);
+    box-shadow:0 0 0 5px var(--bg-cream), 0 4px 10px rgba(0,0,0,0.10);
+    z-index:6;
+  }
+
+  /* Photoreal spheres */
+  .sphere {
+    position:absolute; z-index:4;
+    transition:transform 1.4s ease;
+  }
+  .sphere img { width:100%; height:100%; display:block; }
+  .sphere.gold {
+    top:2%; left:0%;
+    width:64%; height:64%;
+    filter:
+      drop-shadow(0 40px 80px rgba(184,134,44,0.30))
+      drop-shadow(0 0 50px rgba(255,210,123,0.22));
+    animation: gentleFloat 14s ease-in-out infinite;
+  }
+  .sphere.orange {
+    bottom:2%; right:0%;
+    width:40%; height:40%;
+    filter:
+      drop-shadow(0 30px 60px rgba(232,93,47,0.40))
+      drop-shadow(0 0 40px rgba(255,142,95,0.25));
+    animation: gentleFloat 18s ease-in-out infinite -9s;
+  }
+  @keyframes gentleFloat {
+    0%,100% { transform:translateY(0); }
+    50%     { transform:translateY(-12px); }
+  }
+
+  /* COORDINATING Execution overlay on the gold sphere */
+  .orb-text {
+    position:absolute;
+    top:2%; left:0%;
+    width:64%; height:64%;
+    z-index:5;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    pointer-events:none;
+    animation: gentleFloat 14s ease-in-out infinite;
+  }
+  .orb-text .small {
+    font-size:11px; font-weight:700; letter-spacing:2.8px; text-transform:uppercase;
+    color: rgba(255,255,255,0.85);
+    text-shadow: 0 1px 6px rgba(140,80,10,0.3);
+    margin-bottom: 4px;
+  }
+  .orb-text .big {
+    font-size: clamp(28px, 3.4vw, 46px);
+    font-weight:900; letter-spacing:-1px; line-height:1;
+    color: #fff;
+    text-shadow:
+      0 2px 14px rgba(140,80,10,0.45),
+      0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  /* Floating chips at corners around the visualization */
+  .chip {
+    position:absolute; z-index:7;
+    background:#fff;
+    border:1px solid rgba(244,146,11,0.18);
+    border-radius:14px;
+    padding:12px 16px;
+    box-shadow:
+      0 4px 6px rgba(244,146,11,0.04),
+      0 12px 32px rgba(244,146,11,0.16),
+      0 1px 0 rgba(255,255,255,0.7) inset;
+    font-size:13px; font-weight:700; color: var(--navy);
+    white-space:nowrap;
+    animation: chipFloat 3.8s ease-in-out infinite;
+    min-width:160px;
+  }
+  .chip span { display:block; color: var(--sun-deep); font-size:15.5px; margin-top:3px; }
+  .chip .icon { margin-right:4px; }
+  /* Distribute around both spheres */
+  .chip:nth-of-type(1) { top: 4%;  left: -10%;  animation-delay: 0s; }
+  .chip:nth-of-type(2) { top: 14%; right: -6%;  animation-delay: .8s; }
+  .chip:nth-of-type(3) { bottom: 8%; left: -6%; animation-delay: 1.4s; }
+  .chip:nth-of-type(4) { bottom: 38%; right: -10%; animation-delay: .4s; }
+  @keyframes chipFloat {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-10px); }
+  }
+
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .visual-stage { max-width: 440px; margin: 0 auto; }
+    .chip { font-size:11.5px; min-width:140px; padding:10px 14px; }
+    .nav-links a:not(.btn-cta) { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lab-tag">Concept 09 · Two-Sun Composition</div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="#">Resources</a>
+    <a href="#">Investor &amp; Partner Centre</a>
+    <a href="#">Trust Centre</a>
+    <a href="#">Contact Us</a>
+  </div>
+</div>
+
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <span class="mark"><span class="m1"></span><span class="m2"></span></span>
+      <span><span class="two-text">two</span><span class="suns-text">suns</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#">Platform</a>
+      <a href="#">How It Works</a>
+      <a href="#">Applications</a>
+      <a href="#">Why TwoSuns</a>
+      <a href="#">Company</a>
+      <a href="#" class="btn-cta">Engage</a>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="particles"></div>
+  <div class="hero-grid">
+
+    <!-- LEFT: copy -->
+    <div class="copy">
+      <div class="eyebrow"><span class="dot"></span> Coordination Infrastructure for the Enterprise</div>
+      <h1 class="headline">Coordination Infrastructure for <span class="accent">Complex Enterprises</span></h1>
+      <p class="tag-line">Coordinate.&nbsp;&nbsp;Execute.&nbsp;&nbsp;Continue.</p>
+      <p class="sub">TwoSuns coordinates market activity, operational execution, workflows, and enterprise continuity across complex environments. A secure, AI-enhanced operating layer designed to maintain contextual continuity across teams, systems, and initiatives.</p>
+      <div class="ctas">
+        <a href="#" class="btn-primary">Request a Discovery Session</a>
+        <a href="#" class="btn-secondary">Explore the Platform →</a>
+      </div>
+      <p class="foot-note"><span class="glyph">☀</span> Market-facing coordination, operational orchestration, persistent enterprise continuity</p>
+    </div>
+
+    <!-- RIGHT: two-sun visualization -->
+    <div class="visual-stage">
+
+      <div class="ambient-halo"></div>
+
+      <!-- Rotating rays behind the gold sphere -->
+      <svg class="rays-svg" viewBox="0 0 500 500" aria-hidden="true">
+        <g stroke="#F4920B" stroke-width="2" opacity="0.55" stroke-linecap="round">
+          <line x1="250" y1="20"  x2="250" y2="480"/>
+          <line x1="20"  y1="250" x2="480" y2="250"/>
+          <line x1="73"  y1="73"  x2="427" y2="427"/>
+          <line x1="427" y1="73"  x2="73"  y2="427"/>
+          <line x1="20"  y1="170" x2="480" y2="330"/>
+          <line x1="20"  y1="330" x2="480" y2="170"/>
+          <line x1="170" y1="20"  x2="330" y2="480"/>
+          <line x1="330" y1="20"  x2="170" y2="480"/>
+        </g>
+      </svg>
+
+      <!-- Orbital path connecting the two spheres -->
+      <svg class="orbit-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="orbit-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"  stop-color="#0A2540" stop-opacity="0.0"/>
+            <stop offset="40%" stop-color="#0A2540" stop-opacity="0.4"/>
+            <stop offset="60%" stop-color="#0A2540" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#0A2540" stop-opacity="0.0"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="55" cy="55" rx="45" ry="22"
+                 transform="rotate(-30 55 55)"
+                 fill="none" stroke="url(#orbit-stroke)" stroke-width="0.35"/>
+        <ellipse cx="55" cy="55" rx="36" ry="14"
+                 transform="rotate(-45 55 55)"
+                 fill="none" stroke="#B8932E" stroke-width="0.25"
+                 stroke-opacity="0.35" stroke-dasharray="0.9 1.3"/>
+      </svg>
+
+      <!-- The two photoreal spheres -->
+      <div class="sphere gold"><img src="assets/sun-gradient-gold.png" alt=""></div>
+      <div class="sphere orange"><img src="assets/sun-gradient-orange.png" alt=""></div>
+
+      <!-- COORDINATING Execution overlay (sits on gold sphere) -->
+      <div class="orb-text">
+        <div class="small">Coordinating</div>
+        <div class="big">Execution</div>
+      </div>
+
+      <div class="anchor-dot"></div>
+
+      <!-- Floating chips around the visualization -->
+      <div class="chip"><span class="icon">🌍</span>Geopolitical Risk<span>Live Signal</span></div>
+      <div class="chip"><span class="icon">⚡</span>Supply Chain Risk<span>Detected</span></div>
+      <div class="chip"><span class="icon">🛡️</span>Cyber Risk<span>Watching</span></div>
+      <div class="chip"><span class="icon">📊</span>Compliance Review<span>Action Needed</span></div>
+
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
