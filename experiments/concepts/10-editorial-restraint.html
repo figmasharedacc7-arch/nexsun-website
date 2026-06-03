@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg: #F4EFE6;
+    --ink: #0E0E0F;
+    --ink-mid: #34322E;
+    --ink-soft: #6E6A60;
+    --rule: #C9C2B2;
+    --orange: #FF6600;
+    --gold: #CC9900;
+  }
+  body {
+    font-family: "Inter", -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.5;
+    font-feature-settings: "ss01", "cv11", "tnum";
+  }
+  ::selection { background: rgba(255,102,0,0.20); color: var(--ink); }
+
+  .lab-tag {
+    position: fixed; top: 14px; right: 14px; z-index: 99;
+    background: var(--ink); color: var(--bg);
+    font-size: 9px; font-weight: 500; letter-spacing: 1.8px;
+    padding: 5px 10px; text-transform: uppercase;
+  }
+
+  /* ─── PAGE FRAME ─── */
+  .frame {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    padding: 32px 48px 40px;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+  nav .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: 22px; font-weight: 400;
+    color: var(--ink); text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+  nav .brand .marks {
+    display: inline-flex; align-items: center;
+    width: 28px; height: 18px; position: relative;
+  }
+  nav .brand .marks .a, nav .brand .marks .b {
+    position: absolute; border-radius: 50%;
+  }
+  nav .brand .marks .a {
+    left: 0; top: 0;
+    width: 14px; height: 14px;
+    background: radial-gradient(circle at 30% 28%, #FFF, #D9B341 60%, #8C6918);
+    border: 1px solid #8C6918;
+  }
+  nav .brand .marks .b {
+    right: 0; bottom: 0;
+    width: 11px; height: 11px;
+    background: radial-gradient(circle at 30% 28%, #FFF, var(--orange) 60%, #6B1F03);
+    border: 1px solid #6B1F03;
+  }
+  nav .links {
+    display: flex; gap: 36px;
+    font-size: 13px; font-weight: 400;
+  }
+  nav .links a {
+    color: var(--ink-soft); text-decoration: none;
+    transition: color .15s;
+  }
+  nav .links a:hover { color: var(--ink); }
+  nav .links a.cta {
+    color: var(--ink); font-weight: 500;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  nav .links a.cta:hover { color: var(--orange); border-color: var(--orange); }
+
+  /* ─── HERO ─── */
+  #hero {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    align-items: center;
+    padding: 64px 0 32px;
+  }
+
+  /* ─── LEFT: typography only ─── */
+  .copy {
+    max-width: 720px;
+  }
+  .number {
+    font-family: "Inter", sans-serif;
+    font-size: 11px; font-weight: 500; letter-spacing: 3px;
+    color: var(--ink-soft); text-transform: uppercase;
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 80px;
+  }
+  .number::before {
+    content: ""; display: block;
+    width: 24px; height: 1px; background: var(--ink);
+  }
+
+  h1 {
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: clamp(58px, 7.6vw, 124px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -3.5px;
+    color: var(--ink);
+    margin-bottom: 56px;
+    font-variation-settings: "opsz" 144;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--orange);
+  }
+  h1 .gold {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .lede {
+    font-family: "Inter", sans-serif;
+    font-size: 16px; line-height: 1.62;
+    color: var(--ink-mid);
+    max-width: 480px;
+    margin-bottom: 64px;
+    font-weight: 400;
+  }
+
+  .cta-row {
+    display: flex; align-items: center; gap: 24px;
+  }
+  .cta {
+    font-family: "Inter", sans-serif;
+    font-size: 13px; font-weight: 500;
+    color: var(--ink); text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--ink);
+    transition: all .25s;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .cta:hover { color: var(--orange); border-color: var(--orange); gap: 18px; }
+  .cta-aside {
+    font-size: 13px; color: var(--ink-soft);
+    padding: 12px 0;
+  }
+
+  /* ─── RIGHT: brand mark at scale ─── */
+  .mark-stage {
+    position: relative;
+    aspect-ratio: 1/1;
+    max-width: 580px;
+    margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .mark-stage svg {
+    width: 100%; height: 100%;
+    animation: gentle 24s ease-in-out infinite;
+  }
+  @keyframes gentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  /* ─── FOOTER STRIP ─── */
+  footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: "Inter", sans-serif;
+    font-size: 11px; font-weight: 500;
+    color: var(--ink-soft); letter-spacing: 1.8px; text-transform: uppercase;
+  }
+  footer .right { display: flex; align-items: center; gap: 16px; }
+  footer .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--orange);
+  }
+
+  @media (max-width: 980px) {
+    .frame { padding: 24px 24px 32px; }
+    #hero { grid-template-columns: 1fr; gap: 0; padding: 48px 0 32px; }
+    .mark-stage { max-width: 360px; margin: 32px auto 0; }
+    nav .links a:not(.cta) { display: none; }
+    h1 { letter-spacing: -2px; margin-bottom: 32px; }
+    footer { flex-direction: column; gap: 12px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lab-tag">Concept 10 · Editorial Restraint</div>
+
+<div class="frame">
+
+  <nav>
+    <a href="#" class="brand">
+      <span class="marks"><span class="a"></span><span class="b"></span></span>
+      TwoSuns
+    </a>
+    <div class="links">
+      <a href="#">Platform</a>
+      <a href="#">Applications</a>
+      <a href="#">Customers</a>
+      <a href="#">Company</a>
+      <a href="#" class="cta">Engage</a>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="copy">
+      <div class="number">No. 01 — Coordination</div>
+      <h1>The intelligent <em>operating</em> layer for <span class="gold">complex</span> enterprises.</h1>
+      <p class="lede">TwoSuns coordinates market activity, operational execution, and enterprise continuity. Built for organizations where alignment, traceability, and decision quality directly impact outcomes.</p>
+      <div class="cta-row">
+        <a href="#" class="cta">Request a discovery →</a>
+        <span class="cta-aside">or read the platform thesis</span>
+      </div>
+    </div>
+
+    <div class="mark-stage">
+      <!-- The official TwoSuns brand mark, at scale, using the kit's own gradient + stroke language -->
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="goldGradient" cx="50%" cy="50%" r="55%" fx="50%" fy="50%">
+            <stop offset="0%"   stop-color="#FFFFFF"/>
+            <stop offset="32%"  stop-color="#FFE89A"/>
+            <stop offset="64%"  stop-color="#D9B341"/>
+            <stop offset="100%" stop-color="#CC9900"/>
+          </radialGradient>
+          <radialGradient id="orangeGradient" cx="50%" cy="50%" r="55%" fx="50%" fy="50%">
+            <stop offset="0%"   stop-color="#FFFFFF"/>
+            <stop offset="32%"  stop-color="#FF8939"/>
+            <stop offset="69%"  stop-color="#FF6803"/>
+            <stop offset="100%" stop-color="#FF6600"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Gold sun (larger, behind, top-left) -->
+        <circle cx="200" cy="200" r="155"
+                fill="url(#goldGradient)"
+                stroke="#CC9900" stroke-width="22"/>
+
+        <!-- Orange sun (smaller, foreground, bottom-right, slight overlap) -->
+        <circle cx="335" cy="320" r="125"
+                fill="url(#orangeGradient)"
+                stroke="#FF6600" stroke-width="22"/>
+      </svg>
+    </div>
+  </section>
+
+  <footer>
+    <div>TwoSuns © 2026</div>
+    <div class="right">
+      <span class="dot"></span>
+      <span>Coordination Infrastructure</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
