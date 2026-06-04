@@ -252,11 +252,11 @@
     0%,100% { transform:translateY(0px); }
     50%      { transform:translateY(-8px); }
   }
-  .solar-card-animated {
+  .sustainability-card-animated {
     opacity:0; transform:translateY(20px);
     transition:opacity 0.55s ease, transform 0.55s ease;
   }
-  .solar-card-animated.visible {
+  .sustainability-card-animated.visible {
     opacity:1; transform:translateY(0);
   }
 
@@ -651,7 +651,7 @@
     <div class="stage-cards">
 
       <!-- Sense -->
-      <div class="stage-card solar-card-animated">
+      <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 01</div>
         <h3>
           <div class="stage-icon">&#128268;</div>
@@ -669,7 +669,7 @@
       </div>
 
       <!-- Analyze -->
-      <div class="stage-card solar-card-animated">
+      <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 02</div>
         <h3>
           <div class="stage-icon">&#128202;</div>
@@ -687,7 +687,7 @@
       </div>
 
       <!-- Position -->
-      <div class="stage-card solar-card-animated">
+      <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 03</div>
         <h3>
           <div class="stage-icon">&#127919;</div>
@@ -705,7 +705,7 @@
       </div>
 
       <!-- Align -->
-      <div class="stage-card solar-card-animated">
+      <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 04</div>
         <h3>
           <div class="stage-icon">&#129309;</div>
@@ -723,7 +723,7 @@
       </div>
 
       <!-- Commit -->
-      <div class="stage-card solar-card-animated">
+      <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 05</div>
         <h3>
           <div class="stage-icon">&#9989;</div>
@@ -741,7 +741,7 @@
       </div>
 
       <!-- Record -->
-      <div class="stage-card solar-card-animated">
+      <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 06</div>
         <h3>
           <div class="stage-icon">&#128196;</div>
@@ -904,15 +904,15 @@
     <h2 class="section-heading" style="color:white;">The Outcome</h2>
     <p class="section-sub" style="color:rgba(255,255,255,0.75);margin:0 auto;">Organizations move from fragmented analysis to structured, explainable decision-making.</p>
     <div class="outcome-cards">
-      <div class="outcome-card solar-card-animated">
+      <div class="outcome-card sustainability-card-animated">
         <div class="outcome-card-icon">&#9889;</div>
         <h3>Faster Insight</h3>
       </div>
-      <div class="outcome-card solar-card-animated">
+      <div class="outcome-card sustainability-card-animated">
         <div class="outcome-card-icon">&#127919;</div>
         <h3>Clearer Positioning</h3>
       </div>
-      <div class="outcome-card solar-card-animated">
+      <div class="outcome-card sustainability-card-animated">
         <div class="outcome-card-icon">&#128200;</div>
         <h3>Aligned Execution</h3>
       </div>
@@ -1082,14 +1082,14 @@
 
     <div class="examples-grid">
 
-      <!-- Flagship 1: LNG -->
+      <!-- Flagship 1: supply chain -->
       <div class="example-card" id="ex4">
         <div class="example-header" onclick="toggleExample('ex4')">
           <div class="example-header-left">
             <div class="example-number">1</div>
             <div>
-              <h3>LNG Trade and Portfolio Positioning</h3>
-              <p>A global LNG portfolio team is managing exposure across Atlantic and Pacific basins amid shifting demand signals, shipping constraints, and evolving policy dynamics.</p>
+              <h3>supply chain Trade and Portfolio Positioning</h3>
+              <p>A global supply chain team is managing exposure across Atlantic and Pacific basins amid shifting demand signals, shipping constraints, and evolving policy dynamics.</p>
             </div>
           </div>
           <div class="example-toggle">&#8964;</div>
@@ -1098,11 +1098,11 @@
           <div class="example-stages">
             <div class="example-stage">
               <div class="example-stage-label">Sense</div>
-              <div class="example-stage-text">TwoSuns continuously ingests vessel movements and shipping constraints, regional pricing benchmarks (JKM, TTF, Henry Hub), weather-driven demand signals, and policy and regulatory developments impacting flows. The system surfaces a tightening Atlantic supply environment and emerging arbitrage opportunities into Asia.</div>
+              <div class="example-stage-text">TwoSuns continuously ingests vessel movements and shipping constraints, regional pricing benchmarks (JKM, enterprise, Henry Hub), weather-driven demand signals, and policy and regulatory developments impacting flows. The system surfaces a tightening Atlantic supply environment and emerging arbitrage opportunities into Asia.</div>
             </div>
             <div class="example-stage">
               <div class="example-stage-label">Analyze</div>
-              <div class="example-stage-text">Using multi-lens analysis, TwoSuns evaluates buyer behavior in Asia (demand pull and pricing tolerance), supplier flexibility across portfolios, shipping route constraints and costs, and policy impacts on LNG flows and storage. Scenario analysis highlights a short-term window for repositioning cargoes toward higher-margin destinations.</div>
+              <div class="example-stage-text">Using multi-lens analysis, TwoSuns evaluates buyer behavior in Asia (demand pull and pricing tolerance), supplier flexibility across portfolios, shipping route constraints and costs, and policy impacts on supply chain flows and storage. Scenario analysis highlights a short-term window for repositioning cargoes toward higher-margin destinations.</div>
             </div>
             <div class="example-stage">
               <div class="example-stage-label">Position</div>
@@ -1470,7 +1470,7 @@ function drawP(){
 drawP();
 
 // SCROLL ANIMATIONS
-const animatedCards = document.querySelectorAll('.solar-card-animated');
+const animatedCards = document.querySelectorAll('.sustainability-card-animated');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

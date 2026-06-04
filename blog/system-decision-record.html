@@ -206,7 +206,7 @@
 
         <p>In the eighteen months since large language models captured the public imagination, every financial services firm has launched at least one "AI initiative." Many have launched dozens. Trading desks, risk teams, compliance departments, and research groups have all experimented with LLMs in some capacity. The technology's ability to process natural language, summarize documents, and generate human-readable analysis has obvious applications across financial markets.</p>
 
-        <p>Yet the gap between impressive demos and reliable production systems remains vast. In commodity trading, where a single hallucinated data point in a market report could trigger a mispriced trade worth millions of dollars, the stakes of getting LLM deployment wrong are not abstract. Having spent the past two years building production AI systems for commodity market intelligence at TwoSuns, I want to share an honest assessment of where LLMs deliver genuine value in financial markets, where they fail dangerously, and what it actually takes to bridge the gap.</p>
+        <p>Yet the gap between impressive demos and reliable production systems remains vast. In commercial coordination, where a single hallucinated data point in a market report could trigger a mispriced trade worth millions of dollars, the stakes of getting LLM deployment wrong are not abstract. Having spent the past two years building production AI systems for commercial market intelligence at TwoSuns, I want to share an honest assessment of where LLMs deliver genuine value in financial markets, where they fail dangerously, and what it actually takes to bridge the gap.</p>
 
         <h2>The Seductive Demo Problem</h2>
 
@@ -218,7 +218,7 @@
 
         <h2>Hallucination: The Fundamental Challenge</h2>
 
-        <p>Hallucination, the tendency of LLMs to generate plausible-sounding but factually incorrect statements, is not a bug that will be fixed in the next model release. It is an intrinsic property of how these models work. LLMs are trained to produce statistically likely text continuations, not to verify factual claims. When a model states that "Brent crude settled at $78.43 on Tuesday," it is generating a plausible number in context, not looking up the actual settlement price.</p>
+        <p>Hallucination, the tendency of LLMs to generate plausible-sounding but factually incorrect statements, is not a bug that will be fixed in the next model release. It is an intrinsic property of how these models work. LLMs are trained to produce statistically likely text continuations, not to verify factual claims. When a model states that "benchmark crude settled at $78.43 on Tuesday," it is generating a plausible number in context, not looking up the actual settlement price.</p>
 
         <p>In financial markets, this is not merely inconvenient; it is dangerous. The categories of hallucination that pose the greatest risk include the following.</p>
 
@@ -226,7 +226,7 @@
 
         <p><strong>Source attribution hallucination.</strong> Models confidently cite sources that do not exist, or attribute statements to the wrong organization. An LLM might reference "according to the IEA's January Oil Market Report" when the relevant data actually came from OPEC's Monthly Oil Market Report, or fabricate a specific quote from a central bank governor. In compliance-sensitive environments, false source attribution can create serious legal and regulatory risk.</p>
 
-        <p><strong>Reasoning hallucination.</strong> Perhaps the most insidious form. The model constructs a logical argument that sounds compelling but contains a flawed causal chain. For example, it might argue that rising Chinese LNG imports will tighten European gas markets, when in fact Chinese buyers may be drawing on long-term contracts that do not compete with European spot procurement. The narrative is plausible, but the specific market dynamics are wrong.</p>
+        <p><strong>Reasoning hallucination.</strong> Perhaps the most insidious form. The model constructs a logical argument that sounds compelling but contains a flawed causal chain. For example, it might argue that rising Chinese supply chain imports will tighten European gas markets, when in fact Chinese buyers may be drawing on long-term contracts that do not compete with European spot procurement. The narrative is plausible, but the specific market dynamics are wrong.</p>
 
         <div class="highlight-box">
             <p>The question is not whether LLMs hallucinate in financial applications. They do, reliably, at rates that vary from 2% to 15% depending on the task and domain. The question is whether your architecture contains the safeguards to detect, flag, and prevent hallucinated content from reaching decision-makers.</p>
@@ -238,7 +238,7 @@
 
         <p>RAG is a genuine improvement over naive LLM deployment. When implemented well, it dramatically reduces the most obvious forms of hallucination by giving the model authoritative source material to draw from. But RAG introduces its own set of challenges that are often underestimated.</p>
 
-        <p><strong>Retrieval quality determines output quality.</strong> If the retrieval system returns irrelevant or outdated documents, the model will generate confident responses grounded in the wrong information. In commodity markets, where the relevance of information decays rapidly (yesterday's supply forecast may be obsolete today), retrieval systems must be carefully tuned for temporal relevance, not just semantic similarity.</p>
+        <p><strong>Retrieval quality determines output quality.</strong> If the retrieval system returns irrelevant or outdated documents, the model will generate confident responses grounded in the wrong information. In commercial markets, where the relevance of information decays rapidly (yesterday's supply forecast may be obsolete today), retrieval systems must be carefully tuned for temporal relevance, not just semantic similarity.</p>
 
         <p><strong>Context window limitations create blind spots.</strong> Even with modern models supporting 100K+ token context windows, the retrieved context represents a tiny fraction of the total knowledge base. The model cannot reference information that was not retrieved, which means its "knowledge" for any given query is bounded by the retrieval system's recall. Critical information that exists in the knowledge base but was not surfaced by the retrieval step effectively does not exist from the model's perspective.</p>
 
@@ -246,15 +246,15 @@
 
         <h2>Fine-Tuning: Promise and Pitfalls</h2>
 
-        <p>Fine-tuning, adapting a pre-trained model on domain-specific data, is often proposed as the solution to domain knowledge gaps. For commodity markets, this typically means training on historical market reports, analyst commentary, regulatory filings, and trade documentation.</p>
+        <p>Fine-tuning, adapting a pre-trained model on domain-specific data, is often proposed as the solution to domain knowledge gaps. For commercial markets, this typically means training on historical market reports, analyst commentary, regulatory filings, and trade documentation.</p>
 
-        <p>Fine-tuning does improve domain fluency. A model trained on energy market text will use terminology more precisely, understand market conventions, and produce output that reads more naturally to industry professionals. However, fine-tuning comes with significant practical challenges.</p>
+        <p>Fine-tuning does improve domain fluency. A model trained on enterprise market text will use terminology more precisely, understand market conventions, and produce output that reads more naturally to industry professionals. However, fine-tuning comes with significant practical challenges.</p>
 
-        <p><strong>Data quality requirements are extreme.</strong> Fine-tuning on incorrect or inconsistent data embeds those errors into the model's weights. In commodity markets, where historical analyst reports contain predictions that proved wrong, estimates that were later revised, and assessments that reflected the consensus view of a particular moment rather than ground truth, curating a training dataset that improves rather than degrades model accuracy is a major undertaking.</p>
+        <p><strong>Data quality requirements are extreme.</strong> Fine-tuning on incorrect or inconsistent data embeds those errors into the model's weights. In commercial markets, where historical analyst reports contain predictions that proved wrong, estimates that were later revised, and assessments that reflected the consensus view of a particular moment rather than ground truth, curating a training dataset that improves rather than degrades model accuracy is a major undertaking.</p>
 
         <p><strong>Catastrophic forgetting is real.</strong> Aggressive fine-tuning can cause the model to lose general capabilities that are essential for producing coherent, well-reasoned text. Finding the right balance between domain specialization and general capability requires extensive experimentation and evaluation.</p>
 
-        <p><strong>Evaluation is harder than it seems.</strong> How do you measure whether a fine-tuned model for commodity market analysis is "better" than the base model? Standard NLP benchmarks are meaningless for this purpose. You need domain-specific evaluation datasets with verified ground truth, which themselves are expensive to create and maintain. At TwoSuns, we maintain an evaluation suite of over 3,000 verified commodity market questions and scenarios, and we re-run it against every model update. Building and maintaining this evaluation infrastructure is a substantial investment, but without it, you are flying blind.</p>
+        <p><strong>Evaluation is harder than it seems.</strong> How do you measure whether a fine-tuned model for commercial market analysis is "better" than the base model? Standard NLP benchmarks are meaningless for this purpose. You need domain-specific evaluation datasets with verified ground truth, which themselves are expensive to create and maintain. At TwoSuns, we maintain an evaluation suite of over 3,000 verified commercial market questions and scenarios, and we re-run it against every model update. Building and maintaining this evaluation infrastructure is a substantial investment, but without it, you are flying blind.</p>
 
         <h2>Explainability: The Non-Negotiable Requirement</h2>
 
@@ -268,7 +268,7 @@
 
         <h2>The Path Forward</h2>
 
-        <p>Despite these challenges, I am deeply optimistic about the role of LLMs in commodity market intelligence. The key is intellectual honesty about what the technology can and cannot do, combined with engineering rigor in building the systems around it.</p>
+        <p>Despite these challenges, I am deeply optimistic about the role of LLMs in commercial market intelligence. The key is intellectual honesty about what the technology can and cannot do, combined with engineering rigor in building the systems around it.</p>
 
         <p>LLMs excel at processing unstructured text at scale, a capability that is genuinely transformative for an industry that drowns in reports, filings, and news. They are effective at generating natural-language summaries that make complex analytical outputs accessible. They can identify patterns in text that human analysts would miss due to sheer volume. And they are getting better with each generation.</p>
 
@@ -283,7 +283,7 @@
             <div class="author-info">
                 <h4>Aiman El-Ramly</h4>
                 <div class="author-title">CEO & Founder, TwoSuns</div>
-                <p>Aiman has spent over a decade at the intersection of artificial intelligence and commodity markets, previously leading quantitative strategy at a global energy trading firm. He founded TwoSuns to close the gap between the data commodity firms collect and the decisions they need to make.</p>
+                <p>Aiman has spent over a decade at the intersection of artificial intelligence and commercial markets, previously leading quantitative strategy at a global commercial coordination firm. He founded TwoSuns to close the gap between the data enterprise firms collect and the decisions they need to make.</p>
             </div>
         </div>
 
@@ -357,7 +357,7 @@
       </div>
       <div class="footer-newsletter">
         <h3>Stay ahead of the market</h3>
-        <p>Get the latest market briefings from TwoSuns, platform updates, and energy market intelligence delivered monthly.</p>
+        <p>Get the latest market briefings from TwoSuns, platform updates, and enterprise market intelligence delivered monthly.</p>
         <div class="fn-field">
           <input type="text" placeholder="Full name" id="fn-name">
           <input type="email" placeholder="Work email" id="fn-email">

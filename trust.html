@@ -395,21 +395,21 @@
   .footer-legal a:last-child { border-right:none; }
   .footer-legal a:hover { color:rgba(255,255,255,1); }
 
-  /* ── Solar Icon Float & Card Scroll Animations ── */
+  /* ── Sustainability Icon Float & Card Scroll Animations ── */
   @keyframes iconFloat {
     0%,100% { transform:translateY(0px); }
     50%      { transform:translateY(-8px); }
   }
-  .solar-icon-wrap {
+  .sustainability-icon-wrap {
     display:flex; justify-content:center; align-items:center;
     margin-bottom:18px;
     animation:iconFloat 4s ease-in-out infinite;
   }
-  .solar-card-animated {
+  .sustainability-card-animated {
     opacity:0; transform:translateY(20px);
     transition:opacity 0.55s ease, transform 0.55s ease;
   }
-  .solar-card-animated.visible {
+  .sustainability-card-animated.visible {
     opacity:1; transform:translateY(0);
   }
 
@@ -566,9 +566,9 @@
   <div class="container">
     <div class="section-tag">Leadership Credibility</div>
     <h2 class="section-heading">Backed by <span>Decades of Domain Expertise</span></h2>
-    <p class="section-sub">Built by operators who have designed and deployed systems used across global enterprise environments, from energy and commodities to financial services, infrastructure, and government.</p>
+    <p class="section-sub">Built by operators who have designed and deployed systems used across global enterprise environments, from complex enterprises to financial services, infrastructure, and government.</p>
     <div style="margin-top:48px;background:linear-gradient(135deg,var(--sun-pale),rgba(33,95,154,0.05));border-left:4px solid var(--sun);border-radius:0 12px 12px 0;padding:32px 36px;">
-      <p style="font-size:17px;color:var(--text-mid);line-height:1.8;font-style:italic;">"Leadership Backing: TwoSuns is led by energy and commodities market veterans who have built, scaled, and governed enterprise data platforms in complex traded markets for over two decades."</p>
+      <p style="font-size:17px;color:var(--text-mid);line-height:1.8;font-style:italic;">"Leadership Backing: TwoSuns is led by complex enterprises market veterans who have built, scaled, and governed enterprise data platforms in complex traded markets for over two decades."</p>
       <div style="margin-top:20px;display:flex;gap:32px;flex-wrap:wrap;">
         <div>
           <div style="font-size:13px;font-weight:700;color:var(--navy);">Aiman El-Ramly, MBA, CMC</div>
@@ -584,12 +584,12 @@
       <div class="card">
         <div class="card-icon">🏆</div>
         <h3>30+ Years Market Experience</h3>
-        <p>Deep specialization in energy, commodities, and financial market data platforms spanning utilities, trading firms, and financial institutions worldwide.</p>
+        <p>Deep specialization in energy, sectors, and financial market data platforms spanning utilities, trading firms, and financial institutions worldwide.</p>
       </div>
       <div class="card">
         <div class="card-icon">🌐</div>
         <h3>Global Client Base</h3>
-        <p>Advised governments, regulators, commodity traders, and enterprise organizations across North America, Europe, and the Middle East.</p>
+        <p>Advised governments, regulators, industry leaders, and enterprise organizations across North America, Europe, and the Middle East.</p>
       </div>
       <div class="card">
         <div class="card-icon">🔬</div>
@@ -1096,7 +1096,7 @@ window.addEventListener('resize',nxsResponsive);
       }
     });
   },{threshold:0.12});
-  document.querySelectorAll('.solar-card-animated').forEach(function(el){ obs.observe(el); });
+  document.querySelectorAll('.sustainability-card-animated').forEach(function(el){ obs.observe(el); });
 })();
 </script>
 </body>
