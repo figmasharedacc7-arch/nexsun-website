@@ -200,11 +200,12 @@
   .sun-inner-text .sun-stat { font-size:36px; font-weight:900; color:var(--navy); line-height:1; }
   .sun-floating-chips { position:absolute; width:100%; height:100%; pointer-events:none; }
   .chip {
-    position:absolute; background:white; border-radius:12px; padding:10px 16px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.1); font-size:12px; font-weight:700;
-    color:var(--navy); white-space:nowrap; animation:floatChip 3s ease-in-out infinite;
+    position:absolute; background:white; border-radius:12px; padding:10px 15px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.1); font-size:11.5px; font-weight:800;
+    color:var(--navy); white-space:normal; max-width:170px; line-height:1.3;
+    animation:floatChip 3s ease-in-out infinite;
   }
-  .chip span { color:var(--sun-deep); font-size:15px; display:block; }
+  .chip span { color:var(--sun-deep); font-size:12px; font-weight:700; display:block; margin-top:3px; }
   .chip:nth-child(1) { top:10%; left:-10%; animation-delay:0s; }
   .chip:nth-child(2) { top:15%; right:-10%; animation-delay:.8s; }
   .chip:nth-child(3) { bottom:20%; left:-10%; animation-delay:1.4s; }
@@ -591,17 +592,13 @@
   <div class="container" style="position:relative;z-index:2;width:100%;">
     <div class="hero-grid">
       <div>
-        <div class="hero-eyebrow" style="border-color:rgba(244,146,11,0.35);"> Operational Intelligence for Complex Industries</div>
-        <h1 class="hero-heading">Orchestrate Better. <span class="chaos">Execute Faster.</span></h1>
-        <div style="margin:16px 0 20px;">
-          <span style="font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sun-deep);">Structure. Control. Clarity.</span>
-        </div>
-        <p class="hero-sub">TwoSuns is the AI-native operational intelligence layer for complex industrial organizations. We help leaders align strategy, workflows, and execution through AI-enhanced coordination, turning fragmented information into orchestrated action across plants, supply chains, and the enterprise.</p>
+        <div class="hero-eyebrow" style="border-color:rgba(244,146,11,0.35);"> Enterprise Orchestration</div>
+        <h1 class="hero-heading">The orchestration layer for <span class="chaos">complex organizations</span></h1>
+        <p class="hero-sub" style="margin-top:18px;">Transforming how enterprises strategize, decide, and execute.</p>
         <div class="hero-ctas">
           <a href="book-discovery.html" class="btn-primary">Request a Discovery Session</a>
           <a href="platform.html" class="btn-secondary">Explore the Platform →</a>
         </div>
-        <p class="hero-note">☀ Built for cement, mining, manufacturing, logistics, infrastructure, and complex industrial enterprises</p>
       </div>
       <div class="sun-visual">
         <svg class="sun-rays-svg" viewBox="0 0 500 500">
@@ -618,15 +615,15 @@
         </svg>
         <div class="sun-orb">
           <div class="sun-inner-text">
-            <div class="sun-label">Coordinating</div>
+            <div class="sun-label">Orchestrating</div>
             <div class="sun-stat">Execution</div>
           </div>
         </div>
         <div class="sun-floating-chips">
-          <div class="chip">🌍 Geopolitical Risk<span>Live Signal</span></div>
-          <div class="chip">⚡ Supply Chain Risk<span>Detected</span></div>
-          <div class="chip">🛡️ Cyber Risk<span>Watching</span></div>
-          <div class="chip">📊 Compliance Review<span>Action Needed</span></div>
+          <div class="chip">🎯 Enterprise Go to Market<span>Insight. Decide. Grow.</span></div>
+          <div class="chip">🏭 Operational &amp; Industrial Excellence<span>Plan. Monitor. Execute.</span></div>
+          <div class="chip">🔄 Workflow Orchestration<span>Orchestrate. Optimize. Deliver.</span></div>
+          <div class="chip">🧭 Continuity &amp; Alignment<span>Intelligence. Guidance. Decisions.</span></div>
         </div>
       </div>
     </div>
