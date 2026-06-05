@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns Hero v2 — craft upgrades (warm/bright)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --sun:        #F4920B;
+    --sun-deep:   #E2530E;
+    --sun-pale:   #FCEFD2;
+    --navy:       #14304F;
+    --navy-soft:  #51607a;
+    --cream:      #FFFCF6;
+  }
+  body { background:var(--cream); color:var(--navy); font-family:'Inter',system-ui,-apple-system,sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+  .container { max-width:1180px; margin:0 auto; padding:0 48px; }
+
+  /* ===== HERO ===== */
+  #hero {
+    min-height:100vh; display:flex; align-items:center; padding-top:56px;
+    position:relative; overflow:hidden;
+    background:
+      radial-gradient(105% 95% at 76% 26%, #FFEFC9 0%, #FFF6E4 34%, #FFFCF6 68%);
+  }
+  /* faint warm light pooling behind the suns (still, no animation) */
+  .hero-warmth {
+    position:absolute; top:-160px; right:-120px; width:760px; height:760px; border-radius:50%;
+    background:radial-gradient(circle, rgba(246,183,7,0.20) 0%, rgba(244,146,11,0.08) 42%, transparent 70%);
+    pointer-events:none;
+  }
+  /* film grain over everything */
+  .grain {
+    position:fixed; inset:0; pointer-events:none; z-index:50; opacity:.13; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:220px 220px;
+  }
+
+  .hero-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:center; width:100%; }
+
+  .hero-eyebrow {
+    display:inline-flex; align-items:center; gap:9px;
+    color:var(--sun-deep); font-size:11px; font-weight:600;
+    letter-spacing:2.6px; text-transform:uppercase; margin-bottom:26px;
+  }
+  .hero-eyebrow .mini-suns { display:inline-flex; }
+  .hero-eyebrow .mini-suns i { width:8px; height:8px; border-radius:50%; display:block; }
+  .hero-eyebrow .mini-suns i:first-child { background:#D9A521; margin-right:-3px; }
+  .hero-eyebrow .mini-suns i:last-child { background:var(--sun-deep); }
+
+  .hero-heading {
+    font-family:'Fraunces', Georgia, serif; font-weight:600;
+    font-size:clamp(40px, 4.9vw, 66px); line-height:1.04; letter-spacing:-0.5px;
+    color:var(--navy); margin-bottom:24px;
+  }
+  .hero-heading em { font-style:italic; font-weight:600; color:var(--sun-deep); }
+
+  .hero-sub {
+    font-family:'Inter'; color:var(--navy-soft); font-size:18px; font-weight:400;
+    line-height:1.7; max-width:440px; margin-bottom:36px;
+  }
+
+  .hero-ctas { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .btn-primary {
+    background:linear-gradient(135deg, #F8A21D, var(--sun-deep));
+    color:#fff; font-weight:600; padding:15px 28px; border-radius:12px;
+    font-size:14.5px; border:none; cursor:pointer; text-decoration:none; display:inline-block;
+    box-shadow:0 10px 26px rgba(226,83,14,0.28); transition:transform .2s, box-shadow .2s;
+  }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(226,83,14,0.36); }
+  .btn-text {
+    color:var(--navy); font-weight:600; font-size:14.5px; text-decoration:none;
+    display:inline-flex; align-items:center; gap:7px; padding:6px 4px;
+    border-bottom:1.5px solid transparent; transition:border-color .2s;
+  }
+  .btn-text:hover { border-color:var(--navy); }
+
+  /* ===== TWO-SUN VISUAL ===== */
+  .sun-visual { position:relative; display:flex; align-items:center; justify-content:center; }
+  .twin-suns { position:relative; width:430px; height:386px; }
+  .sun {
+    position:absolute; border-radius:50%; will-change:transform;
+    isolation:isolate;
+  }
+  /* specular highlight (top-left) */
+  .sun::before {
+    content:''; position:absolute; inset:0; border-radius:50%;
+    background:radial-gradient(circle at 31% 26%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.30) 13%, transparent 36%);
+    mix-blend-mode:screen;
+  }
+  /* limb darkening + soft inner shading toward lower-right */
+  .sun::after {
+    content:''; position:absolute; inset:0; border-radius:50%;
+    box-shadow: inset -14px -18px 38px rgba(120,58,0,0.30), inset 10px 12px 22px rgba(255,255,255,0.10);
+  }
+  .sun-gold {
+    width:262px; height:262px; top:8px; left:0; z-index:1;
+    background:radial-gradient(circle at 39% 36%, #FFFBEA 0%, #F7DC82 24%, #EBBE49 56%, #D8A227 82%, #BC8A1A 100%);
+    box-shadow:
+      0 0 64px 8px rgba(221,165,33,0.34),
+      0 0 150px 34px rgba(221,165,33,0.16),
+      0 26px 80px rgba(165,120,12,0.22);
+    animation:driftGold 24s ease-in-out infinite;
+  }
+  .sun-orange {
+    width:234px; height:234px; bottom:2px; right:4px; z-index:2;
+    background:radial-gradient(circle at 39% 36%, #FFF4E8 0%, #FFB571 22%, #FF8B3E 56%, #FB6A1F 82%, #DD4E0C 100%);
+    box-shadow:
+      0 0 64px 8px rgba(251,106,31,0.32),
+      0 0 150px 34px rgba(251,106,31,0.15),
+      0 26px 80px rgba(190,70,8,0.24);
+    animation:driftOrange 24s ease-in-out infinite;
+  }
+  /* one meaningful move: a slow binary drift (two-body system) */
+  @keyframes driftGold {
+    0%,100% { transform:translate(0,0); }
+    50%     { transform:translate(5px,6px); }
+  }
+  @keyframes driftOrange {
+    0%,100% { transform:translate(0,0); }
+    25%     { transform:translate(-6px,-4px); }
+    50%     { transform:translate(-3px,-9px); }
+    75%     { transform:translate(4px,-3px); }
+  }
+
+  .sun-inner-text { position:absolute; top:50%; left:52%; transform:translate(-50%,-50%); z-index:4; text-align:center; pointer-events:none; }
+  .sun-inner-text .sun-label { font-family:'Inter'; font-size:10.5px; color:#fff; font-weight:600; letter-spacing:2px; text-transform:uppercase; opacity:.92; text-shadow:0 1px 4px rgba(120,45,0,0.7); }
+  .sun-inner-text .sun-stat { font-family:'Fraunces'; font-size:30px; font-weight:600; color:#fff; line-height:1; margin-top:3px; text-shadow:0 2px 10px rgba(120,45,0,0.55); }
+  body.no-label .sun-inner-text { display:none; }
+
+  /* ===== refined pillar chips (custom icons, no emoji) ===== */
+  .sun-floating-chips { position:absolute; width:100%; height:100%; pointer-events:none; z-index:6; }
+  .chip {
+    position:absolute; display:flex; gap:10px; align-items:flex-start;
+    background:rgba(255,255,255,0.92); backdrop-filter:blur(6px);
+    border:1px solid rgba(20,48,79,0.08); border-radius:14px; padding:11px 14px;
+    box-shadow:0 10px 30px rgba(60,40,10,0.10); max-width:208px;
+  }
+  .chip .ic {
+    flex-shrink:0; width:30px; height:30px; border-radius:9px;
+    background:var(--sun-pale); display:flex; align-items:center; justify-content:center;
+  }
+  .chip .ic svg { width:18px; height:18px; display:block; }
+  .chip b { font-family:'Inter'; font-size:12.5px; font-weight:700; color:var(--navy); line-height:1.25; display:block; }
+  .chip i { font-family:'Inter'; font-size:11px; font-weight:600; font-style:normal; color:var(--sun-deep); line-height:1.3; display:block; margin-top:3px; letter-spacing:0.1px; }
+  .chip:nth-child(1) { top:4%;  left:-13%; }
+  .chip:nth-child(2) { top:12%; right:-13%; }
+  .chip:nth-child(3) { bottom:24%; left:-13%; }
+  .chip:nth-child(4) { bottom:6%; right:-12%; }
+
+  /* preview control bar */
+  .preview-bar {
+    position:fixed; top:16px; left:50%; transform:translateX(-50%); z-index:99;
+    background:rgba(20,48,79,0.94); backdrop-filter:blur(8px); color:#fff;
+    border-radius:30px; padding:8px 10px 8px 18px; display:flex; align-items:center; gap:12px;
+    font-size:12px; box-shadow:0 8px 30px rgba(0,0,0,0.25);
+  }
+  .preview-bar b { font-weight:600; letter-spacing:0.3px; }
+  .preview-bar button {
+    background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px; padding:7px 14px; font-size:12px; font-weight:600; cursor:pointer;
+  }
+  .preview-bar button:hover { background:var(--sun); border-color:var(--sun); }
+
+  @media(max-width:900px){
+    .hero-grid{ grid-template-columns:1fr; gap:40px; }
+  }
+</style>
+</head>
+<body>
+  <div class="grain"></div>
+
+  <div class="preview-bar">
+    <b>TwoSuns hero v2 · warm + craft upgrades</b>
+    <button onclick="document.body.classList.toggle('no-label')">Toggle center label</button>
+  </div>
+
+  <section id="hero">
+    <div class="hero-warmth"></div>
+    <div class="container" style="position:relative;z-index:2;width:100%;">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow"><span class="mini-suns"><i></i><i></i></span> Enterprise Orchestration</div>
+          <h1 class="hero-heading">The orchestration layer for <em>complex organizations</em></h1>
+          <p class="hero-sub">Transforming how enterprises strategize, decide, and execute.</p>
+          <div class="hero-ctas">
+            <a href="#" class="btn-primary">Request a Discovery Session</a>
+            <a href="#" class="btn-text">Explore the Platform →</a>
+          </div>
+        </div>
+
+        <div class="sun-visual">
+          <div class="twin-suns">
+            <div class="sun sun-gold"></div>
+            <div class="sun sun-orange"></div>
+            <div class="sun-inner-text">
+              <div class="sun-label">Orchestrating</div>
+              <div class="sun-stat">Execution</div>
+            </div>
+          </div>
+
+          <div class="sun-floating-chips">
+            <!-- 1. Enterprise Go to Market -->
+            <div class="chip">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#14304F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="3.4"/><path d="M11 13 L20 4"/><path d="M15.5 4 H20 V8.5"/></svg></span>
+              <div><b>Enterprise Go to Market</b><i>Insight. Decide. Grow.</i></div>
+            </div>
+            <!-- 2. Operational & Industrial Excellence -->
+            <div class="chip">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#14304F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2.1" fill="#FCEFD2"/><circle cx="15" cy="12" r="2.1" fill="#FCEFD2"/><circle cx="8" cy="17" r="2.1" fill="#FCEFD2"/></svg></span>
+              <div><b>Operational &amp; Industrial Excellence</b><i>Plan. Monitor. Execute.</i></div>
+            </div>
+            <!-- 3. Workflow Orchestration -->
+            <div class="chip">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#14304F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 7 L16 6 M7 8.4 L11 14.6 M16 7.6 L12.4 14.4"/><circle cx="5.4" cy="6" r="2.2" fill="#FCEFD2"/><circle cx="17.6" cy="6" r="2.2" fill="#FCEFD2"/><circle cx="11.6" cy="16" r="2.2" fill="#FCEFD2"/></svg></span>
+              <div><b>Workflow Orchestration</b><i>Orchestrate. Optimize. Deliver.</i></div>
+            </div>
+            <!-- 4. Continuity & Alignment -->
+            <div class="chip">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#14304F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M15.6 8.4 L11 11 L8.4 15.6 L13 13 Z" fill="#14304F" stroke="none"/></svg></span>
+              <div><b>Continuity &amp; Alignment</b><i>Intelligence. Guidance. Decisions.</i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
