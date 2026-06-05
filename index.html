@@ -18,10 +18,6 @@
   <meta name="twitter:title" content="TwoSuns, Operational Intelligence for Complex Industries">
   <meta name="twitter:description" content="TwoSuns is the coordination infrastructure for complex enterprises. Market and operational coordination, persistent assistance, enterprise continuity across complex environments.">
   <meta name="twitter:image" content="https://twosuns.ai/og-image.jpg">
-  <!-- ── Hero display + UI fonts ── -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --sun:        #F4920B;
@@ -119,14 +115,10 @@
   }
   #hero {
     min-height:100vh; display:flex; align-items:center; padding-top:104px;
-    background:radial-gradient(105% 95% at 76% 26%, #FFEFC9 0%, #FFF6E4 34%, #FFFCF6 68%);
+    background:linear-gradient(160deg, #FFFBF0 0%, #FFF3CD 30%, #E0F2FE 60%, #FEF9C3 100%);
+    background-size:300% 300%;
+    animation:heroBgBreath 14s ease-in-out infinite;
     position:relative; overflow:hidden;
-  }
-  /* film grain, scoped to hero */
-  #hero .grain {
-    position:absolute; inset:0; pointer-events:none; z-index:5; opacity:.13; mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size:220px 220px;
   }
   @keyframes heroFloat1 {
     0%,100% { transform:translate(0,0) scale(1); opacity:.85; }
@@ -139,10 +131,11 @@
     70%     { transform:translate(-20px,10px) scale(.88); opacity:.45; }
   }
   .hero-sun-glow {
-    position:absolute; top:-160px; right:-120px; width:760px; height:760px;
+    position:absolute; top:-120px; right:-80px; width:600px; height:600px;
     border-radius:50%;
-    background:radial-gradient(circle, rgba(246,183,7,0.20) 0%, rgba(244,146,11,0.08) 42%, transparent 70%);
+    background:radial-gradient(ellipse, rgba(246,183,7,0.35) 0%, rgba(244,146,11,0.12) 45%, transparent 70%);
     pointer-events:none;
+    animation:heroFloat1 10s ease-in-out infinite;
   }
   .hero-rays {
     position:absolute; top:-60px; right:-20px; width:500px; height:500px;
@@ -150,19 +143,21 @@
   }
   .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; width:100%; }
   .hero-eyebrow {
-    display:inline-flex; align-items:center; gap:9px;
-    font-family:'Inter',sans-serif; color:var(--sun-deep); font-size:11px; font-weight:600;
-    letter-spacing:2.6px; text-transform:uppercase; margin-bottom:26px;
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--sun-pale); border:1px solid rgba(244,146,11,0.4);
+    color:var(--sun-deep); font-size:11px; font-weight:700;
+    letter-spacing:2.5px; text-transform:uppercase; padding:6px 16px;
+    border-radius:20px; margin-bottom:24px;
   }
-  .hero-eyebrow .mini-suns { display:inline-flex; }
-  .hero-eyebrow .mini-suns i { width:8px; height:8px; border-radius:50%; display:block; }
-  .hero-eyebrow .mini-suns i:first-child { background:#D9A521; margin-right:-3px; }
-  .hero-eyebrow .mini-suns i:last-child { background:var(--sun-deep); }
   .hero-eyebrow .dot { width:6px; height:6px; border-radius:50%; background:var(--sun); animation:blink 1.5s ease-in-out infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
-  .hero-heading { font-family:'Fraunces',Georgia,serif; font-size:clamp(40px,4.9vw,66px); font-weight:600; line-height:1.04; letter-spacing:-0.5px; margin-bottom:24px; color:var(--navy); }
-  .hero-heading .chaos { color:var(--sun-deep); font-style:italic; font-weight:600; }
-  .hero-sub { font-family:'Inter',sans-serif; color:#51607a; font-size:18px; font-weight:400; line-height:1.7; max-width:440px; margin-bottom:36px; }
+  .hero-heading { font-size:clamp(44px,5.5vw,72px); font-weight:900; line-height:1.06; margin-bottom:26px; color:var(--navy); }
+  .hero-heading .chaos { color:var(--sun-deep); position:relative; display:inline-block; }
+  .hero-heading .chaos::after {
+    content:''; position:absolute; bottom:-4px; left:0; right:0; height:3px;
+    background:linear-gradient(90deg,var(--sun),var(--sun-deep)); border-radius:2px;
+  }
+  .hero-sub { color:var(--text-mid); font-size:18px; line-height:1.75; margin-bottom:36px; }
   .hero-stats { display:flex; gap:36px; margin-bottom:36px; }
   .hero-stat .value { font-size:28px; font-weight:900; color:var(--navy); }
   .hero-stat .label { font-size:12px; color:var(--text-muted); margin-top:2px; }
@@ -184,54 +179,41 @@
 
   /* Sun graphic */
   .sun-visual { position:relative; display:flex; align-items:center; justify-content:center; }
-  .twin-suns { position:relative; width:430px; height:386px; }
-  .twin-suns .sun { position:absolute; border-radius:50%; will-change:transform; isolation:isolate; }
-  /* specular highlight (upper-left) */
-  .twin-suns .sun::before {
-    content:''; position:absolute; inset:0; border-radius:50%;
-    background:radial-gradient(circle at 31% 26%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.30) 13%, transparent 36%);
-    mix-blend-mode:screen;
-  }
-  /* limb darkening toward lower-right */
-  .twin-suns .sun::after {
-    content:''; position:absolute; inset:0; border-radius:50%;
-    box-shadow: inset -14px -18px 38px rgba(120,58,0,0.30), inset 10px 12px 22px rgba(255,255,255,0.10);
-  }
+  .twin-suns { position:relative; width:384px; height:340px; }
+  .twin-suns .sun { position:absolute; border-radius:50%; will-change:transform; }
   /* Gold sun: larger, behind, upper-left (matches logo mark) */
   .sun-gold {
-    width:262px; height:262px; top:8px; left:0; z-index:1;
-    background:radial-gradient(circle at 39% 36%, #FFFBEA 0%, #F7DC82 24%, #EBBE49 56%, #D8A227 82%, #BC8A1A 100%);
-    box-shadow:0 0 64px 8px rgba(221,165,33,0.34), 0 0 150px 34px rgba(221,165,33,0.16), 0 26px 80px rgba(165,120,12,0.22);
-    animation:driftGold 24s ease-in-out infinite;
+    width:250px; height:250px; top:6px; left:0; z-index:1;
+    background:radial-gradient(ellipse at 37% 37%, #FFFFFF 0%, #F4D26B 40%, #D9B341 64%, #CC9900 100%);
+    box-shadow:0 0 0 14px rgba(217,179,65,0.10), 0 0 0 38px rgba(217,179,65,0.06), 0 18px 70px rgba(204,153,0,0.28);
+    animation:sunBreath 5s ease-in-out infinite;
   }
   /* Orange sun: smaller, in front, lower-right (matches logo mark) */
   .sun-orange {
-    width:234px; height:234px; bottom:2px; right:4px; z-index:2;
-    background:radial-gradient(circle at 39% 36%, #FFF4E8 0%, #FFB571 22%, #FF8B3E 56%, #FB6A1F 82%, #DD4E0C 100%);
-    box-shadow:0 0 64px 8px rgba(251,106,31,0.32), 0 0 150px 34px rgba(251,106,31,0.15), 0 26px 80px rgba(190,70,8,0.24);
-    animation:driftOrange 24s ease-in-out infinite;
+    width:228px; height:228px; bottom:4px; right:0; z-index:2;
+    background:radial-gradient(ellipse at 37% 37%, #FFFFFF 0%, #FF8939 38%, #FF6803 72%, #FF6600 100%);
+    box-shadow:0 0 0 14px rgba(255,102,0,0.10), 0 0 0 38px rgba(255,102,0,0.06), 0 18px 70px rgba(233,87,4,0.30);
+    animation:sunBreath 5s ease-in-out infinite 1.4s;
   }
-  /* one meaningful move: a slow binary drift (two-body system) */
-  @keyframes driftGold { 0%,100%{transform:translate(0,0)} 50%{transform:translate(5px,6px)} }
-  @keyframes driftOrange { 0%,100%{transform:translate(0,0)} 25%{transform:translate(-6px,-4px)} 50%{transform:translate(-3px,-9px)} 75%{transform:translate(4px,-3px)} }
-  .sun-inner-text { position:absolute; top:50%; left:52%; transform:translate(-50%,-50%); z-index:4; text-align:center; pointer-events:none; }
-  .sun-inner-text .sun-label { font-family:'Inter',sans-serif; font-size:10.5px; color:#fff; font-weight:600; letter-spacing:2px; text-transform:uppercase; opacity:.92; text-shadow:0 1px 4px rgba(120,45,0,0.7); }
-  .sun-inner-text .sun-stat { font-family:'Fraunces',serif; font-size:30px; font-weight:600; color:#fff; line-height:1; margin-top:3px; text-shadow:0 2px 10px rgba(120,45,0,0.55); }
+  @keyframes sunBreath { 0%,100%{transform:scale(1)} 50%{transform:scale(1.045)} }
+  .sun-rays-svg { position:absolute; width:540px; height:540px; animation:rotateSun 40s linear infinite; z-index:0; }
+  .sun-inner-text { position:absolute; top:50%; left:51%; transform:translate(-50%,-50%); z-index:4; text-align:center; pointer-events:none; }
+  .sun-inner-text .sun-label { font-size:12px; color:#fff; font-weight:800; letter-spacing:1.2px; text-transform:uppercase; text-shadow:0 1px 3px rgba(120,45,0,0.85), 0 2px 12px rgba(120,45,0,0.6); }
+  .sun-inner-text .sun-stat { font-size:34px; font-weight:900; color:#fff; line-height:1; text-shadow:0 2px 4px rgba(120,45,0,0.85), 0 3px 16px rgba(120,45,0,0.65); }
   .sun-floating-chips { position:absolute; width:100%; height:100%; pointer-events:none; z-index:6; }
   .chip {
-    position:absolute; display:flex; gap:10px; align-items:flex-start;
-    background:rgba(255,255,255,0.92); backdrop-filter:blur(6px);
-    border:1px solid rgba(20,48,79,0.08); border-radius:14px; padding:11px 14px;
-    box-shadow:0 10px 30px rgba(60,40,10,0.10); max-width:208px;
+    position:absolute; background:white; border-radius:12px; padding:10px 15px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.1); font-size:11.5px; font-weight:800;
+    color:var(--navy); white-space:normal; max-width:170px; line-height:1.3;
+    animation:floatChip 3s ease-in-out infinite;
   }
-  .chip .ic { flex-shrink:0; width:30px; height:30px; border-radius:9px; background:var(--sun-pale); display:flex; align-items:center; justify-content:center; }
-  .chip .ic svg { width:18px; height:18px; display:block; }
-  .chip b { font-family:'Inter',sans-serif; font-size:12.5px; font-weight:700; color:var(--navy); line-height:1.25; display:block; }
-  .chip i { font-family:'Inter',sans-serif; font-size:11px; font-weight:600; font-style:normal; color:var(--sun-deep); line-height:1.3; display:block; margin-top:3px; }
-  .chip:nth-child(1) { top:4%;  left:-13%; }
-  .chip:nth-child(2) { top:12%; right:-13%; }
-  .chip:nth-child(3) { bottom:24%; left:-13%; }
-  .chip:nth-child(4) { bottom:6%; right:-12%; }
+  .chip span { color:var(--sun-deep); font-size:12px; font-weight:700; display:block; margin-top:3px; }
+  .chip:nth-child(1) { top:8%; left:-12%; animation-delay:0s; }
+  .chip:nth-child(2) { top:14%; right:-12%; animation-delay:.8s; }
+  .chip:nth-child(3) { bottom:22%; left:-12%; animation-delay:1.4s; }
+  .chip:nth-child(4) { bottom:8%; right:-12%; animation-delay:.4s; }
+  @keyframes floatChip { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-10px) scale(1.03)} }
+  @keyframes rotateSun { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
 
   /* ─── DIVIDER ─── */
   @keyframes dividerGlow {
@@ -609,11 +591,10 @@
 <!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-sun-glow"></div>
-  <div class="grain"></div>
   <div class="container" style="position:relative;z-index:2;width:100%;">
     <div class="hero-grid">
       <div>
-        <div class="hero-eyebrow"><span class="mini-suns"><i></i><i></i></span> Enterprise Orchestration</div>
+        <div class="hero-eyebrow"> Enterprise Orchestration</div>
         <h1 class="hero-heading">The orchestration layer for <span class="chaos">complex organizations</span></h1>
         <p class="hero-sub" style="margin-top:18px;">Transforming how enterprises strategize, decide, and execute.</p>
         <div class="hero-ctas">
@@ -622,6 +603,18 @@
         </div>
       </div>
       <div class="sun-visual">
+        <svg class="sun-rays-svg" viewBox="0 0 500 500">
+          <g stroke="#F4920B" stroke-width="1.5" opacity=".30">
+            <line x1="250" y1="0" x2="250" y2="500"/>
+            <line x1="0" y1="250" x2="500" y2="250"/>
+            <line x1="73" y1="73" x2="427" y2="427"/>
+            <line x1="427" y1="73" x2="73" y2="427"/>
+            <line x1="0" y1="170" x2="500" y2="330"/>
+            <line x1="0" y1="330" x2="500" y2="170"/>
+            <line x1="170" y1="0" x2="330" y2="500"/>
+            <line x1="330" y1="0" x2="170" y2="500"/>
+          </g>
+        </svg>
         <div class="twin-suns">
           <div class="sun sun-gold"></div>
           <div class="sun sun-orange"></div>
@@ -631,22 +624,11 @@
           </div>
         </div>
         <div class="sun-floating-chips">
-          <div class="chip">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#163E64" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="3.4"/><path d="M11 13 L20 4"/><path d="M15.5 4 H20 V8.5"/></svg></span>
-            <div><b>Enterprise Go to Market</b><i>Insight. Decide. Grow.</i></div>
-          </div>
-          <div class="chip">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#163E64" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2.1" fill="#FEF3C7"/><circle cx="15" cy="12" r="2.1" fill="#FEF3C7"/><circle cx="8" cy="17" r="2.1" fill="#FEF3C7"/></svg></span>
-            <div><b>Operational &amp; Industrial Excellence</b><i>Plan. Monitor. Execute.</i></div>
-          </div>
-          <div class="chip">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#163E64" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 7 L16 6 M7 8.4 L11 14.6 M16 7.6 L12.4 14.4"/><circle cx="5.4" cy="6" r="2.2" fill="#FEF3C7"/><circle cx="17.6" cy="6" r="2.2" fill="#FEF3C7"/><circle cx="11.6" cy="16" r="2.2" fill="#FEF3C7"/></svg></span>
-            <div><b>Workflow Orchestration</b><i>Orchestrate. Optimize. Deliver.</i></div>
-          </div>
-          <div class="chip">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#163E64" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M15.6 8.4 L11 11 L8.4 15.6 L13 13 Z" fill="#163E64" stroke="none"/></svg></span>
-            <div><b>Continuity &amp; Alignment</b><i>Intelligence. Guidance. Decisions.</i></div>
-          </div>
+          <div class="chip">🎯 Enterprise Go to Market<span>Insight. Decide. Grow.</span></div>
+          <div class="chip">🏭 Operational &amp; Industrial Excellence<span>Plan. Monitor. Execute.</span></div>
+          <div class="chip">🔄 Workflow Orchestration<span>Orchestrate. Optimize. Deliver.</span></div>
+          <div class="chip">🧭 Continuity &amp; Alignment<span>Intelligence. Guidance. Decisions.</span></div>
+        </div>
       </div>
     </div>
   </div>
