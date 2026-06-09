@@ -42,10 +42,10 @@
 </script>
 <style>
   :root {
-    --sun:        #F4920B;
-    --sun-bright: #F6B707;
-    --sun-deep:   #E95704;
-    --sun-pale:   #FEF3C7;
+    --sun:        #FF6600;
+    --sun-bright: #CC9900;
+    --sun-deep:   #DB5800;
+    --sun-pale:   #FFEDD0;
     --sky:        #215F9A;
     --sky-mid:    #215F9A;
     --sky-light:  #E0F2FE;
@@ -53,16 +53,16 @@
     --navy-mid:   #215F9A;
     --green:      #215F9A;
     --green-light:#F0F4F9;
-    --logo-green:  #F4920B;
+    --logo-green:  #FF6600;
     --logo-pale:   #F5F9FF;
-    --bg:         #FFFBF0;
-    --bg2:        #FFF7E6;
+    --bg:         #FFF5DD;
+    --bg2:        #FFEFCE;
     --white:      #FFFFFF;
     --text:       #3A3A3A;
     --text-mid:   #334155;
     --text-muted: #64748B;
-    --border:     rgba(244,146,11,0.2);
-    --card-shadow:0 4px 24px rgba(244,146,11,0.08), 0 1px 4px rgba(0,0,0,0.06);
+    --border:     rgba(255,102,0,0.2);
+    --card-shadow:0 4px 24px rgba(255,102,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
@@ -77,7 +77,7 @@
   .section { padding:100px 0; }
   .section-tag {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(244,146,11,0.3);
+    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.3);
     color:var(--sun-deep); font-size:11px; font-weight:700;
     letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
     border-radius:20px; margin-bottom:20px;
@@ -109,8 +109,8 @@
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
     background:rgba(255,251,240,0.88); backdrop-filter:blur(16px);
-    border-bottom:1px solid rgba(244,146,11,0.15);
-    box-shadow:0 1px 20px rgba(244,146,11,0.08);
+    border-bottom:1px solid rgba(255,102,0,0.15);
+    box-shadow:0 1px 20px rgba(255,102,0,0.08);
     overflow:visible;
   }
   .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
@@ -121,9 +121,9 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#fff; font-weight:700; padding:11px 24px; border-radius:8px;
     font-size:14px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 4px 14px rgba(244,146,11,0.4); display:inline-block;
+    box-shadow:0 4px 14px rgba(255,102,0,0.4); display:inline-block;
   }
-  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(244,146,11,0.5); }
+  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,102,0,0.5); }
 
   /* NAV DROPDOWN */
   .nav-dropdown { position:relative; display:flex; align-items:center; }
@@ -134,9 +134,9 @@
   .nav-dropdown:hover > a::after { transform:rotate(180deg); }
   .nav-dropdown-menu {
     position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-6px);
-    background:white; border:1px solid rgba(244,146,11,0.2);
+    background:white; border:1px solid rgba(255,102,0,0.2);
     border-radius:12px; padding:6px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(244,146,11,0.08);
+    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(255,102,0,0.08);
     min-width:160px; opacity:0; visibility:hidden;
     transition:opacity .2s, transform .2s, visibility .2s;
     z-index:200;
@@ -150,7 +150,7 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
-  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(244,146,11,0.1); margin:4px 8px; }
+  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(255,102,0,0.1); margin:4px 8px; }
 
   /* MOBILE NAV */
   .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;margin-left:auto;flex-shrink:0;}
@@ -158,7 +158,7 @@
   .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
   .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
   .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(244,146,11,0.12);font-size:15px;font-weight:500;color:#334155;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,102,0,0.12);font-size:15px;font-weight:500;color:#334155;text-decoration:none;transition:color .2s;}
   #nxs-mob-nav a:hover{color:var(--sun-deep);}
   #nxs-mob-nav a:last-child{border-bottom:none;}
 
@@ -169,12 +169,12 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:white; border:none; cursor:pointer;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 16px rgba(244,146,11,0.45);
+    box-shadow:0 4px 16px rgba(255,102,0,0.45);
     opacity:0; visibility:hidden; transform:translateY(12px);
     transition:opacity .3s, visibility .3s, transform .3s;
   }
   #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
-  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(244,146,11,0.55); }
+  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(255,102,0,0.55); }
   #scroll-top svg { width:18px; height:18px; }
 
   /* FOOTER */
@@ -221,7 +221,7 @@
   /* DIVIDER */
   .sun-divider {
     height:5px;
-    background:linear-gradient(90deg, transparent 0%, #F4920B 18%, #163E64 50%, #F4920B 82%, transparent 100%);
+    background:linear-gradient(90deg, transparent 0%, #FF6600 18%, #163E64 50%, #FF6600 82%, transparent 100%);
     position:relative; z-index:2; overflow:visible;
   }
 
@@ -230,9 +230,9 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#fff; font-weight:700; padding:16px 30px; border-radius:10px;
     font-size:15px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 6px 20px rgba(244,146,11,0.4); display:inline-block;
+    box-shadow:0 6px 20px rgba(255,102,0,0.4); display:inline-block;
   }
-  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(244,146,11,0.5); }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(255,102,0,0.5); }
   .btn-secondary {
     background:transparent; color:var(--navy); font-weight:600;
     padding:16px 30px; border-radius:10px; font-size:15px;
@@ -256,7 +256,7 @@
   /* PAGE HERO */
   .page-hero {
     padding:180px 0 100px;
-    background:linear-gradient(160deg, #FFFBF0 0%, #FFF3CD 30%, #E0F2FE 60%, #FEF9C3 100%);
+    background:linear-gradient(160deg, #FFF5DD 0%, #FFF3CD 30%, #E0F2FE 60%, #FEF9C3 100%);
     background-size:300% 300%;
     animation:heroBgBreath 14s ease-in-out infinite;
     position:relative; overflow:hidden;
@@ -270,7 +270,7 @@
   .page-hero .container { position:relative; z-index:1; }
   .page-hero-eyebrow {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(244,146,11,0.4);
+    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.4);
     color:var(--sun-deep); font-size:11px; font-weight:700;
     letter-spacing:2.5px; text-transform:uppercase; padding:6px 16px;
     border-radius:20px; margin-bottom:24px;
@@ -296,7 +296,7 @@
     padding:28px 24px; text-align:center; box-shadow:var(--card-shadow);
     transition:all .3s;
   }
-  .category-card:hover { border-color:rgba(244,146,11,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(244,146,11,0.14); }
+  .category-card:hover { border-color:rgba(255,102,0,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(255,102,0,0.14); }
   .category-card-icon { font-size:32px; margin-bottom:14px; }
   .category-card h3 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px; }
   .category-card p { font-size:13px; color:var(--text-muted); line-height:1.7; }
@@ -318,7 +318,7 @@
   .diff-content {}
   .diff-content .section-tag-dark {
     display:inline-flex; align-items:center; gap:8px;
-    background:rgba(244,146,11,0.15); border:1px solid rgba(244,146,11,0.3);
+    background:rgba(255,102,0,0.15); border:1px solid rgba(255,102,0,0.3);
     color:var(--sun-bright); font-size:11px; font-weight:700;
     letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
     border-radius:20px; margin-bottom:20px;
@@ -345,7 +345,7 @@
   .diff-section.light .diff-content p { color:var(--text-mid); }
   .diff-section.light .diff-content ul li { color:var(--text-mid); }
   .diff-section.light .diff-content ul li::before { background:var(--sun-deep); }
-  .diff-section.light .diff-visual { background:linear-gradient(135deg,var(--sun-pale),rgba(244,146,11,0.05)); border:1px solid rgba(244,146,11,0.2); }
+  .diff-section.light .diff-visual { background:linear-gradient(135deg,var(--sun-pale),rgba(255,102,0,0.05)); border:1px solid rgba(255,102,0,0.2); }
   .diff-section.light .diff-visual-label { color:var(--navy); }
 
   /* DARK DIFF */
@@ -353,7 +353,7 @@
   .diff-section.dark .diff-content p { color:rgba(255,255,255,0.75); }
   .diff-section.dark .diff-content ul li { color:rgba(255,255,255,0.7); }
   .diff-section.dark .diff-content ul li::before { background:var(--sun); }
-  .diff-section.dark .diff-visual { background:rgba(255,255,255,0.04); border:1px solid rgba(244,146,11,0.15); }
+  .diff-section.dark .diff-visual { background:rgba(255,255,255,0.04); border:1px solid rgba(255,102,0,0.15); }
   .diff-section.dark .diff-visual-label { color:rgba(255,255,255,0.6); }
 
   /* VISUAL FEATURE BOXES */
@@ -366,11 +366,11 @@
   .feature-box-text { font-size:13px; font-weight:600; }
 
   /* LIGHT feature boxes */
-  .diff-section.light .feature-box { background:white; border:1px solid rgba(244,146,11,0.2); }
+  .diff-section.light .feature-box { background:white; border:1px solid rgba(255,102,0,0.2); }
   .diff-section.light .feature-box-text { color:var(--navy); }
 
   /* DARK feature boxes */
-  .diff-section.dark .feature-box { background:rgba(255,255,255,0.06); border:1px solid rgba(244,146,11,0.15); }
+  .diff-section.dark .feature-box { background:rgba(255,255,255,0.06); border:1px solid rgba(255,102,0,0.15); }
   .diff-section.dark .feature-box-text { color:rgba(255,255,255,0.85); }
 
   /* COMPARISON TABLE */
@@ -380,27 +380,27 @@
   .comp-table-wrap { overflow-x:auto; margin-top:48px; border-radius:16px; }
   .comp-table {
     width:100%; border-collapse:collapse; background:rgba(255,255,255,0.03);
-    border:1px solid rgba(244,146,11,0.15); border-radius:16px; overflow:hidden;
+    border:1px solid rgba(255,102,0,0.15); border-radius:16px; overflow:hidden;
   }
   .comp-table th {
-    background:rgba(244,146,11,0.12); padding:16px 20px;
+    background:rgba(255,102,0,0.12); padding:16px 20px;
     font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-    color:var(--sun-bright); text-align:left; border-bottom:1px solid rgba(244,146,11,0.2);
+    color:var(--sun-bright); text-align:left; border-bottom:1px solid rgba(255,102,0,0.2);
     white-space:nowrap;
   }
   .comp-table th:first-child { color:rgba(255,255,255,0.5); background:rgba(255,255,255,0.04); }
-  .comp-table th.highlight { background:rgba(244,146,11,0.2); border-left:2px solid rgba(244,146,11,0.4); }
+  .comp-table th.highlight { background:rgba(255,102,0,0.2); border-left:2px solid rgba(255,102,0,0.4); }
   .comp-table td {
     padding:14px 20px; font-size:14px; color:rgba(255,255,255,0.7);
     border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:top;
     line-height:1.5;
   }
   .comp-table td:first-child { font-weight:600; color:rgba(255,255,255,0.85); background:rgba(255,255,255,0.02); }
-  .comp-table td.highlight { background:rgba(244,146,11,0.06); color:rgba(255,255,255,0.9); border-left:2px solid rgba(244,146,11,0.25); }
+  .comp-table td.highlight { background:rgba(255,102,0,0.06); color:rgba(255,255,255,0.9); border-left:2px solid rgba(255,102,0,0.25); }
   .comp-table td.highlight.strong { color:var(--sun-bright); font-weight:600; }
   .comp-table tr:last-child td { border-bottom:none; }
   .comp-table tr:hover td { background:rgba(255,255,255,0.03); }
-  .comp-table tr:hover td.highlight { background:rgba(244,146,11,0.1); }
+  .comp-table tr:hover td.highlight { background:rgba(255,102,0,0.1); }
 
   /* OUTCOME SECTION */
   #outcome { background:var(--bg); }
@@ -409,7 +409,7 @@
     background:white; border:1px solid var(--border); border-radius:16px;
     padding:28px 20px; text-align:center; box-shadow:var(--card-shadow); transition:all .3s;
   }
-  .outcome-card:hover { border-color:rgba(244,146,11,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(244,146,11,0.14); }
+  .outcome-card:hover { border-color:rgba(255,102,0,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(255,102,0,0.14); }
   .outcome-card-icon { font-size:32px; margin-bottom:12px; }
   .outcome-card h3 { font-size:15px; font-weight:700; color:var(--navy); }
 
@@ -567,7 +567,7 @@
   </div>
 </nav>
 <!-- MOBILE NAV PANEL -->
-<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#fff;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(22,62,100,0.12);border-bottom:3px solid #F4920B;">
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#fff;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(22,62,100,0.12);border-bottom:3px solid #FF6600;">
   <a href="platform.html">Platform</a>
   <a href="how-it-works.html">How It Works</a>
   <a href="applications.html">Applications</a>
@@ -577,7 +577,7 @@
   <a href="investors.html">Investor &amp; Partner Centre</a>
   <a href="partners.html">Partner Centre</a>
   <a href="trust.html">Trust Centre</a>
-  <a href="engage.html" style="color:#F4920B;font-weight:700;">Engage</a>
+  <a href="engage.html" style="color:#FF6600;font-weight:700;">Engage</a>
 </div>
 
 <!-- HERO -->
@@ -906,7 +906,7 @@
 <section id="comparison">
   <div class="container">
     <div style="text-align:center;margin-bottom:8px;">
-      <div class="section-tag" style="background:rgba(244,146,11,0.15);border-color:rgba(244,146,11,0.3);color:var(--sun-bright);">How TwoSuns Compares</div>
+      <div class="section-tag" style="background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.3);color:var(--sun-bright);">How TwoSuns Compares</div>
       <h2 class="section-heading" style="color:white;text-align:center;">How TwoSuns Compares</h2>
       <p class="section-sub" style="color:rgba(255,255,255,0.7);margin:0 auto;text-align:center;">Modern enterprise stacks are built around data and transactions. TwoSuns introduces the missing layer: decisions.</p>
     </div>
@@ -985,7 +985,7 @@
         <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;">Traditional Stack</div>
         <p style="color:rgba(255,255,255,0.8);font-size:15px;line-height:1.7;">Data → Reports → Interpretation → Decision</p>
       </div>
-      <div style="background:rgba(244,146,11,0.1);border-radius:14px;padding:28px;border:1px solid rgba(244,146,11,0.25);">
+      <div style="background:rgba(255,102,0,0.1);border-radius:14px;padding:28px;border:1px solid rgba(255,102,0,0.25);">
         <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:12px;">TwoSuns</div>
         <p style="color:rgba(255,255,255,0.9);font-size:15px;line-height:1.7;">Data → Signals → Structured Decisions → Execution Readiness → Record</p>
       </div>
@@ -1036,15 +1036,15 @@
 
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1080px;margin:0 auto 32px;">
       <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(244,146,11,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4920B" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,102,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Customer & Buyer</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How decisions appear from the buying side</p>
       </div>
       <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(244,146,11,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4920B" stroke-width="2" stroke-linecap="round"><path d="M2 12h6l3-9 4 18 3-9h4"/></svg>
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,102,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><path d="M2 12h6l3-9 4 18 3-9h4"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Competitor</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How rivals will read and respond</p>
@@ -1064,15 +1064,15 @@
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How policy and oversight will assess</p>
       </div>
       <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(244,146,11,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4920B" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,102,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Operator</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How execution owners will deliver</p>
       </div>
       <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(244,146,11,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4920B" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,102,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Investor</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How capital allocators will value</p>
@@ -1085,10 +1085,10 @@
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How teams across functions align</p>
       </div>
       <div style="background:linear-gradient(135deg,#163E64,#0f2a4a);border:1px solid var(--navy);border-radius:14px;padding:22px 18px;text-align:center;color:#fff;">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(244,146,11,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4920B" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,102,0,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
         </div>
-        <strong style="font-size:14px;color:#F6B707;display:block;margin-bottom:4px;">+ Switch Anytime</strong>
+        <strong style="font-size:14px;color:#CC9900;display:block;margin-bottom:4px;">+ Switch Anytime</strong>
         <p style="font-size:12px;color:rgba(255,255,255,0.7);margin:0;line-height:1.5;">Test the same decision across all lenses</p>
       </div>
     </div>
@@ -1165,7 +1165,7 @@
   </div>
 </section>
 <style>
-  .memberships-bar { background:#FFFBF0; border-top:1px solid rgba(244,146,11,0.15); border-bottom:1px solid rgba(244,146,11,0.15); padding:28px 0; overflow:hidden; }
+  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(255,102,0,0.15); border-bottom:1px solid rgba(255,102,0,0.15); padding:28px 0; overflow:hidden; }
   .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
   .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#64748B; flex-shrink:0; min-width:140px; }
   .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
@@ -1341,14 +1341,14 @@ function drawP(){
     if(p.x<0||p.x>W) p.vx*=-1;
     if(p.y<0||p.y>H) p.vy*=-1;
     ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(244,146,11,${p.op})`; ctx.fill();
+    ctx.fillStyle=`rgba(255,102,0,${p.op})`; ctx.fill();
   }
   for(let i=0;i<particles.length;i++){
     for(let j=i+1;j<particles.length;j++){
       const a=particles[i],b=particles[j];
       const d=Math.hypot(a.x-b.x,a.y-b.y);
       if(d<120){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
-        ctx.strokeStyle=`rgba(244,146,11,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
+        ctx.strokeStyle=`rgba(255,102,0,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
     }
   }
   requestAnimationFrame(drawP);

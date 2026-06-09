@@ -20,13 +20,13 @@
   <meta name="twitter:image" content="https://twosuns.ai/og-image.jpg">
 <style>
   :root {
-    --sun:#F4920B; --sun-bright:#F6B707; --sun-deep:#E95704; --sun-pale:#FEF3C7;
+    --sun:#FF6600; --sun-bright:#CC9900; --sun-deep:#DB5800; --sun-pale:#FFEDD0;
     --navy:#163E64; --navy-mid:#215F9A;
     --green:#215F9A; --green-light:#F0F4F9;
-    --bg:#FFFBF0; --bg2:#FFF7E6;
+    --bg:#FFF5DD; --bg2:#FFEFCE;
     --text:#3A3A3A; --text-mid:#334155; --text-muted:#64748B;
-    --border:rgba(244,146,11,0.2);
-    --card-shadow:0 4px 24px rgba(244,146,11,0.08),0 1px 4px rgba(0,0,0,0.06);
+    --border:rgba(255,102,0,0.2);
+    --card-shadow:0 4px 24px rgba(255,102,0,0.08),0 1px 4px rgba(0,0,0,0.06);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -42,20 +42,20 @@
   .topbar-inner a:hover{color:#fff;}
 
   /* NAV */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,251,240,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(244,146,11,0.15);box-shadow:0 1px 20px rgba(244,146,11,0.08);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,251,240,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,102,0,0.15);box-shadow:0 1px 20px rgba(255,102,0,0.08);}
   .nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;height:70px;}
   .nav-links{display:flex;align-items:center;gap:28px;margin-left:auto;}
   .nav-links a{font-size:14px;color:var(--text-mid);font-weight:500;transition:color .2s;}
   .nav-links a:hover{color:var(--sun-deep);}
-  .btn-cta{background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#fff;font-weight:700;padding:11px 24px;border-radius:8px;font-size:14px;border:none;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(244,146,11,0.4);display:inline-block;}
-  .btn-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(244,146,11,0.5);}
+  .btn-cta{background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#fff;font-weight:700;padding:11px 24px;border-radius:8px;font-size:14px;border:none;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(255,102,0,0.4);display:inline-block;}
+  .btn-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,102,0,0.5);}
   .dropdown{position:relative;}
   .dropdown-menu{display:none;position:absolute;top:calc(100%+8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--border);border-radius:12px;padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,0.12);min-width:200px;z-index:200;}
   .dropdown:hover .dropdown-menu{display:block;}
   .dropdown-menu a{display:block;padding:10px 20px;font-size:13px;color:var(--text-mid);transition:background .15s,color .15s;}
   .dropdown-menu a:hover{background:var(--sun-pale);color:var(--sun-deep);}
 
-  .section-tag{display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(244,146,11,0.3);color:var(--sun-deep);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px;}
+  .section-tag{display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(255,102,0,0.3);color:var(--sun-deep);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px;}
   .section-tag::before{content:'☀';font-size:12px;}
   .section-heading{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.15;margin-bottom:20px;color:var(--navy);}
   .section-heading span{color:var(--sun-deep);}
@@ -69,9 +69,9 @@
     height:5px;
     background:linear-gradient(90deg,
       transparent 0%,
-      #F4920B 18%,
+      #FF6600 18%,
       #163E64 50%,
-      #F4920B 82%,
+      #FF6600 82%,
       transparent 100%
     );
     position:relative; z-index:2; overflow:visible;
@@ -82,21 +82,21 @@
     filter:blur(6px); opacity:0.5;
     animation:dividerGlow 2.8s ease-in-out infinite;
   }
-  .btn-primary{background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#fff;font-weight:700;padding:14px 32px;border-radius:10px;font-size:15px;display:inline-block;transition:all .2s;box-shadow:0 4px 18px rgba(244,146,11,0.4);}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(244,146,11,0.5);}
+  .btn-primary{background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#fff;font-weight:700;padding:14px 32px;border-radius:10px;font-size:15px;display:inline-block;transition:all .2s;box-shadow:0 4px 18px rgba(255,102,0,0.4);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,102,0,0.5);}
   .btn-outline{border:2px solid var(--navy);color:var(--navy);font-weight:700;padding:13px 30px;border-radius:10px;font-size:15px;display:inline-block;transition:all .2s;}
   .btn-outline:hover{background:var(--navy);color:#fff;}
 
   /* HERO */
   .ir-hero{padding:160px 0 100px;background:linear-gradient(160deg,#3A3A3A 0%,#163E64 55%,#215F9A 100%);position:relative;overflow:hidden;}
-  .ir-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(244,146,11,0.12),transparent 70%);}
+  .ir-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(255,102,0,0.12),transparent 70%);}
   .ir-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
   .ir-hero h1{font-size:clamp(32px,4.5vw,56px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.5px;margin-bottom:20px;}
   .ir-hero h1 span{color:var(--sun);}
   .ir-hero p{font-size:16px;color:rgba(255,255,255,0.75);line-height:1.75;margin-bottom:36px;max-width:520px;}
   .ir-hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
-  .btn-hero-primary{background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#fff;font-weight:700;padding:15px 32px;border-radius:10px;font-size:15px;display:inline-block;transition:all .2s;box-shadow:0 4px 18px rgba(244,146,11,0.5);}
-  .btn-hero-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(244,146,11,0.6);}
+  .btn-hero-primary{background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#fff;font-weight:700;padding:15px 32px;border-radius:10px;font-size:15px;display:inline-block;transition:all .2s;box-shadow:0 4px 18px rgba(255,102,0,0.5);}
+  .btn-hero-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,102,0,0.6);}
   .btn-hero-outline{border:2px solid rgba(255,255,255,0.35);color:#fff;font-weight:600;padding:14px 28px;border-radius:10px;font-size:15px;display:inline-block;transition:all .2s;}
   .btn-hero-outline:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
 
@@ -107,7 +107,7 @@
   .hero-stat-label{font-size:12px;color:rgba(255,255,255,0.6);margin-top:6px;letter-spacing:.3px;line-height:1.4;}
 
   /* CONFIDENTIAL BADGE */
-  .conf-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(244,146,11,0.15);border:1px solid rgba(244,146,11,0.3);color:var(--sun);font-size:11px;font-weight:700;padding:6px 14px;border-radius:20px;letter-spacing:.5px;margin-bottom:32px;}
+  .conf-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,102,0,0.15);border:1px solid rgba(255,102,0,0.3);color:var(--sun);font-size:11px;font-weight:700;padding:6px 14px;border-radius:20px;letter-spacing:.5px;margin-bottom:32px;}
 
   /* THESIS CARDS */
   .thesis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
@@ -115,7 +115,7 @@
   .thesis-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
   .thesis-card.tc-navy::before{background:linear-gradient(90deg,var(--navy),var(--navy-mid));}
   .thesis-card.tc-amber::before{background:linear-gradient(90deg,var(--sun-deep),var(--sun));}
-  .thesis-card.tc-green::before{background:linear-gradient(90deg,var(--green),#F4920B);}
+  .thesis-card.tc-green::before{background:linear-gradient(90deg,var(--green),#FF6600);}
   .thesis-icon{font-size:0;margin-bottom:16px;}
   .thesis-card h3{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;}
   .thesis-card p{font-size:14px;color:var(--text-muted);line-height:1.7;}
@@ -154,7 +154,7 @@
   .fund-track{height:10px;background:var(--sun-pale);border-radius:8px;overflow:hidden;}
   .fund-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--navy),var(--navy-mid));}
   .fund-fill.f-amber{background:linear-gradient(90deg,var(--sun-deep),var(--sun));}
-  .fund-fill.f-green{background:linear-gradient(90deg,var(--green),#F4920B);}
+  .fund-fill.f-green{background:linear-gradient(90deg,var(--green),#FF6600);}
   .fund-fill.f-light{background:linear-gradient(90deg,#64748b,#94a3b8);}
   .fund-highlights{display:flex;flex-direction:column;gap:16px;}
   .fund-hl{display:flex;gap:14px;align-items:flex-start;}
@@ -163,7 +163,7 @@
 
   /* CTA */
   .ir-cta{background:linear-gradient(135deg,var(--navy) 0%,#215F9A 100%);padding:88px 0;text-align:center;position:relative;overflow:hidden;}
-  .ir-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(244,146,11,0.12),transparent 70%);}
+  .ir-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(255,102,0,0.12),transparent 70%);}
   .ir-cta h2{font-size:clamp(28px,3.5vw,44px);font-weight:900;color:#fff;margin-bottom:16px;}
   .ir-cta h2 span{color:var(--sun);}
   .ir-cta p{color:rgba(255,255,255,0.72);font-size:16px;margin-bottom:40px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.75;}
@@ -213,8 +213,8 @@
   .footer-url{font-size:10px;color:rgba(255,255,255,0.28);letter-spacing:.8px;text-transform:uppercase;}
 
   /* CHAT WIDGET */
-  #nxs-chat-bubble{position:fixed;bottom:32px;right:32px;z-index:999;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--sun),var(--sun-deep));border:none;cursor:pointer;box-shadow:0 6px 24px rgba(244,146,11,0.5);display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;}
-  #nxs-chat-bubble:hover{transform:scale(1.08);box-shadow:0 10px 32px rgba(244,146,11,0.6);}
+  #nxs-chat-bubble{position:fixed;bottom:32px;right:32px;z-index:999;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--sun),var(--sun-deep));border:none;cursor:pointer;box-shadow:0 6px 24px rgba(255,102,0,0.5);display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;}
+  #nxs-chat-bubble:hover{transform:scale(1.08);box-shadow:0 10px 32px rgba(255,102,0,0.6);}
   #nxs-chat-bubble svg{width:26px;height:26px;fill:#fff;}
   .nxs-notif{position:absolute;top:2px;right:2px;width:14px;height:14px;background:#ef4444;border-radius:50%;border:2px solid #fff;display:none;animation:pulse 1.5s infinite;}
   @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.2);}}
@@ -237,7 +237,7 @@
   .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
   .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
   .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(244,146,11,0.12);font-size:15px;font-weight:500;color:#334155;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,102,0,0.12);font-size:15px;font-weight:500;color:#334155;text-decoration:none;transition:color .2s;}
   #nxs-mob-nav a:hover{color:var(--sun-deep);}
   #nxs-mob-nav a:last-child{border-bottom:none;}
   @media(max-width:960px){
@@ -359,9 +359,9 @@
   .nav-dropdown:hover > a::after { transform:rotate(180deg); }
   .nav-dropdown-menu {
     position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-6px);
-    background:white; border:1px solid rgba(244,146,11,0.2);
+    background:white; border:1px solid rgba(255,102,0,0.2);
     border-radius:12px; padding:6px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(244,146,11,0.08);
+    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(255,102,0,0.08);
     min-width:160px; opacity:0; visibility:hidden;
     transition:opacity .2s, transform .2s, visibility .2s;
     z-index:200;
@@ -375,7 +375,7 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
-  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(244,146,11,0.1); margin:4px 8px; }
+  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(255,102,0,0.1); margin:4px 8px; }
   .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
   .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
   .footer-legal a:last-child { border-right:none; }
@@ -455,7 +455,7 @@
     </div>
 </nav>
 <!-- ══ MOBILE NAV PANEL ══ -->
-<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#fff;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(22,62,100,0.12);border-bottom:3px solid #F4920B;">
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#fff;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(22,62,100,0.12);border-bottom:3px solid #FF6600;">
   <a href="platform.html">Platform</a>
   <a href="how-it-works.html">How It Works</a>
   <a href="applications.html">Applications</a>
@@ -465,7 +465,7 @@
   <a href="investors.html">Investor &amp; Partner Centre</a>
   <a href="partners.html">Partner Centre</a>
   <a href="trust.html">Trust Centre</a>
-  <a href="engage.html" style="color:#F4920B;font-weight:700;">Engage</a>
+  <a href="engage.html" style="color:#FF6600;font-weight:700;">Engage</a>
 </div>
 
 <!-- HERO -->
@@ -508,23 +508,23 @@
 <section style="background:#0D1B3E;padding:48px 0;">
   <div style="max-width:1200px;margin:0 auto;padding:0 32px;display:flex;gap:60px;justify-content:center;flex-wrap:wrap;">
     <div style="text-align:center;">
-      <div style="font-size:36px;font-weight:900;color:#F4920B;line-height:1;">2025</div>
+      <div style="font-size:36px;font-weight:900;color:#FF6600;line-height:1;">2025</div>
       <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.5px;">TwoSuns Founded</div>
     </div>
     <div style="text-align:center;">
-      <div style="font-size:36px;font-weight:900;color:#F4920B;line-height:1;">1995</div>
+      <div style="font-size:36px;font-weight:900;color:#FF6600;line-height:1;">1995</div>
       <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.5px;">Founder's Enterprise Roots</div>
     </div>
     <div style="text-align:center;">
-      <div style="font-size:36px;font-weight:900;color:#F4920B;line-height:1;">$25B+</div>
+      <div style="font-size:36px;font-weight:900;color:#FF6600;line-height:1;">$25B+</div>
       <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.5px;">Global TAM (AI Analytics)</div>
     </div>
     <div style="text-align:center;">
-      <div style="font-size:36px;font-weight:900;color:#F4920B;line-height:1;">6</div>
+      <div style="font-size:36px;font-weight:900;color:#FF6600;line-height:1;">6</div>
       <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.5px;">AI-Driven Modules</div>
     </div>
     <div style="text-align:center;">
-      <div style="font-size:36px;font-weight:900;color:#F4920B;line-height:1;">4</div>
+      <div style="font-size:36px;font-weight:900;color:#FF6600;line-height:1;">4</div>
       <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.5px;">Regions of Focus</div>
     </div>
   </div>
@@ -544,8 +544,8 @@
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1080px;margin:0 auto;">
       <div style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--card-shadow);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-          <div style="width:44px;height:44px;border-radius:10px;background:rgba(244,146,11,0.12);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4920B" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+          <div style="width:44px;height:44px;border-radius:10px;background:rgba(255,102,0,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
           </div>
           <strong style="font-size:17px;color:var(--navy);">Market Access</strong>
         </div>
@@ -562,8 +562,8 @@
       </div>
       <div style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--card-shadow);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-          <div style="width:44px;height:44px;border-radius:10px;background:rgba(244,146,11,0.12);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4920B" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <div style="width:44px;height:44px;border-radius:10px;background:rgba(255,102,0,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <strong style="font-size:17px;color:var(--navy);">Distribution Capability</strong>
         </div>
@@ -596,22 +596,22 @@
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;">
 
       <div style="background:linear-gradient(135deg,#163E64,#0f2a4a);border-radius:18px;padding:32px 30px;color:#fff;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(244,146,11,0.15) 0%,transparent 70%);"></div>
+        <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(255,102,0,0.15) 0%,transparent 70%);"></div>
         <div style="position:relative;z-index:2;">
-          <div style="display:inline-block;background:rgba(244,146,11,0.15);border:1px solid rgba(244,146,11,0.3);color:#F6B707;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">01 Strategic Investment</div>
+          <div style="display:inline-block;background:rgba(255,102,0,0.15);border:1px solid rgba(255,102,0,0.3);color:#CC9900;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">01 Strategic Investment</div>
           <h3 style="font-size:22px;font-weight:800;color:#fff;margin-bottom:12px;">Strategic Investment</h3>
           <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.75;margin-bottom:18px;">Support platform development and market expansion while participating in long-term value creation.</p>
           <ul style="list-style:none;padding:0;margin:0;">
-            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#F4920B;">›</span> Aligned capital deployment</li>
-            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#F4920B;">›</span> Access to platform evolution and roadmap</li>
-            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#F4920B;">›</span> Participation in strategic direction and growth</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#FF6600;">›</span> Aligned capital deployment</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#FF6600;">›</span> Access to platform evolution and roadmap</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#FF6600;">›</span> Participation in strategic direction and growth</li>
           </ul>
         </div>
       </div>
 
       <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:32px 30px;box-shadow:var(--card-shadow);position:relative;overflow:hidden;">
         <div style="position:relative;z-index:2;">
-          <div style="display:inline-block;background:var(--sun-pale);border:1px solid rgba(244,146,11,0.3);color:var(--sun-deep);font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">02 Partner-Led</div>
+          <div style="display:inline-block;background:var(--sun-pale);border:1px solid rgba(255,102,0,0.3);color:var(--sun-deep);font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">02 Partner-Led</div>
           <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;">Partner-Led Engagement</h3>
           <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:18px;">Introduce TwoSuns into relevant client environments and participate in delivery and expansion.</p>
           <ul style="list-style:none;padding:0;margin:0;">
@@ -624,7 +624,7 @@
 
       <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:32px 30px;box-shadow:var(--card-shadow);position:relative;overflow:hidden;">
         <div style="position:relative;z-index:2;">
-          <div style="display:inline-block;background:var(--sun-pale);border:1px solid rgba(244,146,11,0.3);color:var(--sun-deep);font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">03 Embedded</div>
+          <div style="display:inline-block;background:var(--sun-pale);border:1px solid rgba(255,102,0,0.3);color:var(--sun-deep);font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">03 Embedded</div>
           <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;">Embedded Partnership</h3>
           <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:18px;">Integrate TwoSuns into existing offerings, services, or platforms.</p>
           <ul style="list-style:none;padding:0;margin:0;">
@@ -636,15 +636,15 @@
       </div>
 
       <div style="background:linear-gradient(135deg,#163E64,#0f2a4a);border-radius:18px;padding:32px 30px;color:#fff;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(244,146,11,0.15) 0%,transparent 70%);"></div>
+        <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(255,102,0,0.15) 0%,transparent 70%);"></div>
         <div style="position:relative;z-index:2;">
-          <div style="display:inline-block;background:rgba(244,146,11,0.15);border:1px solid rgba(244,146,11,0.3);color:#F6B707;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">04 Joint Development</div>
+          <div style="display:inline-block;background:rgba(255,102,0,0.15);border:1px solid rgba(255,102,0,0.3);color:#CC9900;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">04 Joint Development</div>
           <h3 style="font-size:22px;font-weight:800;color:#fff;margin-bottom:12px;">Joint Development</h3>
           <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.75;margin-bottom:18px;">Collaborate on Decision Packs and use cases aligned to specific industries or environments.</p>
           <ul style="list-style:none;padding:0;margin:0;">
-            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#F4920B;">›</span> Co-develop workflows and applications</li>
-            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#F4920B;">›</span> Align to partner client needs</li>
-            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#F4920B;">›</span> Contribute to platform evolution</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#FF6600;">›</span> Co-develop workflows and applications</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#FF6600;">›</span> Align to partner client needs</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;display:flex;gap:10px;"><span style="color:#FF6600;">›</span> Contribute to platform evolution</li>
           </ul>
         </div>
       </div>
@@ -670,7 +670,7 @@
         </filter>
         <radialGradient id="ic2_a" cx="42%" cy="36%" r="58%">
           <stop offset="0%" stop-color="#fde68a"/>
-          <stop offset="50%" stop-color="#E95704"/>
+          <stop offset="50%" stop-color="#DB5800"/>
           <stop offset="100%" stop-color="#7A2A00"/>
         </radialGradient>
         <radialGradient id="ic2_b" cx="38%" cy="30%" r="36%">
@@ -681,12 +681,12 @@
       </defs>
       <!-- Concentric rings -->
       <circle cx="50" cy="50" r="48" fill="none" stroke="#fde68a" stroke-width="1.5" opacity="0.5"/>
-      <circle cx="50" cy="50" r="41" fill="none" stroke="#F6B707" stroke-width="2" opacity="0.62"/>
-      <circle cx="50" cy="50" r="34" fill="none" stroke="#F4920B" stroke-width="2.5" opacity="0.72"/>
+      <circle cx="50" cy="50" r="41" fill="none" stroke="#CC9900" stroke-width="2" opacity="0.62"/>
+      <circle cx="50" cy="50" r="34" fill="none" stroke="#FF6600" stroke-width="2.5" opacity="0.72"/>
       <!-- Inner sphere -->
       <circle cx="50" cy="50" r="26" fill="url(#ic2_a)" filter="url(#ic2_sh)"/>
       <!-- Globe grid on inner sphere -->
-      <g clip-path="url(#ic2_cp)" fill="none" stroke="#fef3c7" stroke-width="0.8" opacity="0.42">
+      <g clip-path="url(#ic2_cp)" fill="none" stroke="#FFEDD0" stroke-width="0.8" opacity="0.42">
         <ellipse cx="50" cy="50" rx="26" ry="7"/>
         <ellipse cx="50" cy="42" rx="20" ry="5"/>
         <ellipse cx="50" cy="58" rx="20" ry="5"/>
@@ -697,7 +697,7 @@
       <g clip-path="url(#ic2_cp)">
         <line x1="50" y1="50" x2="68" y2="32" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.88"/>
         <circle cx="50" cy="50" r="2" fill="white" opacity="0.7"/>
-        <circle cx="68" cy="32" r="3" fill="#F4920B" opacity="1"/>
+        <circle cx="68" cy="32" r="3" fill="#FF6600" opacity="1"/>
       </g>
       <!-- Highlight -->
       <ellipse cx="41" cy="37" rx="9" ry="6" fill="url(#ic2_b)"/>
@@ -735,9 +735,9 @@
         <ellipse cx="50" cy="50" rx="28" ry="38"/>
       </g>
       <!-- Green trend line -->
-      <g clip-path="url(#ic1_cp)" fill="none" stroke="#F4920B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+      <g clip-path="url(#ic1_cp)" fill="none" stroke="#FF6600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
         <polyline points="18,72 28,65 38,68 48,58 58,52 68,46 78,38"/>
-        <circle cx="78" cy="38" r="3" fill="#F4920B" stroke="none"/>
+        <circle cx="78" cy="38" r="3" fill="#FF6600" stroke="none"/>
       </g>
       <!-- AI neural network circuit dots on sphere surface -->
       <g clip-path="url(#ic1_cp)">
@@ -762,8 +762,8 @@
         </filter>
         <radialGradient id="ic11_a" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stop-color="#fef9c3"/>
-          <stop offset="38%" stop-color="#F6B707"/>
-          <stop offset="100%" stop-color="#E95704"/>
+          <stop offset="38%" stop-color="#CC9900"/>
+          <stop offset="100%" stop-color="#DB5800"/>
         </radialGradient>
         <radialGradient id="ic11_b" cx="38%" cy="28%" r="36%">
           <stop offset="0%" stop-color="rgba(255,255,255,0.92)"/>
@@ -772,7 +772,7 @@
         <clipPath id="ic11_cp"><circle cx="50" cy="50" r="23"/></clipPath>
       </defs>
       <!-- 8 pointed rays -->
-      <g fill="#F4920B" opacity="0.65">
+      <g fill="#FF6600" opacity="0.65">
         <polygon points="50,4 53,36 50,40 47,36"/>
         <polygon points="96,50 64,53 60,50 64,47"/>
         <polygon points="50,96 47,64 50,60 53,64"/>
@@ -807,8 +807,8 @@
       </g>
       <!-- Small amber exclamation spike -->
       <g clip-path="url(#ic11_cp)">
-        <line x1="50" y1="60" x2="50" y2="65" stroke="#F4920B" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="50" cy="67" r="1.5" fill="#F4920B"/>
+        <line x1="50" y1="60" x2="50" y2="65" stroke="#FF6600" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="50" cy="67" r="1.5" fill="#FF6600"/>
       </g>
       <ellipse cx="41" cy="39" rx="9" ry="6" fill="url(#ic11_b)"/>
     </svg></div>
@@ -984,7 +984,7 @@
 <!-- WHAT TWOSUNS OWNS -->
 <section class="section" style="background:linear-gradient(135deg,#3A3A3A 0%,#163E64 100%);">
   <div class="container">
-    <div class="section-tag" style="background:rgba(244,146,11,0.15);border-color:rgba(244,146,11,0.3);color:var(--sun);">Competitive Position</div>
+    <div class="section-tag" style="background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.3);color:var(--sun);">Competitive Position</div>
     <h2 class="section-heading" style="color:#fff;">What <span>TwoSuns</span> Owns</h2>
     <p class="section-sub" style="color:rgba(255,255,255,0.7);max-width:680px;">Three defensible positions that are difficult to replicate and increasingly valuable as complexity grows.</p>
 
@@ -1002,7 +1002,7 @@
         <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.75;">The interpretation of unstructured market data.</p>
       </div>
 
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:36px 28px;border-top:4px solid #F4920B;">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:36px 28px;border-top:4px solid #FF6600;">
         <div style="font-size:36px;margin-bottom:20px;">📋</div>
         <h3 style="font-size:18px;font-weight:800;color:#fff;margin-bottom:12px;">The System of Record for Decisions</h3>
         <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.75;">The system of record for decisions.</p>
@@ -1115,7 +1115,7 @@
   </div>
 </section>
 <style>
-  .memberships-bar { background:#FFFBF0; border-top:1px solid rgba(244,146,11,0.15); border-bottom:1px solid rgba(244,146,11,0.15); padding:28px 0; overflow:hidden; }
+  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(255,102,0,0.15); border-bottom:1px solid rgba(255,102,0,0.15); padding:28px 0; overflow:hidden; }
   .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
   .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#64748B; flex-shrink:0; min-width:140px; }
   .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
