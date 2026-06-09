@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns Hero — Version Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0C1730;color:#E8EEF7;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding:0 0 80px}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+  header{padding:64px 0 36px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:44px}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#F6B707;margin-bottom:18px}
+  .kicker i{width:9px;height:9px;border-radius:50%;background:#F6B707;display:block}
+  .kicker i:last-child{background:#FF6A1F;margin-left:-3px}
+  h1{font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:14px}
+  header p{color:#9DB0CC;font-size:16px;line-height:1.7;max-width:680px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .tag{font-size:11px;font-weight:700;letter-spacing:.4px;padding:5px 11px;border-radius:30px;border:1px solid transparent}
+  .t-live{background:rgba(34,197,94,.14);color:#7CE2A6;border-color:rgba(34,197,94,.3)}
+  .t-fav{background:rgba(246,183,7,.16);color:#FFD56B;border-color:rgba(246,183,7,.4)}
+  .t-exp{background:rgba(147,197,253,.12);color:#A9CBF5;border-color:rgba(147,197,253,.28)}
+  .t-set{background:rgba(255,255,255,.06);color:#9DB0CC;border-color:rgba(255,255,255,.14)}
+  .t-ref{background:rgba(255,255,255,.05);color:#8595B0;border-color:rgba(255,255,255,.1)}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+  .card{background:#111E3A;border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+  .card:hover{transform:translateY(-3px);border-color:rgba(246,183,7,.35)}
+  .card.fav{border-color:rgba(246,183,7,.55);box-shadow:0 0 0 1px rgba(246,183,7,.25),0 20px 50px rgba(0,0,0,.35)}
+  .shot{position:relative;aspect-ratio:1280/780;background:#0a1124;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .vnum{position:absolute;top:12px;left:12px;background:rgba(12,23,48,.82);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.14);color:#fff;font-size:12px;font-weight:800;letter-spacing:.5px;padding:5px 11px;border-radius:30px;z-index:2}
+  .body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .name{font-size:17px;font-weight:700;color:#fff}
+  .desc{font-size:13.5px;color:#9DB0CC;line-height:1.6;flex:1}
+  .actions{display:flex;gap:10px;margin-top:4px}
+  .open{font-size:12.5px;font-weight:700;color:#0C1730;background:#F6B707;padding:8px 15px;border-radius:8px;text-decoration:none;transition:background .2s}
+  .open:hover{background:#FFD56B}
+  .noopen{font-size:12.5px;font-weight:600;color:#6B7C99;padding:8px 0}
+  footer{margin-top:50px;padding-top:26px;border-top:1px solid rgba(255,255,255,.08);color:#7889A6;font-size:13px;line-height:1.7}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <header><div class="wrap">
+    <div class="kicker"><span style="display:inline-flex"><i></i><i></i></span> TwoSuns · Hero Exploration</div>
+    <h1>Hero Section — Version Gallery</h1>
+    <p>Every direction we explored for the homepage hero, from the original Nexsun sun through eight TwoSuns iterations. Click <b style="color:#FFD56B">Open live</b> on any version that still has an interactive file.</p>
+    <div class="legend">
+      <span class="tag t-live">● Currently live</span>
+      <span class="tag t-fav">★ Favorite</span>
+      <span class="tag t-exp">Explored</span>
+      <span class="tag t-set">Set aside</span>
+      <span class="tag t-ref">Reference</span>
+    </div>
+  </div></header>
+
+  <div class="wrap"><div class="grid">
+
+    <!-- v0 -->
+    <div class="card">
+      <div class="shot"><span class="vnum">ORIGINAL · Nexsun</span><img src="hero-gallery/v0-original.png" alt="Original Nexsun hero"></div>
+      <div class="body">
+        <div class="row"><span class="name">Nexsun, single sun</span><span class="tag t-ref">Reference</span></div>
+        <p class="desc">The pre-rebrand starting point. One gold sun, "Powering Decisions," Decision Intelligence framing. The single-sun look that read as a real sun.</p>
+        <div class="actions"><span class="noopen">Snapshot only</span></div>
+      </div>
+    </div>
+
+    <!-- v1 -->
+    <div class="card">
+      <div class="shot"><span class="vnum">V1</span><img src="hero-gallery/v1.png" alt="v1 two CSS suns"></div>
+      <div class="body">
+        <div class="row"><span class="name">Two suns, CSS</span><span class="tag t-live">● Live</span></div>
+        <p class="desc">Two flat gradient suns, rotating rays, emoji pillar tags. The version on the site right now.</p>
+        <div class="actions"><a class="open" href="two-suns-hero.html" target="_blank">Open live ↗</a></div>
+      </div>
+    </div>
+
+    <!-- v2 -->
+    <div class="card">
+      <div class="shot"><span class="vnum">V2</span><img src="hero-gallery/v2.png" alt="v2 craft pass"></div>
+      <div class="body">
+        <div class="row"><span class="name">Craft pass</span><span class="tag t-exp">Explored</span></div>
+        <p class="desc">Fraunces display serif, custom line-icons (no emoji), film grain, motion cut to one slow drift.</p>
+        <div class="actions"><a class="open" href="two-suns-hero-v2.html" target="_blank">Open live ↗</a></div>
+      </div>
+    </div>
+
+    <!-- v3 -->
+    <div class="card">
+      <div class="shot"><span class="vnum">V3</span><img src="hero-gallery/v3.png" alt="v3 premium CSS suns"></div>
+      <div class="body">
+        <div class="row"><span class="name">Premium CSS suns</span><span class="tag t-set">Set aside</span></div>
+        <p class="desc">Limb-darkening, specular highlight, surface granulation, contact shadow. Better, but still read as polished CSS spheres.</p>
+        <div class="actions"><span class="noopen">Snapshot only</span></div>
+      </div>
+    </div>
+
+    <!-- v4 -->
+    <div class="card">
+      <div class="shot"><span class="vnum">V4</span><img src="hero-gallery/v4.png" alt="v4 real NASA two suns"></div>
+      <div class="body">
+        <div class="row"><span class="name">Real NASA suns (two)</span><span class="tag t-set">Set aside</span></div>
+        <p class="desc">Two actual NASA solar photographs, gold (171) + orange (304). Truly real, but two real suns read as sci-fi.</p>
+        <div class="actions"><span class="noopen">Snapshot only</span></div>
+      </div>
+    </div>
+
+    <!-- v5 -->
+    <div class="card">
+      <div class="shot"><span class="vnum">V5</span><img src="hero-gallery/v5.png" alt="v5 single real NASA sun"></div>
+      <div class="body">
+        <div class="row"><span class="name">Real NASA sun (one)</span><span class="tag t-set">Set aside</span></div>
+        <p class="desc">A single real sun photo, more believable than two, but loses the "TwoSuns" cue in the hero.</p>
+        <div class="actions"><span class="noopen">Snapshot only</span></div>
+      </div>
+    </div>
+
+    <!-- v6 -->
+    <div class="card">
+      <div class="shot"><span class="vnum">V6</span><img src="hero-gallery/v6.png" alt="v6 dissolving sunburst"></div>
+      <div class="body">
+        <div class="row"><span class="name">Dissolving sunburst</span><span class="tag t-exp">Explored</span></div>
+        <p class="desc">Each sun throws a fine sunburst that dissolves outward, like the old Nexsun rays, but doubled it felt busy.</p>
+        <div class="actions"><a class="open" href="two-suns-hero-v6.html" target="_blank">Open live ↗</a></div>
+      </div>
+    </div>
+
+    <!-- v7 -->
+    <div class="card fav">
+      <div class="shot"><span class="vnum">V7 ★</span><img src="hero-gallery/v7.png" alt="v7 binary orchestration system"></div>
+      <div class="body">
+        <div class="row"><span class="name">Binary orchestration system</span><span class="tag t-fav">★ Favorite</span></div>
+        <p class="desc">Soft-edged suns that merge with a light bloom, wrapped by a tilted orbit with traveling light nodes. Two suns held in orchestration, no hard circles.</p>
+        <div class="actions"><a class="open" href="two-suns-hero-v7.html" target="_blank">Open live ↗</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer><div>Live site hero is currently <b style="color:#A9CBF5">V1</b>. Favorite is <b style="color:#FFD56B">V7</b>. Say the word to ship any version to the homepage. · Gallery generated 2026-06-05.</div></footer>
+  </div>
+</body>
+</html>
