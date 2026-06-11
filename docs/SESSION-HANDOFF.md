@@ -1,186 +1,116 @@
 # TwoSuns Session Handoff
 
-**Read this first when picking up the project in a new Claude session.**
+**Read this first when picking up the project in a new chat.** Last updated end of a long working session (2026-06-06).
 
-Last updated: 2026-06-03. Live site at https://nexsun.ai (custom domain) and https://figmasharedacc7-arch.github.io/nexsun-website/ (GitHub Pages).
+**To start the new chat, paste:**
+> Read `/Users/mohammaddidarulalam/Documents/Claude/nexsun/docs/SESSION-HANDOFF.md` then wait for my instruction.
 
----
-
-## 1. What TwoSuns is right now
-
-**Brand:** TwoSuns (formerly Nexsun.ai, rebranded April 30, 2026)
-
-**Current positioning (per Branding & Positioning TwoSuns doc, June 2026):**
-- Tagline: **"Structure. Control. Clarity."**
-- Headline: **"Orchestrate Better. Execute Faster."**
-- Positioning: **AI-native operational intelligence layer for complex industrial organizations**
-- Target verticals: **Cement, Mining, Manufacturing, Logistics, Infrastructure, Resource industries**
-- ICP: Mid-market and enterprise (250 to 10,000 employees), complex operational environments
-- Mission: "TwoSuns empowers complex industries to make smarter, faster, and more responsible decisions by connecting people, operations, and intelligence into coordinated execution environments that drive productivity, innovation, and sustainable economic growth."
-
-**Platform structure (Core / Horizon / Forge / Assistant):**
-- **Core** — Continuity layer (persistent organizational memory, governance, the Assistant)
-- **Horizon** — Market and revenue execution (GTM, RevOps, pipeline, commercial workflows)
-- **Forge** — Operations and execution (supply chain, procurement, infrastructure planning, operational diagnostics)
-- **Assistant** — AI-enhanced coordination companion (preserves continuity and organizational awareness)
-
-## 2. Workspace topology
-
-Working dir: `/Users/mohammaddidarulalam/Documents/Claude/nexsun/`
-
-| Path | Purpose |
-|---|---|
-| `nexsun/` (this folder) | Live site, deploys to nexsun.ai via GitHub Pages |
-| `nexsun-backup-pre-twosuns-2026-04-30/` | Snapshot before the rebrand. Reference only |
-| `nexsun-backup-pre-aiman-edits/` | Older backup. Reference only |
-| `nexsun-backup-pre-rebrand-2026-04-24/` | Older backup. Reference only |
-| `omnigtm-clone/`, `omnigtm-mirror/` | Sibling projects, not the TwoSuns site |
-
-**Git:** `figmasharedacc7-arch/nexsun-website` on GitHub. Main branch deploys automatically to GitHub Pages.
-
-## 3. Team
-
-- **Aiman El-Ramly** — Founder & CEO. Drives content + messaging direction.
-- **Belén Welch-Almeida** — Chief Growth Officer (commercial strategy, market positioning).
-- **Ryan Arian** — Chief Digital Product Officer (product architecture, AI systems).
-- **Michelle Mollineaux** — Director, Marketing & Partnerships.
-- **Raihaan** — Google Cloud account holder (raihaan@aepg.ca).
-
-## 4. Brand kit (Logos 4 — official kit, June 1, 2026)
-
-All in `nexsun/logos-v4/` (kebab-case names, SVG + PNG, regular + white variants):
-- `twosuns-logo` — master wordmark + dual-sun mark
-- `assistant-logo` — Assistant module lockup
-- `core-logo` — Core module lockup
-- `horizon-logo` — Horizon module lockup
-- `forge-logo` — Forge module lockup
-
-**Site-wide logo files at nexsun/ root all use the official TwoSuns wordmark:**
-- `logo-horizontal.svg` (nav across 93 pages), `logo-color.svg`, `logo-black.svg`, `logo-white.svg`, `logo-registered.svg`, `logo-horizontal-white.svg`, `twosuns-logo-horizontal.svg`
-- `logo-mini.svg` — favicon (custom two-sun mark using kit's official colors and gradient style)
-
-**Important:** all wordmark SVGs have a viewBox extended to include 35-40 units of padding on all sides (to prevent the gold sun mark or 's' letter from clipping). Don't revert this. Format: `viewBox="-40 -40 1472 443"` for color, `viewBox="-35 -35 1227 386"` for white.
-
-## 5. Color palette (established)
-
-| Token | Hex | Usage |
-|---|---|---|
-| Sun gold | `#E6C063` → `#D9B252` | Primary sun mark |
-| Sun gold deep | `#B8932E` → `#CC9900` | Deeper amber accents |
-| Sun orange | `#E85D2F` → `#FF6600` | Secondary sun, CTAs |
-| Sun orange deep | `#B33B12` → `#C2410C` | Hover states |
-| Navy | `#163E64` / `#0A2540` | Body text, brand mark |
-| Navy deep | `#0D1B3E` | Dark sections |
-| Cream | `#FAF7F0` → `#FFFBF0` | Light backgrounds |
-| Sky | `#215F9A` | Secondary accent (use sparingly) |
-
-## 6. Hard rules (apply to every edit)
-
-1. **No em dashes anywhere.** Use commas. CEO rule, enforced site-wide.
-2. **Never false-verify.** After editing a file, read it back word-by-word before claiming the change landed.
-3. **Brainstorm mode:** when the user shares a doc, capture and discuss, don't implement until they say go.
-4. **Keep TwoSuns enterprise tone:** institutional, operational, restrained, quietly ambitious. NOT consumer-AI, NOT startup hype.
-5. **Don't touch backup folders** (`nexsun-backup-pre-*`).
-6. **Don't commit** `token_raihaan.json`, `credentials.json`, or `.env` files.
-7. **Short responses by default.** No trailing summaries.
-
-## 7. Major work history
-
-### April 2026 - Initial rebrand
-- Apr 27: Belén bio update from her email markup
-- Apr 28: Initial Nexsun.ai improvements (proofreading, em dash removal, logo refresh)
-- Apr 30: **Full TwoSuns rebrand** from Nexsun.ai (commit cfdd986). All 93 pages, terminology swaps (PIA → TwoSuns Assistant, SoDR → TwoSuns Core, Glassbox → Persistent Coordination), homepage hero rewritten.
-
-### May to June 2026 - Polish + sector pivot
-- May 28: Partner page rewrite + new "Built for Partnership. Designed for Impact." colored-circle lifecycle visualization
-- June 1: Official Logos 4 kit imported, all logo files updated, viewBox padding fixed to prevent clipping
-- June 2: Energy-sector content removal (49 solar SEO pages deleted, 7 energy blog posts deleted, mechanical sweep replacing "energy markets" / "commodity trading" / "LNG" / "TTF" / "Brent" with industrial/enterprise framing)
-- June 3: **Industrial repositioning applied** (commit fdadea2) — homepage hero, industries page, about mission, site-wide titles/meta all updated to the new "Operational Intelligence for Complex Industries" / "Structure. Control. Clarity." positioning from the Branding doc
-
-### Hero design exploration (still in experiments folder, not live)
-Built 11 hero concepts at `nexsun/experiments/concepts/` exploring different directions. None applied to live site, kept as reference:
-1. Cinematic Minimal (Anthropic / Cohere)
-2. Dark Cosmic (Palantir / Arc)
-3. Data Observatory (Scale / Observable)
-4. Flow Architecture (Databricks)
-5. Animated Grid (Vercel / Linear)
-6. Gradient Mastery (Stripe)
-7. Playful Enterprise (Dust)
-8. Coordinating Execution (refined live-hero pattern)
-9. Two-Sun Composition (photoreal spheres + orbital + chips)
-10. Editorial Restraint (response to "stock 3D, cheap motion, template vibe" feedback)
-11. **Industrial Focus** — aligned with new branding doc (most recent, still preview only at `experiments/concepts/11-industrial-focus.html`)
-
-User's quality-bar feedback: **CSS-only hand-built spheres look "stock 3D"** and **SaaS hero patterns (eyebrow pill, chips, breathing gradient bg, dual CTAs) read as templates**. Next direction if iterating: hire a real designer (`docs/Designer-Brief-TwoSuns-Hero.md` ready to send) or use AI image generation (`docs/AI-Image-Prompts-TwoSuns.md` ready to paste into Midjourney/DALL-E).
-
-## 8. Current live site state
-
-**Homepage `index.html`:**
-- Hero: "Orchestrate Better. Execute Faster." / "Structure. Control. Clarity." / industrial framing
-- Positioning section: "Complex Industries Operate in Fragments"
-- Closing statement: "The next industrial leaders won't be defined by who has the most data..."
-- Existing sun-orb visualization with rotating rays + 4 floating chips (Geopolitical Risk, Supply Chain Risk, Cyber Risk, Compliance Review), "COORDINATING Execution" centerpiece
-
-**Industries page `industries.html`:**
-- Hero: "Built for Complex Industrial Operations"
-- 7 sector cards (already restructured to industrial-broad sectors)
-
-**Platform page `platform.html`:**
-- Platform Structure section with Core / Horizon / Forge cards using module logos from logos-v4/
-- Below: existing 6-tab system components (Home, Explore, Position, Rooms, Contracts, Connect)
-- TwoSuns Assistant section
-
-**Partners page `partners.html`:**
-- New Partner Lifecycle section: 6 colored circles (Align purple → Validate blue → Agree teal → Activate amber → Deliver orange → Scale purple) with chevron connectors, dashed outer rings, line-art SVG icons
-- 4 partner categories: Technology, Data & Intelligence, System Integrators & Advisors, Industry & Strategic
-
-**Other pages**: about, applications, how-it-works, engage, modules, technology, why-twosuns, trust, contact, careers, pricing, use-cases, resources, product, book-discovery, 3 solutions pages, blog (4 remaining posts), press, investors, terms, privacy, cookies, 404. All carry the TwoSuns brand. Energy/commodity references largely stripped.
-
-**404 file count:** ~30 main pages + 4 blog posts + experiments/. Solar pages and energy blog posts deleted.
-
-## 9. What's still pending (judgment calls)
-
-1. **Platform.html Core/Horizon/Forge body copy** — could be reframed industrial-specific (cement plant coordination, mining ops, manufacturing workflows)
-2. **Applications.html** — currently uses general "Coordination Owners" framing; could reframe around the 6 named verticals
-3. **Cement-specific landing page** — the branding doc has a deep cement section, could become its own page (cement.html)
-4. **Hero visual** — current sun-orb is fine but the user has questioned its quality. Hero design fundamentally needs a real designer (brief is ready). Holding pattern.
-5. **og-image.jpg** — currently the auto-generated TwoSuns image, could be refreshed with the official kit
-6. **LinkedIn + X handles** — placeholders, accounts don't exist yet
-7. **Domain decision** — site lives at both nexsun.ai (custom) and figmasharedacc7-arch.github.io/nexsun-website/ (GitHub Pages). If acquiring twosuns.ai, plan redirect strategy
-
-## 10. Key reference docs
-
-In `nexsun/docs/`:
-- `TwoSuns-Rebrand-Checklist.md` / `.docx` — Full rebrand task list with status
-- `Designer-Brief-TwoSuns-Hero.md` — Ready-to-send brief for hiring a Figma designer
-- `AI-Image-Prompts-TwoSuns.md` — Midjourney/DALL-E prompts across 9 aesthetic categories
-- `CEO-Website-Edits-Checklist.md` — Aiman's original edits (already applied)
-- `SESSION-HANDOFF.md` — This file
-
-In `~/Downloads/` (user's reference docs):
-- `Two Suns Logo v1.pptx` — Original logo presentation
-- `DRAFT - Branding and Positioning TwoSuns.docx` — **Latest positioning doc (June 2026), drives the current site copy**
-- `TwoSuns Web Content v1.docx` — Earlier content draft
-- `Partner with TwoSuns.docx` — Partnership content (already applied)
-- `Nexsun.ai Website Edits 3.docx` — Aiman's earlier site edits (already applied)
-
-## 11. How to start the next session
-
-The user will paste content from a new doc, ask for a design change, or request a specific fix. Default workflow:
-
-1. **Read this handoff first** to know where things stand
-2. **Verify current state** by reading the relevant file(s), don't assume from memory
-3. **Apply the change locally**, read it back to verify
-4. **Commit with descriptive message** ending with the `Co-Authored-By` line
-5. **Push** so GitHub Pages auto-deploys in 30 to 60 seconds
-6. **Confirm with HTTP 200 check** via curl if the user reports 404 (it's almost always deployment lag, not a real failure)
-
-For brainstorming new content directions, use the `product-management:brainstorm` skill. For polishing specific pages, just apply edits directly.
+**Live site:** https://figmasharedacc7-arch.github.io/nexsun-website/ (custom domain twosuns.ai)
+**Repo:** `figmasharedacc7-arch/nexsun-website`, main auto-deploys to GitHub Pages (30-60s lag; a fresh push 404s briefly, that's normal).
+**Working dir:** `/Users/mohammaddidarulalam/Documents/Claude/nexsun/`
+**Latest commit at handoff:** `d129f85` (Mining industry landing page).
 
 ---
 
-**Live URL:** https://figmasharedacc7-arch.github.io/nexsun-website/
+## 🔴 THE BIG OPEN DECISION (blocks a lot)
 
-**Repo:** https://github.com/figmasharedacc7-arch/nexsun-website
+**Positioning: industrial vs organizations.** The user (Raihaan) confirmed the **industrial** direction is correct ("complex industries", verticals cement/mining/manufacturing/logistics/infrastructure) but is **checking with supervisors before we sweep the site**. Until signed off:
+- The homepage hero says "the orchestration layer for **complex organizations**" (from the Website-edits deck).
+- ~8 pages' titles/metas still say the OLD "coordination infrastructure" / "operational intelligence for complex industries" / "complex enterprises" (inconsistent).
+- **Do NOT run the site-wide titles/metas/positioning sweep until the user confirms.** New industry pages + Trust/Technology already use the industrial framing (safe, agreed).
 
-**Latest commit at handoff time:** `fdadea2` (Apply new branding doc positioning to live site)
+---
+
+## Brand facts (from the branding doc + product guy)
+
+- **Name:** TwoSuns.ai (company/legal), **twosuns** lowercase (product/brand). Two suns = market + operations, gold (intelligence) + orange (execution).
+- **Confirmed taglines (branding doc):** Headline **"Orchestrate Better. Execute Faster."** · Short **"Structure. Control. Clarity."** · Mission: "TwoSuns empowers complex industries to make smarter, faster, and more responsible decisions by connecting people, operations, and intelligence into coordinated execution environments..."
+- **Category line:** "AI-native operational intelligence layer for complex industries" / "system of decision, not system of record."
+- **Product architecture (branding doc):** **Core** (continuity/governance/memory) · **Horizon** (market/GTM/commercial) · **Forge** (operations/supply chain/execution) · **Assistant** (AI coordination companion). NOTE: the live site + videos still use the OLD 5 modules (Explore, Position, Contract, Rooms, Admin). User said **keep the 5 modules for the videos** (match current site). Core/Horizon/Forge is for later.
+- **Sectors:** Cement, Mining, Manufacturing, Transportation & Logistics, Clean Tech, Infrastructure, Resource industries.
+
+### Official color palette (DEPLOYED site-wide this session)
+| Role | Name | HEX | RGB |
+|---|---|---|---|
+| Primary | Bright Orange | #FF6600 | 255,102,0 (CTAs, accents, highlights) |
+| Primary | Gold | #CC9900 | 204,153,0 (gradients, icons) |
+| Primary | Light Beige | #FFF5DD | dominant background |
+| Secondary | Black / Dark Grey / Steel Grey / White | #000000 / #3A3A3A / #747474 / #FFFFFF | text, neutrals (site already uses #3A3A3A text) |
+| Data-viz set | Red #C00000 · Orange #FF9933 · Yellow #FFC000 · Green #336600 · Green-low #4EA72E · Navy #003366 · Blue Sky #4E95D9 | (for charts/diagrams only, never compete with core) |
+
+**Doc errors flagged (fix at source):** Light Beige HEX `#FFF5DD` vs listed RGB `255,251,241` mismatch (deployed #FFF5DD) · Neutral White RGB wrongly listed `38,50,56` · "Red" row HEX printed `#FF6600` but RGB `192,0,0`=#C00000 · doc names a core "Deep Horizon Blue" not in the primary table (likely #003366).
+**Pending palette items:** reconcile site navy `#163E64` vs doc's `#003366` ("Deep Horizon Blue"); the doc specifies **Aptos** type (site uses Segoe UI / Inter), not yet switched.
+
+---
+
+## Hard rules
+1. **No em dashes anywhere.** Use commas. CEO rule.
+2. **No "real time" / "real-time."** Use "continuous" / "continuously."
+3. **Never false-verify.** Read files back / render before claiming a change landed.
+4. **Brainstorm mode:** when given a doc/video, capture and discuss, do not implement until told.
+5. Keep the enterprise/industrial tone: institutional, precise, no hype.
+6. Don't commit token/credential files. Don't touch `nexsun-backup-*` folders.
+7. Short responses by default; commit + push after substantive changes.
+
+## Capabilities that worked this session
+- **Render any page/SVG/docx-logo:** headless Chrome on `file://` (no localhost server, loopback is sandboxed off). `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --screenshot=... file://...` (use `--dangerouslyDisableSandbox` Bash flag for network/fonts).
+- **Watch videos:** download (or local file) + `ffmpeg -vf "fps=1/2,scale,tile=AxB"` frame montages, then Read the montage. (No ffprobe; no tesseract/whisper, so OCR/transcription is manual via reading frames.)
+- **PDF text:** `pdfplumber` (pdftoppm not installed). **docx:** `python-docx` (read + generate).
+- **Google Drive MCP** connected (search_files/list_recent_files); large videos can't stream through it, have user drop files in ~/Downloads instead.
+
+---
+
+## What got done this session (condensed)
+
+**Website-edits.pptx deck applied** (slides 2-11): hero copy, "Organizations Today" section, removed the founder/pedigree (energy) section, Mission line, Opportunity copy, **Why TwoSuns 3→4 cards** (added Human-in-the-Loop Governance), Decision Packs wording, Partners page metadata.
+
+**Hero design saga** (live hero = **V1**, two CSS suns + rays + emoji chips). Explored V2 (serif craft), V3 (premium CSS), V4/V5 (real NASA sun photos, rejected "sci-fi"), V6 (sunburst), V7 (binary orchestration system, soft suns + orbit), V8 (V1 suns + orbit), V9 (V1 suns + rays + orbit), V10 (V7 spaced suns + bloom). **Shareable gallery:** https://figmasharedacc7-arch.github.io/nexsun-website/experiments/hero-showcase.html (V7/V9/V10 are the favorites). All hero experiments in `experiments/two-suns-hero-v*.html`. Live homepage is untouched V1.
+
+**Official palette deployed** site-wide (~2,459 tokens, 37 pages).
+
+**Video scripts** written (demo VO + 5 module clips, TwoSuns rebrand of the old Nexsun demo). Branded **`~/Downloads/TwoSuns-Demo-Video-Script.docx`** generated (two-sun logo + "Demo Video Script"). Current site videos (homepage + 5 on modules.html) are ALL still old Nexsun (Framer-hosted, blue, energy/trading) and need replacing, user is producing these separately.
+
+---
+
+## 🟢 SEO optimization (the ACTIVE thread)
+
+**Term spine (confirmed with product guy):** System of Decision Records, System of Outcomes, Intelligent Ops, Human-in-the-Loop, **Glassbox AI**. Plus trend terms (agentic AI, vertical AI, physical AI, decision intelligence). Full per-page keyword map in **`docs/SEO-keyword-map.md`**.
+
+**Done (committed + live):**
+1. Technical quick wins: robots.txt sitemap → twosuns.ai (was dead nexsun.ai); added missing H1 on modules.html; trimmed technology.html title (73→58); deleted `why-nexsun.html` (duplicate); alt text already 100% (349 imgs).
+2. Keyword map (`docs/SEO-keyword-map.md`).
+3. Homepage structured data fixed (Organization: working logo, both founders Aiman + Ryan, 4 socials in sameAs; + WebSite schema).
+4. **Trust page** optimized for glassbox/explainable/auditable/human-in-the-loop/AI-governance.
+5. **Technology page** optimized for glassbox/explainable AI architecture/System of Decision Records.
+6. **Cement landing page** `cement.html` ("AI operational intelligence for cement"), in sitemap, linked from industries (Infrastructure & Industrial card).
+7. **Mining landing page** `mining.html`, in sitemap, linked from industries (Resource-Intensive card).
+
+**Industry-page recipe (to repeat for manufacturing + logistics):** `cp cement.html X.html` → python-replace head SEO strings + JSON-LD + the body between `<!-- ══ HERO ══ -->` and `<!-- ══ CTA ══ -->` with X content (hero, stats, challenge cards, 6 help cards, role cards, positioning) → add `<url>` to sitemap.xml → add a "Deep dive →" link from the relevant industries.html card. Branding doc has deep content for cement + mining; manufacturing/logistics can follow the same structure.
+
+**SEO next steps:**
+- ▶ Build **manufacturing** + **logistics** landing pages (unblocked, fast, template proven). Industries set = 2 of 4 done.
+- ▶ Optional: FAQ + Breadcrumb schema; make industry pages more discoverable (nav "Industries" dropdown or a sector grid on industries.html, user was asked, not yet decided).
+- ⏸ **Titles/metas sweep** across ~8 pages (index, product, about, careers, investors, pricing, contact, modules) still "coordination infrastructure"/"complex enterprises", BLOCKED on positioning sign-off.
+- ⏸ **User/Raihaan task:** register twosuns.ai in **Google Search Console + Bing**, submit the sitemap (so indexing actually starts). Raihaan holds the Google Cloud account.
+
+---
+
+## Team
+- **Aiman El-Ramly** — Founder & CEO. **Ryan Arian** — co-founder/CDPO. **Belén Welch-Almeida** — CGO. **Michelle Mollineaux** — Marketing/Partnerships. **Alexa Marquez** — sent the palette deploy directive. **Raihaan** (the user, raihaan@aepg.ca) — website + Google Cloud account.
+
+## Key files & reference docs
+- `docs/SEO-keyword-map.md` — per-page keyword map
+- `docs/TwoSuns-Hero-Sun-Render-Kit.md` — render-asset prompts for the hero suns
+- `docs/TwoSuns-Video-Scripts.md` — full video script doc (may be uncommitted)
+- `~/Downloads/TwoSuns-Demo-Video-Script.docx` — branded demo script
+- `~/Downloads/DRAFT - Branding and Positioning TwoSuns.pdf` (40pp) / `.docx` — **the authoritative brand doc** (positioning, palette pp.36-38, Core/Horizon/Forge, cement + mining deep content, ICP, GTM)
+- `~/Downloads/Product Branding Check-List.xlsx - Branding Phase 1.pdf` — the phase-1 task checklist
+- `~/Downloads/Website-edits.pptx` — the homepage edit deck (applied)
+- `experiments/hero-showcase.html` — shareable hero gallery; `experiments/two-suns-hero-v*.html` — hero versions
+
+## Pending decisions to resurface
+1. **Positioning sign-off** (industrial) — unblocks the titles/metas sweep + the homepage hero copy.
+2. **Hero winner** — V1 is live; user likes V7/V9/V10 from the gallery. Ship one when chosen.
+3. **Navy + typography** reconciliation to the brand doc (#003366, Aptos).
+4. **Industry-page discoverability** (nav dropdown vs sector grid).
+5. **Module architecture** long-term (5 modules now vs Core/Horizon/Forge in the doc).
