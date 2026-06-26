@@ -490,10 +490,41 @@
   <div class="container">
     <div class="section-tag">Community</div>
     <h1>The TwoSuns Community</h1>
-    <p>Connect with peers, access exclusive resources, and help shape the future of coordination intelligence. Sign in or create an account to get started.</p>
+    <p style="font-size:19px;color:var(--sun-deep);font-weight:800;margin-bottom:8px;">Get Help. Share Ideas. Learn Together.</p>
+    <p>Welcome to the TwoSuns Community, a dedicated space for industrial leaders, operators, and innovators to connect, collaborate, and accelerate their AI and operational intelligence journey. Whether you are just getting started or scaling enterprise-wide initiatives, you are in good company.</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
       <a href="#register" class="btn-primary">Create an Account</a>
       <a href="#register" class="btn-secondary">Sign In</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY JOIN ══ -->
+<section class="section" style="background:#fff;padding:72px 0;">
+  <div class="container">
+    <div class="section-tag">Why Join the Community</div>
+    <h2 class="section-heading">A space built for <span>industrial innovators</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:34px;">
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:28px;">
+        <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin:0 0 10px;">Connect with Peers</h3>
+        <p style="color:var(--text-muted);font-size:14.5px;line-height:1.7;margin:0;">Engage with operations, technology, and business leaders across mining, manufacturing, cement, logistics, and infrastructure industries. Share experiences, challenges, and best practices.</p>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:28px;">
+        <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin:0 0 10px;">Free Training &amp; Learning</h3>
+        <p style="color:var(--text-muted);font-size:14.5px;line-height:1.7;margin:0;">Access complimentary training sessions, webinars, product tutorials, and educational resources designed to help you get the most from TwoSuns and AI-powered operational intelligence.</p>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:28px;">
+        <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin:0 0 10px;">Share Your Work</h3>
+        <p style="color:var(--text-muted);font-size:14.5px;line-height:1.7;margin:0;">Showcase your use cases, success stories, and innovative approaches to operational coordination and decision-making.</p>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:28px;">
+        <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin:0 0 10px;">Get Help &amp; Support</h3>
+        <p style="color:var(--text-muted);font-size:14.5px;line-height:1.7;margin:0;">Ask questions, exchange ideas, and receive guidance from the TwoSuns team and community members.</p>
+      </div>
+    </div>
+    <div style="text-align:center;max-width:760px;margin:42px auto 0;">
+      <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin:0 0 10px;">You are in Good Company</h3>
+      <p style="color:var(--text-muted);font-size:15px;line-height:1.75;margin:0;">Join a growing network of forward-thinking organizations that are reimagining industrial operations through intelligence, collaboration, and continuous learning.</p>
     </div>
   </div>
 </section>
@@ -970,7 +1001,7 @@ window.addEventListener('resize',nxsResponsive);
   var ctx = c.getContext('2d'), pts = [], t = 0;
   function sz(){ c.width = c.offsetWidth; c.height = c.offsetHeight; }
   sz(); window.addEventListener('resize', sz);
-  var cols = ['245,158,11','245,158,11','245,158,11','34,197,94','30,58,138'];
+  var cols = ['245,158,11','245,158,11','245,158,11','204,153,0','255,102,0'];
   for(var i=0;i<55;i++) pts.push({
     x:Math.random()*c.width, y:Math.random()*c.height,
     vx:(Math.random()-.5)*.28, vy:(Math.random()-.5)*.28,

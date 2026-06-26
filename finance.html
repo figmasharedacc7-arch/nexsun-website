@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Platform Modules for Complex Enterprises | TwoSuns</title>
+<title>Financial Markets | TwoSuns</title>
   <!-- ── SEO & Social ── -->
-  <meta name="description" content="Explore TwoSuns's six integrated System Components: Home, Explore, Position, Rooms, Contracts, and Connect, with the TwoSuns Assistant as the unified interface.">
+  <meta name="description" content="TwoSuns helps financial institutions, investment firms, and market participants turn fragmented information into coordinated intelligence, for faster decisions, stronger visibility, and confidence in volatile markets.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://twosuns.ai/modules.html">
+  <link rel="canonical" href="https://twosuns.ai/finance.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI Platform Modules for Enterprise & Sectors | TwoSuns">
-  <meta property="og:description" content="Explore TwoSuns's six integrated System Components: Home, Explore, Position, Rooms, Contracts, and Connect, with the TwoSuns Assistant as the unified interface.">
+  <meta property="og:title" content="Financial Markets | TwoSuns">
+  <meta property="og:description" content="TwoSuns helps financial institutions, investment firms, and market participants turn fragmented information into coordinated intelligence, for faster decisions, stronger visibility, and confidence in volatile markets.">
   <meta property="og:image" content="https://twosuns.ai/og-image.jpg">
-  <meta property="og:url" content="https://twosuns.ai/modules.html">
+  <meta property="og:url" content="https://twosuns.ai/finance.html">
   <meta property="og:site_name" content="TwoSuns">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Platform Modules for Enterprise & Sectors | TwoSuns">
-  <meta name="twitter:description" content="Explore TwoSuns's six integrated System Components: Home, Explore, Position, Rooms, Contracts, and Connect, with the TwoSuns Assistant as the unified interface.">
+  <meta name="twitter:title" content="Financial Markets | TwoSuns">
+  <meta name="twitter:description" content="TwoSuns helps financial institutions, investment firms, and market participants turn fragmented information into coordinated intelligence, for faster decisions, stronger visibility, and confidence in volatile markets.">
   <meta name="twitter:image" content="https://twosuns.ai/og-image.jpg">
 <style>
   :root {
@@ -93,7 +93,6 @@
   .nav-links { display:flex; align-items:center; gap:32px; margin-left:auto; }
   .nav-links a { font-size:14px; color:var(--text-mid); font-weight:500; transition:color .2s; }
   .nav-links a:hover { color:var(--sun-deep); }
-  .nxs-sustainability-ico { width:20px; height:20px; display:inline-block; vertical-align:-3px; margin-right:5px; flex-shrink:0; }
   .btn-cta {
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
@@ -146,20 +145,138 @@
     animation:dividerGlow 2.8s ease-in-out infinite;
   }
 
-  /* ─── CTA BUTTONS ─── */
-  .btn-primary {
-    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
-    color:#FFFFFF; font-weight:700; padding:14px 32px; border-radius:10px;
-    font-size:15px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 4px 14px rgba(255,102,0,0.4); display:inline-block;
+  /* ─── FOUNDERS ─── */
+  #founders { background:linear-gradient(180deg,var(--sky-light) 0%,white 100%); }
+  .founders-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:48px; }
+  .founder-card { background:white; border:1px solid var(--border); border-radius:20px; padding:36px; box-shadow:var(--card-shadow); }
+  .founder-avatar {
+    width:88px; height:88px; border-radius:50%;
+    overflow:hidden; margin-bottom:22px;
+    border:3px solid var(--sun-pale);
+    box-shadow:0 8px 24px rgba(255,102,0,0.3);
   }
-  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,102,0,0.5); }
-  .btn-secondary {
+  .founder-avatar img { width:100%; height:100%; object-fit:cover; object-position:center 15%; display:block; }
+  .founder-card h3 { font-size:24px; font-weight:800; color:var(--navy); margin-bottom:4px; }
+  .founder-card .cred { color:var(--sky); font-size:13px; font-weight:700; margin-bottom:4px; }
+  .founder-card .role { color:var(--text-muted); font-size:14px; margin-bottom:18px; }
+  .founder-card .bio { color:var(--text-mid); font-size:14px; line-height:1.75; margin-bottom:20px; }
+  .achieve-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px; }
+  .founder-card ul { list-style:none; margin-bottom:22px; }
+  .founder-card ul li { font-size:13px; color:var(--text-mid); padding:5px 0; display:flex; gap:8px; border-bottom:1px solid rgba(255,102,0,0.08); }
+  .founder-card ul li::before { content:'•'; color:var(--sun-deep); font-weight:700; flex-shrink:0; }
+  .founder-contact { display:flex; gap:16px; flex-wrap:wrap; }
+  .founder-contact a { color:var(--sky); font-size:13px; font-weight:700; }
+
+  /* ─── SIX GRID ─── */
+  .six-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:40px 0; }
+  .card { background:white; border:1px solid var(--border); border-radius:16px; padding:28px; transition:all .3s; box-shadow:var(--card-shadow); }
+  .card:hover { border-color:rgba(255,102,0,0.4); transform:translateY(-5px); box-shadow:0 12px 40px rgba(255,102,0,0.14); }
+  .card-icon { width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg,var(--sun-pale),rgba(255,102,0,0.1)); border:1px solid rgba(255,102,0,0.25); display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-size:22px; }
+  .card h3 { font-size:18px; font-weight:700; margin-bottom:10px; color:var(--navy); }
+  .card p { color:var(--text-muted); font-size:14px; line-height:1.7; }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials { background:white; }
+  /* ── Founding Pilot Section ── */
+  .pilot-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:40px; align-items:start; }
+  .pilot-invite { background:linear-gradient(135deg,#16120D 0%,#1E1A14 100%); border-radius:20px; padding:40px; color:white; }
+  .pilot-invite h3 { font-size:22px; font-weight:800; color:white; margin-bottom:8px; line-height:1.3; }
+  .pilot-invite h3 span { color:var(--sun); }
+  .pilot-invite .pilot-sub { font-size:14px; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:28px; }
+  .pilot-benefits { list-style:none; padding:0; margin:0 0 32px; }
+  .pilot-benefits li { display:flex; align-items:flex-start; gap:12px; padding:10px 0; font-size:14px; color:rgba(255,255,255,0.85); line-height:1.6; }
+  .pilot-benefits li:not(:last-child) { border-bottom:1px solid rgba(255,255,255,0.08); }
+  .pilot-ico { width:32px; height:32px; border-radius:8px; background:rgba(255,102,0,0.15); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .pilot-ico svg { width:16px; height:16px; }
+  .pilot-cta { display:inline-flex; align-items:center; gap:8px; background:var(--sun); color:#FFFFFF; padding:14px 28px; border-radius:10px; font-size:14px; font-weight:700; text-decoration:none; transition:opacity .2s; }
+  .pilot-cta:hover { opacity:.88; }
+  .pilot-cohort-tag { display:inline-block; background:rgba(255,102,0,0.15); border:1px solid rgba(255,102,0,0.3); color:var(--sun); font-size:11px; font-weight:700; padding:4px 14px; border-radius:8px; margin-bottom:20px; letter-spacing:0.5px; text-transform:uppercase; }
+  .outcome-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+  .outcome-card { background:var(--bg); border:1px solid var(--border); border-radius:16px; padding:24px 28px; display:flex; align-items:center; gap:20px; transition:border-color .2s, box-shadow .2s; }
+  .outcome-card:hover { border-color:rgba(255,102,0,0.4); box-shadow:0 4px 20px rgba(255,102,0,0.08); }
+  .outcome-metric { min-width:90px; text-align:center; flex-shrink:0; }
+  .outcome-metric .val { font-size:32px; font-weight:900; color:var(--navy); line-height:1.1; }
+  .outcome-metric .unit { font-size:11px; font-weight:700; color:var(--sun-deep); text-transform:uppercase; letter-spacing:0.5px; margin-top:2px; }
+  .outcome-detail h4 { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+  .outcome-detail p { font-size:13px; color:var(--text-muted); line-height:1.6; margin:0; }
+  @media(max-width:768px){
+    .pilot-layout{grid-template-columns:1fr;gap:32px;}
+    .outcome-metric .val{font-size:26px;}
+  
+    .footer-newsletter input,.footer-newsletter select{max-width:100%!important;box-sizing:border-box!important;}
+    .footer-brand img{max-width:280px!important;}
+    .fn-row{flex-direction:column!important;}
+    .fn-row input,.fn-row select{width:100%!important;}
+    /* ── Universal mobile overflow prevention ── */
+    *{max-width:100%!important;box-sizing:border-box!important;}
+    img,svg,video,canvas,iframe{max-width:100%!important;height:auto!important;}
+    [style*="gap:64px"]{gap:24px!important;}
+    [style*="gap:72px"]{gap:24px!important;}
+    [style*="gap:60px"]{gap:24px!important;}
+    [style*="gap:80px"]{gap:32px!important;}
+    [style*="gap:56px"]{gap:24px!important;}
+    [style*="gap:48px"]{gap:24px!important;}
+    [style*="width:500px"]{width:100%!important;}
+    [style*="width:540px"]{width:100%!important;}
+    [style*="width:600px"]{width:100%!important;}
+    [style*="width:640px"]{width:100%!important;}
+    [style*="width:680px"]{width:100%!important;}
+    [style*="width:700px"]{width:100%!important;}
+    [style*="width:720px"]{width:100%!important;}
+    [style*="width:760px"]{width:100%!important;}
+    [style*="width:800px"]{width:100%!important;}
+    [style*="width:860px"]{width:100%!important;}
+    [style*="width:880px"]{width:100%!important;}
+    [style*="width:900px"]{width:100%!important;}
+    [style*="width:920px"]{width:100%!important;}
+    [style*="width:1000px"]{width:100%!important;}
+    [style*="width:1100px"]{width:100%!important;}
+    [style*="width:1200px"]{width:100%!important;}
+    [style*="width:1400px"]{width:100%!important;}
+    /* ── Inline grid collapse (attribute selectors) ── */
+    [style*="grid-template-columns:260px 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:200px 1fr"]{grid-template-columns:1fr!important;gap:24px!important;}
+    [style*="grid-template-columns:1fr 1.8fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1fr 1.4fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1.4fr 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+    [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+    [style*="grid-template-columns:1fr auto 1fr auto 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
+    .module-grid{grid-template-columns:1fr!important;gap:32px!important;}
+    .founder-card{grid-template-columns:1fr!important;gap:24px!important;}
+    .supply-chain-grid{grid-template-columns:1fr!important;}
+    .supply-chain-grid .supply-arrow{display:none!important;}
+    /* ── Comparison table mobile ── */
+    table{font-size:12px!important;}
+    table th,table td{padding:10px 12px!important;min-width:120px!important;}
+    table th:first-child,table td:first-child{position:sticky!important;left:0!important;z-index:2!important;background:inherit!important;}
+    table thead th:first-child{background:var(--navy)!important;}
+    table tr[style*="background:var(--bg)"] td:first-child{background:var(--bg)!important;}
+    table tr[style*="background:white"] td:first-child{background:white!important;}
+  }
+  .btn-outline {
     border:2px solid var(--sun-deep); color:var(--sun-deep); background:transparent;
-    padding:12px 30px; border-radius:10px; font-size:15px; font-weight:700;
+    padding:12px 28px; border-radius:10px; font-size:14px; font-weight:700;
     cursor:pointer; transition:all .2s; display:inline-block;
   }
-  .btn-secondary:hover { background:var(--sun-pale); }
+  .btn-outline:hover { background:var(--sun-pale); }
+  .btn-primary {
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:#FFFFFF; font-weight:700; padding:16px 30px; border-radius:10px;
+    font-size:15px; border:none; cursor:pointer; transition:all .2s;
+    box-shadow:0 6px 20px rgba(255,102,0,0.4); display:inline-block;
+  }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(255,102,0,0.5); }
+  .btn-secondary {
+    background:transparent; color:var(--navy); font-weight:600;
+    padding:16px 30px; border-radius:10px; font-size:15px;
+    border:2px solid rgba(30,26,20,0.25); cursor:pointer; transition:all .2s; display:inline-block;
+  }
+  .btn-secondary:hover { background:rgba(30,26,20,0.05); border-color:var(--navy); }
 
               /* ─── FOOTER ─── */
   footer { background:#16120D; padding:64px 0 32px; border-top:3px solid var(--sun); }
@@ -199,13 +316,6 @@
   .fn-btn:hover { opacity:.88; transform:translateY(-1px); }
   .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
   .footer-bottom p { font-size:12px; color:rgba(255,255,255,0.4); }
-  /* ─── RESPONSIVE ─── */
-  @media(max-width:900px){
-    .module-grid { grid-template-columns: 1fr !important; }
-    .module-grid .video-col-left { order: -1; }
-    .footer-top{grid-template-columns:1fr 1fr;} .footer-newsletter{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,0.1);padding-top:32px;grid-column:1/-1;}
-  }
-
   /* ─── NAV DROPDOWN ─── */
   .nav-dropdown { position:relative; display:flex; align-items:center; }
   .nav-dropdown > a { display:flex; align-items:center; gap:4px; cursor:pointer; }
@@ -302,10 +412,6 @@
     .team-grid{grid-template-columns:1fr 1fr!important;gap:12px!important;}
     .funds-grid{grid-template-columns:1fr!important;}
     .footer-top{grid-template-columns:1fr 1fr!important;gap:24px!important;}
-    .footer-newsletter-row{grid-template-columns:1fr!important;gap:32px!important;padding:24px!important;}
-    .page-hero{padding:140px 0 60px!important;}
-    .page-hero h1{font-size:clamp(30px,8vw,42px)!important;}
-    .form-row{grid-template-columns:1fr!important;}
     .footer-wordmark{font-size:clamp(44px,13vw,72px)!important;letter-spacing:-2px!important;}
     .footer-bottom{flex-direction:column!important;align-items:flex-start!important;}
     .footer-legal a:first-child{padding-left:0!important;}
@@ -313,64 +419,24 @@
     #nxs-chat-bubble{bottom:20px!important;right:20px!important;}
     .ind-wrap{padding:0 18px!important;}
     .sun-divider{display:none;}
-  
-    .footer-newsletter input,.footer-newsletter select{max-width:100%!important;box-sizing:border-box!important;}
-    .footer-brand img{max-width:280px!important;}
-    .fn-row{flex-direction:column!important;}
-    .fn-row input,.fn-row select{width:100%!important;}
-    /* ── Universal mobile overflow prevention ── */
-    *{max-width:100%!important;box-sizing:border-box!important;}
-    img,svg,video,canvas,iframe{max-width:100%!important;height:auto!important;}
-    table,.cookie-table{display:block!important;overflow-x:auto!important;}
-    .diff-visual-icon{font-size:56px!important;}
-    .featured-img-icon{font-size:56px!important;}
-    .price-badge .big{font-size:48px!important;}
-    [style*="gap:64px"]{gap:24px!important;}
-    [style*="gap:72px"]{gap:24px!important;}
-    [style*="gap:60px"]{gap:24px!important;}
-    [style*="gap:80px"]{gap:32px!important;}
-    [style*="gap:56px"]{gap:24px!important;}
-    [style*="gap:48px"]{gap:24px!important;}
-    [style*="width:500px"]{width:100%!important;}
-    [style*="width:540px"]{width:100%!important;}
-    [style*="width:600px"]{width:100%!important;}
-    [style*="width:640px"]{width:100%!important;}
-    [style*="width:680px"]{width:100%!important;}
-    [style*="width:700px"]{width:100%!important;}
-    [style*="width:720px"]{width:100%!important;}
-    [style*="width:760px"]{width:100%!important;}
-    [style*="width:800px"]{width:100%!important;}
-    [style*="width:860px"]{width:100%!important;}
-    [style*="width:880px"]{width:100%!important;}
-    [style*="width:900px"]{width:100%!important;}
-    [style*="width:920px"]{width:100%!important;}
-    [style*="width:1000px"]{width:100%!important;}
-    [style*="width:1100px"]{width:100%!important;}
-    [style*="width:1200px"]{width:100%!important;}
-    [style*="width:1400px"]{width:100%!important;}
-    /* ── Inline grid collapse (attribute selectors) ── */
-    [style*="grid-template-columns:260px 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
-    [style*="grid-template-columns:200px 1fr"]{grid-template-columns:1fr!important;gap:24px!important;}
-    [style*="grid-template-columns:1fr 1.8fr"]{grid-template-columns:1fr!important;gap:32px!important;}
-    [style*="grid-template-columns:1fr 1.4fr"]{grid-template-columns:1fr!important;gap:32px!important;}
-    [style*="grid-template-columns:1.4fr 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
-    [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
-    [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
-    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
-    [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
-    [style*="grid-template-columns:1fr auto 1fr auto 1fr"]{grid-template-columns:1fr!important;}
-    [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
-    [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
-    .module-grid{grid-template-columns:1fr!important;gap:32px!important;}
-    .founder-card{grid-template-columns:1fr!important;gap:24px!important;}
-    .supply-chain-grid{grid-template-columns:1fr!important;}
-    .supply-chain-grid .supply-arrow{display:none!important;}
+    .outcome-grid{grid-template-columns:1fr!important;}
+    .six-grid{grid-template-columns:1fr 1fr!important;}
+    .founders-grid{grid-template-columns:1fr!important;}
+    .pilot-layout{grid-template-columns:1fr!important;gap:32px!important;}
+    .strip-stats{grid-template-columns:repeat(3,1fr)!important;}
+    table{display:block!important;overflow-x:auto!important;}
+    .form-row{grid-template-columns:1fr!important;}
+    .footer-newsletter-row{grid-template-columns:1fr!important;gap:32px!important;padding:24px!important;}
+    .page-hero{padding:140px 0 60px!important;}
+    .page-hero h1{font-size:clamp(30px,8vw,42px)!important;}
   }
   @media(max-width:480px){
     .footer-top{grid-template-columns:1fr!important;}
     .market-grid{grid-template-columns:1fr!important;}
     .team-grid{grid-template-columns:1fr!important;}
     .hero-stats{flex-direction:column!important;}
+    .six-grid{grid-template-columns:1fr!important;}
+    .strip-stats{grid-template-columns:repeat(2,1fr)!important;}
   
     /* ── Further collapse at 480px ── */
     [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;}
@@ -384,48 +450,23 @@
   .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
   .footer-legal a:last-child { border-right:none; }
   .footer-legal a:hover { color:rgba(255,255,255,1); }
-
-  /* ── Sustainability Icon Float & Card Scroll Animations ── */
-  @keyframes iconFloat {
-    0%,100% { transform:translateY(0px); }
-    50%      { transform:translateY(-8px); }
-  }
-  .sustainability-icon-wrap {
-    display:flex; justify-content:center; align-items:center;
-    margin-bottom:18px;
-    animation:iconFloat 4s ease-in-out infinite;
-  }
-  .sustainability-card-animated {
-    opacity:0; transform:translateY(20px);
-    transition:opacity 0.55s ease, transform 0.55s ease;
-  }
-  .sustainability-card-animated.visible {
-    opacity:1; transform:translateY(0);
-  }
-
 </style>
   <!-- ── Favicons ── -->
   <link rel="icon" type="image/svg+xml" href="logo-mini.svg">
   <link rel="apple-touch-icon" href="logo-mini.svg">
   <meta name="theme-color" content="#1E1A14">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Platform Modules","description":"Six integrated AI components for enterprise coordination","url":"https://twosuns.ai/modules.html","isPartOf":{"@type":"WebSite","name":"TwoSuns","url":"https://twosuns.ai"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Financial Markets | TwoSuns",
+  "url": "https://twosuns.ai/finance.html",
+  "description": "TwoSuns helps financial institutions, investment firms, and market participants turn fragmented information into coordinated intelligence for faster, more confident decisions.",
+  "isPartOf": {"@type": "WebSite", "name": "TwoSuns", "url": "https://twosuns.ai"}
+}
+</script>
 </head>
 <body>
-<!-- TwoSuns Sustainability Icon Sprite -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  <symbol id="nxs-ic1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#1E1A14"/><polyline points="20,70 35,60 50,52 65,44 80,36" fill="none" stroke="#FF6600" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="36" r="5" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#FDE68A" stroke-width="3" opacity="0.5"/><circle cx="50" cy="50" r="38" fill="none" stroke="#CC9900" stroke-width="3" opacity="0.65"/><circle cx="50" cy="50" r="28" fill="#FF6600"/><line x1="50" y1="50" x2="70" y2="30" stroke="white" stroke-width="4" stroke-linecap="round"/><circle cx="70" cy="30" r="5" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#FF6600"/><polyline points="18,74 32,66 46,54 60,44 74,34 84,26" fill="none" stroke="#FF6600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="84" cy="16" r="4" fill="#D9480F"/></symbol>
-  <symbol id="nxs-ic4" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#EAB308"/><rect x="30" y="56" width="10" height="18" rx="2" fill="#1E1A14" opacity="0.8"/><rect x="45" y="46" width="10" height="28" rx="2" fill="#1E1A14" opacity="0.8"/><rect x="60" y="50" width="10" height="24" rx="2" fill="#1E1A14" opacity="0.8"/><circle cx="50" cy="44" r="4" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic5" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#FF6600"/><circle cx="50" cy="50" r="26" fill="white"/><polyline points="30,54 38,48 44,54 50,40 56,54 62,44 70,50" fill="none" stroke="#FF6600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="nxs-ic6" viewBox="0 0 100 100"><path d="M50,8 A42,42 0 0,0 50,92 Z" fill="#1E1A14"/><path d="M50,8 A42,42 0 0,1 50,92 Z" fill="#FF6600"/><line x1="28" y1="50" x2="68" y2="50" stroke="#FF6600" stroke-width="5" stroke-linecap="round"/><polygon points="64,42 76,50 64,58" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic7" viewBox="0 0 100 100"><g fill="#FF6600" opacity="0.25"><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(0 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(45 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(90 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(135 50 50)"/></g><circle cx="50" cy="50" r="30" fill="#FF6600"/><circle cx="50" cy="10" r="5" fill="#1E1A14"/><circle cx="90" cy="50" r="5" fill="#1E1A14"/><circle cx="50" cy="90" r="5" fill="#1E1A14"/><circle cx="10" cy="50" r="5" fill="#1E1A14"/></symbol>
-  <symbol id="nxs-ic8" viewBox="0 0 100 100"><circle cx="34" cy="50" r="30" fill="#1E1A14"/><rect x="70" y="30" width="8" height="14" rx="1" fill="#FF6600"/><rect x="82" y="38" width="8" height="16" rx="1" fill="#D9480F"/><rect x="94" y="32" width="8" height="14" rx="1" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic9" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#FF6600"/><polyline points="14,74 30,74 38,73 50,42 62,73 70,74 86,74" fill="none" stroke="#D9480F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="42" r="5" fill="#D9480F"/></symbol>
-  <symbol id="nxs-ic10" viewBox="0 0 100 100"><circle cx="50" cy="60" r="36" fill="#FF6600"/><rect x="28" y="14" width="10" height="30" rx="2" fill="#FF6600"/><rect x="45" y="6" width="10" height="30" rx="2" fill="#D9480F"/><rect x="62" y="12" width="10" height="32" rx="2" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic11" viewBox="0 0 100 100"><polygon points="50,2 54,38 50,42 46,38" fill="#FF6600" opacity="0.6"/><polygon points="98,50 62,54 58,50 62,46" fill="#FF6600" opacity="0.6"/><polygon points="50,98 46,62 50,58 54,62" fill="#FF6600" opacity="0.6"/><polygon points="2,50 38,46 42,50 38,54" fill="#FF6600" opacity="0.6"/><circle cx="50" cy="50" r="25" fill="#FF6600"/><polyline points="30,54 38,54 42,46 50,32 58,46 62,54 70,54" fill="none" stroke="#D9480F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="32" r="5" fill="#D9480F"/></symbol>
-  <symbol id="nxs-ic12" viewBox="0 0 100 100"><circle cx="40" cy="52" r="34" fill="#1E1A14"/><polyline points="16,66 30,66 36,44 40,32 44,44 54,66 68,66" fill="none" stroke="#FF6600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="32" r="4" fill="#FF6600"/><path d="M72,28 Q92,52 72,76" fill="none" stroke="#FF6600" stroke-width="4" stroke-linecap="round" opacity="0.8"/><path d="M80,34 Q96,52 80,70" fill="none" stroke="#FF6600" stroke-width="3" stroke-linecap="round" opacity="0.5"/></symbol>
-</svg>
 
 <canvas id="sun-canvas"></canvas>
 
@@ -503,175 +544,181 @@
   <a href="engage.html" style="color:#FF6600;font-weight:700;">Engage</a>
 </div>
 
-<!-- ══ PAGE HERO ══ -->
-<div class="page-hero">
-  <canvas class="hero-canvas"></canvas>
+<!-- ══ FINANCE HERO ══ -->
+<section style="background:linear-gradient(160deg,#16120D 0%,#1E1A14 100%);padding:96px 0;color:#FFFFFF;position:relative;overflow:hidden;">
   <div class="container">
-    <div class="section-tag">Platform Modules</div>
-    <h1 class="section-heading" style="text-align:center;">Modules at a <span>Glance</span></h1>
-    <p class="section-sub" style="text-align:center;margin:0 auto;">TwoSuns is organized around intent-driven modules rather than rigid workflows. Each module mirrors how modern enterprises actually coordinate and execute, seamlessly integrated, AI-assisted, and explainable across complex environments.</p>
+    <div class="section-tag" style="background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.35);color:var(--sun);">Financial Markets</div>
+    <h1 style="color:#FFFFFF;font-size:clamp(32px,4.6vw,54px);font-weight:900;line-height:1.1;margin:14px 0 20px;max-width:920px;">Turn Market Complexity Into <span style="color:var(--sun);">Confident Decisions</span></h1>
+    <p style="color:rgba(255,255,255,0.78);font-size:18px;line-height:1.75;max-width:840px;margin:0 0 32px;">TwoSuns helps financial institutions, investment firms, and market participants transform fragmented information into coordinated intelligence, enabling faster decisions, stronger visibility, and greater confidence in volatile markets.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="contact.html" class="btn-cta">Schedule a Discovery Session</a>
+      <a href="contact.html" style="display:inline-block;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:700;border:2px solid rgba(255,102,0,0.5);color:var(--sun);transition:all .2s;">Request a Platform Demonstration</a>
+    </div>
   </div>
-</div>
+</section>
 
 <div class="sun-divider"></div>
 
-<!-- ══ MODULES (compact hover-reveal) ══ -->
-<style>
-.mod-stack{display:grid;gap:18px;max-width:1000px;margin:0 auto;}
-.mod-card{position:relative;background:#FFFFFF;border:1px solid var(--border);border-radius:18px;padding:26px 32px;box-shadow:var(--card-shadow);transition:box-shadow .3s,transform .3s,border-color .3s;}
-.mod-card:hover{box-shadow:0 20px 54px rgba(20,16,12,.14);border-color:rgba(255,102,0,.4);transform:translateY(-2px);}
-.mod-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
-.mod-badge{background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;font-size:10px;font-weight:800;letter-spacing:2px;padding:5px 13px;border-radius:20px;text-transform:uppercase;}
-.mod-name{font-size:clamp(22px,2.4vw,30px);font-weight:800;color:var(--navy);margin:0;line-height:1.1;}
-.mod-tagline{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--sun-deep);margin:14px 0 8px;}
-.mod-desc{color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;}
-.mod-hint{display:none;}
-.mod-reveal{max-height:none;opacity:1;overflow:visible;margin-top:20px;}
-.mod-feats{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.mod-feat{background:var(--sun-pale);border-radius:12px;padding:14px 18px;border:1px solid rgba(255,102,0,.2);}
-.mod-feat h5{font-size:14px;font-weight:700;color:var(--navy);margin:0 0 4px;display:flex;align-items:center;gap:7px;}
-.mod-feat p{font-size:13px;color:var(--text-muted);margin:0;line-height:1.55;}
-@media (max-width:640px){.mod-feats{grid-template-columns:1fr;}}
-@media (hover:none){.mod-reveal{max-height:none;opacity:1;margin-top:20px;}.mod-hint{display:none;}}
-</style>
+<!-- ══ INDUSTRY OVERVIEW ══ -->
 <section class="section" style="background:var(--bg);">
+  <div class="container" style="max-width:900px;">
+    <div class="section-tag">Industry Overview</div>
+    <h2 class="section-heading">Too much information. <span>Not enough clarity.</span></h2>
+    <p style="color:var(--text-muted);font-size:17px;line-height:1.8;margin-bottom:18px;">Financial markets generate enormous amounts of information every day. Market data, economic indicators, research, news, portfolio analytics, customer activity, risk assessments, and operational reporting often exist across multiple platforms and teams.</p>
+    <p style="color:var(--text-muted);font-size:17px;line-height:1.8;margin-bottom:18px;">As complexity increases, decision-makers face a common challenge: investment professionals, portfolio managers, analysts, traders, executives, and advisors need timely, explainable intelligence that connects market activity with business priorities.</p>
+    <p style="color:var(--text-muted);font-size:17px;line-height:1.8;margin:0;">TwoSuns provides a unified intelligence environment that helps organizations coordinate market insights, operational workflows, stakeholder collaboration, and strategic decision-making in one place.</p>
+  </div>
+</section>
+
+<!-- ══ COMMON CHALLENGES ══ -->
+<section class="section" style="background:white;">
   <div class="container">
-    <div class="mod-stack">
-      <div class="mod-card" tabindex="0">
-        <div class="mod-top">
-          <span class="mod-badge">Module 1</span>
-          <h3 class="mod-name">Explore</h3>
-          <span class="mod-hint">Hover for detail &#8594;</span>
-        </div>
-        <div class="mod-tagline">Market &amp; Operational Discovery</div>
-        <p class="mod-desc">The foundation for analysis and discovery across markets and operational environments. Explore gives your teams a continuous, AI-assisted view of external signals, internal context, and emerging opportunities, from signal to structured strategy.</p>
-        <div class="mod-reveal">
-          <div class="mod-feats">
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic2"/></svg> Discover (Map &amp; Signals)</h5><p>See the whole market on an interactive map with AI-powered signals surfacing what matters most.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic5"/></svg> Analysis</h5><p>Access AI-driven frameworks combining fundamental, technical, macro, and ESG intelligence layers.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic12"/></svg> Scenario Planning</h5><p>Model and simulate future market outcomes with role-based views across markets and regions.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic4"/></svg> Position Log</h5><p>View a continuous list of your positions and metrics, always current, always traceable.</p></div>
-          </div>
-        </div>
+    <div class="section-tag">Common Challenges</div>
+    <h2 class="section-heading">The cost of <span>fragmented markets</span></h2>
+    <p class="section-sub" style="margin-bottom:8px;">Critical signals get lost between systems, teams, and timelines. Here is where clarity breaks down.</p>
+    <div class="six-grid">
+      <div class="card">
+        <h3>Information Overload</h3>
+        <p>Critical market signals are often buried within disconnected systems, research reports, spreadsheets, and communication channels.</p>
       </div>
-      <div class="mod-card" tabindex="0">
-        <div class="mod-top">
-          <span class="mod-badge">Module 2</span>
-          <h3 class="mod-name">Markets</h3>
-          <span class="mod-hint">Hover for detail &#8594;</span>
-        </div>
-        <div class="mod-tagline">Strategy &amp; Execution</div>
-        <p class="mod-desc">A centralized workspace for monitoring market dynamics, benchmarking performance, and aligning stakeholders around strategic opportunities, competitive positioning, and informed action.</p>
-        <div class="mod-reveal">
-          <div class="mod-feats">
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic3"/></svg> Performance Benchmarking</h5><p>Continuously measure performance, competitiveness, and operational excellence against industry benchmarks.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic1"/></svg> Strategy Canvas</h5><p>Build and evolve strategies collaboratively with your team on a shared visual canvas.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic7"/></svg> Stakeholder Publishing</h5><p>Publish strategies, market data, and insights to internal and external stakeholders with a full audit trail.</p></div>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Delayed Decisions</h3>
+        <p>By the time information is consolidated and reviewed, opportunities may have passed or risks may have increased.</p>
       </div>
-      <div class="mod-card" tabindex="0">
-        <div class="mod-top">
-          <span class="mod-badge">Module 3</span>
-          <h3 class="mod-name">Procurements</h3>
-          <span class="mod-hint">Hover for detail &#8594;</span>
-        </div>
-        <div class="mod-tagline">Supplier &amp; Contract Intelligence</div>
-        <p class="mod-desc">Coordinate procurement intelligence across suppliers, contracts, and commercial activities. AI-assisted coordination benchmarks supplier agreements, pricing, terms, obligations, and performance against industry standards, transforming procurement data into faster, more informed sourcing decisions.</p>
-        <div class="mod-reveal">
-          <div class="mod-feats">
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic8"/></svg> Supplier Benchmarking</h5><p>Benchmark supplier agreements, pricing, terms, and performance against industry standards.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic10"/></svg> Clause Analysis</h5><p>Review contract clauses with full context of the originating decision and intent.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic11"/></svg> Auditable Intent</h5><p>Every step is logged, traceable, and preserved defensible under any future audit.</p></div>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Fragmented Visibility</h3>
+        <p>Investment, risk, operations, compliance, and executive teams often operate with different views of the same situation.</p>
       </div>
-      <div class="mod-card" tabindex="0">
-        <div class="mod-top">
-          <span class="mod-badge">Module 4</span>
-          <h3 class="mod-name">Spaces</h3>
-          <span class="mod-hint">Hover for detail &#8594;</span>
-        </div>
-        <div class="mod-tagline">Secure Collaboration &amp; Coordination</div>
-        <p class="mod-desc">Spaces enable secure, persistent environments where teams and external stakeholders collaborate, negotiate, share information, and coordinate decisions through AI-assisted workflows and secure communication. Whether managing operational initiatives, supplier relationships, strategic discussions, or commercial negotiations, Spaces brings the right people together in a contextual workspace designed for alignment and execution.</p>
-        <div class="mod-reveal">
-          <div class="mod-feats">
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic6"/></svg> Deal Rooms</h5><p>Purpose-built spaces for managing commercial negotiations, approvals, and agreements with complete version control, transparency, and auditability.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic7"/></svg> External Collaboration</h5><p>Invite counterparties, regulators, and partners into secure, governed workspaces without compromising confidentiality.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic3"/></svg> Decision Threads</h5><p>Collaborative annotations, presence detection, and discussion threads, all preserved in the decision record.</p></div>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Institutional Knowledge Loss</h3>
+        <p>Important insights, assumptions, and decision rationale frequently remain trapped in emails, documents, and individual expertise.</p>
       </div>
-      <div class="mod-card" tabindex="0">
-        <div class="mod-top">
-          <span class="mod-badge">Module 5</span>
-          <h3 class="mod-name">Admin</h3>
-          <span class="mod-hint">Hover for detail &#8594;</span>
-        </div>
-        <div class="mod-tagline">Centralized Control</div>
-        <p class="mod-desc">Manages user permissions, policy guardrails, and integrations to ensure enterprise governance at every level. Admin gives IT and compliance teams complete control without limiting the coordination velocity of operational and commercial teams.</p>
-        <div class="mod-reveal">
-          <div class="mod-feats">
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic9"/></svg> User Permissions</h5><p>Role-based access controls, permissions, and audit trails across all platform modules and data sources.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic11"/></svg> Policy Guardrails</h5><p>Define and enforce data governance policies, compliance rules, and AI usage boundaries enterprise-wide.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic6"/></svg> Integrations</h5><p>Connect TwoSuns to internal analytics platforms, ERP, CRM, contract repositories, and operational systems.</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="mod-card" tabindex="0">
-        <div class="mod-top">
-          <span class="mod-badge">Module 6</span>
-          <h3 class="mod-name">Operations</h3>
-          <span class="mod-hint">Hover for detail &#8594;</span>
-        </div>
-        <div class="mod-tagline">Operational Intelligence</div>
-        <p class="mod-desc">Operations provides AI-assisted visibility into processes, workflows, resources, and performance across the enterprise. By continuously analyzing operational data, identifying inefficiencies, and recommending corrective actions, Operations helps organizations improve productivity, reduce waste, strengthen accountability, and align day-to-day execution with business objectives.</p>
-        <div class="mod-reveal">
-          <div class="mod-feats">
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic5"/></svg> Process Optimization</h5><p>Identify bottlenecks, inefficiencies, and workflow gaps to improve operational performance and resource utilization.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic3"/></svg> Performance Insights</h5><p>Continuously monitor operational metrics and trends to uncover opportunities for productivity and cost improvements.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic12"/></svg> Actionable Recommendations</h5><p>Leverage AI-assisted analysis to prioritize corrective actions, accelerate decisions, and drive measurable outcomes.</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="mod-card" tabindex="0">
-        <div class="mod-top">
-          <span class="mod-badge">Module 7</span>
-          <h3 class="mod-name">Financials</h3>
-          <span class="mod-hint">Hover for detail &#8594;</span>
-        </div>
-        <div class="mod-tagline">Financial Intelligence</div>
-        <p class="mod-desc">Financials provides AI-assisted visibility into costs, revenues, cash flow, pricing, profitability, scenario testing, and commercial performance. By connecting financial data across the organization, Financials helps leaders understand business drivers, evaluate scenarios, improve forecasting accuracy, optimize margins, and make faster, more informed financial decisions.</p>
-        <div class="mod-reveal">
-          <div class="mod-feats">
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic4"/></svg> Cost Visibility</h5><p>Gain a clear understanding of cost structures, spending patterns, and profitability drivers across the business.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic1"/></svg> Margin Optimization</h5><p>Analyze pricing, revenue, and breakeven points to improve margins and support sustainable growth.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic10"/></svg> Cash Flow</h5><p>Monitor cash flow, financial performance, and forecasts to strengthen planning and operational decisions.</p></div>
-            <div class="mod-feat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic12"/></svg> Scenario Testing</h5><p>Stress-test business assumptions and operational variables to project financial outcomes and evaluate risks.</p></div>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Increasing Market Volatility</h3>
+        <p>Geopolitical events, economic shifts, commodity markets, interest rates, and regulatory changes require organizations to respond faster than ever before.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<!-- ══ THE TWOSUNS ADVANTAGE ══ -->
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="section-tag">The TwoSuns Advantage</div>
+    <h2 class="section-heading">How TwoSuns <span>helps</span></h2>
+    <p class="section-sub" style="margin-bottom:8px;">One coordinated environment for market intelligence, decisions, and the reasoning behind them.</p>
+    <div class="six-grid">
+      <div class="card">
+        <div class="card-icon">☀</div>
+        <h3>Unified Market Intelligence</h3>
+        <p>Bring together market data, research, news, internal analysis, economic indicators, and operational information into a single environment.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">☀</div>
+        <h3>Faster Investment Decisions</h3>
+        <p>Reduce the time spent gathering and reconciling information so teams can focus on evaluating opportunities and making decisions.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">☀</div>
+        <h3>Explainable Intelligence</h3>
+        <p>Every insight, recommendation, assumption, and decision remains visible, traceable, and auditable.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">☀</div>
+        <h3>Scenario Planning</h3>
+        <p>Evaluate market developments, portfolio impacts, investment opportunities, and strategic alternatives before taking action.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">☀</div>
+        <h3>Stakeholder Alignment</h3>
+        <p>Keep investment teams, executives, advisors, analysts, and operational leaders aligned around a shared understanding of market conditions and priorities.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">☀</div>
+        <h3>Institutional Memory</h3>
+        <p>Capture the rationale behind key decisions, preserving organizational knowledge and creating continuity across teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHERE TWOSUNS CREATES VALUE ══ -->
+<section class="section" style="background:white;">
+  <div class="container" style="max-width:940px;">
+    <div class="section-tag">Where TwoSuns Creates Value</div>
+    <h2 class="section-heading">Built for how <span>capital moves</span></h2>
+    <p class="section-sub" style="margin-bottom:36px;">From asset management to commodity trading, TwoSuns connects intelligence to execution across the financial landscape.</p>
+    <div style="display:grid;gap:22px;">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 32px;box-shadow:var(--card-shadow);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 8px;">Asset Management</h3>
+        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;">Improve visibility across portfolios, market conditions, research, and investment decision-making.</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 32px;box-shadow:var(--card-shadow);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 8px;">Private Equity &amp; Venture Capital</h3>
+        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;">Coordinate deal sourcing, due diligence, market intelligence, portfolio oversight, and stakeholder collaboration.</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 32px;box-shadow:var(--card-shadow);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 8px;">Commodity &amp; Energy Trading</h3>
+        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;">Connect market intelligence, pricing signals, supply chain activity, and commercial execution.</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 32px;box-shadow:var(--card-shadow);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 8px;">Pension Funds &amp; Family Offices</h3>
+        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;">Evaluate investments, monitor risk, assess market developments, and maintain a transparent decision framework.</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 32px;box-shadow:var(--card-shadow);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 8px;">Corporate Investment Teams</h3>
+        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;">Support capital allocation, strategic planning, acquisitions, partnerships, and market monitoring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+<!-- ══ BUSINESS OUTCOMES ══ -->
+<section class="section" style="background:var(--bg);">
+  <div class="container" style="max-width:980px;">
+    <div class="section-tag">Business Outcomes</div>
+    <h2 class="section-heading">What changes when <span>information becomes action</span></h2>
+    <p class="section-sub" style="margin-bottom:36px;">Measurable shifts in speed, visibility, and alignment across the organization.</p>
+    <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin:0;padding:0;">
+      <li style="display:flex;align-items:flex-start;gap:12px;font-size:16px;color:var(--navy);font-weight:600;line-height:1.5;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="10" cy="10" r="10" fill="var(--sun-pale)"/><path d="M6 10.5l2.5 2.5L14 7" stroke="var(--sun-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Faster decision cycles</li>
+      <li style="display:flex;align-items:flex-start;gap:12px;font-size:16px;color:var(--navy);font-weight:600;line-height:1.5;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="10" cy="10" r="10" fill="var(--sun-pale)"/><path d="M6 10.5l2.5 2.5L14 7" stroke="var(--sun-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Improved market visibility</li>
+      <li style="display:flex;align-items:flex-start;gap:12px;font-size:16px;color:var(--navy);font-weight:600;line-height:1.5;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="10" cy="10" r="10" fill="var(--sun-pale)"/><path d="M6 10.5l2.5 2.5L14 7" stroke="var(--sun-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Better stakeholder alignment</li>
+      <li style="display:flex;align-items:flex-start;gap:12px;font-size:16px;color:var(--navy);font-weight:600;line-height:1.5;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="10" cy="10" r="10" fill="var(--sun-pale)"/><path d="M6 10.5l2.5 2.5L14 7" stroke="var(--sun-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>More informed investment decisions</li>
+      <li style="display:flex;align-items:flex-start;gap:12px;font-size:16px;color:var(--navy);font-weight:600;line-height:1.5;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="10" cy="10" r="10" fill="var(--sun-pale)"/><path d="M6 10.5l2.5 2.5L14 7" stroke="var(--sun-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Greater organizational transparency</li>
+      <li style="display:flex;align-items:flex-start;gap:12px;font-size:16px;color:var(--navy);font-weight:600;line-height:1.5;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="10" cy="10" r="10" fill="var(--sun-pale)"/><path d="M6 10.5l2.5 2.5L14 7" stroke="var(--sun-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Stronger institutional knowledge retention</li>
+      <li style="display:flex;align-items:flex-start;gap:12px;font-size:16px;color:var(--navy);font-weight:600;line-height:1.5;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="10" cy="10" r="10" fill="var(--sun-pale)"/><path d="M6 10.5l2.5 2.5L14 7" stroke="var(--sun-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Improved responsiveness to market changes</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══ WHY NOW ══ -->
+<section class="section" style="background:white;">
+  <div class="container" style="max-width:880px;text-align:center;">
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Why Now</div>
+    <p style="font-size:clamp(20px,2.6vw,30px);font-weight:800;color:var(--navy);line-height:1.4;margin:0 auto 24px;max-width:780px;">The next generation of market leaders will not be defined by who has the most information. They will be defined by who can transform information into coordinated action faster than everyone else.</p>
+    <p style="color:var(--text-muted);font-size:17px;line-height:1.8;margin:0 auto;max-width:740px;">TwoSuns helps financial institutions move beyond disconnected data, fragmented workflows, and reactive decision-making to create a more intelligent, aligned, and responsive organization.</p>
   </div>
 </section>
 
 <div class="sun-divider"></div>
 
 <!-- ══ CTA ══ -->
-<section class="section" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFEDD0 40%,#FCE2BC 100%);text-align:center;">
-  <div class="container">
-    <div class="section-tag">Get Started</div>
-    <h2 class="section-heading">See Every Module <span>In Action</span></h2>
-    <p class="section-sub" style="margin:0 auto 40px;">Book a discovery session to see how TwoSuns's modules work together from Signal to Strategy.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="contact.html" class="btn-primary">Book a Pilot →</a>
-      <a href="industries.html" class="btn-secondary">View Industries</a>
+<section class="section" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFF5DD 100%);text-align:center;">
+  <div class="container" style="max-width:820px;">
+    <h2 class="section-heading">See what your <span>organization is missing</span></h2>
+    <p class="section-sub" style="margin:0 auto 16px;">Discover how TwoSuns can help your team connect market intelligence, operational insight, and strategic decision-making into a single coordinated environment.</p>
+    <p style="color:var(--text-muted);font-size:15px;line-height:1.75;margin:0 auto 32px;max-width:680px;">Explore your current information landscape, identify high-value opportunities, and see how TwoSuns can help your organization make faster, smarter, and more confident decisions. When you speak to one of our experts, you may be qualified to sample our industry-leading platform on a no-cost basis.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn-primary">Book a Discovery Workshop</a>
+      <a href="contact.html" class="btn-secondary">Request a Platform Demonstration →</a>
     </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
-<!-- ══ MEMBERSHIPS ══ -->
 <section class="memberships-bar" aria-label="Memberships and affiliations">
   <div class="memberships-inner">
     <div class="memberships-label">Proud Member Of</div>
@@ -764,25 +811,25 @@
         <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sun-deep);margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
       <!-- Social Icons -->
       <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
-        <a href="https://www.linkedin.com/company/twosuns" target="_blank" aria-label="LinkedIn"
+        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
            style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
            onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
            onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E1A14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <a href="https://x.com/TwoSunsAI" target="_blank" aria-label="X / Twitter"
+        <a href="https://x.com/TwoSunsAI" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
            style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
            onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
            onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="#1E1A14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.726-8.851L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <a href="https://www.youtube.com/@TwoSunsplatform" target="_blank" aria-label="YouTube"
+        <a href="https://www.youtube.com/@TwoSunsplatform" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
            style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
            onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
            onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="#1E1A14"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </a>
-        <a href="https://www.instagram.com/twosuns.ai/" target="_blank" aria-label="Instagram"
+        <a href="https://www.instagram.com/twosuns.ai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
            style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
            onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
            onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
@@ -1081,7 +1128,7 @@ window.addEventListener('resize',nxsResponsive);
   var ctx = c.getContext('2d'), pts = [], t = 0;
   function sz(){ c.width = c.offsetWidth; c.height = c.offsetHeight; }
   sz(); window.addEventListener('resize', sz);
-  var cols = ['245,158,11','245,158,11','245,158,11','204,153,0','255,102,0'];
+  var cols = ['255,102,0','255,102,0','255,102,0','204,153,0','219,88,0'];
   for(var i=0;i<55;i++) pts.push({
     x:Math.random()*c.width, y:Math.random()*c.height,
     vx:(Math.random()-.5)*.28, vy:(Math.random()-.5)*.28,
@@ -1118,19 +1165,6 @@ window.addEventListener('resize',nxsResponsive);
     requestAnimationFrame(draw);
   }
   draw();
-})();
-</script>
-<script>
-(function(){
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e,i){
-      if(e.isIntersecting){
-        setTimeout(function(){ e.target.classList.add('visible'); }, i*90);
-        obs.unobserve(e.target);
-      }
-    });
-  },{threshold:0.12});
-  document.querySelectorAll('.sustainability-card-animated').forEach(function(el){ obs.observe(el); });
 })();
 </script>
 </body>
