@@ -461,7 +461,6 @@
 <nav>
       <div class="topbar">
     <div class="topbar-inner">
-      <a href="blog.html">Resources</a>
       <a href="investors.html">Investor &amp; Partner Centre</a>
       <a href="partners.html">Partner Centre</a>
       <a href="trust.html">Trust Centre</a>
@@ -490,6 +489,18 @@
       <a href="applications.html">Applications</a>
       <a href="why-twosuns.html">Why TwoSuns</a>
       <div class="nav-dropdown">
+        <a href="blog.html">Resources</a>
+        <div class="nav-dropdown-menu">
+          <a href="blog.html">Industry Insights</a>
+          <a href="videos.html">Videos</a>
+          <a href="resources.html">Knowledge Center</a>
+          <div class="menu-divider"></div>
+          <a href="community.html">Community</a>
+          <a href="community.html#events">Events</a>
+          <a href="community.html#social">Social Media</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
         <a href="about.html">Company</a>
         <div class="nav-dropdown-menu">
           <a href="about.html">About Us</a>
@@ -510,7 +521,10 @@
   <a href="applications.html">Applications</a>
   <a href="why-twosuns.html">Why TwoSuns</a>
   <a href="about.html">Company</a>
-  <a href="blog.html">Resources</a>
+  <a href="blog.html">Industry Insights</a>
+  <a href="videos.html">Videos</a>
+  <a href="resources.html">Knowledge Center</a>
+  <a href="community.html">Community</a>
   <a href="investors.html">Investor &amp; Partner Centre</a>
   <a href="partners.html">Partner Centre</a>
   <a href="trust.html">Trust Centre</a>
@@ -518,465 +532,90 @@
 </div>
 
 <!-- ══ PAGE HERO ══ -->
-<div class="page-hero">
-  <canvas class="hero-canvas"></canvas>
+<!-- ══ ABOUT HERO ══ -->
+<section style="background:linear-gradient(160deg,#16120D 0%,#1E1A14 100%);padding:90px 0;color:#FFFFFF;position:relative;overflow:hidden;">
   <div class="container">
-    <div class="section-tag">About TwoSuns</div>
-    <h1 class="section-heading" style="text-align:center;">A Founder-Led Evolution of <span>Coordination Infrastructure</span></h1>
-    <p class="section-sub" style="text-align:center;margin:0 auto;max-width:720px;">A founder-led evolution toward operational intelligence for complex industries. TwoSuns empowers complex industries to make smarter, faster, and more responsible decisions by connecting people, operations, and intelligence into coordinated execution environments that drive productivity, innovation, and sustainable economic growth.</p>
-
-    <!-- Two-column origin story -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:40px auto 0;max-width:920px;">
-      <!-- LEFT: Founder track record -->
-      <div style="background:rgba(30,26,20,0.04);border-radius:16px;padding:28px 24px;border:1px solid rgba(30,26,20,0.08);">
-        <div style="font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--sun);margin-bottom:14px;">Founder Track Record</div>
-        <p style="font-size:14px;color:var(--text-muted);line-height:1.8;margin:0 0 16px;">Founded by Aiman El-Ramly, TwoSuns builds on a track record of creating and scaling category-defining platforms.</p>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <div style="display:flex;gap:12px;align-items:flex-start;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 6-9"/></svg>
-            </div>
-            <div>
-              <div style="font-size:13px;font-weight:700;color:var(--navy);">Zema Global Data Corporation</div>
-              <div style="font-size:12px;color:var(--text-muted);line-height:1.6;">Global standard for market data integration and analytics across complex enterprises.</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;align-items:flex-start;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--navy),#2A231B);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M2 20h20M5 20V10l7-6 7 6v10"/><path d="M9 20v-6h6v6"/></svg>
-            </div>
-            <div>
-              <div style="font-size:13px;font-weight:700;color:var(--navy);">ZE Power Engineering</div>
-              <div style="font-size:12px;color:var(--text-muted);line-height:1.6;">Full-service design engineering company and a BC anchor firm supporting critical utility infrastructure.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- RIGHT: The structural gap -->
-      <div style="background:linear-gradient(135deg,#16120D,#1E1A14);border-radius:16px;padding:28px 24px;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(255,102,0,0.12),transparent);border-radius:50%;"></div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--sun);margin-bottom:14px;">The Structural Gap</div>
-        <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.8;margin:0 0 16px;">Markets have become more complex. Data has expanded rapidly, particularly unstructured data across policy, logistics, and market activity.</p>
-        <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.8;margin:0 0 20px;">Existing systems were not designed to interpret or act on this continuously.</p>
-        <div style="border-top:1px solid rgba(255,102,0,0.2);padding-top:16px;">
-          <p style="font-size:15px;font-weight:700;color:#FFFFFF;margin:0 0 4px;">TwoSuns was built to define the next layer.</p>
-          <p style="font-size:13px;color:rgba(255,102,0,0.85);margin:0;">A system where market signals, strategy, and execution operate together.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ FOUNDER & PRODUCT PERSPECTIVES ══ -->
-<section style="background:#16120D;padding:72px 0;color:#FFFFFF;position:relative;overflow:hidden;">
-  <div style="position:absolute;top:-80px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,102,0,0.12) 0%,transparent 65%);pointer-events:none;"></div>
-  <div style="max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:2;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
-
-      <!-- Founder Perspective -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 30px;backdrop-filter:blur(6px);">
-        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,102,0,0.15);border:1px solid rgba(255,102,0,0.3);color:#CC9900;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:4px 10px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">Founder Perspective</div>
-        <p style="font-size:15px;color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:14px;font-style:italic;">"Over time, one pattern becomes clear. Organizations invest in data, systems, and talent. Each improves independently. Execution still depends on fragmented views and ad-hoc coordination across functions."</p>
-        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:14px;">The constraint is structural. The challenge is not access to information. The challenge is how decisions are formed, aligned, executed, and retained. TwoSuns was built to address that gap directly.</p>
-        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;">
-          <strong style="font-size:13px;color:#FF6600;display:block;">Aiman El-Ramly</strong>
-          <span style="font-size:11.5px;color:rgba(255,255,255,0.5);">Founder &amp; CEO</span>
-        </div>
-      </div>
-
-      <!-- Product Perspective -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 30px;backdrop-filter:blur(6px);">
-        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(42,35,27,0.18);border:1px solid rgba(42,35,27,0.35);color:#F3C98C;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:4px 10px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">Product Perspective</div>
-        <p style="font-size:15px;color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:14px;font-style:italic;">"Most systems are designed to store data or generate outputs. TwoSuns is designed to coordinate how the enterprise actually executes."</p>
-        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:14px;">This requires an architecture that continuously ingests data, applies context, supports iteration, and connects intelligence directly to workflows and execution. The objective is consistency, clarity, and traceability across every decision.</p>
-        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;">
-          <strong style="font-size:13px;color:#F3C98C;display:block;">Ryan Arian</strong>
-          <span style="font-size:11.5px;color:rgba(255,255,255,0.5);">Chief Digital Product Officer</span>
-        </div>
-      </div>
-
-    </div>
+    <div class="section-tag" style="background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.35);color:var(--sun);">About Us</div>
+    <h1 style="color:#FFFFFF;font-size:clamp(32px,4.5vw,52px);font-weight:900;line-height:1.1;margin:14px 0 18px;max-width:900px;">The operational intelligence platform for <span style="color:var(--sun);">complex industries</span></h1>
+    <p style="color:rgba(255,255,255,0.78);font-size:18px;line-height:1.75;max-width:820px;margin:0;">TwoSuns.ai is the AI-native operational intelligence platform for complex industries. We connect data, systems, people, and AI to transform fragmented information into coordinated, explainable, and executable decisions, helping organizations move from disconnected insights to aligned execution across operations, commercial teams, and the enterprise.</p>
   </div>
 </section>
 
 <div class="sun-divider"></div>
 
-<!-- OUR PURPOSE / MISSION & VISION (moved from homepage, Website-edits slide 20) -->
-<section style="background:var(--bg);padding:88px 0;">
-  <div class="container">
-    <div>
-      <div class="section-tag">Our Purpose</div>
-      <h2 style="font-size:clamp(22px,2.8vw,34px);font-weight:800;color:var(--navy);margin-bottom:18px;line-height:1.2;">OUR MISSION</h2>
-      <p style="font-size:18px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;">Transforming how enterprises strategize, decide, and execute.</p>
-      <h2 style="font-size:clamp(22px,2.8vw,34px);font-weight:800;color:var(--navy);margin-bottom:18px;line-height:1.2;">OUR VISION</h2>
-      <p style="font-size:18px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;">A world where decisions are consistent, explainable, and aligned across the enterprise.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;">
-        <span style="background:var(--sun-pale);border:1px solid rgba(255,102,0,0.3);color:var(--sun-deep);font-size:14px;font-weight:700;padding:5px 12px;border-radius:16px;">AI-First</span>
-        <span style="background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);color:var(--navy);font-size:14px;font-weight:700;padding:5px 12px;border-radius:16px;">Continuous</span>
-        <span style="background:var(--green-light);border:1px solid rgba(42,35,27,0.2);color:var(--green);font-size:14px;font-weight:700;padding:5px 12px;border-radius:16px;">Responsible</span>
-      </div>
-    </div>
+<!-- ══ WHY WE EXIST ══ -->
+<section class="section" style="background:var(--bg);">
+  <div class="container" style="max-width:880px;">
+    <div class="section-tag">Why We Exist</div>
+    <h2 class="section-heading">Coordination, <span>not more data</span></h2>
+    <p style="color:var(--text-muted);font-size:17px;line-height:1.8;">Organizations today do not suffer from a lack of data, they suffer from a lack of coordination. Information is fragmented across systems, teams, and workflows, making it difficult to make consistent, explainable decisions. TwoSuns was created to become the intelligence and orchestration layer that connects signals, people, and actions across the enterprise.</p>
   </div>
 </section>
 
-<div class="sun-divider"></div>
-
-<!-- ══ FOUNDERS ══ -->
-<section id="founders" class="section">
-  <div class="container">
-    <div class="section-tag">Leadership Team</div>
-    <h2 class="section-heading">The People Behind TwoSuns</h2>
-    <p class="section-sub" style="max-width:640px;">TwoSuns is designed by practitioners who have operated across enterprise software, industrial operations, commercial markets, and global data platforms. This ensures the platform reflects how organizations actually coordinate and execute.</p>
-
-    <div style="display:flex;flex-direction:column;gap:24px;margin-top:36px;">
-
-      <!-- ── Aiman ── -->
-      <div class="founder-card" style="display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;">
-        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;">
-          <div class="founder-avatar" style="width:120px;height:120px;">
-            <img loading="lazy" src="aiman-headshot.jpg" alt="Aiman El-Ramly" style="object-position:center 0%;">
-          </div>
-          <div>
-            <h3>Aiman El-Ramly</h3>
-            <div class="cred">MBA, CMC</div>
-            <div class="role" style="margin-top:6px;">Founder &amp; CEO</div>
-            <a href="https://www.linkedin.com/in/aimanelramly/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#1E1A14;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-        <div>
-          <p class="bio">Aiman El-Ramly is a founder, board director, and transformational leader with more than three decades of experience building and scaling organizations across multiple industries. His work spans enterprise software, management consulting, infrastructure, construction and real estate development, deregulated markets, electrification, organizational transition, and high-growth technology environments. Across these domains, he has operated across the full enterprise stack, from strategy through execution, including marketing, sales, finance, human resources, operations, and IT.</p>
-          <p class="bio">As Founder and CEO of TwoSuns, an AI-native coordination platform designed to structure how organizations make decisions in complex environments, Aiman connects data, context, intelligence, and execution into a continuous TwoSuns Core. TwoSuns is part of the AEPG group of companies. Earlier in his career, he was a founding executive of ZE PowerGroup, leading revenue strategy, global expansion, and product commercialization, and co-founded ZE Power Engineering, where he served as CFO and continues to serve as a Board Director.</p>
-          <p class="bio">Aiman serves on the board of Zema Global Data Corporation and chairs the M&amp;A Special Committee, overseeing strategic transactions including the acquisition of the market data business from Morningstar and cQuant.io. He also serves on the Advisory Board of Yocale. Throughout his career, his work has focused on bridging market structure, enterprise data governance, and strategic decision-making across global majors, Fortune 500 companies, utilities, financial institutions, industry leaders, governments, and enterprise organizations.</p>
-          <div class="achieve-title">Key Achievements</div>
-          <ul>
-            <li>Founder &amp; CEO, TwoSuns: AI-native coordination platform.</li>
-            <li>Founding executive of ZE PowerGroup, scaled into a global market data and analytics provider.</li>
-            <li>Co-founder, ZE Power Engineering: served as CFO, continues as Board Director.</li>
-            <li>Chair, M&amp;A Special Committee at Zema Global: oversaw acquisitions including Morningstar market data and cQuant.io.</li>
-            <li>Senior governance roles including BC Soccer (First Vice President) and President, Richmond Girls Soccer Association.</li>
-            <li>MBA in Management Consulting (Royal Roads University), Certified Management Consultant (CMC), BA Psychology (UBC).</li>
-          </ul>
-          <div style="background:rgba(255,102,0,0.06);border-left:3px solid var(--sun);border-radius:0 8px 8px 0;padding:12px 16px;margin-top:16px;">
-            <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin:0;font-style:italic;">"The real constraint is the absence of enduring coordination infrastructure across the enterprise. TwoSuns was built to address that gap directly."</p>
-          </div>
-          <div class="founder-contact" style="margin-top:20px;">
-            <a href="mailto:info@twosuns.ai">info@twosuns.ai</a>
-            <a href="tel:604-760-9015">604-760-9015</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── Ryan ── -->
-      <div class="founder-card" style="display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;">
-        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;">
-          <div class="founder-avatar" style="width:120px;height:120px;">
-            <img loading="lazy" src="ryan-headshot.jpg" alt="Ryan Arian" style="object-fit:cover;object-position:center 15%">
-          </div>
-          <div>
-            <h3>Ryan Arian</h3>
-            <div class="cred">BCom (MIS), MPM</div>
-            <div class="role" style="margin-top:6px;">Chief Digital Product Officer</div>
-            <a href="https://www.linkedin.com/in/ryan-arian/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#1E1A14;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-        <div>
-          <p class="bio">Ryan Arian leads product architecture and AI system development for TwoSuns. He is a solution delivery and technology leader with more than 15 years of experience building and scaling enterprise systems across data, operations, and AI-driven environments. His work focuses on translating complex operating conditions into structured, continuous systems that deliver measurable business outcomes.</p>
-          <p class="bio">Ryan has led large-scale initiatives across enterprise organizations, including lululemon, where he delivered transformative AI and Agile programs across supply chain and product innovation systems. He successfully drove the development of enterprise applications that generated significant financial impact, including turning a multi-million-dollar investment into double-digit return multiples through operational optimization and intelligent system design.</p>
-          <p class="bio">At TwoSuns, Ryan is responsible for the platform's intelligence architecture, including the TwoSuns Core, multi-model AI orchestration, agentic workflows and decision systems, and secure, scalable enterprise infrastructure. His work ensures that TwoSuns operates as a structured, governed system capable of supporting decision-making across complex environments at scale.</p>
-          <div class="achieve-title">Key Achievements</div>
-          <ul>
-            <li>15+ years leading enterprise AI adoption, generative AI integration, and large-scale solution delivery.</li>
-            <li>Delivered transformative AI and Agile programs at lululemon across supply chain and product innovation.</li>
-            <li>Architect of TwoSuns's TwoSuns Core, multi-model AI orchestration, and agentic workflows.</li>
-            <li>Enterprise-level Agile and SAFe transformation, DevSecOps, CI/CD automation, and platform architecture.</li>
-            <li>Certifications: CAIS (AI Scientist), PMP, PMI-ACP, SAFe Program Consultant, SAFe Product Owner &amp; DevOps, Certified Scrum Professional and Scrum Master.</li>
-          </ul>
-          <div style="background:rgba(255,102,0,0.06);border-left:3px solid var(--logo-green);border-radius:0 8px 8px 0;padding:12px 16px;margin-top:16px;">
-            <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin:0;font-style:italic;">"The goal is not more information; rather, to offer a system where decisions are consistent, explainable, and repeatable."</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── Belén ── -->
-      <div class="founder-card" style="display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;">
-        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;">
-          <div class="founder-avatar" style="width:120px;height:120px;">
-            <img loading="lazy" src="belen-headshot.jpg" alt="Belén Welch-Almeida" style="object-fit:cover;object-position:center top;">
-          </div>
-          <div>
-            <h3>Belén Welch-Almeida</h3>
-            <div class="cred" style="font-weight:400;color:var(--text-muted);">Executive Master in International Business (AI), ESCP</div>
-            <div class="role" style="margin-top:6px;font-weight:700;color:var(--navy);font-size:15px;">Chief Growth Officer</div>
-            <a href="https://www.linkedin.com/in/belenwelch/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#1E1A14;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-        <div>
-          <p class="bio">Belén Welch-Almeida leads commercial strategy, market positioning, and growth for TwoSuns. Her experience spans commercial growth and operations, marketing, strategic partnerships, and capital for growth including in clean technologies. She works closely with enterprise partners, governments and clients to align TwoSuns with real-world use cases across operations, and strategy. She brings a strong combination of market understanding and execution focus, ensuring that TwoSuns delivers measurable value in complex environments.</p>
-          <div class="achieve-title">Key Achievements</div>
-          <ul>
-            <li>Leads commercial strategy, market positioning, and growth for TwoSuns.</li>
-            <li>Deep experience across GTM, global markets, commercial operations, and strategic partnerships.</li>
-            <li>Prior leadership at high visibility organizations such as Innovation Asset Collective, Business Development Bank of Canada, Microsoft, and Opportunities New Brunswick in investment attraction.</li>
-            <li>Works directly with enterprise clients to align platform capabilities with real-world use cases.</li>
-            <li>Aligns market insight, capital, and execution to drive scalable outcomes for TwoSuns clients.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- ── Michelle ── -->
-      <div class="founder-card" style="display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;">
-        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;">
-          <div class="founder-avatar" style="width:120px;height:120px;">
-            <img loading="lazy" src="michelle-headshot.jpg" alt="Michelle Mollineaux" style="object-fit:cover;object-position:center 15%">
-          </div>
-          <div>
-            <h3>Michelle Mollineaux</h3>
-            <div class="cred" style="margin-bottom:6px;">Director, Marketing &amp; Partnerships</div>
-            <div style="display:inline-block;background:var(--sun-pale);border:1px solid var(--border);color:var(--sun-deep);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;">🏆 Most Inspiring Women Leaders 2026</div>
-            <a href="https://www.linkedin.com/in/michellemollineaux/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#1E1A14;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-        <div>
-          <p class="bio">Michelle Mollineaux leads marketing, partnerships, and ecosystem development for TwoSuns. She brings more than two decades of experience across enterprise software, data platforms, government, and technology ecosystems, with a focus on building market presence, driving revenue growth, and structuring high-value partnerships. She was recently recognized by CEO Views as one of the Most Inspiring Women Leaders to Watch 2026.</p>
-          <p class="bio">Michelle has held senior marketing and partnership roles at Argus Media and ZE PowerGroup Inc., where she led global go-to-market strategy, channel development, and co-marketing initiatives with data providers, technology partners, and consulting firms. Earlier in her career, she held leadership roles across technology, telecommunications, and public-sector environments, including TELUS, Layer 7 Technologies, and multiple early-stage and growth companies. She has also served on boards including the College of Registered Nurses of BC and the College of Registered Psychiatric Nurses of BC.</p>
-          <div class="achieve-title">Key Achievements</div>
-          <ul>
-            <li>Recognized by CEO Views as one of the Most Inspiring Women Leaders to Watch 2026.</li>
-            <li>20+ years across global go-to-market strategy, brand development, and channel partnerships.</li>
-            <li>Senior marketing and partnership leadership at Argus Media and ZE PowerGroup.</li>
-            <li>Co-Founder of KoolProjects Media Inc., a social enterprise for collaboration and project development.</li>
-            <li>Board governance experience including College of Registered Nurses of BC and CRPNBC.</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="sun-divider"></div>
-
-<!-- BUILT BY OPERATORS + OPERATING MODEL -->
-<section class="section" style="background:linear-gradient(180deg,var(--bg) 0%,var(--sun-pale) 100%);">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
-      <div>
-        <div class="section-tag">Built by Operators</div>
-        <h2 style="font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:18px;">Built by <span style="color:var(--sun-deep);">Operators</span></h2>
-        <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:18px;">TwoSuns is designed by practitioners who have operated across:</p>
-        <ul style="list-style:none;padding:0;margin:0;">
-          <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;"><span style="color:var(--sun-deep);font-weight:700;">›</span> Commercial and go-to-market environments</li>
-          <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;"><span style="color:var(--sun-deep);font-weight:700;">›</span> Industrial and system-driven operations</li>
-          <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;"><span style="color:var(--sun-deep);font-weight:700;">›</span> Enterprise software and data platforms</li>
-          <li style="font-size:14px;color:var(--text);padding:8px 0;display:flex;gap:10px;"><span style="color:var(--sun-deep);font-weight:700;">›</span> Governance, policy, and organizational leadership</li>
-        </ul>
-        <p style="font-size:14px;color:var(--navy);font-weight:600;line-height:1.7;margin-top:18px;font-style:italic;">This ensures the platform reflects how decisions are actually made across organizations.</p>
-      </div>
-      <div>
-        <div class="section-tag">Operating Model</div>
-        <h2 style="font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:18px;">A Distributed <span style="color:var(--sun-deep);">Global Footprint</span></h2>
-        <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:18px;">TwoSuns operates as a distributed organization with a global footprint, designed for organizations that operate across regions, functions, and complex decision environments.</p>
-        <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:22px 24px;box-shadow:var(--card-shadow);">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-            <div>
-              <strong style="font-size:13px;color:var(--navy);display:block;margin-bottom:4px;">🇨🇦 Canadian HQ</strong>
-              <span style="font-size:12.5px;color:var(--text-muted);line-height:1.6;">Richmond, British Columbia</span>
-            </div>
-            <div>
-              <strong style="font-size:13px;color:var(--navy);display:block;margin-bottom:4px;">🌐 Engineering Hub</strong>
-              <span style="font-size:12.5px;color:var(--text-muted);line-height:1.6;">Cairo, Egypt</span>
-            </div>
-            <div>
-              <strong style="font-size:13px;color:var(--navy);display:block;margin-bottom:4px;">🏢 Parent Company</strong>
-              <span style="font-size:12.5px;color:var(--text-muted);line-height:1.6;">Part of AEPG group of companies</span>
-            </div>
-            <div>
-              <strong style="font-size:13px;color:var(--navy);display:block;margin-bottom:4px;">🤝 Regional Focus</strong>
-              <span style="font-size:12.5px;color:var(--text-muted);line-height:1.6;">MENA, Canada, Europe, LATAM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Closing -->
-    <div style="background:linear-gradient(135deg,#1E1A14,#1A140E);border-radius:20px;padding:48px 56px;color:#FFFFFF;margin-top:64px;text-align:center;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(255,102,0,0.18) 0%,transparent 65%);pointer-events:none;"></div>
-      <div style="position:relative;z-index:2;">
-        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,102,0,0.15);border:1px solid rgba(255,102,0,0.3);color:#CC9900;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">A System for How Decisions Are Made</div>
-        <h3 style="font-size:clamp(24px,2.6vw,34px);font-weight:800;color:#FFFFFF;line-height:1.3;margin-bottom:14px;max-width:760px;margin-left:auto;margin-right:auto;">TwoSuns reflects a shift toward systems that structure how decisions are formed, aligned, executed, and recorded.</h3>
-        <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.8;max-width:680px;margin:0 auto 24px;">It connects data, intelligence, and action into a continuous framework that evolves with the organization and strengthens over time.</p>
-        <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;padding:14px 30px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;">Book a Discovery <span>→</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sun-divider"></div>
-
-<!-- COMPETITIVE COMPARISON -->
+<!-- ══ PURPOSE / MISSION / VISION ══ -->
 <section class="section" style="background:white;">
-  <div class="container">
-    <div class="section-tag">Competitive Positioning</div>
-    <h2 class="section-heading">How TwoSuns <span>Stands Apart</span></h2>
-    <p class="section-sub">TwoSuns occupies a distinct category, not a general AI tool, not a data terminal, but purpose-built coordination for complex enterprise environments.</p>
-    <div style="overflow-x:auto;margin-top:40px;">
-      <table style="width:100%;border-collapse:collapse;font-size:14px;">
-        <thead>
-          <tr style="background:linear-gradient(135deg,var(--navy),#2A231B);color:white;">
-            <th style="padding:16px 20px;text-align:left;border-radius:12px 0 0 0;">Dimension</th>
-            <th style="padding:16px 20px;text-align:center;">ChatGPT (Enterprise)</th>
-            <th style="padding:16px 20px;text-align:center;">Palantir</th>
-            <th style="padding:16px 20px;text-align:center;">Bloomberg Terminal</th>
-            <th style="padding:16px 20px;text-align:center;background:rgba(255,102,0,0.3);border-radius:0 12px 0 0;">✦ TwoSuns</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="background:var(--bg);">
-            <td style="padding:14px 20px;font-weight:700;color:var(--navy);">Core Type</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">AI assistant</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Data integration &amp; analytics</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Financial data terminal</td>
-            <td style="padding:14px 20px;text-align:center;font-weight:700;color:var(--sun-deep);background:var(--sun-pale);">AI coordination platform</td>
-          </tr>
-          <tr style="background:white;">
-            <td style="padding:14px 20px;font-weight:700;color:var(--navy);">Main Purpose</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Productivity &amp; knowledge work</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Operational intelligence</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Market data &amp; analytics</td>
-            <td style="padding:14px 20px;text-align:center;font-weight:700;color:var(--sun-deep);background:var(--sun-pale);">Coordination infrastructure for complex enterprises</td>
-          </tr>
-          <tr style="background:var(--bg);">
-            <td style="padding:14px 20px;font-weight:700;color:var(--navy);">Target Users</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Any industry employees</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Governments, defense, enterprises</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Traders, analysts, investment banks</td>
-            <td style="padding:14px 20px;text-align:center;font-weight:700;color:var(--sun-deep);background:var(--sun-pale);">Energy companies, industry leaders, risk teams</td>
-          </tr>
-          <tr style="background:white;">
-            <td style="padding:14px 20px;font-weight:700;color:var(--navy);">AI Model</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Black box</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Proprietary models</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Traditional analytics</td>
-            <td style="padding:14px 20px;text-align:center;font-weight:700;color:var(--sun-deep);background:var(--sun-pale);">Persistent Coordination, fully explainable &amp; auditable</td>
-          </tr>
-          <tr style="background:var(--bg);">
-            <td style="padding:14px 20px;font-weight:700;color:var(--navy);">Decision Record</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">None</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Partial</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">None</td>
-            <td style="padding:14px 20px;text-align:center;font-weight:700;color:var(--sun-deep);background:var(--sun-pale);">Full TwoSuns Core, immutable, traceable, WORM</td>
-          </tr>
-          <tr style="background:white;">
-            <td style="padding:14px 20px;font-weight:700;color:var(--navy);">Specialization</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">General AI</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Data infrastructure</td>
-            <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">Financial markets</td>
-            <td style="padding:14px 20px;text-align:center;font-weight:700;color:var(--sun-deep);background:var(--sun-pale);border-radius:0 0 12px 0;">Energy &amp; commercial markets</td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="container" style="max-width:940px;text-align:center;">
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Our Purpose</div>
+    <p style="font-size:clamp(20px,2.6vw,30px);font-weight:800;color:var(--navy);line-height:1.4;margin:0 auto 44px;max-width:820px;">To become the orchestration layer that enables organizations to operate with greater intelligence, alignment, and confidence.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;text-align:left;">
+      <div style="background:var(--sun-pale);border-radius:16px;padding:30px;border:1px solid rgba(255,102,0,0.2);">
+        <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin:0 0 10px;">Our Mission</h3>
+        <p style="color:var(--text-muted);font-size:16px;line-height:1.7;margin:0;">Transforming how enterprises strategize, decide, and execute.</p>
+      </div>
+      <div style="background:var(--sun-pale);border-radius:16px;padding:30px;border:1px solid rgba(255,102,0,0.2);">
+        <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin:0 0 10px;">Our Vision</h3>
+        <p style="color:var(--text-muted);font-size:16px;line-height:1.7;margin:0;">A world where decisions are consistent, explainable, and aligned across the enterprise.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="sun-divider"></div>
-<!-- TRUST & GOVERNANCE -->
+<!-- ══ LEADERSHIP ══ -->
 <section class="section" style="background:var(--bg);">
-  <div class="container">
-    <div class="section-tag">Trust &amp; Governance</div>
-    <h2 class="section-heading">Enterprise-Grade <span>Security &amp; Accountability</span></h2>
-    <p class="section-sub">Enterprise buyers require more than intelligence, they require defensibility. TwoSuns is built governance-first, with auditability at every layer.</p>
-    <div class="six-grid" style="margin-top:40px;">
-      <div class="card"><div class="card-icon">🔍</div><h3>Persistent Coordination</h3><p>Every AI-assisted insight has logged sources, reasoning paths, and assumptions. Nothing is opaque. Everything is reviewable and defensible under audit.</p></div>
-      <div class="card"><div class="card-icon">📒</div><h3>TwoSuns Core</h3><p>Immutable TwoSuns Core preserves the complete decision chain from signal discovery to final outcome with WORM (Write Once, Read Many) storage compliance.</p></div>
-      <div class="card"><div class="card-icon">🏢</div><h3>Tenant Isolation</h3><p>Schema-per-tenant isolation in PostgreSQL provides structural separation of client data with full operational efficiency within shared infrastructure.</p></div>
-      <div class="card"><div class="card-icon">🔐</div><h3>Encryption &amp; Identity</h3><p>TLS/mTLS for all communications, AWS KMS for data at rest, OIDC authentication, JWT authorization, and enterprise IdP integration.</p></div>
-      <div class="card"><div class="card-icon">📋</div><h3>Audit Logging</h3><p>Event-level audit trails, infrastructure-level access governance, and immutable evidence storage meeting enterprise compliance expectations.</p></div>
-      <div class="card"><div class="card-icon">👤</div><h3>Human-in-the-Loop</h3><p>AI-assisted extraction is always reviewable and verified before becoming operationally binding. Intelligence augments human judgment, it does not replace it.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="sun-divider"></div>
-
-<!-- ══ FOUNDING PILOT PARTNERS ══ -->
-<section id="founding-pilots" class="section">
-  <div class="container">
-    <div class="section-tag">Founding Cohort</div>
-    <h2 class="section-heading">Become a <span>Founding Pilot Partner</span></h2>
-    <p class="section-sub">We are selecting a limited cohort of enterprise partners to shape the future of coordination in complex enterprises.</p>
-
-    <div class="pilot-layout">
-      <!-- Left: Invitation Card -->
-      <div class="pilot-invite">
-        <div class="pilot-cohort-tag">Limited Availability</div>
-        <h3>Shape the Platform.<br><span>Lead the Market.</span></h3>
-        <p class="pilot-sub">Founding pilot partners work directly with our team to configure TwoSuns for their workflows, gaining early access to capabilities built around their priorities.</p>
-        <ul class="pilot-benefits">
-          <li>
-            <div class="pilot-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26z"/></svg></div>
-            <div><strong style="color:white;">Priority Access</strong><br>First to deploy new modules, integrations, and analytical capabilities</div>
-          </li>
-          <li>
-            <div class="pilot-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><path d="M12 20V10M6 20V4M18 20v-6"/></svg></div>
-            <div><strong style="color:white;">Shape the Roadmap</strong><br>Direct input into feature development and platform direction</div>
-          </li>
-          <li>
-            <div class="pilot-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-            <div><strong style="color:white;">Preferential Terms</strong><br>Founding partner pricing locked in for the duration of the engagement</div>
-          </li>
-          <li>
-            <div class="pilot-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-            <div><strong style="color:white;">Dedicated Support</strong><br>White-glove onboarding with direct access to the founding team</div>
-          </li>
-        </ul>
-        <a href="engage.html" class="pilot-cta">Apply for Founding Cohort &rarr;</a>
+  <div class="container" style="max-width:920px;">
+    <div class="section-tag">Leadership Team</div>
+    <h2 class="section-heading">The People Behind <span>TwoSuns</span></h2>
+    <p class="section-sub" style="margin-bottom:36px;">Our leadership team combines deep expertise in enterprise software, artificial intelligence, industrial operations, data platforms, and go-to-market execution, helping organizations solve complex coordination challenges and unlock new levels of operational performance.</p>
+    <div style="display:grid;gap:22px;">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px 32px;box-shadow:var(--card-shadow);">
+        <img src="aiman-headshot.jpg" alt="Aiman El-Ramly" loading="lazy" style="width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center 0%;display:block;margin-bottom:16px;border:3px solid var(--sun-pale);box-shadow:0 6px 18px rgba(255,102,0,0.18);">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+          <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:0;">Aiman El-Ramly</h3>
+          <span style="font-size:12.5px;color:var(--text-muted);font-weight:600;">MBA, CMC</span>
+        </div>
+        <div style="color:var(--sun-deep);font-weight:700;font-size:14px;margin:5px 0 6px;">Founder &amp; CEO</div>
+        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:var(--sun-deep);font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
+        <p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Aiman El-Ramly is a founder, board director, and transformational leader with more than three decades of experience building and scaling organizations across multiple industries. His work spans enterprise software, management consulting, infrastructure, construction, and real estate development, deregulated markets, electrification, organizational transition, and high-growth technology environments. Across these domains, he has operated across the full enterprise stack, from strategy through execution, including marketing, sales, finance, human resources, operations, and IT.</p><p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">As Founder and CEO of TwoSuns, an AI-native coordination platform designed to structure how organizations make decisions in complex environments, Aiman connects data, context, intelligence, and execution into a continuous TwoSuns Core. TwoSuns is part of the AEPG group of companies. Earlier in his career, he was a founding executive of ZE PowerGroup and co-founded ZE Power Engineering, where he served as CFO and continues to serve as a Board Director.</p><p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Aiman serves on the board of Zema Global Data Corporation and chairs the M&amp;A Special Committee, overseeing strategic transactions including the acquisition of the market data business from Morningstar and cQuant.io. He also serves on the Advisory Board of Yocale.</p>
       </div>
-
-      <!-- Right: Expected Outcomes -->
-      <div class="outcome-grid">
-        <div style="margin-bottom:8px;">
-          <div class="section-tag" style="margin-bottom:8px;">Expected Outcomes</div>
-          <p style="font-size:14px;color:var(--text-muted);line-height:1.7;">Platform capabilities designed to deliver measurable impact across your commercial and operational coordination.</p>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px 32px;box-shadow:var(--card-shadow);">
+        <img src="ryan-headshot.jpg" alt="Ryan Arian" loading="lazy" style="width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center 15%;display:block;margin-bottom:16px;border:3px solid var(--sun-pale);box-shadow:0 6px 18px rgba(255,102,0,0.18);">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+          <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:0;">Ryan Arian</h3>
+          <span style="font-size:12.5px;color:var(--text-muted);font-weight:600;">BCom (MIS), MPM</span>
         </div>
-
-        <div class="outcome-card">
-          <div class="outcome-metric"><div class="val">40%</div><div class="unit">Faster</div></div>
-          <div class="outcome-detail"><h4>Market Response Time</h4><p>Unified signal processing reduces the time from market event to informed decision across your team.</p></div>
+        <div style="color:var(--sun-deep);font-weight:700;font-size:14px;margin:5px 0 6px;">Chief Digital Product Officer</div>
+        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:var(--sun-deep);font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
+        <p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Ryan Arian leads product architecture and AI system development for TwoSuns. He is a solution delivery and technology leader with more than 15 years of experience building and scaling enterprise systems across data, operations, and AI-driven environments. His work focuses on translating complex operating conditions into structured, continuous systems that deliver measurable business outcomes.</p><p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Ryan has led large-scale initiatives across enterprise organizations, including lululemon, where he delivered transformative AI and Agile programs across supply chain and product innovation systems. At TwoSuns, he is responsible for the platform's intelligence architecture, including the TwoSuns Core, multi-model AI orchestration, agentic workflows, and secure, scalable enterprise infrastructure.</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px 32px;box-shadow:var(--card-shadow);">
+        <img src="belen-headshot.jpg" alt="Bel&eacute;n Welch-Almeida" loading="lazy" style="width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center top;display:block;margin-bottom:16px;border:3px solid var(--sun-pale);box-shadow:0 6px 18px rgba(255,102,0,0.18);">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+          <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:0;">Bel&eacute;n Welch-Almeida</h3>
+          <span style="font-size:12.5px;color:var(--text-muted);font-weight:600;">Executive Master in International Business (AI), ESCP</span>
         </div>
-
-        <div class="outcome-card">
-          <div class="outcome-metric"><div class="val">500+</div><div class="unit">Sources</div></div>
-          <div class="outcome-detail"><h4>Global Data Integration</h4><p>Consolidated view across market signals, regulatory filings, contracts, and operational data.</p></div>
+        <div style="color:var(--sun-deep);font-weight:700;font-size:14px;margin:5px 0 6px;">Chief Growth Officer</div>
+        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:var(--sun-deep);font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
+        <p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Bel&eacute;n Welch-Almeida leads commercial strategy, market positioning, and growth for TwoSuns. Her experience spans commercial growth and operations, marketing, strategic partnerships, and capital for growth, including in clean technologies. She works closely with enterprise partners, governments, and clients to align TwoSuns with real-world use cases across operations and strategy.</p><p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Throughout her career, Bel&eacute;n has held leadership roles with organizations including Innovation Asset Collective, Business Development Bank of Canada, Microsoft, and Opportunities New Brunswick, where she helped accelerate commercialization, investment attraction, and strategic growth initiatives.</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px 32px;box-shadow:var(--card-shadow);">
+        <img src="michelle-headshot.jpg" alt="Michelle Mollineaux" loading="lazy" style="width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center 15%;display:block;margin-bottom:16px;border:3px solid var(--sun-pale);box-shadow:0 6px 18px rgba(255,102,0,0.18);">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+          <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:0;">Michelle Mollineaux</h3>
+          <span style="font-size:12.5px;color:var(--text-muted);font-weight:600;">Recognized among the Most Inspiring Women Leaders to Watch, 2026</span>
         </div>
-
-        <div class="outcome-card">
-          <div class="outcome-metric"><div class="val">60%</div><div class="unit">Reduction</div></div>
-          <div class="outcome-detail"><h4>Manual Analysis Overhead</h4><p>Persistent Coordination automates extraction, structuring, and cross-referencing while keeping humans in the loop.</p></div>
-        </div>
-
-        <div class="outcome-card">
-          <div class="outcome-metric"><div class="val">1</div><div class="unit">Platform</div></div>
-          <div class="outcome-detail"><h4>End-to-End Decision Layer</h4><p>From signal detection through negotiation to contract execution, all in a single auditable system.</p></div>
-        </div>
-
-        <div class="outcome-card">
-          <div class="outcome-metric"><div class="val">100%</div><div class="unit">Traceable</div></div>
-          <div class="outcome-detail"><h4>TwoSuns Core</h4><p>Every decision logged with context, rationale, and audit trail for compliance and institutional memory.</p></div>
-        </div>
+        <div style="color:var(--sun-deep);font-weight:700;font-size:14px;margin:5px 0 6px;">Director, Marketing &amp; Partnerships</div>
+        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:var(--sun-deep);font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
+        <p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Michelle Mollineaux leads Marketing, Partnerships, and Ecosystem Development for TwoSuns, driving global market awareness, strategic alliances, and ecosystem growth. With more than 25 years of experience across enterprise software, data intelligence, technology, and the public sector, she specializes in building high-value partnerships and bringing innovative technologies to market. She was recently recognized by The CEO Views as one of the Most Inspiring Women Leaders to Watch in 2026.</p><p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Prior to joining TwoSuns, Michelle held senior leadership roles at Argus Media, ZE PowerGroup Inc. (ZEMA Global Data), Layer 7 Technologies (Broadcom), and TELUS Enterprise Solutions. She also serves as a Board Member of Mend Canada and was instrumental in the development of Bill M 204, the Perinatal and Postnatal Mental Health Strategy Act, which became law in British Columbia.</p>
       </div>
     </div>
   </div>
@@ -984,54 +623,18 @@
 
 <div class="sun-divider"></div>
 
-<!-- ══ WHY TWOSUNS EXISTS ══ -->
-<section class="section" style="background:linear-gradient(135deg,#16120D 0%,#1E1A14 100%);color:white;">
+<!-- ══ CTA ══ -->
+<section class="section" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFF5DD 100%);text-align:center;">
   <div class="container">
-    <div style="max-width:800px;margin:0 auto;text-align:center;">
-      <div class="section-tag" style="background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.3);color:#FF6600;margin:0 auto 24px;">Why TwoSuns Exists</div>
-      <h2 class="section-heading" style="color:white;margin-bottom:24px;">Enterprise systems manage data.<br>Analytics platforms interpret data.<br><span>Decision-making remains fragmented.</span></h2>
-      <p style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:32px;">TwoSuns establishes the coordination layer: A continuous system that connects signals to decisions, aligns stakeholders, and maintains a persistent record of how decisions are made.</p>
-      <a href="why-twosuns.html" style="display:inline-flex;align-items:center;gap:8px;background:#FF6600;color:#FFFFFF;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Why TwoSuns &rarr;</a>
+    <h2 class="section-heading">Let's transform <span>decision-making together</span></h2>
+    <p class="section-sub" style="margin:0 auto 32px;">Whether you are exploring AI readiness, operational intelligence, or a strategic partnership, we would love to connect.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn-primary">Contact Us</a>
+      <a href="engage.html" class="btn-secondary">Become a Founding Pilot Partner →</a>
     </div>
   </div>
 </section>
 
-<div class="sun-divider"></div>
-
-<!-- ══ ENGAGEMENT MODEL ══ -->
-<section class="section" style="background:var(--bg);">
-  <div class="container">
-    <div style="max-width:800px;margin:0 auto;">
-      <div class="section-tag">Engagement Model</div>
-      <h2 class="section-heading">How We Work with <span>Organizations</span></h2>
-      <p class="section-sub" style="margin-bottom:40px;">TwoSuns works with select organizations through structured pilot programs designed to validate the platform in real operating environments.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px;">
-        <div style="padding:28px 24px;background:white;border-radius:16px;border:1px solid var(--border);box-shadow:var(--card-shadow);">
-          <div style="font-size:28px;margin-bottom:12px;">🎯</div>
-          <h3 style="font-size:15px;font-weight:700;margin-bottom:8px;color:var(--navy);">Trading and Commercial Workflows</h3>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.65;">Position formation, opportunity identification, and commercial execution across pricing and logistics.</p>
-        </div>
-        <div style="padding:28px 24px;background:white;border-radius:16px;border:1px solid var(--border);box-shadow:var(--card-shadow);">
-          <div style="font-size:28px;margin-bottom:12px;">⚙️</div>
-          <h3 style="font-size:15px;font-weight:700;margin-bottom:8px;color:var(--navy);">Operational and Revenue Optimization</h3>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.65;">Connect market signals to plant-level decisions, optimizing cost, production, and margin.</p>
-        </div>
-        <div style="padding:28px 24px;background:white;border-radius:16px;border:1px solid var(--border);box-shadow:var(--card-shadow);">
-          <div style="font-size:28px;margin-bottom:12px;">📊</div>
-          <h3 style="font-size:15px;font-weight:700;margin-bottom:8px;color:var(--navy);">Strategic and Capital Decision-Making</h3>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.65;">Translate market intelligence into investment decisions, partnerships, and long-term positioning.</p>
-        </div>
-      </div>
-      <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:32px;font-style:italic;">TwoSuns reflects the next evolution of market intelligence, where data, strategy, and execution converge into a continuous decision system.</p>
-      <a href="engage.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#FFFFFF;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Explore Engagement Options &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<div class="sun-divider"></div>
-
-<!-- ══ FOOTER ══ -->
-<!-- ══ MEMBERSHIPS ══ -->
 <section class="memberships-bar" aria-label="Memberships and affiliations">
   <div class="memberships-inner">
     <div class="memberships-label">Proud Member Of</div>
