@@ -6,17 +6,17 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:#FFF5DD; font-family:'Segoe UI',system-ui,sans-serif; padding:60px 40px; }
-  h1 { font-size:14px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#64748b; margin-bottom:56px; }
+  h1 { font-size:14px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#5A554C; margin-bottom:56px; }
   .concepts { display:flex; flex-direction:column; gap:80px; }
   .concept { display:flex; flex-direction:column; gap:32px; }
-  .concept-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#94a3b8; }
+  .concept-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#9B938A; }
   .variants { display:flex; gap:48px; align-items:center; flex-wrap:wrap; }
   .variant { display:flex; flex-direction:column; align-items:center; gap:16px; }
-  .variant-label { font-size:10px; color:#94a3b8; letter-spacing:1px; text-transform:uppercase; }
-  .on-light { background:#FFF5DD; padding:32px 40px; border-radius:16px; border:1px solid #e2e8f0; display:flex; align-items:center; justify-content:center; }
-  .on-dark  { background:#163E64; padding:32px 40px; border-radius:16px; display:flex; align-items:center; justify-content:center; }
+  .variant-label { font-size:10px; color:#9B938A; letter-spacing:1px; text-transform:uppercase; }
+  .on-light { background:#FFF5DD; padding:32px 40px; border-radius:16px; border:1px solid #E8E1D6; display:flex; align-items:center; justify-content:center; }
+  .on-dark  { background:#1E1A14; padding:32px 40px; border-radius:16px; display:flex; align-items:center; justify-content:center; }
   .on-black { background:#3A3A3A; padding:32px 40px; border-radius:16px; display:flex; align-items:center; justify-content:center; }
-  .divider { height:1px; background:linear-gradient(90deg,transparent,#e2e8f0,transparent); margin:24px 0; }
+  .divider { height:1px; background:linear-gradient(90deg,transparent,#E8E1D6,transparent); margin:24px 0; }
 </style>
 </head>
 <body>
@@ -47,7 +47,7 @@
           <!-- Icon mark: 32px -->
           <g transform="translate(0,0)">
             <!-- Outer navy ring -->
-            <circle cx="32" cy="32" r="30" fill="#163E64"/>
+            <circle cx="32" cy="32" r="30" fill="#1E1A14"/>
             <!-- Amber rays -->
             <g fill="#FF6600" filter="url(#aGlow)">
               <rect x="30" y="4"  width="4" height="10" rx="2" transform="rotate(0 32 32)"/>
@@ -67,7 +67,7 @@
             <circle cx="51" cy="13" r="5" fill="#FF6600"/>
           </g>
           <!-- Wordmark -->
-          <text x="76" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#163E64" letter-spacing="-0.5">TwoSuns</text>
+          <text x="76" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#1E1A14" letter-spacing="-0.5">TwoSuns</text>
           <text x="205" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#FF6600">.ai</text>
         </svg>
       </div>
@@ -117,7 +117,7 @@
               <stop offset="100%" stop-color="#DB5800"/>
             </radialGradient>
           </defs>
-          <circle cx="32" cy="32" r="30" fill="#163E64"/>
+          <circle cx="32" cy="32" r="30" fill="#1E1A14"/>
           <g fill="#FF6600">
             <rect x="30" y="3"  width="4" height="11" rx="2" transform="rotate(0 32 32)"/>
             <rect x="30" y="3"  width="4" height="11" rx="2" transform="rotate(45 32 32)"/>
@@ -162,7 +162,7 @@
           <circle cx="32" cy="32" r="30" fill="none" stroke="#FF6600" stroke-width="1.5" opacity="0.3"/>
           <circle cx="32" cy="32" r="25" fill="none" stroke="#FF6600" stroke-width="1" opacity="0.5"/>
           <!-- Core filled circle -->
-          <circle cx="32" cy="32" r="22" fill="#163E64"/>
+          <circle cx="32" cy="32" r="22" fill="#1E1A14"/>
           <!-- Rising market line (clipped inside circle) -->
           <g clip-path="url(#bClip)">
             <polyline points="12,46 22,36 30,40 42,22 52,18" fill="none" stroke="url(#bGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -174,9 +174,9 @@
             <circle cx="52" cy="18" r="3.5" fill="#FF6600"/>
           </g>
           <!-- Ring border -->
-          <circle cx="32" cy="32" r="22" fill="none" stroke="#163E64" stroke-width="2"/>
+          <circle cx="32" cy="32" r="22" fill="none" stroke="#1E1A14" stroke-width="2"/>
           <!-- Wordmark -->
-          <text x="72" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#163E64" letter-spacing="-0.5">TwoSuns</text>
+          <text x="72" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#1E1A14" letter-spacing="-0.5">TwoSuns</text>
           <text x="201" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#FF6600">.ai</text>
         </svg>
       </div>
@@ -252,8 +252,8 @@
         <svg width="260" height="64" viewBox="0 0 260 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="cGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#215F9A"/>
-              <stop offset="100%" stop-color="#163E64"/>
+              <stop offset="0%" stop-color="#2A231B"/>
+              <stop offset="100%" stop-color="#1E1A14"/>
             </linearGradient>
             <linearGradient id="cAmber" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#CC9900"/>
@@ -269,7 +269,7 @@
           <!-- Green orbit ring around sun -->
           <circle cx="48" cy="16" r="11" fill="none" stroke="#FF6600" stroke-width="2" stroke-dasharray="3 2"/>
           <!-- Wordmark -->
-          <text x="76" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#163E64" letter-spacing="-0.5">TwoSuns</text>
+          <text x="76" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="28" fill="#1E1A14" letter-spacing="-0.5">TwoSuns</text>
           <text x="205" y="36" font-family="'Segoe UI',system-ui,sans-serif" font-weight="700" font-size="28" fill="#FF6600">.ai</text>
         </svg>
       </div>
@@ -281,8 +281,8 @@
         <svg width="260" height="64" viewBox="0 0 260 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="cGradD" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#3B82F6"/>
-              <stop offset="100%" stop-color="#215F9A"/>
+              <stop offset="0%" stop-color="#E0531A"/>
+              <stop offset="100%" stop-color="#2A231B"/>
             </linearGradient>
             <linearGradient id="cAmberD" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#CC9900"/>
@@ -305,8 +305,8 @@
         <svg width="80" height="80" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="cGradI" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#215F9A"/>
-              <stop offset="100%" stop-color="#163E64"/>
+              <stop offset="0%" stop-color="#2A231B"/>
+              <stop offset="100%" stop-color="#1E1A14"/>
             </linearGradient>
             <linearGradient id="cAmberI" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#CC9900"/>
@@ -326,12 +326,12 @@
 
 </div><!-- end concepts -->
 
-<div style="margin-top:60px;padding-top:32px;border-top:1px solid #e2e8f0;font-size:12px;color:#94a3b8;line-height:1.8;">
-  <strong style="color:#334155;">Colour palette used:</strong><br>
-  Navy #163E64 · Amber #FF6600 · Logo Green #FF6600 · White · Gradients<br><br>
-  <strong style="color:#334155;">Concept A</strong> Sustainability Compass: Traditional sun mark with rays, N in the core. Premium & recognisable.<br>
-  <strong style="color:#334155;">Concept B</strong> Market Signal: Rising line chart inside concentric rings. Enterprise + finance story.<br>
-  <strong style="color:#334155;">Concept C</strong> Sun Node: Bold N in a rounded square, amber sun burst top-right. Clean & modern app icon.
+<div style="margin-top:60px;padding-top:32px;border-top:1px solid #E8E1D6;font-size:12px;color:#9B938A;line-height:1.8;">
+  <strong style="color:#3A3A3A;">Colour palette used:</strong><br>
+  Navy #1E1A14 · Amber #FF6600 · Logo Green #FF6600 · White · Gradients<br><br>
+  <strong style="color:#3A3A3A;">Concept A</strong> Sustainability Compass: Traditional sun mark with rays, N in the core. Premium & recognisable.<br>
+  <strong style="color:#3A3A3A;">Concept B</strong> Market Signal: Rising line chart inside concentric rings. Enterprise + finance story.<br>
+  <strong style="color:#3A3A3A;">Concept C</strong> Sun Node: Bold N in a rounded square, amber sun burst top-right. Clean & modern app icon.
 </div>
 
 </body>

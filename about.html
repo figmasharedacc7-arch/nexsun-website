@@ -24,19 +24,19 @@
     --sun-bright: #CC9900;
     --sun-deep:   #DB5800;
     --sun-pale:   #FFEDD0;
-    --sky:        #215F9A;
-    --sky-mid:    #215F9A;
-    --sky-light:  #E0F2FE;
-    --navy:       #163E64;
-    --navy-mid:   #215F9A;
-    --green:      #215F9A;
-    --green-light:#F0F4F9;
+    --sky:        #2A231B;
+    --sky-mid:    #2A231B;
+    --sky-light:  #FCE2BC;
+    --navy:       #1E1A14;
+    --navy-mid:   #2A231B;
+    --green:      #2A231B;
+    --green-light:#F2EFE7;
     --bg:         #FFF5DD;
     --bg2:        #FFEFCE;
     --white:      #FFFFFF;
     --text:       #3A3A3A;
-    --text-mid:   #334155;
-    --text-muted: #64748B;
+    --text-mid:   #3A3A3A;
+    --text-muted: #5A554C;
     --border:     rgba(255,102,0,0.2);
     --card-shadow:0 4px 24px rgba(255,102,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
   }
@@ -79,7 +79,7 @@
     border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
   }
   .topbar-inner a:last-child { border-right:none; padding-right:0; }
-  .topbar-inner a:hover { color:#fff; }
+  .topbar-inner a:hover { color:#FFFFFF; }
 
   /* ─── NAV ─── */
   nav {
@@ -95,7 +95,7 @@
   .nav-links a:hover { color:var(--sun-deep); }
   .btn-cta {
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
-    color:#fff; font-weight:700; padding:11px 24px; border-radius:8px;
+    color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
     font-size:14px; border:none; cursor:pointer; transition:all .2s;
     box-shadow:0 4px 14px rgba(255,102,0,0.4); display:inline-block;
   }
@@ -104,13 +104,13 @@
   /* ─── PAGE HERO ─── */
   .page-hero {
     padding:140px 0 80px; text-align:center;
-    background:linear-gradient(160deg, #FFF5DD 0%, #FFF3CD 35%, #E0F2FE 100%);
+    background:linear-gradient(160deg, #FFF5DD 0%, #FFF3CD 35%, #FCE2BC 100%);
     position:relative; overflow:hidden;
   }
   .page-hero::after {
     content:''; position:absolute; bottom:-80px; left:-80px; width:420px; height:420px;
     border-radius:50%;
-    background:radial-gradient(ellipse, rgba(33,95,154,0.15) 0%, transparent 65%);
+    background:radial-gradient(ellipse, rgba(42,35,27,0.15) 0%, transparent 65%);
     pointer-events:none;
     animation:heroFloat2 11s ease-in-out infinite;
   }
@@ -132,7 +132,7 @@
     background:linear-gradient(90deg,
       transparent 0%,
       #FF6600 18%,
-      #163E64 50%,
+      #1E1A14 50%,
       #FF6600 82%,
       transparent 100%
     );
@@ -179,7 +179,7 @@
   #testimonials { background:white; }
   /* ── Founding Pilot Section ── */
   .pilot-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:40px; align-items:start; }
-  .pilot-invite { background:linear-gradient(135deg,#0D1B3E 0%,#163E64 100%); border-radius:20px; padding:40px; color:white; }
+  .pilot-invite { background:linear-gradient(135deg,#16120D 0%,#1E1A14 100%); border-radius:20px; padding:40px; color:white; }
   .pilot-invite h3 { font-size:22px; font-weight:800; color:white; margin-bottom:8px; line-height:1.3; }
   .pilot-invite h3 span { color:var(--sun); }
   .pilot-invite .pilot-sub { font-size:14px; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:28px; }
@@ -188,7 +188,7 @@
   .pilot-benefits li:not(:last-child) { border-bottom:1px solid rgba(255,255,255,0.08); }
   .pilot-ico { width:32px; height:32px; border-radius:8px; background:rgba(255,102,0,0.15); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
   .pilot-ico svg { width:16px; height:16px; }
-  .pilot-cta { display:inline-flex; align-items:center; gap:8px; background:var(--sun); color:#fff; padding:14px 28px; border-radius:10px; font-size:14px; font-weight:700; text-decoration:none; transition:opacity .2s; }
+  .pilot-cta { display:inline-flex; align-items:center; gap:8px; background:var(--sun); color:#FFFFFF; padding:14px 28px; border-radius:10px; font-size:14px; font-weight:700; text-decoration:none; transition:opacity .2s; }
   .pilot-cta:hover { opacity:.88; }
   .pilot-cohort-tag { display:inline-block; background:rgba(255,102,0,0.15); border:1px solid rgba(255,102,0,0.3); color:var(--sun); font-size:11px; font-weight:700; padding:4px 14px; border-radius:8px; margin-bottom:20px; letter-spacing:0.5px; text-transform:uppercase; }
   .outcome-grid { display:grid; grid-template-columns:1fr; gap:16px; }
@@ -266,7 +266,7 @@
   .btn-outline:hover { background:var(--sun-pale); }
 
               /* ─── FOOTER ─── */
-  footer { background:#0D1B3E; padding:64px 0 32px; border-top:3px solid var(--sun); }
+  footer { background:#16120D; padding:64px 0 32px; border-top:3px solid var(--sun); }
   .footer-top {
     display:grid; grid-template-columns:1fr 1fr 1.6fr 1fr;
     gap:40px; margin-bottom:48px; align-items:start;
@@ -288,18 +288,18 @@
   }
   .footer-brand { display:flex; flex-direction:column; justify-content:center; }
   .footer-brand p { color:var(--navy); font-size:14px; line-height:1.75; margin:16px 0 8px; }
-  .footer-brand .conf { font-size:12px; color:rgba(22,62,100,0.4); }
+  .footer-brand .conf { font-size:12px; color:rgba(30,26,20,0.4); }
   .footer-newsletter h3 { font-size:18px; font-weight:700; color:var(--navy); margin-bottom:10px; line-height:1.3; }
-  .footer-newsletter p { font-size:13px; color:rgba(22,62,100,0.65); margin-bottom:20px; line-height:1.6; }
+  .footer-newsletter p { font-size:13px; color:rgba(30,26,20,0.65); margin-bottom:20px; line-height:1.6; }
   .fn-field { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
-  .fn-field input { background:#fff; border:1px solid rgba(22,62,100,0.15); border-radius:8px; padding:12px 14px; font-size:14px; color:var(--navy); outline:none; transition:border-color .2s; font-family:inherit; }
-  .fn-field input::placeholder { color:rgba(22,62,100,0.35); }
+  .fn-field input { background:#FFFFFF; border:1px solid rgba(30,26,20,0.15); border-radius:8px; padding:12px 14px; font-size:14px; color:var(--navy); outline:none; transition:border-color .2s; font-family:inherit; }
+  .fn-field input::placeholder { color:rgba(30,26,20,0.35); }
   .fn-field input:focus { border-color:var(--sun); }
   .fn-check { display:flex; align-items:flex-start; gap:10px; margin-bottom:14px; }
   .fn-check input[type=checkbox] { margin-top:3px; accent-color:var(--sun); width:14px; height:14px; flex-shrink:0; cursor:pointer; }
-  .fn-check label { font-size:12px; color:rgba(22,62,100,0.6); line-height:1.5; cursor:pointer; }
-  .fn-legal { font-size:11px; color:rgba(22,62,100,0.45); margin-bottom:16px; line-height:1.5; }
-  .fn-btn { background:linear-gradient(135deg,var(--sun),var(--sun-deep)); color:#fff; border:none; border-radius:8px; padding:12px 24px; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer; width:100%; transition:opacity .2s, transform .2s; }
+  .fn-check label { font-size:12px; color:rgba(30,26,20,0.6); line-height:1.5; cursor:pointer; }
+  .fn-legal { font-size:11px; color:rgba(30,26,20,0.45); margin-bottom:16px; line-height:1.5; }
+  .fn-btn { background:linear-gradient(135deg,var(--sun),var(--sun-deep)); color:#FFFFFF; border:none; border-radius:8px; padding:12px 24px; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer; width:100%; transition:opacity .2s, transform .2s; }
   .fn-btn:hover { opacity:.88; transform:translateY(-1px); }
   .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
   .footer-bottom p { font-size:12px; color:rgba(255,255,255,0.4); }
@@ -367,7 +367,7 @@
   .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
   .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
   .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,102,0,0.12);font-size:15px;font-weight:500;color:#334155;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,102,0,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
   #nxs-mob-nav a:hover{color:var(--sun-deep);}
   #nxs-mob-nav a:last-child{border-bottom:none;}
   @media(max-width:960px){
@@ -441,7 +441,7 @@
   <!-- ── Favicons ── -->
   <link rel="icon" type="image/svg+xml" href="logo-mini.svg">
   <link rel="apple-touch-icon" href="logo-mini.svg">
-  <meta name="theme-color" content="#163E64">
+  <meta name="theme-color" content="#1E1A14">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -504,7 +504,7 @@
     </div>
 </nav>
 <!-- ══ MOBILE NAV PANEL ══ -->
-<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#fff;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(22,62,100,0.12);border-bottom:3px solid #FF6600;">
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #FF6600;">
   <a href="platform.html">Platform</a>
   <a href="how-it-works.html">How It Works</a>
   <a href="applications.html">Applications</a>
@@ -528,7 +528,7 @@
     <!-- Two-column origin story -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:40px auto 0;max-width:920px;">
       <!-- LEFT: Founder track record -->
-      <div style="background:rgba(22,62,100,0.04);border-radius:16px;padding:28px 24px;border:1px solid rgba(22,62,100,0.08);">
+      <div style="background:rgba(30,26,20,0.04);border-radius:16px;padding:28px 24px;border:1px solid rgba(30,26,20,0.08);">
         <div style="font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--sun);margin-bottom:14px;">Founder Track Record</div>
         <p style="font-size:14px;color:var(--text-muted);line-height:1.8;margin:0 0 16px;">Founded by Aiman El-Ramly, TwoSuns builds on a track record of creating and scaling category-defining platforms.</p>
         <div style="display:flex;flex-direction:column;gap:12px;">
@@ -542,7 +542,7 @@
             </div>
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--navy),#215F9A);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--navy),#2A231B);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M2 20h20M5 20V10l7-6 7 6v10"/><path d="M9 20v-6h6v6"/></svg>
             </div>
             <div>
@@ -553,13 +553,13 @@
         </div>
       </div>
       <!-- RIGHT: The structural gap -->
-      <div style="background:linear-gradient(135deg,#0D1B3E,#163E64);border-radius:16px;padding:28px 24px;position:relative;overflow:hidden;">
+      <div style="background:linear-gradient(135deg,#16120D,#1E1A14);border-radius:16px;padding:28px 24px;position:relative;overflow:hidden;">
         <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(255,102,0,0.12),transparent);border-radius:50%;"></div>
         <div style="font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--sun);margin-bottom:14px;">The Structural Gap</div>
         <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.8;margin:0 0 16px;">Markets have become more complex. Data has expanded rapidly, particularly unstructured data across policy, logistics, and market activity.</p>
         <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.8;margin:0 0 20px;">Existing systems were not designed to interpret or act on this continuously.</p>
         <div style="border-top:1px solid rgba(255,102,0,0.2);padding-top:16px;">
-          <p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 4px;">TwoSuns was built to define the next layer.</p>
+          <p style="font-size:15px;font-weight:700;color:#FFFFFF;margin:0 0 4px;">TwoSuns was built to define the next layer.</p>
           <p style="font-size:13px;color:rgba(255,102,0,0.85);margin:0;">A system where market signals, strategy, and execution operate together.</p>
         </div>
       </div>
@@ -568,7 +568,7 @@
 </div>
 
 <!-- ══ FOUNDER & PRODUCT PERSPECTIVES ══ -->
-<section style="background:#0D1B3E;padding:72px 0;color:#fff;position:relative;overflow:hidden;">
+<section style="background:#16120D;padding:72px 0;color:#FFFFFF;position:relative;overflow:hidden;">
   <div style="position:absolute;top:-80px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,102,0,0.12) 0%,transparent 65%);pointer-events:none;"></div>
   <div style="max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:2;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
@@ -586,11 +586,11 @@
 
       <!-- Product Perspective -->
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 30px;backdrop-filter:blur(6px);">
-        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(33,95,154,0.18);border:1px solid rgba(33,95,154,0.35);color:#93C5FD;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:4px 10px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">Product Perspective</div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(42,35,27,0.18);border:1px solid rgba(42,35,27,0.35);color:#F3C98C;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:4px 10px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">Product Perspective</div>
         <p style="font-size:15px;color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:14px;font-style:italic;">"Most systems are designed to store data or generate outputs. TwoSuns is designed to coordinate how the enterprise actually executes."</p>
         <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:14px;">This requires an architecture that continuously ingests data, applies context, supports iteration, and connects intelligence directly to workflows and execution. The objective is consistency, clarity, and traceability across every decision.</p>
         <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;">
-          <strong style="font-size:13px;color:#93C5FD;display:block;">Ryan Arian</strong>
+          <strong style="font-size:13px;color:#F3C98C;display:block;">Ryan Arian</strong>
           <span style="font-size:11.5px;color:rgba(255,255,255,0.5);">Chief Digital Product Officer</span>
         </div>
       </div>
@@ -607,13 +607,13 @@
     <div>
       <div class="section-tag">Our Purpose</div>
       <h2 style="font-size:clamp(22px,2.8vw,34px);font-weight:800;color:var(--navy);margin-bottom:18px;line-height:1.2;">OUR MISSION</h2>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;">Transforming how enterprises strategize, decide, and execute.</p>
+      <p style="font-size:18px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;">Transforming how enterprises strategize, decide, and execute.</p>
       <h2 style="font-size:clamp(22px,2.8vw,34px);font-weight:800;color:var(--navy);margin-bottom:18px;line-height:1.2;">OUR VISION</h2>
-      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;">A world where decisions are consistent, explainable, and aligned across the enterprise.</p>
+      <p style="font-size:18px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;">A world where decisions are consistent, explainable, and aligned across the enterprise.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;">
-        <span style="background:var(--sun-pale);border:1px solid rgba(255,102,0,0.3);color:var(--sun-deep);font-size:11px;font-weight:700;padding:5px 12px;border-radius:16px;">AI-First</span>
-        <span style="background:rgba(22,62,100,0.12);border:1px solid rgba(22,62,100,0.25);color:var(--navy);font-size:11px;font-weight:700;padding:5px 12px;border-radius:16px;">Continuous</span>
-        <span style="background:var(--green-light);border:1px solid rgba(33,95,154,0.2);color:var(--green);font-size:11px;font-weight:700;padding:5px 12px;border-radius:16px;">Responsible</span>
+        <span style="background:var(--sun-pale);border:1px solid rgba(255,102,0,0.3);color:var(--sun-deep);font-size:14px;font-weight:700;padding:5px 12px;border-radius:16px;">AI-First</span>
+        <span style="background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);color:var(--navy);font-size:14px;font-weight:700;padding:5px 12px;border-radius:16px;">Continuous</span>
+        <span style="background:var(--green-light);border:1px solid rgba(42,35,27,0.2);color:var(--green);font-size:14px;font-weight:700;padding:5px 12px;border-radius:16px;">Responsible</span>
       </div>
     </div>
   </div>
@@ -640,7 +640,7 @@
             <h3>Aiman El-Ramly</h3>
             <div class="cred">MBA, CMC</div>
             <div class="role" style="margin-top:6px;">Founder &amp; CEO</div>
-            <a href="https://www.linkedin.com/in/aimanelramly/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#0A66C2;color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
+            <a href="https://www.linkedin.com/in/aimanelramly/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#1E1A14;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
@@ -679,7 +679,7 @@
             <h3>Ryan Arian</h3>
             <div class="cred">BCom (MIS), MPM</div>
             <div class="role" style="margin-top:6px;">Chief Digital Product Officer</div>
-            <a href="https://www.linkedin.com/in/ryan-arian/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#0A66C2;color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
+            <a href="https://www.linkedin.com/in/ryan-arian/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#1E1A14;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
@@ -713,7 +713,7 @@
             <h3>Belén Welch-Almeida</h3>
             <div class="cred" style="font-weight:400;color:var(--text-muted);">Executive Master in International Business (AI), ESCP</div>
             <div class="role" style="margin-top:6px;font-weight:700;color:var(--navy);font-size:15px;">Chief Growth Officer</div>
-            <a href="https://www.linkedin.com/in/belenwelch/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#0A66C2;color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
+            <a href="https://www.linkedin.com/in/belenwelch/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#1E1A14;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
@@ -742,7 +742,7 @@
             <h3>Michelle Mollineaux</h3>
             <div class="cred" style="margin-bottom:6px;">Director, Marketing &amp; Partnerships</div>
             <div style="display:inline-block;background:var(--sun-pale);border:1px solid var(--border);color:var(--sun-deep);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;">🏆 Most Inspiring Women Leaders 2026</div>
-            <a href="https://www.linkedin.com/in/michellemollineaux/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#0A66C2;color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
+            <a href="https://www.linkedin.com/in/michellemollineaux/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#1E1A14;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
@@ -788,7 +788,7 @@
         <div class="section-tag">Operating Model</div>
         <h2 style="font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:18px;">A Distributed <span style="color:var(--sun-deep);">Global Footprint</span></h2>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:18px;">TwoSuns operates as a distributed organization with a global footprint, designed for organizations that operate across regions, functions, and complex decision environments.</p>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px 24px;box-shadow:var(--card-shadow);">
+        <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:22px 24px;box-shadow:var(--card-shadow);">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
             <div>
               <strong style="font-size:13px;color:var(--navy);display:block;margin-bottom:4px;">🇨🇦 Canadian HQ</strong>
@@ -812,13 +812,13 @@
     </div>
 
     <!-- Closing -->
-    <div style="background:linear-gradient(135deg,#163E64,#0f2a4a);border-radius:20px;padding:48px 56px;color:#fff;margin-top:64px;text-align:center;position:relative;overflow:hidden;">
+    <div style="background:linear-gradient(135deg,#1E1A14,#1A140E);border-radius:20px;padding:48px 56px;color:#FFFFFF;margin-top:64px;text-align:center;position:relative;overflow:hidden;">
       <div style="position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(255,102,0,0.18) 0%,transparent 65%);pointer-events:none;"></div>
       <div style="position:relative;z-index:2;">
         <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,102,0,0.15);border:1px solid rgba(255,102,0,0.3);color:#CC9900;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">A System for How Decisions Are Made</div>
-        <h3 style="font-size:clamp(24px,2.6vw,34px);font-weight:800;color:#fff;line-height:1.3;margin-bottom:14px;max-width:760px;margin-left:auto;margin-right:auto;">TwoSuns reflects a shift toward systems that structure how decisions are formed, aligned, executed, and recorded.</h3>
+        <h3 style="font-size:clamp(24px,2.6vw,34px);font-weight:800;color:#FFFFFF;line-height:1.3;margin-bottom:14px;max-width:760px;margin-left:auto;margin-right:auto;">TwoSuns reflects a shift toward systems that structure how decisions are formed, aligned, executed, and recorded.</h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.8;max-width:680px;margin:0 auto 24px;">It connects data, intelligence, and action into a continuous framework that evolves with the organization and strengthens over time.</p>
-        <a href="book-discovery.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#fff;padding:14px 30px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;">Book a Discovery <span>→</span></a>
+        <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;padding:14px 30px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;">Book a Discovery <span>→</span></a>
       </div>
     </div>
   </div>
@@ -835,7 +835,7 @@
     <div style="overflow-x:auto;margin-top:40px;">
       <table style="width:100%;border-collapse:collapse;font-size:14px;">
         <thead>
-          <tr style="background:linear-gradient(135deg,var(--navy),#215F9A);color:white;">
+          <tr style="background:linear-gradient(135deg,var(--navy),#2A231B);color:white;">
             <th style="padding:16px 20px;text-align:left;border-radius:12px 0 0 0;">Dimension</th>
             <th style="padding:16px 20px;text-align:center;">ChatGPT (Enterprise)</th>
             <th style="padding:16px 20px;text-align:center;">Palantir</th>
@@ -985,13 +985,13 @@
 <div class="sun-divider"></div>
 
 <!-- ══ WHY TWOSUNS EXISTS ══ -->
-<section class="section" style="background:linear-gradient(135deg,#0D1B3E 0%,#163E64 100%);color:white;">
+<section class="section" style="background:linear-gradient(135deg,#16120D 0%,#1E1A14 100%);color:white;">
   <div class="container">
     <div style="max-width:800px;margin:0 auto;text-align:center;">
       <div class="section-tag" style="background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.3);color:#FF6600;margin:0 auto 24px;">Why TwoSuns Exists</div>
       <h2 class="section-heading" style="color:white;margin-bottom:24px;">Enterprise systems manage data.<br>Analytics platforms interpret data.<br><span>Decision-making remains fragmented.</span></h2>
       <p style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:32px;">TwoSuns establishes the coordination layer: A continuous system that connects signals to decisions, aligns stakeholders, and maintains a persistent record of how decisions are made.</p>
-      <a href="why-twosuns.html" style="display:inline-flex;align-items:center;gap:8px;background:#FF6600;color:#fff;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Why TwoSuns &rarr;</a>
+      <a href="why-twosuns.html" style="display:inline-flex;align-items:center;gap:8px;background:#FF6600;color:#FFFFFF;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Why TwoSuns &rarr;</a>
     </div>
   </div>
 </section>
@@ -1023,7 +1023,7 @@
         </div>
       </div>
       <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:32px;font-style:italic;">TwoSuns reflects the next evolution of market intelligence, where data, strategy, and execution converge into a continuous decision system.</p>
-      <a href="engage.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Explore Engagement Options &rarr;</a>
+      <a href="engage.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#FFFFFF;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Explore Engagement Options &rarr;</a>
     </div>
   </div>
 </section>
@@ -1053,8 +1053,8 @@
 <style>
   .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(255,102,0,0.15); border-bottom:1px solid rgba(255,102,0,0.15); padding:28px 0; overflow:hidden; }
   .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
-  .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#64748B; flex-shrink:0; min-width:140px; }
-  .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+  .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#5A554C; flex-shrink:0; min-width:140px; }
+  .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); }
   .memberships-row { display:flex; align-items:center; gap:64px; animation:memberships-scroll 30s linear infinite; width:max-content; }
   .memberships-row:hover { animation-play-state:paused; }
   .m-logo { display:flex; align-items:center; flex-shrink:0; opacity:.55; filter:grayscale(1); transition:opacity .25s, filter .25s; }
@@ -1125,28 +1125,28 @@
       <!-- Social Icons -->
       <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
         <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-           style="width:38px;height:38px;border-radius:8px;background:rgba(22,62,100,0.12);border:1px solid rgba(22,62,100,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
-           onmouseover="this.style.background='rgba(22,62,100,0.22)';this.style.borderColor='rgba(22,62,100,0.5)'"
-           onmouseout="this.style.background='rgba(22,62,100,0.12)';this.style.borderColor='rgba(22,62,100,0.25)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#163E64"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+           style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
+           onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E1A14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a href="https://x.com/TwoSunsAI" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
-           style="width:38px;height:38px;border-radius:8px;background:rgba(22,62,100,0.12);border:1px solid rgba(22,62,100,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
-           onmouseover="this.style.background='rgba(22,62,100,0.22)';this.style.borderColor='rgba(22,62,100,0.5)'"
-           onmouseout="this.style.background='rgba(22,62,100,0.12)';this.style.borderColor='rgba(22,62,100,0.25)'">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="#163E64"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.726-8.851L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+           style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
+           onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#1E1A14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.726-8.851L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
         <a href="https://www.youtube.com/@TwoSunsplatform" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
-           style="width:38px;height:38px;border-radius:8px;background:rgba(22,62,100,0.12);border:1px solid rgba(22,62,100,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
-           onmouseover="this.style.background='rgba(22,62,100,0.22)';this.style.borderColor='rgba(22,62,100,0.5)'"
-           onmouseout="this.style.background='rgba(22,62,100,0.12)';this.style.borderColor='rgba(22,62,100,0.25)'">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="#163E64"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+           style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
+           onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#1E1A14"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </a>
         <a href="https://www.instagram.com/twosuns.ai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-           style="width:38px;height:38px;border-radius:8px;background:rgba(22,62,100,0.12);border:1px solid rgba(22,62,100,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
-           onmouseover="this.style.background='rgba(22,62,100,0.22)';this.style.borderColor='rgba(22,62,100,0.5)'"
-           onmouseout="this.style.background='rgba(22,62,100,0.12)';this.style.borderColor='rgba(22,62,100,0.25)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#163E64"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+           style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
+           onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E1A14"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
       </div>
       </div>
@@ -1173,7 +1173,7 @@
         <a href="cookies.html">Cookie Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
       </div>
-      <p>&#169; 2026 TwoSuns. All rights reserved.</p>
+      <p>&#995A11; 2026 TwoSuns. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -1183,7 +1183,7 @@ function fnSubmit(){
   if(!e||!e.value.includes('@')){alert('Please enter a valid email address.');return;}
   var btn=document.querySelector('.fn-btn');
   btn.textContent='Subscribed ✓';
-  btn.style.background='#215F9A';
+  btn.style.background='#2A231B';
   btn.disabled=true;
 }
 </script>
@@ -1269,7 +1269,7 @@ window.addEventListener('scroll', () => {
   #nxs-chat-bubble svg { width:24px; height:24px; color:white; }
   #nxs-chat-bubble .nxs-notif {
     position:absolute; top:-3px; right:-3px; width:14px; height:14px;
-    background:#EF4444; border-radius:50%; border:2px solid white;
+    background:#D9480F; border-radius:50%; border:2px solid white;
     animation:nxsPulse 2s ease-in-out infinite;
   }
   @keyframes nxsPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
@@ -1283,7 +1283,7 @@ window.addEventListener('scroll', () => {
     transform-origin:bottom right; overflow:hidden;
   }
   #nxs-chat-panel.open { opacity:1; visibility:visible; transform:translateY(0) scale(1); }
-  .nxs-header { background:linear-gradient(135deg,var(--navy),#215F9A); padding:20px; display:flex; align-items:center; gap:12px; }
+  .nxs-header { background:linear-gradient(135deg,var(--navy),#2A231B); padding:20px; display:flex; align-items:center; gap:12px; }
   .nxs-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--sun),var(--sun-deep)); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
   .nxs-header-text h4 { font-size:14px; font-weight:700; color:white; margin-bottom:2px; }
   .nxs-header-text p { font-size:11px; color:rgba(255,255,255,0.6); display:flex; align-items:center; gap:5px; }
@@ -1362,7 +1362,7 @@ setTimeout(function(){ var n=document.getElementById('nxs-notif'); if(n) n.style
   #cookie-banner p a:hover { color:#CC9900; }
   .cookie-btns { display:flex; gap:10px; flex-shrink:0; }
   .cookie-accept {
-    background:linear-gradient(135deg,#FF6600,#DB5800); color:#fff;
+    background:linear-gradient(135deg,#FF6600,#DB5800); color:#FFFFFF;
     font-size:13px; font-weight:700; padding:10px 22px; border-radius:8px;
     border:none; cursor:pointer; transition:all .2s;
     box-shadow:0 4px 14px rgba(255,102,0,0.35);
@@ -1375,7 +1375,7 @@ setTimeout(function(){ var n=document.getElementById('nxs-notif'); if(n) n.style
   }
   .cookie-decline:hover { background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.8); }
 </style>
-  <p>🍪 We use cookies to improve your experience, analyze site traffic, and personalize content. By clicking <strong style="color:#fff;">Accept All</strong>, you agree to our use of cookies. <a href="privacy.html">Privacy Policy</a> · <a href="cookies.html">Cookie Policy</a></p>
+  <p>🍪 We use cookies to improve your experience, analyze site traffic, and personalize content. By clicking <strong style="color:#FFFFFF;">Accept All</strong>, you agree to our use of cookies. <a href="privacy.html">Privacy Policy</a> · <a href="cookies.html">Cookie Policy</a></p>
   <div class="cookie-btns">
     <button class="cookie-decline" onclick="cookieChoice(false)">Decline</button>
     <button class="cookie-accept" onclick="cookieChoice(true)">Accept All</button>
@@ -1470,7 +1470,7 @@ window.addEventListener('resize',nxsResponsive);
         var a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
         if(d<130){
           ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
-          ctx.strokeStyle='rgba(22,62,100,'+(0.06*(1-d/130))+')';
+          ctx.strokeStyle='rgba(30,26,20,'+(0.06*(1-d/130))+')';
           ctx.lineWidth=.5; ctx.stroke();
         }
       }
