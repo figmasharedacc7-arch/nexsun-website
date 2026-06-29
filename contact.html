@@ -248,6 +248,10 @@
   .footer-contact-item { font-size:14px; color:rgba(255,255,255,0.75); padding:5px 0; line-height:1.6; }
   .footer-contact-item a { color:rgba(255,255,255,0.75); }
   .footer-contact-item a:hover { color:#9A7209; }
+  /* Contact-info card sits on a light background, so its email links must be dark (the .footer-contact-item white is for the dark footer only) */
+  .contact-info-card .footer-contact-item { color:var(--navy); }
+  .contact-info-card .footer-contact-item a { color:var(--navy); font-weight:600; }
+  .contact-info-card .footer-contact-item a:hover { color:#9A7209; }
   /* Newsletter row */
   .footer-newsletter-row {
     display:grid; grid-template-columns:1fr 1fr; gap:64px;
