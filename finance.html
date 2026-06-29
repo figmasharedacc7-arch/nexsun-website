@@ -65,7 +65,7 @@
 
     /* ─── TOPBAR ─── */
   .topbar {
-    background:var(--navy);
+    background:#33302A;
     border-bottom:1px solid rgba(255,255,255,0.06);
   }
   .topbar-inner {
@@ -84,7 +84,7 @@
   /* ─── NAV ─── */
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:#1E1A14; backdrop-filter:blur(16px);
+    background:#33302A; backdrop-filter:blur(16px);
     border-bottom:1px solid rgba(224,100,30,0.15);
     box-shadow:0 1px 20px rgba(224,100,30,0.08);
     overflow:visible;
@@ -132,7 +132,7 @@
     background:linear-gradient(90deg,
       transparent 0%,
       #E0641E 18%,
-      #1E1A14 50%,
+      #33302A 50%,
       #E0641E 82%,
       transparent 100%
     );
@@ -179,7 +179,7 @@
   #testimonials { background:white; }
   /* ── Founding Pilot Section ── */
   .pilot-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:40px; align-items:start; }
-  .pilot-invite { background:linear-gradient(135deg,#16120D 0%,#1E1A14 100%); border-radius:20px; padding:40px; color:white; }
+  .pilot-invite { background:linear-gradient(135deg,#2D2A23 0%,#33302A 100%); border-radius:20px; padding:40px; color:white; }
   .pilot-invite h3 { font-size:22px; font-weight:800; color:white; margin-bottom:8px; line-height:1.3; }
   .pilot-invite h3 span { color:#9A7209; }
   .pilot-invite .pilot-sub { font-size:14px; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:28px; }
@@ -254,7 +254,7 @@
     table{font-size:12px!important;}
     table th,table td{padding:10px 12px!important;min-width:120px!important;}
     table th:first-child,table td:first-child{position:sticky!important;left:0!important;z-index:2!important;background:inherit!important;}
-    table thead th:first-child{background:var(--navy)!important;}
+    table thead th:first-child{background:#33302A!important;}
     table tr[style*="background:var(--bg)"] td:first-child{background:var(--bg)!important;}
     table tr[style*="background:white"] td:first-child{background:white!important;}
   }
@@ -276,10 +276,10 @@
     padding:16px 30px; border-radius:10px; font-size:15px;
     border:2px solid rgba(30,26,20,0.25); cursor:pointer; transition:all .2s; display:inline-block;
   }
-  .btn-secondary:hover { background:rgba(30,26,20,0.05); border-color:var(--navy); }
+  .btn-secondary:hover { background:rgba(51,48,42,0.05); border-color:var(--navy); }
 
               /* ─── FOOTER ─── */
-  footer { background:#16120D; padding:64px 0 32px; border-top:3px solid var(--sun); }
+  footer { background:#2D2A23; padding:64px 0 32px; border-top:3px solid var(--sun); }
   .footer-top {
     display:grid; grid-template-columns:1fr 1fr 1.6fr 1fr;
     gap:40px; margin-bottom:48px; align-items:start;
@@ -558,7 +558,7 @@
 </div>
 
 <!-- ══ FINANCE HERO ══ -->
-<section style="background:linear-gradient(160deg,#16120D 0%,#1E1A14 100%);padding:96px 0;color:#FFFFFF;position:relative;overflow:hidden;">
+<section style="background:linear-gradient(160deg,#2D2A23 0%,#33302A 100%);padding:96px 0;color:#FFFFFF;position:relative;overflow:hidden;">
   <div class="container">
     <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:#9A7209;">Financial Markets</div>
     <h1 style="color:#FFFFFF;font-size:clamp(32px,4.6vw,54px);font-weight:900;line-height:1.1;margin:14px 0 20px;max-width:920px;">Turn Market Complexity Into <span style="color:var(--sun-bright);">Confident Decisions</span></h1>
@@ -824,13 +824,13 @@
       <!-- Social Icons -->
       <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
         <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-           style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           style="width:38px;height:38px;border-radius:8px;background:rgba(51,48,42,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
            onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
            onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E1A14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a href="https://x.com/TwoSunsAI" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
-           style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           style="width:38px;height:38px;border-radius:8px;background:rgba(51,48,42,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
            onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
            onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="#1E1A14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.726-8.851L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -971,7 +971,7 @@ window.addEventListener('scroll', () => {
     transform-origin:bottom right; overflow:hidden;
   }
   #nxs-chat-panel.open { opacity:1; visibility:visible; transform:translateY(0) scale(1); }
-  .nxs-header { background:linear-gradient(135deg,var(--navy),#2A231B); padding:20px; display:flex; align-items:center; gap:12px; }
+  .nxs-header { background:linear-gradient(135deg,#33302A,#2A231B); padding:20px; display:flex; align-items:center; gap:12px; }
   .nxs-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--sun),var(--sun-deep)); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
   .nxs-header-text h4 { font-size:14px; font-weight:700; color:white; margin-bottom:2px; }
   .nxs-header-text p { font-size:11px; color:rgba(255,255,255,0.6); display:flex; align-items:center; gap:5px; }
