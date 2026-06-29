@@ -20,9 +20,9 @@
   <meta name="twitter:image" content="https://twosuns.ai/og-image.jpg">
 <style>
   :root {
-    --sun:        #FF6600;
+    --sun:        #E0641E;
     --sun-bright: #CC9900;
-    --sun-deep:   #DB5800;
+    --sun-deep:   #C45213;
     --sun-pale:   #FFEDD0;
     --sky:        #2A231B;
     --sky-mid:    #2A231B;
@@ -37,8 +37,8 @@
     --text:       #3A3A3A;
     --text-mid:   #3A3A3A;
     --text-muted: #5A554C;
-    --border:     rgba(255,102,0,0.2);
-    --card-shadow:0 4px 24px rgba(255,102,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
+    --border:     rgba(224,100,30,0.2);
+    --card-shadow:0 4px 24px rgba(224,100,30,0.08), 0 1px 4px rgba(0,0,0,0.06);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
@@ -53,7 +53,7 @@
   .section { padding:100px 0; }
   .section-tag {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.3);
+    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.3);
     color:var(--sun-deep); font-size:11px; font-weight:700;
     letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
     border-radius:20px; margin-bottom:20px;
@@ -85,8 +85,8 @@
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
     background:#1E1A14; backdrop-filter:blur(16px);
-    border-bottom:1px solid rgba(255,102,0,0.15);
-    box-shadow:0 1px 20px rgba(255,102,0,0.08);
+    border-bottom:1px solid rgba(224,100,30,0.15);
+    box-shadow:0 1px 20px rgba(224,100,30,0.08);
     overflow:visible;
   }
   .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
@@ -99,9 +99,9 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
     font-size:14px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 4px 14px rgba(255,102,0,0.4); display:inline-block;
+    box-shadow:0 4px 14px rgba(224,100,30,0.4); display:inline-block;
   }
-  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,102,0,0.5); }
+  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(224,100,30,0.5); }
 
   /* ─── PAGE HERO ─── */
   .page-hero {
@@ -133,9 +133,9 @@
     height:5px;
     background:linear-gradient(90deg,
       transparent 0%,
-      #FF6600 18%,
+      #E0641E 18%,
       #1E1A14 50%,
-      #FF6600 82%,
+      #E0641E 82%,
       transparent 100%
     );
     position:relative; z-index:2; overflow:visible;
@@ -152,9 +152,9 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:14px 32px; border-radius:10px;
     font-size:15px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 4px 14px rgba(255,102,0,0.4); display:inline-block;
+    box-shadow:0 4px 14px rgba(224,100,30,0.4); display:inline-block;
   }
-  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,102,0,0.5); }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(224,100,30,0.5); }
   .btn-secondary {
     border:2px solid var(--sun-deep); color:var(--sun-deep); background:transparent;
     padding:12px 30px; border-radius:10px; font-size:15px; font-weight:700;
@@ -215,9 +215,9 @@
   .nav-dropdown:hover > a::after { transform:rotate(180deg); }
   .nav-dropdown-menu {
     position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-6px);
-    background:white; border:1px solid rgba(255,102,0,0.2);
+    background:white; border:1px solid rgba(224,100,30,0.2);
     border-radius:12px; padding:6px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(255,102,0,0.08);
+    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(224,100,30,0.08);
     min-width:160px; opacity:0; visibility:hidden;
     transition:opacity .2s, transform .2s, visibility .2s;
     z-index:200;
@@ -231,7 +231,8 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
-  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(255,102,0,0.1); margin:4px 8px; }
+  .nav-dropdown-menu .menu-label { font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); padding:7px 16px 3px; opacity:0.7; pointer-events:none; }
+  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
 
   /* ─── SCROLL TO TOP ─── */
   #scroll-top {
@@ -240,12 +241,12 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:white; border:none; cursor:pointer;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 16px rgba(255,102,0,0.45);
+    box-shadow:0 4px 16px rgba(224,100,30,0.45);
     opacity:0; visibility:hidden; transform:translateY(12px);
     transition:opacity .3s, visibility .3s, transform .3s;
   }
   #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
-  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(255,102,0,0.55); }
+  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(224,100,30,0.55); }
   #scroll-top svg { width:18px; height:18px; }
 
   /* ─── HERO AMBIENT ANIMATION ─── */
@@ -270,7 +271,7 @@
   .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
   .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
   .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,102,0,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(224,100,30,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
   #nxs-mob-nav a:hover{color:var(--sun-deep);}
   #nxs-mob-nav a:last-child{border-bottom:none;}
   @media(max-width:960px){
@@ -422,18 +423,18 @@
 <body>
 <!-- TwoSuns Sustainability Icon Sprite -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  <symbol id="nxs-ic1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#1E1A14"/><polyline points="20,70 35,60 50,52 65,44 80,36" fill="none" stroke="#FF6600" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="36" r="5" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#FDE68A" stroke-width="3" opacity="0.5"/><circle cx="50" cy="50" r="38" fill="none" stroke="#CC9900" stroke-width="3" opacity="0.65"/><circle cx="50" cy="50" r="28" fill="#FF6600"/><line x1="50" y1="50" x2="70" y2="30" stroke="white" stroke-width="4" stroke-linecap="round"/><circle cx="70" cy="30" r="5" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#FF6600"/><polyline points="18,74 32,66 46,54 60,44 74,34 84,26" fill="none" stroke="#FF6600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="84" cy="16" r="4" fill="#D9480F"/></symbol>
-  <symbol id="nxs-ic4" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#EAB308"/><rect x="30" y="56" width="10" height="18" rx="2" fill="#1E1A14" opacity="0.8"/><rect x="45" y="46" width="10" height="28" rx="2" fill="#1E1A14" opacity="0.8"/><rect x="60" y="50" width="10" height="24" rx="2" fill="#1E1A14" opacity="0.8"/><circle cx="50" cy="44" r="4" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic5" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#FF6600"/><circle cx="50" cy="50" r="26" fill="white"/><polyline points="30,54 38,48 44,54 50,40 56,54 62,44 70,50" fill="none" stroke="#FF6600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="nxs-ic6" viewBox="0 0 100 100"><path d="M50,8 A42,42 0 0,0 50,92 Z" fill="#1E1A14"/><path d="M50,8 A42,42 0 0,1 50,92 Z" fill="#FF6600"/><line x1="28" y1="50" x2="68" y2="50" stroke="#FF6600" stroke-width="5" stroke-linecap="round"/><polygon points="64,42 76,50 64,58" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic7" viewBox="0 0 100 100"><g fill="#FF6600" opacity="0.25"><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(0 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(45 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(90 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(135 50 50)"/></g><circle cx="50" cy="50" r="30" fill="#FF6600"/><circle cx="50" cy="10" r="5" fill="#1E1A14"/><circle cx="90" cy="50" r="5" fill="#1E1A14"/><circle cx="50" cy="90" r="5" fill="#1E1A14"/><circle cx="10" cy="50" r="5" fill="#1E1A14"/></symbol>
-  <symbol id="nxs-ic8" viewBox="0 0 100 100"><circle cx="34" cy="50" r="30" fill="#1E1A14"/><rect x="70" y="30" width="8" height="14" rx="1" fill="#FF6600"/><rect x="82" y="38" width="8" height="16" rx="1" fill="#D9480F"/><rect x="94" y="32" width="8" height="14" rx="1" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic9" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#FF6600"/><polyline points="14,74 30,74 38,73 50,42 62,73 70,74 86,74" fill="none" stroke="#D9480F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="42" r="5" fill="#D9480F"/></symbol>
-  <symbol id="nxs-ic10" viewBox="0 0 100 100"><circle cx="50" cy="60" r="36" fill="#FF6600"/><rect x="28" y="14" width="10" height="30" rx="2" fill="#FF6600"/><rect x="45" y="6" width="10" height="30" rx="2" fill="#D9480F"/><rect x="62" y="12" width="10" height="32" rx="2" fill="#FF6600"/></symbol>
-  <symbol id="nxs-ic11" viewBox="0 0 100 100"><polygon points="50,2 54,38 50,42 46,38" fill="#FF6600" opacity="0.6"/><polygon points="98,50 62,54 58,50 62,46" fill="#FF6600" opacity="0.6"/><polygon points="50,98 46,62 50,58 54,62" fill="#FF6600" opacity="0.6"/><polygon points="2,50 38,46 42,50 38,54" fill="#FF6600" opacity="0.6"/><circle cx="50" cy="50" r="25" fill="#FF6600"/><polyline points="30,54 38,54 42,46 50,32 58,46 62,54 70,54" fill="none" stroke="#D9480F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="32" r="5" fill="#D9480F"/></symbol>
-  <symbol id="nxs-ic12" viewBox="0 0 100 100"><circle cx="40" cy="52" r="34" fill="#1E1A14"/><polyline points="16,66 30,66 36,44 40,32 44,44 54,66 68,66" fill="none" stroke="#FF6600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="32" r="4" fill="#FF6600"/><path d="M72,28 Q92,52 72,76" fill="none" stroke="#FF6600" stroke-width="4" stroke-linecap="round" opacity="0.8"/><path d="M80,34 Q96,52 80,70" fill="none" stroke="#FF6600" stroke-width="3" stroke-linecap="round" opacity="0.5"/></symbol>
+  <symbol id="nxs-ic1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#1E1A14"/><polyline points="20,70 35,60 50,52 65,44 80,36" fill="none" stroke="#E0641E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="36" r="5" fill="#E0641E"/></symbol>
+  <symbol id="nxs-ic2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#FDE68A" stroke-width="3" opacity="0.5"/><circle cx="50" cy="50" r="38" fill="none" stroke="#CC9900" stroke-width="3" opacity="0.65"/><circle cx="50" cy="50" r="28" fill="#E0641E"/><line x1="50" y1="50" x2="70" y2="30" stroke="white" stroke-width="4" stroke-linecap="round"/><circle cx="70" cy="30" r="5" fill="#E0641E"/></symbol>
+  <symbol id="nxs-ic3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#E0641E"/><polyline points="18,74 32,66 46,54 60,44 74,34 84,26" fill="none" stroke="#E0641E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="84" cy="16" r="4" fill="#D9480F"/></symbol>
+  <symbol id="nxs-ic4" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#EAB308"/><rect x="30" y="56" width="10" height="18" rx="2" fill="#1E1A14" opacity="0.8"/><rect x="45" y="46" width="10" height="28" rx="2" fill="#1E1A14" opacity="0.8"/><rect x="60" y="50" width="10" height="24" rx="2" fill="#1E1A14" opacity="0.8"/><circle cx="50" cy="44" r="4" fill="#E0641E"/></symbol>
+  <symbol id="nxs-ic5" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#E0641E"/><circle cx="50" cy="50" r="26" fill="white"/><polyline points="30,54 38,48 44,54 50,40 56,54 62,44 70,50" fill="none" stroke="#E0641E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="nxs-ic6" viewBox="0 0 100 100"><path d="M50,8 A42,42 0 0,0 50,92 Z" fill="#1E1A14"/><path d="M50,8 A42,42 0 0,1 50,92 Z" fill="#E0641E"/><line x1="28" y1="50" x2="68" y2="50" stroke="#E0641E" stroke-width="5" stroke-linecap="round"/><polygon points="64,42 76,50 64,58" fill="#E0641E"/></symbol>
+  <symbol id="nxs-ic7" viewBox="0 0 100 100"><g fill="#E0641E" opacity="0.25"><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(0 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(45 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(90 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(135 50 50)"/></g><circle cx="50" cy="50" r="30" fill="#E0641E"/><circle cx="50" cy="10" r="5" fill="#1E1A14"/><circle cx="90" cy="50" r="5" fill="#1E1A14"/><circle cx="50" cy="90" r="5" fill="#1E1A14"/><circle cx="10" cy="50" r="5" fill="#1E1A14"/></symbol>
+  <symbol id="nxs-ic8" viewBox="0 0 100 100"><circle cx="34" cy="50" r="30" fill="#1E1A14"/><rect x="70" y="30" width="8" height="14" rx="1" fill="#E0641E"/><rect x="82" y="38" width="8" height="16" rx="1" fill="#D9480F"/><rect x="94" y="32" width="8" height="14" rx="1" fill="#E0641E"/></symbol>
+  <symbol id="nxs-ic9" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#E0641E"/><polyline points="14,74 30,74 38,73 50,42 62,73 70,74 86,74" fill="none" stroke="#D9480F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="42" r="5" fill="#D9480F"/></symbol>
+  <symbol id="nxs-ic10" viewBox="0 0 100 100"><circle cx="50" cy="60" r="36" fill="#E0641E"/><rect x="28" y="14" width="10" height="30" rx="2" fill="#E0641E"/><rect x="45" y="6" width="10" height="30" rx="2" fill="#D9480F"/><rect x="62" y="12" width="10" height="32" rx="2" fill="#E0641E"/></symbol>
+  <symbol id="nxs-ic11" viewBox="0 0 100 100"><polygon points="50,2 54,38 50,42 46,38" fill="#E0641E" opacity="0.6"/><polygon points="98,50 62,54 58,50 62,46" fill="#E0641E" opacity="0.6"/><polygon points="50,98 46,62 50,58 54,62" fill="#E0641E" opacity="0.6"/><polygon points="2,50 38,46 42,50 38,54" fill="#E0641E" opacity="0.6"/><circle cx="50" cy="50" r="25" fill="#E0641E"/><polyline points="30,54 38,54 42,46 50,32 58,46 62,54 70,54" fill="none" stroke="#D9480F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="32" r="5" fill="#D9480F"/></symbol>
+  <symbol id="nxs-ic12" viewBox="0 0 100 100"><circle cx="40" cy="52" r="34" fill="#1E1A14"/><polyline points="16,66 30,66 36,44 40,32 44,44 54,66 68,66" fill="none" stroke="#E0641E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="32" r="4" fill="#E0641E"/><path d="M72,28 Q92,52 72,76" fill="none" stroke="#E0641E" stroke-width="4" stroke-linecap="round" opacity="0.8"/><path d="M80,34 Q96,52 80,70" fill="none" stroke="#E0641E" stroke-width="3" stroke-linecap="round" opacity="0.5"/></symbol>
 </svg>
 
 <canvas id="sun-canvas"></canvas>
@@ -458,6 +459,7 @@
         <a href="platform.html">Platform</a>
         <div class="nav-dropdown-menu">
           <a href="platform.html">Platform Overview</a>
+          <a href="how-it-works.html">How It Works</a>
           <div class="menu-divider"></div>
           <a href="modules.html">Modules</a>
           <a href="technology.html">Technology</a>
@@ -465,7 +467,7 @@
           <a href="trust.html">Trust Centre</a>
         </div>
       </div>
-      <a href="how-it-works.html">How It Works</a>
+      
       <div class="nav-dropdown">
         <a href="industries.html">Industries</a>
         <div class="nav-dropdown-menu">
@@ -481,11 +483,13 @@
       <div class="nav-dropdown">
         <a href="blog.html">Resources</a>
         <div class="nav-dropdown-menu">
-          <a href="blog.html">Industry Insights</a>
+          <div class="menu-label">Industry Insights</div>
+          <a href="blog.html">Blog</a>
           <a href="videos.html">Videos</a>
           <a href="resources.html">Knowledge Center</a>
           <div class="menu-divider"></div>
-          <a href="community.html">Community</a>
+          <div class="menu-label">Community</div>
+          <a href="community.html">Overview</a>
           <a href="community.html#events">Events</a>
           <a href="community.html#social">Social Media</a>
         </div>
@@ -505,20 +509,20 @@
     </div>
 </nav>
 <!-- ══ MOBILE NAV PANEL ══ -->
-<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #FF6600;">
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #E0641E;">
   <a href="platform.html">Platform</a>
   <a href="how-it-works.html">How It Works</a>
   <a href="industries.html">Industries</a>
   <a href="why-twosuns.html">Why TwoSuns</a>
   <a href="about.html">Company</a>
-  <a href="blog.html">Industry Insights</a>
+  <a href="blog.html">Blog</a>
   <a href="videos.html">Videos</a>
   <a href="resources.html">Knowledge Center</a>
   <a href="community.html">Community</a>
   <a href="investors.html">Investor Centre</a>
   <a href="partners.html">Partner Centre</a>
   <a href="trust.html">Trust Centre</a>
-  <a href="engage.html" style="color:#FF6600;font-weight:700;">Engage</a>
+  <a href="engage.html" style="color:#E0641E;font-weight:700;">Engage</a>
 </div>
 
 <!-- ══ PAGE HERO ══ -->
@@ -546,15 +550,15 @@
         <h2 class="section-heading">Continuous <span>Scanning</span></h2>
         <p style="color:var(--text-muted);font-size:16px;line-height:1.8;margin-bottom:28px;">TwoSuns ingests and normalizes external signals, internal enterprise data, and operational context: news, policy updates, regulatory filings, market data, operational workflows, ERP and CRM outputs, and more. No heavy integration is required to start coordinating execution.</p>
         <div style="display:grid;gap:12px;">
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic2"/></svg> Multi-Source Ingestion</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Licensed feeds, public databases, government sources, news, social sentiment, ESG frameworks and pricing data all normalized automatically.</p>
           </div>
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic3"/></svg> Continuous Normalization</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Raw, unstructured information is continuously converted into structured, actionable intelligence without manual preprocessing.</p>
           </div>
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic6"/></svg> Zero-Friction Integration</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">No heavy integration required to start. Connect enterprise data sources progressively as your use case grows.</p>
           </div>
@@ -562,25 +566,25 @@
       </div>
       <!-- visual col RIGHT -->
       <div style="display:flex;align-items:stretch;min-height:420px;">
-        <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(255,102,0,0.15),0 4px 20px rgba(0,0,0,0.1);border:1px solid var(--border);width:100%;background:#3A3A3A;padding:32px;display:flex;flex-direction:column;justify-content:space-between;">
-          <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,102,0,0.6);text-transform:uppercase;margin-bottom:20px;">● Live Data Ingestion</div>
+        <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(224,100,30,0.15),0 4px 20px rgba(0,0,0,0.1);border:1px solid var(--border);width:100%;background:#3A3A3A;padding:32px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(224,100,30,0.6);text-transform:uppercase;margin-bottom:20px;">● Live Data Ingestion</div>
           <div style="display:flex;flex-direction:column;gap:12px;flex:1;">
             <!-- Source rows -->
             <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.04);border-radius:10px;padding:10px 14px;">
               <svg width="20" height="20" style="flex-shrink:0"><use href="#nxs-ic2"/></svg>
               <div style="flex:1;">
                 <div style="font-size:12px;font-weight:600;color:#FFFFFF;margin-bottom:2px;">News &amp; Sentiment</div>
-                <div style="height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div style="height:100%;width:87%;background:linear-gradient(90deg,#FF6600,#CC9900);border-radius:2px;"></div></div>
+                <div style="height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div style="height:100%;width:87%;background:linear-gradient(90deg,#E0641E,#CC9900);border-radius:2px;"></div></div>
               </div>
-              <span style="font-size:10px;color:#FF6600;font-weight:700;">+12.4k/hr</span>
+              <span style="font-size:10px;color:#E0641E;font-weight:700;">+12.4k/hr</span>
             </div>
             <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.04);border-radius:10px;padding:10px 14px;">
               <svg width="20" height="20" style="flex-shrink:0"><use href="#nxs-ic4"/></svg>
               <div style="flex:1;">
                 <div style="font-size:12px;font-weight:600;color:#FFFFFF;margin-bottom:2px;">Price Feeds</div>
-                <div style="height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div style="height:100%;width:95%;background:linear-gradient(90deg,#FF6600,#CC9900);border-radius:2px;"></div></div>
+                <div style="height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div style="height:100%;width:95%;background:linear-gradient(90deg,#E0641E,#CC9900);border-radius:2px;"></div></div>
               </div>
-              <span style="font-size:10px;color:#FF6600;font-weight:700;">LIVE</span>
+              <span style="font-size:10px;color:#E0641E;font-weight:700;">LIVE</span>
             </div>
             <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.04);border-radius:10px;padding:10px 14px;">
               <svg width="20" height="20" style="flex-shrink:0"><use href="#nxs-ic10"/></svg>
@@ -594,7 +598,7 @@
               <svg width="20" height="20" style="flex-shrink:0"><use href="#nxs-ic5"/></svg>
               <div style="flex:1;">
                 <div style="font-size:12px;font-weight:600;color:#FFFFFF;margin-bottom:2px;">ESG &amp; Carbon</div>
-                <div style="height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div style="height:100%;width:74%;background:linear-gradient(90deg,#2A231B,#FF6600);border-radius:2px;"></div></div>
+                <div style="height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div style="height:100%;width:74%;background:linear-gradient(90deg,#2A231B,#E0641E);border-radius:2px;"></div></div>
               </div>
               <span style="font-size:10px;color:rgba(255,255,255,0.4);font-weight:700;">91 sources</span>
             </div>
@@ -602,14 +606,14 @@
               <svg width="20" height="20" style="flex-shrink:0"><use href="#nxs-ic7"/></svg>
               <div style="flex:1;">
                 <div style="font-size:12px;font-weight:600;color:#FFFFFF;margin-bottom:2px;">Social &amp; Expert Networks</div>
-                <div style="height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div style="height:100%;width:55%;background:linear-gradient(90deg,#FF6600,#CC9900);border-radius:2px;"></div></div>
+                <div style="height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div style="height:100%;width:55%;background:linear-gradient(90deg,#E0641E,#CC9900);border-radius:2px;"></div></div>
               </div>
               <span style="font-size:10px;color:rgba(255,255,255,0.4);font-weight:700;">67 sources</span>
             </div>
           </div>
           <div style="margin-top:20px;border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;display:flex;align-items:center;justify-content:space-between;">
             <span style="font-size:12px;color:rgba(255,255,255,0.4);">Total signals ingested</span>
-            <span style="font-size:20px;font-weight:800;color:#FF6600;">500+</span>
+            <span style="font-size:20px;font-weight:800;color:#E0641E;">500+</span>
           </div>
         </div>
       </div>
@@ -624,48 +628,48 @@
     <div class="module-grid" style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:stretch;">
       <!-- visual col LEFT -->
       <div style="display:flex;align-items:stretch;min-height:420px;">
-        <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(255,102,0,0.15),0 4px 20px rgba(0,0,0,0.1);border:1px solid var(--border);width:100%;background:#3A3A3A;padding:32px;display:flex;flex-direction:column;gap:16px;">
-          <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,102,0,0.6);text-transform:uppercase;">● AI Agents Active</div>
+        <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(224,100,30,0.15),0 4px 20px rgba(0,0,0,0.1);border:1px solid var(--border);width:100%;background:#3A3A3A;padding:32px;display:flex;flex-direction:column;gap:16px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(224,100,30,0.6);text-transform:uppercase;">● AI Agents Active</div>
           <!-- Agent cards -->
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-            <div style="background:rgba(255,102,0,0.1);border:1px solid rgba(255,102,0,0.2);border-radius:10px;padding:12px;">
+            <div style="background:rgba(224,100,30,0.1);border:1px solid rgba(224,100,30,0.2);border-radius:10px;padding:12px;">
               <div style="font-size:10px;color:#CC9900;font-weight:700;margin-bottom:4px;">PESTEL AGENT</div>
               <div style="font-size:12px;color:rgba(255,255,255,0.7);">Political risk ↑ 0.34</div>
-              <div style="font-size:10px;color:#FF6600;margin-top:4px;">● Running</div>
+              <div style="font-size:10px;color:#E0641E;margin-top:4px;">● Running</div>
             </div>
-            <div style="background:rgba(255,102,0,0.1);border:1px solid rgba(255,102,0,0.2);border-radius:10px;padding:12px;">
+            <div style="background:rgba(224,100,30,0.1);border:1px solid rgba(224,100,30,0.2);border-radius:10px;padding:12px;">
               <div style="font-size:10px;color:#CC9900;font-weight:700;margin-bottom:4px;">ECONOMETRIC</div>
               <div style="font-size:12px;color:rgba(255,255,255,0.7);">Correlation 0.87</div>
-              <div style="font-size:10px;color:#FF6600;margin-top:4px;">● Running</div>
+              <div style="font-size:10px;color:#E0641E;margin-top:4px;">● Running</div>
             </div>
             <div style="background:rgba(42,35,27,0.15);border:1px solid rgba(42,35,27,0.3);border-radius:10px;padding:12px;">
               <div style="font-size:10px;color:#F3C98C;font-weight:700;margin-bottom:4px;">SENTIMENT NLP</div>
               <div style="font-size:12px;color:rgba(255,255,255,0.7);">Bearish 62%</div>
-              <div style="font-size:10px;color:#FF6600;margin-top:4px;">● Running</div>
+              <div style="font-size:10px;color:#E0641E;margin-top:4px;">● Running</div>
             </div>
-            <div style="background:rgba(42,35,27,0.12);border:1px solid rgba(255,102,0,0.25);border-radius:10px;padding:12px;">
+            <div style="background:rgba(42,35,27,0.12);border:1px solid rgba(224,100,30,0.25);border-radius:10px;padding:12px;">
               <div style="font-size:10px;color:#CC9900;font-weight:700;margin-bottom:4px;">ESG SCORING</div>
               <div style="font-size:12px;color:rgba(255,255,255,0.7);">Score: 74/100</div>
-              <div style="font-size:10px;color:#FF6600;margin-top:4px;">● Running</div>
+              <div style="font-size:10px;color:#E0641E;margin-top:4px;">● Running</div>
             </div>
           </div>
           <!-- Signal output -->
           <div style="background:rgba(255,255,255,0.04);border-radius:12px;padding:16px;">
             <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Composite Signal Output</div>
             <div style="display:flex;align-items:flex-end;gap:6px;height:48px;">
-              <div style="flex:1;height:40%;background:rgba(255,102,0,0.3);border-radius:3px 3px 0 0;"></div>
-              <div style="flex:1;height:55%;background:rgba(255,102,0,0.4);border-radius:3px 3px 0 0;"></div>
-              <div style="flex:1;height:35%;background:rgba(255,102,0,0.3);border-radius:3px 3px 0 0;"></div>
-              <div style="flex:1;height:70%;background:rgba(255,102,0,0.5);border-radius:3px 3px 0 0;"></div>
-              <div style="flex:1;height:85%;background:#FF6600;border-radius:3px 3px 0 0;"></div>
-              <div style="flex:1;height:60%;background:rgba(255,102,0,0.6);border-radius:3px 3px 0 0;"></div>
-              <div style="flex:1;height:90%;background:#FF6600;border-radius:3px 3px 0 0;"></div>
-              <div style="flex:1;height:75%;background:rgba(255,102,0,0.7);border-radius:3px 3px 0 0;"></div>
+              <div style="flex:1;height:40%;background:rgba(224,100,30,0.3);border-radius:3px 3px 0 0;"></div>
+              <div style="flex:1;height:55%;background:rgba(224,100,30,0.4);border-radius:3px 3px 0 0;"></div>
+              <div style="flex:1;height:35%;background:rgba(224,100,30,0.3);border-radius:3px 3px 0 0;"></div>
+              <div style="flex:1;height:70%;background:rgba(224,100,30,0.5);border-radius:3px 3px 0 0;"></div>
+              <div style="flex:1;height:85%;background:#E0641E;border-radius:3px 3px 0 0;"></div>
+              <div style="flex:1;height:60%;background:rgba(224,100,30,0.6);border-radius:3px 3px 0 0;"></div>
+              <div style="flex:1;height:90%;background:#E0641E;border-radius:3px 3px 0 0;"></div>
+              <div style="flex:1;height:75%;background:rgba(224,100,30,0.7);border-radius:3px 3px 0 0;"></div>
             </div>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,102,0,0.1);border:1px solid rgba(255,102,0,0.25);border-radius:10px;padding:10px 14px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(224,100,30,0.1);border:1px solid rgba(224,100,30,0.25);border-radius:10px;padding:10px 14px;">
             <span style="font-size:12px;color:#CC9900;">Signal Confidence</span>
-            <span style="font-size:18px;font-weight:800;color:#FF6600;">94.2%</span>
+            <span style="font-size:18px;font-weight:800;color:#E0641E;">94.2%</span>
           </div>
         </div>
       </div>
@@ -678,19 +682,19 @@
         <h2 class="section-heading">Advanced AI <span>Analysis</span></h2>
         <p style="color:var(--text-muted);font-size:16px;line-height:1.8;margin-bottom:28px;">Beyond static analytics, TwoSuns combines human expertise with persistent AI assistance. It applies PESTEL, SWOT, Five Forces, scenario modeling, and quantitative and qualitative frameworks continuously, turning unstructured signals, reports, and operational context into structured coordination intelligence.</p>
         <div style="display:grid;gap:12px;">
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic1"/></svg> AI Agent Army</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Multiple specialised AI agents work in parallel each trained on domain-specific market knowledge for energy, sectors, and financials.</p>
           </div>
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic5"/></svg> Framework Application</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">PESTEL, SWOT, Five Forces, econometric, statistical and probabilistic models applied continuously not just on demand.</p>
           </div>
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic4"/></svg> Qualitative to Quantitative</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Converts news, reports, and commentary into measurable signals using NLP, knowledge graphs, and retrieval-augmented generation (RAG).</p>
           </div>
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic1"/></svg> Learns With You</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Adaptive intelligence that evolves with your organisation's context, priorities, and market exposure over time.</p>
           </div>
@@ -715,15 +719,15 @@
         <h2 class="section-heading">Lens-<span>Shifting</span></h2>
         <p style="color:var(--text-muted);font-size:16px;line-height:1.8;margin-bottom:28px;">View any situation through multiple stakeholder lenses instantly: customers, competitors, suppliers, partners, regulators, internal teams. Anticipate positions, identify risks, and surface opportunities invisible to single-perspective analytics platforms.</p>
         <div style="display:grid;gap:12px;">
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic7"/></svg> Role-Based Views</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Switch instantly between producer, buyer, transporter, regulator, and investor perspectives seeing what each stakeholder sees.</p>
           </div>
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic8"/></svg> Counterparty Intelligence</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Anticipate how counterparties will respond to market conditions, pricing moves, and policy changes before engagement.</p>
           </div>
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic9"/></svg> Hidden Opportunity Detection</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Surface opportunities and risks that are invisible from a single perspective visible only when viewing the full market landscape.</p>
           </div>
@@ -731,23 +735,23 @@
       </div>
       <!-- visual col RIGHT -->
       <div style="display:flex;align-items:stretch;min-height:420px;">
-        <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(255,102,0,0.15),0 4px 20px rgba(0,0,0,0.1);border:1px solid var(--border);width:100%;background:#3A3A3A;padding:32px;display:flex;flex-direction:column;gap:16px;">
-          <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,102,0,0.6);text-transform:uppercase;">● Lens-Shifting View</div>
+        <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(224,100,30,0.15),0 4px 20px rgba(0,0,0,0.1);border:1px solid var(--border);width:100%;background:#3A3A3A;padding:32px;display:flex;flex-direction:column;gap:16px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(224,100,30,0.6);text-transform:uppercase;">● Lens-Shifting View</div>
           <!-- Event card -->
-          <div style="background:rgba(255,102,0,0.08);border:1px solid rgba(255,102,0,0.2);border-radius:12px;padding:14px;">
+          <div style="background:rgba(224,100,30,0.08);border:1px solid rgba(224,100,30,0.2);border-radius:12px;padding:14px;">
             <div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;">MARKET EVENT</div>
             <div style="font-size:14px;font-weight:700;color:#FFFFFF;">Industrial Operations Futures +12.3%</div>
             <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;">Cold snap forecast Northeast US, 7-day horizon</div>
           </div>
           <!-- Perspective cards -->
           <div style="display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;align-items:center;gap:10px;background:rgba(255,102,0,0.1);border-left:3px solid #FF6600;border-radius:0 8px 8px 0;padding:10px 12px;">
+            <div style="display:flex;align-items:center;gap:10px;background:rgba(224,100,30,0.1);border-left:3px solid #E0641E;border-radius:0 8px 8px 0;padding:10px 12px;">
               <svg width="18" height="18" style="flex-shrink:0"><use href="#nxs-ic12"/></svg>
               <div style="flex:1;">
                 <div style="font-size:11px;font-weight:700;color:#CC9900;">PRODUCER VIEW</div>
                 <div style="font-size:11px;color:rgba(255,255,255,0.6);">Accelerate extraction Q4 margin window open</div>
               </div>
-              <span style="color:#FF6600;font-size:13px;font-weight:700;">↑ BUY</span>
+              <span style="color:#E0641E;font-size:13px;font-weight:700;">↑ BUY</span>
             </div>
             <div style="display:flex;align-items:center;gap:10px;background:rgba(42,35,27,0.12);border-left:3px solid #E0531A;border-radius:0 8px 8px 0;padding:10px 12px;">
               <svg width="18" height="18" style="flex-shrink:0"><use href="#nxs-ic7"/></svg>
@@ -755,15 +759,15 @@
                 <div style="font-size:11px;font-weight:700;color:#F3C98C;">BUYER VIEW</div>
                 <div style="font-size:11px;color:rgba(255,255,255,0.6);">Lock in forward contracts before further spike</div>
               </div>
-              <span style="color:#FF6600;font-size:13px;font-weight:700;">⚡ ACT</span>
+              <span style="color:#E0641E;font-size:13px;font-weight:700;">⚡ ACT</span>
             </div>
-            <div style="display:flex;align-items:center;gap:10px;background:rgba(42,35,27,0.1);border-left:3px solid #FF6600;border-radius:0 8px 8px 0;padding:10px 12px;">
+            <div style="display:flex;align-items:center;gap:10px;background:rgba(42,35,27,0.1);border-left:3px solid #E0641E;border-radius:0 8px 8px 0;padding:10px 12px;">
               <svg width="18" height="18" style="flex-shrink:0"><use href="#nxs-ic3"/></svg>
               <div style="flex:1;">
                 <div style="font-size:11px;font-weight:700;color:#CC9900;">INVESTOR VIEW</div>
                 <div style="font-size:11px;color:rgba(255,255,255,0.6);">Energy equities exposure rebalance recommended</div>
               </div>
-              <span style="color:#FF6600;font-size:13px;font-weight:700;">↑ LONG</span>
+              <span style="color:#E0641E;font-size:13px;font-weight:700;">↑ LONG</span>
             </div>
             <div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.04);border-left:3px solid rgba(255,255,255,0.2);border-radius:0 8px 8px 0;padding:10px 12px;">
               <svg width="18" height="18" style="flex-shrink:0"><use href="#nxs-ic11"/></svg>
@@ -787,16 +791,16 @@
     <div class="module-grid" style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:stretch;">
       <!-- visual col LEFT -->
       <div style="display:flex;align-items:stretch;min-height:420px;">
-        <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(255,102,0,0.15),0 4px 20px rgba(0,0,0,0.1);border:1px solid var(--border);width:100%;background:#3A3A3A;padding:32px;display:flex;flex-direction:column;gap:14px;">
+        <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(224,100,30,0.15),0 4px 20px rgba(0,0,0,0.1);border:1px solid var(--border);width:100%;background:#3A3A3A;padding:32px;display:flex;flex-direction:column;gap:14px;">
           <div style="display:flex;align-items:center;justify-content:space-between;">
-            <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,102,0,0.6);text-transform:uppercase;">● Secure Room</div>
-            <span style="background:rgba(255,102,0,0.15);color:#FF6600;font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;"><svg width="12" height="12" style="vertical-align:-1px;margin-right:3px"><use href="#nxs-ic11"/></svg>Encrypted</span>
+            <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(224,100,30,0.6);text-transform:uppercase;">● Secure Room</div>
+            <span style="background:rgba(224,100,30,0.15);color:#E0641E;font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;"><svg width="12" height="12" style="vertical-align:-1px;margin-right:3px"><use href="#nxs-ic11"/></svg>Encrypted</span>
           </div>
           <!-- Room header -->
           <div style="background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;">
             <div style="font-size:13px;font-weight:700;color:#FFFFFF;margin-bottom:6px;">Q4 Industrial Operations Supply Negotiation</div>
             <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF6600,#DB5800);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#FFFFFF;">AE</div>
+              <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#E0641E,#C45213);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#FFFFFF;">AE</div>
               <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#2A231B,#1E1A14);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#FFFFFF;">RA</div>
               <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#2A231B,#9A6A0E);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#FFFFFF;">BW</div>
               <div style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,0.5);">+3</div>
@@ -807,7 +811,7 @@
           <div style="display:flex;flex-direction:column;gap:8px;">
             <div style="font-size:10px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:1px;">Chain of Intent</div>
             <div style="display:flex;gap:10px;align-items:flex-start;">
-              <div style="width:6px;height:6px;border-radius:50%;background:#FF6600;margin-top:4px;flex-shrink:0;"></div>
+              <div style="width:6px;height:6px;border-radius:50%;background:#E0641E;margin-top:4px;flex-shrink:0;"></div>
               <div><div style="font-size:11px;color:rgba(255,255,255,0.7);">AE shared price scenario model</div><div style="font-size:10px;color:rgba(255,255,255,0.3);">Today 09:14 · View only</div></div>
             </div>
             <div style="display:flex;gap:10px;align-items:flex-start;">
@@ -815,13 +819,13 @@
               <div><div style="font-size:11px;color:rgba(255,255,255,0.7);">Supplier accepted RFP terms (v2)</div><div style="font-size:10px;color:rgba(255,255,255,0.3);">Today 10:31 · Signed</div></div>
             </div>
             <div style="display:flex;gap:10px;align-items:flex-start;">
-              <div style="width:6px;height:6px;border-radius:50%;background:#FF6600;margin-top:4px;flex-shrink:0;"></div>
+              <div style="width:6px;height:6px;border-radius:50%;background:#E0641E;margin-top:4px;flex-shrink:0;"></div>
               <div><div style="font-size:11px;color:rgba(255,255,255,0.7);">TwoSuns Core record created immutable</div><div style="font-size:10px;color:rgba(255,255,255,0.3);">Today 10:33 · Hash: a3f9c2…</div></div>
             </div>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,102,0,0.08);border:1px solid rgba(255,102,0,0.2);border-radius:10px;padding:10px 14px;margin-top:auto;">
+          <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(224,100,30,0.08);border:1px solid rgba(224,100,30,0.2);border-radius:10px;padding:10px 14px;margin-top:auto;">
             <span style="font-size:11px;color:rgba(255,255,255,0.5);">Audit trail entries</span>
-            <span style="font-size:16px;font-weight:800;color:#FF6600;">100% Immutable</span>
+            <span style="font-size:16px;font-weight:800;color:#E0641E;">100% Immutable</span>
           </div>
         </div>
       </div>
@@ -834,19 +838,19 @@
         <h2 class="section-heading">Enterprise-Grade <span>Collaboration</span></h2>
         <p style="color:var(--text-muted);font-size:16px;line-height:1.8;margin-bottom:28px;">TwoSuns doesn't just provide insights, it provides the environment to coordinate execution on them. Secure Rooms let teams collaborate internally or with external partners, with persistent context, full audit trail, and chain of intent preserved at every step.</p>
         <div style="display:grid;gap:12px;">
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic6"/></svg> Secure Rooms</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Invite suppliers, buyers, regulators, investors, or partners to comment, negotiate, or transact in a fully governed workspace.</p>
           </div>
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic10"/></svg> RFPs &amp; Intelligence Sharing</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Issue RFPs, share intelligence briefings, or align strategy all in a controlled, auditable space.</p>
           </div>
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic11"/></svg> Permission &amp; Visibility Control</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Granular permissions and a complete chain of intent for every action full visibility over who sees what.</p>
           </div>
-          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(255,102,0,0.2);">
+          <div style="background:var(--sun-pale);border-radius:12px;padding:16px 20px;border:1px solid rgba(224,100,30,0.2);">
             <h5 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;"><svg class="nxs-sustainability-ico"><use href="#nxs-ic4"/></svg> Auditable Actions</h5>
             <p style="font-size:13px;color:var(--text-muted);margin:0;">Every collaboration step is logged and preserved in an immutable TwoSuns Core record ensuring nothing is lost between intent and execution.</p>
           </div>
@@ -896,7 +900,7 @@
   </div>
 </section>
 <style>
-  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(255,102,0,0.15); border-bottom:1px solid rgba(255,102,0,0.15); padding:28px 0; overflow:hidden; }
+  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(224,100,30,0.15); border-bottom:1px solid rgba(224,100,30,0.15); padding:28px 0; overflow:hidden; }
   .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
   .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#5A554C; flex-shrink:0; min-width:140px; }
   .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); }
@@ -948,7 +952,6 @@
           <li><a href="blog.html">Use Cases</a></li>
           <li><a href="blog.html">Platform Briefs</a></li>
           <li><a href="blog.html">Case Studies</a></li>
-          <li><a href="blog.html">Events &amp; Media</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -957,8 +960,7 @@
         <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:info@twosuns.ai" style="color:var(--sun-bright)">info@twosuns.ai</a></div>
         <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:invest@twosuns.ai" style="color:var(--sun-bright)">invest@twosuns.ai</a></div>
         <div class="footer-contact-item" style="padding-top:6px;"><a href="tel:6047609015">1-604-760-9015</a></div>
-        <div class="footer-contact-item" style="margin-top:8px;"><a href="https://AEPG.ca">AEPG.ca &#8599;</a></div>
-        <div class="footer-contact-item"><a href="https://TwoSuns">TwoSuns &#8599;</a></div>
+        <div class="footer-contact-item"><a href="https://twosuns.ai">TwoSuns &#8599;</a></div>
       </div>
     </div>
 
@@ -1005,8 +1007,9 @@
         <a href="privacy.html">Privacy Policy</a>
         <a href="cookies.html">Cookie Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="trust.html">Trust Centre</a>
       </div>
-      <p>&#995A11; 2026 TwoSuns. All rights reserved.</p>
+      <p>&#169; 2026 TwoSuns. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -1045,14 +1048,14 @@ function drawP(){
     if(p.x<0||p.x>W) p.vx*=-1;
     if(p.y<0||p.y>H) p.vy*=-1;
     ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(255,102,0,${p.op})`; ctx.fill();
+    ctx.fillStyle=`rgba(224,100,30,${p.op})`; ctx.fill();
   }
   for(let i=0;i<particles.length;i++){
     for(let j=i+1;j<particles.length;j++){
       const a=particles[i],b=particles[j];
       const d=Math.hypot(a.x-b.x,a.y-b.y);
       if(d<120){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
-        ctx.strokeStyle=`rgba(255,102,0,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
+        ctx.strokeStyle=`rgba(224,100,30,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
     }
   }
   requestAnimationFrame(drawP);
@@ -1081,11 +1084,11 @@ window.addEventListener('scroll', () => {
     position:fixed; bottom:88px; right:32px; z-index:998;
     width:52px; height:52px; border-radius:50%;
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
-    box-shadow:0 4px 20px rgba(255,102,0,0.5);
+    box-shadow:0 4px 20px rgba(224,100,30,0.5);
     border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
     transition:transform .2s, box-shadow .2s;
   }
-  #nxs-chat-bubble:hover { transform:scale(1.08); box-shadow:0 6px 28px rgba(255,102,0,0.65); }
+  #nxs-chat-bubble:hover { transform:scale(1.08); box-shadow:0 6px 28px rgba(224,100,30,0.65); }
   #nxs-chat-bubble svg { width:24px; height:24px; color:white; }
   #nxs-chat-bubble .nxs-notif {
     position:absolute; top:-3px; right:-3px; width:14px; height:14px;
@@ -1096,8 +1099,8 @@ window.addEventListener('scroll', () => {
   #nxs-chat-panel {
     position:fixed; bottom:156px; right:32px; z-index:997;
     width:320px; background:white; border-radius:20px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(255,102,0,0.1);
-    border:1px solid rgba(255,102,0,0.15);
+    box-shadow:0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(224,100,30,0.1);
+    border:1px solid rgba(224,100,30,0.15);
     opacity:0; visibility:hidden; transform:translateY(12px) scale(0.97);
     transition:opacity .25s, visibility .25s, transform .25s;
     transform-origin:bottom right; overflow:hidden;
@@ -1107,18 +1110,18 @@ window.addEventListener('scroll', () => {
   .nxs-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--sun),var(--sun-deep)); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
   .nxs-header-text h4 { font-size:14px; font-weight:700; color:white; margin-bottom:2px; }
   .nxs-header-text p { font-size:11px; color:rgba(255,255,255,0.6); display:flex; align-items:center; gap:5px; }
-  .nxs-online-dot { width:7px; height:7px; background:#FF6600; border-radius:50%; display:inline-block; }
+  .nxs-online-dot { width:7px; height:7px; background:#E0641E; border-radius:50%; display:inline-block; }
   .nxs-close { margin-left:auto; background:none; border:none; color:rgba(255,255,255,0.6); cursor:pointer; font-size:18px; line-height:1; padding:4px; transition:color .2s; }
   .nxs-close:hover { color:white; }
   .nxs-body { padding:20px; }
-  .nxs-welcome { background:var(--sun-pale); border:1px solid rgba(255,102,0,0.2); border-radius:14px; padding:14px 16px; margin-bottom:16px; }
+  .nxs-welcome { background:var(--sun-pale); border:1px solid rgba(224,100,30,0.2); border-radius:14px; padding:14px 16px; margin-bottom:16px; }
   .nxs-welcome p { font-size:13px; color:var(--text-mid); line-height:1.6; }
   .nxs-welcome strong { color:var(--navy); }
   .nxs-actions { display:flex; flex-direction:column; gap:8px; }
   .nxs-action-btn { width:100%; text-align:left; background:white; border:1px solid var(--border); border-radius:12px; padding:12px 16px; font-size:13px; font-weight:600; color:var(--navy); cursor:pointer; transition:all .18s; display:flex; align-items:center; gap:10px; text-decoration:none; }
-  .nxs-action-btn:hover { background:var(--sun-pale); border-color:rgba(255,102,0,0.4); transform:translateX(3px); }
+  .nxs-action-btn:hover { background:var(--sun-pale); border-color:rgba(224,100,30,0.4); transform:translateX(3px); }
   .nxs-action-btn .nxs-ico { font-size:16px; flex-shrink:0; }
-  .nxs-footer { padding:12px 20px; border-top:1px solid rgba(255,102,0,0.1); text-align:center; }
+  .nxs-footer { padding:12px 20px; border-top:1px solid rgba(224,100,30,0.1); text-align:center; }
   .nxs-footer a { font-size:11px; color:var(--text-muted); }
   .nxs-footer a:hover { color:var(--sun-deep); }
 
@@ -1171,7 +1174,7 @@ setTimeout(function(){ var n=document.getElementById('nxs-notif'); if(n) n.style
 <style>
   #cookie-banner {
     position:fixed; bottom:0; left:0; right:0; z-index:9999;
-    background:#3A3A3A; border-top:1px solid rgba(255,102,0,0.2);
+    background:#3A3A3A; border-top:1px solid rgba(224,100,30,0.2);
     box-shadow:0 -8px 40px rgba(0,0,0,0.25);
     padding:20px 32px; display:flex; align-items:center;
     justify-content:space-between; gap:24px; flex-wrap:wrap;
@@ -1179,16 +1182,16 @@ setTimeout(function(){ var n=document.getElementById('nxs-notif'); if(n) n.style
   }
   @keyframes cookieSlideUp { from{transform:translateY(100%);opacity:0} to{transform:translateY(0);opacity:1} }
   #cookie-banner p { font-size:13.5px; color:rgba(255,255,255,0.7); line-height:1.6; margin:0; max-width:700px; }
-  #cookie-banner p a { color:#FF6600; text-decoration:underline; }
+  #cookie-banner p a { color:#E0641E; text-decoration:underline; }
   #cookie-banner p a:hover { color:#CC9900; }
   .cookie-btns { display:flex; gap:10px; flex-shrink:0; }
   .cookie-accept {
-    background:linear-gradient(135deg,#FF6600,#DB5800); color:#FFFFFF;
+    background:linear-gradient(135deg,#E0641E,#C45213); color:#FFFFFF;
     font-size:13px; font-weight:700; padding:10px 22px; border-radius:8px;
     border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 4px 14px rgba(255,102,0,0.35);
+    box-shadow:0 4px 14px rgba(224,100,30,0.35);
   }
-  .cookie-accept:hover { transform:translateY(-1px); box-shadow:0 6px 20px rgba(255,102,0,0.5); }
+  .cookie-accept:hover { transform:translateY(-1px); box-shadow:0 6px 20px rgba(224,100,30,0.5); }
   .cookie-decline {
     background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.55);
     font-size:13px; font-weight:600; padding:10px 18px; border-radius:8px;
@@ -1262,7 +1265,7 @@ window.addEventListener('resize',nxsResponsive);
   var ctx = c.getContext('2d'), pts = [], t = 0;
   function sz(){ c.width = c.offsetWidth; c.height = c.offsetHeight; }
   sz(); window.addEventListener('resize', sz);
-  var cols = ['245,158,11','245,158,11','245,158,11','204,153,0','255,102,0'];
+  var cols = ['245,158,11','245,158,11','245,158,11','204,153,0','224,100,30'];
   for(var i=0;i<55;i++) pts.push({
     x:Math.random()*c.width, y:Math.random()*c.height,
     vx:(Math.random()-.5)*.28, vy:(Math.random()-.5)*.28,

@@ -42,9 +42,9 @@
 </script>
 <style>
   :root {
-    --sun:        #FF6600;
+    --sun:        #E0641E;
     --sun-bright: #CC9900;
-    --sun-deep:   #DB5800;
+    --sun-deep:   #C45213;
     --sun-pale:   #FFEDD0;
     --sky:        #2A231B;
     --sky-mid:    #2A231B;
@@ -53,7 +53,7 @@
     --navy-mid:   #2A231B;
     --green:      #2A231B;
     --green-light:#F2EFE7;
-    --logo-green:  #FF6600;
+    --logo-green:  #E0641E;
     --logo-pale:   #FFF8EC;
     --bg:         #FFF5DD;
     --bg2:        #FFEFCE;
@@ -61,8 +61,8 @@
     --text:       #3A3A3A;
     --text-mid:   #3A3A3A;
     --text-muted: #5A554C;
-    --border:     rgba(255,102,0,0.2);
-    --card-shadow:0 4px 24px rgba(255,102,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
+    --border:     rgba(224,100,30,0.2);
+    --card-shadow:0 4px 24px rgba(224,100,30,0.08), 0 1px 4px rgba(0,0,0,0.06);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
@@ -77,7 +77,7 @@
   .section { padding:100px 0; }
   .section-tag {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.3);
+    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.3);
     color:var(--sun-deep); font-size:11px; font-weight:700;
     letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
     border-radius:20px; margin-bottom:20px;
@@ -109,8 +109,8 @@
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
     background:#1E1A14; backdrop-filter:blur(16px);
-    border-bottom:1px solid rgba(255,102,0,0.15);
-    box-shadow:0 1px 20px rgba(255,102,0,0.08);
+    border-bottom:1px solid rgba(224,100,30,0.15);
+    box-shadow:0 1px 20px rgba(224,100,30,0.08);
     overflow:visible;
   }
   .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
@@ -121,9 +121,9 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
     font-size:14px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 4px 14px rgba(255,102,0,0.4); display:inline-block;
+    box-shadow:0 4px 14px rgba(224,100,30,0.4); display:inline-block;
   }
-  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,102,0,0.5); }
+  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(224,100,30,0.5); }
 
   /* NAV DROPDOWN */
   .nav-dropdown { position:relative; display:flex; align-items:center; }
@@ -134,9 +134,9 @@
   .nav-dropdown:hover > a::after { transform:rotate(180deg); }
   .nav-dropdown-menu {
     position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-6px);
-    background:white; border:1px solid rgba(255,102,0,0.2);
+    background:white; border:1px solid rgba(224,100,30,0.2);
     border-radius:12px; padding:6px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(255,102,0,0.08);
+    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(224,100,30,0.08);
     min-width:160px; opacity:0; visibility:hidden;
     transition:opacity .2s, transform .2s, visibility .2s;
     z-index:200;
@@ -150,7 +150,8 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
-  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(255,102,0,0.1); margin:4px 8px; }
+  .nav-dropdown-menu .menu-label { font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); padding:7px 16px 3px; opacity:0.7; pointer-events:none; }
+  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
 
   /* MOBILE NAV */
   .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;margin-left:auto;flex-shrink:0;}
@@ -158,7 +159,7 @@
   .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
   .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
   .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,102,0,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(224,100,30,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
   #nxs-mob-nav a:hover{color:var(--sun-deep);}
   #nxs-mob-nav a:last-child{border-bottom:none;}
 
@@ -169,12 +170,12 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:white; border:none; cursor:pointer;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 16px rgba(255,102,0,0.45);
+    box-shadow:0 4px 16px rgba(224,100,30,0.45);
     opacity:0; visibility:hidden; transform:translateY(12px);
     transition:opacity .3s, visibility .3s, transform .3s;
   }
   #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
-  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(255,102,0,0.55); }
+  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(224,100,30,0.55); }
   #scroll-top svg { width:18px; height:18px; }
 
   /* FOOTER */
@@ -221,7 +222,7 @@
   /* DIVIDER */
   .sun-divider {
     height:5px;
-    background:linear-gradient(90deg, transparent 0%, #FF6600 18%, #1E1A14 50%, #FF6600 82%, transparent 100%);
+    background:linear-gradient(90deg, transparent 0%, #E0641E 18%, #1E1A14 50%, #E0641E 82%, transparent 100%);
     position:relative; z-index:2; overflow:visible;
   }
 
@@ -230,9 +231,9 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:16px 30px; border-radius:10px;
     font-size:15px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 6px 20px rgba(255,102,0,0.4); display:inline-block;
+    box-shadow:0 6px 20px rgba(224,100,30,0.4); display:inline-block;
   }
-  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(255,102,0,0.5); }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(224,100,30,0.5); }
   .btn-secondary {
     background:transparent; color:var(--navy); font-weight:600;
     padding:16px 30px; border-radius:10px; font-size:15px;
@@ -245,7 +246,7 @@
     background:white; border:1px solid var(--border); border-radius:16px;
     padding:28px; transition:all .3s; box-shadow:var(--card-shadow);
   }
-  .card:hover { border-color:rgba(255,102,0,0.4); transform:translateY(-5px); box-shadow:0 12px 40px rgba(255,102,0,0.14); }
+  .card:hover { border-color:rgba(224,100,30,0.4); transform:translateY(-5px); box-shadow:0 12px 40px rgba(224,100,30,0.14); }
 
   /* SOLAR ANIMATIONS */
   @keyframes iconFloat {
@@ -277,7 +278,7 @@
   .page-hero .container { position:relative; z-index:1; }
   .page-hero-eyebrow {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.4);
+    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.4);
     color:var(--sun-deep); font-size:11px; font-weight:700;
     letter-spacing:2.5px; text-transform:uppercase; padding:6px 16px;
     border-radius:20px; margin-bottom:24px;
@@ -308,10 +309,10 @@
   }
   .stage-cards { display:grid; gap:24px; }
   .stage-card {
-    background:#16120D; border:1px solid rgba(255,102,0,0.18);
+    background:#16120D; border:1px solid rgba(224,100,30,0.18);
     border-radius:20px; padding:36px 40px; transition:border-color .3s, box-shadow .3s;
   }
-  .stage-card:hover { border-color:rgba(255,102,0,0.45); box-shadow:0 8px 40px rgba(255,102,0,0.12); }
+  .stage-card:hover { border-color:rgba(224,100,30,0.45); box-shadow:0 8px 40px rgba(224,100,30,0.12); }
   .stage-number {
     font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
     color:var(--sun); margin-bottom:8px;
@@ -322,8 +323,8 @@
   }
   .stage-card h3 .stage-icon {
     width:40px; height:40px; border-radius:10px;
-    background:linear-gradient(135deg,rgba(255,102,0,0.2),rgba(255,102,0,0.08));
-    border:1px solid rgba(255,102,0,0.3);
+    background:linear-gradient(135deg,rgba(224,100,30,0.2),rgba(224,100,30,0.08));
+    border:1px solid rgba(224,100,30,0.3);
     display:flex; align-items:center; justify-content:center;
     font-size:18px; flex-shrink:0;
   }
@@ -338,7 +339,7 @@
     width:6px; height:6px; border-radius:50%; background:var(--sun);
   }
   .stage-closing {
-    margin-top:20px; padding-top:20px; border-top:1px solid rgba(255,102,0,0.1);
+    margin-top:20px; padding-top:20px; border-top:1px solid rgba(224,100,30,0.1);
     color:rgba(255,255,255,0.85); font-size:14px; font-style:italic;
   }
 
@@ -350,7 +351,7 @@
   .arch-bullets { display:grid; gap:16px; margin-top:32px; }
   .arch-bullet {
     display:flex; align-items:flex-start; gap:16px;
-    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.2);
+    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.2);
     border-radius:14px; padding:20px 24px;
   }
   .arch-bullet-icon {
@@ -366,15 +367,15 @@
     border-radius:20px; padding:40px; display:flex; flex-direction:column; gap:16px;
   }
   .arch-sys {
-    background:rgba(255,255,255,0.06); border:1px solid rgba(255,102,0,0.15);
+    background:rgba(255,255,255,0.06); border:1px solid rgba(224,100,30,0.15);
     border-radius:12px; padding:16px 20px; display:flex; align-items:center; gap:14px;
   }
   .arch-sys-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
   .arch-sys-label { font-size:13px; font-weight:600; color:rgba(255,255,255,0.8); }
   .arch-sys-type { font-size:11px; color:rgba(255,255,255,0.4); margin-left:auto; letter-spacing:1px; text-transform:uppercase; }
   .arch-center {
-    background:linear-gradient(135deg,rgba(255,102,0,0.2),rgba(255,102,0,0.08));
-    border:2px solid rgba(255,102,0,0.45);
+    background:linear-gradient(135deg,rgba(224,100,30,0.2),rgba(224,100,30,0.08));
+    border:2px solid rgba(224,100,30,0.45);
     border-radius:14px; padding:20px 24px; text-align:center;
   }
   .arch-center span { font-size:13px; font-weight:700; color:var(--sun-bright); letter-spacing:1px; text-transform:uppercase; }
@@ -385,10 +386,10 @@
   #outcome .section-sub { color:rgba(255,255,255,0.75); }
   .outcome-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
   .outcome-card {
-    background:rgba(255,255,255,0.07); border:1px solid rgba(255,102,0,0.2);
+    background:rgba(255,255,255,0.07); border:1px solid rgba(224,100,30,0.2);
     border-radius:18px; padding:36px 28px; text-align:center; transition:all .3s;
   }
-  .outcome-card:hover { background:rgba(255,255,255,0.1); border-color:rgba(255,102,0,0.45); transform:translateY(-4px); }
+  .outcome-card:hover { background:rgba(255,255,255,0.1); border-color:rgba(224,100,30,0.45); transform:translateY(-4px); }
   .outcome-card-icon { font-size:36px; margin-bottom:16px; }
   .outcome-card h3 { font-size:20px; font-weight:800; color:var(--sun-bright); margin-bottom:10px; }
   .outcome-card p { font-size:14px; color:rgba(255,255,255,0.65); line-height:1.7; }
@@ -400,7 +401,7 @@
     background:white; border:1px solid var(--border); border-radius:16px;
     overflow:hidden; box-shadow:var(--card-shadow); transition:box-shadow .3s;
   }
-  .example-card:hover { box-shadow:0 8px 40px rgba(255,102,0,0.12); }
+  .example-card:hover { box-shadow:0 8px 40px rgba(224,100,30,0.12); }
   .example-header {
     display:flex; align-items:center; justify-content:space-between;
     padding:24px 32px; cursor:pointer; user-select:none;
@@ -418,14 +419,14 @@
   .example-header p { font-size:13px; color:var(--text-muted); }
   .example-toggle {
     width:32px; height:32px; border-radius:50%;
-    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.3);
+    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.3);
     display:flex; align-items:center; justify-content:center;
     font-size:16px; color:var(--sun-deep); flex-shrink:0;
     transition:transform .3s, background .2s;
   }
   .example-card.open .example-toggle { transform:rotate(180deg); background:var(--sun); color:white; }
   .example-body {
-    display:none; padding:0 32px 32px; border-top:1px solid rgba(255,102,0,0.12);
+    display:none; padding:0 32px 32px; border-top:1px solid rgba(224,100,30,0.12);
   }
   .example-card.open .example-body { display:block; }
   .example-stages { display:grid; gap:12px; margin-top:24px; }
@@ -435,14 +436,14 @@
   .example-stage-label {
     font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
     color:var(--sun-deep); background:var(--sun-pale);
-    border:1px solid rgba(255,102,0,0.25); border-radius:6px;
+    border:1px solid rgba(224,100,30,0.25); border-radius:6px;
     padding:4px 10px; flex-shrink:0; margin-top:2px; min-width:80px; text-align:center;
   }
   .example-stage-text { font-size:14px; color:var(--text-mid); line-height:1.7; }
   .example-outcome {
     margin-top:24px; padding:20px 24px;
-    background:linear-gradient(135deg,var(--logo-pale),rgba(255,102,0,0.05));
-    border:1px solid rgba(255,102,0,0.2); border-radius:12px;
+    background:linear-gradient(135deg,var(--logo-pale),rgba(224,100,30,0.05));
+    border:1px solid rgba(224,100,30,0.2); border-radius:12px;
   }
   .example-outcome strong { font-size:13px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:6px; }
   .example-outcome p { font-size:14px; color:var(--text-mid); line-height:1.7; }
@@ -570,6 +571,7 @@
         <a href="platform.html">Platform</a>
         <div class="nav-dropdown-menu">
           <a href="platform.html">Platform Overview</a>
+          <a href="how-it-works.html">How It Works</a>
           <div class="menu-divider"></div>
           <a href="modules.html">Modules</a>
           <a href="technology.html">Technology</a>
@@ -593,11 +595,13 @@
       <div class="nav-dropdown">
         <a href="blog.html">Resources</a>
         <div class="nav-dropdown-menu">
-          <a href="blog.html">Industry Insights</a>
+          <div class="menu-label">Industry Insights</div>
+          <a href="blog.html">Blog</a>
           <a href="videos.html">Videos</a>
           <a href="resources.html">Knowledge Center</a>
           <div class="menu-divider"></div>
-          <a href="community.html">Community</a>
+          <div class="menu-label">Community</div>
+          <a href="community.html">Overview</a>
           <a href="community.html#events">Events</a>
           <a href="community.html#social">Social Media</a>
         </div>
@@ -617,20 +621,20 @@
   </div>
 </nav>
 <!-- MOBILE NAV PANEL -->
-<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #FF6600;">
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #E0641E;">
   <a href="platform.html">Platform</a>
   <a href="how-it-works.html">How It Works</a>
   <a href="industries.html">Industries</a>
   <a href="why-twosuns.html">Why TwoSuns</a>
   <a href="about.html">Company</a>
-  <a href="blog.html">Industry Insights</a>
+  <a href="blog.html">Blog</a>
   <a href="videos.html">Videos</a>
   <a href="resources.html">Knowledge Center</a>
   <a href="community.html">Community</a>
   <a href="investors.html">Investor Centre</a>
   <a href="partners.html">Partner Centre</a>
   <a href="trust.html">Trust Centre</a>
-  <a href="engage.html" style="color:#FF6600;font-weight:700;">Engage</a>
+  <a href="engage.html" style="color:#E0641E;font-weight:700;">Engage</a>
 </div>
 
 <!-- HERO -->
@@ -677,7 +681,7 @@
       <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 01</div>
         <h3>
-          <div class="stage-icon">&#533F2B;</div>
+          <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
           Sense: Continuous Signal Awareness
         </h3>
         <p>TwoSuns ingests and synthesizes vast volumes of structured and unstructured data across global markets.</p>
@@ -695,7 +699,7 @@
       <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 02</div>
         <h3>
-          <div class="stage-icon">&#4A3826;</div>
+          <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
           Analyze: Structured Intelligence and Signal Extraction
         </h3>
         <p>Signals are contextualized using AI and established frameworks, including multi-lens analysis and PESTLE.</p>
@@ -713,7 +717,7 @@
       <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 03</div>
         <h3>
-          <div class="stage-icon">&#4E3B28;</div>
+          <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
           Coordinate: Workflow Orchestration and Decision Structuring
         </h3>
         <p>Insights are converted into structured positions.</p>
@@ -731,7 +735,7 @@
       <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 04</div>
         <h3>
-          <div class="stage-icon">&#935109;</div>
+          <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
           Align: Structured Collaboration Across Stakeholders
         </h3>
         <p>Decisions are aligned across internal teams and external counterparties through secure, purpose-built environments.</p>
@@ -749,7 +753,7 @@
       <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 05</div>
         <h3>
-          <div class="stage-icon">&#9989;</div>
+          <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
           Commit: Advancing Decisions Through Controlled Workflows
         </h3>
         <p>Positions and strategies move forward through structured execution pathways.</p>
@@ -767,7 +771,7 @@
       <div class="stage-card sustainability-card-animated">
         <div class="stage-number">Stage 06</div>
         <h3>
-          <div class="stage-icon">&#965812;</div>
+          <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
           Record: TwoSuns Core
         </h3>
         <p>Every decision, input, and outcome is captured and maintained.</p>
@@ -798,7 +802,7 @@
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1080px;margin:0 auto;">
       <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:16px;padding:32px 28px;box-shadow:var(--card-shadow);">
-        <div style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(255,102,0,0.3);color:var(--sun-deep);font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase;">Continuous Refinement</div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(224,100,30,0.3);color:var(--sun-deep);font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase;">Continuous Refinement</div>
         <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:12px;">Test &amp; Adapt as Conditions Evolve</h3>
         <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:14px;">Each iteration builds on prior decisions, maintaining continuity while improving precision.</p>
         <ul style="list-style:none;padding:0;margin:0;">
@@ -809,16 +813,16 @@
         </ul>
       </div>
       <div style="background:linear-gradient(135deg,#1E1A14,#1A140E);border-radius:16px;padding:32px 28px;color:#FFFFFF;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(255,102,0,0.18) 0%,transparent 70%);"></div>
+        <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(224,100,30,0.18) 0%,transparent 70%);"></div>
         <div style="position:relative;z-index:2;">
-          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,102,0,0.15);border:1px solid rgba(255,102,0,0.3);color:#CC9900;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase;">Full Context Switching</div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(224,100,30,0.15);border:1px solid rgba(224,100,30,0.3);color:#CC9900;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase;">Full Context Switching</div>
           <h3 style="font-size:20px;font-weight:800;color:#FFFFFF;margin-bottom:12px;">Operate from Multiple Perspectives</h3>
           <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:14px;">Test the same decision from different viewpoints to reveal risks, opportunities, and positioning gaps.</p>
           <ul style="list-style:none;padding:0;margin:0;">
-            <li style="font-size:13px;color:rgba(255,255,255,0.85);padding:6px 0;display:flex;gap:10px;"><span style="color:#FF6600;">›</span> Competitor and customer perspectives</li>
-            <li style="font-size:13px;color:rgba(255,255,255,0.85);padding:6px 0;display:flex;gap:10px;"><span style="color:#FF6600;">›</span> Partner and internal stakeholder lenses</li>
-            <li style="font-size:13px;color:rgba(255,255,255,0.85);padding:6px 0;display:flex;gap:10px;"><span style="color:#FF6600;">›</span> Across markets, geographies, and industries</li>
-            <li style="font-size:13px;color:rgba(255,255,255,0.85);padding:6px 0;display:flex;gap:10px;"><span style="color:#FF6600;">›</span> Across functions and roles</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.85);padding:6px 0;display:flex;gap:10px;"><span style="color:#E0641E;">›</span> Competitor and customer perspectives</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.85);padding:6px 0;display:flex;gap:10px;"><span style="color:#E0641E;">›</span> Partner and internal stakeholder lenses</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.85);padding:6px 0;display:flex;gap:10px;"><span style="color:#E0641E;">›</span> Across markets, geographies, and industries</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.85);padding:6px 0;display:flex;gap:10px;"><span style="color:#E0641E;">›</span> Across functions and roles</li>
           </ul>
         </div>
       </div>
@@ -844,28 +848,28 @@
         <p>These systems manage <strong>data and execution</strong>. TwoSuns <strong>structures decisions</strong> and aligns execution across them.</p>
         <div class="arch-bullets">
           <div class="arch-bullet">
-            <div class="arch-bullet-icon">&#4D3A28;</div>
+            <div class="arch-bullet-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="arch-bullet-text">
               <strong>Data-first, AI-native architecture</strong>
               <span>Built to ingest and synthesize structured and unstructured data at scale.</span>
             </div>
           </div>
           <div class="arch-bullet">
-            <div class="arch-bullet-icon">&#533F2B;</div>
+            <div class="arch-bullet-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="arch-bullet-text">
               <strong>Explainable outputs with full transparency (Persistent Coordination)</strong>
               <span>Every output shows its source data, logic, and reasoning.</span>
             </div>
           </div>
           <div class="arch-bullet">
-            <div class="arch-bullet-icon">&#523E2A;</div>
+            <div class="arch-bullet-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="arch-bullet-text">
               <strong>Multi-lens market interpretation</strong>
               <span>Evaluates every situation across buyer, supplier, intermediary, and regulator perspectives.</span>
             </div>
           </div>
           <div class="arch-bullet">
-            <div class="arch-bullet-icon">&#493726;</div>
+            <div class="arch-bullet-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="arch-bullet-text">
               <strong>Integrated collaboration and workflow management</strong>
               <span>Decision rooms and structured workflows embedded directly into the platform.</span>
@@ -891,25 +895,25 @@
           <div class="arch-sys-type">Execution</div>
         </div>
         <div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 0;">
-          <div style="flex:1;height:1px;background:rgba(255,102,0,0.25);"></div>
+          <div style="flex:1;height:1px;background:rgba(224,100,30,0.25);"></div>
           <div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;">connects to</div>
-          <div style="flex:1;height:1px;background:rgba(255,102,0,0.25);"></div>
+          <div style="flex:1;height:1px;background:rgba(224,100,30,0.25);"></div>
         </div>
         <div class="arch-center">
           <span>TwoSuns - Coordination Infrastructure</span>
         </div>
         <div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 0;">
-          <div style="flex:1;height:1px;background:rgba(255,102,0,0.25);"></div>
+          <div style="flex:1;height:1px;background:rgba(224,100,30,0.25);"></div>
           <div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;">outputs</div>
-          <div style="flex:1;height:1px;background:rgba(255,102,0,0.25);"></div>
+          <div style="flex:1;height:1px;background:rgba(224,100,30,0.25);"></div>
         </div>
         <div class="arch-sys">
-          <div class="arch-sys-dot" style="background:#FF6600;"></div>
+          <div class="arch-sys-dot" style="background:#E0641E;"></div>
           <div class="arch-sys-label">Structured Decisions</div>
           <div class="arch-sys-type">Ready for Execution</div>
         </div>
         <div class="arch-sys">
-          <div class="arch-sys-dot" style="background:#FF6600;"></div>
+          <div class="arch-sys-dot" style="background:#E0641E;"></div>
           <div class="arch-sys-label">TwoSuns Core</div>
           <div class="arch-sys-type">Full Audit Trail</div>
         </div>
@@ -923,20 +927,20 @@
 <!-- OUTCOME -->
 <section id="outcome" class="section">
   <div class="container" style="text-align:center;">
-    <div class="section-tag" style="background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.3);color:var(--sun-bright);">The Outcome</div>
+    <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.3);color:var(--sun-bright);">The Outcome</div>
     <h2 class="section-heading" style="color:white;">The Outcome</h2>
     <p class="section-sub" style="color:rgba(255,255,255,0.75);margin:0 auto;">Organizations move from fragmented analysis to structured, explainable decision-making.</p>
     <div class="outcome-cards">
       <div class="outcome-card sustainability-card-animated">
-        <div class="outcome-card-icon">&#9889;</div>
+        <div class="outcome-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Faster Insight</h3>
       </div>
       <div class="outcome-card sustainability-card-animated">
-        <div class="outcome-card-icon">&#4E3B28;</div>
+        <div class="outcome-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Clearer Positioning</h3>
       </div>
       <div class="outcome-card sustainability-card-animated">
-        <div class="outcome-card-icon">&#493726;</div>
+        <div class="outcome-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Aligned Execution</h3>
       </div>
     </div>
@@ -1296,7 +1300,7 @@
   </div>
 </section>
 <style>
-  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(255,102,0,0.15); border-bottom:1px solid rgba(255,102,0,0.15); padding:28px 0; overflow:hidden; }
+  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(224,100,30,0.15); border-bottom:1px solid rgba(224,100,30,0.15); padding:28px 0; overflow:hidden; }
   .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
   .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#5A554C; flex-shrink:0; min-width:140px; }
   .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); }
@@ -1346,7 +1350,6 @@
           <li><a href="blog.html">Use Cases</a></li>
           <li><a href="blog.html">Platform Briefs</a></li>
           <li><a href="blog.html">Case Studies</a></li>
-          <li><a href="blog.html">Events &amp; Media</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1355,8 +1358,7 @@
         <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:info@twosuns.ai" style="color:var(--sun-bright)">info@twosuns.ai</a></div>
         <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:invest@twosuns.ai" style="color:var(--sun-bright)">invest@twosuns.ai</a></div>
         <div class="footer-contact-item" style="padding-top:6px;"><a href="tel:6047609015">1-604-760-9015</a></div>
-        <div class="footer-contact-item" style="margin-top:8px;"><a href="https://AEPG.ca">AEPG.ca &#8599;</a></div>
-        <div class="footer-contact-item"><a href="https://TwoSuns">TwoSuns &#8599;</a></div>
+        <div class="footer-contact-item"><a href="https://twosuns.ai">TwoSuns &#8599;</a></div>
       </div>
     </div>
     <div class="footer-newsletter-row">
@@ -1399,8 +1401,9 @@
         <a href="privacy.html">Privacy Policy</a>
         <a href="cookies.html">Cookie Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="trust.html">Trust Centre</a>
       </div>
-      <p>&#995A11; 2026 TwoSuns. All rights reserved.</p>
+      <p>&#169; 2026 TwoSuns. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -1466,14 +1469,14 @@ function drawP(){
     if(p.x<0||p.x>W) p.vx*=-1;
     if(p.y<0||p.y>H) p.vy*=-1;
     ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(255,102,0,${p.op})`; ctx.fill();
+    ctx.fillStyle=`rgba(224,100,30,${p.op})`; ctx.fill();
   }
   for(let i=0;i<particles.length;i++){
     for(let j=i+1;j<particles.length;j++){
       const a=particles[i],b=particles[j];
       const d=Math.hypot(a.x-b.x,a.y-b.y);
       if(d<120){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
-        ctx.strokeStyle=`rgba(255,102,0,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
+        ctx.strokeStyle=`rgba(224,100,30,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
     }
   }
   requestAnimationFrame(drawP);
@@ -1498,7 +1501,7 @@ animatedCards.forEach(card => observer.observe(card));
   var ctx = c.getContext('2d'), pts = [], t = 0;
   function sz(){ c.width = c.offsetWidth; c.height = c.offsetHeight; }
   sz(); window.addEventListener('resize', sz);
-  var cols = ['245,158,11','245,158,11','245,158,11','204,153,0','255,102,0'];
+  var cols = ['245,158,11','245,158,11','245,158,11','204,153,0','224,100,30'];
   for(var i=0;i<55;i++) pts.push({
     x:Math.random()*c.width, y:Math.random()*c.height,
     vx:(Math.random()-.5)*.28, vy:(Math.random()-.5)*.28,

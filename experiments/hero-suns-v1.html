@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns, Hero with orbital suns (experiment)</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#FF6600; --gold:#CC9900; --beige:#FFF5DD;
+    --navy:#163E64; --ink:#1b2733; --steel:#5f6b78; --line:#ECE6D8;
+    --sans:'Inter',-apple-system,'Segoe UI',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+  .draft{position:fixed;top:14px;right:-44px;transform:rotate(45deg);z-index:90;background:var(--orange);color:#fff;font-size:11px;letter-spacing:.14em;font-weight:700;padding:6px 56px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+  .container{max-width:1240px;margin:0 auto;padding:0 clamp(22px,5vw,52px)}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:23px;letter-spacing:-.02em}
+  .brand .o{position:relative;width:26px;height:24px}
+  .brand .o i{position:absolute;border-radius:50%}
+  .brand .o .g{width:16px;height:16px;left:0;top:2px;background:radial-gradient(circle at 42% 42%,#E9CF6B,#C99A1E)}
+  .brand .o .r{width:13px;height:13px;right:0;top:7px;background:radial-gradient(circle at 42% 42%,#FBB066,#F4933A)}
+  .navlinks{display:flex;gap:32px;font-size:15px;font-weight:500;color:var(--ink)}
+  .navlinks a{opacity:.82;text-decoration:none;color:inherit}.navlinks a:hover{opacity:1;color:var(--orange)}
+  .nav-cta{font-size:15px;font-weight:600;color:#fff;background:var(--orange);padding:11px 22px;border-radius:9px;text-decoration:none}
+  @media(max-width:880px){.navlinks,.nav-cta{display:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden}
+  .hero-in{display:grid;grid-template-columns:1.18fr .82fr;gap:48px;align-items:center;min-height:min(86vh,780px);padding:40px 0}
+  .eyebrow{font-size:14px;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:22px}
+  .hero h1{font-size:clamp(46px,6.6vw,82px);line-height:1.0;font-weight:900;letter-spacing:-.03em;color:var(--navy);margin-bottom:26px}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero .sub{font-size:clamp(17px,1.6vw,21px);line-height:1.6;color:var(--steel);max-width:560px;margin-bottom:38px}
+  .cta{display:flex;gap:15px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:600;padding:16px 30px;border-radius:11px;text-decoration:none;transition:.25s}
+  .btn-p{background:linear-gradient(135deg,#FF8A1E,var(--orange));color:#fff;box-shadow:0 12px 28px rgba(255,102,0,.32)}
+  .btn-p:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(255,102,0,.42)}
+  .btn-g{color:var(--navy);border:1px solid rgba(22,62,100,.28)}
+  .btn-g:hover{border-color:var(--navy);background:rgba(22,62,100,.04)}
+  @media(max-width:880px){.hero-in{grid-template-columns:1fr}.viz{display:none}}
+
+  /* orbital two-suns */
+  .viz{position:relative;width:min(500px,40vw);aspect-ratio:1;margin-left:auto}
+  .ring{position:absolute;inset:11%;border:1px solid rgba(26,26,26,.5);border-radius:50%}
+  .sun{position:absolute;border-radius:50%;will-change:transform}
+  .gold{width:248px;height:248px;left:15%;top:1%;filter:blur(2px) saturate(1.04);animation:drift1 12s ease-in-out infinite;
+    background:radial-gradient(circle at 50% 48%,#C99A1E 0%,#E2B83F 14%,#F1D068 32%,#F8E4A8 52%,rgba(250,239,208,.5) 70%,rgba(255,255,255,0) 84%)}
+  .orange{width:188px;height:188px;right:2%;bottom:3%;filter:blur(1px) saturate(1.03);animation:drift2 13s ease-in-out infinite;
+    background:radial-gradient(circle at 50% 36%,rgba(255,255,255,.32) 0%,rgba(255,255,255,0) 36%),radial-gradient(circle at 50% 50%,#F8AE60 0%,#F4A04C 46%,#EF9638 66%,#ED9231 77%,rgba(237,146,49,0) 85%)}
+  @keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(-7px,-11px)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(9px,7px)}}
+  @media(prefers-reduced-motion:reduce){.gold,.orange{animation:none}}
+</style>
+</head>
+<body>
+  <div class="draft">EXPERIMENT</div>
+
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="o"><i class="g"></i><i class="r"></i></span>twosuns</div>
+      <nav class="navlinks"><a href="#">Platform</a><a href="#">Industries</a><a href="#">Why TwoSuns</a><a href="#">How it works</a><a href="#">Company</a></nav>
+      <a href="#" class="nav-cta">Book a pilot</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-in">
+      <div>
+        <div class="eyebrow">Operational intelligence for complex industries</div>
+        <h1>Orchestrate better. <em>Execute</em> faster.</h1>
+        <p class="sub">TwoSuns is the AI-native decision layer for heavy industry. Two suns, market and operations, intelligence and execution, in one coordinated system.</p>
+        <div class="cta">
+          <a href="#" class="btn btn-p">Book a pilot</a>
+          <a href="#" class="btn btn-g">See the platform &rarr;</a>
+        </div>
+      </div>
+      <div class="viz">
+        <div class="ring"></div>
+        <div class="sun gold"></div>
+        <div class="sun orange"></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

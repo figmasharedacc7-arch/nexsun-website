@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoSuns, Operational Intelligence for Complex Industries</title>
+  <!-- ── SEO & Social ── -->
+  <meta name="description" content="TwoSuns is the coordination infrastructure for complex enterprises. Market and operational coordination, persistent assistance, enterprise continuity across complex environments.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://twosuns.ai/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TwoSuns, Operational Intelligence for Complex Industries">
+  <meta property="og:description" content="TwoSuns is the coordination infrastructure for complex enterprises. Market and operational coordination, persistent assistance, enterprise continuity across complex environments.">
+  <meta property="og:image" content="https://twosuns.ai/og-image.jpg">
+  <meta property="og:url" content="https://twosuns.ai/">
+  <meta property="og:site_name" content="TwoSuns">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TwoSuns, Operational Intelligence for Complex Industries">
+  <meta name="twitter:description" content="TwoSuns is the coordination infrastructure for complex enterprises. Market and operational coordination, persistent assistance, enterprise continuity across complex environments.">
+  <meta name="twitter:image" content="https://twosuns.ai/og-image.jpg">
+<style>
+  :root {
+    /* Official TwoSuns palette (brand doc): Orange #FF6600 · Gold #CC9900 · Light Beige #FFF5DD */
+    --sun:        #FF6600;
+    --sun-bright: #CC9900;
+    --sun-deep:   #DB5800;
+    --sun-pale:   #FFEDD0;
+    --sky:        #2A231B;
+    --sky-mid:    #2A231B;
+    --sky-light:  #FCE2BC;
+    --navy:       #1E1A14;
+    --navy-mid:   #2A231B;
+    --green:      #2A231B;
+    --green-light:#F2EFE7;
+    --logo-green:  #FF6600;
+    --logo-pale:   #FFF8EC;
+    --bg:         #FFF5DD;
+    --bg2:        #FFEFCE;
+    --white:      #FFFFFF;
+    --text:       #3A3A3A;
+    --text-mid:   #3A3A3A;
+    --text-muted: #5A554C;
+    --border:     rgba(255,102,0,0.2);
+    --card-shadow:0 4px 24px rgba(255,102,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,sans-serif; overflow-x:hidden; }
+  a { color:inherit; text-decoration:none; }
+
+  /* ─── SUN CANVAS ─── */
+  #sun-canvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:.55; }
+
+  /* ─── SHARED ─── */
+  .container { max-width:1200px; margin:0 auto; padding:0 32px; position:relative; z-index:2; }
+  .section { padding:100px 0; }
+  .section-tag {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.3);
+    color:var(--sun-deep); font-size:11px; font-weight:700;
+    letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
+    border-radius:20px; margin-bottom:20px;
+  }
+  .section-tag::before { content:'☀'; font-size:12px; }
+  .section-heading { font-size:clamp(30px,4vw,52px); font-weight:800; line-height:1.15; margin-bottom:20px; color:var(--navy); }
+  .section-heading span:not([style]) { color:var(--sun-deep); }
+  .section-heading .sky { color:var(--sky); }
+  .section-sub { color:var(--text-muted); font-size:17px; line-height:1.75; max-width:680px; }
+
+  /* ─── LOGO SVG ─── */
+  .logo-svg { display:flex; align-items:center; gap:2px; }
+
+  /* ─── TOPBAR ─── */
+  .topbar {
+    background:var(--navy);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .topbar-inner {
+    max-width:1200px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; justify-content:flex-end;
+    height:34px; gap:0;
+  }
+  .topbar-inner a {
+    font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+    color:var(--sun); text-decoration:none; padding:0 16px; transition:color .2s;
+    border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
+  }
+  .topbar-inner a:last-child { border-right:none; padding-right:0; }
+  .topbar-inner a:hover { color:#FFFFFF; }
+
+  /* ─── NAV ─── */
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:#1E1A14; backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,102,0,0.15);
+    box-shadow:0 1px 20px rgba(255,102,0,0.08);
+    overflow:visible;
+  }
+  .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
+  .nav-links { display:flex; align-items:center; gap:32px; margin-left:auto; }
+  .nav-links a { font-size:14px; color:#FFFFFF; font-weight:500; transition:color .2s; }
+  .nav-links a:hover { color:var(--sun-deep); }
+  .btn-cta {
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
+    font-size:14px; border:none; cursor:pointer; transition:all .2s;
+    box-shadow:0 4px 14px rgba(255,102,0,0.4); display:inline-block;
+  }
+  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,102,0,0.5); }
+
+  /* ─── HERO ─── */
+  @keyframes heroBgBreath {
+    0%,100% { background-position:0% 50%; }
+    33%      { background-position:60% 30%; }
+    66%      { background-position:100% 70%; }
+  }
+  #hero {
+    min-height:100vh; display:flex; align-items:center; padding-top:104px;
+    background:linear-gradient(160deg, #FFF5DD 0%, #FFF3CD 30%, #FCE2BC 60%, #FEF9C3 100%);
+    background-size:300% 300%;
+    animation:heroBgBreath 14s ease-in-out infinite;
+    position:relative; overflow:hidden;
+  }
+  @keyframes heroFloat1 {
+    0%,100% { transform:translate(0,0) scale(1); opacity:.85; }
+    33%      { transform:translate(-40px,30px) scale(1.12); opacity:1; }
+    66%      { transform:translate(20px,-25px) scale(.92); opacity:.7; }
+  }
+  @keyframes heroFloat2 {
+    0%,100% { transform:translate(0,0) scale(1); opacity:.5; }
+    40%     { transform:translate(30px,40px) scale(1.15); opacity:.75; }
+    70%     { transform:translate(-20px,10px) scale(.88); opacity:.45; }
+  }
+  .hero-sun-glow {
+    position:absolute; top:-120px; right:-80px; width:600px; height:600px;
+    border-radius:50%;
+    background:radial-gradient(ellipse, rgba(204,153,0,0.35) 0%, rgba(255,102,0,0.12) 45%, transparent 70%);
+    pointer-events:none;
+    animation:heroFloat1 10s ease-in-out infinite;
+  }
+  .hero-rays {
+    position:absolute; top:-60px; right:-20px; width:500px; height:500px;
+    pointer-events:none; opacity:.25;
+  }
+  .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; width:100%; }
+  .hero-eyebrow {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.4);
+    color:var(--sun-deep); font-size:11px; font-weight:700;
+    letter-spacing:2.5px; text-transform:uppercase; padding:6px 16px;
+    border-radius:20px; margin-bottom:24px;
+  }
+  .hero-eyebrow .dot { width:6px; height:6px; border-radius:50%; background:var(--sun); animation:blink 1.5s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+  .hero-heading { font-size:clamp(44px,5.5vw,72px); font-weight:900; line-height:1.06; margin-bottom:26px; color:var(--navy); }
+  .hero-heading .chaos { color:var(--sun-deep); position:relative; display:inline-block; }
+  .hero-heading .chaos::after {
+    content:''; position:absolute; bottom:-4px; left:0; right:0; height:3px;
+    background:linear-gradient(90deg,var(--sun),var(--sun-deep)); border-radius:2px;
+  }
+  .hero-sub { color:var(--text-mid); font-size:18px; line-height:1.75; margin-bottom:36px; }
+  .hero-stats { display:flex; gap:36px; margin-bottom:36px; }
+  .hero-stat .value { font-size:28px; font-weight:900; color:var(--navy); }
+  .hero-stat .label { font-size:12px; color:var(--text-muted); margin-top:2px; }
+  .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px; }
+  .btn-primary {
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:#FFFFFF; font-weight:700; padding:16px 30px; border-radius:10px;
+    font-size:15px; border:none; cursor:pointer; transition:all .2s;
+    box-shadow:0 6px 20px rgba(255,102,0,0.4); display:inline-block;
+  }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(255,102,0,0.5); }
+  .btn-secondary {
+    background:transparent; color:var(--navy); font-weight:600;
+    padding:16px 30px; border-radius:10px; font-size:15px;
+    border:2px solid rgba(30,26,20,0.25); cursor:pointer; transition:all .2s; display:inline-block;
+  }
+  .btn-secondary:hover { background:rgba(30,26,20,0.05); border-color:var(--navy); }
+  .hero-note { font-size:12px; color:var(--text-muted); }
+
+  /* Sun graphic */
+  .sun-visual { position:relative; display:flex; align-items:center; justify-content:center; }
+  .twin-suns { position:relative; width:384px; height:340px; }
+  .twin-suns .sun { position:absolute; border-radius:50%; will-change:transform; }
+  /* Gold sun: larger, behind, upper-left (matches logo mark) */
+  .sun-gold {
+    width:250px; height:250px; top:6px; left:0; z-index:1;
+    background:radial-gradient(ellipse at 37% 37%, #FFFFFF 0%, #F4D26B 40%, #D9B341 64%, #CC9900 100%);
+    box-shadow:0 0 0 14px rgba(217,179,65,0.10), 0 0 0 38px rgba(217,179,65,0.06), 0 18px 70px rgba(204,153,0,0.28);
+    animation:sunBreath 5s ease-in-out infinite;
+  }
+  /* Orange sun: smaller, in front, lower-right (matches logo mark) */
+  .sun-orange {
+    width:228px; height:228px; bottom:4px; right:0; z-index:2;
+    background:radial-gradient(ellipse at 37% 37%, #FFFFFF 0%, #FF8939 38%, #FF6803 72%, #FF6600 100%);
+    box-shadow:0 0 0 14px rgba(255,102,0,0.10), 0 0 0 38px rgba(255,102,0,0.06), 0 18px 70px rgba(233,87,4,0.30);
+    animation:sunBreath 5s ease-in-out infinite 1.4s;
+  }
+  @keyframes sunBreath { 0%,100%{transform:scale(1)} 50%{transform:scale(1.045)} }
+  .sun-rays-svg { position:absolute; width:540px; height:540px; animation:rotateSun 40s linear infinite; z-index:0; }
+  .sun-inner-text { position:absolute; top:50%; left:51%; transform:translate(-50%,-50%); z-index:4; text-align:center; pointer-events:none; }
+  .sun-inner-text .sun-label { font-size:12px; color:#FFFFFF; font-weight:800; letter-spacing:1.2px; text-transform:uppercase; text-shadow:0 1px 3px rgba(120,45,0,0.85), 0 2px 12px rgba(120,45,0,0.6); }
+  .sun-inner-text .sun-stat { font-size:34px; font-weight:900; color:#FFFFFF; line-height:1; text-shadow:0 2px 4px rgba(120,45,0,0.85), 0 3px 16px rgba(120,45,0,0.65); }
+  .sun-floating-chips { position:absolute; width:100%; height:100%; pointer-events:none; z-index:6; }
+  .chip {
+    position:absolute; background:white; border-radius:12px; padding:10px 15px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.1); font-size:11.5px; font-weight:800;
+    color:var(--navy); white-space:normal; max-width:170px; line-height:1.3;
+    animation:floatChip 3s ease-in-out infinite;
+  }
+  .chip span { color:var(--sun-deep); font-size:12px; font-weight:700; display:block; margin-top:3px; }
+  .chip:nth-child(1) { top:8%; left:-12%; animation-delay:0s; }
+  .chip:nth-child(2) { top:14%; right:-12%; animation-delay:.8s; }
+  .chip:nth-child(3) { bottom:22%; left:-12%; animation-delay:1.4s; }
+  .chip:nth-child(4) { bottom:8%; right:-12%; animation-delay:.4s; }
+  @keyframes floatChip { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-10px) scale(1.03)} }
+  @keyframes rotateSun { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+  /* ─── DIVIDER ─── */
+  @keyframes dividerGlow {
+    0%,100% { opacity:0.45; filter:blur(5px); }
+    50%      { opacity:0.9;  filter:blur(9px); }
+  }
+  .sun-divider {
+    height:5px;
+    background:linear-gradient(90deg,
+      transparent 0%,
+      #FF6600 18%,
+      #1E1A14 50%,
+      #FF6600 82%,
+      transparent 100%
+    );
+    position:relative; z-index:2; overflow:visible;
+  }
+  .sun-divider::after {
+    content:''; position:absolute; inset:-5px 0;
+    background:inherit; border-radius:6px;
+    filter:blur(6px); opacity:0.5;
+    animation:dividerGlow 2.8s ease-in-out infinite;
+  }
+
+  /* ─── BRAND STRIP ─── */
+  #brand-strip {
+    background:linear-gradient(135deg,var(--navy) 0%,#2A231B 100%);
+    padding:60px 0; text-align:center;
+  }
+  #brand-strip h2 { font-size:32px; font-weight:800; color:white; margin-bottom:10px; }
+  #brand-strip p { color:rgba(255,255,255,0.7); font-size:16px; }
+  .strip-stats { display:flex; gap:60px; justify-content:center; margin-top:40px; flex-wrap:wrap; }
+  .strip-stat .val { font-size:40px; font-weight:900; color:var(--sun-bright); }
+  .strip-stat .lbl { font-size:13px; color:rgba(255,255,255,0.6); margin-top:4px; }
+
+  /* ─── CARDS ─── */
+  .card {
+    background:white; border:1px solid var(--border); border-radius:16px;
+    padding:28px; transition:all .3s; box-shadow:var(--card-shadow);
+  }
+  .card:hover { border-color:rgba(255,102,0,0.4); transform:translateY(-5px); box-shadow:0 12px 40px rgba(255,102,0,0.14); }
+  .card-icon {
+    width:48px; height:48px; border-radius:12px;
+    background:linear-gradient(135deg,var(--sun-pale),rgba(255,102,0,0.1));
+    border:1px solid rgba(255,102,0,0.25);
+    animation:iconFloat 4s ease-in-out infinite; overflow:visible;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px; font-size:22px;
+  }
+  .card h3 { font-size:18px; font-weight:700; margin-bottom:10px; color:var(--navy); }
+  .card p { color:var(--text-muted); font-size:14px; line-height:1.7; }
+
+  /* ─── CHALLENGE ─── */
+  #challenge { background:white; }
+  #challenge .two-col { display:grid; grid-template-columns:1fr 1fr; gap:80px; }
+  .challenge-cards { display:grid; gap:16px; margin-top:36px; }
+  .quote-box {
+    background:linear-gradient(135deg,var(--sun-pale),rgba(42,35,27,0.05));
+    border-left:4px solid var(--sun); border-radius:0 12px 12px 0;
+    padding:20px 24px; margin:28px 0; font-style:italic;
+    color:var(--text-mid); font-size:15px; line-height:1.75;
+  }
+
+            /* ─── FOOTER ─── */
+  footer { background:#16120D; padding:64px 0 32px; border-top:3px solid var(--sun); }
+  .footer-top {
+    display:grid; grid-template-columns:1fr 1fr 1.6fr 1fr;
+    gap:40px; margin-bottom:48px; align-items:start;
+    padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; color:var(--sun-bright); }
+  .footer-col ul { list-style:none; }
+  .footer-col ul li { padding:5px 0; font-size:14px; color:rgba(255,255,255,0.75); cursor:pointer; transition:color .2s; }
+  .footer-col ul li:hover, .footer-col ul li a:hover { color:var(--sun-deep); }
+  .footer-col ul li a { color:rgba(255,255,255,0.75); }
+  .footer-contact-item { font-size:14px; color:rgba(255,255,255,0.75); padding:5px 0; line-height:1.6; }
+  .footer-contact-item a { color:rgba(255,255,255,0.75); }
+  .footer-contact-item a:hover { color:var(--sun-deep); }
+  /* Newsletter row */
+  .footer-newsletter-row {
+    display:grid; grid-template-columns:1fr 1fr; gap:64px;
+    padding:40px 48px; border-radius:16px; margin-bottom:48px; align-items:center;
+    background:linear-gradient(135deg,#FEFAE8 0%,#FFF8D6 50%,#FAF0B8 100%);
+  }
+  .footer-brand { display:flex; flex-direction:column; justify-content:center; }
+  .footer-brand p { color:var(--navy); font-size:14px; line-height:1.75; margin:16px 0 8px; }
+  .footer-brand .conf { font-size:12px; color:rgba(30,26,20,0.4); }
+  .footer-newsletter h3 { font-size:18px; font-weight:700; color:var(--navy); margin-bottom:10px; line-height:1.3; }
+  .footer-newsletter p { font-size:13px; color:rgba(30,26,20,0.65); margin-bottom:20px; line-height:1.6; }
+  .fn-field { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+  .fn-field input { background:#FFFFFF; border:1px solid rgba(30,26,20,0.15); border-radius:8px; padding:12px 14px; font-size:14px; color:var(--navy); outline:none; transition:border-color .2s; font-family:inherit; }
+  .fn-field input::placeholder { color:rgba(30,26,20,0.35); }
+  .fn-field input:focus { border-color:var(--sun); }
+  .fn-check { display:flex; align-items:flex-start; gap:10px; margin-bottom:14px; }
+  .fn-check input[type=checkbox] { margin-top:3px; accent-color:var(--sun); width:14px; height:14px; flex-shrink:0; cursor:pointer; }
+  .fn-check label { font-size:12px; color:rgba(30,26,20,0.6); line-height:1.5; cursor:pointer; }
+  .fn-legal { font-size:11px; color:rgba(30,26,20,0.45); margin-bottom:16px; line-height:1.5; }
+  .fn-btn { background:linear-gradient(135deg,var(--sun),var(--sun-deep)); color:#FFFFFF; border:none; border-radius:8px; padding:12px 24px; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer; width:100%; transition:opacity .2s, transform .2s; }
+  .fn-btn:hover { opacity:.88; transform:translateY(-1px); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+  .footer-bottom p { font-size:12px; color:rgba(255,255,255,0.4); }
+  /* ─── NAV DROPDOWN ─── */
+  .nav-dropdown { position:relative; display:flex; align-items:center; }
+  .nav-dropdown > a { display:flex; align-items:center; gap:4px; cursor:pointer; }
+  .nav-dropdown > a::after { content:''; display:inline-block; width:0; height:0;
+    border-left:4px solid transparent; border-right:4px solid transparent;
+    border-top:4px solid currentColor; margin-top:1px; transition:transform .2s; }
+  .nav-dropdown:hover > a::after { transform:rotate(180deg); }
+  .nav-dropdown-menu {
+    position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-6px);
+    background:white; border:1px solid rgba(255,102,0,0.2);
+    border-radius:12px; padding:6px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(255,102,0,0.08);
+    min-width:160px; opacity:0; visibility:hidden;
+    transition:opacity .2s, transform .2s, visibility .2s;
+    z-index:200;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu {
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a {
+    display:block; padding:9px 16px; border-radius:8px;
+    font-size:13.5px; color:var(--text-mid); font-weight:500;
+    transition:background .15s, color .15s; white-space:nowrap;
+  }
+  .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
+  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(255,102,0,0.1); margin:4px 8px; }
+
+  /* ─── SCROLL TO TOP ─── */
+  #scroll-top {
+    position:fixed; bottom:32px; right:32px; z-index:999;
+    width:44px; height:44px; border-radius:50%;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:white; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 16px rgba(255,102,0,0.45);
+    opacity:0; visibility:hidden; transform:translateY(12px);
+    transition:opacity .3s, visibility .3s, transform .3s;
+  }
+  #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
+  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(255,102,0,0.55); }
+  #scroll-top svg { width:18px; height:18px; }
+
+  /* ════ MOBILE RESPONSIVE ════ */
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;margin-left:auto;flex-shrink:0;}
+  .nav-hamburger span{width:22px;height:2px;background:#FFFFFF;border-radius:2px;transition:all .3s;display:block;}
+  .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+  .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+  .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,102,0,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a:hover{color:var(--sun-deep);}
+  #nxs-mob-nav a:last-child{border-bottom:none;}
+  @media(max-width:960px){
+    .topbar-inner a{padding:0 10px;font-size:10px;}
+  }
+  @media(max-width:768px){
+    .topbar{display:none!important;}
+    .nav-links{display:none!important;}
+    .nav-hamburger{display:flex!important;}
+    .container{padding:0 18px!important;}
+    #hero{padding-top:82px!important;min-height:auto!important;padding-bottom:56px!important;}
+    .hero-grid{grid-template-columns:1fr!important;gap:32px!important;}
+    .hero-heading{font-size:clamp(30px,8vw,42px)!important;}
+    .hero-stats{gap:16px!important;flex-wrap:wrap!important;}
+    .hero-ctas{flex-direction:column!important;}
+    .hero-ctas a{text-align:center!important;}
+    .sun-visual{display:none!important;}
+    .section{padding:56px 0!important;}
+    .section-heading{font-size:clamp(24px,6vw,32px)!important;}
+    .strip-stats{gap:20px!important;}
+    .strip-stat .val{font-size:28px!important;}
+    #challenge .two-col{grid-template-columns:1fr!important;gap:36px!important;}
+    .ir-hero-grid{grid-template-columns:1fr!important;gap:36px!important;}
+    .ir-hero h1{font-size:clamp(28px,7vw,40px)!important;}
+    .hero-stats.ir-stats{grid-template-columns:1fr 1fr!important;}
+    .thesis-grid{grid-template-columns:1fr!important;}
+    .market-grid{grid-template-columns:1fr 1fr!important;gap:2px!important;}
+    .traction-grid{grid-template-columns:1fr!important;}
+    .team-grid{grid-template-columns:1fr 1fr!important;gap:12px!important;}
+    .funds-grid{grid-template-columns:1fr!important;}
+    .footer-top{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+    .footer-wordmark{font-size:clamp(44px,13vw,72px)!important;letter-spacing:-2px!important;}
+    .footer-bottom{flex-direction:column!important;align-items:flex-start!important;}
+    .footer-legal a:first-child{padding-left:0!important;}
+    #nxs-chat-panel{right:12px!important;left:12px!important;width:auto!important;}
+    #nxs-chat-bubble{bottom:20px!important;right:20px!important;}
+    .ind-wrap{padding:0 18px!important;}
+    .sun-divider{display:none;}
+    .footer-newsletter-row{grid-template-columns:1fr!important;gap:32px!important;padding:24px!important;}
+    .page-hero{padding:140px 0 60px!important;}
+    .page-hero h1{font-size:clamp(30px,8vw,42px)!important;}
+  
+    .footer-newsletter input,.footer-newsletter select{max-width:100%!important;box-sizing:border-box!important;}
+    .footer-brand img{max-width:280px!important;}
+    .fn-row{flex-direction:column!important;}
+    .fn-row input,.fn-row select{width:100%!important;}
+    /* ── Universal mobile overflow prevention ── */
+    *{max-width:100%!important;box-sizing:border-box!important;}
+    img,svg,video,canvas,iframe{max-width:100%!important;height:auto!important;}
+    table,.cookie-table{display:block!important;overflow-x:auto!important;}
+    .diff-visual-icon{font-size:56px!important;}
+    .featured-img-icon{font-size:56px!important;}
+    .price-badge .big{font-size:48px!important;}
+    [style*="gap:64px"]{gap:24px!important;}
+    [style*="gap:72px"]{gap:24px!important;}
+    [style*="gap:60px"]{gap:24px!important;}
+    [style*="gap:80px"]{gap:32px!important;}
+    [style*="gap:56px"]{gap:24px!important;}
+    [style*="gap:48px"]{gap:24px!important;}
+    [style*="width:500px"]{width:100%!important;}
+    [style*="width:540px"]{width:100%!important;}
+    [style*="width:600px"]{width:100%!important;}
+    [style*="width:640px"]{width:100%!important;}
+    [style*="width:680px"]{width:100%!important;}
+    [style*="width:700px"]{width:100%!important;}
+    [style*="width:720px"]{width:100%!important;}
+    [style*="width:760px"]{width:100%!important;}
+    [style*="width:800px"]{width:100%!important;}
+    [style*="width:860px"]{width:100%!important;}
+    [style*="width:880px"]{width:100%!important;}
+    [style*="width:900px"]{width:100%!important;}
+    [style*="width:920px"]{width:100%!important;}
+    [style*="width:1000px"]{width:100%!important;}
+    [style*="width:1100px"]{width:100%!important;}
+    [style*="width:1200px"]{width:100%!important;}
+    [style*="width:1400px"]{width:100%!important;}
+    /* ── Inline grid collapse (attribute selectors) ── */
+    [style*="grid-template-columns:260px 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:200px 1fr"]{grid-template-columns:1fr!important;gap:24px!important;}
+    [style*="grid-template-columns:1fr 1.8fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1fr 1.4fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1.4fr 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+    [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+    [style*="grid-template-columns:1fr auto 1fr auto 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
+    .module-grid{grid-template-columns:1fr!important;gap:32px!important;}
+    .founder-card{grid-template-columns:1fr!important;gap:24px!important;}
+    .supply-chain-grid{grid-template-columns:1fr!important;}
+    .supply-chain-grid .supply-arrow{display:none!important;}
+  }
+  @media(max-width:480px){
+    .footer-top{grid-template-columns:1fr!important;}
+    .market-grid{grid-template-columns:1fr!important;}
+    .team-grid{grid-template-columns:1fr!important;}
+    .hero-stats{flex-direction:column!important;}
+    .footer-newsletter-row{padding:20px!important;}
+  
+    /* ── Further collapse at 480px ── */
+    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:1fr!important;}
+  }
+
+
+  /* ─── LOGO GREEN ACCENTS ─── */
+  .section-tag.gtag {
+    background:var(--logo-pale); border-color:rgba(255,102,0,0.3); color:var(--green);
+  }
+  .section-tag.gtag::before { content:'◆'; font-size:9px; }
+  .section-heading .gspan { color:var(--logo-green); }
+  .hero-eyebrow .dot { background:var(--logo-green) !important; }
+  .hero-stat:nth-child(2) .value { color:var(--logo-green) !important; }
+
+  .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
+  .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
+  .footer-legal a:last-child { border-right:none; }
+  .footer-legal a:hover { color:rgba(255,255,255,1); }
+
+  /* ── Sustainability Icon Float & Card Scroll Animations ── */
+  @keyframes iconFloat {
+    0%,100% { transform:translateY(0px); }
+    50%      { transform:translateY(-8px); }
+  }
+  .sustainability-icon-wrap {
+    display:flex; justify-content:center; align-items:center;
+    margin-bottom:18px;
+    animation:iconFloat 4s ease-in-out infinite;
+  }
+  .sustainability-card-animated {
+    opacity:0; transform:translateY(20px);
+    transition:opacity 0.55s ease, transform 0.55s ease;
+  }
+  .sustainability-card-animated.visible {
+    opacity:1; transform:translateY(0);
+  }
+
+</style>
+  <!-- ── Favicons ── -->
+  <link rel="icon" type="image/svg+xml" href="logo-mini.svg">
+  <link rel="apple-touch-icon" href="logo-mini.svg">
+  <meta name="theme-color" content="#1E1A14">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TwoSuns",
+  "legalName": "TwoSuns.ai",
+  "url": "https://twosuns.ai",
+  "logo": "https://twosuns.ai/logo-horizontal.png",
+  "description": "TwoSuns is an AI-native operational intelligence platform that helps complex industries turn fragmented information into coordinated execution.",
+  "founder": [
+    { "@type": "Person", "name": "Aiman El-Ramly" },
+    { "@type": "Person", "name": "Ryan Arian" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/twosuns",
+    "https://x.com/TwoSunsAI",
+    "https://www.youtube.com/@TwoSunsplatform",
+    "https://www.instagram.com/twosuns.ai/"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TwoSuns",
+  "url": "https://twosuns.ai"
+}
+</script>
+<style id="softer-text">
+/* preview: soften content headings (warm dark grey instead of near-black) + muted orange accents; buttons/icons/nav unchanged */
+.section-heading,.hero-heading{color:#37322B !important;}
+.section-heading span:not([style]),.hero-heading .chaos{color:#C24A00 !important;}
+.section-tag{color:#9A5A1E !important;}
+.gname,.mod-name{color:#37322B !important;}
+.gname span,.mod-name span{color:#C24A00 !important;}
+</style></head>
+<body>
+
+<canvas id="sun-canvas"></canvas>
+
+<!-- ══ NAV ══ -->
+<nav>
+    <div class="topbar">
+    <div class="topbar-inner">
+      <a href="investors.html">Investor Centre</a>
+      <a href="partners.html">Partner Centre</a>
+      <a href="trust.html">Trust Centre</a>
+      <a href="contact.html">Contact Us</a>
+    <a href="https://AEPG.ca" target="_blank" rel="noopener noreferrer">AEPG.ca</a>
+    </div>
+  </div>
+  <div class="nav-inner">
+    <a href="index.html">
+      <img src="logo-horizontal-white.svg" alt="TwoSuns" style="height:60px;width:auto;display:block;">
+    </a>
+    <button class="nav-hamburger" id="nxs-hamburger" onclick="toggleMobNav()" aria-label="Toggle menu"></button>
+            <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="platform.html">Platform</a>
+        <div class="nav-dropdown-menu">
+          <a href="platform.html">Platform Overview</a>
+          <div class="menu-divider"></div>
+          <a href="modules.html">Modules</a>
+          <a href="technology.html">Technology</a>
+          <div class="menu-divider"></div>
+          <a href="trust.html">Trust Centre</a>
+        </div>
+      </div>
+      <a href="how-it-works.html">How It Works</a>
+      <div class="nav-dropdown">
+        <a href="industries.html">Industries</a>
+        <div class="nav-dropdown-menu">
+          <a href="industries.html">All Industries</a>
+          <div class="menu-divider"></div>
+          <a href="cement.html">Cement &amp; Construction</a>
+          <a href="mining.html">Mining &amp; Resources</a>
+          <a href="finance.html">Financial Markets</a>
+          <a href="manufacturing.html">Manufacturing</a>
+        </div>
+      </div>
+      <a href="why-twosuns.html">Why TwoSuns</a>
+      <div class="nav-dropdown">
+        <a href="blog.html">Resources</a>
+        <div class="nav-dropdown-menu">
+          <a href="blog.html">Industry Insights</a>
+          <a href="videos.html">Videos</a>
+          <a href="resources.html">Knowledge Center</a>
+          <div class="menu-divider"></div>
+          <a href="community.html">Community</a>
+          <a href="community.html#events">Events</a>
+          <a href="community.html#social">Social Media</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="about.html">Company</a>
+        <div class="nav-dropdown-menu">
+          <a href="about.html">About Us</a>
+          <a href="investors.html">Investor Centre</a>
+          <a href="press.html">Press &amp; Media</a>
+          <div class="menu-divider"></div>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <a href="engage.html" class="btn-cta">Engage</a>
+    </div>
+    </div>
+</nav>
+<!-- ══ MOBILE NAV PANEL ══ -->
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #FF6600;">
+  <a href="platform.html">Platform</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="industries.html">Industries</a>
+  <a href="why-twosuns.html">Why TwoSuns</a>
+  <a href="about.html">Company</a>
+  <a href="blog.html">Industry Insights</a>
+  <a href="videos.html">Videos</a>
+  <a href="resources.html">Knowledge Center</a>
+  <a href="community.html">Community</a>
+  <a href="investors.html">Investor Centre</a>
+  <a href="partners.html">Partner Centre</a>
+  <a href="trust.html">Trust Centre</a>
+  <a href="engage.html" style="color:#FF6600;font-weight:700;">Engage</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-sun-glow"></div>
+  <div class="container" style="position:relative;z-index:2;width:100%;">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow"> Enterprise Orchestration</div>
+        <h1 class="hero-heading">The orchestration layer for <span class="chaos">complex organizations</span></h1>
+        <p class="hero-sub" style="margin-top:18px;">Transforming how enterprises strategize, decide, and execute.</p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn-primary">Request a Discovery Session</a>
+          <a href="platform.html" class="btn-secondary">Explore the Platform →</a>
+        </div>
+      </div>
+      <div class="sun-visual">
+        <svg class="sun-rays-svg" viewBox="0 0 500 500">
+          <g stroke="#FF6600" stroke-width="1.5" opacity=".30">
+            <line x1="250" y1="0" x2="250" y2="500"/>
+            <line x1="0" y1="250" x2="500" y2="250"/>
+            <line x1="73" y1="73" x2="427" y2="427"/>
+            <line x1="427" y1="73" x2="73" y2="427"/>
+            <line x1="0" y1="170" x2="500" y2="330"/>
+            <line x1="0" y1="330" x2="500" y2="170"/>
+            <line x1="170" y1="0" x2="330" y2="500"/>
+            <line x1="330" y1="0" x2="170" y2="500"/>
+          </g>
+        </svg>
+        <div class="twin-suns">
+          <div class="sun sun-gold"></div>
+          <div class="sun sun-orange"></div>
+          <div class="sun-inner-text">
+            <div class="sun-label">Orchestrating</div>
+            <div class="sun-stat">Execution</div>
+          </div>
+        </div>
+        <div class="sun-floating-chips">
+          <div class="chip">Enterprise Go to Market<span>Insight. Decide. Grow.</span></div>
+          <div class="chip">Operational &amp; Industrial Excellence<span>Plan. Monitor. Execute.</span></div>
+          <div class="chip">Workflow Orchestration<span>Orchestrate. Optimize. Deliver.</span></div>
+          <div class="chip">Continuity &amp; Alignment<span>Intelligence. Guidance. Decisions.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="sun-divider"></div>
+<!-- ══ 4 PILLARS ══ -->
+<section style="background:linear-gradient(160deg,#16120D 0%,#100E0A 60%,#1A1200 100%);padding:90px 0;position:relative;overflow:hidden;">
+  <!-- Star field -->
+  <div style="position:absolute;inset:0;pointer-events:none;z-index:0;" aria-hidden="true">
+    <div style="position:absolute;width:2px;height:2px;background:#FFFFFF;border-radius:50%;top:12%;left:8%;opacity:.5;"></div>
+    <div style="position:absolute;width:1px;height:1px;background:#FFFFFF;border-radius:50%;top:28%;left:22%;opacity:.4;"></div>
+    <div style="position:absolute;width:2px;height:2px;background:#FFFFFF;border-radius:50%;top:18%;left:45%;opacity:.6;"></div>
+    <div style="position:absolute;width:1px;height:1px;background:#FFFFFF;border-radius:50%;top:8%;left:67%;opacity:.3;"></div>
+    <div style="position:absolute;width:2px;height:2px;background:#FFFFFF;border-radius:50%;top:35%;left:78%;opacity:.5;"></div>
+    <div style="position:absolute;width:1px;height:1px;background:#FFFFFF;border-radius:50%;top:55%;left:92%;opacity:.4;"></div>
+    <div style="position:absolute;width:2px;height:2px;background:#FFFFFF;border-radius:50%;top:70%;left:14%;opacity:.35;"></div>
+    <div style="position:absolute;width:1px;height:1px;background:#FFFFFF;border-radius:50%;top:82%;left:38%;opacity:.5;"></div>
+    <div style="position:absolute;width:2px;height:2px;background:#FFFFFF;border-radius:50%;top:75%;left:62%;opacity:.3;"></div>
+    <div style="position:absolute;width:1px;height:1px;background:#FFFFFF;border-radius:50%;top:90%;left:84%;opacity:.45;"></div>
+    <!-- Sparkles -->
+    <div style="position:absolute;top:15%;right:10%;width:16px;height:16px;opacity:.5;">
+      <div style="position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#FFFFFF,transparent);transform:translateY(-50%);"></div>
+      <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,#FFFFFF,transparent);transform:translateX(-50%);"></div>
+    </div>
+    <div style="position:absolute;top:60%;left:5%;width:12px;height:12px;opacity:.4;">
+      <div style="position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#FFFFFF,transparent);transform:translateY(-50%);"></div>
+      <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,#FFFFFF,transparent);transform:translateX(-50%);"></div>
+    </div>
+    <!-- Bottom warm glow -->
+    <div style="position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(to top,rgba(255,102,0,0.12),transparent);pointer-events:none;"></div>
+  </div>
+
+  <div class="container" style="position:relative;z-index:1;">
+    <div style="text-align:center;margin-bottom:56px;">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,102,0,0.12);border:1px solid rgba(255,102,0,0.25);color:#FF6600;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px;">What We Do</div>
+      <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:900;color:#FFFFFF;margin:0 0 14px;letter-spacing:-0.5px;">Four pillars. <span style="color:#FF6600;">One unified platform.</span></h2>
+      <p style="color:rgba(255,255,255,0.55);font-size:16px;max-width:540px;margin:0 auto;line-height:1.7;">TwoSuns.ai is an enterprise intelligence platform that consolidates operational, market, and financial data into a unified, continuous environment. Designed for executive-level visibility and cross-functional execution, it eliminates the friction between information and decision-making.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+
+      <!-- 1. Discovery & Market Intelligence -->
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 24px;text-align:center;transition:background .25s,border-color .25s,transform .25s;cursor:default;" onmouseover="this.style.background='rgba(255,102,0,0.08)';this.style.borderColor='rgba(255,102,0,0.3)';this.style.transform='translateY(-6px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="width:64px;height:64px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#F5C700" stroke-width="2.5"/><circle cx="24" cy="24" r="3" fill="#F5C700"/><line x1="24" y1="4" x2="24" y2="12" stroke="#F5C700" stroke-width="2" stroke-linecap="round"/><line x1="24" y1="36" x2="24" y2="44" stroke="#F5C700" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="24" x2="12" y2="24" stroke="#F5C700" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="24" x2="44" y2="24" stroke="#F5C700" stroke-width="2" stroke-linecap="round"/><polygon points="24,13 27,21 24,24 21,21" fill="#F5C700" opacity=".8"/></svg>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;color:#FFFFFF;margin-bottom:10px;line-height:1.3;">Discovery &amp; Market Intelligence</h3>
+        <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;">Continuous global signals, PESTEL analysis, and AI-powered market briefings so you always know what's moving before the market does.</p>
+      </div>
+
+      <!-- 2. Financial & Operational Intelligence -->
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 24px;text-align:center;transition:background .25s,border-color .25s,transform .25s;cursor:default;" onmouseover="this.style.background='rgba(255,102,0,0.08)';this.style.borderColor='rgba(255,102,0,0.3)';this.style.transform='translateY(-6px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="width:64px;height:64px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M14 28c0-4 2-7 6-9l4-2" stroke="#F5C700" stroke-width="2.5" stroke-linecap="round"/><path d="M34 20c0 4-2 7-6 9l-4 2" stroke="#F5C700" stroke-width="2.5" stroke-linecap="round"/><path d="M8 32c2 3 5 5 8 5s5-1 8-3 5-3 8-3 6 2 8 5" stroke="#F5C700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="20" r="4" stroke="#F5C700" stroke-width="2"/><circle cx="32" cy="28" r="4" stroke="#F5C700" stroke-width="2"/></svg>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;color:#FFFFFF;margin-bottom:10px;line-height:1.3;">Financial &amp; Operational Intelligence</h3>
+        <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;">Unify operational, production, and financial information to uncover inefficiencies, improve resource allocation, and support data-driven decision-making.</p>
+      </div>
+
+      <!-- 3. Collaboration & Networking -->
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 24px;text-align:center;transition:background .25s,border-color .25s,transform .25s;cursor:default;" onmouseover="this.style.background='rgba(255,102,0,0.08)';this.style.borderColor='rgba(255,102,0,0.3)';this.style.transform='translateY(-6px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="width:64px;height:64px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M8 12h32a2 2 0 012 2v16a2 2 0 01-2 2H16l-8 6V14a2 2 0 012-2z" stroke="#F5C700" stroke-width="2.5" stroke-linejoin="round"/><circle cx="17" cy="22" r="2" fill="#F5C700"/><circle cx="24" cy="22" r="2" fill="#F5C700"/><circle cx="31" cy="22" r="2" fill="#F5C700"/></svg>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;color:#FFFFFF;margin-bottom:10px;line-height:1.3;">Collaboration &amp; Networking</h3>
+        <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;">Structured Rooms for deal-specific intelligence sharing. Coordinate across teams, counterparties, and partners with full audit trails.</p>
+      </div>
+
+      <!-- 4. Support & Governance -->
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 24px;text-align:center;transition:background .25s,border-color .25s,transform .25s;cursor:default;" onmouseover="this.style.background='rgba(255,102,0,0.08)';this.style.borderColor='rgba(255,102,0,0.3)';this.style.transform='translateY(-6px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="width:64px;height:64px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="#F5C700" stroke-width="2.5"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M10.1 10.1l4.2 4.2M33.7 33.7l4.2 4.2M10.1 37.9l4.2-4.2M33.7 14.3l4.2-4.2" stroke="#F5C700" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;color:#FFFFFF;margin-bottom:10px;line-height:1.3;">Support &amp; Governance</h3>
+        <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;">Persistent Coordination explainability, immutable TwoSuns Core, role-based access, and enterprise-grade security, accountability built in.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+<!-- ══ THE ENTERPRISE CHALLENGE ══ -->
+<section id="positioning" style="background:var(--bg);padding:88px 0;">
+  <div class="container" style="max-width:980px;text-align:center;">
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">The Enterprise Challenge</div>
+    <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:22px;">Organizations <span style="color:var(--sun-deep);">Today</span></h2>
+    <p style="font-size:16px;color:var(--text-muted);line-height:1.8;max-width:820px;margin:0 auto 20px;">As organizations grow, critical context becomes fragmented across systems, teams, workflows, stakeholders, and AI tools. The result is reduced visibility, inconsistent execution, operational friction, person dependency, and difficulty maintaining alignment across the business.</p>
+    <p style="font-size:17px;color:var(--navy);font-weight:600;line-height:1.75;max-width:860px;margin:0 auto;">TwoSuns acts as a persistent orchestration layer that unifies operational intelligence, organizational knowledge, workflows, and decision-making into a continuously evolving environment that enables coordinated execution, institutional continuity, and faster, more traceable decisions, transforming how enterprises strategize, decide, and execute.</p>
+  </div>
+</section>
+
+<!-- Our Purpose / Mission & Vision moved to about.html (Company page), Website-edits slide 20 -->
+<div class="sun-divider"></div>
+<section id="challenge" class="section">
+  <div class="container">
+    <div class="two-col" style="align-items:start;">
+      <div>
+        <div class="section-tag">The Challenge</div>
+        <h2 class="section-heading">The <span>Shift</span><br>Facing Enterprises</h2>
+        <p class="section-sub">Organizations operate with fragmented systems and disconnected workflows. Data expands. Complexity increases. Decisions remain inconsistent.</p>
+        <div style="display:grid;gap:20px;margin-top:36px;">
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px;background:white;border-radius:14px;border:1px solid var(--border);box-shadow:var(--card-shadow);">
+            <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#1E1A14,#2A231B);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M4 4h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M4 14h6v6H4z"/><path d="M17 14v3m0 3v-3m0 0h3m-3 0h-3"/></svg>
+            </div>
+            <div><h4 style="font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px;">Fragmented Systems</h4><p style="font-size:14.5px;color:var(--text-muted);line-height:1.7;">Data, analytics, and workflows live in disconnected silos, creating blind spots at the moment decisions must be made across functions.</p></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px;background:white;border-radius:14px;border:1px solid var(--border);box-shadow:var(--card-shadow);">
+            <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#7A2A00,#DB5800);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/><path d="M4 4l2 2m12-2l-2 2"/></svg>
+            </div>
+            <div><h4 style="font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px;">Inconsistent Decisions</h4><p style="font-size:14.5px;color:var(--text-muted);line-height:1.7;">Decision-making continues to rely on individual interpretation, with inconsistent logic, limited traceability, and uneven execution.</p></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px;background:white;border-radius:14px;border:1px solid var(--border);box-shadow:var(--card-shadow);">
+            <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#3A1E0A,#D9480F);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 9v4m0 4h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+            </div>
+            <div><h4 style="font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px;">No System of Record</h4><p style="font-size:14.5px;color:var(--text-muted);line-height:1.7;">Decisions get made and forgotten. Without a persistent record, institutional knowledge erodes and accountability is lost.</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-tag gtag">The Opportunity</div>
+        <h2 class="section-heading">The TwoSuns<br>Opportunity</h2>
+        <p class="section-sub">Organizations that connect signals to decisions and decisions to execution outperform those that operate in silos. Speed, clarity, and alignment become lasting competitive advantages.</p>
+        <div style="display:grid;gap:20px;margin-top:36px;">
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px;background:white;border-radius:14px;border:1px solid var(--border);box-shadow:var(--card-shadow);">
+            <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <div><h4 style="font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px;">Signal-to-Decision Architecture</h4><p style="font-size:14.5px;color:var(--text-muted);line-height:1.7;">A continuous system that connects internal data, external signals, and user context into structured decision workflows with full traceability.</p></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px;background:white;border-radius:14px;border:1px solid var(--border);box-shadow:var(--card-shadow);">
+            <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#241B10,#FF6600);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 110 18 9 9 0 010-18z"/><path d="M12 7v1m0 8v1"/></svg>
+            </div>
+            <div><img src="logos-v4/core-logo.svg" alt="TwoSuns Core" style="height:30px;width:auto;display:block;margin-bottom:8px;"><p style="font-size:14.5px;color:var(--text-muted);line-height:1.7;">TwoSuns Core&trade; connects, cleans, structures, and synchronizes enterprise data from across systems, workflows, documents, and institutional knowledge, creating a trusted intelligence foundation that powers AI-driven insights, coordination, and decision-making.</p></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px;background:white;border-radius:14px;border:1px solid var(--border);box-shadow:var(--card-shadow);">
+            <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#1E1A14,#2A231B);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M8 10h8M8 14h5"/><path d="M21 12a8 8 0 01-8 8H7l-4 3V12a8 8 0 018-8h2a8 8 0 018 8z"/></svg>
+            </div>
+            <div><h4 style="font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px;">TwoSuns Ray</h4><p style="font-size:14.5px;color:var(--text-muted);line-height:1.7;">Ask your operations anything, and get answers backed by the record: alerts, playbooks, decisions. Evidence in plain language.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="sun-divider"></div>
+<!-- ══ AI READINESS (Website-edits slide 24) ══ -->
+<section class="section" style="background:var(--bg);padding:88px 0;">
+  <div class="container">
+    <div style="text-align:center;max-width:860px;margin:0 auto 40px;">
+      <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">AI Readiness</div>
+      <h2 class="section-heading" style="text-align:center;">Most Organizations Are <span>Not AI-Ready</span></h2>
+      <p class="section-sub" style="margin:18px auto 0;">Despite growing interest in artificial intelligence, many organizations lack the connected data, institutional knowledge, and operational foundation needed to effectively deploy and scale AI. When properly implemented, AI helps identify operational gaps, uncover inefficiencies, and provide actionable recommendations to improve performance and decision-making.</p>
+    </div>
+    <div style="max-width:940px;margin:0 auto;background:#FFFFFF;border:1px solid var(--border);border-radius:18px;box-shadow:var(--card-shadow);padding:38px 36px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin:0;">AI Readiness Solution</h3>
+      </div>
+      <p style="font-size:15.5px;color:var(--text-muted);line-height:1.7;margin:0 0 30px;">TwoSuns creates a trusted intelligence foundation by connecting data, systems, workflows, and institutional knowledge, enabling organizations to identify operational gaps, unlock insights, and confidently scale AI across the enterprise.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+        <div style="text-align:center;padding:18px 10px;background:var(--sun-pale);border-radius:12px;border:1px solid rgba(255,102,0,0.15);">
+          <div style="width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#1E1A14,#2A231B);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>
+          </div>
+          <div style="font-size:13.5px;font-weight:700;color:var(--navy);">Data</div>
+        </div>
+        <div style="text-align:center;padding:18px 10px;background:var(--sun-pale);border-radius:12px;border:1px solid rgba(255,102,0,0.15);">
+          <div style="width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#1E1A14,#2A231B);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          </div>
+          <div style="font-size:13.5px;font-weight:700;color:var(--navy);">Systems</div>
+        </div>
+        <div style="text-align:center;padding:18px 10px;background:var(--sun-pale);border-radius:12px;border:1px solid rgba(255,102,0,0.15);">
+          <div style="width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#1E1A14,#2A231B);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="9" r="2.5"/><path d="M6 8.5v7M8.5 18h5a3 3 0 003-3V11.5"/></svg>
+          </div>
+          <div style="font-size:13.5px;font-weight:700;color:var(--navy);">Workflows</div>
+        </div>
+        <div style="text-align:center;padding:18px 10px;background:var(--sun-pale);border-radius:12px;border:1px solid rgba(255,102,0,0.15);">
+          <div style="width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#1E1A14,#2A231B);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </div>
+          <div style="font-size:13.5px;font-weight:700;color:var(--navy);">Institutional Knowledge</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="sun-divider"></div>
+<section id="why" style="background:var(--bg2);padding:88px 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Why Choose TwoSuns</div>
+      <h2 style="font-size:clamp(30px,4vw,52px);font-weight:800;line-height:1.15;margin-bottom:20px;text-align:center;">Orchestration <span style="color:#FF6600;">Execution</span></h2>
+      <p class="section-sub" style="text-align:center;margin:0 auto;">Four defining advantages that enable organizations to move from fragmented information to orchestrated and measurable execution.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:920px;margin:0 auto;">
+      <div class="card" style="text-align:center;padding:36px 28px;">
+        <div class="sustainability-icon-wrap" style="margin-bottom:16px;"><svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="icg_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#16120D" flood-opacity="0.4"/>
+        </filter>
+        <radialGradient id="icg_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#F6D9AE"/>
+          <stop offset="42%" stop-color="#8A4E18"/>
+          <stop offset="100%" stop-color="#1B1712"/>
+        </radialGradient>
+        <radialGradient id="icg_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.85)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="icg_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <circle cx="50" cy="55" r="43" fill="#1E1A14" opacity="0.12"/>
+      <circle cx="50" cy="50" r="38" fill="url(#icg_a)" filter="url(#icg_sh)"/>
+      <g clip-path="url(#icg_cp)">
+        <circle cx="50" cy="49" r="27" fill="none" stroke="#FF6600" stroke-width="2.2" stroke-dasharray="5 7" stroke-linecap="round" opacity="0.9"/>
+      </g>
+      <g fill="#FFFFFF" opacity="0.95">
+        <circle cx="50" cy="42" r="7.5"/>
+        <path d="M37 63 c0-8.5 5.8-14 13-14 s13 5.5 13 14 z"/>
+      </g>
+      <circle cx="71" cy="70" r="11" fill="#FF6600"/>
+      <path d="M66 70 l3.5 3.6 l6.6 -7.6" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#icg_b)"/>
+    </svg></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--sun-deep);margin-bottom:10px;">01</div>
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin-bottom:12px;">Human-in-the-Loop Governance</h3>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;">AI should augment human expertise, not replace it. TwoSuns keeps people in the loop, combining machine intelligence with human judgment, validation, and domain expertise. This approach helps reduce hallucinations, prevent AI-generated noise, and ensure decisions remain practical, trustworthy, and accountable.</p>
+      </div>
+      <div class="card" style="text-align:center;padding:36px 28px;">
+        <div class="sustainability-icon-wrap" style="margin-bottom:16px;"><svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic1_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#3A3A3A" flood-opacity="0.4"/>
+        </filter>
+        <radialGradient id="ic1_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#F3C98C"/>
+          <stop offset="40%" stop-color="#2A231B"/>
+          <stop offset="100%" stop-color="#3A3A3A"/>
+        </radialGradient>
+        <radialGradient id="ic1_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.85)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic1_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <!-- Sphere -->
+      <circle cx="50" cy="55" r="43" fill="#1E1A14" opacity="0.12"/>
+      <circle cx="50" cy="50" r="38" fill="url(#ic1_a)" filter="url(#ic1_sh)"/>
+      <!-- Globe grid -->
+      <g clip-path="url(#ic1_cp)" fill="none" stroke="#F3C98C" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="33" rx="29" ry="7"/>
+        <ellipse cx="50" cy="67" rx="29" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Green trend line -->
+      <g clip-path="url(#ic1_cp)" fill="none" stroke="#FF6600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+        <polyline points="18,72 28,65 38,68 48,58 58,52 68,46 78,38"/>
+        <circle cx="78" cy="38" r="3" fill="#FF6600" stroke="none"/>
+      </g>
+      <!-- AI neural network circuit dots on sphere surface -->
+      <g clip-path="url(#ic1_cp)">
+        <line x1="28" y1="42" x2="40" y2="36" stroke="#1E1A14" stroke-width="1.1" opacity="0.72"/>
+        <line x1="40" y1="36" x2="52" y2="44" stroke="#1E1A14" stroke-width="1.1" opacity="0.72"/>
+        <line x1="52" y1="44" x2="28" y2="42" stroke="#1E1A14" stroke-width="1.1" opacity="0.72"/>
+        <circle cx="28" cy="42" r="2" fill="#1E1A14" opacity="0.9"/>
+        <circle cx="40" cy="36" r="2" fill="#1E1A14" opacity="0.9"/>
+        <circle cx="52" cy="44" r="2" fill="#1E1A14" opacity="0.9"/>
+      </g>
+      <!-- Highlight ellipse -->
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#ic1_b)"/>
+    </svg></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--sun-deep);margin-bottom:10px;">02</div>
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin-bottom:12px;">Signal-to-Decision Architecture</h3>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;">Connects fragmented market data, analytics, and workflows into a continuous decision system. TwoSuns ingests structured and unstructured data, extracts high-value signals, and links them directly to execution, reducing latency between insight and action.</p>
+      </div>
+      <div class="card" style="text-align:center;padding:36px 28px;">
+        <div class="sustainability-icon-wrap" style="margin-bottom:16px;"><svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic7_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#7A2A00" flood-opacity="0.42"/>
+        </filter>
+        <radialGradient id="ic7_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#FDE68A"/>
+          <stop offset="45%" stop-color="#FF6600"/>
+          <stop offset="100%" stop-color="#7A2A00"/>
+        </radialGradient>
+        <radialGradient id="ic7_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic7_cp"><circle cx="50" cy="50" r="30"/></clipPath>
+      </defs>
+      <!-- 8 sun rays -->
+      <g opacity="0.22" fill="#FF6600">
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(0 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(90 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(22.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(67.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(112.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(157.5 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="43" fill="#CC9900" opacity="0.14"/>
+      <!-- Sphere -->
+      <circle cx="50" cy="50" r="30" fill="url(#ic7_a)" filter="url(#ic7_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic7_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="30" ry="8"/>
+        <ellipse cx="50" cy="50" rx="30" ry="18"/>
+        <ellipse cx="50" cy="38" rx="22" ry="6"/>
+        <ellipse cx="50" cy="62" rx="22" ry="6"/>
+        <ellipse cx="50" cy="50" rx="12" ry="30"/>
+        <ellipse cx="50" cy="50" rx="24" ry="30"/>
+      </g>
+      <!-- 4 navy ecosystem network dots radiating outward from sphere with connecting lines -->
+      <g stroke="#1E1A14" stroke-width="1.4" opacity="0.88">
+        <line x1="50" y1="20" x2="50" y2="10"/>
+        <line x1="78" y1="44" x2="88" y2="40"/>
+        <line x1="70" y1="72" x2="78" y2="82"/>
+        <line x1="22" y1="60" x2="12" y2="64"/>
+      </g>
+      <circle cx="50" cy="9" r="4" fill="#1E1A14"/>
+      <circle cx="89" cy="39" r="4" fill="#1E1A14"/>
+      <circle cx="79" cy="83" r="4" fill="#1E1A14"/>
+      <circle cx="11" cy="65" r="4" fill="#1E1A14"/>
+      <ellipse cx="40" cy="37" rx="10" ry="7" fill="url(#ic7_b)"/>
+    </svg></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--logo-green);margin-bottom:10px;">03</div>
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin-bottom:12px;">Explainable Intelligence (Persistent Coordination)</h3>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;">Every output is transparent, traceable, and defensible. TwoSuns surfaces the underlying data, logic, and assumptions behind each recommendation, enabling organizations to act with confidence while meeting governance, risk, and compliance requirements.</p>
+      </div>
+      <div class="card" style="text-align:center;padding:36px 28px;">
+        <div class="sustainability-icon-wrap" style="margin-bottom:16px;"><svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic11_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#7A2A00" flood-opacity="0.5"/>
+        </filter>
+        <radialGradient id="ic11_a" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FEF9C3"/>
+          <stop offset="38%" stop-color="#CC9900"/>
+          <stop offset="100%" stop-color="#DB5800"/>
+        </radialGradient>
+        <radialGradient id="ic11_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.92)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic11_cp"><circle cx="50" cy="50" r="23"/></clipPath>
+      </defs>
+      <!-- 8 pointed rays -->
+      <g fill="#FF6600" opacity="0.65">
+        <polygon points="50,4 53,36 50,40 47,36"/>
+        <polygon points="96,50 64,53 60,50 64,47"/>
+        <polygon points="50,96 47,64 50,60 53,64"/>
+        <polygon points="4,50 36,47 40,50 36,53"/>
+        <polygon points="79,21 58,44 54,41 66,20"/>
+        <polygon points="79,79 56,59 59,55 80,68"/>
+        <polygon points="21,79 40,56 44,59 23,80"/>
+        <polygon points="21,21 44,40 42,44 22,34"/>
+      </g>
+      <g fill="#FDE68A" opacity="0.4">
+        <polygon points="50,10 51.5,38 50,40 48.5,38"/>
+        <polygon points="90,50 62,51.5 60,50 62,48.5"/>
+        <polygon points="50,90 48.5,62 50,60 51.5,62"/>
+        <polygon points="10,50 38,48.5 40,50 38,51.5"/>
+      </g>
+      <!-- Sun center circle -->
+      <circle cx="50" cy="50" r="23" fill="url(#ic11_a)" filter="url(#ic11_sh)"/>
+      <!-- Globe grid on center circle -->
+      <g clip-path="url(#ic11_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="23" ry="6"/>
+        <ellipse cx="50" cy="50" rx="23" ry="14"/>
+        <ellipse cx="50" cy="42" rx="16" ry="4"/>
+        <ellipse cx="50" cy="58" rx="16" ry="4"/>
+        <ellipse cx="50" cy="50" rx="9" ry="23"/>
+        <ellipse cx="50" cy="50" rx="18" ry="23"/>
+      </g>
+      <!-- Bold red zigzag ALERT line inside sun clearly visible risk signal -->
+      <g clip-path="url(#ic11_cp)" fill="none" stroke="#D9480F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.98">
+        <polyline points="30,54 36,54 40,48 44,58 50,34 56,58 60,48 64,54 70,54"/>
+        <!-- Filled red circle at spike peak -->
+        <circle cx="50" cy="34" r="3.5" fill="#D9480F" stroke="none"/>
+      </g>
+      <!-- Small amber exclamation spike -->
+      <g clip-path="url(#ic11_cp)">
+        <line x1="50" y1="60" x2="50" y2="65" stroke="#FF6600" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="50" cy="67" r="1.5" fill="#FF6600"/>
+      </g>
+      <ellipse cx="41" cy="39" rx="9" ry="6" fill="url(#ic11_b)"/>
+    </svg></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--sun-deep);margin-bottom:10px;">04</div>
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin-bottom:12px;">Multi-Lens Analysis</h3>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;">Analyzes situations from multiple perspectives simultaneously: buyer, supplier, intermediary, and regulator. This provides a more complete understanding of complex situations and improves decision quality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sun-divider"></div>
+
+      <!-- Decision Packs / Decision Picks section removed (Website-edits slide 26) -->
+
+<section style="background:var(--bg);padding:88px 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Platform</div>
+      <h2 class="section-heading" style="text-align:center;">Modules <span>at a <span class="gspan">Glance</span></span></h2>
+      <p class="section-sub" style="text-align:center;margin:0 auto;">Seven purpose-built modules, each tackling a critical dimension of coordination intelligence, all connected in one unified platform.</p>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="nxs-ic1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#1E1A14"/><polyline points="20,70 35,60 50,52 65,44 80,36" fill="none" stroke="#FF6600" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="36" r="5" fill="#FF6600"/></symbol>
+  <symbol id="nxs-ic2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#FDE68A" stroke-width="3" opacity="0.5"/><circle cx="50" cy="50" r="38" fill="none" stroke="#CC9900" stroke-width="3" opacity="0.65"/><circle cx="50" cy="50" r="28" fill="#FF6600"/><line x1="50" y1="50" x2="70" y2="30" stroke="white" stroke-width="4" stroke-linecap="round"/><circle cx="70" cy="30" r="5" fill="#FF6600"/></symbol>
+  <symbol id="nxs-ic3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#FF6600"/><polyline points="18,74 32,66 46,54 60,44 74,34 84,26" fill="none" stroke="#FF6600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="84" cy="16" r="4" fill="#D9480F"/></symbol>
+  <symbol id="nxs-ic4" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#EAB308"/><rect x="30" y="56" width="10" height="18" rx="2" fill="#1E1A14" opacity="0.8"/><rect x="45" y="46" width="10" height="28" rx="2" fill="#1E1A14" opacity="0.8"/><rect x="60" y="50" width="10" height="24" rx="2" fill="#1E1A14" opacity="0.8"/><circle cx="50" cy="44" r="4" fill="#FF6600"/></symbol>
+  <symbol id="nxs-ic5" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#FF6600"/><circle cx="50" cy="50" r="26" fill="white"/><polyline points="30,54 38,48 44,54 50,40 56,54 62,44 70,50" fill="none" stroke="#FF6600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="nxs-ic6" viewBox="0 0 100 100"><path d="M50,8 A42,42 0 0,0 50,92 Z" fill="#1E1A14"/><path d="M50,8 A42,42 0 0,1 50,92 Z" fill="#FF6600"/><line x1="28" y1="50" x2="68" y2="50" stroke="#FF6600" stroke-width="5" stroke-linecap="round"/><polygon points="64,42 76,50 64,58" fill="#FF6600"/></symbol>
+  <symbol id="nxs-ic7" viewBox="0 0 100 100"><g fill="#FF6600" opacity="0.25"><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(0 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(45 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(90 50 50)"/><ellipse cx="50" cy="6" rx="4" ry="12" transform="rotate(135 50 50)"/></g><circle cx="50" cy="50" r="30" fill="#FF6600"/><circle cx="50" cy="10" r="5" fill="#1E1A14"/><circle cx="90" cy="50" r="5" fill="#1E1A14"/><circle cx="50" cy="90" r="5" fill="#1E1A14"/><circle cx="10" cy="50" r="5" fill="#1E1A14"/></symbol>
+  <symbol id="nxs-ic8" viewBox="0 0 100 100"><circle cx="34" cy="50" r="30" fill="#1E1A14"/><rect x="70" y="30" width="8" height="14" rx="1" fill="#FF6600"/><rect x="82" y="38" width="8" height="16" rx="1" fill="#D9480F"/><rect x="94" y="32" width="8" height="14" rx="1" fill="#FF6600"/></symbol>
+  <symbol id="nxs-ic9" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#FF6600"/><polyline points="14,74 30,74 38,73 50,42 62,73 70,74 86,74" fill="none" stroke="#D9480F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="42" r="5" fill="#D9480F"/></symbol>
+  <symbol id="nxs-ic10" viewBox="0 0 100 100"><circle cx="50" cy="60" r="36" fill="#FF6600"/><rect x="28" y="14" width="10" height="30" rx="2" fill="#FF6600"/><rect x="45" y="6" width="10" height="30" rx="2" fill="#D9480F"/><rect x="62" y="12" width="10" height="32" rx="2" fill="#FF6600"/></symbol>
+  <symbol id="nxs-ic11" viewBox="0 0 100 100"><polygon points="50,2 54,38 50,42 46,38" fill="#FF6600" opacity="0.6"/><polygon points="98,50 62,54 58,50 62,46" fill="#FF6600" opacity="0.6"/><polygon points="50,98 46,62 50,58 54,62" fill="#FF6600" opacity="0.6"/><polygon points="2,50 38,46 42,50 38,54" fill="#FF6600" opacity="0.6"/><circle cx="50" cy="50" r="25" fill="#FF6600"/><polyline points="30,54 38,54 42,46 50,32 58,46 62,54 70,54" fill="none" stroke="#D9480F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="32" r="5" fill="#D9480F"/></symbol>
+  <symbol id="nxs-ic12" viewBox="0 0 100 100"><circle cx="40" cy="52" r="34" fill="#1E1A14"/><polyline points="16,66 30,66 36,44 40,32 44,44 54,66 68,66" fill="none" stroke="#FF6600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="32" r="4" fill="#FF6600"/><path d="M72,28 Q92,52 72,76" fill="none" stroke="#FF6600" stroke-width="4" stroke-linecap="round" opacity="0.8"/><path d="M80,34 Q96,52 80,70" fill="none" stroke="#FF6600" stroke-width="3" stroke-linecap="round" opacity="0.5"/></symbol>
+</svg>
+<style>
+.nxs-sustainability-ico{width:20px;height:20px;display:inline-block;vertical-align:-3px;margin-right:5px;flex-shrink:0;}
+.gwrap{max-width:1040px;margin:0 auto;}
+.grow{display:grid;grid-template-columns:repeat(7,1fr);gap:14px;margin-bottom:26px;}
+.gcard{background:#FFFFFF;border:1px solid var(--border);border-radius:18px;padding:24px 14px;text-align:center;box-shadow:var(--card-shadow);transition:transform .25s,border-color .25s,box-shadow .25s;cursor:pointer;}
+.gcard:hover{transform:translateY(-4px);border-color:rgba(255,102,0,.45);box-shadow:0 16px 40px rgba(20,16,12,.13);}
+.gcard.sel{border-color:rgba(255,102,0,.55);box-shadow:0 14px 36px rgba(255,102,0,.16);}
+.gstage{display:grid;}
+.gbox{grid-area:1/1;background:#FFFFFF;border:1px solid var(--border);border-radius:20px;padding:32px 36px;box-shadow:var(--card-shadow);text-align:left;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease;pointer-events:none;}
+.gbox.active{opacity:1;visibility:visible;transform:none;pointer-events:auto;}
+.gbox-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.gbadge{background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;font-size:10px;font-weight:800;letter-spacing:2px;padding:5px 13px;border-radius:20px;text-transform:uppercase;}
+.gname{font-size:clamp(22px,2.4vw,30px);font-weight:800;color:var(--navy);margin:0;line-height:1.1;}
+.gtag{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--sun-deep);margin:14px 0 8px;}
+.gdesc{color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;}
+.gfeats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+.gfeat{background:var(--sun-pale);border-radius:12px;padding:14px 18px;border:1px solid rgba(255,102,0,.2);}
+.gfeat h5{font-size:14px;font-weight:700;color:var(--navy);margin:0 0 4px;display:flex;align-items:center;}
+.gfeat p{font-size:13px;color:var(--text-muted);margin:0;line-height:1.55;}
+@media (max-width:1000px){.grow{grid-template-columns:repeat(4,1fr);}}
+@media (max-width:760px){.grow{grid-template-columns:repeat(2,1fr);}.gfeats{grid-template-columns:1fr;}.gbox{padding:24px 20px;}}
+</style>
+    <div class="gwrap" id="glance-wrap">
+      <div class="grow">
+      <div class="gcard sel" tabindex="0">
+        <div class="sustainability-icon-wrap" style="margin-bottom:10px;"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic2_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#7A2A00" flood-opacity="0.35"/>
+        </filter>
+        <radialGradient id="ic2_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#FDE68A"/>
+          <stop offset="50%" stop-color="#DB5800"/>
+          <stop offset="100%" stop-color="#7A2A00"/>
+        </radialGradient>
+        <radialGradient id="ic2_b" cx="38%" cy="30%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.87)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic2_cp"><circle cx="50" cy="50" r="26"/></clipPath>
+      </defs>
+      <!-- Concentric rings -->
+      <circle cx="50" cy="50" r="48" fill="none" stroke="#FDE68A" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="50" cy="50" r="41" fill="none" stroke="#CC9900" stroke-width="2" opacity="0.62"/>
+      <circle cx="50" cy="50" r="34" fill="none" stroke="#FF6600" stroke-width="2.5" opacity="0.72"/>
+      <!-- Inner sphere -->
+      <circle cx="50" cy="50" r="26" fill="url(#ic2_a)" filter="url(#ic2_sh)"/>
+      <!-- Globe grid on inner sphere -->
+      <g clip-path="url(#ic2_cp)" fill="none" stroke="#FFEDD0" stroke-width="0.8" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="26" ry="7"/>
+        <ellipse cx="50" cy="42" rx="20" ry="5"/>
+        <ellipse cx="50" cy="58" rx="20" ry="5"/>
+        <ellipse cx="50" cy="50" rx="10" ry="26"/>
+        <ellipse cx="50" cy="50" rx="20" ry="26"/>
+      </g>
+      <!-- Radar sweep line: one straight line from center at ~45° + green signal dot -->
+      <g clip-path="url(#ic2_cp)">
+        <line x1="50" y1="50" x2="68" y2="32" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.88"/>
+        <circle cx="50" cy="50" r="2" fill="white" opacity="0.7"/>
+        <circle cx="68" cy="32" r="3" fill="#FF6600" opacity="1"/>
+      </g>
+      <!-- Highlight -->
+      <ellipse cx="41" cy="37" rx="9" ry="6" fill="url(#ic2_b)"/>
+    </svg></div>
+        <div style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:5px;">EXPLORE</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.45;">Discovery across markets and operational environments, from signal to strategy.</div>
+      </div>
+      <div class="gcard" tabindex="0">
+        <div class="sustainability-icon-wrap" style="margin-bottom:10px;"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic9_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#3A3A3A" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic9_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#FDE68A"/>
+          <stop offset="50%" stop-color="#FF6600"/>
+          <stop offset="100%" stop-color="#7A2A00"/>
+        </radialGradient>
+        <radialGradient id="ic9_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.88)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic9_cp"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <circle cx="50" cy="50" r="38" fill="url(#ic9_a)" filter="url(#ic9_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic9_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Flat baseline with DRAMATIC red anomaly spike 32px tall, clearly visible -->
+      <g clip-path="url(#ic9_cp)" fill="none" stroke="#D9480F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.97">
+        <!-- Flat baseline segments -->
+        <polyline points="14,74 26,74 30,74 34,74 38,73"/>
+        <!-- Spike up to y=42 (32px tall from baseline at y=74) -->
+        <polyline points="38,73 50,42 62,73"/>
+        <!-- Flat continuation -->
+        <polyline points="62,73 66,74 70,74 80,74 86,74"/>
+        <!-- Spike peak dot -->
+        <circle cx="50" cy="42" r="3.5" fill="#D9480F" stroke="none"/>
+      </g>
+      <!-- Green live dot at end of baseline -->
+      <circle cx="86" cy="74" r="2.5" fill="#FF6600" clip-path="url(#ic9_cp)"/>
+      <ellipse cx="36" cy="33" rx="13" ry="8.5" fill="url(#ic9_b)"/>
+    </svg></div>
+        <div style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:5px;">MARKETS</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.45;">Monitor market dynamics and benchmark performance against industry standards.</div>
+      </div>
+      <div class="gcard" tabindex="0">
+        <div class="sustainability-icon-wrap" style="margin-bottom:10px;"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic6_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#3A3A3A" flood-opacity="0.38"/>
+        </filter>
+        <linearGradient id="ic6_L" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F3C98C"/>
+          <stop offset="100%" stop-color="#1E1A14"/>
+        </linearGradient>
+        <linearGradient id="ic6_R" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#FDE68A"/>
+          <stop offset="100%" stop-color="#DB5800"/>
+        </linearGradient>
+        <radialGradient id="ic6_hl" cx="36%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.84)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic6_cl"><rect x="12" y="12" width="38" height="76"/></clipPath>
+        <clipPath id="ic6_cr"><rect x="50" y="12" width="38" height="76"/></clipPath>
+        <clipPath id="ic6_full"><circle cx="50" cy="50" r="38"/></clipPath>
+      </defs>
+      <!-- Split sphere -->
+      <circle cx="50" cy="50" r="38" fill="url(#ic6_L)" clip-path="url(#ic6_cl)" filter="url(#ic6_sh)"/>
+      <circle cx="50" cy="50" r="38" fill="url(#ic6_R)" clip-path="url(#ic6_cr)" filter="url(#ic6_sh)"/>
+      <!-- Globe lines on both halves -->
+      <g clip-path="url(#ic6_full)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="38" ry="10"/>
+        <ellipse cx="50" cy="50" rx="38" ry="22"/>
+        <ellipse cx="50" cy="34" rx="28" ry="7"/>
+        <ellipse cx="50" cy="66" rx="28" ry="7"/>
+        <ellipse cx="50" cy="50" rx="14" ry="38"/>
+        <ellipse cx="50" cy="50" rx="28" ry="38"/>
+      </g>
+      <!-- Vertical divider line -->
+      <line x1="50" y1="13" x2="50" y2="87" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
+      <!-- Green horizontal flow arrow crossing divider -->
+      <g clip-path="url(#ic6_full)">
+        <line x1="30" y1="50" x2="68" y2="50" stroke="#FF6600" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="65,46 73,50 65,54" fill="#FF6600"/>
+        <circle cx="72" cy="50" r="2.5" fill="#FF6600"/>
+      </g>
+      <ellipse cx="36" cy="33" rx="11" ry="7" fill="url(#ic6_hl)"/>
+    </svg></div>
+        <div style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:5px;">PROCUREMENTS</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.45;">Coordinate supplier, contract, and commercial intelligence in one place.</div>
+      </div>
+      <div class="gcard" tabindex="0">
+        <div class="sustainability-icon-wrap" style="margin-bottom:10px;"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic7_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#7A2A00" flood-opacity="0.42"/>
+        </filter>
+        <radialGradient id="ic7_a" cx="42%" cy="36%" r="58%">
+          <stop offset="0%" stop-color="#FDE68A"/>
+          <stop offset="45%" stop-color="#FF6600"/>
+          <stop offset="100%" stop-color="#7A2A00"/>
+        </radialGradient>
+        <radialGradient id="ic7_b" cx="38%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic7_cp"><circle cx="50" cy="50" r="30"/></clipPath>
+      </defs>
+      <!-- 8 sun rays -->
+      <g opacity="0.22" fill="#FF6600">
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(0 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(90 50 50)"/>
+        <ellipse cx="50" cy="6" rx="3" ry="10" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(22.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(67.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(112.5 50 50)"/>
+        <ellipse cx="50" cy="9" rx="2" ry="7" transform="rotate(157.5 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="43" fill="#CC9900" opacity="0.14"/>
+      <!-- Sphere -->
+      <circle cx="50" cy="50" r="30" fill="url(#ic7_a)" filter="url(#ic7_sh)"/>
+      <!-- Globe grid white ~42% -->
+      <g clip-path="url(#ic7_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="30" ry="8"/>
+        <ellipse cx="50" cy="50" rx="30" ry="18"/>
+        <ellipse cx="50" cy="38" rx="22" ry="6"/>
+        <ellipse cx="50" cy="62" rx="22" ry="6"/>
+        <ellipse cx="50" cy="50" rx="12" ry="30"/>
+        <ellipse cx="50" cy="50" rx="24" ry="30"/>
+      </g>
+      <!-- 4 navy ecosystem network dots radiating outward from sphere with connecting lines -->
+      <g stroke="#1E1A14" stroke-width="1.4" opacity="0.88">
+        <line x1="50" y1="20" x2="50" y2="10"/>
+        <line x1="78" y1="44" x2="88" y2="40"/>
+        <line x1="70" y1="72" x2="78" y2="82"/>
+        <line x1="22" y1="60" x2="12" y2="64"/>
+      </g>
+      <circle cx="50" cy="9" r="4" fill="#1E1A14"/>
+      <circle cx="89" cy="39" r="4" fill="#1E1A14"/>
+      <circle cx="79" cy="83" r="4" fill="#1E1A14"/>
+      <circle cx="11" cy="65" r="4" fill="#1E1A14"/>
+      <ellipse cx="40" cy="37" rx="10" ry="7" fill="url(#ic7_b)"/>
+    </svg></div>
+        <div style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:5px;">SPACES</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.45;">Secure spaces to collaborate, negotiate, and coordinate decisions.</div>
+      </div>
+      <div class="gcard" tabindex="0">
+        <div class="sustainability-icon-wrap" style="margin-bottom:10px;"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ic5_sh" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#241B10" flood-opacity="0.38"/>
+        </filter>
+        <radialGradient id="ic5_ring" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FF6600" stop-opacity="0"/>
+          <stop offset="48%" stop-color="#FF6600"/>
+          <stop offset="72%" stop-color="#2A231B"/>
+          <stop offset="100%" stop-color="#241B10"/>
+        </radialGradient>
+        <radialGradient id="ic5_hl" cx="32%" cy="28%" r="36%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.82)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <clipPath id="ic5_inner"><circle cx="50" cy="50" r="22"/></clipPath>
+      </defs>
+      <circle cx="50" cy="55" r="44" fill="#FF6600" opacity="0.08"/>
+      <circle cx="50" cy="50" r="40" fill="url(#ic5_ring)" filter="url(#ic5_sh)"/>
+      <!-- White center circle -->
+      <circle cx="50" cy="50" r="23" fill="white"/>
+      <circle cx="50" cy="50" r="23" fill="none" stroke="#CC9900" stroke-width="2" opacity="0.5"/>
+      <!-- Globe lines in white center area in green -->
+      <g clip-path="url(#ic5_inner)" fill="none" stroke="#FF6600" stroke-width="0.9" opacity="0.42">
+        <ellipse cx="50" cy="50" rx="22" ry="6"/>
+        <ellipse cx="50" cy="44" rx="16" ry="4"/>
+        <ellipse cx="50" cy="56" rx="16" ry="4"/>
+        <ellipse cx="50" cy="50" rx="9" ry="22"/>
+        <ellipse cx="50" cy="50" rx="17" ry="22"/>
+      </g>
+      <!-- Analytics polyline in amber inside center circle -->
+      <g clip-path="url(#ic5_inner)" fill="none" stroke="#FF6600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+        <polyline points="32,56 38,50 43,54 48,44 53,50 58,43 64,48 68,44"/>
+        <circle cx="68" cy="44" r="2.5" fill="#FF6600" stroke="none"/>
+      </g>
+      <ellipse cx="31" cy="29" rx="10" ry="6.5" fill="url(#ic5_hl)" opacity="0.85"/>
+    </svg></div>
+        <div style="font-size:13px;font-weight:800;color:var(--logo-green);margin-bottom:5px;">PLATFORM</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.45;">Centralized control, permissions, policy guardrails, and governance.</div>
+      </div>
+      <div class="gcard" tabindex="0">
+        <div class="sustainability-icon-wrap" style="margin-bottom:10px;"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="icop_sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#7A2A00" flood-opacity="0.35"/></filter>
+        <radialGradient id="icop_a" cx="42%" cy="36%" r="58%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="50%" stop-color="#FF6600"/><stop offset="100%" stop-color="#7A2A00"/></radialGradient>
+        <radialGradient id="icop_b" cx="38%" cy="28%" r="36%"><stop offset="0%" stop-color="rgba(255,255,255,0.88)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient>
+      </defs>
+      <circle cx="50" cy="50" r="44" fill="#CC9900" opacity="0.12"/>
+      <g fill="#1E1A14" opacity="0.82">
+        <rect x="46.5" y="6" width="7" height="13" rx="2" transform="rotate(0 50 50)"/>
+        <rect x="46.5" y="6" width="7" height="13" rx="2" transform="rotate(45 50 50)"/>
+        <rect x="46.5" y="6" width="7" height="13" rx="2" transform="rotate(90 50 50)"/>
+        <rect x="46.5" y="6" width="7" height="13" rx="2" transform="rotate(135 50 50)"/>
+        <rect x="46.5" y="6" width="7" height="13" rx="2" transform="rotate(180 50 50)"/>
+        <rect x="46.5" y="6" width="7" height="13" rx="2" transform="rotate(225 50 50)"/>
+        <rect x="46.5" y="6" width="7" height="13" rx="2" transform="rotate(270 50 50)"/>
+        <rect x="46.5" y="6" width="7" height="13" rx="2" transform="rotate(315 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="31" fill="url(#icop_a)" filter="url(#icop_sh)"/>
+      <circle cx="50" cy="50" r="15" fill="none" stroke="white" stroke-width="3.2" opacity="0.85"/>
+      <circle cx="50" cy="50" r="5.5" fill="white" opacity="0.9"/>
+      <ellipse cx="40" cy="37" rx="10" ry="7" fill="url(#icop_b)"/>
+    </svg></div>
+        <div style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:5px;">OPERATIONS</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.45;">Identify inefficiencies and improve execution across the organization.</div>
+      </div>
+      <div class="gcard" tabindex="0">
+        <div class="sustainability-icon-wrap" style="margin-bottom:10px;"><svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="icfn_sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#241B10" flood-opacity="0.35"/></filter>
+        <radialGradient id="icfn_a" cx="42%" cy="36%" r="58%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="50%" stop-color="#FF6600"/><stop offset="100%" stop-color="#7A2A00"/></radialGradient>
+        <radialGradient id="icfn_b" cx="38%" cy="28%" r="36%"><stop offset="0%" stop-color="rgba(255,255,255,0.88)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient>
+        <clipPath id="icfn_cp"><circle cx="50" cy="50" r="33"/></clipPath>
+      </defs>
+      <circle cx="50" cy="50" r="44" fill="#CC9900" opacity="0.12"/>
+      <circle cx="50" cy="50" r="33" fill="url(#icfn_a)" filter="url(#icfn_sh)"/>
+      <g clip-path="url(#icfn_cp)" fill="none" stroke="white" stroke-width="0.9" opacity="0.4">
+        <ellipse cx="50" cy="50" rx="33" ry="9"/><ellipse cx="50" cy="50" rx="33" ry="20"/><ellipse cx="50" cy="50" rx="12" ry="33"/>
+      </g>
+      <g clip-path="url(#icfn_cp)">
+        <rect x="33" y="56" width="7" height="15" rx="1.5" fill="white" opacity="0.92"/>
+        <rect x="46" y="48" width="7" height="23" rx="1.5" fill="white" opacity="0.92"/>
+        <rect x="59" y="40" width="7" height="31" rx="1.5" fill="white" opacity="0.92"/>
+        <polyline points="31,52 44,46 57,38 67,30" fill="none" stroke="#1E1A14" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <polygon points="62,28 69,27 67,34" fill="#1E1A14"/>
+      </g>
+      <ellipse cx="40" cy="36" rx="10" ry="7" fill="url(#icfn_b)"/>
+    </svg></div>
+        <div style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:5px;">FINANCIALS</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.45;">Analyze costs, cash flow, profitability, pricing, and performance.</div>
+      </div>
+      </div>
+      <div class="gstage">
+      <div class="gbox active">
+        <div class="gbox-top"><span class="gbadge">Module 1</span><h3 class="gname">Explore</h3></div>
+        <div class="gtag">Market & Operational Discovery</div>
+        <p class="gdesc">The foundation for analysis and discovery across markets and operational environments. Explore gives your teams a continuous, AI-assisted view of external signals, internal context, and emerging opportunities, from signal to structured strategy.</p>
+        <div class="gfeats">
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic2"/></svg>Discover (Map &amp; Signals)</h5><p>See the whole market on an interactive map with AI-powered signals surfacing what matters most.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic5"/></svg>Analysis</h5><p>Access AI-driven frameworks combining fundamental, technical, macro, and ESG intelligence layers.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic12"/></svg>Scenario Planning</h5><p>Model and simulate future market outcomes with role-based views across markets and regions.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic4"/></svg>Position Log</h5><p>View a continuous list of your positions and metrics, always current, always traceable.</p></div>
+        </div>
+      </div>
+      <div class="gbox">
+        <div class="gbox-top"><span class="gbadge">Module 2</span><h3 class="gname">Markets</h3></div>
+        <div class="gtag">Strategy & Execution</div>
+        <p class="gdesc">A centralized workspace for monitoring market dynamics, benchmarking performance, and aligning stakeholders around strategic opportunities, competitive positioning, and informed action.</p>
+        <div class="gfeats">
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic3"/></svg>Performance Benchmarking</h5><p>Continuously measure performance, competitiveness, and operational excellence against industry benchmarks.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic1"/></svg>Strategy Canvas</h5><p>Build and evolve strategies collaboratively with your team on a shared visual canvas.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic7"/></svg>Stakeholder Publishing</h5><p>Publish strategies, market data, and insights to internal and external stakeholders with a full audit trail.</p></div>
+        </div>
+      </div>
+      <div class="gbox">
+        <div class="gbox-top"><span class="gbadge">Module 3</span><h3 class="gname">Procurements</h3></div>
+        <div class="gtag">Supplier & Contract Intelligence</div>
+        <p class="gdesc">Coordinate procurement intelligence across suppliers, contracts, and commercial activities. AI-assisted coordination benchmarks supplier agreements, pricing, terms, obligations, and performance against industry standards, transforming procurement data into faster, more informed sourcing decisions.</p>
+        <div class="gfeats">
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic8"/></svg>Supplier Benchmarking</h5><p>Benchmark supplier agreements, pricing, terms, and performance against industry standards.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic10"/></svg>Clause Analysis</h5><p>Review contract clauses with full context of the originating decision and intent.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic11"/></svg>Auditable Intent</h5><p>Every step is logged, traceable, and preserved defensible under any future audit.</p></div>
+        </div>
+      </div>
+      <div class="gbox">
+        <div class="gbox-top"><span class="gbadge">Module 4</span><h3 class="gname">Spaces</h3></div>
+        <div class="gtag">Secure Collaboration & Coordination</div>
+        <p class="gdesc">Spaces enable secure, persistent environments where teams and external stakeholders collaborate, negotiate, share information, and coordinate decisions through AI-assisted workflows and secure communication. Whether managing operational initiatives, supplier relationships, strategic discussions, or commercial negotiations, Spaces brings the right people together in a contextual workspace designed for alignment and execution.</p>
+        <div class="gfeats">
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic6"/></svg>Deal Rooms</h5><p>Purpose-built spaces for managing commercial negotiations, approvals, and agreements with complete version control, transparency, and auditability.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic7"/></svg>External Collaboration</h5><p>Invite counterparties, regulators, and partners into secure, governed workspaces without compromising confidentiality.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic3"/></svg>Decision Threads</h5><p>Collaborative annotations, presence detection, and discussion threads, all preserved in the decision record.</p></div>
+        </div>
+      </div>
+      <div class="gbox">
+        <div class="gbox-top"><span class="gbadge">Module 5</span><h3 class="gname">Platform</h3></div>
+        <div class="gtag">Centralized Control</div>
+        <p class="gdesc">Manages user permissions, policy guardrails, and integrations to ensure enterprise governance at every level. Platform gives IT and compliance teams complete control without limiting the coordination velocity of operational and commercial teams.</p>
+        <div class="gfeats">
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic9"/></svg>User Permissions</h5><p>Role-based access controls, permissions, and audit trails across all platform modules and data sources.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic11"/></svg>Policy Guardrails</h5><p>Define and enforce data governance policies, compliance rules, and AI usage boundaries enterprise-wide.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic6"/></svg>Integrations</h5><p>Connect TwoSuns to internal analytics platforms, ERP, CRM, contract repositories, and operational systems.</p></div>
+        </div>
+      </div>
+      <div class="gbox">
+        <div class="gbox-top"><span class="gbadge">Module 6</span><h3 class="gname">Operations</h3></div>
+        <div class="gtag">Operational Intelligence</div>
+        <p class="gdesc">Operations provides AI-assisted visibility into processes, workflows, resources, and performance across the enterprise. By continuously analyzing operational data, identifying inefficiencies, and recommending corrective actions, Operations helps organizations improve productivity, reduce waste, strengthen accountability, and align day-to-day execution with business objectives.</p>
+        <div class="gfeats">
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic5"/></svg>Process Optimization</h5><p>Identify bottlenecks, inefficiencies, and workflow gaps to improve operational performance and resource utilization.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic3"/></svg>Performance Insights</h5><p>Continuously monitor operational metrics and trends to uncover opportunities for productivity and cost improvements.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic12"/></svg>Actionable Recommendations</h5><p>Leverage AI-assisted analysis to prioritize corrective actions, accelerate decision-making, and drive measurable outcomes.</p></div>
+        </div>
+      </div>
+      <div class="gbox">
+        <div class="gbox-top"><span class="gbadge">Module 7</span><h3 class="gname">Financials</h3></div>
+        <div class="gtag">Financial Intelligence</div>
+        <p class="gdesc">Financials provides AI-assisted visibility into costs, revenues, cash flow, pricing, profitability, scenario testing, and commercial performance. By connecting financial data across the organization, Financials helps leaders understand business drivers, evaluate scenarios, improve forecasting accuracy, optimize margins, and make faster, more informed financial decisions.</p>
+        <div class="gfeats">
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic4"/></svg>Cost Visibility</h5><p>Gain a clear understanding of cost structures, spending patterns, and profitability drivers across the business.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic1"/></svg>Margin Optimization</h5><p>Analyze pricing, revenue, and breakeven points to improve margins and support sustainable growth.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic10"/></svg>Cash Flow</h5><p>Monitor cash flow, financial performance, and forecasts to strengthen planning and operational decision-making.</p></div>
+          <div class="gfeat"><h5><svg class="nxs-sustainability-ico"><use href="#nxs-ic12"/></svg>Scenario Testing</h5><p>Stress-test business assumptions and operational variables to instantly project financial outcomes, evaluate risks, and support better strategic decisions.</p></div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script>
+(function(){var w=document.getElementById('glance-wrap');if(!w)return;
+var cards=[].slice.call(w.querySelectorAll('.gcard')),boxes=[].slice.call(w.querySelectorAll('.gbox'));
+function show(n){boxes.forEach(function(b,k){b.classList.toggle('active',k===n);});cards.forEach(function(c,k){c.classList.toggle('sel',k===n);});}
+cards.forEach(function(c,i){c.addEventListener('mouseenter',function(){show(i);});c.addEventListener('click',function(){show(i);});c.addEventListener('focus',function(){show(i);});});
+show(0);})();
+</script>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="modules.html" class="btn-primary">View All Modules →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INDUSTRIES ══ -->
+<section id="industries-glance" style="background:var(--bg2);padding:80px 0 0;">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:20px;">
+      <div>
+        <div class="section-tag">Industries We Serve</div>
+        <h2 class="section-heading" style="margin-bottom:10px;">Powering Progress <span>Across Industries</span></h2>
+        <p class="section-sub">TwoSuns adapts to the perspectives that matter from upstream to downstream, physical to financial, bilateral to exchange-traded.</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+        <button onclick="slideIndustries(-1)" id="ind-prev" style="width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--card-shadow);" onmouseover="this.style.background='var(--sun-pale)';this.style.borderColor='var(--sun)'" onmouseout="this.style.background='white';this.style.borderColor='var(--border)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button onclick="slideIndustries(1)" id="ind-next" style="width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--card-shadow);" onmouseover="this.style.background='var(--sun-pale)';this.style.borderColor='var(--sun)'" onmouseout="this.style.background='white';this.style.borderColor='var(--border)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-width slider -->
+  <div style="overflow:hidden;position:relative;">
+    <div id="ind-track" style="display:flex;gap:20px;padding:0 calc((100vw - 1136px)/2) 60px;transition:transform .45s cubic-bezier(.4,0,.2,1);width:max-content;">
+
+      <a href="industries.html" class="ind-card" style="flex-shrink:0;width:340px;height:420px;border-radius:20px;overflow:hidden;position:relative;display:block;cursor:pointer;">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=680&h=840&fit=crop&auto=format" alt="Financial Services" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 55%,transparent 100%);"></div>
+        <div style="position:absolute;bottom:28px;left:28px;right:28px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:8px;">Financial Markets</div>
+          <div style="font-size:20px;font-weight:800;color:#FFFFFF;line-height:1.2;">Financial Institutions &amp; Investors</div>
+        </div>
+      </a>
+
+      <a href="industries.html" class="ind-card" style="flex-shrink:0;width:340px;height:420px;border-radius:20px;overflow:hidden;position:relative;display:block;cursor:pointer;">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=680&h=840&fit=crop&auto=format" alt="Sustainability Initiatives" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 55%,transparent 100%);"></div>
+        <div style="position:absolute;bottom:28px;left:28px;right:28px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:8px;">Clean Energy</div>
+          <div style="font-size:20px;font-weight:800;color:#FFFFFF;line-height:1.2;">Sustainability Initiatives &amp; Sustainability Markets</div>
+        </div>
+      </a>
+
+      <a href="industries.html" class="ind-card" style="flex-shrink:0;width:340px;height:420px;border-radius:20px;overflow:hidden;position:relative;display:block;cursor:pointer;">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=680&h=840&fit=crop&auto=format" alt="Commercial Coordination" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 55%,transparent 100%);"></div>
+        <div style="position:absolute;bottom:28px;left:28px;right:28px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:8px;">Energy</div>
+          <div style="font-size:20px;font-weight:800;color:#FFFFFF;line-height:1.2;">Commercial Coordination &amp; Utilities</div>
+        </div>
+      </a>
+
+      <a href="industries.html" class="ind-card" style="flex-shrink:0;width:340px;height:420px;border-radius:20px;overflow:hidden;position:relative;display:block;cursor:pointer;">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=680&h=840&fit=crop&auto=format" alt="Transportation" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 55%,transparent 100%);"></div>
+        <div style="position:absolute;bottom:28px;left:28px;right:28px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:8px;">Logistics</div>
+          <div style="font-size:20px;font-weight:800;color:#FFFFFF;line-height:1.2;">Transportation &amp; Logistics</div>
+        </div>
+      </a>
+
+      <a href="industries.html" class="ind-card" style="flex-shrink:0;width:340px;height:420px;border-radius:20px;overflow:hidden;position:relative;display:block;cursor:pointer;">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=680&h=840&fit=crop&auto=format" alt="Mining" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 55%,transparent 100%);"></div>
+        <div style="position:absolute;bottom:28px;left:28px;right:28px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:8px;">Commodities</div>
+          <div style="font-size:20px;font-weight:800;color:#FFFFFF;line-height:1.2;">Mining, Metals &amp; Agriculture</div>
+        </div>
+      </a>
+
+      <a href="industries.html" class="ind-card" style="flex-shrink:0;width:340px;height:420px;border-radius:20px;overflow:hidden;position:relative;display:block;cursor:pointer;">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=680&h=840&fit=crop&auto=format" alt="Government" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 55%,transparent 100%);"></div>
+        <div style="position:absolute;bottom:28px;left:28px;right:28px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:8px;">Public Sector</div>
+          <div style="font-size:20px;font-weight:800;color:#FFFFFF;line-height:1.2;">Governments &amp; Regulators</div>
+        </div>
+      </a>
+
+      <a href="industries.html" class="ind-card" style="flex-shrink:0;width:340px;height:420px;border-radius:20px;overflow:hidden;position:relative;display:block;cursor:pointer;">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=680&h=840&fit=crop&auto=format" alt="Analytics" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 55%,transparent 100%);"></div>
+        <div style="position:absolute;bottom:28px;left:28px;right:28px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:8px;">Advisory</div>
+          <div style="font-size:20px;font-weight:800;color:#FFFFFF;line-height:1.2;">Consultants, Analysts &amp; Creators</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div style="text-align:center;padding-bottom:60px;">
+    <a href="industries.html" class="btn-primary">View All Industries →</a>
+  </div>
+</section>
+
+<style>
+  .ind-card:hover img { transform:scale(1.04); }
+  .ind-card::after { content:''; position:absolute; inset:0; border-radius:20px; border:2px solid transparent; transition:border-color .2s; }
+  .ind-card:hover::after { border-color:rgba(255,102,0,0.5); }
+  @media(max-width:900px){ #ind-track { padding:0 24px 48px !important; } }
+</style>
+<script>
+var indPos = 0;
+function slideIndustries(dir){
+  var track = document.getElementById('ind-track');
+  var cards = track.querySelectorAll('.ind-card');
+  var cardW = cards[0].offsetWidth + 20;
+  var visible = Math.floor(track.parentElement.offsetWidth / cardW);
+  var max = cards.length - visible;
+  indPos = Math.max(0, Math.min(indPos + dir, max));
+  track.style.transform = 'translateX(-' + (indPos * cardW) + 'px)';
+}
+</script>
+
+<!-- TAGLINE STRIP -->
+<div style="background:linear-gradient(135deg,#16120D 0%,#1E1A14 100%);padding:80px 0;text-align:center;position:relative;z-index:2;">
+  <div class="container" style="max-width:880px;">
+    <p style="font-size:clamp(24px,3.2vw,40px);font-weight:800;color:#FFFFFF;line-height:1.25;letter-spacing:-0.3px;margin-bottom:18px;">The next industrial leaders<br><span style="color:var(--sun-bright);">won't be defined by who has the most data. They'll be defined by who can coordinate execution.</span></p>
+    <p style="color:rgba(255,255,255,0.78);margin-bottom:32px;font-size:16px;line-height:1.7;max-width:680px;margin-left:auto;margin-right:auto;">TwoSuns is the AI-native operational intelligence layer for complex industries. Built for cement, mining, manufacturing, logistics, infrastructure, and resource sectors where execution depends on coordinated decision-making.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" style="background:var(--sun);color:#FFFFFF;padding:14px 30px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;display:inline-block;">Request a Discovery Session</a>
+      <a href="contact.html" style="background:transparent;color:#FFFFFF;padding:14px 26px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,0.30);display:inline-block;">Contact TwoSuns</a>
+    </div>
+  </div>
+</div>
+
+<div class="sun-divider"></div>
+
+<!-- ══ FOOTER ══ -->
+<!-- ══ MEMBERSHIPS ══ -->
+<section class="memberships-bar" aria-label="Memberships and affiliations">
+  <div class="memberships-inner">
+    <div class="memberships-label">Proud Member Of</div>
+    <div class="memberships-track">
+      <div class="memberships-row">
+        <a href="https://www.cim.org" target="_blank" rel="noopener" class="m-logo" aria-label="CIM, Canadian Institute of Mining"><img src="memberships/cim.png" alt="CIM" loading="lazy"></a>
+        <a href="https://www.boardoftrade.com/" target="_blank" rel="noopener" class="m-logo" aria-label="Greater Vancouver Board of Trade"><img src="memberships/gvbot.svg" alt="Greater Vancouver Board of Trade" loading="lazy"></a>
+        <a href="https://wearebctech.com" target="_blank" rel="noopener" class="m-logo" aria-label="We Are BC Tech"><img src="memberships/bctech.svg" alt="We Are BC Tech" loading="lazy"></a>
+        <a href="https://www.richmondchamber.ca/" target="_blank" rel="noopener" class="m-logo" aria-label="Richmond Chamber of Commerce"><img src="memberships/richmond.png" alt="Richmond Chamber of Commerce" loading="lazy"></a>
+        <!-- Duplicate for seamless scroll -->
+        <a href="https://www.cim.org" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/cim.png" alt="" loading="lazy"></a>
+        <a href="https://www.boardoftrade.com/" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/gvbot.svg" alt="" loading="lazy"></a>
+        <a href="https://wearebctech.com" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/bctech.svg" alt="" loading="lazy"></a>
+        <a href="https://www.richmondchamber.ca/" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/richmond.png" alt="" loading="lazy"></a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(255,102,0,0.15); border-bottom:1px solid rgba(255,102,0,0.15); padding:28px 0; overflow:hidden; }
+  .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
+  .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#5A554C; flex-shrink:0; min-width:140px; }
+  .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); }
+  .memberships-row { display:flex; align-items:center; gap:64px; animation:memberships-scroll 30s linear infinite; width:max-content; }
+  .memberships-row:hover { animation-play-state:paused; }
+  .m-logo { display:flex; align-items:center; flex-shrink:0; opacity:.55; filter:grayscale(1); transition:opacity .25s, filter .25s; }
+  .m-logo:hover { opacity:1; filter:grayscale(0); }
+  .m-logo img { height:40px; width:auto; max-width:180px; object-fit:contain; }
+  @keyframes memberships-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  @media (max-width:768px) {
+    .memberships-inner { flex-direction:column; gap:14px; padding:0 16px; }
+    .memberships-label { min-width:auto; text-align:center; }
+    .memberships-row { gap:40px; }
+    .m-logo img { height:32px; }
+  }
+</style>
+
+<footer>
+  <div class="container">
+
+    <!-- Links columns -->
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="platform.html">Platform Overview</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="modules.html">Modules</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="trust.html">Trust Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="why-twosuns.html">Why TwoSuns</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="partners.html">Partner Centre</a></li>
+          <li><a href="investors.html">Investor Centre</a></li>
+          <li><a href="press.html">Press &amp; Media</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="blog.html">Use Cases</a></li>
+          <li><a href="blog.html">Platform Briefs</a></li>
+          <li><a href="blog.html">Case Studies</a></li>
+          <li><a href="blog.html">Events &amp; Media</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">130, 5920 No. Two Road<br>Richmond BC V7C 4R9</div>
+        <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:info@twosuns.ai" style="color:var(--sun-bright)">info@twosuns.ai</a></div>
+        <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:invest@twosuns.ai" style="color:var(--sun-bright)">invest@twosuns.ai</a></div>
+        <div class="footer-contact-item" style="padding-top:6px;"><a href="tel:6047609015">1-604-760-9015</a></div>
+        <div class="footer-contact-item" style="margin-top:8px;"><a href="https://AEPG.ca">AEPG.ca &#8599;</a></div>
+        <div class="footer-contact-item"><a href="https://TwoSuns">TwoSuns &#8599;</a></div>
+      </div>
+    </div>
+
+    <!-- Brand + Newsletter row -->
+    <div class="footer-newsletter-row">
+      <div class="footer-brand">
+        <img src="logo-color.svg" alt="TwoSuns" style="width:100%;max-width:280px;height:auto;display:block;">
+        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sun-deep);margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
+      <!-- Social Icons -->
+      <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
+        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+           style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
+           onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E1A14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://x.com/TwoSunsAI" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
+           style="width:38px;height:38px;border-radius:8px;background:rgba(30,26,20,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+           onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
+           onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#1E1A14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.726-8.851L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Stay ahead of the market</h3>
+        <p>Get the latest market briefings from TwoSuns, platform updates, and coordination delivered monthly.</p>
+        <div class="fn-field">
+          <input type="text" placeholder="Full name" id="fn-name">
+          <input type="email" placeholder="Work email" id="fn-email">
+          <input type="text" placeholder="Company" id="fn-company">
+        </div>
+        <div class="fn-check">
+          <input type="checkbox" id="fn-updates">
+          <label for="fn-updates">Also send me platform release notes and product updates.</label>
+        </div>
+        <p class="fn-legal">By subscribing, you agree to receive email communications from TwoSuns. You can unsubscribe at any time.</p>
+        <button class="fn-btn" onclick="fnSubmit()">Subscribe Now</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookie Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      <p>&#995A11; 2026 TwoSuns. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function fnSubmit(){
+  var e=document.getElementById('fn-email');
+  if(!e||!e.value.includes('@')){alert('Please enter a valid email address.');return;}
+  var btn=document.querySelector('.fn-btn');
+  btn.textContent='Subscribed ✓';
+  btn.style.background='#2A231B';
+  btn.disabled=true;
+}
+</script>
+
+<script>
+// ── AMBIENT SUN PARTICLES ──
+const canvas = document.getElementById('sun-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
+function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+resize(); window.addEventListener('resize',()=>{ resize(); initP(); });
+function initP(){
+  particles=[];
+  const n = Math.floor(W*H/18000);
+  for(let i=0;i<n;i++) particles.push({
+    x:Math.random()*W, y:Math.random()*H,
+    vx:(Math.random()-.5)*.2, vy:(Math.random()-.5)*.2,
+    r:Math.random()*2+.5, op:Math.random()*.4+.1
+  });
+}
+initP();
+function drawP(){
+  ctx.clearRect(0,0,W,H);
+  for(const p of particles){
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W) p.vx*=-1;
+    if(p.y<0||p.y>H) p.vy*=-1;
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(255,102,0,${p.op})`; ctx.fill();
+  }
+  for(let i=0;i<particles.length;i++){
+    for(let j=i+1;j<particles.length;j++){
+      const a=particles[i],b=particles[j];
+      const d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<120){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle=`rgba(255,102,0,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
+    }
+  }
+  requestAnimationFrame(drawP);
+}
+drawP();
+
+
+// ── NAV ACTIVE ──
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{
+  const y = window.scrollY+80;
+  sections.forEach(s=>{
+    if(y>=s.offsetTop && y<s.offsetTop+s.offsetHeight){
+      document.querySelectorAll('.nav-links a').forEach(a=>{
+        a.style.color = a.getAttribute('href')==='#'+s.id ? 'var(--sun-deep)' : '';
+      });
+    }
+  });
+});
+</script>
+
+<!-- ── SCROLL TO TOP ── -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script>
+// ── SCROLL TO TOP VISIBILITY ──
+const scrollBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
+</script>
+
+<!-- ══ CHAT WIDGET ══ -->
+<style>
+  #nxs-chat-bubble {
+    position:fixed; bottom:88px; right:32px; z-index:998;
+    width:52px; height:52px; border-radius:50%;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    box-shadow:0 4px 20px rgba(255,102,0,0.5);
+    border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:transform .2s, box-shadow .2s;
+  }
+  #nxs-chat-bubble:hover { transform:scale(1.08); box-shadow:0 6px 28px rgba(255,102,0,0.65); }
+  #nxs-chat-bubble svg { width:24px; height:24px; color:white; }
+  #nxs-chat-bubble .nxs-notif {
+    position:absolute; top:-3px; right:-3px; width:14px; height:14px;
+    background:#D9480F; border-radius:50%; border:2px solid white;
+    animation:nxsPulse 2s ease-in-out infinite;
+  }
+  @keyframes nxsPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+
+  #nxs-chat-panel {
+    position:fixed; bottom:156px; right:32px; z-index:997;
+    width:320px; background:white; border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(255,102,0,0.1);
+    border:1px solid rgba(255,102,0,0.15);
+    opacity:0; visibility:hidden; transform:translateY(12px) scale(0.97);
+    transition:opacity .25s, visibility .25s, transform .25s;
+    transform-origin:bottom right; overflow:hidden;
+  }
+  #nxs-chat-panel.open {
+    opacity:1; visibility:visible; transform:translateY(0) scale(1);
+  }
+  .nxs-header {
+    background:linear-gradient(135deg,var(--navy),#2A231B);
+    padding:20px; display:flex; align-items:center; gap:12px;
+  }
+  .nxs-avatar {
+    width:40px; height:40px; border-radius:50%;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    display:flex; align-items:center; justify-content:center;
+    font-size:18px; flex-shrink:0;
+  }
+  .nxs-header-text h4 { font-size:14px; font-weight:700; color:white; margin-bottom:2px; }
+  .nxs-header-text p { font-size:11px; color:rgba(255,255,255,0.6); display:flex; align-items:center; gap:5px; }
+  .nxs-online-dot { width:7px; height:7px; background:#FF6600; border-radius:50%; display:inline-block; }
+  .nxs-close { margin-left:auto; background:none; border:none; color:rgba(255,255,255,0.6); cursor:pointer; font-size:18px; line-height:1; padding:4px; transition:color .2s; }
+  .nxs-close:hover { color:white; }
+
+  .nxs-body { padding:20px; }
+  .nxs-welcome {
+    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.2);
+    border-radius:14px; padding:14px 16px; margin-bottom:16px;
+  }
+  .nxs-welcome p { font-size:13px; color:var(--text-mid); line-height:1.6; }
+  .nxs-welcome strong { color:var(--navy); }
+  .nxs-actions { display:flex; flex-direction:column; gap:8px; }
+  .nxs-action-btn {
+    width:100%; text-align:left; background:white;
+    border:1px solid var(--border); border-radius:12px;
+    padding:12px 16px; font-size:13px; font-weight:600; color:var(--navy);
+    cursor:pointer; transition:all .18s; display:flex; align-items:center; gap:10px;
+    text-decoration:none;
+  }
+  .nxs-action-btn:hover {
+    background:var(--sun-pale); border-color:rgba(255,102,0,0.4);
+    transform:translateX(3px);
+  }
+  .nxs-action-btn .nxs-ico { font-size:16px; flex-shrink:0; }
+  .nxs-footer { padding:12px 20px; border-top:1px solid rgba(255,102,0,0.1); text-align:center; }
+  .nxs-footer a { font-size:11px; color:var(--text-muted); }
+  .nxs-footer a:hover { color:var(--sun-deep); }
+</style>
+
+<button id="nxs-chat-bubble" onclick="toggleChat()" aria-label="Chat with TwoSuns">
+  <svg id="nxs-icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+  <svg id="nxs-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+  <div class="nxs-notif" id="nxs-notif"></div>
+</button>
+
+<div id="nxs-chat-panel">
+  <div class="nxs-header">
+    <div class="nxs-avatar">TS</div>
+    <div class="nxs-header-text">
+      <h4>TwoSuns Team</h4>
+      <p> Typically replies within 1 business day</p>
+    </div>
+    <button class="nxs-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="nxs-body">
+    <div class="nxs-welcome">
+      <p>Welcome to <strong>TwoSuns</strong>, the decision layer for industrial operations.<br><br>How can we help you today?</p>
+    </div>
+    <div class="nxs-actions">
+      <a href="contact.html" class="nxs-action-btn">
+        Book a Live Demo
+      </a>
+      <a href="pricing.html" class="nxs-action-btn">
+        Pilot Program &amp; Pricing
+      </a>
+      <a href="modules.html" class="nxs-action-btn">
+        Explore the Platform
+      </a>
+      <a href="mailto:info@twosuns.ai" class="nxs-action-btn">
+        Send Us a Message
+      </a>
+    </div>
+  </div>
+  <div class="nxs-footer">
+    <a href="contact.html">Contact us · info@twosuns.ai · 1-604-760-9015</a>
+  </div>
+</div>
+
+<script>
+function toggleChat(){
+  var panel = document.getElementById('nxs-chat-panel');
+  var iconChat = document.getElementById('nxs-icon-chat');
+  var iconClose = document.getElementById('nxs-icon-close');
+  var notif = document.getElementById('nxs-notif');
+  var isOpen = panel.classList.toggle('open');
+  iconChat.style.display = isOpen ? 'none' : '';
+  iconClose.style.display = isOpen ? '' : 'none';
+  if(isOpen && notif) notif.style.display = 'none';
+}
+// Show notification dot after 3s
+setTimeout(function(){ var n=document.getElementById('nxs-notif'); if(n) n.style.display='block'; }, 3000);
+</script>
+
+<!-- ══ COOKIE CONSENT ══ -->
+<div id="cookie-banner" style="display:none;">
+<style>
+  #cookie-banner {
+    position:fixed; bottom:0; left:0; right:0; z-index:9999;
+    background:#3A3A3A; border-top:1px solid rgba(255,102,0,0.2);
+    box-shadow:0 -8px 40px rgba(0,0,0,0.25);
+    padding:20px 32px; display:flex; align-items:center;
+    justify-content:space-between; gap:24px; flex-wrap:wrap;
+    animation:cookieSlideUp .4s ease;
+  }
+  @keyframes cookieSlideUp { from{transform:translateY(100%);opacity:0} to{transform:translateY(0);opacity:1} }
+  #cookie-banner p { font-size:13.5px; color:rgba(255,255,255,0.7); line-height:1.6; margin:0; max-width:700px; }
+  #cookie-banner p a { color:#FF6600; text-decoration:underline; }
+  #cookie-banner p a:hover { color:#CC9900; }
+  .cookie-btns { display:flex; gap:10px; flex-shrink:0; }
+  .cookie-accept {
+    background:linear-gradient(135deg,#FF6600,#DB5800); color:#FFFFFF;
+    font-size:13px; font-weight:700; padding:10px 22px; border-radius:8px;
+    border:none; cursor:pointer; transition:all .2s;
+    box-shadow:0 4px 14px rgba(255,102,0,0.35);
+  }
+  .cookie-accept:hover { transform:translateY(-1px); box-shadow:0 6px 20px rgba(255,102,0,0.5); }
+  .cookie-decline {
+    background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.55);
+    font-size:13px; font-weight:600; padding:10px 18px; border-radius:8px;
+    border:1px solid rgba(255,255,255,0.12); cursor:pointer; transition:all .2s;
+  }
+  .cookie-decline:hover { background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.8); }
+</style>
+  <p>We use cookies to improve your experience, analyze site traffic, and personalize content. By clicking <strong style="color:#FFFFFF;">Accept All</strong>, you agree to our use of cookies. <a href="privacy.html">Privacy Policy</a> · <a href="cookies.html">Cookie Policy</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="cookieChoice(false)">Decline</button>
+    <button class="cookie-accept" onclick="cookieChoice(true)">Accept All</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('nxs_cookie_consent')){
+    document.getElementById('cookie-banner').style.display='flex';
+  }
+})();
+function cookieChoice(accepted){
+  localStorage.setItem('nxs_cookie_consent', accepted ? 'accepted' : 'declined');
+  var b = document.getElementById('cookie-banner');
+  b.style.transition='transform .35s ease, opacity .35s ease';
+  b.style.transform='translateY(100%)';
+  b.style.opacity='0';
+  setTimeout(function(){ b.style.display='none'; }, 370);
+}
+</script>
+</div>
+
+<script>
+function toggleMobNav(){
+  var m=document.getElementById('nxs-mob-nav');
+  var b=document.getElementById('nxs-hamburger');
+  var open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  if(b)b.classList.toggle('open',!open);
+}
+// Responsive inline-grid fixer
+function nxsResponsive(){
+  var isMob=window.innerWidth<=768;
+  document.querySelectorAll('[style*="grid-template-columns"]').forEach(function(el){
+    var s=el.getAttribute('style')||'';
+    if(!el.dataset.origGrid) el.dataset.origGrid=el.style.gridTemplateColumns;
+    if(isMob){
+      if(/repeat\([3-9]/.test(s)||/1fr 1\.8fr|1fr 1fr 1\.6fr|1fr 1fr 1\.5fr/.test(s)){
+        el.style.gridTemplateColumns='1fr';
+        el.style.gap='16px';
+      } else if(/repeat\([45]/.test(s)){
+        el.style.gridTemplateColumns='1fr 1fr';
+        el.style.gap='12px';
+      }
+    } else {
+      if(el.dataset.origGrid) el.style.gridTemplateColumns=el.dataset.origGrid;
+    }
+  });
+  // Fix min-height on mission/video sections
+  if(isMob){
+    document.querySelectorAll('[style*="min-height:460px"]').forEach(function(el){
+      el.style.minHeight='auto';
+    });
+  }
+}
+window.addEventListener('DOMContentLoaded',nxsResponsive);
+window.addEventListener('resize',nxsResponsive);
+</script>
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        setTimeout(function(){ e.target.classList.add('visible'); }, i*90);
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.sustainability-card-animated').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+</body>
+</html>

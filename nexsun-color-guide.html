@@ -22,7 +22,7 @@
     display: flex; align-items: center; justify-content: space-between;
     margin-bottom: 48px;
     padding-bottom: 28px;
-    border-bottom: 3px solid #FF6600;
+    border-bottom: 3px solid #E0641E;
   }
   .brand { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 900; }
   .brand span { color: #1E1A14; }
@@ -33,10 +33,10 @@
   .section { margin-bottom: 52px; }
   .section-label {
     font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
-    color: #DB5800; margin-bottom: 20px;
+    color: #C45213; margin-bottom: 20px;
     display: flex; align-items: center; gap: 8px;
   }
-  .section-label::after { content:''; flex:1; height:1px; background: rgba(255,102,0,0.25); }
+  .section-label::after { content:''; flex:1; height:1px; background: rgba(224,100,30,0.25); }
 
   /* Color swatches */
   .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; }
@@ -53,7 +53,7 @@
   /* Type scale */
   .type-row {
     display: flex; align-items: baseline; gap: 20px;
-    padding: 18px 0; border-bottom: 1px solid rgba(255,102,0,0.12);
+    padding: 18px 0; border-bottom: 1px solid rgba(224,100,30,0.12);
   }
   .type-label { width: 130px; font-size: 11px; color: #9B938A; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; flex-shrink: 0; }
   .type-sample { line-height: 1.2; }
@@ -63,8 +63,8 @@
   .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .usage-card {
     background: #FFFFFF; border-radius: 12px; padding: 20px 22px;
-    border: 1px solid rgba(255,102,0,0.18);
-    box-shadow: 0 2px 12px rgba(255,102,0,0.06);
+    border: 1px solid rgba(224,100,30,0.18);
+    box-shadow: 0 2px 12px rgba(224,100,30,0.06);
   }
   .usage-card h4 { font-size: 13px; font-weight: 700; color: #1E1A14; margin-bottom: 10px; }
   .usage-card ul { list-style: none; }
@@ -83,10 +83,10 @@
     box-shadow: 0 2px 16px rgba(0,0,0,0.07);
     border: 2px solid transparent;
   }
-  .bg-card.primary { border-color: #FF6600; }
+  .bg-card.primary { border-color: #E0641E; }
   .bg-tag {
     font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-    color: #DB5800; margin-bottom: 12px;
+    color: #C45213; margin-bottom: 12px;
   }
   .bg-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
   .bg-card p  { font-size: 12px; color: #5A554C; line-height: 1.5; }
@@ -139,10 +139,10 @@
     <div class="section-label">Primary Palette</div>
     <div class="swatches">
       <div class="swatch">
-        <div class="swatch-color" style="background:#FF6600;"></div>
+        <div class="swatch-color" style="background:#E0641E;"></div>
         <div class="swatch-info">
           <div class="swatch-name">Sun</div>
-          <div class="swatch-hex">#FF6600</div>
+          <div class="swatch-hex">#E0641E</div>
           <div class="swatch-role">Primary accent</div>
         </div>
       </div>
@@ -155,10 +155,10 @@
         </div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background:#DB5800;"></div>
+        <div class="swatch-color" style="background:#C45213;"></div>
         <div class="swatch-info">
           <div class="swatch-name">Sun Deep</div>
-          <div class="swatch-hex">#DB5800</div>
+          <div class="swatch-hex">#C45213</div>
           <div class="swatch-role">CTAs / links</div>
         </div>
       </div>
@@ -274,17 +274,17 @@
     <div class="section-label">Key Gradients</div>
     <div class="grad-row">
       <div class="grad-card">
-        <div class="grad-preview" style="background:linear-gradient(135deg,#FF6600,#DB5800);"></div>
+        <div class="grad-preview" style="background:linear-gradient(135deg,#E0641E,#C45213);"></div>
         <div class="grad-info">
           <div class="grad-name">CTA / Button</div>
-          <div class="grad-css">135deg, #FF6600 → #DB5800</div>
+          <div class="grad-css">135deg, #E0641E → #C45213</div>
         </div>
       </div>
       <div class="grad-card">
-        <div class="grad-preview" style="background:radial-gradient(ellipse at 35% 35%,#FFF3CD 0%,#CC9900 40%,#FF6600 70%,#DB5800 100%);"></div>
+        <div class="grad-preview" style="background:radial-gradient(ellipse at 35% 35%,#FFF3CD 0%,#CC9900 40%,#E0641E 70%,#C45213 100%);"></div>
         <div class="grad-info">
           <div class="grad-name">Sun Orb</div>
-          <div class="grad-css">radial, #FFF3CD → #CC9900 → #FF6600 → #DB5800</div>
+          <div class="grad-css">radial, #FFF3CD → #CC9900 → #E0641E → #C45213</div>
         </div>
       </div>
       <div class="grad-card">
@@ -322,7 +322,7 @@
     </div>
     <div class="type-row">
       <div class="type-label">Label / Tag</div>
-      <div class="type-sample" style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#DB5800;background:#FFEDD0;padding:4px 12px;border-radius:20px;border:1px solid rgba(255,102,0,0.3);">☀ AI PLATFORM</div>
+      <div class="type-sample" style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C45213;background:#FFEDD0;padding:4px 12px;border-radius:20px;border:1px solid rgba(224,100,30,0.3);">☀ AI PLATFORM</div>
       <div class="type-spec">Inter 700 · Uppercase · Sun Deep</div>
     </div>
   </div>
@@ -334,10 +334,10 @@
       <div class="usage-card">
         <h4>Artwork Elements</h4>
         <ul>
-          <li>Icons &amp; highlights → Sun #FF6600</li>
+          <li>Icons &amp; highlights → Sun #E0641E</li>
           <li>Logo, headings → Navy #1E1A14</li>
           <li>".ai" suffix → Sky #2A231B</li>
-          <li>Links, URLs → Sun Deep #DB5800</li>
+          <li>Links, URLs → Sun Deep #C45213</li>
           <li>Tagline text → Text Muted #5A554C</li>
           <li>Background → #FFF5DD</li>
         </ul>
@@ -345,8 +345,8 @@
       <div class="usage-card">
         <h4>Icon Circles</h4>
         <ul>
-          <li>Discovery → Sun #FF6600</li>
-          <li>Strategy → Sun Deep #DB5800</li>
+          <li>Discovery → Sun #E0641E</li>
+          <li>Strategy → Sun Deep #C45213</li>
           <li>Collaboration → Sky #2A231B</li>
           <li>Governance → Navy #1E1A14</li>
           <li>Icon glyphs → always White</li>
@@ -404,7 +404,7 @@
   </div>
 </section>
 <style>
-  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(255,102,0,0.15); border-bottom:1px solid rgba(255,102,0,0.15); padding:28px 0; overflow:hidden; }
+  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(224,100,30,0.15); border-bottom:1px solid rgba(224,100,30,0.15); padding:28px 0; overflow:hidden; }
   .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
   .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#5A554C; flex-shrink:0; min-width:140px; }
   .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); }

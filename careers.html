@@ -22,9 +22,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
   :root {
-    --sun:        #FF6600;
+    --sun:        #E0641E;
     --sun-bright: #CC9900;
-    --sun-deep:   #DB5800;
+    --sun-deep:   #C45213;
     --sun-pale:   #FFEDD0;
     --sky:        #2A231B;
     --sky-mid:    #2A231B;
@@ -33,7 +33,7 @@
     --navy-mid:   #2A231B;
     --green:      #2A231B;
     --green-light:#F2EFE7;
-    --logo-green:  #FF6600;
+    --logo-green:  #E0641E;
     --logo-pale:   #FFF8EC;
     --bg:         #FFF5DD;
     --bg2:        #FFEFCE;
@@ -41,8 +41,8 @@
     --text:       #3A3A3A;
     --text-mid:   #3A3A3A;
     --text-muted: #5A554C;
-    --border:     rgba(255,102,0,0.2);
-    --card-shadow:0 4px 24px rgba(255,102,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
+    --border:     rgba(224,100,30,0.2);
+    --card-shadow:0 4px 24px rgba(224,100,30,0.08), 0 1px 4px rgba(0,0,0,0.06);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
@@ -57,7 +57,7 @@
   .section { padding:100px 0; }
   .section-tag {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.3);
+    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.3);
     color:var(--sun-deep); font-size:11px; font-weight:700;
     letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
     border-radius:20px; margin-bottom:20px;
@@ -93,8 +93,8 @@
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
     background:#1E1A14; backdrop-filter:blur(16px);
-    border-bottom:1px solid rgba(255,102,0,0.15);
-    box-shadow:0 1px 20px rgba(255,102,0,0.08);
+    border-bottom:1px solid rgba(224,100,30,0.15);
+    box-shadow:0 1px 20px rgba(224,100,30,0.08);
     overflow:visible;
   }
   .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
@@ -105,9 +105,9 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
     font-size:14px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 4px 14px rgba(255,102,0,0.4); display:inline-block;
+    box-shadow:0 4px 14px rgba(224,100,30,0.4); display:inline-block;
   }
-  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,102,0,0.5); }
+  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(224,100,30,0.5); }
 
   /* ─── HERO ─── */
   @keyframes heroBgBreath {
@@ -135,7 +135,7 @@
   .hero-sun-glow {
     position:absolute; top:-120px; right:-80px; width:600px; height:600px;
     border-radius:50%;
-    background:radial-gradient(ellipse, rgba(204,153,0,0.35) 0%, rgba(255,102,0,0.12) 45%, transparent 70%);
+    background:radial-gradient(ellipse, rgba(204,153,0,0.35) 0%, rgba(224,100,30,0.12) 45%, transparent 70%);
     pointer-events:none;
     animation:heroFloat1 10s ease-in-out infinite;
   }
@@ -146,7 +146,7 @@
   .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; width:100%; }
   .hero-eyebrow {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.4);
+    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.4);
     color:var(--sun-deep); font-size:11px; font-weight:700;
     letter-spacing:2.5px; text-transform:uppercase; padding:6px 16px;
     border-radius:20px; margin-bottom:24px;
@@ -168,9 +168,9 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:16px 30px; border-radius:10px;
     font-size:15px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 6px 20px rgba(255,102,0,0.4); display:inline-block;
+    box-shadow:0 6px 20px rgba(224,100,30,0.4); display:inline-block;
   }
-  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(255,102,0,0.5); }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(224,100,30,0.5); }
   .btn-secondary {
     background:transparent; color:var(--navy); font-weight:600;
     padding:16px 30px; border-radius:10px; font-size:15px;
@@ -183,18 +183,18 @@
   .sun-visual { position:relative; display:flex; align-items:center; justify-content:center; }
   .sun-orb {
     width:320px; height:320px; border-radius:50%;
-    background:radial-gradient(ellipse at 35% 35%, #FFF3CD 0%, #CC9900 40%, #FF6600 70%, #DB5800 100%);
+    background:radial-gradient(ellipse at 35% 35%, #FFF3CD 0%, #CC9900 40%, #E0641E 70%, #C45213 100%);
     box-shadow: 0 0 0 20px rgba(204,153,0,0.12),
                 0 0 0 50px rgba(204,153,0,0.07),
                 0 0 0 90px rgba(204,153,0,0.04),
-                0 20px 80px rgba(255,102,0,0.35);
+                0 20px 80px rgba(224,100,30,0.35);
     position:relative; z-index:2;
     animation:sunPulse 4s ease-in-out infinite;
     display:flex; align-items:center; justify-content:center;
   }
   @keyframes sunPulse {
-    0%,100%{box-shadow:0 0 0 20px rgba(204,153,0,0.12),0 0 0 50px rgba(204,153,0,0.07),0 0 0 90px rgba(204,153,0,0.04),0 20px 80px rgba(255,102,0,0.35);}
-    50%{box-shadow:0 0 0 30px rgba(204,153,0,0.15),0 0 0 70px rgba(204,153,0,0.09),0 0 0 120px rgba(204,153,0,0.05),0 20px 100px rgba(255,102,0,0.4);}
+    0%,100%{box-shadow:0 0 0 20px rgba(204,153,0,0.12),0 0 0 50px rgba(204,153,0,0.07),0 0 0 90px rgba(204,153,0,0.04),0 20px 80px rgba(224,100,30,0.35);}
+    50%{box-shadow:0 0 0 30px rgba(204,153,0,0.15),0 0 0 70px rgba(204,153,0,0.09),0 0 0 120px rgba(204,153,0,0.05),0 20px 100px rgba(224,100,30,0.4);}
   }
   .sun-rays-svg { position:absolute; width:500px; height:500px; animation:rotateSun 40s linear infinite; z-index:1; }
   .sun-inner-text { text-align:center; z-index:3; }
@@ -223,9 +223,9 @@
     height:5px;
     background:linear-gradient(90deg,
       transparent 0%,
-      #FF6600 18%,
+      #E0641E 18%,
       #1E1A14 50%,
-      #FF6600 82%,
+      #E0641E 82%,
       transparent 100%
     );
     position:relative; z-index:2; overflow:visible;
@@ -253,11 +253,11 @@
     background:white; border:1px solid var(--border); border-radius:16px;
     padding:28px; transition:all .3s; box-shadow:var(--card-shadow);
   }
-  .card:hover { border-color:rgba(255,102,0,0.4); transform:translateY(-5px); box-shadow:0 12px 40px rgba(255,102,0,0.14); }
+  .card:hover { border-color:rgba(224,100,30,0.4); transform:translateY(-5px); box-shadow:0 12px 40px rgba(224,100,30,0.14); }
   .card-icon {
     width:48px; height:48px; border-radius:12px;
-    background:linear-gradient(135deg,var(--sun-pale),rgba(255,102,0,0.1));
-    border:1px solid rgba(255,102,0,0.25);
+    background:linear-gradient(135deg,var(--sun-pale),rgba(224,100,30,0.1));
+    border:1px solid rgba(224,100,30,0.25);
     display:flex; align-items:center; justify-content:center;
     margin-bottom:18px; font-size:22px;
   }
@@ -322,9 +322,9 @@
   .nav-dropdown:hover > a::after { transform:rotate(180deg); }
   .nav-dropdown-menu {
     position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-6px);
-    background:white; border:1px solid rgba(255,102,0,0.2);
+    background:white; border:1px solid rgba(224,100,30,0.2);
     border-radius:12px; padding:6px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(255,102,0,0.08);
+    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(224,100,30,0.08);
     min-width:160px; opacity:0; visibility:hidden;
     transition:opacity .2s, transform .2s, visibility .2s;
     z-index:200;
@@ -338,7 +338,7 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
-  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(255,102,0,0.1); margin:4px 8px; }
+  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
 
   /* ─── SCROLL TO TOP ─── */
   #scroll-top {
@@ -347,12 +347,12 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:white; border:none; cursor:pointer;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 16px rgba(255,102,0,0.45);
+    box-shadow:0 4px 16px rgba(224,100,30,0.45);
     opacity:0; visibility:hidden; transform:translateY(12px);
     transition:opacity .3s, visibility .3s, transform .3s;
   }
   #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
-  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(255,102,0,0.55); }
+  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(224,100,30,0.55); }
   #scroll-top svg { width:18px; height:18px; }
 
   /* ════ MOBILE RESPONSIVE ════ */
@@ -361,7 +361,7 @@
   .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
   .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
   .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,102,0,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(224,100,30,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
   #nxs-mob-nav a:hover{color:var(--sun-deep);}
   #nxs-mob-nav a:last-child{border-bottom:none;}
   @media(max-width:960px){
@@ -471,7 +471,7 @@
 
   /* ─── LOGO GREEN ACCENTS ─── */
   .section-tag.gtag {
-    background:var(--logo-pale); border-color:rgba(255,102,0,0.3); color:var(--green);
+    background:var(--logo-pale); border-color:rgba(224,100,30,0.3); color:var(--green);
   }
   .section-tag.gtag::before { content:'◆'; font-size:9px; }
   .section-heading .gspan { color:var(--logo-green); }
@@ -490,7 +490,7 @@
     .job-tag { display:inline-block; font-size:11px; font-weight:700; padding:4px 10px; border-radius:20px; letter-spacing:.5px; }
     .tag-full { background:#FBF4E6; color:#1E1A14; }
     .tag-remote { background:#F2EFE7; color:#9A6A0E; }
-    .tag-contract { background:#FFEDD0; color:#DB5800; }
+    .tag-contract { background:#FFEDD0; color:#C45213; }
     .value-card { background:#FCF9F2; border:1px solid rgba(30,26,20,0.08); border-radius:16px; padding:32px 28px; }
     .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
     .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
@@ -521,6 +521,7 @@
         <a href="platform.html">Platform</a>
         <div class="nav-dropdown-menu">
           <a href="platform.html">Platform Overview</a>
+          <a href="how-it-works.html">How It Works</a>
           <div class="menu-divider"></div>
           <a href="modules.html">Modules</a>
           <a href="technology.html">Technology</a>
@@ -528,7 +529,7 @@
           <a href="trust.html">Trust Centre</a>
         </div>
       </div>
-      <a href="how-it-works.html">How It Works</a>
+      
       <div class="nav-dropdown">
         <a href="industries.html">Industries</a>
         <div class="nav-dropdown-menu">
@@ -544,11 +545,13 @@
       <div class="nav-dropdown">
         <a href="blog.html">Resources</a>
         <div class="nav-dropdown-menu">
-          <a href="blog.html">Industry Insights</a>
+          <div class="menu-label">Industry Insights</div>
+          <a href="blog.html">Blog</a>
           <a href="videos.html">Videos</a>
           <a href="resources.html">Knowledge Center</a>
           <div class="menu-divider"></div>
-          <a href="community.html">Community</a>
+          <div class="menu-label">Community</div>
+          <a href="community.html">Overview</a>
           <a href="community.html#events">Events</a>
           <a href="community.html#social">Social Media</a>
         </div>
@@ -568,35 +571,35 @@
     </div>
 </nav>
 <!-- ══ MOBILE NAV PANEL ══ -->
-<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #FF6600;">
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #E0641E;">
   <a href="platform.html">Platform</a>
   <a href="how-it-works.html">How It Works</a>
   <a href="industries.html">Industries</a>
   <a href="why-twosuns.html">Why TwoSuns</a>
   <a href="about.html">Company</a>
-  <a href="blog.html">Industry Insights</a>
+  <a href="blog.html">Blog</a>
   <a href="videos.html">Videos</a>
   <a href="resources.html">Knowledge Center</a>
   <a href="community.html">Community</a>
   <a href="investors.html">Investor Centre</a>
   <a href="partners.html">Partner Centre</a>
   <a href="trust.html">Trust Centre</a>
-  <a href="engage.html" style="color:#FF6600;font-weight:700;">Engage</a>
+  <a href="engage.html" style="color:#E0641E;font-weight:700;">Engage</a>
 </div>
 
 <!-- ══ HERO ══ -->
 <section class="career-hero">
   <canvas id="car-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
-  <div style="position:absolute;top:-100px;right:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,102,0,0.15) 0%,transparent 65%);pointer-events:none;"></div>
-  <div style="position:absolute;bottom:-80px;left:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,102,0,0.1) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="position:absolute;top:-100px;right:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(ellipse,rgba(224,100,30,0.15) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-80px;left:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(ellipse,rgba(224,100,30,0.1) 0%,transparent 65%);pointer-events:none;"></div>
   <div class="container" style="position:relative;z-index:2;">
     <div style="max-width:780px;">
-      <div class="section-tag" style="background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.35);color:var(--sun);">Careers at TwoSuns</div>
-      <h1 style="font-size:clamp(38px,5.5vw,64px);font-weight:900;color:#FFFFFF;line-height:1.08;letter-spacing:-2px;margin:14px 0 24px;">Build the Future of <span style="color:#FF6600;">Operational Intelligence</span></h1>
+      <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:var(--sun);">Careers at TwoSuns</div>
+      <h1 style="font-size:clamp(38px,5.5vw,64px);font-weight:900;color:#FFFFFF;line-height:1.08;letter-spacing:-2px;margin:14px 0 24px;">Build the Future of <span style="color:#E0641E;">Operational Intelligence</span></h1>
       <p style="font-size:18px;color:rgba(255,255,255,0.82);line-height:1.75;max-width:660px;margin-bottom:18px;">We're building the intelligence layer that helps organizations make better decisions, coordinate execution, and unlock the full value of AI. At TwoSuns, you'll work alongside experienced software builders, industry experts, and AI innovators, solving some of the most complex challenges facing industrial organizations.</p>
       <p style="font-size:18px;color:rgba(255,255,255,0.82);line-height:1.75;max-width:660px;margin-bottom:40px;">Join us in shaping the future of enterprise decision-making.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;">
-        <a href="mailto:careers@twosuns.ai" style="background:#FF6600;color:#FFFFFF;padding:16px 32px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:opacity .2s,transform .2s;" onmouseover="this.style.opacity='.88';this.style.transform='translateY(-2px)'" onmouseout="this.style.opacity='1';this.style.transform=''">View Open Roles &rarr;</a>
+        <a href="mailto:careers@twosuns.ai" style="background:#E0641E;color:#FFFFFF;padding:16px 32px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:opacity .2s,transform .2s;" onmouseover="this.style.opacity='.88';this.style.transform='translateY(-2px)'" onmouseout="this.style.opacity='1';this.style.transform=''">View Open Roles &rarr;</a>
         <a href="#open-roles" style="background:rgba(255,255,255,0.1);color:#FFFFFF;padding:16px 32px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,0.25);transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">See where you fit</a>
       </div>
     </div>
@@ -647,7 +650,7 @@
 <!-- ══ EMPLOYEE PROMISE ══ -->
 <section class="section" style="background:linear-gradient(160deg,#16120D 0%,#1E1A14 100%);color:#FFFFFF;">
   <div class="container" style="max-width:880px;text-align:center;">
-    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.35);color:var(--sun);">Employee Promise</div>
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:var(--sun);">Employee Promise</div>
     <p style="font-size:clamp(20px,2.6vw,30px);font-weight:800;color:#FFFFFF;line-height:1.45;margin:0;">At TwoSuns, you won't be one of thousands of employees. You'll help shape our products, influence our direction, and build technology that changes how organizations operate.</p>
   </div>
 </section>
@@ -678,7 +681,7 @@
         <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;">Trust and Accountability</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin:0;">We do what we say, own our work, and support each other.</p>
       </div>
-      <div class="value-card" style="background:linear-gradient(135deg,var(--sun-pale),rgba(255,102,0,0.08));border-color:rgba(255,102,0,0.25);display:flex;align-items:center;">
+      <div class="value-card" style="background:linear-gradient(135deg,var(--sun-pale),rgba(224,100,30,0.08));border-color:rgba(224,100,30,0.25);display:flex;align-items:center;">
         <p style="font-size:15px;color:var(--text-mid);line-height:1.7;margin:0;font-weight:600;">A values-driven culture is increasingly important for technology talent, and a hallmark of successful technology employers.</p>
       </div>
     </div>
@@ -691,28 +694,28 @@
     <div class="section-tag">What We Work On</div>
     <h2 class="section-heading">At TwoSuns, you'll help build <span>technologies that</span></h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-top:36px;">
-      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,102,0,0.12);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(224,100,30,0.12);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Coordinate enterprise decision-making</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,102,0,0.12);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(224,100,30,0.12);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Connect data, systems, and people</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,102,0,0.12);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(224,100,30,0.12);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Enable explainable AI</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,102,0,0.12);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(224,100,30,0.12);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Improve operational performance</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,102,0,0.12);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(224,100,30,0.12);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Preserve organizational knowledge</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,102,0,0.12);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(224,100,30,0.12);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Transform industrial operations through intelligence</span>
       </div>
     </div>
@@ -726,27 +729,27 @@
     <h2 class="section-heading">You may be a <span>great fit if you</span></h2>
     <div style="display:grid;gap:12px;margin-top:36px;">
       <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Love solving complex problems.</span>
       </div>
       <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Enjoy building new things.</span>
       </div>
       <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Are comfortable with ambiguity and change.</span>
       </div>
       <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Want to have an outsized impact.</span>
       </div>
       <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Believe technology should augment human expertise, not replace it.</span>
       </div>
       <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB5800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Are excited about the future of AI and enterprise software.</span>
       </div>
     </div>
@@ -760,12 +763,12 @@
     <h2 class="section-heading">Do the best work <span>of your career</span></h2>
     <p style="color:var(--text-muted);font-size:17px;line-height:1.8;margin-bottom:8px;">We're building a company where talented people can do the best work of their careers. We value:</p>
     <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;">
-      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(255,102,0,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Flexibility</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(255,102,0,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Continuous learning</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(255,102,0,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Entrepreneurship</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(255,102,0,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Collaboration</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(255,102,0,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Respect and inclusion</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(255,102,0,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Work with purpose</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(224,100,30,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Flexibility</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(224,100,30,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Continuous learning</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(224,100,30,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Entrepreneurship</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(224,100,30,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Collaboration</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(224,100,30,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Respect and inclusion</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--sun-pale);border:1px solid rgba(224,100,30,0.25);color:var(--navy);font-size:15px;font-weight:600;padding:10px 20px;border-radius:30px;">Work with purpose</span>
     </div>
   </div>
 </section>
@@ -804,19 +807,19 @@
 <!-- ══ FINAL CTA ══ -->
 <section class="section" style="background:linear-gradient(135deg,#16120D,#1E1A14);text-align:center;">
   <div class="container">
-    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.35);color:var(--sun);">Join Us</div>
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:var(--sun);">Join Us</div>
     <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;color:#FFFFFF;margin-bottom:16px;letter-spacing:-1px;line-height:1.15;">Help Build the Future of <span style="color:var(--sun);">Enterprise Intelligence</span></h2>
     <p style="font-size:17px;color:rgba(255,255,255,0.78);margin:0 auto 12px;max-width:620px;line-height:1.7;">We're on a mission to transform how organizations strategize, decide, and execute. If you're excited about AI, enterprise software, and solving complex challenges, we'd love to hear from you.</p>
     <p style="font-size:17px;color:rgba(255,255,255,0.78);margin:0 auto 36px;max-width:620px;line-height:1.7;">Join us and help build what's next.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-      <a href="mailto:careers@twosuns.ai" style="background:#FF6600;color:#FFFFFF;padding:16px 36px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;display:inline-block;transition:opacity .2s,transform .2s;" onmouseover="this.style.opacity='.88';this.style.transform='translateY(-2px)'" onmouseout="this.style.opacity='1';this.style.transform=''">View Opportunities &rarr;</a>
+      <a href="mailto:careers@twosuns.ai" style="background:#E0641E;color:#FFFFFF;padding:16px 36px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;display:inline-block;transition:opacity .2s,transform .2s;" onmouseover="this.style.opacity='.88';this.style.transform='translateY(-2px)'" onmouseout="this.style.opacity='1';this.style.transform=''">View Opportunities &rarr;</a>
       <a href="contact.html" style="background:transparent;color:#FFFFFF;padding:16px 36px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,0.3);display:inline-block;transition:background .2s,border-color .2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)';this.style.borderColor='rgba(255,255,255,0.6)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(255,255,255,0.3)'">Contact Us</a>
     </div>
   </div>
 </section>
 
 <!-- ══ EU APPLICANT PRIVACY NOTE ══ -->
-<section style="background:var(--bg);padding:40px 0;border-top:1px solid rgba(255,102,0,0.15);">
+<section style="background:var(--bg);padding:40px 0;border-top:1px solid rgba(224,100,30,0.15);">
   <div class="container" style="max-width:880px;">
     <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin:0;text-align:center;">TwoSuns collects and processes personal data in accordance with applicable data protection laws. If you are a European Job Applicant, see the <a href="privacy.html" style="color:var(--sun-deep);font-weight:600;">privacy notice</a> for further details.</p>
   </div>
@@ -842,7 +845,7 @@
   </div>
 </section>
 <style>
-  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(255,102,0,0.15); border-bottom:1px solid rgba(255,102,0,0.15); padding:28px 0; overflow:hidden; }
+  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(224,100,30,0.15); border-bottom:1px solid rgba(224,100,30,0.15); padding:28px 0; overflow:hidden; }
   .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
   .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#5A554C; flex-shrink:0; min-width:140px; }
   .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); }
@@ -894,7 +897,6 @@
           <li><a href="blog.html">Use Cases</a></li>
           <li><a href="blog.html">Platform Briefs</a></li>
           <li><a href="blog.html">Case Studies</a></li>
-          <li><a href="blog.html">Events &amp; Media</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -903,8 +905,7 @@
         <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:info@twosuns.ai" style="color:var(--sun-bright)">info@twosuns.ai</a></div>
         <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:invest@twosuns.ai" style="color:var(--sun-bright)">invest@twosuns.ai</a></div>
         <div class="footer-contact-item" style="padding-top:6px;"><a href="tel:6047609015">1-604-760-9015</a></div>
-        <div class="footer-contact-item" style="margin-top:8px;"><a href="https://AEPG.ca">AEPG.ca &#8599;</a></div>
-        <div class="footer-contact-item"><a href="https://TwoSuns">TwoSuns &#8599;</a></div>
+        <div class="footer-contact-item"><a href="https://twosuns.ai">TwoSuns &#8599;</a></div>
       </div>
     </div>
 
@@ -951,8 +952,9 @@
         <a href="privacy.html">Privacy Policy</a>
         <a href="cookies.html">Cookie Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="trust.html">Trust Centre</a>
       </div>
-      <p>&#995A11; 2026 TwoSuns. All rights reserved.</p>
+      <p>&#169; 2026 TwoSuns. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -985,7 +987,7 @@ function toggleMobNav(){
     pts.push({x:Math.random()*c.width,y:Math.random()*c.height,
       vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,
       r:Math.random()*2.2+.8,
-      col:Math.random()>.55?'rgba(255,102,0,0.7)':'rgba(255,102,0,0.5)'});
+      col:Math.random()>.55?'rgba(224,100,30,0.7)':'rgba(224,100,30,0.5)'});
   }
   function draw(){
     ctx.clearRect(0,0,c.width,c.height);

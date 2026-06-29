@@ -42,9 +42,9 @@
 </script>
 <style>
   :root {
-    --sun:        #FF6600;
+    --sun:        #E0641E;
     --sun-bright: #CC9900;
-    --sun-deep:   #DB5800;
+    --sun-deep:   #C45213;
     --sun-pale:   #FFEDD0;
     --sky:        #2A231B;
     --sky-mid:    #2A231B;
@@ -53,7 +53,7 @@
     --navy-mid:   #2A231B;
     --green:      #2A231B;
     --green-light:#F2EFE7;
-    --logo-green:  #FF6600;
+    --logo-green:  #E0641E;
     --logo-pale:   #FFF8EC;
     --bg:         #FFF5DD;
     --bg2:        #FFEFCE;
@@ -61,8 +61,8 @@
     --text:       #3A3A3A;
     --text-mid:   #3A3A3A;
     --text-muted: #5A554C;
-    --border:     rgba(255,102,0,0.2);
-    --card-shadow:0 4px 24px rgba(255,102,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
+    --border:     rgba(224,100,30,0.2);
+    --card-shadow:0 4px 24px rgba(224,100,30,0.08), 0 1px 4px rgba(0,0,0,0.06);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
@@ -77,7 +77,7 @@
   .section { padding:100px 0; }
   .section-tag {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.3);
+    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.3);
     color:var(--sun-deep); font-size:11px; font-weight:700;
     letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
     border-radius:20px; margin-bottom:20px;
@@ -109,8 +109,8 @@
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
     background:#1E1A14; backdrop-filter:blur(16px);
-    border-bottom:1px solid rgba(255,102,0,0.15);
-    box-shadow:0 1px 20px rgba(255,102,0,0.08);
+    border-bottom:1px solid rgba(224,100,30,0.15);
+    box-shadow:0 1px 20px rgba(224,100,30,0.08);
     overflow:visible;
   }
   .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
@@ -121,9 +121,9 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
     font-size:14px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 4px 14px rgba(255,102,0,0.4); display:inline-block;
+    box-shadow:0 4px 14px rgba(224,100,30,0.4); display:inline-block;
   }
-  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,102,0,0.5); }
+  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(224,100,30,0.5); }
 
   /* NAV DROPDOWN */
   .nav-dropdown { position:relative; display:flex; align-items:center; }
@@ -134,9 +134,9 @@
   .nav-dropdown:hover > a::after { transform:rotate(180deg); }
   .nav-dropdown-menu {
     position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-6px);
-    background:white; border:1px solid rgba(255,102,0,0.2);
+    background:white; border:1px solid rgba(224,100,30,0.2);
     border-radius:12px; padding:6px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(255,102,0,0.08);
+    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(224,100,30,0.08);
     min-width:160px; opacity:0; visibility:hidden;
     transition:opacity .2s, transform .2s, visibility .2s;
     z-index:200;
@@ -150,7 +150,8 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
-  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(255,102,0,0.1); margin:4px 8px; }
+  .nav-dropdown-menu .menu-label { font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); padding:7px 16px 3px; opacity:0.7; pointer-events:none; }
+  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
 
   /* MOBILE NAV */
   .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;margin-left:auto;flex-shrink:0;}
@@ -158,7 +159,7 @@
   .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
   .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
   .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,102,0,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(224,100,30,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
   #nxs-mob-nav a:hover{color:var(--sun-deep);}
   #nxs-mob-nav a:last-child{border-bottom:none;}
 
@@ -169,12 +170,12 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:white; border:none; cursor:pointer;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 16px rgba(255,102,0,0.45);
+    box-shadow:0 4px 16px rgba(224,100,30,0.45);
     opacity:0; visibility:hidden; transform:translateY(12px);
     transition:opacity .3s, visibility .3s, transform .3s;
   }
   #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
-  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(255,102,0,0.55); }
+  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(224,100,30,0.55); }
   #scroll-top svg { width:18px; height:18px; }
 
   /* FOOTER */
@@ -221,7 +222,7 @@
   /* DIVIDER */
   .sun-divider {
     height:5px;
-    background:linear-gradient(90deg, transparent 0%, #FF6600 18%, #1E1A14 50%, #FF6600 82%, transparent 100%);
+    background:linear-gradient(90deg, transparent 0%, #E0641E 18%, #1E1A14 50%, #E0641E 82%, transparent 100%);
     position:relative; z-index:2; overflow:visible;
   }
 
@@ -230,9 +231,9 @@
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:16px 30px; border-radius:10px;
     font-size:15px; border:none; cursor:pointer; transition:all .2s;
-    box-shadow:0 6px 20px rgba(255,102,0,0.4); display:inline-block;
+    box-shadow:0 6px 20px rgba(224,100,30,0.4); display:inline-block;
   }
-  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(255,102,0,0.5); }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(224,100,30,0.5); }
   .btn-secondary {
     background:transparent; color:var(--navy); font-weight:600;
     padding:16px 30px; border-radius:10px; font-size:15px;
@@ -270,7 +271,7 @@
   .page-hero .container { position:relative; z-index:1; }
   .page-hero-eyebrow {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(255,102,0,0.4);
+    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.4);
     color:var(--sun-deep); font-size:11px; font-weight:700;
     letter-spacing:2.5px; text-transform:uppercase; padding:6px 16px;
     border-radius:20px; margin-bottom:24px;
@@ -296,7 +297,7 @@
     padding:28px 24px; text-align:center; box-shadow:var(--card-shadow);
     transition:all .3s;
   }
-  .category-card:hover { border-color:rgba(255,102,0,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(255,102,0,0.14); }
+  .category-card:hover { border-color:rgba(224,100,30,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(224,100,30,0.14); }
   .category-card-icon { font-size:32px; margin-bottom:14px; }
   .category-card h3 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px; }
   .category-card p { font-size:13px; color:var(--text-muted); line-height:1.7; }
@@ -318,7 +319,7 @@
   .diff-content {}
   .diff-content .section-tag-dark {
     display:inline-flex; align-items:center; gap:8px;
-    background:rgba(255,102,0,0.15); border:1px solid rgba(255,102,0,0.3);
+    background:rgba(224,100,30,0.15); border:1px solid rgba(224,100,30,0.3);
     color:var(--sun-bright); font-size:11px; font-weight:700;
     letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
     border-radius:20px; margin-bottom:20px;
@@ -345,7 +346,7 @@
   .diff-section.light .diff-content p { color:var(--text-mid); }
   .diff-section.light .diff-content ul li { color:var(--text-mid); }
   .diff-section.light .diff-content ul li::before { background:var(--sun-deep); }
-  .diff-section.light .diff-visual { background:linear-gradient(135deg,var(--sun-pale),rgba(255,102,0,0.05)); border:1px solid rgba(255,102,0,0.2); }
+  .diff-section.light .diff-visual { background:linear-gradient(135deg,var(--sun-pale),rgba(224,100,30,0.05)); border:1px solid rgba(224,100,30,0.2); }
   .diff-section.light .diff-visual-label { color:var(--navy); }
 
   /* DARK DIFF */
@@ -353,7 +354,7 @@
   .diff-section.dark .diff-content p { color:rgba(255,255,255,0.75); }
   .diff-section.dark .diff-content ul li { color:rgba(255,255,255,0.7); }
   .diff-section.dark .diff-content ul li::before { background:var(--sun); }
-  .diff-section.dark .diff-visual { background:rgba(255,255,255,0.04); border:1px solid rgba(255,102,0,0.15); }
+  .diff-section.dark .diff-visual { background:rgba(255,255,255,0.04); border:1px solid rgba(224,100,30,0.15); }
   .diff-section.dark .diff-visual-label { color:rgba(255,255,255,0.6); }
 
   /* VISUAL FEATURE BOXES */
@@ -366,11 +367,11 @@
   .feature-box-text { font-size:13px; font-weight:600; }
 
   /* LIGHT feature boxes */
-  .diff-section.light .feature-box { background:white; border:1px solid rgba(255,102,0,0.2); }
+  .diff-section.light .feature-box { background:white; border:1px solid rgba(224,100,30,0.2); }
   .diff-section.light .feature-box-text { color:var(--navy); }
 
   /* DARK feature boxes */
-  .diff-section.dark .feature-box { background:rgba(255,255,255,0.06); border:1px solid rgba(255,102,0,0.15); }
+  .diff-section.dark .feature-box { background:rgba(255,255,255,0.06); border:1px solid rgba(224,100,30,0.15); }
   .diff-section.dark .feature-box-text { color:rgba(255,255,255,0.85); }
 
   /* COMPARISON TABLE */
@@ -380,27 +381,27 @@
   .comp-table-wrap { overflow-x:auto; margin-top:48px; border-radius:16px; }
   .comp-table {
     width:100%; border-collapse:collapse; background:rgba(255,255,255,0.03);
-    border:1px solid rgba(255,102,0,0.15); border-radius:16px; overflow:hidden;
+    border:1px solid rgba(224,100,30,0.15); border-radius:16px; overflow:hidden;
   }
   .comp-table th {
-    background:rgba(255,102,0,0.12); padding:16px 20px;
+    background:rgba(224,100,30,0.12); padding:16px 20px;
     font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-    color:var(--sun-bright); text-align:left; border-bottom:1px solid rgba(255,102,0,0.2);
+    color:var(--sun-bright); text-align:left; border-bottom:1px solid rgba(224,100,30,0.2);
     white-space:nowrap;
   }
   .comp-table th:first-child { color:rgba(255,255,255,0.5); background:rgba(255,255,255,0.04); }
-  .comp-table th.highlight { background:rgba(255,102,0,0.2); border-left:2px solid rgba(255,102,0,0.4); }
+  .comp-table th.highlight { background:rgba(224,100,30,0.2); border-left:2px solid rgba(224,100,30,0.4); }
   .comp-table td {
     padding:14px 20px; font-size:14px; color:rgba(255,255,255,0.7);
     border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:top;
     line-height:1.5;
   }
   .comp-table td:first-child { font-weight:600; color:rgba(255,255,255,0.85); background:rgba(255,255,255,0.02); }
-  .comp-table td.highlight { background:rgba(255,102,0,0.06); color:rgba(255,255,255,0.9); border-left:2px solid rgba(255,102,0,0.25); }
+  .comp-table td.highlight { background:rgba(224,100,30,0.06); color:rgba(255,255,255,0.9); border-left:2px solid rgba(224,100,30,0.25); }
   .comp-table td.highlight.strong { color:var(--sun-bright); font-weight:600; }
   .comp-table tr:last-child td { border-bottom:none; }
   .comp-table tr:hover td { background:rgba(255,255,255,0.03); }
-  .comp-table tr:hover td.highlight { background:rgba(255,102,0,0.1); }
+  .comp-table tr:hover td.highlight { background:rgba(224,100,30,0.1); }
 
   /* OUTCOME SECTION */
   #outcome { background:var(--bg); }
@@ -409,7 +410,7 @@
     background:white; border:1px solid var(--border); border-radius:16px;
     padding:28px 20px; text-align:center; box-shadow:var(--card-shadow); transition:all .3s;
   }
-  .outcome-card:hover { border-color:rgba(255,102,0,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(255,102,0,0.14); }
+  .outcome-card:hover { border-color:rgba(224,100,30,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(224,100,30,0.14); }
   .outcome-card-icon { font-size:32px; margin-bottom:12px; }
   .outcome-card h3 { font-size:15px; font-weight:700; color:var(--navy); }
 
@@ -540,6 +541,7 @@
         <a href="platform.html">Platform</a>
         <div class="nav-dropdown-menu">
           <a href="platform.html">Platform Overview</a>
+          <a href="how-it-works.html">How It Works</a>
           <div class="menu-divider"></div>
           <a href="modules.html">Modules</a>
           <a href="technology.html">Technology</a>
@@ -547,7 +549,7 @@
           <a href="trust.html">Trust Centre</a>
         </div>
       </div>
-      <a href="how-it-works.html">How It Works</a>
+      
       <div class="nav-dropdown">
         <a href="industries.html">Industries</a>
         <div class="nav-dropdown-menu">
@@ -563,11 +565,13 @@
       <div class="nav-dropdown">
         <a href="blog.html">Resources</a>
         <div class="nav-dropdown-menu">
-          <a href="blog.html">Industry Insights</a>
+          <div class="menu-label">Industry Insights</div>
+          <a href="blog.html">Blog</a>
           <a href="videos.html">Videos</a>
           <a href="resources.html">Knowledge Center</a>
           <div class="menu-divider"></div>
-          <a href="community.html">Community</a>
+          <div class="menu-label">Community</div>
+          <a href="community.html">Overview</a>
           <a href="community.html#events">Events</a>
           <a href="community.html#social">Social Media</a>
         </div>
@@ -587,20 +591,20 @@
   </div>
 </nav>
 <!-- MOBILE NAV PANEL -->
-<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #FF6600;">
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #E0641E;">
   <a href="platform.html">Platform</a>
   <a href="how-it-works.html">How It Works</a>
   <a href="industries.html">Industries</a>
   <a href="why-twosuns.html">Why TwoSuns</a>
   <a href="about.html">Company</a>
-  <a href="blog.html">Industry Insights</a>
+  <a href="blog.html">Blog</a>
   <a href="videos.html">Videos</a>
   <a href="resources.html">Knowledge Center</a>
   <a href="community.html">Community</a>
   <a href="investors.html">Investor Centre</a>
   <a href="partners.html">Partner Centre</a>
   <a href="trust.html">Trust Centre</a>
-  <a href="engage.html" style="color:#FF6600;font-weight:700;">Engage</a>
+  <a href="engage.html" style="color:#E0641E;font-weight:700;">Engage</a>
 </div>
 
 <!-- HERO -->
@@ -629,17 +633,17 @@
     </div>
     <div class="category-cards">
       <div class="category-card sustainability-card-animated">
-        <div class="category-card-icon">&#54402B;</div>
+        <div class="category-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Systems of Record (ETRM, CTRM, ERP)</h3>
         <p>Manage data and transactions. Essential for operational accuracy and compliance record-keeping.</p>
       </div>
       <div class="category-card sustainability-card-animated">
-        <div class="category-card-icon">&#4A3826;</div>
+        <div class="category-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Data and Analytics Platforms</h3>
         <p>Aggregate and interpret data. Provide analytical support for understanding historical and predictive trends.</p>
       </div>
       <div class="category-card sustainability-card-animated">
-        <div class="category-card-icon">&#493726;</div>
+        <div class="category-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Workflow and Collaboration Tools</h3>
         <p>Manage processes and communication. Enable teams to coordinate tasks and share information.</p>
       </div>
@@ -666,19 +670,19 @@
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
           <div class="feature-box">
-            <div class="feature-box-icon">&#533F2B;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Continuous data ingestion across global markets</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#9889;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">High-value signal extraction continuously</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#533F2B;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Direct link from signal to decision structure</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#493726;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Execution-ready outputs with full decision context</div>
           </div>
         </div>
@@ -705,19 +709,19 @@
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
           <div class="feature-box">
-            <div class="feature-box-icon">&#533F2B;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">News, policy, logistics, and sentiment data</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#4D3A28;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Global, multi-region market coverage</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#543F2B;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">AI-powered synthesis and pattern recognition</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#533F2B;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Continuous interpretation, not static dashboards</div>
           </div>
         </div>
@@ -744,19 +748,19 @@
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
           <div class="feature-box">
-            <div class="feature-box-icon">&#533F2B;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Full source data traceability</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#523E2A;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Transparent analytical logic</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#9989;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Auditable assumptions and reasoning</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#4C3A27;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Governance and compliance ready</div>
           </div>
         </div>
@@ -784,19 +788,19 @@
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
           <div class="feature-box">
-            <div class="feature-box-icon">&#965812;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Persistent decision logs from signal to outcome</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#533F2B;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Full position and strategy version history</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#493726;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Stakeholder collaboration and approval records</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#874F12;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Institutional memory for future decision-making</div>
           </div>
         </div>
@@ -824,19 +828,19 @@
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
           <div class="feature-box">
-            <div class="feature-box-icon">&#874F12;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Buyer perspective: demand signals and purchase strategy</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#523E2A;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Supplier perspective: capacity, pricing, and risk</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#533F2B;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Intermediary perspective: spread and arbitrage dynamics</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#9878;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Regulator perspective: policy and compliance landscape</div>
           </div>
         </div>
@@ -864,19 +868,19 @@
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
           <div class="feature-box">
-            <div class="feature-box-icon">&#493726;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Trading and commercial strategy</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#874F12;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Risk and portfolio management</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#9881;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Operations and supply chain</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#4E3B28;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Strategy and capital allocation</div>
           </div>
         </div>
@@ -902,19 +906,19 @@
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
           <div class="feature-box">
-            <div class="feature-box-icon">&#54402B;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Operates alongside ETRM, CTRM, ERP, and data platforms</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#493726;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Internal and external collaboration</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#533F2B;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Full traceability and auditability</div>
           </div>
           <div class="feature-box">
-            <div class="feature-box-icon">&#4D3A28;</div>
+            <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Multi-team, multi-region environments</div>
           </div>
         </div>
@@ -929,7 +933,7 @@
 <section id="comparison">
   <div class="container">
     <div style="text-align:center;margin-bottom:8px;">
-      <div class="section-tag" style="background:rgba(255,102,0,0.15);border-color:rgba(255,102,0,0.3);color:var(--sun-bright);">How TwoSuns Compares</div>
+      <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.3);color:var(--sun-bright);">How TwoSuns Compares</div>
       <h2 class="section-heading" style="color:white;text-align:center;">How TwoSuns Compares</h2>
       <p class="section-sub" style="color:rgba(255,255,255,0.7);margin:0 auto;text-align:center;">Modern enterprise stacks are built around data and transactions. TwoSuns introduces the missing layer: decisions.</p>
     </div>
@@ -1008,7 +1012,7 @@
         <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;">Traditional Stack</div>
         <p style="color:rgba(255,255,255,0.8);font-size:15px;line-height:1.7;">Data → Reports → Interpretation → Decision</p>
       </div>
-      <div style="background:rgba(255,102,0,0.1);border-radius:14px;padding:28px;border:1px solid rgba(255,102,0,0.25);">
+      <div style="background:rgba(224,100,30,0.1);border-radius:14px;padding:28px;border:1px solid rgba(224,100,30,0.25);">
         <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:12px;">TwoSuns</div>
         <p style="color:rgba(255,255,255,0.9);font-size:15px;line-height:1.7;">Data → Signals → Structured Decisions → Execution Readiness → Record</p>
       </div>
@@ -1059,15 +1063,15 @@
 
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1080px;margin:0 auto 32px;">
       <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,102,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Customer & Buyer</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How decisions appear from the buying side</p>
       </div>
       <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,102,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><path d="M2 12h6l3-9 4 18 3-9h4"/></svg>
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><path d="M2 12h6l3-9 4 18 3-9h4"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Competitor</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How rivals will read and respond</p>
@@ -1087,15 +1091,15 @@
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How policy and oversight will assess</p>
       </div>
       <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,102,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Operator</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How execution owners will deliver</p>
       </div>
       <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,102,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Investor</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How capital allocators will value</p>
@@ -1108,8 +1112,8 @@
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How teams across functions align</p>
       </div>
       <div style="background:linear-gradient(135deg,#1E1A14,#1A140E);border:1px solid var(--navy);border-radius:14px;padding:22px 18px;text-align:center;color:#FFFFFF;">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,102,0,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(224,100,30,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
         </div>
         <strong style="font-size:14px;color:#CC9900;display:block;margin-bottom:4px;">+ Switch Anytime</strong>
         <p style="font-size:12px;color:rgba(255,255,255,0.7);margin:0;line-height:1.5;">Test the same decision across all lenses</p>
@@ -1132,23 +1136,23 @@
     <p class="section-sub" style="margin:0 auto;">Organizations move from fragmented analysis to structured decision-making.</p>
     <div class="outcome-cards">
       <div class="outcome-card sustainability-card-animated">
-        <div class="outcome-card-icon">&#9889;</div>
+        <div class="outcome-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Faster Insight</h3>
       </div>
       <div class="outcome-card sustainability-card-animated">
-        <div class="outcome-card-icon">&#4E3B28;</div>
+        <div class="outcome-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Clearer Positioning</h3>
       </div>
       <div class="outcome-card sustainability-card-animated">
-        <div class="outcome-card-icon">&#493726;</div>
+        <div class="outcome-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Aligned Execution</h3>
       </div>
       <div class="outcome-card sustainability-card-animated">
-        <div class="outcome-card-icon">&#874F12;</div>
+        <div class="outcome-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Reduced Risk</h3>
       </div>
       <div class="outcome-card sustainability-card-animated">
-        <div class="outcome-card-icon">&#533F2B;</div>
+        <div class="outcome-card-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
         <h3>Full Transparency</h3>
       </div>
     </div>
@@ -1188,7 +1192,7 @@
   </div>
 </section>
 <style>
-  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(255,102,0,0.15); border-bottom:1px solid rgba(255,102,0,0.15); padding:28px 0; overflow:hidden; }
+  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(224,100,30,0.15); border-bottom:1px solid rgba(224,100,30,0.15); padding:28px 0; overflow:hidden; }
   .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
   .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#5A554C; flex-shrink:0; min-width:140px; }
   .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); }
@@ -1238,7 +1242,6 @@
           <li><a href="blog.html">Use Cases</a></li>
           <li><a href="blog.html">Platform Briefs</a></li>
           <li><a href="blog.html">Case Studies</a></li>
-          <li><a href="blog.html">Events &amp; Media</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1247,8 +1250,7 @@
         <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:info@twosuns.ai" style="color:var(--sun-bright)">info@twosuns.ai</a></div>
         <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:invest@twosuns.ai" style="color:var(--sun-bright)">invest@twosuns.ai</a></div>
         <div class="footer-contact-item" style="padding-top:6px;"><a href="tel:6047609015">1-604-760-9015</a></div>
-        <div class="footer-contact-item" style="margin-top:8px;"><a href="https://AEPG.ca">AEPG.ca &#8599;</a></div>
-        <div class="footer-contact-item"><a href="https://TwoSuns">TwoSuns &#8599;</a></div>
+        <div class="footer-contact-item"><a href="https://twosuns.ai">TwoSuns &#8599;</a></div>
       </div>
     </div>
     <div class="footer-newsletter-row">
@@ -1291,8 +1293,9 @@
         <a href="privacy.html">Privacy Policy</a>
         <a href="cookies.html">Cookie Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="trust.html">Trust Centre</a>
       </div>
-      <p>&#995A11; 2026 TwoSuns. All rights reserved.</p>
+      <p>&#169; 2026 TwoSuns. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -1352,14 +1355,14 @@ function drawP(){
     if(p.x<0||p.x>W) p.vx*=-1;
     if(p.y<0||p.y>H) p.vy*=-1;
     ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(255,102,0,${p.op})`; ctx.fill();
+    ctx.fillStyle=`rgba(224,100,30,${p.op})`; ctx.fill();
   }
   for(let i=0;i<particles.length;i++){
     for(let j=i+1;j<particles.length;j++){
       const a=particles[i],b=particles[j];
       const d=Math.hypot(a.x-b.x,a.y-b.y);
       if(d<120){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
-        ctx.strokeStyle=`rgba(255,102,0,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
+        ctx.strokeStyle=`rgba(224,100,30,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
     }
   }
   requestAnimationFrame(drawP);
@@ -1384,7 +1387,7 @@ animatedCards.forEach(card => observer.observe(card));
   var ctx = c.getContext('2d'), pts = [], t = 0;
   function sz(){ c.width = c.offsetWidth; c.height = c.offsetHeight; }
   sz(); window.addEventListener('resize', sz);
-  var cols = ['245,158,11','245,158,11','245,158,11','204,153,0','255,102,0'];
+  var cols = ['245,158,11','245,158,11','245,158,11','204,153,0','224,100,30'];
   for(var i=0;i<55;i++) pts.push({
     x:Math.random()*c.width, y:Math.random()*c.height,
     vx:(Math.random()-.5)*.28, vy:(Math.random()-.5)*.28,
