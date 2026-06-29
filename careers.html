@@ -33,7 +33,7 @@
     --navy-mid:   #2A231B;
     --green:      #2A231B;
     --green-light:#F2EFE7;
-    --logo-green:  #E0641E;
+    --logo-green:  #9A7209;
     --logo-pale:   #FFF8EC;
     --bg:         #FFF5DD;
     --bg2:        #FFEFCE;
@@ -57,14 +57,14 @@
   .section { padding:100px 0; }
   .section-tag {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.3);
-    color:var(--sun-deep); font-size:11px; font-weight:700;
+    background:#F7EDC8; border:1px solid rgba(140,101,0,0.32);
+    color:#8C6500; font-size:11px; font-weight:700;
     letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
     border-radius:20px; margin-bottom:20px;
   }
   .section-tag::before { content:'☀'; font-size:12px; }
   .section-heading { font-size:clamp(30px,4vw,52px); font-weight:800; line-height:1.15; margin-bottom:20px; color:var(--navy); }
-  .section-heading span { color:var(--sun-deep); }
+  .section-heading span { color:#9A7209; }
   .section-heading .sky { color:var(--sky); }
   .section-sub { color:var(--text-muted); font-size:17px; line-height:1.75; max-width:680px; }
 
@@ -83,7 +83,7 @@
   }
   .topbar-inner a {
     font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
-    color:var(--sun); text-decoration:none; padding:0 16px; transition:color .2s;
+    color:#9A7209; text-decoration:none; padding:0 16px; transition:color .2s;
     border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
   }
   .topbar-inner a:last-child { border-right:none; padding-right:0; }
@@ -100,7 +100,7 @@
   .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
   .nav-links { display:flex; align-items:center; gap:32px; margin-left:auto; }
   .nav-links a { font-size:14px; color:#FFFFFF; font-weight:500; transition:color .2s; }
-  .nav-links a:hover { color:var(--sun-deep); }
+  .nav-links a:hover { color:#9A7209; }
   .btn-cta {
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
@@ -147,14 +147,14 @@
   .hero-eyebrow {
     display:inline-flex; align-items:center; gap:8px;
     background:var(--sun-pale); border:1px solid rgba(224,100,30,0.4);
-    color:var(--sun-deep); font-size:11px; font-weight:700;
+    color:#9A7209; font-size:11px; font-weight:700;
     letter-spacing:2.5px; text-transform:uppercase; padding:6px 16px;
     border-radius:20px; margin-bottom:24px;
   }
   .hero-eyebrow .dot { width:6px; height:6px; border-radius:50%; background:var(--sun); animation:blink 1.5s ease-in-out infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
   .hero-heading { font-size:clamp(44px,5.5vw,72px); font-weight:900; line-height:1.06; margin-bottom:26px; color:var(--navy); }
-  .hero-heading .chaos { color:var(--sun-deep); position:relative; display:inline-block; }
+  .hero-heading .chaos { color:var(--sun-bright); position:relative; display:inline-block; }
   .hero-heading .chaos::after {
     content:''; position:absolute; bottom:-4px; left:0; right:0; height:3px;
     background:linear-gradient(90deg,var(--sun),var(--sun-deep)); border-radius:2px;
@@ -206,7 +206,7 @@
     box-shadow:0 4px 20px rgba(0,0,0,0.1); font-size:12px; font-weight:700;
     color:var(--navy); white-space:nowrap; animation:floatChip 3s ease-in-out infinite;
   }
-  .chip span { color:var(--sun-deep); font-size:15px; display:block; }
+  .chip span { color:#9A7209; font-size:15px; display:block; }
   .chip:nth-child(1) { top:10%; left:-10%; animation-delay:0s; }
   .chip:nth-child(2) { top:15%; right:-5%; animation-delay:.8s; }
   .chip:nth-child(3) { bottom:20%; left:-5%; animation-delay:1.4s; }
@@ -285,11 +285,11 @@
   .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; color:var(--sun-bright); }
   .footer-col ul { list-style:none; }
   .footer-col ul li { padding:5px 0; font-size:14px; color:rgba(255,255,255,0.75); cursor:pointer; transition:color .2s; }
-  .footer-col ul li:hover, .footer-col ul li a:hover { color:var(--sun-deep); }
+  .footer-col ul li:hover, .footer-col ul li a:hover { color:#9A7209; }
   .footer-col ul li a { color:rgba(255,255,255,0.75); }
   .footer-contact-item { font-size:14px; color:rgba(255,255,255,0.75); padding:5px 0; line-height:1.6; }
   .footer-contact-item a { color:rgba(255,255,255,0.75); }
-  .footer-contact-item a:hover { color:var(--sun-deep); }
+  .footer-contact-item a:hover { color:#9A7209; }
   /* Newsletter row */
   .footer-newsletter-row {
     display:grid; grid-template-columns:1fr 1fr; gap:64px;
@@ -337,7 +337,7 @@
     font-size:13.5px; color:var(--text-mid); font-weight:500;
     transition:background .15s, color .15s; white-space:nowrap;
   }
-  .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
+  .nav-dropdown-menu a:hover { background:var(--sun-pale); color:#9A7209; }
   .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
 
   /* ─── SCROLL TO TOP ─── */
@@ -362,7 +362,7 @@
   .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
   .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
   #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(224,100,30,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
-  #nxs-mob-nav a:hover{color:var(--sun-deep);}
+  #nxs-mob-nav a:hover{color:#9A7209;}
   #nxs-mob-nav a:last-child{border-bottom:none;}
   @media(max-width:960px){
     .topbar-inner a{padding:0 10px;font-size:10px;}
@@ -584,7 +584,7 @@
   <a href="investors.html">Investor Centre</a>
   <a href="partners.html">Partner Centre</a>
   <a href="trust.html">Trust Centre</a>
-  <a href="engage.html" style="color:#E0641E;font-weight:700;">Engage</a>
+  <a href="engage.html" style="color:#9A7209;font-weight:700;">Engage</a>
 </div>
 
 <!-- ══ HERO ══ -->
@@ -594,8 +594,8 @@
   <div style="position:absolute;bottom:-80px;left:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(ellipse,rgba(224,100,30,0.1) 0%,transparent 65%);pointer-events:none;"></div>
   <div class="container" style="position:relative;z-index:2;">
     <div style="max-width:780px;">
-      <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:var(--sun);">Careers at TwoSuns</div>
-      <h1 style="font-size:clamp(38px,5.5vw,64px);font-weight:900;color:#FFFFFF;line-height:1.08;letter-spacing:-2px;margin:14px 0 24px;">Build the Future of <span style="color:#E0641E;">Operational Intelligence</span></h1>
+      <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:#9A7209;">Careers at TwoSuns</div>
+      <h1 style="font-size:clamp(38px,5.5vw,64px);font-weight:900;color:#FFFFFF;line-height:1.08;letter-spacing:-2px;margin:14px 0 24px;">Build the Future of <span style="color:#CC9900;">Operational Intelligence</span></h1>
       <p style="font-size:18px;color:rgba(255,255,255,0.82);line-height:1.75;max-width:660px;margin-bottom:18px;">We're building the intelligence layer that helps organizations make better decisions, coordinate execution, and unlock the full value of AI. At TwoSuns, you'll work alongside experienced software builders, industry experts, and AI innovators, solving some of the most complex challenges facing industrial organizations.</p>
       <p style="font-size:18px;color:rgba(255,255,255,0.82);line-height:1.75;max-width:660px;margin-bottom:40px;">Join us in shaping the future of enterprise decision-making.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;">
@@ -615,7 +615,7 @@
     <h2 class="section-heading">The world doesn't need <span>another dashboard</span></h2>
     <p style="color:var(--text-muted);font-size:17px;line-height:1.8;margin-bottom:18px;">Organizations today struggle with fragmented systems, disconnected data, and decisions that fail to translate into execution. TwoSuns was founded to solve this problem. We are building an AI-native operational intelligence platform that helps enterprises connect signals, decisions, and execution across their entire organization.</p>
     <div style="background:linear-gradient(135deg,var(--sun-pale),rgba(42,35,27,0.05));border-left:4px solid var(--sun);border-radius:0 12px 12px 0;padding:22px 26px;margin-top:8px;">
-      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun-deep);margin-bottom:8px;">Our Mission</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9A7209;margin-bottom:8px;">Our Mission</div>
       <p style="font-size:18px;font-weight:700;color:var(--navy);line-height:1.55;margin:0;">Transforming how enterprises strategize, decide, and execute.</p>
     </div>
   </div>
@@ -650,7 +650,7 @@
 <!-- ══ EMPLOYEE PROMISE ══ -->
 <section class="section" style="background:linear-gradient(160deg,#16120D 0%,#1E1A14 100%);color:#FFFFFF;">
   <div class="container" style="max-width:880px;text-align:center;">
-    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:var(--sun);">Employee Promise</div>
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:#9A7209;">Employee Promise</div>
     <p style="font-size:clamp(20px,2.6vw,30px);font-weight:800;color:#FFFFFF;line-height:1.45;margin:0;">At TwoSuns, you won't be one of thousands of employees. You'll help shape our products, influence our direction, and build technology that changes how organizations operate.</p>
   </div>
 </section>
@@ -797,7 +797,7 @@
     <div style="background:linear-gradient(135deg,#FCF9F2,#FBF4E6);border:1px solid rgba(30,26,20,0.1);border-radius:20px;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-top:36px;">
       <div>
         <h3 style="font-size:20px;font-weight:800;color:#1E1A14;margin-bottom:8px;">Don't see the perfect role?</h3>
-        <p style="font-size:15px;color:#5A554C;line-height:1.65;max-width:520px;margin:0;">We're always interested in meeting great people. Send your resume to <a href="mailto:careers@twosuns.ai" style="color:var(--sun-deep);font-weight:700;">careers@twosuns.ai</a>.</p>
+        <p style="font-size:15px;color:#5A554C;line-height:1.65;max-width:520px;margin:0;">We're always interested in meeting great people. Send your resume to <a href="mailto:careers@twosuns.ai" style="color:#9A7209;font-weight:700;">careers@twosuns.ai</a>.</p>
       </div>
       <a href="mailto:careers@twosuns.ai" style="background:#1E1A14;color:#FFFFFF;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Send Your Resume &rarr;</a>
     </div>
@@ -807,8 +807,8 @@
 <!-- ══ FINAL CTA ══ -->
 <section class="section" style="background:linear-gradient(135deg,#16120D,#1E1A14);text-align:center;">
   <div class="container">
-    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:var(--sun);">Join Us</div>
-    <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;color:#FFFFFF;margin-bottom:16px;letter-spacing:-1px;line-height:1.15;">Help Build the Future of <span style="color:var(--sun);">Enterprise Intelligence</span></h2>
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:#9A7209;">Join Us</div>
+    <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;color:#FFFFFF;margin-bottom:16px;letter-spacing:-1px;line-height:1.15;">Help Build the Future of <span style="color:var(--sun-bright);">Enterprise Intelligence</span></h2>
     <p style="font-size:17px;color:rgba(255,255,255,0.78);margin:0 auto 12px;max-width:620px;line-height:1.7;">We're on a mission to transform how organizations strategize, decide, and execute. If you're excited about AI, enterprise software, and solving complex challenges, we'd love to hear from you.</p>
     <p style="font-size:17px;color:rgba(255,255,255,0.78);margin:0 auto 36px;max-width:620px;line-height:1.7;">Join us and help build what's next.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
@@ -821,7 +821,7 @@
 <!-- ══ EU APPLICANT PRIVACY NOTE ══ -->
 <section style="background:var(--bg);padding:40px 0;border-top:1px solid rgba(224,100,30,0.15);">
   <div class="container" style="max-width:880px;">
-    <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin:0;text-align:center;">TwoSuns collects and processes personal data in accordance with applicable data protection laws. If you are a European Job Applicant, see the <a href="privacy.html" style="color:var(--sun-deep);font-weight:600;">privacy notice</a> for further details.</p>
+    <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin:0;text-align:center;">TwoSuns collects and processes personal data in accordance with applicable data protection laws. If you are a European Job Applicant, see the <a href="privacy.html" style="color:#9A7209;font-weight:600;">privacy notice</a> for further details.</p>
   </div>
 </section>
 
@@ -913,7 +913,7 @@
     <div class="footer-newsletter-row">
       <div class="footer-brand">
         <img src="logo-color.svg" alt="TwoSuns" style="width:100%;max-width:280px;height:auto;display:block;">
-        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sun-deep);margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
+        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9A7209;margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
       <!-- Social Icons -->
       <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
         <a href="https://www.linkedin.com/company/twosuns" target="_blank" aria-label="LinkedIn"

@@ -53,14 +53,14 @@
   .section { padding:100px 0; }
   .section-tag {
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--sun-pale); border:1px solid rgba(224,100,30,0.3);
-    color:var(--sun-deep); font-size:11px; font-weight:700;
+    background:#F7EDC8; border:1px solid rgba(140,101,0,0.32);
+    color:#8C6500; font-size:11px; font-weight:700;
     letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
     border-radius:20px; margin-bottom:20px;
   }
   .section-tag::before { content:'☀'; font-size:12px; }
   .section-heading { font-size:clamp(30px,4vw,52px); font-weight:800; line-height:1.15; margin-bottom:20px; color:var(--navy); }
-  .section-heading span { color:var(--sun-deep); }
+  .section-heading span { color:#9A7209; }
   .section-sub { color:var(--text-muted); font-size:17px; line-height:1.75; max-width:680px; }
 
     /* ─── TOPBAR ─── */
@@ -75,7 +75,7 @@
   }
   .topbar-inner a {
     font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
-    color:var(--sun); text-decoration:none; padding:0 16px; transition:color .2s;
+    color:#9A7209; text-decoration:none; padding:0 16px; transition:color .2s;
     border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
   }
   .topbar-inner a:last-child { border-right:none; padding-right:0; }
@@ -92,7 +92,7 @@
   .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
   .nav-links { display:flex; align-items:center; gap:32px; margin-left:auto; }
   .nav-links a { font-size:14px; color:#FFFFFF; font-weight:500; transition:color .2s; }
-  .nav-links a:hover { color:var(--sun-deep); }
+  .nav-links a:hover { color:#9A7209; }
   .btn-cta {
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
@@ -163,7 +163,7 @@
   .achieve-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px; }
   .founder-card ul { list-style:none; margin-bottom:22px; }
   .founder-card ul li { font-size:13px; color:var(--text-mid); padding:5px 0; display:flex; gap:8px; border-bottom:1px solid rgba(224,100,30,0.08); }
-  .founder-card ul li::before { content:'✓'; color:var(--sun-deep); font-weight:700; flex-shrink:0; }
+  .founder-card ul li::before { content:'✓'; color:#9A7209; font-weight:700; flex-shrink:0; }
   .founder-contact { display:flex; gap:16px; flex-wrap:wrap; }
   .founder-contact a { color:var(--sky); font-size:13px; font-weight:700; }
 
@@ -181,7 +181,7 @@
   .pilot-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:40px; align-items:start; }
   .pilot-invite { background:linear-gradient(135deg,#16120D 0%,#1E1A14 100%); border-radius:20px; padding:40px; color:white; }
   .pilot-invite h3 { font-size:22px; font-weight:800; color:white; margin-bottom:8px; line-height:1.3; }
-  .pilot-invite h3 span { color:var(--sun); }
+  .pilot-invite h3 span { color:#9A7209; }
   .pilot-invite .pilot-sub { font-size:14px; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:28px; }
   .pilot-benefits { list-style:none; padding:0; margin:0 0 32px; }
   .pilot-benefits li { display:flex; align-items:flex-start; gap:12px; padding:10px 0; font-size:14px; color:rgba(255,255,255,0.85); line-height:1.6; }
@@ -190,13 +190,13 @@
   .pilot-ico svg { width:16px; height:16px; }
   .pilot-cta { display:inline-flex; align-items:center; gap:8px; background:var(--sun); color:#FFFFFF; padding:14px 28px; border-radius:10px; font-size:14px; font-weight:700; text-decoration:none; transition:opacity .2s; }
   .pilot-cta:hover { opacity:.88; }
-  .pilot-cohort-tag { display:inline-block; background:rgba(224,100,30,0.15); border:1px solid rgba(224,100,30,0.3); color:var(--sun); font-size:11px; font-weight:700; padding:4px 14px; border-radius:8px; margin-bottom:20px; letter-spacing:0.5px; text-transform:uppercase; }
+  .pilot-cohort-tag { display:inline-block; background:rgba(224,100,30,0.15); border:1px solid rgba(224,100,30,0.3); color:#9A7209; font-size:11px; font-weight:700; padding:4px 14px; border-radius:8px; margin-bottom:20px; letter-spacing:0.5px; text-transform:uppercase; }
   .outcome-grid { display:grid; grid-template-columns:1fr; gap:16px; }
   .outcome-card { background:var(--bg); border:1px solid var(--border); border-radius:16px; padding:24px 28px; display:flex; align-items:center; gap:20px; transition:border-color .2s, box-shadow .2s; }
   .outcome-card:hover { border-color:rgba(224,100,30,0.4); box-shadow:0 4px 20px rgba(224,100,30,0.08); }
   .outcome-metric { min-width:90px; text-align:center; flex-shrink:0; }
   .outcome-metric .val { font-size:32px; font-weight:900; color:var(--navy); line-height:1.1; }
-  .outcome-metric .unit { font-size:11px; font-weight:700; color:var(--sun-deep); text-transform:uppercase; letter-spacing:0.5px; margin-top:2px; }
+  .outcome-metric .unit { font-size:11px; font-weight:700; color:#9A7209; text-transform:uppercase; letter-spacing:0.5px; margin-top:2px; }
   .outcome-detail h4 { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:4px; }
   .outcome-detail p { font-size:13px; color:var(--text-muted); line-height:1.6; margin:0; }
   @media(max-width:768px){
@@ -259,7 +259,7 @@
     table tr[style*="background:white"] td:first-child{background:white!important;}
   }
   .btn-outline {
-    border:2px solid var(--sun-deep); color:var(--sun-deep); background:transparent;
+    border:2px solid var(--sun-deep); color:#9A7209; background:transparent;
     padding:12px 28px; border-radius:10px; font-size:14px; font-weight:700;
     cursor:pointer; transition:all .2s; display:inline-block;
   }
@@ -275,11 +275,11 @@
   .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; color:var(--sun-bright); }
   .footer-col ul { list-style:none; }
   .footer-col ul li { padding:5px 0; font-size:14px; color:rgba(255,255,255,0.75); cursor:pointer; transition:color .2s; }
-  .footer-col ul li:hover, .footer-col ul li a:hover { color:var(--sun-deep); }
+  .footer-col ul li:hover, .footer-col ul li a:hover { color:#9A7209; }
   .footer-col ul li a { color:rgba(255,255,255,0.75); }
   .footer-contact-item { font-size:14px; color:rgba(255,255,255,0.75); padding:5px 0; line-height:1.6; }
   .footer-contact-item a { color:rgba(255,255,255,0.75); }
-  .footer-contact-item a:hover { color:var(--sun-deep); }
+  .footer-contact-item a:hover { color:#9A7209; }
   /* Newsletter row */
   .footer-newsletter-row {
     display:grid; grid-template-columns:1fr 1fr; gap:64px;
@@ -327,7 +327,7 @@
     font-size:13.5px; color:var(--text-mid); font-weight:500;
     transition:background .15s, color .15s; white-space:nowrap;
   }
-  .nav-dropdown-menu a:hover { background:var(--sun-pale); color:var(--sun-deep); }
+  .nav-dropdown-menu a:hover { background:var(--sun-pale); color:#9A7209; }
   .nav-dropdown-menu .menu-label { font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); padding:7px 16px 3px; opacity:0.7; pointer-events:none; }
   .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
 
@@ -369,7 +369,7 @@
   .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
   .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
   #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(224,100,30,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
-  #nxs-mob-nav a:hover{color:var(--sun-deep);}
+  #nxs-mob-nav a:hover{color:#9A7209;}
   #nxs-mob-nav a:last-child{border-bottom:none;}
   @media(max-width:960px){
     .topbar-inner a{padding:0 10px;font-size:10px;}
@@ -541,15 +541,15 @@
   <a href="investors.html">Investor Centre</a>
   <a href="partners.html">Partner Centre</a>
   <a href="trust.html">Trust Centre</a>
-  <a href="engage.html" style="color:#E0641E;font-weight:700;">Engage</a>
+  <a href="engage.html" style="color:#9A7209;font-weight:700;">Engage</a>
 </div>
 
 <!-- ══ PAGE HERO ══ -->
 <!-- ══ ABOUT HERO ══ -->
 <section style="background:linear-gradient(160deg,#16120D 0%,#1E1A14 100%);padding:90px 0;color:#FFFFFF;position:relative;overflow:hidden;">
   <div class="container">
-    <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:var(--sun);">About Us</div>
-    <h1 style="color:#FFFFFF;font-size:clamp(32px,4.5vw,52px);font-weight:900;line-height:1.1;margin:14px 0 18px;max-width:900px;">The operational intelligence platform for <span style="color:var(--sun);">complex industries</span></h1>
+    <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:#9A7209;">About Us</div>
+    <h1 style="color:#FFFFFF;font-size:clamp(32px,4.5vw,52px);font-weight:900;line-height:1.1;margin:14px 0 18px;max-width:900px;">The operational intelligence platform for <span style="color:var(--sun-bright);">complex industries</span></h1>
     <p style="color:rgba(255,255,255,0.78);font-size:18px;line-height:1.75;max-width:820px;margin:0;">TwoSuns.ai is the AI-native operational intelligence platform for complex industries. We connect data, systems, people, and AI to transform fragmented information into orchestrated, explainable, and executable decisions, helping organizations move from disconnected insights to aligned execution across operations, commercial teams, and the enterprise.</p>
   </div>
 </section>
@@ -596,8 +596,8 @@
           <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:0;">Aiman El-Ramly</h3>
           <span style="font-size:12.5px;color:var(--text-muted);font-weight:600;">MBA, CMC</span>
         </div>
-        <div style="color:var(--sun-deep);font-weight:700;font-size:14px;margin:5px 0 6px;">Founder &amp; CEO</div>
-        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:var(--sun-deep);font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
+        <div style="color:#9A7209;font-weight:700;font-size:14px;margin:5px 0 6px;">Founder &amp; CEO</div>
+        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:#9A7209;font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
         <p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Aiman El-Ramly is a founder, board director, and transformational leader with more than three decades of experience building and scaling organizations across multiple industries. His work spans enterprise software, management consulting, infrastructure, construction, and real estate development, deregulated markets, electrification, organizational transition, and high-growth technology environments. Across these domains, he has operated across the full enterprise stack, from strategy through execution, including marketing, sales, finance, human resources, operations, and IT.</p><p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">As Founder and CEO of TwoSuns, an AI-native coordination platform designed to structure how organizations make decisions in complex environments, Aiman connects data, context, intelligence, and execution into a continuous TwoSuns Core. Earlier in his career, he was a founding executive of ZE PowerGroup and co-founded ZE Power Engineering, where he served as CFO and continues to serve as a Board Director.</p><p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Aiman serves on the board of Zema Global Data Corporation and chairs the M&amp;A Special Committee, overseeing strategic transactions including the acquisition of the market data business from Morningstar and cQuant.io. He also serves on the Advisory Board of Yocale.</p>
       </div>
       <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px 32px;box-shadow:var(--card-shadow);">
@@ -606,8 +606,8 @@
           <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:0;">Ryan Arian</h3>
           <span style="font-size:12.5px;color:var(--text-muted);font-weight:600;">BCom (MIS), MPM</span>
         </div>
-        <div style="color:var(--sun-deep);font-weight:700;font-size:14px;margin:5px 0 6px;">Chief Digital Product Officer</div>
-        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:var(--sun-deep);font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
+        <div style="color:#9A7209;font-weight:700;font-size:14px;margin:5px 0 6px;">Chief Digital Product Officer</div>
+        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:#9A7209;font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
         <p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Ryan Arian leads product architecture and AI system development for TwoSuns. He is a solution delivery and technology leader with more than 15 years of experience building and scaling enterprise systems across data, operations, and AI-driven environments. His work focuses on translating complex operating conditions into structured, continuous systems that deliver measurable business outcomes.</p><p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Ryan has led large-scale initiatives across enterprise organizations, including lululemon, where he delivered transformative AI and Agile programs across supply chain and product innovation systems. At TwoSuns, he is responsible for the platform's intelligence architecture, including the TwoSuns Core, multi-model AI orchestration, agentic workflows, and secure, scalable enterprise infrastructure.</p>
       </div>
       <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px 32px;box-shadow:var(--card-shadow);">
@@ -616,8 +616,8 @@
           <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:0;">Bel&eacute;n Welch-Almeida</h3>
           <span style="font-size:12.5px;color:var(--text-muted);font-weight:600;">Executive Master in International Business (AI), ESCP</span>
         </div>
-        <div style="color:var(--sun-deep);font-weight:700;font-size:14px;margin:5px 0 6px;">Chief Growth Officer</div>
-        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:var(--sun-deep);font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
+        <div style="color:#9A7209;font-weight:700;font-size:14px;margin:5px 0 6px;">Chief Growth Officer</div>
+        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:#9A7209;font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
         <p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Bel&eacute;n Welch-Almeida leads commercial strategy, market positioning, and growth for TwoSuns. Her experience spans commercial growth and operations, marketing, strategic partnerships, and capital for growth, including in clean technologies. She works closely with enterprise partners, governments, and clients to align TwoSuns with real-world use cases across operations and strategy.</p><p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Throughout her career, Bel&eacute;n has held leadership roles with organizations including Innovation Asset Collective, Business Development Bank of Canada, Microsoft, and Opportunities New Brunswick, where she helped accelerate commercialization, investment attraction, and strategic growth initiatives.</p>
       </div>
       <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px 32px;box-shadow:var(--card-shadow);">
@@ -626,8 +626,8 @@
           <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:0;">Michelle Mollineaux</h3>
           <span style="font-size:12.5px;color:var(--text-muted);font-weight:600;">Recognized among the Most Inspiring Women Leaders to Watch, 2026</span>
         </div>
-        <div style="color:var(--sun-deep);font-weight:700;font-size:14px;margin:5px 0 6px;">Director, Marketing &amp; Partnerships</div>
-        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:var(--sun-deep);font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
+        <div style="color:#9A7209;font-weight:700;font-size:14px;margin:5px 0 6px;">Director, Marketing &amp; Partnerships</div>
+        <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener" style="font-size:12.5px;color:#9A7209;font-weight:700;text-decoration:none;">LinkedIn &#8599;</a>
         <p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Michelle Mollineaux leads Marketing, Partnerships, and Ecosystem Development for TwoSuns, driving global market awareness, strategic alliances, and ecosystem growth. With more than 25 years of experience across enterprise software, data intelligence, technology, and the public sector, she specializes in building high-value partnerships and bringing innovative technologies to market. She was recently recognized by The CEO Views as one of the Most Inspiring Women Leaders to Watch in 2026.</p><p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin:12px 0 0;">Prior to joining TwoSuns, Michelle held senior leadership roles at Argus Media, ZE PowerGroup Inc. (ZEMA Global Data), Layer 7 Technologies (Broadcom), and TELUS Enterprise Solutions. She also serves as a Board Member of Mend Canada and was instrumental in the development of Bill M 204, the Perinatal and Postnatal Mental Health Strategy Act, which became law in British Columbia.</p>
       </div>
     </div>
@@ -735,7 +735,7 @@
     <div class="footer-newsletter-row">
       <div class="footer-brand">
         <img src="logo-color.svg" alt="TwoSuns" style="width:100%;max-width:280px;height:auto;display:block;">
-        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sun-deep);margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
+        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9A7209;margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
       <!-- Social Icons -->
       <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
         <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
@@ -903,7 +903,7 @@ window.addEventListener('scroll', () => {
   .nxs-action-btn .nxs-ico { font-size:16px; flex-shrink:0; }
   .nxs-footer { padding:12px 20px; border-top:1px solid rgba(224,100,30,0.1); text-align:center; }
   .nxs-footer a { font-size:11px; color:var(--text-muted); }
-  .nxs-footer a:hover { color:var(--sun-deep); }
+  .nxs-footer a:hover { color:#9A7209; }
 </style>
 <button id="nxs-chat-bubble" onclick="toggleChat()" aria-label="Chat with TwoSuns">
   <svg id="nxs-icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -961,7 +961,7 @@ setTimeout(function(){ var n=document.getElementById('nxs-notif'); if(n) n.style
   }
   @keyframes cookieSlideUp { from{transform:translateY(100%);opacity:0} to{transform:translateY(0);opacity:1} }
   #cookie-banner p { font-size:13.5px; color:rgba(255,255,255,0.7); line-height:1.6; margin:0; max-width:700px; }
-  #cookie-banner p a { color:#E0641E; text-decoration:underline; }
+  #cookie-banner p a { color:#9A7209; text-decoration:underline; }
   #cookie-banner p a:hover { color:#CC9900; }
   .cookie-btns { display:flex; gap:10px; flex-shrink:0; }
   .cookie-accept {
