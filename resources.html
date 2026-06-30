@@ -231,6 +231,16 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:#9A7209; }
+  .nav-dropdown-menu.nav-mega-menu{left:auto;right:0;transform:translateY(-6px);width:540px;max-width:88vw;min-width:0;padding:0;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:#3A352E;border-color:rgba(255,255,255,0.12);}
+  .nav-dropdown:hover .nav-dropdown-menu.nav-mega-menu{transform:translateY(0);}
+  .nav-mega-cats{padding:12px 0;border-right:1px solid rgba(255,255,255,0.1);}
+  .nav-mega-cat{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;font-size:15px;font-weight:500;color:rgba(255,255,255,0.72);cursor:pointer;transition:background .15s,color .15s;}
+  .nav-mega-cat.active{color:#fff;background:rgba(255,255,255,0.05);box-shadow:inset 3px 0 0 #CC9900;}
+  .nav-mega-cat span{opacity:0.45;font-size:18px;}
+  .nav-mega-subs{padding:16px 20px;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a{color:rgba(255,255,255,0.78);padding:10px 8px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a:hover{background:transparent;color:#CC9900;}
+  
   .nav-dropdown-menu .menu-label { font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); padding:7px 16px 3px; opacity:0.7; pointer-events:none; }
   .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
 
@@ -439,18 +449,25 @@
         </div>
       </div>
       <a href="why-twosuns.html">Why TwoSuns</a>
-      <div class="nav-dropdown">
+      <div class="nav-dropdown nav-mega">
         <a href="blog.html">Resources</a>
-        <div class="nav-dropdown-menu">
-          <div class="menu-label">Industry Insights</div>
-          <a href="blog.html">Blog</a>
-          <a href="videos.html">Videos</a>
-          <a href="resources.html">Knowledge Center</a>
-          <div class="menu-divider"></div>
-          <div class="menu-label">Community</div>
-          <a href="community.html">Overview</a>
-          <a href="community.html#events">Events</a>
-          <a href="community.html#social">Social Media</a>
+        <div class="nav-dropdown-menu nav-mega-menu">
+          <div class="nav-mega-cats">
+            <div class="nav-mega-cat active" data-k="insights" onmouseover="megaShow(this,'insights')">Industry Insights <span>&rsaquo;</span></div>
+            <div class="nav-mega-cat" data-k="community" onmouseover="megaShow(this,'community')">Community <span>&rsaquo;</span></div>
+          </div>
+          <div class="nav-mega-subs">
+            <div class="nav-mega-sub" data-k="insights" style="display:flex;flex-direction:column;">
+              <a href="blog.html">Blog</a>
+              <a href="videos.html">Videos</a>
+              <a href="resources.html">Knowledge Center</a>
+            </div>
+            <div class="nav-mega-sub" data-k="community" style="display:none;flex-direction:column;">
+              <a href="community.html">Overview</a>
+              <a href="community.html#events">Events</a>
+              <a href="community.html#social">Social Media</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="nav-dropdown">
@@ -615,8 +632,10 @@
     <!-- Brand + Newsletter row -->
     <div class="footer-newsletter-row">
       <div class="footer-brand">
-        <img src="logo-color.svg" alt="TwoSuns" style="width:100%;max-width:280px;height:auto;display:block;">
-        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9A7209;margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
+        <div class="brand-lockup" style="display:inline-block;max-width:100%;">
+        <img src="logo-color.svg" alt="TwoSuns" style="width:100%;height:auto;display:block;">
+        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9A7209;margin:10px 0 0;opacity:0.85;;white-space:nowrap;">Light on Complexity.&nbsp; Power in Decisions.</p>
+        </div>
       <!-- Social Icons -->
       <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
         <a href="https://www.linkedin.com/company/twosuns" target="_blank" aria-label="LinkedIn"
@@ -973,5 +992,6 @@ window.addEventListener('resize',nxsResponsive);
   draw();
 })();
 </script>
+<script>function megaShow(el,k){var m=el.closest('.nav-mega-menu');m.querySelectorAll('.nav-mega-cat').forEach(function(c){c.classList.toggle('active',c.dataset.k===k);});m.querySelectorAll('.nav-mega-sub').forEach(function(s){s.style.display=(s.dataset.k===k)?'flex':'none';});}</script>
 </body>
 </html>

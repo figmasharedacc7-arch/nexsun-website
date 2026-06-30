@@ -341,6 +341,16 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:#9A7209; }
+  .nav-dropdown-menu.nav-mega-menu{left:auto;right:0;transform:translateY(-6px);width:540px;max-width:88vw;min-width:0;padding:0;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:#3A352E;border-color:rgba(255,255,255,0.12);}
+  .nav-dropdown:hover .nav-dropdown-menu.nav-mega-menu{transform:translateY(0);}
+  .nav-mega-cats{padding:12px 0;border-right:1px solid rgba(255,255,255,0.1);}
+  .nav-mega-cat{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;font-size:15px;font-weight:500;color:rgba(255,255,255,0.72);cursor:pointer;transition:background .15s,color .15s;}
+  .nav-mega-cat.active{color:#fff;background:rgba(255,255,255,0.05);box-shadow:inset 3px 0 0 #CC9900;}
+  .nav-mega-cat span{opacity:0.45;font-size:18px;}
+  .nav-mega-subs{padding:16px 20px;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a{color:rgba(255,255,255,0.78);padding:10px 8px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a:hover{background:transparent;color:#CC9900;}
+  
   .nav-dropdown-menu .menu-label { font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); padding:7px 16px 3px; opacity:0.7; pointer-events:none; }
   .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
 
@@ -512,18 +522,25 @@
         </div>
       </div>
       <a href="why-twosuns.html">Why TwoSuns</a>
-      <div class="nav-dropdown">
+      <div class="nav-dropdown nav-mega">
         <a href="blog.html">Resources</a>
-        <div class="nav-dropdown-menu">
-          <div class="menu-label">Industry Insights</div>
-          <a href="blog.html">Blog</a>
-          <a href="videos.html">Videos</a>
-          <a href="resources.html">Knowledge Center</a>
-          <div class="menu-divider"></div>
-          <div class="menu-label">Community</div>
-          <a href="community.html">Overview</a>
-          <a href="community.html#events">Events</a>
-          <a href="community.html#social">Social Media</a>
+        <div class="nav-dropdown-menu nav-mega-menu">
+          <div class="nav-mega-cats">
+            <div class="nav-mega-cat active" data-k="insights" onmouseover="megaShow(this,'insights')">Industry Insights <span>&rsaquo;</span></div>
+            <div class="nav-mega-cat" data-k="community" onmouseover="megaShow(this,'community')">Community <span>&rsaquo;</span></div>
+          </div>
+          <div class="nav-mega-subs">
+            <div class="nav-mega-sub" data-k="insights" style="display:flex;flex-direction:column;">
+              <a href="blog.html">Blog</a>
+              <a href="videos.html">Videos</a>
+              <a href="resources.html">Knowledge Center</a>
+            </div>
+            <div class="nav-mega-sub" data-k="community" style="display:none;flex-direction:column;">
+              <a href="community.html">Overview</a>
+              <a href="community.html#events">Events</a>
+              <a href="community.html#social">Social Media</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="nav-dropdown">
@@ -658,39 +675,6 @@
   </div>
 </section>
 
-<!-- ══ WHERE TWOSUNS CREATES VALUE ══ -->
-<section class="section" style="background:white;">
-  <div class="container" style="max-width:940px;">
-    <div class="section-tag">Where TwoSuns Creates Value</div>
-    <h2 class="section-heading">Built for how <span>capital moves</span></h2>
-    <p class="section-sub" style="margin-bottom:36px;">From asset management to commodity trading, TwoSuns connects intelligence to execution across the financial landscape.</p>
-    <div style="display:grid;gap:22px;">
-      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 32px;box-shadow:var(--card-shadow);">
-        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 8px;">Asset Management</h3>
-        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;">Improve visibility across portfolios, market conditions, research, and investment decision-making.</p>
-      </div>
-      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 32px;box-shadow:var(--card-shadow);">
-        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 8px;">Private Equity &amp; Venture Capital</h3>
-        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;">Coordinate deal sourcing, due diligence, market intelligence, portfolio oversight, and stakeholder collaboration.</p>
-      </div>
-      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 32px;box-shadow:var(--card-shadow);">
-        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 8px;">Commodity &amp; Energy Trading</h3>
-        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;">Connect market intelligence, pricing signals, supply chain activity, and commercial execution.</p>
-      </div>
-      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 32px;box-shadow:var(--card-shadow);">
-        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 8px;">Pension Funds &amp; Family Offices</h3>
-        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;">Evaluate investments, monitor risk, assess market developments, and maintain a transparent decision framework.</p>
-      </div>
-      <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 32px;box-shadow:var(--card-shadow);">
-        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 8px;">Corporate Investment Teams</h3>
-        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0;">Support capital allocation, strategic planning, acquisitions, partnerships, and market monitoring.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sun-divider"></div>
-
 <!-- ══ BUSINESS OUTCOMES ══ -->
 <section class="section" style="background:var(--bg);">
   <div class="container" style="max-width:980px;">
@@ -708,17 +692,6 @@
     </ul>
   </div>
 </section>
-
-<!-- ══ WHY NOW ══ -->
-<section class="section" style="background:white;">
-  <div class="container" style="max-width:880px;text-align:center;">
-    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Why Now</div>
-    <p style="font-size:clamp(20px,2.6vw,30px);font-weight:800;color:var(--navy);line-height:1.4;margin:0 auto 24px;max-width:780px;">The next generation of market leaders will not be defined by who has the most information. They will be defined by who can transform information into orchestrated action faster than everyone else.</p>
-    <p style="color:var(--text-muted);font-size:17px;line-height:1.8;margin:0 auto;max-width:740px;">TwoSuns helps financial institutions move beyond disconnected data, fragmented workflows, and reactive decision-making to create a more intelligent, aligned, and responsive organization.</p>
-  </div>
-</section>
-
-<div class="sun-divider"></div>
 
 <!-- ══ CTA ══ -->
 <section class="section" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFF5DD 100%);text-align:center;">
@@ -819,8 +792,10 @@
     <!-- Brand + Newsletter row -->
     <div class="footer-newsletter-row">
       <div class="footer-brand">
-        <img src="logo-color.svg" alt="TwoSuns" style="width:100%;max-width:280px;height:auto;display:block;">
-        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9A7209;margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
+        <div class="brand-lockup" style="display:inline-block;max-width:100%;">
+        <img src="logo-color.svg" alt="TwoSuns" style="width:100%;height:auto;display:block;">
+        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9A7209;margin:10px 0 0;opacity:0.85;;white-space:nowrap;">Light on Complexity.&nbsp; Power in Decisions.</p>
+        </div>
       <!-- Social Icons -->
       <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
         <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
@@ -1168,5 +1143,6 @@ window.addEventListener('resize',nxsResponsive);
   draw();
 })();
 </script>
+<script>function megaShow(el,k){var m=el.closest('.nav-mega-menu');m.querySelectorAll('.nav-mega-cat').forEach(function(c){c.classList.toggle('active',c.dataset.k===k);});m.querySelectorAll('.nav-mega-sub').forEach(function(s){s.style.display=(s.dataset.k===k)?'flex':'none';});}</script>
 </body>
 </html>

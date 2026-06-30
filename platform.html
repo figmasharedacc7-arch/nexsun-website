@@ -311,6 +311,16 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:#9A7209; }
+  .nav-dropdown-menu.nav-mega-menu{left:auto;right:0;transform:translateY(-6px);width:540px;max-width:88vw;min-width:0;padding:0;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:#3A352E;border-color:rgba(255,255,255,0.12);}
+  .nav-dropdown:hover .nav-dropdown-menu.nav-mega-menu{transform:translateY(0);}
+  .nav-mega-cats{padding:12px 0;border-right:1px solid rgba(255,255,255,0.1);}
+  .nav-mega-cat{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;font-size:15px;font-weight:500;color:rgba(255,255,255,0.72);cursor:pointer;transition:background .15s,color .15s;}
+  .nav-mega-cat.active{color:#fff;background:rgba(255,255,255,0.05);box-shadow:inset 3px 0 0 #CC9900;}
+  .nav-mega-cat span{opacity:0.45;font-size:18px;}
+  .nav-mega-subs{padding:16px 20px;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a{color:rgba(255,255,255,0.78);padding:10px 8px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a:hover{background:transparent;color:#CC9900;}
+  
   .nav-dropdown-menu .menu-label { font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); padding:7px 16px 3px; opacity:0.7; pointer-events:none; }
   .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
 
@@ -543,18 +553,25 @@
         </div>
       </div>
       <a href="why-twosuns.html">Why TwoSuns</a>
-      <div class="nav-dropdown">
+      <div class="nav-dropdown nav-mega">
         <a href="blog.html">Resources</a>
-        <div class="nav-dropdown-menu">
-          <div class="menu-label">Industry Insights</div>
-          <a href="blog.html">Blog</a>
-          <a href="videos.html">Videos</a>
-          <a href="resources.html">Knowledge Center</a>
-          <div class="menu-divider"></div>
-          <div class="menu-label">Community</div>
-          <a href="community.html">Overview</a>
-          <a href="community.html#events">Events</a>
-          <a href="community.html#social">Social Media</a>
+        <div class="nav-dropdown-menu nav-mega-menu">
+          <div class="nav-mega-cats">
+            <div class="nav-mega-cat active" data-k="insights" onmouseover="megaShow(this,'insights')">Industry Insights <span>&rsaquo;</span></div>
+            <div class="nav-mega-cat" data-k="community" onmouseover="megaShow(this,'community')">Community <span>&rsaquo;</span></div>
+          </div>
+          <div class="nav-mega-subs">
+            <div class="nav-mega-sub" data-k="insights" style="display:flex;flex-direction:column;">
+              <a href="blog.html">Blog</a>
+              <a href="videos.html">Videos</a>
+              <a href="resources.html">Knowledge Center</a>
+            </div>
+            <div class="nav-mega-sub" data-k="community" style="display:none;flex-direction:column;">
+              <a href="community.html">Overview</a>
+              <a href="community.html#events">Events</a>
+              <a href="community.html#social">Social Media</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="nav-dropdown">
@@ -885,29 +902,6 @@
 
 <div class="sun-divider"></div>
 
-<!-- ══ INTERACTIVE ══ -->
-<section id="interactive">
-  <div class="container">
-    <div class="section-tag">Interactive Intelligence</div>
-    <h2 class="section-heading" style="color:white">Move your cursor to explore our<br><span>multi-dimensional</span> data platform</h2>
-    <div class="int-orb" id="int-orb">
-      <div class="int-orb-inner">
-        <p>AI-Powered</p>
-        <h3>Intelligence<br>Platform</h3>
-      </div>
-    </div>
-    <div class="int-stats">
-      <div class="int-stat"><div class="val">$25T+</div><div class="lbl">Market Volume</div></div>
-      <div class="int-stat"><div class="val">6</div><div class="lbl">Analytical Domains</div></div>
-      <div class="int-stat"><div class="val">180</div><div class="lbl">Day Pilot Access</div></div>
-      <div class="int-stat"><div class="val">Continuous</div><div class="lbl">Market Intelligence</div></div>
-      <div class="int-stat"><div class="val">99.9%</div><div class="lbl">Uptime</div></div>
-    </div>
-  </div>
-</section>
-
-<div class="sun-divider"></div>
-
 <!-- ══ PLATFORM MODULES ══ -->
 <!-- ══ PLATFORM STRUCTURE, Core / Horizon / Forge ══ -->
 <section class="section" style="background:var(--bg);">
@@ -967,102 +961,6 @@
     </div>
 
     <p style="margin-top:36px;max-width:900px;font-style:italic;color:var(--text-muted);font-size:14px;line-height:1.7;">Horizon and Forge are not isolated. Commercial positioning, operational constraints, workflow orchestration, and stakeholder alignment continuously interact across Horizon, Forge, and Core through shared organizational context and persistent continuity.</p>
-  </div>
-</section>
-
-<div class="sun-divider"></div>
-
-<section id="platform" class="section">
-  <div class="container">
-    <div class="section-tag">System Components</div>
-    <h2 class="section-heading">The TwoSuns <span>System</span></h2>
-    <p class="section-sub" style="margin-bottom:32px;">TwoSuns is organized as a set of connected components that operate as a unified system. Each component supports a stage of the orchestration lifecycle and adapts to non-linear, real-world workflows.</p>
-    <div class="tab-bar">
-      <button class="tab-btn active" onclick="switchTab('home',this)">Home</button>
-      <button class="tab-btn" onclick="switchTab('explore',this)">Explore</button>
-      <button class="tab-btn" onclick="switchTab('position',this)">Position</button>
-      <button class="tab-btn" onclick="switchTab('rooms',this)">Rooms</button>
-      <button class="tab-btn" onclick="switchTab('contracts',this)">Contracts</button>
-      <button class="tab-btn" onclick="switchTab('connect',this)">Connect</button>
-    </div>
-
-<div id="tab-home" class="tab-content active">
-  <div class="tab-main">
-    <h4>Intelligence Layer</h4><h2>Home</h2>
-    <p>A dynamically curated command center tailored to the user's role, organization, and market exposure. Synthesizes continuous data and applies frameworks such as PESTLE to surface what matters most across trade, risk, and operations.</p>
-    <div class="tab-features">
-      <div class="tab-feature"><h5>Role-Based Intelligence</h5><p>Content and signals are curated based on the user's function, organization, and market exposure.</p></div>
-      <div class="tab-feature"><h5>Framework-Driven Analysis</h5><p>Applies PESTLE and multi-lens frameworks to surface what matters most continuously.</p></div>
-      <div class="tab-feature"><h5>Unified Command Center</h5><p>Brings together trade, risk, and operational signals into a single, actionable view.</p></div>
-    </div>
-  </div>
-  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,26,20,0.12);"><img loading="lazy" src="screenshots/ss-discover.png" alt="Home intelligence layer command center" style="width:100%;display:block;border-radius:14px;"></div>
-</div>
-
-<div id="tab-explore" class="tab-content">
-  <div class="tab-main">
-    <h4>Deep Market Analysis</h4><h2>Explore</h2>
-    <p>Enables structured discovery and analysis of markets, assets, and signals. Moves beyond dashboards into contextual understanding of what is changing and why.</p>
-    <div class="tab-features">
-      <div class="tab-feature"><h5>Structured Discovery</h5><p>Analyze markets, assets, and signals with contextual depth beyond static dashboards.</p></div>
-      <div class="tab-feature"><h5>Contextual Understanding</h5><p>Understand not just what is changing, but why, with AI-driven signal interpretation.</p></div>
-    </div>
-  </div>
-  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,26,20,0.12);"><img loading="lazy" src="screenshots/ss-analysis.png" alt="Explore deep market analysis" style="width:100%;display:block;border-radius:14px;"></div>
-</div>
-
-<div id="tab-position" class="tab-content">
-  <div class="tab-main">
-    <h4>Strategy &amp; Decision Formation</h4><h2>Position</h2>
-    <p>Where insights become positions.</p>
-    <div class="tab-features">
-      <div class="tab-feature"><h5>Position Log</h5><p>Structured tracking of positions over time with full context and history.</p></div>
-      <div class="tab-feature"><h5>Canvas</h5><p>Develop and combine strategies within a unified workspace.</p></div>
-      <div class="tab-feature"><h5>Strategy &amp; Scenario Modeling</h5><p>Model multiple scenarios and perspectives to refine positioning.</p></div>
-      <div class="tab-feature"><h5>Controlled Publish Workflows</h5><p>Advance decisions through defined workflows with governance and approvals.</p></div>
-    </div>
-  </div>
-  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,26,20,0.12);"><img loading="lazy" src="screenshots/ss-strategy.png" alt="Position strategy and decision formation" style="width:100%;display:block;border-radius:14px;"></div>
-</div>
-
-<div id="tab-rooms" class="tab-content">
-  <div class="tab-main">
-    <h4>Structured Collaboration</h4><h2>Rooms</h2>
-    <p>Secure environments for orchestration and alignment.</p>
-    <div class="tab-features">
-      <div class="tab-feature"><h5>Cooperative Rooms</h5><p>Internal strategy development and team orchestration.</p></div>
-      <div class="tab-feature"><h5>Negotiation &amp; Commercial Rooms</h5><p>Structured engagement with counterparties and partners.</p></div>
-      <div class="tab-feature"><h5>Broadcast Rooms</h5><p>Controlled syndication of intelligence and positions.</p></div>
-      <div class="tab-feature"><h5>Review Rooms</h5><p>Approvals, governance, and decision review processes.</p></div>
-    </div>
-  </div>
-  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,26,20,0.12);"><img loading="lazy" src="screenshots/ss-rooms.png" alt="Structured collaboration rooms" style="width:100%;display:block;border-radius:14px;"></div>
-</div>
-
-<div id="tab-contracts" class="tab-content">
-  <div class="tab-main">
-    <h4>Commercial Structuring</h4><h2>Contracts</h2>
-    <p>Integrated contract intelligence.</p>
-    <div class="tab-features">
-      <div class="tab-feature"><h5>Contract Library</h5><p>Centralized library with templates for EFET, ISDA, NAESB, and custom agreements.</p></div>
-      <div class="tab-feature"><h5>Contract Analysis</h5><p>AI-assisted analysis of risk, terms, deviations, and obligations in context.</p></div>
-      <div class="tab-feature"><h5>Contract Offers</h5><p>Generate and manage offers linked directly to active positions and strategies.</p></div>
-    </div>
-  </div>
-  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,26,20,0.12);"><img loading="lazy" src="screenshots/ss-contracts-overview.png" alt="Contract intelligence and commercial structuring" style="width:100%;display:block;border-radius:14px;"></div>
-</div>
-
-<div id="tab-connect" class="tab-content">
-  <div class="tab-main">
-    <h4>Network &amp; Engagement Layer</h4><h2>Connect</h2>
-    <p>Supports communication, matchmaking, and opportunity alignment across participants, extending into GTM and relationship workflows.</p>
-    <div class="tab-features">
-      <div class="tab-feature"><h5>Participant Matching</h5><p>Identify counterparties, investors, and partners aligned with emerging intelligence.</p></div>
-      <div class="tab-feature"><h5>Relationship Workflows</h5><p>Manage engagement and outreach driven by intelligence and strategic positioning.</p></div>
-    </div>
-  </div>
-  <div class="tab-visual" style="padding:0;overflow:hidden;min-height:auto;background:transparent;border:1px solid rgba(30,26,20,0.12);"><img loading="lazy" src="screenshots/ss-contracts-offers.png" alt="Connect network and engagement" style="width:100%;display:block;border-radius:14px;"></div>
-</div>
   </div>
 </section>
 
@@ -1956,8 +1854,10 @@
     <!-- Brand + Newsletter row -->
     <div class="footer-newsletter-row">
       <div class="footer-brand">
-        <img src="logo-color.svg" alt="TwoSuns" style="width:100%;max-width:280px;height:auto;display:block;">
-        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9A7209;margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
+        <div class="brand-lockup" style="display:inline-block;max-width:100%;">
+        <img src="logo-color.svg" alt="TwoSuns" style="width:100%;height:auto;display:block;">
+        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9A7209;margin:10px 0 0;opacity:0.85;;white-space:nowrap;">Light on Complexity.&nbsp; Power in Decisions.</p>
+        </div>
       <!-- Social Icons -->
       <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
         <a href="https://www.linkedin.com/company/twosuns" target="_blank" aria-label="LinkedIn"
@@ -2338,5 +2238,6 @@ window.addEventListener('resize',nxsResponsive);
   document.querySelectorAll('.sustainability-card-animated').forEach(function(el){ obs.observe(el); });
 })();
 </script>
+<script>function megaShow(el,k){var m=el.closest('.nav-mega-menu');m.querySelectorAll('.nav-mega-cat').forEach(function(c){c.classList.toggle('active',c.dataset.k===k);});m.querySelectorAll('.nav-mega-sub').forEach(function(s){s.style.display=(s.dataset.k===k)?'flex':'none';});}</script>
 </body>
 </html>
