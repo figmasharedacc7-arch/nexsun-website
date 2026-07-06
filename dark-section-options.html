@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TwoSuns Dark Section Options</title>
+<style>
+:root{--bg:#FFF5DD;--sun:#E0641E;--sun-deep:#C45213;--gold:#CC9900;--gold-deep:#9A7209;--navy:#1E1A14;--text:#3A3A3A;--muted:#5A554C;--border:#ECDCC0;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--navy);-webkit-font-smoothing:antialiased;}
+
+/* intro */
+.intro{padding:44px 40px 24px;max-width:1180px;margin:0 auto;}
+.intro .kick{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px;}
+.intro .kick::before{content:'\2600';font-size:14px;}
+.intro h1{font-size:clamp(26px,3.4vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.6px;text-wrap:balance;}
+.intro p{margin-top:13px;font-size:15.5px;line-height:1.65;color:var(--muted);max-width:700px;}
+.intro p b{color:var(--navy);font-weight:700;}
+
+/* sticky jump nav */
+.jumpbar{position:sticky;top:0;z-index:100;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  background:rgba(255,245,221,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:11px 40px;}
+.jumpbar .lead{font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--navy);margin-right:4px;}
+.jumpbar a{font-size:12.5px;font-weight:700;color:var(--gold-deep);text-decoration:none;padding:5px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;transition:border-color .15s,color .15s,transform .15s;}
+.jumpbar a:hover{border-color:var(--sun);color:var(--sun-deep);transform:translateY(-1px);}
+.jumpbar a:focus-visible{outline:2px solid var(--sun);outline-offset:2px;}
+
+/* option label strip */
+.opt-label{max-width:1100px;margin:0 auto;padding:26px 40px 10px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.opt-label .n{color:var(--sun-deep);}
+.opt-label small{font-weight:600;letter-spacing:0;text-transform:none;color:var(--muted);font-size:13px;}
+.opt-label .pick{font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:10.5px;color:#fff;background:linear-gradient(135deg,var(--sun),var(--sun-deep));padding:3px 9px;border-radius:20px;}
+
+/* the demo section (faithful to the live site) */
+.sec{padding:64px 40px;position:relative;}
+.inner{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:6px 15px;border-radius:20px;margin-bottom:18px;}
+.eyebrow::before{content:'\2600';}
+h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;line-height:1.12;letter-spacing:-.5px;margin-bottom:16px;text-wrap:balance;}
+.sub{font-size:16px;line-height:1.7;max-width:620px;margin-bottom:36px;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{border-radius:16px;padding:26px 24px;}
+.card .ic{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));}
+.card .ic svg{stroke:#fff;width:22px;height:22px;fill:none;stroke-width:2;stroke-linecap:round;}
+.card h3{font-size:16px;font-weight:800;margin-bottom:7px;}
+.card p{font-size:13.5px;line-height:1.6;}
+.wrap{border-top:1px solid rgba(30,26,20,.08);scroll-margin-top:56px;}
+
+@media(max-width:820px){
+  .grid{grid-template-columns:1fr;}
+  .sec{padding:44px 22px;}
+  .intro{padding:34px 22px 20px;}
+  .jumpbar,.opt-label{padding-left:22px;padding-right:22px;}
+}
+</style>
+</head>
+<body>
+<div class="intro">
+  <div class="kick">TwoSuns Design Review</div>
+  <h1>Dark section alternatives</h1>
+  <p>Twelve warm treatments for the site's dark bands, all showing the same section and copy so only the background changes. The brief: keep the contrast, lose the dark. <b>Option 1 is what the site uses today.</b> Options 2 to 12 are the candidates. Jump between them below.</p>
+</div>
+
+<nav class="jumpbar" aria-label="Jump to option">
+  <span class="lead">Jump to</span>
+  <a href="#opt-1">1</a><a href="#opt-2">2</a><a href="#opt-3">3</a><a href="#opt-4">4</a><a href="#opt-5">5</a><a href="#opt-6">6</a><a href="#opt-7">7</a><a href="#opt-8">8</a><a href="#opt-9">9</a><a href="#opt-10">10</a><a href="#opt-11">11</a><a href="#opt-12">12</a>
+</nav>
+
+<!-- 1 -->
+<div class="wrap" id="opt-1">
+<div class="opt-label"><span class="n">1</span> Warm Stone <small>&mdash; what it is now (dark)</small></div>
+<div class="sec" style="background:linear-gradient(160deg,#413C33 0%,#474237 55%,#2A231B 100%);">
+  <div class="inner">
+    <span class="eyebrow" style="background:rgba(224,100,30,.15);border:1px solid rgba(224,100,30,.3);color:#CC9900;">Why Choose TwoSuns</span>
+    <h2 style="color:#fff;">Built for how decisions <span style="color:#CC9900;">actually get made</span></h2>
+    <p class="sub" style="color:rgba(255,255,255,.72);">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:#fff;">Signal to Decision</h3><p style="color:rgba(255,255,255,.65);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:#fff;">Explainable by Design</h3><p style="color:rgba(255,255,255,.65);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:#fff;">Orchestrated Execution</h3><p style="color:rgba(255,255,255,.65);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="wrap" id="opt-2">
+<div class="opt-label"><span class="n">2</span> Warm Sand <small>&mdash; subtle earthy step-down, dark text</small></div>
+<div class="sec" style="background:#ECE0C4;">
+  <div class="inner">
+    <span class="eyebrow" style="background:#FBF3E0;border:1px solid #E2D3B0;color:#9A7209;">Why Choose TwoSuns</span>
+    <h2 style="color:var(--navy);">Built for how decisions <span style="color:#9A7209;">actually get made</span></h2>
+    <p class="sub" style="color:#6B5F49;">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:#fff;border:1px solid #E6DAC0;box-shadow:0 6px 20px rgba(60,50,30,.06);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:var(--navy);">Signal to Decision</h3><p style="color:var(--muted);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:#fff;border:1px solid #E6DAC0;box-shadow:0 6px 20px rgba(60,50,30,.06);"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:var(--navy);">Explainable by Design</h3><p style="color:var(--muted);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:#fff;border:1px solid #E6DAC0;box-shadow:0 6px 20px rgba(60,50,30,.06);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:var(--navy);">Orchestrated Execution</h3><p style="color:var(--muted);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="wrap" id="opt-3">
+<div class="opt-label"><span class="n">3</span> Peach Glow <small>&mdash; warm apricot gradient, on-brand</small></div>
+<div class="sec" style="background:linear-gradient(135deg,#FFEEDA 0%,#FFDFC2 100%);">
+  <div class="inner">
+    <span class="eyebrow" style="background:#fff;border:1px solid rgba(224,100,30,.3);color:#C45213;">Why Choose TwoSuns</span>
+    <h2 style="color:var(--navy);">Built for how decisions <span style="color:#C45213;">actually get made</span></h2>
+    <p class="sub" style="color:#6B5240;">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:#fff;border:1px solid #FAD9BC;box-shadow:0 6px 20px rgba(224,100,30,.08);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:var(--navy);">Signal to Decision</h3><p style="color:var(--muted);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:#fff;border:1px solid #FAD9BC;box-shadow:0 6px 20px rgba(224,100,30,.08);"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:var(--navy);">Explainable by Design</h3><p style="color:var(--muted);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:#fff;border:1px solid #FAD9BC;box-shadow:0 6px 20px rgba(224,100,30,.08);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:var(--navy);">Orchestrated Execution</h3><p style="color:var(--muted);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="wrap" id="opt-4">
+<div class="opt-label"><span class="n">4</span> Gold Mist <small>&mdash; pale warm gold</small></div>
+<div class="sec" style="background:linear-gradient(135deg,#FBF3D6 0%,#F5E6AE 100%);">
+  <div class="inner">
+    <span class="eyebrow" style="background:#fff;border:1px solid rgba(154,114,9,.35);color:#9A7209;">Why Choose TwoSuns</span>
+    <h2 style="color:var(--navy);">Built for how decisions <span style="color:#9A7209;">actually get made</span></h2>
+    <p class="sub" style="color:#5F5636;">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:#fff;border:1px solid #EEDFA6;box-shadow:0 6px 20px rgba(154,114,9,.08);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:var(--navy);">Signal to Decision</h3><p style="color:var(--muted);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:#fff;border:1px solid #EEDFA6;box-shadow:0 6px 20px rgba(154,114,9,.08);"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:var(--navy);">Explainable by Design</h3><p style="color:var(--muted);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:#fff;border:1px solid #EEDFA6;box-shadow:0 6px 20px rgba(154,114,9,.08);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:var(--navy);">Orchestrated Execution</h3><p style="color:var(--muted);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="wrap" id="opt-5">
+<div class="opt-label"><span class="n">5</span> Elevated White <small>&mdash; white panel on cream, orange top edge</small></div>
+<div class="sec" style="background:var(--bg);">
+  <div class="inner" style="background:#fff;border-radius:22px;border-top:4px solid var(--sun);box-shadow:0 14px 50px rgba(60,50,30,.10);padding:52px 44px;max-width:1020px;">
+    <span class="eyebrow" style="background:var(--bg);border:1px solid rgba(224,100,30,.3);color:#9A7209;">Why Choose TwoSuns</span>
+    <h2 style="color:var(--navy);">Built for how decisions <span style="color:#9A7209;">actually get made</span></h2>
+    <p class="sub" style="color:var(--muted);">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:var(--bg);border:1px solid var(--border);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:var(--navy);">Signal to Decision</h3><p style="color:var(--muted);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:var(--bg);border:1px solid var(--border);"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:var(--navy);">Explainable by Design</h3><p style="color:var(--muted);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:var(--bg);border:1px solid var(--border);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:var(--navy);">Orchestrated Execution</h3><p style="color:var(--muted);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="wrap" id="opt-6">
+<div class="opt-label"><span class="n">6</span> Sun Orange <small>&mdash; bold warm fill, high contrast, not dark</small></div>
+<div class="sec" style="background:linear-gradient(135deg,#E0641E 0%,#C45213 100%);">
+  <div class="inner">
+    <span class="eyebrow" style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);color:#fff;">Why Choose TwoSuns</span>
+    <h2 style="color:#fff;">Built for how decisions <span style="color:#FFE9C7;">actually get made</span></h2>
+    <p class="sub" style="color:rgba(255,255,255,.9);">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);"><div class="ic" style="background:#fff;"><svg viewBox="0 0 24 24" style="stroke:#C45213;"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:#fff;">Signal to Decision</h3><p style="color:rgba(255,255,255,.85);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);"><div class="ic" style="background:#fff;"><svg viewBox="0 0 24 24" style="stroke:#C45213;"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:#fff;">Explainable by Design</h3><p style="color:rgba(255,255,255,.85);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);"><div class="ic" style="background:#fff;"><svg viewBox="0 0 24 24" style="stroke:#C45213;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:#fff;">Orchestrated Execution</h3><p style="color:rgba(255,255,255,.85);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="wrap" id="opt-7">
+<div class="opt-label"><span class="n">7</span> Warm Taupe <small>&mdash; a real mid-tone, strongest contrast without dark</small> <span class="pick">Claude's pick</span></div>
+<div class="sec" style="background:#D3C4A0;">
+  <div class="inner">
+    <span class="eyebrow" style="background:#F3ECD9;border:1px solid #C4B48C;color:#8A6A1E;">Why Choose TwoSuns</span>
+    <h2 style="color:var(--navy);">Built for how decisions <span style="color:#8A5A0C;">actually get made</span></h2>
+    <p class="sub" style="color:#4E4632;">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:#fff;border:1px solid #C7B892;box-shadow:0 8px 24px rgba(60,48,20,.10);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:var(--navy);">Signal to Decision</h3><p style="color:var(--muted);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:#fff;border:1px solid #C7B892;box-shadow:0 8px 24px rgba(60,48,20,.10);"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:var(--navy);">Explainable by Design</h3><p style="color:var(--muted);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:#fff;border:1px solid #C7B892;box-shadow:0 8px 24px rgba(60,48,20,.10);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:var(--navy);">Orchestrated Execution</h3><p style="color:var(--muted);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="wrap" id="opt-8">
+<div class="opt-label"><span class="n">8</span> Sun Radial <small>&mdash; cream with a soft orange glow, atmospheric depth</small></div>
+<div class="sec" style="background:radial-gradient(ellipse 55% 80% at 82% 15%,rgba(224,100,30,.16),transparent 60%),radial-gradient(ellipse 45% 70% at 8% 95%,rgba(204,153,0,.12),transparent 60%),#FFF5DD;">
+  <div class="inner">
+    <span class="eyebrow" style="background:#fff;border:1px solid rgba(224,100,30,.3);color:#C45213;">Why Choose TwoSuns</span>
+    <h2 style="color:var(--navy);">Built for how decisions <span style="color:#9A7209;">actually get made</span></h2>
+    <p class="sub" style="color:var(--muted);">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:#fff;border:1px solid var(--border);box-shadow:0 8px 26px rgba(224,100,30,.10);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:var(--navy);">Signal to Decision</h3><p style="color:var(--muted);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:#fff;border:1px solid var(--border);box-shadow:0 8px 26px rgba(224,100,30,.10);"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:var(--navy);">Explainable by Design</h3><p style="color:var(--muted);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:#fff;border:1px solid var(--border);box-shadow:0 8px 26px rgba(224,100,30,.10);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:var(--navy);">Orchestrated Execution</h3><p style="color:var(--muted);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="wrap" id="opt-9">
+<div class="opt-label"><span class="n">9</span> Orange &rarr; Gold <small>&mdash; bold two-color warm gradient</small></div>
+<div class="sec" style="background:linear-gradient(115deg,#E0641E 0%,#D07A14 50%,#CC9900 100%);">
+  <div class="inner">
+    <span class="eyebrow" style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;">Why Choose TwoSuns</span>
+    <h2 style="color:#fff;">Built for how decisions <span style="color:#FFF1D0;">actually get made</span></h2>
+    <p class="sub" style="color:rgba(255,255,255,.92);">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);"><div class="ic" style="background:#fff;"><svg viewBox="0 0 24 24" style="stroke:#C45213;"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:#fff;">Signal to Decision</h3><p style="color:rgba(255,255,255,.88);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);"><div class="ic" style="background:#fff;"><svg viewBox="0 0 24 24" style="stroke:#C45213;"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:#fff;">Explainable by Design</h3><p style="color:rgba(255,255,255,.88);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);"><div class="ic" style="background:#fff;"><svg viewBox="0 0 24 24" style="stroke:#C45213;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:#fff;">Orchestrated Execution</h3><p style="color:rgba(255,255,255,.88);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="wrap" id="opt-10">
+<div class="opt-label"><span class="n">10</span> Outlined Panel <small>&mdash; no fill; a bordered region on the page</small></div>
+<div class="sec" style="background:var(--bg);">
+  <div class="inner" style="border:2px solid rgba(224,100,30,.4);border-radius:24px;padding:48px 44px;max-width:1040px;">
+    <span class="eyebrow" style="background:#fff;border:1px solid rgba(224,100,30,.3);color:#9A7209;">Why Choose TwoSuns</span>
+    <h2 style="color:var(--navy);">Built for how decisions <span style="color:#9A7209;">actually get made</span></h2>
+    <p class="sub" style="color:var(--muted);">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:#fff;border:1px solid var(--border);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:var(--navy);">Signal to Decision</h3><p style="color:var(--muted);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:#fff;border:1px solid var(--border);"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:var(--navy);">Explainable by Design</h3><p style="color:var(--muted);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:#fff;border:1px solid var(--border);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:var(--navy);">Orchestrated Execution</h3><p style="color:var(--muted);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="wrap" id="opt-11">
+<div class="opt-label"><span class="n">11</span> Accent Cards <small>&mdash; section blends with page; cards carry the punch</small></div>
+<div class="sec" style="background:var(--bg);">
+  <div class="inner">
+    <span class="eyebrow" style="background:#fff;border:1px solid rgba(224,100,30,.3);color:#9A7209;">Why Choose TwoSuns</span>
+    <h2 style="color:var(--navy);">Built for how decisions <span style="color:#9A7209;">actually get made</span></h2>
+    <p class="sub" style="color:var(--muted);">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--sun);box-shadow:0 8px 24px rgba(60,50,30,.07);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:var(--navy);">Signal to Decision</h3><p style="color:var(--muted);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--gold);box-shadow:0 8px 24px rgba(60,50,30,.07);"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:var(--navy);">Explainable by Design</h3><p style="color:var(--muted);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--sun-deep);box-shadow:0 8px 24px rgba(60,50,30,.07);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:var(--navy);">Orchestrated Execution</h3><p style="color:var(--muted);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 12 -->
+<div class="wrap" id="opt-12">
+<div class="opt-label"><span class="n">12</span> Cream &rarr; Sand fade <small>&mdash; gentle vertical gradient, quiet depth</small></div>
+<div class="sec" style="background:linear-gradient(180deg,#FFF5DD 0%,#EADDBE 100%);">
+  <div class="inner">
+    <span class="eyebrow" style="background:#fff;border:1px solid rgba(224,100,30,.28);color:#9A7209;">Why Choose TwoSuns</span>
+    <h2 style="color:var(--navy);">Built for how decisions <span style="color:#9A7209;">actually get made</span></h2>
+    <p class="sub" style="color:var(--muted);">One continuous system connecting signals to decisions, and decisions to execution, with full traceability.</p>
+    <div class="grid">
+      <div class="card" style="background:#fff;border:1px solid #EAD9B4;box-shadow:0 8px 24px rgba(60,50,30,.08);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div><h3 style="color:var(--navy);">Signal to Decision</h3><p style="color:var(--muted);">Connect internal data and external signals into structured decision workflows.</p></div>
+      <div class="card" style="background:#fff;border:1px solid #EAD9B4;box-shadow:0 8px 24px rgba(60,50,30,.08);"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div><h3 style="color:var(--navy);">Explainable by Design</h3><p style="color:var(--muted);">Every output shows its source data, logic, and assumptions.</p></div>
+      <div class="card" style="background:#fff;border:1px solid #EAD9B4;box-shadow:0 8px 24px rgba(60,50,30,.08);"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3 style="color:var(--navy);">Orchestrated Execution</h3><p style="color:var(--muted);">Decisions flow into aligned action across teams and systems.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
