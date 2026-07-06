@@ -310,38 +310,44 @@
     margin-bottom:48px; justify-content:center;
   }
   .lifecycle-step {
-    background:#474237; color:var(--sun-bright);
+    background:#FFFFFF; color:var(--sun-deep); border:1px solid rgba(224,100,30,0.3);
     font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-    padding:8px 18px; border-radius:20px;
+    padding:8px 18px; border-radius:20px; cursor:pointer;
+    transition:background .2s, color .2s, transform .2s, box-shadow .2s;
   }
+  .lifecycle-step:hover { transform:translateY(-1px); box-shadow:0 4px 12px rgba(224,100,30,0.18); }
+  .lifecycle-step.active { background:linear-gradient(135deg,var(--sun),var(--sun-deep)); color:#FFFFFF; border-color:transparent; box-shadow:0 4px 14px rgba(224,100,30,0.3); }
   .lifecycle-arrow {
     color:#9A7209; font-size:18px; font-weight:700; flex-shrink:0;
   }
-  .stage-cards { display:grid; gap:24px; }
+  .stage-cards { display:grid; gap:24px; max-width:900px; margin:0 auto; }
   .stage-card {
-    background:#413C33; border:1px solid rgba(224,100,30,0.18);
-    border-radius:20px; padding:36px 40px; transition:border-color .3s, box-shadow .3s;
+    display:none;
+    background:#FFFFFF; border:1px solid var(--border);
+    border-radius:20px; padding:36px 40px; box-shadow:var(--card-shadow);
+    animation:stageIn .35s ease;
   }
-  .stage-card:hover { border-color:rgba(224,100,30,0.45); box-shadow:0 8px 40px rgba(224,100,30,0.12); }
+  .stage-card.active { display:block; }
+  @keyframes stageIn { from{opacity:0;transform:translateY(8px);} to{opacity:1;transform:translateY(0);} }
   .stage-number {
     font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
     color:#9A7209; margin-bottom:8px;
   }
   .stage-card h3 {
-    font-size:22px; font-weight:800; color:#FFFFFF; margin-bottom:16px;
+    font-size:22px; font-weight:800; color:var(--navy); margin-bottom:16px;
     display:flex; align-items:center; gap:12px;
   }
   .stage-card h3 .stage-icon {
     width:40px; height:40px; border-radius:10px;
-    background:linear-gradient(135deg,rgba(224,100,30,0.2),rgba(224,100,30,0.08));
-    border:1px solid rgba(224,100,30,0.3);
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:#FFFFFF;
     display:flex; align-items:center; justify-content:center;
     font-size:18px; flex-shrink:0;
   }
-  .stage-card p { color:rgba(255,255,255,0.75); font-size:15px; line-height:1.75; margin-bottom:16px; }
+  .stage-card p { color:var(--text-muted); font-size:15px; line-height:1.75; margin-bottom:16px; }
   .stage-card ul { list-style:none; padding:0; display:flex; flex-direction:column; gap:8px; }
   .stage-card ul li {
-    color:rgba(255,255,255,0.65); font-size:14px; line-height:1.6;
+    color:var(--text); font-size:14px; line-height:1.6;
     padding-left:20px; position:relative;
   }
   .stage-card ul li::before {
@@ -349,8 +355,8 @@
     width:6px; height:6px; border-radius:50%; background:var(--sun);
   }
   .stage-closing {
-    margin-top:20px; padding-top:20px; border-top:1px solid rgba(224,100,30,0.1);
-    color:rgba(255,255,255,0.85); font-size:14px; font-style:italic;
+    margin-top:20px; padding-top:20px; border-top:1px solid rgba(224,100,30,0.15);
+    color:var(--text-muted); font-size:14px; font-style:italic;
   }
 
   /* ARCHITECTURE SECTION */
@@ -679,23 +685,23 @@
     </div>
 
     <div class="lifecycle-flow">
-      <div class="lifecycle-step">Sense</div>
+      <div class="lifecycle-step active" onmouseover="showStage(0)" onclick="showStage(0)">Sense</div>
       <div class="lifecycle-arrow">&#8594;</div>
-      <div class="lifecycle-step">Analyze</div>
+      <div class="lifecycle-step" onmouseover="showStage(1)" onclick="showStage(1)">Analyze</div>
       <div class="lifecycle-arrow">&#8594;</div>
-      <div class="lifecycle-step">Position</div>
+      <div class="lifecycle-step" onmouseover="showStage(2)" onclick="showStage(2)">Position</div>
       <div class="lifecycle-arrow">&#8594;</div>
-      <div class="lifecycle-step">Align</div>
+      <div class="lifecycle-step" onmouseover="showStage(3)" onclick="showStage(3)">Align</div>
       <div class="lifecycle-arrow">&#8594;</div>
-      <div class="lifecycle-step">Commit</div>
+      <div class="lifecycle-step" onmouseover="showStage(4)" onclick="showStage(4)">Commit</div>
       <div class="lifecycle-arrow">&#8594;</div>
-      <div class="lifecycle-step">Optimize</div>
+      <div class="lifecycle-step" onmouseover="showStage(5)" onclick="showStage(5)">Optimize</div>
     </div>
 
     <div class="stage-cards">
 
       <!-- Sense -->
-      <div class="stage-card sustainability-card-animated">
+      <div class="stage-card active">
         <div class="stage-number">Stage 01</div>
         <h3>
           <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
@@ -713,7 +719,7 @@
       </div>
 
       <!-- Analyze -->
-      <div class="stage-card sustainability-card-animated">
+      <div class="stage-card">
         <div class="stage-number">Stage 02</div>
         <h3>
           <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
@@ -731,7 +737,7 @@
       </div>
 
       <!-- Position -->
-      <div class="stage-card sustainability-card-animated">
+      <div class="stage-card">
         <div class="stage-number">Stage 03</div>
         <h3>
           <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
@@ -749,7 +755,7 @@
       </div>
 
       <!-- Align -->
-      <div class="stage-card sustainability-card-animated">
+      <div class="stage-card">
         <div class="stage-number">Stage 04</div>
         <h3>
           <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
@@ -767,7 +773,7 @@
       </div>
 
       <!-- Commit -->
-      <div class="stage-card sustainability-card-animated">
+      <div class="stage-card">
         <div class="stage-number">Stage 05</div>
         <h3>
           <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
@@ -785,7 +791,7 @@
       </div>
 
       <!-- Record -->
-      <div class="stage-card sustainability-card-animated">
+      <div class="stage-card">
         <div class="stage-number">Stage 06</div>
         <h3>
           <div class="stage-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
@@ -1558,5 +1564,13 @@ animatedCards.forEach(card => observer.observe(card));
 </script>
 
 <script>function megaShow(el,k){var m=el.closest('.nav-mega-menu');m.querySelectorAll('.nav-mega-cat').forEach(function(c){c.classList.toggle('active',c.dataset.k===k);});m.querySelectorAll('.nav-mega-sub').forEach(function(s){s.style.display=(s.dataset.k===k)?'flex':'none';});}</script>
+
+<script>
+function showStage(n){
+  var sec=document.getElementById('lifecycle'); if(!sec) return;
+  sec.querySelectorAll('.stage-card').forEach(function(c,i){c.classList.toggle('active', i===n);});
+  sec.querySelectorAll('.lifecycle-step').forEach(function(s,i){s.classList.toggle('active', i===n);});
+}
+</script>
 </body>
 </html>
