@@ -379,16 +379,16 @@
   .arch-bullet-text strong { font-size:14px; font-weight:700; color:var(--navy); display:block; margin-bottom:4px; }
   .arch-bullet-text span { font-size:13px; color:var(--text-muted); line-height:1.6; }
   .arch-visual {
-    background:linear-gradient(135deg,#413C33 0%,#474237 100%);
+    background:#FFFFFF; border:1px solid var(--border); box-shadow:var(--card-shadow);
     border-radius:20px; padding:40px; display:flex; flex-direction:column; gap:16px;
   }
   .arch-sys {
-    background:rgba(255,255,255,0.06); border:1px solid rgba(224,100,30,0.15);
+    background:var(--bg); border:1px solid rgba(224,100,30,0.15);
     border-radius:12px; padding:16px 20px; display:flex; align-items:center; gap:14px;
   }
   .arch-sys-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
-  .arch-sys-label { font-size:13px; font-weight:600; color:rgba(255,255,255,0.8); }
-  .arch-sys-type { font-size:11px; color:rgba(255,255,255,0.4); margin-left:auto; letter-spacing:1px; text-transform:uppercase; }
+  .arch-sys-label { font-size:13px; font-weight:600; color:var(--navy); }
+  .arch-sys-type { font-size:11px; color:var(--text-muted); margin-left:auto; letter-spacing:1px; text-transform:uppercase; }
   .arch-center {
     background:linear-gradient(135deg,rgba(224,100,30,0.2),rgba(224,100,30,0.08));
     border:2px solid rgba(224,100,30,0.45);
@@ -860,26 +860,26 @@
     <div class="arch-grid">
       <div class="arch-text">
         <div class="section-tag">Integration</div>
-        <h2 class="section-heading">Integrated with Your Systems</h2>
-        <p>TwoSuns operates alongside existing enterprise systems:</p>
+        <h2 class="section-heading">Built to work with what you already run</h2>
+        <p>TwoSuns doesn&rsquo;t replace your data platforms, ERP, or CRM, it sits above them, turning what they already capture into decisions your teams can act on.</p>
         <ul style="margin:12px 0 16px 20px;list-style:disc;">
-          <li>Data platforms and analytics systems</li>
-          <li>ERP and financial systems</li>
-          <li>CRM and operational tools</li>
+          <li><strong>Data &amp; analytics platforms</strong>, the signal</li>
+          <li><strong>ERP &amp; financial systems</strong>, the transaction record</li>
+          <li><strong>CRM &amp; operational tools</strong>, the execution layer</li>
         </ul>
-        <p>These systems manage <strong>data and execution</strong>. TwoSuns <strong>structures decisions</strong> and aligns execution across them.</p>
+        <p style="font-style:italic;border-left:3px solid var(--sun);padding-left:16px;color:var(--text-muted);margin:16px 0;">Your existing systems are built to run the business. TwoSuns is built to coordinate it.</p>
         <div class="arch-bullets">
           <div class="arch-bullet">
             <div class="arch-bullet-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="arch-bullet-text">
               <strong>Data-first, AI-native architecture</strong>
-              <span>Built to ingest and synthesize structured and unstructured data at scale.</span>
+              <span>Ingests and synthesizes structured and unstructured data at scale.</span>
             </div>
           </div>
           <div class="arch-bullet">
             <div class="arch-bullet-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="arch-bullet-text">
-              <strong>Explainable outputs with full transparency (Persistent Coordination)</strong>
+              <strong>Full transparency (Persistent Coordination)</strong>
               <span>Every output shows its source data, logic, and reasoning.</span>
             </div>
           </div>
@@ -893,12 +893,12 @@
           <div class="arch-bullet">
             <div class="arch-bullet-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="arch-bullet-text">
-              <strong>Integrated collaboration and workflow management</strong>
-              <span>Decision rooms and structured workflows embedded directly into the platform.</span>
+              <strong>Decision rooms, not dashboards</strong>
+              <span>Collaboration and structured workflows embedded directly into the platform.</span>
             </div>
           </div>
         </div>
-        <p style="margin-top:24px;font-size:1.05rem;color:rgba(255,255,255,0.85);">TwoSuns connects signals to decisions in a way existing systems do not.</p>
+        <p style="margin-top:24px;font-size:1.05rem;color:var(--text-muted);">TwoSuns connects signals to decisions in a way existing systems do not.</p>
       </div>
       <div class="arch-visual">
         <div class="arch-sys">
