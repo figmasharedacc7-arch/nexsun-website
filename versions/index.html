@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TwoSuns — Site Version Archive</title>
+<style>
+:root{--bg:#FFF5DD;--sun:#E0641E;--sun-deep:#C45213;--gold:#CC9900;--gold-deep:#9A7209;--navy:#1E1A14;--text:#3A3A3A;--muted:#5A554C;--border:#ECDCC0;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--navy);-webkit-font-smoothing:antialiased;line-height:1.5;}
+.wrap{max-width:820px;margin:0 auto;padding:64px 28px 80px;}
+.kick{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px;}
+.kick::before{content:'\2600';font-size:14px;}
+h1{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.6px;line-height:1.1;}
+.lead{margin-top:14px;font-size:16px;line-height:1.65;color:var(--muted);max-width:620px;}
+.list{margin-top:40px;display:flex;flex-direction:column;gap:16px;}
+.row{display:flex;align-items:center;gap:20px;background:#fff;border:1px solid var(--border);border-left:4px solid var(--sun);border-radius:14px;padding:22px 24px;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s,border-color .15s;box-shadow:0 6px 20px rgba(60,50,30,.05);}
+.row:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(224,100,30,.12);border-left-color:var(--sun-deep);}
+.row.live{border-left-color:var(--gold);background:linear-gradient(120deg,#FFF9EC,#fff);}
+.row .meta{flex:1;min-width:0;}
+.row .name{font-size:18px;font-weight:800;color:var(--navy);}
+.row .desc{font-size:14px;color:var(--muted);margin-top:4px;}
+.row .date{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--gold-deep);white-space:nowrap;font-variant-numeric:tabular-nums;}
+.row .go{font-size:22px;color:var(--sun-deep);flex-shrink:0;}
+.foot{margin-top:44px;font-size:13px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px;}
+@media(max-width:560px){.row{flex-wrap:wrap;gap:8px 16px;} .row .date{order:3;width:100%;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kick">TwoSuns Design Archive</div>
+  <h1>Site version snapshots</h1>
+  <p class="lead">Each link below opens a full, self-contained snapshot of the site at a point in time. These are unlisted archive copies for reference and comparison, they are not the live site.</p>
+
+  <div class="list">
+    <a class="row live" href="https://figmasharedacc7-arch.github.io/nexsun-website/">
+      <div class="meta">
+        <div class="name">Current live site</div>
+        <div class="desc">The site as it stands today, TwoSuns branding.</div>
+      </div>
+      <div class="date">Live</div>
+      <div class="go">&rarr;</div>
+    </a>
+    <a class="row" href="pre-memberships-2026-07-06/index.html">
+      <div class="meta">
+        <div class="name">Before memberships bar removal</div>
+        <div class="desc">Includes the "Proud Member Of" bar and the team sections, just before they were removed.</div>
+      </div>
+      <div class="date">2026-07-06</div>
+      <div class="go">&rarr;</div>
+    </a>
+    <a class="row" href="pre-twosuns-2026-04-30/index.html">
+      <div class="meta">
+        <div class="name">Before the TwoSuns naming</div>
+        <div class="desc">Snapshot taken during the rebrand transition.</div>
+      </div>
+      <div class="date">2026-04-30</div>
+      <div class="go">&rarr;</div>
+    </a>
+    <a class="row" href="pre-rebrand-2026-04-24/index.html">
+      <div class="meta">
+        <div class="name">Before the rebrand (Nexsun)</div>
+        <div class="desc">The Nexsun-branded site, just before the rebrand.</div>
+      </div>
+      <div class="date">2026-04-24</div>
+      <div class="go">&rarr;</div>
+    </a>
+    <a class="row" href="pre-aiman-edits/index.html">
+      <div class="meta">
+        <div class="name">Before the CEO edit round</div>
+        <div class="desc">Earlier draft, prior to Aiman's round of edits.</div>
+      </div>
+      <div class="date">earlier</div>
+      <div class="go">&rarr;</div>
+    </a>
+  </div>
+
+  <p class="foot">Archive snapshots are set to noindex. Link fidelity is best on each version's main pages; some older blog subpages may vary.</p>
+</div>
+</body>
+</html>

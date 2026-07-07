@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nexsun email templates · Preview</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #FFFBF0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #163E64;
+  }
+  header {
+    background: #163E64;
+    color: #fff;
+    padding: 20px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  header h1 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  header p {
+    margin: 0;
+    font-size: 13px;
+    color: #FEF3C7;
+    opacity: 0.9;
+  }
+  nav {
+    background: #fff;
+    border-bottom: 1px solid #FEF3C7;
+    padding: 12px 32px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  nav button {
+    background: transparent;
+    border: 1px solid #163E64;
+    color: #163E64;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.15s;
+  }
+  nav button:hover { background: #FEF3C7; }
+  nav button.active { background: #F4920B; color: #fff; border-color: #F4920B; }
+  main {
+    padding: 32px 16px;
+    display: flex;
+    justify-content: center;
+  }
+  .frame-wrap {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    overflow: hidden;
+    width: 100%;
+    max-width: 640px;
+  }
+  iframe {
+    width: 100%;
+    height: 1400px;
+    border: 0;
+    display: block;
+  }
+  .meta {
+    padding: 16px 24px;
+    background: #FFF7E6;
+    border-bottom: 1px solid #FEF3C7;
+    font-size: 13px;
+    color: #64748B;
+  }
+  .meta strong { color: #163E64; }
+  .meta span { display: inline-block; margin-right: 16px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Nexsun email templates</h1>
+  <p>Local preview · logos resolve from /nexsun/logo-horizontal*.png</p>
+</header>
+
+<nav>
+  <button class="active" data-src="01-newsletter.html" data-subj="The Brief, [Month Year]" data-type="Newsletter">1. Newsletter</button>
+  <button data-src="02-nurture.html" data-subj="A question for you" data-type="Nurture (day 3)">2. Nurture</button>
+  <button data-src="03-announcement.html" data-subj="New in Nexsun: [Feature name]" data-type="Product announcement">3. Announcement</button>
+</nav>
+
+<main>
+  <div class="frame-wrap">
+    <div class="meta">
+      <span><strong>Type:</strong> <span id="meta-type">Newsletter</span></span>
+      <span><strong>Subject:</strong> <span id="meta-subj">The Brief, [Month Year]</span></span>
+    </div>
+    <iframe id="email-frame" src="01-newsletter.html"></iframe>
+  </div>
+</main>
+
+<script>
+  const buttons = document.querySelectorAll('nav button');
+  const frame = document.getElementById('email-frame');
+  const metaSubj = document.getElementById('meta-subj');
+  const metaType = document.getElementById('meta-type');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      frame.src = btn.dataset.src;
+      metaSubj.textContent = btn.dataset.subj;
+      metaType.textContent = btn.dataset.type;
+    });
+  });
+</script>
+
+</body>
+</html>

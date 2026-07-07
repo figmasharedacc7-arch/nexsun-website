@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Centre | TwoSuns</title>
+<!-- SEO & Social -->
+<meta name="description" content="Partner with TwoSuns. Join a global ecosystem of technology, data, AI, and industry partners building the future of enterprise orchestration for complex organizations.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://twosuns.ai/partners.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Partner Centre | TwoSuns">
+<meta property="og:description" content="Join a global ecosystem of data, AI, infrastructure, and industry partners powering coordination for complex markets.">
+<meta property="og:image" content="https://twosuns.ai/og-image.jpg">
+<meta property="og:url" content="https://twosuns.ai/partners.html">
+<meta property="og:site_name" content="TwoSuns">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Partner Centre | TwoSuns">
+<meta name="twitter:description" content="Partnerships that turn data into a decision advantage.">
+<meta name="twitter:image" content="https://twosuns.ai/og-image.jpg">
+<style>
+  :root {
+    --sun:        #E0641E;
+    --sun-bright: #CC9900;
+    --sun-deep:   #C45213;
+    --sun-pale:   #FFEDD0;
+    --sky:        #2A231B;
+    --sky-mid:    #2A231B;
+    --sky-light:  #FCE2BC;
+    --navy:       #1E1A14;
+    --navy-mid:   #2A231B;
+    --green:      #2A231B;
+    --green-light:#F2EFE7;
+    --logo-green:  #9A7209;
+    --logo-pale:   #FFF8EC;
+    --bg:         #FFF5DD;
+    --bg2:        #FFEFCE;
+    --white:      #FFFFFF;
+    --text:       #3A3A3A;
+    --text-mid:   #3A3A3A;
+    --text-muted: #5A554C;
+    --border:     rgba(224,100,30,0.2);
+    --card-shadow:0 4px 24px rgba(224,100,30,0.08), 0 1px 4px rgba(0,0,0,0.06);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,sans-serif; overflow-x:hidden; }
+  a { color:inherit; text-decoration:none; }
+
+  /* SUN CANVAS */
+  #sun-canvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:.55; }
+
+  /* SHARED */
+  .container { max-width:1200px; margin:0 auto; padding:0 32px; position:relative; z-index:2; }
+  .section { padding:100px 0; }
+  .section-tag {
+    display:inline-flex; align-items:center; gap:8px;
+    background:#F7EDC8; border:1px solid rgba(140,101,0,0.32);
+    color:#8C6500; font-size:11px; font-weight:700;
+    letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
+    border-radius:20px; margin-bottom:20px;
+  }
+  .section-tag::before { content:'☀'; font-size:12px; }
+  .section-heading { font-size:clamp(30px,4vw,52px); font-weight:800; line-height:1.15; margin-bottom:20px; color:var(--navy); }
+  .section-sub { color:var(--text-muted); font-size:17px; line-height:1.75; max-width:680px; }
+
+  /* TOPBAR */
+  .topbar { background:#474237; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .topbar-inner {
+    max-width:1200px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; justify-content:flex-end;
+    height:34px; gap:0;
+  }
+  .topbar-inner a {
+    font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+    color:#9A7209; text-decoration:none; padding:0 16px; transition:color .2s;
+    border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
+  }
+  .topbar-inner a:last-child { border-right:none; padding-right:0; }
+  .topbar-inner a:hover { color:#FFFFFF; }
+
+  /* NAV */
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:#474237; backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(224,100,30,0.15);
+    box-shadow:0 1px 20px rgba(224,100,30,0.08);
+    overflow:visible;
+  }
+  .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
+  .nav-links { display:flex; align-items:center; gap:32px; margin-left:auto; }
+  .nav-links a { font-size:14px; color:#FFFFFF; font-weight:500; transition:color .2s; }
+  .nav-links a:hover { color:#9A7209; }
+  .btn-cta {
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
+    font-size:14px; border:none; cursor:pointer; transition:all .2s;
+    box-shadow:0 4px 14px rgba(224,100,30,0.4); display:inline-block;
+  }
+  .btn-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(224,100,30,0.5); }
+
+  /* NAV DROPDOWN */
+  .nav-dropdown { position:relative; display:flex; align-items:center; }
+  .nav-dropdown > a { display:flex; align-items:center; gap:4px; cursor:pointer; }
+  .nav-dropdown > a::after { content:''; display:inline-block; width:0; height:0;
+    border-left:4px solid transparent; border-right:4px solid transparent;
+    border-top:4px solid currentColor; margin-top:1px; transition:transform .2s; }
+  .nav-dropdown:hover > a::after { transform:rotate(180deg); }
+  .nav-dropdown-menu {
+    position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-6px);
+    background:white; border:1px solid rgba(224,100,30,0.2);
+    border-radius:12px; padding:6px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(224,100,30,0.08);
+    min-width:160px; opacity:0; visibility:hidden;
+    transition:opacity .2s, transform .2s, visibility .2s; z-index:200;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+  .nav-dropdown-menu a {
+    display:block; padding:9px 16px; border-radius:8px;
+    font-size:13.5px; color:var(--text-mid); font-weight:500;
+    transition:background .15s, color .15s; white-space:nowrap;
+  }
+  .nav-dropdown-menu a:hover { background:var(--sun-pale); color:#9A7209; }
+  .nav-dropdown-menu.nav-mega-menu{left:auto;right:0;transform:translateY(-6px);width:540px;max-width:88vw;min-width:0;padding:0;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:#3A352E;border-color:rgba(255,255,255,0.12);}
+  .nav-dropdown:hover .nav-dropdown-menu.nav-mega-menu{transform:translateY(0);}
+  .nav-mega-cats{padding:12px 0;border-right:1px solid rgba(255,255,255,0.1);}
+  .nav-mega-cat{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;font-size:15px;font-weight:500;color:rgba(255,255,255,0.72);cursor:pointer;transition:background .15s,color .15s;}
+  .nav-mega-cat.active{color:#fff;background:rgba(255,255,255,0.05);box-shadow:inset 3px 0 0 #CC9900;}
+  .nav-mega-cat span{opacity:0.45;font-size:18px;}
+  .nav-mega-subs{padding:16px 20px;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a{color:rgba(255,255,255,0.78);padding:10px 8px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a:hover{background:transparent;color:#CC9900;}
+  
+  .nav-dropdown-menu .menu-label { font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); padding:7px 16px 3px; opacity:0.7; pointer-events:none; }
+  .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
+
+  /* HAMBURGER */
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;margin-left:auto;flex-shrink:0;}
+  .nav-hamburger span{width:22px;height:2px;background:#FFFFFF;border-radius:2px;transition:all .3s;display:block;}
+  .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+  .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+  .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+  #nxs-mob-nav a{display:block;padding:13px 0;border-bottom:1px solid rgba(224,100,30,0.12);font-size:15px;font-weight:500;color:#3A3A3A;text-decoration:none;transition:color .2s;}
+  #nxs-mob-nav a:hover{color:#9A7209;}
+  #nxs-mob-nav a:last-child{border-bottom:none;}
+
+  /* DIVIDER */
+  .sun-divider {
+    height:5px;
+    background:linear-gradient(90deg, transparent 0%, #E0641E 18%, #474237 50%, #E0641E 82%, transparent 100%);
+    position:relative; z-index:2; overflow:visible;
+  }
+  .sun-divider::after {
+    content:''; position:absolute; inset:-5px 0;
+    background:inherit; border-radius:6px; filter:blur(6px); opacity:0.5;
+    animation:dividerGlow 2.8s ease-in-out infinite;
+  }
+  @keyframes dividerGlow { 0%,100%{opacity:0.45;filter:blur(5px);} 50%{opacity:0.9;filter:blur(9px);} }
+
+  /* SCROLL TO TOP */
+  #scroll-top {
+    position:fixed; bottom:32px; right:32px; z-index:999;
+    width:44px; height:44px; border-radius:50%;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:white; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 16px rgba(224,100,30,0.45);
+    opacity:0; visibility:hidden; transform:translateY(12px);
+    transition:opacity .3s, visibility .3s, transform .3s;
+  }
+  #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
+  #scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(224,100,30,0.55); }
+  #scroll-top svg { width:18px; height:18px; }
+
+  /* FOOTER */
+  footer { background:#413C33; padding:64px 0 32px; border-top:3px solid var(--sun); }
+  .footer-top {
+    display:grid; grid-template-columns:1fr 1fr 1.6fr 1fr;
+    gap:40px; margin-bottom:48px; align-items:start;
+    padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; color:var(--sun-bright); }
+  .footer-col ul { list-style:none; }
+  .footer-col ul li { padding:5px 0; font-size:14px; color:rgba(255,255,255,0.75); cursor:pointer; transition:color .2s; }
+  .footer-col ul li:hover, .footer-col ul li a:hover { color:#9A7209; }
+  .footer-col ul li a { color:rgba(255,255,255,0.75); }
+  .footer-contact-item { font-size:14px; color:rgba(255,255,255,0.75); padding:5px 0; line-height:1.6; }
+  .footer-contact-item a { color:rgba(255,255,255,0.75); }
+  .footer-contact-item a:hover { color:#9A7209; }
+  .footer-newsletter-row {
+    display:grid; grid-template-columns:1fr 1fr; gap:64px;
+    padding:40px 48px; border-radius:16px; margin-bottom:48px; align-items:center;
+    background:linear-gradient(135deg,#FEFAE8 0%,#FFF8D6 50%,#FAF0B8 100%);
+  }
+  .footer-brand { display:flex; flex-direction:column; justify-content:center; }
+  .footer-brand p { color:var(--navy); font-size:14px; line-height:1.75; margin:16px 0 8px; }
+  .footer-newsletter h3 { font-size:18px; font-weight:700; color:var(--navy); margin-bottom:10px; line-height:1.3; }
+  .footer-newsletter p { font-size:13px; color:rgba(30,26,20,0.65); margin-bottom:20px; line-height:1.6; }
+  .fn-field { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+  .fn-field input { background:#FFFFFF; border:1px solid rgba(30,26,20,0.15); border-radius:8px; padding:12px 14px; font-size:14px; color:var(--navy); outline:none; transition:border-color .2s; font-family:inherit; }
+  .fn-field input::placeholder { color:rgba(30,26,20,0.35); }
+  .fn-field input:focus { border-color:var(--sun); }
+  .fn-check { display:flex; align-items:flex-start; gap:10px; margin-bottom:14px; }
+  .fn-check input[type=checkbox] { margin-top:3px; accent-color:var(--sun); width:14px; height:14px; flex-shrink:0; cursor:pointer; }
+  .fn-check label { font-size:12px; color:rgba(30,26,20,0.6); line-height:1.5; cursor:pointer; }
+  .fn-legal { font-size:11px; color:rgba(30,26,20,0.45); margin-bottom:16px; line-height:1.5; }
+  .fn-btn { background:linear-gradient(135deg,var(--sun),var(--sun-deep)); color:#FFFFFF; border:none; border-radius:8px; padding:12px 24px; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer; width:100%; transition:opacity .2s, transform .2s; }
+  .fn-btn:hover { opacity:.88; transform:translateY(-1px); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+  .footer-bottom p { font-size:12px; color:rgba(255,255,255,0.4); }
+  .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
+  .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
+  .footer-legal a:last-child { border-right:none; }
+  .footer-legal a:hover { color:rgba(255,255,255,1); }
+
+  /* ---- PAGE-SPECIFIC STYLES ---- */
+
+  /* HERO */
+  .partners-hero {
+    background:linear-gradient(160deg, #413C33 0%, #474237 50%, #2A231B 100%);
+    padding:160px 0 100px;
+    position:relative; overflow:hidden;
+  }
+  .partners-hero::before {
+    content:''; position:absolute; top:-100px; right:-100px;
+    width:700px; height:700px; border-radius:50%;
+    background:radial-gradient(ellipse, rgba(224,100,30,0.08) 0%, rgba(224,100,30,0.1) 40%, transparent 65%);
+    pointer-events:none;
+  }
+  .partners-hero::after {
+    content:''; position:absolute; bottom:-80px; left:-80px;
+    width:500px; height:500px; border-radius:50%;
+    background:radial-gradient(ellipse, rgba(224,100,30,0.08) 0%, transparent 65%);
+    pointer-events:none;
+  }
+  .partners-hero-tag {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(224,100,30,0.15); border:1px solid rgba(224,100,30,0.35);
+    color:#CC9900; font-size:11px; font-weight:700;
+    letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
+    border-radius:20px; margin-bottom:20px;
+  }
+  .partners-hero h1 {
+    font-size:clamp(14px,2vw,18px); font-weight:700; color:var(--sun-bright);
+    letter-spacing:2px; text-transform:uppercase; margin-bottom:16px;
+  }
+  .partners-hero-headline {
+    font-size:clamp(38px,5vw,64px); font-weight:900; line-height:1.08; color:#FFFFFF;
+    margin-bottom:24px; max-width:820px;
+  }
+  .partners-hero-headline span { color:var(--sun-bright); }
+  .partners-hero-sub {
+    font-size:17px; color:rgba(255,255,255,0.65);
+    line-height:1.8; max-width:680px; margin-bottom:36px;
+  }
+  .partners-hero-cta {
+    display:inline-flex; align-items:center; gap:10px;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:white; font-weight:800; font-size:15px;
+    padding:16px 32px; border-radius:10px;
+    box-shadow:0 6px 24px rgba(224,100,30,0.4);
+    transition:all .2s; text-decoration:none;
+  }
+  .partners-hero-cta:hover { transform:translateY(-2px); box-shadow:0 10px 32px rgba(224,100,30,0.5); }
+
+  /* WHY PARTNER */
+  .why-section { padding:100px 0; background:var(--bg); }
+  .why-body { font-size:17px; color:var(--text-mid); line-height:1.8; max-width:720px; margin-bottom:48px; }
+  .why-benefits {
+    display:grid; grid-template-columns:repeat(2,1fr); gap:20px;
+    max-width:860px;
+  }
+  .why-benefit {
+    background:white; border:1px solid var(--border); border-radius:14px;
+    padding:24px 26px; display:flex; align-items:flex-start; gap:16px;
+    box-shadow:var(--card-shadow); transition:all .3s;
+  }
+  .why-benefit:hover { border-color:rgba(224,100,30,0.4); transform:translateY(-4px); box-shadow:0 12px 36px rgba(224,100,30,0.12); }
+  .why-dot {
+    width:10px; height:10px; border-radius:50%; flex-shrink:0;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    margin-top:6px;
+  }
+  .why-benefit p { font-size:15px; color:var(--text-mid); line-height:1.65; }
+
+  /* VALUE PILLARS */
+  .pillars-section { padding:100px 0; background:white; }
+  .pillars-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:28px;
+    margin-top:56px;
+  }
+  .pillar-card {
+    background:var(--bg); border:1px solid var(--border); border-radius:20px;
+    padding:36px 32px; box-shadow:var(--card-shadow); transition:all .3s;
+  }
+  .pillar-card:hover { border-color:rgba(224,100,30,0.4); transform:translateY(-5px); box-shadow:0 14px 44px rgba(224,100,30,0.13); }
+  .pillar-card.featured {
+    background:linear-gradient(160deg,#474237 0%,#2A231B 100%);
+    border:none; grid-column:span 2;
+  }
+  .pillar-num {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:36px; height:36px; border-radius:10px;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:white; font-size:14px; font-weight:800;
+    margin-bottom:18px;
+  }
+  .pillar-card h3 { font-size:20px; font-weight:800; color:var(--navy); margin-bottom:14px; }
+  .pillar-card.featured h3 { color:var(--sun-bright); }
+  .pillar-list { list-style:none; margin-bottom:18px; }
+  .pillar-list li {
+    font-size:14px; color:var(--text-mid); line-height:1.7; padding:5px 0;
+    padding-left:18px; position:relative;
+  }
+  .pillar-list li::before { content:''; position:absolute; left:0; top:13px; width:8px; height:2px; background:var(--sun); border-radius:2px; }
+  .pillar-card.featured .pillar-list li { color:rgba(255,255,255,0.75); }
+  .pillar-card.featured .pillar-list li::before { background:var(--sun-bright); }
+  .pillar-tagline {
+    font-size:14px; font-style:italic; color:var(--text-muted);
+    border-left:3px solid var(--sun); padding-left:14px;
+    line-height:1.65;
+  }
+  .pillar-card.featured .pillar-tagline { color:rgba(255,255,255,0.55); border-left-color:var(--sun-bright); }
+
+  /* PARTNER TIERS, Horizontal card layout */
+  .tiers-section { padding:100px 0; background:var(--bg); }
+  .tiers-stack { display:flex; flex-direction:column; gap:24px; margin-top:48px; }
+  .tier-row {
+    display:grid; grid-template-columns:260px 1fr; gap:0;
+    background:white; border:1px solid var(--border); border-radius:20px;
+    overflow:hidden; box-shadow:var(--card-shadow); transition:all .3s;
+  }
+  .tier-row:hover { border-color:rgba(224,100,30,0.4); box-shadow:0 12px 40px rgba(224,100,30,0.1); }
+  .tier-left {
+    padding:32px 28px; display:flex; flex-direction:column; justify-content:center;
+    border-right:1px solid var(--border); background:var(--bg);
+  }
+  .tier-badge {
+    font-size:10px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
+    padding:4px 12px; border-radius:20px; margin-bottom:12px; width:fit-content;
+  }
+  .tier-badge.t1 { background:rgba(90,85,76,0.12); color:#4A443C; }
+  .tier-badge.t2 { background:rgba(42,35,27,0.12); color:#1E1A14; }
+  .tier-badge.t3 { background:rgba(224,100,30,0.15); color:#9A7209; }
+  .tier-badge.t4 { background:rgba(71,66,55,0.12); color:var(--navy); }
+  .tier-name { font-size:20px; font-weight:800; color:var(--navy); margin-bottom:4px; line-height:1.25; }
+  .tier-subtitle { font-size:12px; color:var(--text-muted); line-height:1.5; }
+  .tier-right { padding:28px 32px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; align-items:start; }
+  .tier-block h4 {
+    font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase;
+    color:#9A7209; margin-bottom:8px;
+  }
+  .tier-block p { font-size:13px; color:var(--text-mid); line-height:1.65; }
+  .tier-block ul { list-style:none; margin:0; padding:0; }
+  .tier-block ul li {
+    font-size:13px; color:var(--text-mid); line-height:1.65;
+    padding:3px 0 3px 16px; position:relative;
+  }
+  .tier-block ul li::before {
+    content:''; position:absolute; left:0; top:11px;
+    width:6px; height:2px; background:var(--sun); border-radius:2px;
+  }
+  .tier-block.commercial { background:rgba(224,100,30,0.05); border-radius:10px; padding:14px 16px; }
+  .tier-block.value { background:rgba(224,100,30,0.04); border-radius:10px; padding:14px 16px; }
+  .tier-block.value h4 { color:var(--green); }
+
+  /* Tier progression bar */
+  .tier-prog-bar {
+    display:flex; align-items:center; justify-content:center;
+    gap:0; margin-top:48px; position:relative;
+  }
+  .tier-prog-bar::before {
+    content:''; position:absolute; top:50%; left:12%; right:12%;
+    height:3px; background:linear-gradient(90deg,rgba(90,85,76,0.2),rgba(42,35,27,0.3),rgba(224,100,30,0.4),rgba(71,66,55,0.5));
+    border-radius:2px; z-index:0;
+  }
+  .prog-node {
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    position:relative; z-index:1; flex:1; max-width:180px;
+  }
+  .prog-dot {
+    width:40px; height:40px; border-radius:50%; display:flex;
+    align-items:center; justify-content:center; font-size:14px; font-weight:800;
+    color:white; box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  }
+  .prog-dot.d1 { background:#5A554C; }
+  .prog-dot.d2 { background:#2A231B; }
+  .prog-dot.d3 { background:var(--sun); }
+  .prog-dot.d4 { background:#474237; }
+  .prog-name { font-size:12px; font-weight:700; color:var(--navy); text-align:center; }
+  @media(max-width:900px){
+    .tier-row{grid-template-columns:1fr;}
+    .tier-left{border-right:none;border-bottom:1px solid var(--border);}
+    .tier-right{grid-template-columns:1fr;}
+  }
+
+  /* HOW IT WORKS */
+  .how-section {
+    padding:100px 0;
+    background:linear-gradient(160deg, #413C33 0%, #474237 100%);
+  }
+  .how-heading { font-size:clamp(30px,4vw,48px); font-weight:800; color:white; margin-bottom:56px; }
+  .steps-grid {
+    display:grid; grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+  .step-card {
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+    border-radius:16px; padding:28px 24px; transition:background .3s;
+  }
+  .step-card:hover { background:rgba(255,255,255,0.08); }
+  .step-num {
+    width:48px; height:48px; border-radius:50%;
+    background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:white; font-size:18px; font-weight:900;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:20px;
+  }
+  .step-card h3 { font-size:17px; font-weight:700; color:white; margin-bottom:10px; }
+  .step-card p { font-size:14px; color:rgba(255,255,255,0.65); line-height:1.7; }
+
+  /* FORM SECTION */
+  .form-section { padding:100px 0; background:var(--bg); }
+  .form-wrap {
+    max-width:760px; margin:0 auto;
+    background:white; border-radius:24px; padding:56px 52px;
+    box-shadow:0 8px 48px rgba(224,100,30,0.1), 0 2px 8px rgba(0,0,0,0.05);
+    border:1px solid var(--border);
+  }
+  .form-wrap h2 { font-size:clamp(26px,3.5vw,38px); font-weight:800; color:var(--navy); margin-bottom:10px; }
+  .form-wrap .form-sub { font-size:15px; color:var(--text-muted); margin-bottom:36px; line-height:1.65; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .form-group { margin-bottom:20px; }
+  .form-group label { display:block; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--navy); margin-bottom:7px; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width:100%; background:#FAFAF8; border:1px solid rgba(30,26,20,0.15);
+    border-radius:10px; padding:13px 16px; font-size:15px; color:var(--text);
+    outline:none; transition:border-color .2s, box-shadow .2s; font-family:inherit;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color:rgba(30,26,20,0.3); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color:var(--sun); box-shadow:0 0 0 3px rgba(224,100,30,0.12);
+  }
+  .form-group select { cursor:pointer; }
+  .form-group textarea { resize:vertical; min-height:120px; line-height:1.65; }
+  .form-submit {
+    width:100%; background:linear-gradient(135deg,var(--sun),var(--sun-deep));
+    color:white; border:none; border-radius:12px; padding:17px 32px;
+    font-size:16px; font-weight:800; letter-spacing:0.5px; cursor:pointer;
+    transition:all .2s; box-shadow:0 6px 24px rgba(224,100,30,0.4);
+    margin-top:8px;
+  }
+  .form-submit:hover { transform:translateY(-2px); box-shadow:0 10px 32px rgba(224,100,30,0.5); }
+
+  /* CLOSING */
+  .closing-strip {
+    background:linear-gradient(135deg,#474237 0%,#2A231B 100%);
+    padding:48px 0; text-align:center;
+  }
+  .closing-strip p {
+    font-size:18px; font-weight:600; color:rgba(255,255,255,0.88);
+    max-width:680px; margin:0 auto; line-height:1.65;
+  }
+
+  /* MOBILE */
+  @media(max-width:960px){
+    .topbar-inner a{padding:0 10px;font-size:10px;}
+    .pillars-grid{grid-template-columns:1fr!important;}
+    .pillar-card.featured{grid-column:span 1!important;}
+    .tiers-grid{grid-template-columns:1fr 1fr!important;}
+    .steps-grid{grid-template-columns:1fr 1fr!important;}
+    .why-benefits{grid-template-columns:1fr!important;}
+  }
+  @media(max-width:768px){
+    .topbar{display:none!important;}
+    .nav-links{display:none!important;}
+    .nav-hamburger{display:flex!important;}
+    .container{padding:0 18px!important;}
+    .partners-hero{padding:120px 0 70px!important;}
+    .section{padding:56px 0!important;}
+    .section-heading{font-size:clamp(24px,6vw,32px)!important;}
+    .pillars-grid{grid-template-columns:1fr!important;}
+    .pillar-card.featured{grid-column:span 1!important;}
+    .tiers-grid{grid-template-columns:1fr!important;}
+    .steps-grid{grid-template-columns:1fr!important;}
+    .why-benefits{grid-template-columns:1fr!important;}
+    .form-wrap{padding:32px 22px!important;}
+    .form-row{grid-template-columns:1fr!important;}
+    .tier-progression{flex-direction:column!important;gap:8px!important;}
+    .prog-arrow{transform:rotate(90deg)!important;}
+    .footer-top{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+    .footer-newsletter-row{grid-template-columns:1fr!important;gap:32px!important;padding:28px 24px!important;}
+    .footer-bottom{flex-direction:column!important;align-items:flex-start!important;}
+    .footer-legal a:first-child{padding-left:0!important;}
+    .sun-divider{display:none;}
+    .tier-right{grid-template-columns:1fr!important;}
+    .page-hero{padding:140px 0 60px!important;}
+    .page-hero h1{font-size:clamp(30px,8vw,42px)!important;}
+  
+    .footer-newsletter input,.footer-newsletter select{max-width:100%!important;box-sizing:border-box!important;}
+    .footer-brand img{max-width:280px!important;}
+    .fn-row{flex-direction:column!important;}
+    .fn-row input,.fn-row select{width:100%!important;}
+    /* ── Universal mobile overflow prevention ── */
+    *{max-width:100%!important;box-sizing:border-box!important;}
+    img,svg,video,canvas,iframe{max-width:100%!important;height:auto!important;}
+    table,.cookie-table{display:block!important;overflow-x:auto!important;}
+    .diff-visual-icon{font-size:56px!important;}
+    .featured-img-icon{font-size:56px!important;}
+    .price-badge .big{font-size:48px!important;}
+    [style*="gap:64px"]{gap:24px!important;}
+    [style*="gap:72px"]{gap:24px!important;}
+    [style*="gap:60px"]{gap:24px!important;}
+    [style*="gap:80px"]{gap:32px!important;}
+    [style*="gap:56px"]{gap:24px!important;}
+    [style*="gap:48px"]{gap:24px!important;}
+    [style*="width:500px"]{width:100%!important;}
+    [style*="width:540px"]{width:100%!important;}
+    [style*="width:600px"]{width:100%!important;}
+    [style*="width:640px"]{width:100%!important;}
+    [style*="width:680px"]{width:100%!important;}
+    [style*="width:700px"]{width:100%!important;}
+    [style*="width:720px"]{width:100%!important;}
+    [style*="width:760px"]{width:100%!important;}
+    [style*="width:800px"]{width:100%!important;}
+    [style*="width:860px"]{width:100%!important;}
+    [style*="width:880px"]{width:100%!important;}
+    [style*="width:900px"]{width:100%!important;}
+    [style*="width:920px"]{width:100%!important;}
+    [style*="width:1000px"]{width:100%!important;}
+    [style*="width:1100px"]{width:100%!important;}
+    [style*="width:1200px"]{width:100%!important;}
+    [style*="width:1400px"]{width:100%!important;}
+    /* ── Inline grid collapse (attribute selectors) ── */
+    [style*="grid-template-columns:260px 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:200px 1fr"]{grid-template-columns:1fr!important;gap:24px!important;}
+    [style*="grid-template-columns:1fr 1.8fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1fr 1.4fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1.4fr 1fr"]{grid-template-columns:1fr!important;gap:32px!important;}
+    [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+    [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+    [style*="grid-template-columns:1fr auto 1fr auto 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
+    .module-grid{grid-template-columns:1fr!important;gap:32px!important;}
+    .founder-card{grid-template-columns:1fr!important;gap:24px!important;}
+    .supply-chain-grid{grid-template-columns:1fr!important;}
+    .supply-chain-grid .supply-arrow{display:none!important;}
+  }
+  @media(max-width:480px){
+    .footer-top{grid-template-columns:1fr!important;}
+    .tiers-grid{grid-template-columns:1fr!important;}
+    .footer-newsletter-row{padding:20px!important;}
+    .steps-grid{grid-template-columns:1fr!important;}
+  
+    /* ── Further collapse at 480px ── */
+    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:1fr!important;}
+  }
+
+  @keyframes iconFloat { 0%,100%{transform:translateY(0px);} 50%{transform:translateY(-8px);} }
+</style>
+<link rel="icon" type="image/svg+xml" href="logo-mini.svg">
+<link rel="apple-touch-icon" href="logo-mini.svg">
+<meta name="theme-color" content="#1E1A14">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Partner Centre","description":"Partner with TwoSuns to deliver enterprise orchestration to complex organizations","url":"https://twosuns.ai/partners.html","isPartOf":{"@type":"WebSite","name":"TwoSuns","url":"https://twosuns.ai"}}</script>
+</head>
+<body>
+
+<canvas id="sun-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a href="investors.html">Investor Centre</a>
+      <a href="partners.html">Partner Centre</a>
+      <a href="trust.html">Trust Centre</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+  <div class="nav-inner">
+    <a href="index.html">
+      <img src="logo-horizontal-white.svg" alt="TwoSuns" style="height:60px;width:auto;display:block;">
+    </a>
+    <button class="nav-hamburger" id="nxs-hamburger" onclick="toggleMobNav()" aria-label="Toggle menu"></button>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="platform.html">Platform</a>
+        <div class="nav-dropdown-menu">
+          <a href="platform.html">Platform Overview</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="why-twosuns.html">Why TwoSuns</a>
+          <div class="menu-divider"></div>
+          <a href="modules.html">Modules</a>
+          <a href="technology.html">Technology</a>
+          <div class="menu-divider"></div>
+          <a href="trust.html">Trust Centre</a>
+        </div>
+      </div>
+      
+      <div class="nav-dropdown">
+        <a href="industries.html">Industries</a>
+        <div class="nav-dropdown-menu">
+          <a href="industries.html">All Industries</a>
+          <div class="menu-divider"></div>
+          <a href="cement.html">Cement &amp; Construction</a>
+          <a href="mining.html">Mining &amp; Resources</a>
+          <a href="finance.html">Financial Markets</a>
+          <a href="manufacturing.html">Manufacturing</a>
+        </div>
+      </div>
+      <div class="nav-dropdown nav-mega">
+        <a href="blog.html">Resources</a>
+        <div class="nav-dropdown-menu nav-mega-menu">
+          <div class="nav-mega-cats">
+            <div class="nav-mega-cat active" data-k="insights" onmouseover="megaShow(this,'insights')">Industry Insights <span>&rsaquo;</span></div>
+            <div class="nav-mega-cat" data-k="community" onmouseover="megaShow(this,'community')">Community <span>&rsaquo;</span></div>
+          </div>
+          <div class="nav-mega-subs">
+            <div class="nav-mega-sub" data-k="insights" style="display:flex;flex-direction:column;">
+              <a href="blog.html">Blog</a>
+              <a href="videos.html">Videos</a>
+              <a href="resources.html">Knowledge Center</a>
+            </div>
+            <div class="nav-mega-sub" data-k="community" style="display:none;flex-direction:column;">
+              <a href="community.html">Overview</a>
+              <a href="community.html#events">Events</a>
+              <a href="community.html#social">Social Media</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="about.html">Company</a>
+        <div class="nav-dropdown-menu">
+          <a href="about.html">About Us</a>
+          <a href="investors.html">Investor Centre</a>
+          <a href="press.html">Press &amp; Media</a>
+          <div class="menu-divider"></div>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <a href="book-discovery.html" class="btn-cta">Book a Discovery</a>
+    </div>
+  </div>
+</nav>
+<!-- MOBILE NAV PANEL -->
+<div id="nxs-mob-nav" style="display:none;position:fixed;top:70px;left:0;right:0;background:#FFFFFF;z-index:9998;padding:16px 24px 24px;box-shadow:0 8px 32px rgba(30,26,20,0.12);border-bottom:3px solid #E0641E;">
+  <a href="platform.html">Platform</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="industries.html">Industries</a>
+  <a href="why-twosuns.html">Why TwoSuns</a>
+  <a href="about.html">Company</a>
+  <a href="blog.html">Blog</a>
+  <a href="videos.html">Videos</a>
+  <a href="resources.html">Knowledge Center</a>
+  <a href="community.html">Community</a>
+  <a href="investors.html">Investor Centre</a>
+  <a href="partners.html">Partner Centre</a>
+  <a href="trust.html">Trust Centre</a>
+  <a href="book-discovery.html" style="color:#9A7209;font-weight:700;">Book a Discovery</a>
+</div>
+
+<!-- HERO -->
+<section class="partners-hero">
+  <div class="container">
+    <div class="partners-hero-tag">&#9670; Partner with TwoSuns.ai</div>
+    <h1>Partner with TwoSuns.ai</h1>
+    <div class="partners-hero-headline">Building the Future of <span>Enterprise Orchestration</span></div>
+    <p class="partners-hero-sub">TwoSuns works with technology providers, data partners, system integrators, consultants, and industry specialists to help organizations transform fragmented information into orchestrated execution. Together, we help enterprises improve visibility, strengthen decision-making, and accelerate outcomes across commercial, operational, and industrial environments.</p>
+    <a href="mailto:partners@twosuns.ai" class="partners-hero-cta">Partner With Us &#8594;</a>
+  </div>
+</section>
+<div class="sun-divider"></div>
+
+<!-- WHY PARTNER -->
+<section class="why-section section">
+  <div class="container">
+    <div class="section-tag">Why Partner</div>
+    <h2 class="section-heading">Why Partner with TwoSuns?</h2>
+    <p class="why-body">TwoSuns has created a global ecosystem focused on enterprise coordination, operational intelligence, and AI-enabled execution.</p>
+    <p style="font-size:15px;color:var(--text-mid);margin-top:16px;margin-bottom:8px;font-weight:600;">Partnering with TwoSuns enables you to:</p>
+    <div class="why-benefits">
+      <div class="why-benefit">
+        <div class="why-dot"></div>
+        <p>Create new revenue opportunities through co-selling and joint solutions</p>
+      </div>
+      <div class="why-benefit">
+        <div class="why-dot"></div>
+        <p>Expand into industrial, infrastructure, manufacturing, resource, and enterprise markets</p>
+      </div>
+      <div class="why-benefit">
+        <div class="why-dot"></div>
+        <p>Deliver greater value through explainable, human-guided AI</p>
+      </div>
+      <div class="why-benefit">
+        <div class="why-dot"></div>
+        <p>Accelerate customer outcomes with integrated execution environments</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR ECOSYSTEM -->
+<section class="pillars-section">
+  <div class="container">
+    <div class="section-tag">Our Ecosystem</div>
+    <h2 class="section-heading">Our Partner <span>Ecosystem</span></h2>
+    <p class="section-sub" style="margin-bottom:40px;">We collaborate across four strategic partner categories that bring complementary capabilities to enterprise coordination.</p>
+    <div class="pillars-grid">
+
+      <!-- Ecosystem 1: Technology Partners -->
+      <div class="pillar-card">
+        <div class="pillar-num">1</div>
+        <h3>Technology Partners</h3>
+        <p style="font-size:14px;color:var(--text-mid);line-height:1.7;">Cloud, AI, data, and enterprise technology providers that help power scalable deployments.</p>
+      </div>
+
+      <!-- Ecosystem 2: Data & Intelligence -->
+      <div class="pillar-card">
+        <div class="pillar-num">2</div>
+        <h3>Data &amp; Intelligence Partners</h3>
+        <p style="font-size:14px;color:var(--text-mid);line-height:1.7;">Organizations that provide market, operational, industry, and business intelligence.</p>
+      </div>
+
+      <!-- Ecosystem 3: System Integrators & Advisors -->
+      <div class="pillar-card">
+        <div class="pillar-num">3</div>
+        <h3>System Integrators &amp; Advisors</h3>
+        <p style="font-size:14px;color:var(--text-mid);line-height:1.7;">Consultancies, implementation partners, and industry experts helping customers modernize operations and execution.</p>
+      </div>
+
+      <!-- Ecosystem 4: Industry & Strategic -->
+      <div class="pillar-card">
+        <div class="pillar-num">4</div>
+        <h3>Industry &amp; Strategic Partners</h3>
+        <p style="font-size:14px;color:var(--text-mid);line-height:1.7;">Organizations that bring domain expertise, market access, and customer relationships.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER TYPES -->
+<section class="tiers-section">
+  <div class="container">
+    <div class="section-tag">Partner Types</div>
+    <h2 class="section-heading">Partner <span>Types</span></h2>
+    <p class="section-sub">We collaborate across five strategic partner categories, each playing a distinct role in scaling coordination to the markets that need it most.</p>
+
+    <div class="tiers-stack">
+
+      <!-- Type 1: Strategic Technology -->
+      <div class="tier-row">
+        <div class="tier-left">
+          <div class="tier-badge t1">01</div>
+          <div class="tier-name">Strategic Technology Partners</div>
+          <div class="tier-subtitle">Cloud, AI, and data platforms.</div>
+        </div>
+        <div class="tier-right">
+          <div class="tier-block">
+            <h4>Role</h4>
+            <p>Enable scale and enterprise deployment of TwoSuns across global markets.</p>
+          </div>
+          <div class="tier-block commercial">
+            <h4>Collaboration</h4>
+            <p>Joint architecture, co-engineering, and go-to-market motions on hyperscale cloud and AI platforms.</p>
+          </div>
+          <div class="tier-block value">
+            <h4>Outcome</h4>
+            <p>Enterprise-grade performance, reach, and trust built on proven technology foundations.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type 2: Data & Intelligence -->
+      <div class="tier-row">
+        <div class="tier-left">
+          <div class="tier-badge t2">02</div>
+          <div class="tier-name">Data &amp; Intelligence Partners</div>
+          <div class="tier-subtitle">Premium data and market intelligence providers.</div>
+        </div>
+        <div class="tier-right">
+          <div class="tier-block">
+            <h4>Role</h4>
+            <p>Power differentiated insights and analytics across sectors, energy, and financial markets.</p>
+          </div>
+          <div class="tier-block commercial">
+            <h4>Collaboration</h4>
+            <p>Licensed data integration, co-developed benchmarks, and joint analytics offerings.</p>
+          </div>
+          <div class="tier-block value">
+            <h4>Outcome</h4>
+            <p>Richer intelligence for clients, new distribution for partners, and shared monetization of data-led products.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type 3: Integration & Enablement -->
+      <div class="tier-row">
+        <div class="tier-left">
+          <div class="tier-badge t3">03</div>
+          <div class="tier-name">Integration &amp; Enablement Partners</div>
+          <div class="tier-subtitle">Technology and services partners.</div>
+        </div>
+        <div class="tier-right">
+          <div class="tier-block">
+            <h4>Role</h4>
+            <p>Enable seamless deployment and continuous intelligence inside client environments and workflows.</p>
+          </div>
+          <div class="tier-block commercial">
+            <h4>Collaboration</h4>
+            <p>Connectors, APIs, managed services, and delivery frameworks that accelerate time to value.</p>
+          </div>
+          <div class="tier-block value">
+            <h4>Outcome</h4>
+            <p>Faster deployments, lower integration risk, and consistent delivery across enterprise rollouts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type 4: Channel & Industry -->
+      <div class="tier-row">
+        <div class="tier-left">
+          <div class="tier-badge t4">04</div>
+          <div class="tier-name">Channel &amp; Industry Partners</div>
+          <div class="tier-subtitle">System integrators, consultants, and industry specialists.</div>
+        </div>
+        <div class="tier-right">
+          <div class="tier-block">
+            <h4>Role</h4>
+            <p>Drive customer success by bringing industry expertise, delivery capacity, and trusted relationships.</p>
+          </div>
+          <div class="tier-block commercial">
+            <h4>Collaboration</h4>
+            <p>Co-sell, co-deliver, and joint account strategies aligned to priority markets and segments.</p>
+          </div>
+          <div class="tier-block value">
+            <h4>Outcome</h4>
+            <p>Scaled reach, faster adoption, and measurable commercial outcomes across client portfolios.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type 5: Innovation & Emerging -->
+      <div class="tier-row">
+        <div class="tier-left">
+          <div class="tier-badge t1">05</div>
+          <div class="tier-name">Innovation &amp; Emerging Partners</div>
+          <div class="tier-subtitle">AI startups and ecosystem leaders.</div>
+        </div>
+        <div class="tier-right">
+          <div class="tier-block">
+            <h4>Role</h4>
+            <p>Accelerate innovation and go-to-market for new AI capabilities and emerging use cases.</p>
+          </div>
+          <div class="tier-block commercial">
+            <h4>Collaboration</h4>
+            <p>Joint R&amp;D, early-access programs, and co-branded launches across frontier domains.</p>
+          </div>
+          <div class="tier-block value">
+            <h4>Outcome</h4>
+            <p>Shared leadership in defining the next generation of coordination.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK TOGETHER -->
+<section class="how-section">
+  <div class="container">
+    <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:var(--sun-bright);">Model</div>
+    <h2 class="how-heading">How We Work Together</h2>
+    <p style="font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:40px;max-width:680px;">Our partnership model is built on four collaboration motions that drive shared success.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Co-Sell</h3>
+        <p>Develop opportunities and grow revenue together.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Co-Build</h3>
+        <p>Create integrated solutions that solve real business challenges.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Co-Market</h3>
+        <p>Collaborate on thought leadership, events, and market education.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Co-Innovate</h3>
+        <p>Combine expertise, intelligence, and execution capabilities to create measurable business outcomes.</p>
+      </div>
+    </div>
+    <p style="font-size:15px;color:rgba(255,255,255,0.8);margin-top:36px;max-width:680px;font-style:italic;">Every partnership is aligned to measurable outcomes and revenue growth.</p>
+  </div>
+</section>
+
+<!-- WHAT PARTNERS GAIN + PARTNER LIFECYCLE -->
+<section class="section" style="background:white;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
+
+      <!-- Left: What Partners Gain -->
+      <div>
+        <div class="section-tag">Partner Benefits</div>
+        <h3 style="font-size:24px;font-weight:800;color:var(--navy);margin:16px 0 12px;line-height:1.3;">Partner <span style="color:#9A7209;">Benefits</span></h3>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px;line-height:1.7;">Partnership with TwoSuns delivers value across three connected dimensions.</p>
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="2" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              </div>
+              <strong style="font-size:15px;color:var(--navy);">Commercial Growth</strong>
+            </div>
+            <ul style="list-style:none;padding-left:0;margin:0;">
+              <li style="font-size:13px;color:var(--text-mid);padding:3px 0;line-height:1.6;">&#8250; New revenue opportunities</li>
+              <li style="font-size:13px;color:var(--text-mid);padding:3px 0;line-height:1.6;">&#8250; Expanded solution offerings</li>
+              <li style="font-size:13px;color:var(--text-mid);padding:3px 0;line-height:1.6;">&#8250; Access to new customer segments</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:rgba(42,35,27,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E1A14" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              </div>
+              <strong style="font-size:15px;color:var(--navy);">Strategic Advantage</strong>
+            </div>
+            <ul style="list-style:none;padding-left:0;margin:0;">
+              <li style="font-size:13px;color:var(--text-mid);padding:3px 0;line-height:1.6;">&#8250; Alignment with enterprise AI transformation</li>
+              <li style="font-size:13px;color:var(--text-mid);padding:3px 0;line-height:1.6;">&#8250; Access to emerging markets and industries</li>
+              <li style="font-size:13px;color:var(--text-mid);padding:3px 0;line-height:1.6;">&#8250; Increased differentiation</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A231B" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <strong style="font-size:15px;color:var(--navy);">Customer Success</strong>
+            </div>
+            <ul style="list-style:none;padding-left:0;margin:0;">
+              <li style="font-size:13px;color:var(--text-mid);padding:3px 0;line-height:1.6;">&#8250; Faster implementation</li>
+              <li style="font-size:13px;color:var(--text-mid);padding:3px 0;line-height:1.6;">&#8250; Reduced complexity</li>
+              <li style="font-size:13px;color:var(--text-mid);padding:3px 0;line-height:1.6;">&#8250; Better business outcomes</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right: Data Contribution -->
+      <div>
+        <div class="section-tag">Data Contribution</div>
+        <h3 style="font-size:24px;font-weight:800;color:var(--navy);margin:16px 0 12px;line-height:1.3;">Shape the Next Generation of <span style="color:#9A7209;">Benchmarks</span></h3>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px;line-height:1.7;">TwoSuns partners help shape how enterprise coordination is measured. Contribute anonymized signals and benchmarks that the industry trusts.</p>
+
+        <div style="background:linear-gradient(135deg,#474237 0%,#2A231B 100%);border-radius:16px;padding:32px 36px;color:white;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:12px;">Data Contribution</div>
+          <h4 style="font-size:22px;font-weight:800;margin-bottom:14px;line-height:1.3;">Join the benchmark community.</h4>
+          <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:22px;">Want to contribute to a more data-led benchmarks ecosystem? Join 200+ firms helping create a more transparent and accurate way to measure enterprise coordination outcomes.</p>
+          <a href="mailto:partners@twosuns.ai?subject=Data%20Contribution%20Inquiry" style="display:inline-block;background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;padding:11px 24px;border-radius:8px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">Contribute Data &#8594;</a>
+        </div>
+
+        <div style="margin-top:24px;padding:20px 22px;background:var(--bg);border:1px solid var(--border);border-radius:12px;">
+          <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin:0;">Partners who contribute data gain early access to industry benchmarks, co-authored research, and recognition in published reports.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="sun-divider"></div>
+
+<!-- ══ PARTNER LIFECYCLE, full-width visual ══ -->
+<section style="background:#FFFFFF;padding:96px 0 80px;position:relative;overflow:hidden;">
+  <!-- Subtle mesh decoration at bottom -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:160px;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160'%3E%3Cpath d='M0 110 Q360 60 720 110 T1440 110' stroke='%238B5CF6' stroke-width='0.4' fill='none' opacity='0.18'/%3E%3Cpath d='M0 120 Q360 70 720 120 T1440 120' stroke='%233B82F6' stroke-width='0.4' fill='none' opacity='0.18'/%3E%3Cpath d='M0 130 Q360 80 720 130 T1440 130' stroke='%2310B981' stroke-width='0.4' fill='none' opacity='0.18'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:center bottom;background-size:100% auto;pointer-events:none;"></div>
+
+  <div class="container" style="position:relative;z-index:2;">
+    <!-- Eyebrow with horizontal lines on both sides -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:18px;">
+      <span style="display:inline-block;width:48px;height:1px;background:#E0531A;"></span>
+      <span style="font-size:13px;font-weight:700;letter-spacing:4px;color:#E0531A;text-transform:uppercase;">Partner Lifecycle</span>
+      <span style="display:inline-block;width:48px;height:1px;background:#E0531A;"></span>
+    </div>
+
+    <h2 style="text-align:center;font-size:clamp(32px,4.4vw,56px);font-weight:900;color:#14110D;line-height:1.15;letter-spacing:-1px;margin-bottom:64px;">Built for Partnership<span style="color:#E0531A;">.</span> Designed for Impact<span style="color:#E0531A;">.</span></h2>
+
+    <!-- 6-stage horizontal lifecycle -->
+    <div class="lifecycle-row" style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr auto 1fr;gap:0;align-items:start;max-width:1280px;margin:0 auto;">
+
+      <!-- Stage 01 ALIGN, purple -->
+      <div class="ls" style="text-align:center;">
+        <div style="font-size:13px;font-weight:700;color:#E8A52A;letter-spacing:1px;margin-bottom:14px;">01</div>
+        <div class="ls-circle" style="--col:#E8A52A;">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#E8A52A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div style="margin-top:18px;font-size:14px;font-weight:800;color:#E8A52A;letter-spacing:2px;">ALIGN</div>
+        <p style="margin-top:10px;font-size:13px;color:#3A3A3A;line-height:1.55;max-width:170px;margin-left:auto;margin-right:auto;">Align on shared vision, capabilities, and strategic goals.</p>
+      </div>
+
+      <div class="ls-chev" style="color:#D7D0C5;font-size:22px;font-weight:700;padding-top:64px;">»</div>
+
+      <!-- Stage 02 VALIDATE, blue -->
+      <div class="ls" style="text-align:center;">
+        <div style="font-size:13px;font-weight:700;color:#E0531A;letter-spacing:1px;margin-bottom:14px;">02</div>
+        <div class="ls-circle" style="--col:#E0531A;">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#E0531A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M8 13v-2"/><path d="M11 13V9"/><path d="M14 13v-3"/>
+          </svg>
+        </div>
+        <div style="margin-top:18px;font-size:14px;font-weight:800;color:#E0531A;letter-spacing:2px;">VALIDATE</div>
+        <p style="margin-top:10px;font-size:13px;color:#3A3A3A;line-height:1.55;max-width:170px;margin-left:auto;margin-right:auto;">Validate opportunities, use cases, and value potential together.</p>
+      </div>
+
+      <div class="ls-chev" style="color:#D7D0C5;font-size:22px;font-weight:700;padding-top:64px;">»</div>
+
+      <!-- Stage 03 AGREE, teal -->
+      <div class="ls" style="text-align:center;">
+        <div style="font-size:13px;font-weight:700;color:#D79A12;letter-spacing:1px;margin-bottom:14px;">03</div>
+        <div class="ls-circle" style="--col:#D79A12;">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#D79A12" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/>
+          </svg>
+        </div>
+        <div style="margin-top:18px;font-size:14px;font-weight:800;color:#D79A12;letter-spacing:2px;">AGREE</div>
+        <p style="margin-top:10px;font-size:13px;color:#3A3A3A;line-height:1.55;max-width:170px;margin-left:auto;margin-right:auto;">Establish roles, commitments, and commercial terms.</p>
+      </div>
+
+      <div class="ls-chev" style="color:#D7D0C5;font-size:22px;font-weight:700;padding-top:64px;">»</div>
+
+      <!-- Stage 04 ACTIVATE, amber/yellow -->
+      <div class="ls" style="text-align:center;">
+        <div style="font-size:13px;font-weight:700;color:#F59E0B;letter-spacing:1px;margin-bottom:14px;">04</div>
+        <div class="ls-circle" style="--col:#F59E0B;">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+          </svg>
+        </div>
+        <div style="margin-top:18px;font-size:14px;font-weight:800;color:#F59E0B;letter-spacing:2px;">ACTIVATE</div>
+        <p style="margin-top:10px;font-size:13px;color:#3A3A3A;line-height:1.55;max-width:170px;margin-left:auto;margin-right:auto;">Launch together with enablement, joint planning, and go-to-market.</p>
+      </div>
+
+      <div class="ls-chev" style="color:#D7D0C5;font-size:22px;font-weight:700;padding-top:64px;">»</div>
+
+      <!-- Stage 05 DELIVER, orange -->
+      <div class="ls" style="text-align:center;">
+        <div style="font-size:13px;font-weight:700;color:#F97316;letter-spacing:1px;margin-bottom:14px;">05</div>
+        <div class="ls-circle" style="--col:#F97316;">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5"/><path d="M14 17h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>
+          </svg>
+        </div>
+        <div style="margin-top:18px;font-size:14px;font-weight:800;color:#F97316;letter-spacing:2px;">DELIVER</div>
+        <p style="margin-top:10px;font-size:13px;color:#3A3A3A;line-height:1.55;max-width:170px;margin-left:auto;margin-right:auto;">Deliver value to customers and drive measurable outcomes.</p>
+      </div>
+
+      <div class="ls-chev" style="color:#D7D0C5;font-size:22px;font-weight:700;padding-top:64px;">»</div>
+
+      <!-- Stage 06 SCALE, purple -->
+      <div class="ls" style="text-align:center;">
+        <div style="font-size:13px;font-weight:700;color:#E8A52A;letter-spacing:1px;margin-bottom:14px;">06</div>
+        <div class="ls-circle" style="--col:#E8A52A;">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#E8A52A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18"/><rect x="7" y="13" width="3" height="5"/><rect x="12" y="9" width="3" height="9"/><rect x="17" y="5" width="3" height="13"/><path d="m17 8 3-3-3-3" transform="translate(0 -2)"/>
+          </svg>
+        </div>
+        <div style="margin-top:18px;font-size:14px;font-weight:800;color:#E8A52A;letter-spacing:2px;">SCALE</div>
+        <p style="margin-top:10px;font-size:13px;color:#3A3A3A;line-height:1.55;max-width:170px;margin-left:auto;margin-right:auto;">Expand impact, grow revenue, and scale our partnership.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    .ls-circle {
+      position:relative;
+      width:104px; height:104px;
+      margin:0 auto;
+      display:flex; align-items:center; justify-content:center;
+    }
+    /* Dashed outer ring */
+    .ls-circle::before {
+      content:''; position:absolute; inset:-8px;
+      border-radius:50%;
+      border:1.5px dashed var(--col);
+      opacity:0.45;
+    }
+    /* Solid inner ring */
+    .ls-circle::after {
+      content:''; position:absolute; inset:0;
+      border-radius:50%;
+      border:2px solid var(--col);
+      background:#FFFFFF;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.06), inset 0 0 0 6px rgba(255,255,255,1);
+    }
+    .ls-circle svg { position:relative; z-index:2; }
+    .ls:hover .ls-circle::before { opacity:0.85; transform: rotate(8deg); transition: all .35s ease; }
+    .ls-circle::before { transition: all .35s ease; }
+
+    @media (max-width: 1100px) {
+      .lifecycle-row {
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 32px 16px !important;
+      }
+      .ls-chev { display:none !important; }
+    }
+    @media (max-width: 640px) {
+      .lifecycle-row {
+        grid-template-columns: 1fr 1fr !important;
+      }
+    }
+  </style>
+</section>
+<div class="sun-divider"></div>
+
+<!-- PARTNER INQUIRY FORM -->
+<section class="form-section" id="partner-form">
+  <div class="container">
+    <div class="form-wrap">
+      <h2>Let's Build What's Next</h2>
+      <p class="form-sub">Organizations that connect signals to decisions and decisions to execution will outperform. Let's build that future together. Email us directly at <a href="mailto:partners@twosuns.ai" style="color:#9A7209;font-weight:700;">partners@twosuns.ai</a>.</p>
+
+      <form onsubmit="partnerSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="partner-email" placeholder="your@company.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Organization</label>
+            <input type="text" placeholder="Your organization" required>
+          </div>
+          <div class="form-group">
+            <label>Role</label>
+            <input type="text" placeholder="Your role or title" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Type of Partnership</label>
+          <select required>
+            <option value="" disabled selected>Select partnership type</option>
+            <option value="technology">Strategic Technology Partner</option>
+            <option value="data">Data &amp; Intelligence Partner</option>
+            <option value="integration">Integration &amp; Enablement Partner</option>
+            <option value="channel">Channel &amp; Industry Partner</option>
+            <option value="innovation">Innovation &amp; Emerging Partner</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us about your organization, the markets you serve, and where you see a partnership with TwoSuns creating the most value." required></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="partner-submit-btn">Submit Inquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<div class="closing-strip">
+  <div class="container">
+    <p>Let's build what's next, together. Reach us at <a href="mailto:partners@twosuns.ai" style="color:var(--sun-bright);font-weight:700;">partners@twosuns.ai</a>.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<!-- ══ MEMBERSHIPS ══ -->
+<section class="memberships-bar" aria-label="Memberships and affiliations">
+  <div class="memberships-inner">
+    <div class="memberships-label">Proud Member Of</div>
+    <div class="memberships-track">
+      <div class="memberships-row">
+        <a href="https://www.cim.org" target="_blank" rel="noopener" class="m-logo" aria-label="CIM, Canadian Institute of Mining"><img src="memberships/cim.png" alt="CIM" loading="lazy"></a>
+        <a href="https://www.boardoftrade.com/" target="_blank" rel="noopener" class="m-logo" aria-label="Greater Vancouver Board of Trade"><img src="memberships/gvbot.svg" alt="Greater Vancouver Board of Trade" loading="lazy"></a>
+        <a href="https://wearebctech.com" target="_blank" rel="noopener" class="m-logo" aria-label="We Are BC Tech"><img src="memberships/bctech.svg" alt="We Are BC Tech" loading="lazy"></a>
+        <a href="https://www.richmondchamber.ca/" target="_blank" rel="noopener" class="m-logo" aria-label="Richmond Chamber of Commerce"><img src="memberships/richmond.png" alt="Richmond Chamber of Commerce" loading="lazy"></a>
+        <!-- Duplicate for seamless scroll -->
+        <a href="https://www.cim.org" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/cim.png" alt="" loading="lazy"></a>
+        <a href="https://www.boardoftrade.com/" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/gvbot.svg" alt="" loading="lazy"></a>
+        <a href="https://wearebctech.com" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/bctech.svg" alt="" loading="lazy"></a>
+        <a href="https://www.richmondchamber.ca/" target="_blank" rel="noopener" class="m-logo" aria-hidden="true" tabindex="-1"><img src="memberships/richmond.png" alt="" loading="lazy"></a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .memberships-bar { background:#FFF5DD; border-top:1px solid rgba(224,100,30,0.15); border-bottom:1px solid rgba(224,100,30,0.15); padding:28px 0; overflow:hidden; }
+  .memberships-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; gap:32px; }
+  .memberships-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#5A554C; flex-shrink:0; min-width:140px; }
+  .memberships-track { flex:1; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000000 8%,#000000 92%,transparent); }
+  .memberships-row { display:flex; align-items:center; gap:64px; animation:memberships-scroll 30s linear infinite; width:max-content; }
+  .memberships-row:hover { animation-play-state:paused; }
+  .m-logo { display:flex; align-items:center; flex-shrink:0; opacity:.55; filter:grayscale(1); transition:opacity .25s, filter .25s; }
+  .m-logo:hover { opacity:1; filter:grayscale(0); }
+  .m-logo img { height:40px; width:auto; max-width:180px; object-fit:contain; }
+  @keyframes memberships-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  @media (max-width:768px) {
+    .memberships-inner { flex-direction:column; gap:14px; padding:0 16px; }
+    .memberships-label { min-width:auto; text-align:center; }
+    .memberships-row { gap:40px; }
+    .m-logo img { height:32px; }
+  }
+</style>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="platform.html">Platform Overview</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="modules.html">Modules</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="trust.html">Trust Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="why-twosuns.html">Why TwoSuns</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="partners.html">Partner Centre</a></li>
+          <li><a href="investors.html">Investor Centre</a></li>
+          <li><a href="press.html">Press &amp; Media</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="blog.html">Use Cases</a></li>
+          <li><a href="blog.html">Platform Briefs</a></li>
+          <li><a href="blog.html">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">130, 5920 No. Two Road<br>Richmond BC V7C 4R9</div>
+        <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:info@twosuns.ai" style="color:var(--sun-bright)">info@twosuns.ai</a></div>
+        <div class="footer-contact-item" style="padding:2px 0;"><a href="mailto:invest@twosuns.ai" style="color:var(--sun-bright)">invest@twosuns.ai</a></div>
+        <div class="footer-contact-item" style="padding-top:6px;"><a href="tel:6047609015">1-604-760-9015</a></div>
+        <div class="footer-contact-item"><a href="https://twosuns.ai">TwoSuns &#8599;</a></div>
+      </div>
+    </div>
+    <div class="footer-newsletter-row">
+      <div class="footer-brand">
+        <img src="logo-color.svg" alt="TwoSuns" style="width:340px;max-width:100%;height:auto;display:block;">
+        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9A7209;margin:10px 0 0;opacity:0.85;;">Light on Complexity.&nbsp; Power in Decisions.</p>
+        <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
+          <a href="https://www.linkedin.com/company/twosuns" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+             style="width:38px;height:38px;border-radius:8px;background:rgba(71,66,55,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+             onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
+             onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1E1A14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://x.com/TwoSunsAI" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
+             style="width:38px;height:38px;border-radius:8px;background:rgba(71,66,55,0.12);border:1px solid rgba(30,26,20,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;"
+             onmouseover="this.style.background='rgba(30,26,20,0.22)';this.style.borderColor='rgba(30,26,20,0.5)'"
+             onmouseout="this.style.background='rgba(30,26,20,0.12)';this.style.borderColor='rgba(30,26,20,0.25)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#1E1A14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.726-8.851L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Stay ahead of the market</h3>
+        <p>Get the latest market briefings from TwoSuns, platform updates, and coordination delivered monthly.</p>
+        <div class="fn-field">
+          <input type="text" placeholder="Full name" id="fn-name">
+          <input type="email" placeholder="Work email" id="fn-email">
+          <input type="text" placeholder="Company" id="fn-company">
+        </div>
+        <div class="fn-check">
+          <input type="checkbox" id="fn-updates">
+          <label for="fn-updates">Also send me platform release notes and product updates.</label>
+        </div>
+        <p class="fn-legal">By subscribing, you agree to receive email communications from TwoSuns. You can unsubscribe at any time.</p>
+        <button class="fn-btn" onclick="fnSubmit()">Subscribe Now</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookie Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="trust.html">Trust Centre</a>
+      </div>
+      <p>&#169; 2026 TwoSuns. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function fnSubmit(){
+  var e=document.getElementById('fn-email');
+  if(!e||!e.value.includes('@')){alert('Please enter a valid email address.');return;}
+  var btn=document.querySelector('.fn-btn');
+  btn.textContent='Subscribed ✓';
+  btn.style.background='#2A231B';
+  btn.disabled=true;
+}
+function partnerSubmit(evt){
+  evt.preventDefault();
+  var btn=document.getElementById('partner-submit-btn');
+  btn.textContent='Inquiry Submitted ✓';
+  btn.style.background='#2A231B';
+  btn.disabled=true;
+}
+function toggleMobNav(){
+  var nav=document.getElementById('nxs-mob-nav');
+  var btn=document.getElementById('nxs-hamburger');
+  var open=nav.style.display==='none'||nav.style.display==='';
+  nav.style.display=open?'block':'none';
+  btn.classList.toggle('open',open);
+}
+</script>
+
+<script>
+// AMBIENT SUN PARTICLES
+const canvas = document.getElementById('sun-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
+function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+resize(); window.addEventListener('resize',()=>{ resize(); initP(); });
+function initP(){
+  particles=[];
+  const n = Math.floor(W*H/18000);
+  for(let i=0;i<n;i++) particles.push({
+    x:Math.random()*W, y:Math.random()*H,
+    vx:(Math.random()-.5)*.2, vy:(Math.random()-.5)*.2,
+    r:Math.random()*2+.5, op:Math.random()*.4+.1
+  });
+}
+initP();
+function drawP(){
+  ctx.clearRect(0,0,W,H);
+  for(const p of particles){
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W) p.vx*=-1;
+    if(p.y<0||p.y>H) p.vy*=-1;
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(224,100,30,${p.op})`; ctx.fill();
+  }
+  for(let i=0;i<particles.length;i++){
+    for(let j=i+1;j<particles.length;j++){
+      const a=particles[i],b=particles[j];
+      const d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<120){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle=`rgba(224,100,30,${.08*(1-d/120)})`; ctx.lineWidth=.5; ctx.stroke(); }
+    }
+  }
+  requestAnimationFrame(drawP);
+}
+drawP();
+</script>
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+<script>
+const scrollBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
+</script>
+
+<script>function megaShow(el,k){var m=el.closest('.nav-mega-menu');m.querySelectorAll('.nav-mega-cat').forEach(function(c){c.classList.toggle('active',c.dataset.k===k);});m.querySelectorAll('.nav-mega-sub').forEach(function(s){s.style.display=(s.dataset.k===k)?'flex':'none';});}</script>
+</body>
+</html>

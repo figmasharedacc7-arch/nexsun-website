@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block internal/dev pages
+Disallow: /icons.html
+Disallow: /logo-preview.html
+
+# Sitemap location
+Sitemap: https://nexsun.ai/sitemap.xml

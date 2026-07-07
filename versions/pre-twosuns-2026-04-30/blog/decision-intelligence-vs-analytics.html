@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How continuous AI intelligence is replacing periodic reporting on commodity trading desks, and why decision intelligence is the next evolution beyond analytics.">
+    <meta name="author" content="Aiman El-Ramly">
+    <meta property="og:title" content="From Data Overload to Decision Clarity: How AI Is Reshaping Commodity Trading Desks">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Nexsun.ai">
+    <link rel="canonical" href="https://nexsun.ai/blog/decision-intelligence-vs-analytics.html">
+    <meta property="og:description" content="How continuous AI intelligence is replacing periodic reporting on commodity trading desks, and why decision intelligence is the next evolution beyond analytics.">
+    <meta property="og:image" content="https://nexsun.ai/og-image.jpg">
+    <meta property="og:url" content="https://nexsun.ai/blog/decision-intelligence-vs-analytics.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://nexsun.ai/og-image.jpg">
+    <title>From Data Overload to Decision Clarity: How AI Is Reshaping Commodity Trading Desks | Nexsun.ai</title>
+    <style>
+        :root {
+            --navy: #163E64;
+            --sun: #F4920B;
+            --sun-deep: #E95704;
+            --sun-pale: #FEF3C7;
+            --text: #3A3A3A;
+            --text-mid: #334155;
+            --text-muted: #64748B;
+            --bg: #FFFBF0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--navy);
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .back-link:hover { color: var(--sun-deep); }
+        .category-tag {
+            display: inline-block;
+            background: var(--sun-pale);
+            color: var(--sun-deep);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.3rem 0.75rem;
+            border-radius: 3px;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.4rem;
+            line-height: 1.2;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .article-meta {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--sun);
+        }
+        .article-meta span { margin-right: 1.5rem; }
+        h2 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin: 2.2rem 0 1rem;
+            line-height: 1.3;
+        }
+        p {
+            margin-bottom: 1.3rem;
+            color: var(--text-mid);
+            font-size: 1.08rem;
+        }
+        .highlight-box {
+            background: var(--sun-pale);
+            border-left: 4px solid var(--sun);
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .highlight-box p {
+            margin-bottom: 0;
+            font-style: italic;
+            color: var(--text);
+        }
+        .author-box {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        .author-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .author-info h4 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--navy);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .author-info .author-title {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            color: var(--sun-deep);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .author-info p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .article-container { padding: 2rem 18px !important; }
+            .highlight-box { padding: 1.25rem !important; }
+            .author-box { flex-direction: column; align-items: center; text-align: center; }
+            h1 { font-size: 1.75rem !important; }
+            .footer-newsletter-row { grid-template-columns: 1fr !important; gap: 32px !important; padding: 24px !important; }
+            .footer-top { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+            .footer-bottom { flex-direction: column !important; align-items: flex-start !important; }
+            .footer-legal a:first-child { padding-left: 0 !important; }
+        }
+        @media (max-width: 480px) {
+            .article-container { padding: 1.5rem 14px !important; }
+            h1 { font-size: 1.5rem !important; }
+            .footer-top { grid-template-columns: 1fr !important; }
+        }
+    
+  @media(max-width:768px){
+    body{overflow-x:hidden!important;}
+    *{max-width:100%!important;box-sizing:border-box!important;}
+    img,svg,video{max-width:100%!important;height:auto!important;}
+    .container{padding:0 18px!important;}
+    .article-container,.article-wrap{padding:0 18px!important;max-width:100%!important;}
+    .article-body{padding:0!important;}
+    .article-title,h1{font-size:clamp(24px,6vw,36px)!important;}
+    .highlight-box{padding:20px!important;}
+    .author-box{flex-direction:column!important;text-align:center!important;}
+    .footer-newsletter-row{grid-template-columns:1fr!important;gap:32px!important;padding:24px!important;}
+    .footer-top{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+    .footer-bottom{flex-direction:column!important;align-items:flex-start!important;}
+    .footer-legal a:first-child{padding-left:0!important;}
+    .footer-brand img{max-width:280px!important;}
+    .fn-row{flex-direction:column!important;}
+    .fn-row input,.fn-row select{width:100%!important;}
+    table{display:block!important;overflow-x:auto!important;max-width:100%!important;}
+    pre,code{overflow-x:auto!important;max-width:100%!important;word-break:break-word!important;}
+    [style*="gap:64px"]{gap:24px!important;}
+    [style*="gap:48px"]{gap:24px!important;}
+    [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+  }
+  @media(max-width:480px){
+    .footer-top{grid-template-columns:1fr!important;}
+    .article-title,h1{font-size:clamp(22px,5.5vw,30px)!important;}
+    .article-container,.article-wrap{padding:0 14px!important;}
+  }
+</style>
+</head>
+<body>
+    <article class="article-container">
+        <a href="../resources.html" class="back-link">&larr; Back to Resources</a>
+
+        <div class="category-tag">Market Intelligence</div>
+        <h1>From Data Overload to Decision Clarity: How AI Is Reshaping Commodity Trading Desks</h1>
+        <div class="article-meta">
+            <span>By <strong>Aiman El-Ramly</strong></span>
+            <span>March 18, 2026</span>
+            <span>10 min read</span>
+        </div>
+
+        <p>The average commodity trading desk today subscribes to somewhere between 40 and 120 data feeds. Price tickers from ICE, CME, and LME flow in alongside shipping intelligence from MarineTraffic and Kpler, weather models from ECMWF and NOAA, regulatory filings from FERC and ACER, satellite imagery tracking tank farm inventories, and an ever-expanding universe of alternative data providers promising unique alpha. The irony is hard to miss: in an industry awash with more information than at any point in its history, the quality of decision-making has not kept pace.</p>
+
+        <p>This is the paradox at the center of modern commodity trading, and it is the reason a growing number of firms are moving beyond traditional analytics toward something fundamentally different: decision intelligence.</p>
+
+        <h2>The Reporting Trap</h2>
+
+        <p>For most trading organizations, the analytical workflow has changed remarkably little over the past decade. Analysts compile morning briefings that summarize overnight price moves, inventory shifts, and macro headlines. Weekly PESTLE reports (Political, Economic, Social, Technological, Legal, Environmental) provide structured assessments of the factors that could move markets. Quarterly strategy reviews synthesize these views into positioning recommendations.</p>
+
+        <p>The problem is temporal. Markets are continuous, but the intelligence cycle is periodic. A regulatory announcement from the European Commission at 14:00 CET may not surface in a structured assessment until the following morning's briefing. By then, the market has already repriced. A geopolitical escalation in the Strait of Hormuz creates immediate freight and crude oil implications, but the analyst covering shipping risk may not cross-reference that event with the desk's exposure to Middle East Gulf cargoes continuously.</p>
+
+        <p>Traditional analytics tells you what happened. It can tell you what the data says right now if you look at the right dashboard. What it cannot do, without extraordinary human effort, is continuously synthesize hundreds of signals across domains and tell you what those signals mean for your specific portfolio, in this moment, given your risk limits and market positioning.</p>
+
+        <h2>Analytics Is Not Intelligence</h2>
+
+        <p>The distinction between analytics and decision intelligence is not merely semantic. Analytics is the discipline of extracting patterns from data: time-series analysis, correlation matrices, regression models, visualization. These are essential capabilities, and no serious trading operation functions without them.</p>
+
+        <p>Decision intelligence, by contrast, begins where analytics ends. It asks: given everything we know right now, across every relevant domain, what should we do? It requires not just data processing but signal fusion, the ability to ingest structured price feeds alongside unstructured news, combine satellite-derived storage estimates with shipping manifest data, overlay regulatory timelines onto forward curve analysis, and produce a synthesized view that accounts for the interactions between these domains.</p>
+
+        <div class="highlight-box">
+            <p>The gap between analytics and decision intelligence is the gap between knowing that European natural gas storage is at 42% capacity and understanding that this figure, combined with an incoming cold snap in the GFS 10-day forecast, a delayed LNG cargo from Sabine Pass, and a pending German regulatory filing on strategic reserves, creates a specific set of risks and opportunities for your portfolio in the next 72 hours.</p>
+        </div>
+
+        <h2>Signal Fusion and the PESTLE Framework at Machine Speed</h2>
+
+        <p>The PESTLE framework has long been a staple of strategic analysis in commodity markets, and for good reason. Markets are shaped by political decisions (OPEC+ production quotas, sanctions regimes, trade policy), economic fundamentals (GDP growth, industrial production, currency movements), social dynamics (demand patterns, labor actions, public sentiment toward fossil fuels), technological shifts (renewable cost curves, battery storage economics, carbon capture viability), legal developments (contract enforcement, regulatory compliance, litigation outcomes), and environmental factors (emissions regulations, carbon pricing, extreme weather events).</p>
+
+        <p>The challenge is that PESTLE analysis has traditionally been a human exercise conducted on a periodic basis. An analyst might update the political risk assessment weekly, the economic outlook monthly, and the technological landscape quarterly. These timeframes made sense when the information environment changed slowly enough for human synthesis to keep up.</p>
+
+        <p>That era is over. Political risk can shift in minutes when a head of state posts on social media. Economic data releases trigger algorithmic repricing in milliseconds. Regulatory timelines accelerate, overlap, and interact in ways that demand continuous monitoring. The PESTLE framework remains intellectually valid, but its execution must become continuous, automated, and integrated.</p>
+
+        <p>This is precisely what AI-powered decision intelligence platforms achieve. By ingesting data across all six PESTLE dimensions simultaneously, applying natural language processing to extract signals from unstructured sources, normalizing those signals against structured data feeds, and running them through domain-specific models, a decision intelligence system can maintain a continuously updated, multi-dimensional view of the factors shaping any given market.</p>
+
+        <h2>How Trading Desks Are Evolving</h2>
+
+        <p>The shift from analytics to decision intelligence is not happening uniformly. In our work with commodity trading organizations across energy, metals, and agriculture, we observe three distinct stages of maturity.</p>
+
+        <p><strong>Stage one</strong> firms operate with siloed analytics. The fundamental analysis team produces reports independently of the quant team. Shipping intelligence lives in a separate system from weather analytics. Risk management has its own data infrastructure. Insight, when it emerges, does so through informal human coordination: a conversation in the hallway, a shared spreadsheet, a weekly cross-desk meeting.</p>
+
+        <p><strong>Stage two</strong> firms have begun consolidating their data infrastructure. They have built or acquired platforms that centralize their data feeds and provide unified dashboards. Analysts can access multiple domains from a single interface. This is a meaningful improvement in efficiency, but the synthesis still depends on human cognition. The data is integrated; the intelligence is not.</p>
+
+        <p><strong>Stage three</strong> firms are deploying AI systems that perform continuous signal fusion across domains. These systems do not merely display data; they interpret it. They generate alerts that reflect the interaction of multiple signals, not just threshold breaches on individual metrics. They produce probabilistic assessments of market scenarios that incorporate political, economic, and environmental factors simultaneously. They learn from the desk's own trading history to calibrate their outputs to the firm's specific risk appetite and market focus.</p>
+
+        <p>We built Nexsun to accelerate the transition from stage two to stage three. Our platform ingests over 500 data sources spanning commodity price feeds, regulatory filings, geopolitical events, weather systems, shipping movements, and satellite intelligence. It normalizes these inputs into a unified signal layer, applies domain-specific AI models to extract meaning, and delivers decision-ready intelligence directly to the people who need it.</p>
+
+        <h2>The Human Element Remains Central</h2>
+
+        <p>A critical point that often gets lost in discussions of AI in trading: decision intelligence does not replace human judgment. It augments it. The trader who has spent 20 years developing intuition about the European power market brings irreplaceable contextual understanding to every decision. What AI does is ensure that this experienced professional has access to a continuously updated, comprehensively synthesized view of the factors that matter, rather than relying on periodic reports and manual cross-referencing.</p>
+
+        <p>The best decision intelligence systems are designed to be transparent about their reasoning. When our platform surfaces an alert about a potential supply disruption, it shows the analyst exactly which signals contributed to that assessment: the specific news report, the satellite image, the shipping data, the regulatory filing. This is not a black box producing mysterious recommendations. It is a glass box that makes its reasoning visible and auditable.</p>
+
+        <h2>The Competitive Imperative</h2>
+
+        <p>In commodity markets, information asymmetry has always been the primary source of competitive advantage. For decades, that asymmetry was built through networks of physical traders, relationships with producers and consumers, and proprietary research capabilities. These advantages still matter, but they are being supplemented, and in some cases supplanted, by technological advantages in data processing and synthesis.</p>
+
+        <p>The firms that will outperform in the coming decade are those that move beyond accumulating data feeds and start building genuine decision intelligence capabilities. The question is no longer whether AI will reshape commodity trading desks. The question is whether your desk will be reshaped by the technology you deploy, or by competitors who deploy it first.</p>
+
+        <p>The transition from data overload to decision clarity is not a technology project. It is a strategic imperative. And for organizations navigating increasingly complex, volatile, and interconnected global commodity markets, it is one that demands attention now.</p>
+
+        <div class="author-box">
+            <div class="author-avatar">AE</div>
+            <div class="author-info">
+                <h4>Aiman El-Ramly</h4>
+                <div class="author-title">CEO & Founder, Nexsun.ai</div>
+                <p>Aiman has spent over a decade at the intersection of artificial intelligence and commodity markets, previously leading quantitative strategy at a global energy trading firm. He founded Nexsun to close the gap between the data commodity firms collect and the decisions they need to make.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #E2E8F0;">
+            <a href="../resources.html" class="back-link">&larr; Back to Resources</a>
+        </div>
+    </article>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="../platform.html">Platform Overview</a></li>
+          <li><a href="../how-it-works.html">How It Works</a></li>
+          <li><a href="../modules.html">Modules</a></li>
+          <li><a href="../technology.html">Technology</a></li>
+          <li><a href="../trust.html">Trust Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../why-nexsun.html">Why Nexsun.ai</a></li>
+          <li><a href="../applications.html">Applications</a></li>
+          <li><a href="../partners.html">Partner Centre</a></li>
+          <li><a href="../investors.html">Investor Centre</a></li>
+          <li><a href="../press.html">Press &amp; Media</a></li>
+          <li><a href="../careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog.html">Insights</a></li>
+          <li><a href="../blog.html">Use Cases</a></li>
+          <li><a href="../blog.html">Platform Briefs</a></li>
+          <li><a href="../blog.html">Case Studies</a></li>
+          <li><a href="../blog.html">Events &amp; Media</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">130, 5920 No. Two Road<br>Richmond BC V7C 4R9</div>
+        <div class="footer-contact-item"><a href="mailto:info@nexsun.ai" style="color:var(--sun-bright)">info@nexsun.ai</a></div>
+        <div class="footer-contact-item"><a href="tel:6047609015">1-604-760-9015</a></div>
+        <div class="footer-contact-item" style="margin-top:8px;"><a href="https://AEPG.ca">AEPG.ca &#8599;</a></div>
+        <div class="footer-contact-item"><a href="https://Nexsun.ai">Nexsun.ai &#8599;</a></div>
+      </div>
+    </div>
+    <div class="footer-newsletter-row">
+      <div class="footer-brand">
+        <img src="../logo-color.svg" alt="Nexsun.ai" style="width:100%;max-width:480px;height:auto;display:block;">
+        <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sun-deep);margin:10px 0 0;opacity:0.85;">Light on Complexity.&nbsp; Power in Decisions.</p>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:20px;">
+        <a href="https://www.linkedin.com/company/nexsun-ai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:38px;height:38px;border-radius:8px;background:rgba(22,62,100,0.12);border:1px solid rgba(22,62,100,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;" onmouseover="this.style.background='rgba(22,62,100,0.22)';this.style.borderColor='rgba(22,62,100,0.5)'" onmouseout="this.style.background='rgba(22,62,100,0.12)';this.style.borderColor='rgba(22,62,100,0.25)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#163E64"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://x.com/NexsunAI" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" style="width:38px;height:38px;border-radius:8px;background:rgba(22,62,100,0.12);border:1px solid rgba(22,62,100,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;" onmouseover="this.style.background='rgba(22,62,100,0.22)';this.style.borderColor='rgba(22,62,100,0.5)'" onmouseout="this.style.background='rgba(22,62,100,0.12)';this.style.borderColor='rgba(22,62,100,0.25)'">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#163E64"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.726-8.851L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@Nexsun.aiplatform" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="width:38px;height:38px;border-radius:8px;background:rgba(22,62,100,0.12);border:1px solid rgba(22,62,100,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;" onmouseover="this.style.background='rgba(22,62,100,0.22)';this.style.borderColor='rgba(22,62,100,0.5)'" onmouseout="this.style.background='rgba(22,62,100,0.12)';this.style.borderColor='rgba(22,62,100,0.25)'">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#163E64"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/nexsun.ai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="width:38px;height:38px;border-radius:8px;background:rgba(22,62,100,0.12);border:1px solid rgba(22,62,100,0.25);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;" onmouseover="this.style.background='rgba(22,62,100,0.22)';this.style.borderColor='rgba(22,62,100,0.5)'" onmouseout="this.style.background='rgba(22,62,100,0.12)';this.style.borderColor='rgba(22,62,100,0.25)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#163E64"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Stay ahead of the market</h3>
+        <p>Get the latest market briefings from Nexsun.ai, platform updates, and energy market intelligence delivered monthly.</p>
+        <div class="fn-field">
+          <input type="text" placeholder="Full name" id="fn-name">
+          <input type="email" placeholder="Work email" id="fn-email">
+          <input type="text" placeholder="Company" id="fn-company">
+        </div>
+        <div class="fn-check">
+          <input type="checkbox" id="fn-updates">
+          <label for="fn-updates">Also send me platform release notes and product updates.</label>
+        </div>
+        <p class="fn-legal">By subscribing, you agree to receive email communications from Nexsun.ai. You can unsubscribe at any time.</p>
+        <button class="fn-btn" onclick="fnSubmit()">Subscribe Now</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../cookies.html">Cookie Policy</a>
+        <a href="../terms.html">Terms &amp; Conditions</a>
+      </div>
+      <p>&#169; 2026 Nexsun.ai. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function fnSubmit(){
+  var e=document.getElementById('fn-email');
+  if(!e||!e.value.includes('@')){alert('Please enter a valid email address.');return;}
+  var btn=document.querySelector('.fn-btn');
+  btn.textContent='Subscribed \u2713';
+  btn.style.background='#215F9A';
+  btn.disabled=true;
+}
+</script>
+
+</body>
+</html>
