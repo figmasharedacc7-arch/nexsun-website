@@ -91,7 +91,7 @@
   /* ─── NAV ─── */
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:#474237; backdrop-filter:blur(16px);
+    background:rgba(255,248,236,0.92); backdrop-filter:blur(16px);
     border-bottom:1px solid rgba(224,100,30,0.15);
     box-shadow:0 1px 20px rgba(224,100,30,0.08);
     overflow:visible;
@@ -279,7 +279,7 @@
   }
 
             /* ─── FOOTER ─── */
-  footer { background:#413C33; padding:64px 0 32px; border-top:3px solid var(--sun); }
+  footer { background:var(--bg); padding:64px 0 32px; border-top:3px solid var(--sun); }
   .footer-top {
     display:grid; grid-template-columns:1fr 1fr 1.6fr 1fr;
     gap:40px; margin-bottom:48px; align-items:start;
@@ -556,7 +556,7 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" aria-label="TwoSuns home">
-      <img src="logo-horizontal-white.svg" alt="TwoSuns" style="height:60px;width:auto;display:block;">
+      <img src="logo-color.svg" alt="TwoSuns" style="height:60px;width:auto;display:block;">
     </a>
     <a href="contact.html" class="btn-cta" style="margin-left:auto;">Contact Us</a>
   </div>
@@ -617,113 +617,65 @@
   </div>
 </section>
 
-<section style="background:linear-gradient(160deg,#413C33 0%,#100E0A 60%,#1A1200 100%);padding:90px 0;position:relative;overflow:hidden;">
-  <!-- Star field -->
-  <div style="position:absolute;inset:0;pointer-events:none;z-index:0;" aria-hidden="true">
-    <div style="position:absolute;width:2px;height:2px;background:#FFFFFF;border-radius:50%;top:12%;left:8%;opacity:.5;"></div>
-    <div style="position:absolute;width:1px;height:1px;background:#FFFFFF;border-radius:50%;top:28%;left:22%;opacity:.4;"></div>
-    <div style="position:absolute;width:2px;height:2px;background:#FFFFFF;border-radius:50%;top:18%;left:45%;opacity:.6;"></div>
-    <div style="position:absolute;width:1px;height:1px;background:#FFFFFF;border-radius:50%;top:8%;left:67%;opacity:.3;"></div>
-    <div style="position:absolute;width:2px;height:2px;background:#FFFFFF;border-radius:50%;top:35%;left:78%;opacity:.5;"></div>
-    <div style="position:absolute;width:1px;height:1px;background:#FFFFFF;border-radius:50%;top:55%;left:92%;opacity:.4;"></div>
-    <div style="position:absolute;width:2px;height:2px;background:#FFFFFF;border-radius:50%;top:70%;left:14%;opacity:.35;"></div>
-    <div style="position:absolute;width:1px;height:1px;background:#FFFFFF;border-radius:50%;top:82%;left:38%;opacity:.5;"></div>
-    <div style="position:absolute;width:2px;height:2px;background:#FFFFFF;border-radius:50%;top:75%;left:62%;opacity:.3;"></div>
-    <div style="position:absolute;width:1px;height:1px;background:#FFFFFF;border-radius:50%;top:90%;left:84%;opacity:.45;"></div>
-    <!-- Sparkles -->
-    <div style="position:absolute;top:15%;right:10%;width:16px;height:16px;opacity:.5;">
-      <div style="position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#FFFFFF,transparent);transform:translateY(-50%);"></div>
-      <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,#FFFFFF,transparent);transform:translateX(-50%);"></div>
+<section class="section" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFF5DD 100%);">
+  <div class="container">
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">What Is TwoSuns</div>
+    <h2 class="section-heading" style="text-align:center;">A Persistent Coordination Layer <span>Across the Enterprise</span></h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 40px;max-width:730px;">TwoSuns introduces a persistent enterprise coordination layer designed to help organizations align workflows, operational activity, market positioning, execution, and organizational continuity across complex environments.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px 26px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 4px;">Persistent Contextual Awareness</h3>
+        
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">Teams iteratively understand market positioning, explore opportunities, evaluate scenarios, coordinate workflows, and execute across the enterprise using persistent contextual awareness.</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px 26px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 4px;">Unified Signals and Context</h3>
+        
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">TwoSuns combines internal enterprise information, external signals, operational workflows, live assumptions, and organizational context with AI-assisted coordination into continuously evolving operational environments.</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px 26px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 4px;">Enterprise-Grade Continuity</h3>
+        
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">Secure, permissioned, enterprise-grade environments designed to maintain continuity across corporate, regional, departmental, initiative, workflow, and individual user contexts.</p>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px 26px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 4px;">Fits Your Existing Systems</h3>
+        
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">Incorporates operational inputs, other enterprise system outputs, external signals, workflows, and live organizational context where appropriate.</p>
+      </div>
     </div>
-    <div style="position:absolute;top:60%;left:5%;width:12px;height:12px;opacity:.4;">
-      <div style="position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#FFFFFF,transparent);transform:translateY(-50%);"></div>
-      <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,#FFFFFF,transparent);transform:translateX(-50%);"></div>
-    </div>
-    <!-- Bottom warm glow -->
-    <div style="position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(to top,rgba(224,100,30,0.12),transparent);pointer-events:none;"></div>
   </div>
+</section>
 
-  <div class="container" style="position:relative;z-index:1;">
-    <div style="text-align:center;margin-bottom:56px;">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(224,100,30,0.12);border:1px solid rgba(224,100,30,0.25);color:#9A7209;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px;">What Is TwoSuns</div>
-      <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:900;color:#FFFFFF;margin:0 0 14px;letter-spacing:-0.5px;">A Persistent Coordination Layer <span style="color:#CC9900;">Across the Enterprise</span></h2>
-      <p style="color:rgba(255,255,255,0.55);font-size:16px;max-width:540px;margin:0 auto;line-height:1.7;">TwoSuns introduces a persistent enterprise coordination layer designed to help organizations align workflows, operational activity, market positioning, execution, and organizational continuity across complex environments.</p>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
-
-      <!-- 1. Discovery & Market Intelligence -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 24px;text-align:center;transition:background .25s,border-color .25s,transform .25s;cursor:default;" onmouseover="this.style.background='rgba(224,100,30,0.08)';this.style.borderColor='rgba(224,100,30,0.3)';this.style.transform='translateY(-6px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
-        <div style="width:64px;height:64px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#F5C700" stroke-width="2.5"/><circle cx="24" cy="24" r="3" fill="#F5C700"/><line x1="24" y1="4" x2="24" y2="12" stroke="#F5C700" stroke-width="2" stroke-linecap="round"/><line x1="24" y1="36" x2="24" y2="44" stroke="#F5C700" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="24" x2="12" y2="24" stroke="#F5C700" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="24" x2="44" y2="24" stroke="#F5C700" stroke-width="2" stroke-linecap="round"/><polygon points="24,13 27,21 24,24 21,21" fill="#F5C700" opacity=".8"/></svg>
-        </div>
-        <h3 style="font-size:16px;font-weight:700;color:#FFFFFF;margin-bottom:10px;line-height:1.3;">Persistent Contextual Awareness</h3>
-        <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;">Teams iteratively understand market positioning, explore opportunities, evaluate scenarios, coordinate workflows, and execute across the enterprise using persistent contextual awareness.</p>
-      </div>
-
-      <!-- 2. Financial & Operational Intelligence -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 24px;text-align:center;transition:background .25s,border-color .25s,transform .25s;cursor:default;" onmouseover="this.style.background='rgba(224,100,30,0.08)';this.style.borderColor='rgba(224,100,30,0.3)';this.style.transform='translateY(-6px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
-        <div style="width:64px;height:64px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M14 28c0-4 2-7 6-9l4-2" stroke="#F5C700" stroke-width="2.5" stroke-linecap="round"/><path d="M34 20c0 4-2 7-6 9l-4 2" stroke="#F5C700" stroke-width="2.5" stroke-linecap="round"/><path d="M8 32c2 3 5 5 8 5s5-1 8-3 5-3 8-3 6 2 8 5" stroke="#F5C700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="20" r="4" stroke="#F5C700" stroke-width="2"/><circle cx="32" cy="28" r="4" stroke="#F5C700" stroke-width="2"/></svg>
-        </div>
-        <h3 style="font-size:16px;font-weight:700;color:#FFFFFF;margin-bottom:10px;line-height:1.3;">Unified Signals and Context</h3>
-        <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;">TwoSuns combines internal enterprise information, external signals, operational workflows, live assumptions, and organizational context with AI-assisted coordination into continuously evolving operational environments.</p>
-      </div>
-
-      <!-- 3. Collaboration & Networking -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 24px;text-align:center;transition:background .25s,border-color .25s,transform .25s;cursor:default;" onmouseover="this.style.background='rgba(224,100,30,0.08)';this.style.borderColor='rgba(224,100,30,0.3)';this.style.transform='translateY(-6px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
-        <div style="width:64px;height:64px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M8 12h32a2 2 0 012 2v16a2 2 0 01-2 2H16l-8 6V14a2 2 0 012-2z" stroke="#F5C700" stroke-width="2.5" stroke-linejoin="round"/><circle cx="17" cy="22" r="2" fill="#F5C700"/><circle cx="24" cy="22" r="2" fill="#F5C700"/><circle cx="31" cy="22" r="2" fill="#F5C700"/></svg>
-        </div>
-        <h3 style="font-size:16px;font-weight:700;color:#FFFFFF;margin-bottom:10px;line-height:1.3;">Enterprise-Grade Continuity</h3>
-        <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;">Secure, permissioned, enterprise-grade environments designed to maintain continuity across corporate, regional, departmental, initiative, workflow, and individual user contexts.</p>
-      </div>
-
-      <!-- 4. Support & Governance -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 24px;text-align:center;transition:background .25s,border-color .25s,transform .25s;cursor:default;" onmouseover="this.style.background='rgba(224,100,30,0.08)';this.style.borderColor='rgba(224,100,30,0.3)';this.style.transform='translateY(-6px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
-        <div style="width:64px;height:64px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="#F5C700" stroke-width="2.5"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M10.1 10.1l4.2 4.2M33.7 33.7l4.2 4.2M10.1 37.9l4.2-4.2M33.7 14.3l4.2-4.2" stroke="#F5C700" stroke-width="2.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3 style="font-size:16px;font-weight:700;color:#FFFFFF;margin-bottom:10px;line-height:1.3;">Fits Your Existing Systems</h3>
-        <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;">Incorporates operational inputs, other enterprise system outputs, external signals, workflows, and live organizational context where appropriate.</p>
-      </div>
-
-    </div>
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">The Assistant</div>
+    <h2 class="section-heading" style="text-align:center;">Persistent Enterprise <span>Assistance</span></h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 40px;max-width:730px;">At the center of the platform is the persistent TwoSuns Assistant. It operates across workflows, systems, Decision Picks and Packs, users, and operational environments to maintain contextual continuity and organizational awareness. Unlike isolated AI sessions or disconnected copilots, it maintains continuity across operational activity over time.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:820px;margin:0 auto;"><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Workflow coordination</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Operational guidance</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Scenario exploration</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Execution support</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Contextual awareness</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Organizational alignment</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Continuity over time</span></div>
   </div>
 </section>
 
 <section class="section" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFF5DD 100%);">
   <div class="container">
-    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">The Assistant</div>
-    <h2 class="section-heading" style="text-align:center;">Persistent Enterprise <span>Assistance</span></h2>
-    <p class="section-sub" style="text-align:center;margin:0 auto 16px;max-width:730px;">At the center of the platform is the persistent TwoSuns Assistant. It operates across workflows, systems, Decision Picks and Packs, users, and operational environments to maintain contextual continuity and organizational awareness across the enterprise.</p>
-    <p class="section-sub" style="text-align:center;margin:0 auto 34px;max-width:730px;">Unlike isolated AI sessions or disconnected copilots, the TwoSuns Assistant maintains continuity across operational activity over time.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:820px;margin:0 auto;"><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Workflow coordination</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Operational guidance</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Scenario exploration</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Execution support</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Contextual awareness</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Organizational alignment</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Continuity over time</span></div>
-  </div>
-</section>
-
-<section style="background:linear-gradient(160deg,#413C33 0%,#100E0A 60%,#1A1200 100%);padding:90px 0;position:relative;overflow:hidden;">
-  <div class="container" style="position:relative;z-index:1;">
-    <div style="text-align:center;margin-bottom:52px;">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(224,100,30,0.12);border:1px solid rgba(224,100,30,0.25);color:#9A7209;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px;">Platform Structure</div>
-      <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:900;color:#FFFFFF;margin:0 0 16px;letter-spacing:-0.5px;">Built Around Enterprise <span style="color:#CC9900;">Coordination</span></h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:16px;max-width:720px;margin:0 auto;line-height:1.7;">TwoSuns is structured around interconnected operational environments designed to coordinate market activity, operational execution, workflows, and organizational continuity across the enterprise.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:32px 28px;">
-        <h3 style="font-size:20px;font-weight:800;color:#FFFFFF;margin:0 0 4px;">TwoSuns Core</h3>
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Platform Structure</div>
+    <h2 class="section-heading" style="text-align:center;">Built Around Enterprise <span>Coordination</span></h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 40px;max-width:730px;">TwoSuns is structured around interconnected operational environments designed to coordinate market activity, operational execution, workflows, and organizational continuity across the enterprise.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px 26px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 4px;">TwoSuns Core</h3>
         <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9A7209;margin-bottom:14px;">The Enterprise Continuity Layer</div>
-        <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;margin:0;">Establishes the persistent coordination and continuity layer across the enterprise, maintaining alignment across corporate strategy, regional operations, departments, initiatives, workflows, and individual users.</p>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">Establishes the persistent coordination and continuity layer across the enterprise, maintaining alignment across corporate strategy, regional operations, departments, initiatives, workflows, and individual users.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:32px 28px;">
-        <h3 style="font-size:20px;font-weight:800;color:#FFFFFF;margin:0 0 4px;">TwoSuns Horizon</h3>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px 26px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 4px;">TwoSuns Horizon</h3>
         <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9A7209;margin-bottom:14px;">Market and Revenue Execution</div>
-        <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;margin:0;">Coordinates external, commercial, and market-facing activity. Continuously explore markets, refine positioning, coordinate GTM activity, evaluate opportunities, and align revenue execution.</p>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">Coordinates external, commercial, and market-facing activity. Continuously explore markets, refine positioning, coordinate GTM activity, evaluate opportunities, and align revenue execution.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:32px 28px;">
-        <h3 style="font-size:20px;font-weight:800;color:#FFFFFF;margin:0 0 4px;">TwoSuns Forge</h3>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px 26px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 4px;">TwoSuns Forge</h3>
         <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9A7209;margin-bottom:14px;">Operational and Execution Coordination</div>
-        <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;margin:0;">Extends market and execution environments into operational and industrial workflows where execution quality, operational alignment, and scenario evaluation materially affect enterprise performance.</p>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">Extends market and execution environments into operational and industrial workflows where execution quality, operational alignment, and scenario evaluation materially affect enterprise performance.</p>
       </div>
     </div>
   </div>
@@ -738,56 +690,52 @@
   </div>
 </section>
 
-<section style="background:linear-gradient(160deg,#413C33 0%,#100E0A 60%,#1A1200 100%);padding:90px 0;position:relative;overflow:hidden;">
-  <div class="container" style="position:relative;z-index:1;">
-    <div style="text-align:center;margin-bottom:52px;">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(224,100,30,0.12);border:1px solid rgba(224,100,30,0.25);color:#9A7209;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px;">Deployment</div>
-      <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:900;color:#FFFFFF;margin:0 0 16px;letter-spacing:-0.5px;">Focused Deployment. <span style="color:#CC9900;">Controlled Expansion.</span></h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:16px;max-width:720px;margin:0 auto;line-height:1.7;">TwoSuns deploys through targeted Decision Picks and broader Decision Packs configured across Core, Horizon, and Forge. It begins with focused use cases that rapidly demonstrate measurable capability and business value.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto;">
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:32px 28px;">
-        <h3 style="font-size:20px;font-weight:800;color:#FFFFFF;margin:0 0 4px;">Decision Picks</h3>
+<section class="section" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFF5DD 100%);">
+  <div class="container">
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Deployment</div>
+    <h2 class="section-heading" style="text-align:center;">Focused Deployment. <span>Controlled Expansion.</span></h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 40px;max-width:730px;">TwoSuns deploys through targeted Decision Picks and broader Decision Packs configured across Core, Horizon, and Forge. It begins with focused use cases that rapidly demonstrate measurable capability and business value.</p>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:900px;margin:0 auto;">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px 26px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 4px;">Decision Picks</h3>
         <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9A7209;margin-bottom:14px;">Rapid, Focused</div>
-        <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;margin:0;">Focused, rapid-deployment initiatives that address specific operational or commercial challenges with minimal deployment friction. Rapid onboarding, measurable proof of capability, and low-friction initial engagement.</p>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">Focused, rapid-deployment initiatives that address specific operational or commercial challenges with minimal deployment friction. Rapid onboarding, measurable proof of capability, and low-friction initial engagement.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:32px 28px;">
-        <h3 style="font-size:20px;font-weight:800;color:#FFFFFF;margin:0 0 4px;">Decision Packs</h3>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px 26px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <h3 style="font-size:19px;font-weight:800;color:var(--navy);margin:0 0 4px;">Decision Packs</h3>
         <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9A7209;margin-bottom:14px;">Broad, Scalable</div>
-        <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;margin:0;">Broader operational environments configured around workflows, business functions, strategic initiatives, or enterprise coordination challenges. Expand progressively across teams, workflows, departments, and initiatives over time.</p>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">Broader operational environments configured around workflows, business functions, strategic initiatives, or enterprise coordination challenges. Expand progressively across teams, workflows, departments, and initiatives over time.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Integration</div>
+    <h2 class="section-heading" style="text-align:center;">Operate Across Existing <span>Enterprise Systems</span></h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 40px;max-width:730px;">TwoSuns is designed to enhance existing enterprise environments rather than replace them. It operates alongside your systems, incorporating operational inputs, workflows, organizational context, and external signals into persistent coordination and execution environments.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:820px;margin:0 auto;"><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">ERP systems</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">CRM platforms</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Operational systems</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Collaboration</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Workflow platforms</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Analytics</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">AI services</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:0 3px 10px rgba(60,50,30,.04);">Infrastructure</span></div>
   </div>
 </section>
 
 <section class="section" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFF5DD 100%);">
   <div class="container">
-    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Integration</div>
-    <h2 class="section-heading" style="text-align:center;">Operate Across Existing <span>Enterprise Systems</span></h2>
-    <p class="section-sub" style="text-align:center;margin:0 auto 34px;max-width:730px;">TwoSuns is designed to enhance existing enterprise environments rather than replace them. It operates alongside your systems, incorporating operational inputs, workflows, organizational context, and external signals into persistent coordination and execution environments.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:760px;margin:0 auto;"><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">ERP systems</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">CRM platforms</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Operational systems</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Collaboration</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Workflow platforms</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Analytics</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">AI services</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--text);">Infrastructure</span></div>
-  </div>
-</section>
-
-<section style="background:linear-gradient(160deg,#413C33 0%,#100E0A 60%,#1A1200 100%);padding:90px 0;position:relative;overflow:hidden;">
-  <div class="container" style="position:relative;z-index:1;">
-    <div style="text-align:center;margin-bottom:52px;">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(224,100,30,0.12);border:1px solid rgba(224,100,30,0.25);color:#9A7209;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px;">Who It Is For</div>
-      <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:900;color:#FFFFFF;margin:0 0 16px;letter-spacing:-0.5px;">Designed for Complex <span style="color:#CC9900;">Enterprise Environments</span></h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:16px;max-width:720px;margin:0 auto;line-height:1.7;">TwoSuns is a broad enterprise coordination and execution platform, not a narrow industry application. Most organizations face the same underlying coordination challenges: fragmented workflows, disconnected operational context, siloed execution, and rising operational complexity.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 26px;">
-        <div style="font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#CC9900;margin-bottom:8px;">Enterprise Environments</div>
-        <ul style="list-style:none;margin:0;padding:0;"><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Complex operational enterprises</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Multi-stakeholder coordination</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Distributed organizations</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Cross-functional execution</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Operational transformation</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Enterprise modernization</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Infrastructure and industrial operations</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Public infrastructure and institutions</li></ul>
+    <div class="section-tag" style="justify-content:center;margin:0 auto 16px;">Who It Is For</div>
+    <h2 class="section-heading" style="text-align:center;">Designed for Complex <span>Enterprise Environments</span></h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 40px;max-width:730px;">TwoSuns is a broad enterprise coordination and execution platform, not a narrow industry application. Most organizations face the same underlying coordination challenges: fragmented workflows, disconnected operational context, siloed execution, and rising operational complexity.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:26px 24px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <div style="font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#9A7209;margin-bottom:8px;">Enterprise Environments</div>
+        <ul style="list-style:none;margin:0;padding:0;"><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Complex operational enterprises</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Multi-stakeholder coordination</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Distributed organizations</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Cross-functional execution</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Operational transformation</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Enterprise modernization</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Infrastructure and industrial operations</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Public infrastructure and institutions</li></ul>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 26px;">
-        <div style="font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#CC9900;margin-bottom:8px;">Functional Coordination Areas</div>
-        <ul style="list-style:none;margin:0;padding:0;"><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Market and revenue coordination</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Operational execution</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Supply chain and logistics</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Infrastructure planning</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Procurement and sourcing</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Program and initiative coordination</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Strategic workflow management</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Commercial and operational alignment</li></ul>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:26px 24px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <div style="font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#9A7209;margin-bottom:8px;">Functional Coordination Areas</div>
+        <ul style="list-style:none;margin:0;padding:0;"><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Market and revenue coordination</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Operational execution</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Supply chain and logistics</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Infrastructure planning</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Procurement and sourcing</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Program and initiative coordination</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Strategic workflow management</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Commercial and operational alignment</li></ul>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 26px;">
-        <div style="font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#CC9900;margin-bottom:8px;">Strategic Sectors</div>
-        <ul style="list-style:none;margin:0;padding:0;"><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Infrastructure and industrial</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Resource-intensive industries</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Construction and engineering</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Manufacturing and production</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Enterprise SaaS and AI-native</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Public infrastructure</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Government and sovereign</li><li style="font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.5;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">Complex B2B ecosystems</li></ul>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:20px;padding:26px 24px;box-shadow:0 8px 24px rgba(60,50,30,.06);">
+        <div style="font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#9A7209;margin-bottom:8px;">Strategic Sectors</div>
+        <ul style="list-style:none;margin:0;padding:0;"><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Infrastructure and industrial</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Resource-intensive industries</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Construction and engineering</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Manufacturing and production</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Enterprise SaaS and AI-native</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Public infrastructure</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Government and sovereign</li><li style="font-size:13.5px;color:var(--text);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--border);">Complex B2B ecosystems</li></ul>
       </div>
     </div>
   </div>
@@ -834,11 +782,11 @@
 <footer>
   <div class="container" style="padding:44px 0;">
     <div style="display:flex;flex-wrap:wrap;gap:22px 40px;align-items:center;justify-content:space-between;">
-      <img src="logo-horizontal-white.svg" alt="TwoSuns" style="height:50px;width:auto;">
+      <img src="logo-color.svg" alt="TwoSuns" style="height:50px;width:auto;">
       <div style="font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#CC9900;">Light on complexity. Power in decisions.</div>
-      <div style="font-size:14px;color:rgba(255,255,255,.72);">info@twosuns.ai</div>
+      <div style="font-size:14px;color:var(--text-muted);">info@twosuns.ai</div>
     </div>
-    <div style="margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(255,255,255,.5);">&copy; 2026 TwoSuns. All rights reserved.</div>
+    <div style="margin-top:26px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);">&copy; 2026 TwoSuns. All rights reserved.</div>
   </div>
 </footer>
 <script>
