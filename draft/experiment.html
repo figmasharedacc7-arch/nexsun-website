@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TwoSuns — Salesforce-style Experiment</title>
+<style>
+:root{
+  --ink:#17222E; --muted:#5C6A78; --line:#E7ECF1;
+  --bg:#FFFFFF; --soft:#F3F7FB;
+  --sky:#4E95D9; --sky-soft:#EAF2FB;
+  --green:#4EA72E; --green-soft:#EAF6E3;
+  --gold:#CC9900; --gold-soft:#FBF3D6;
+  --orange:#E0641E; --orange2:#FF9933; --orange-soft:#FFEEDD;
+  --yellow:#FFC000; --navy:#003366;
+  --r:28px; --rs:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px;}
+a{text-decoration:none;color:inherit;}
+h1,h2,h3{letter-spacing:-0.02em;text-wrap:balance;}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;font-weight:700;font-size:15px;padding:13px 26px;transition:transform .15s,box-shadow .15s,background .15s;cursor:pointer;}
+.pill-primary{background:var(--orange);color:#fff;box-shadow:0 8px 20px rgba(224,100,30,.28);}
+.pill-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(224,100,30,.36);}
+.pill-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line);}
+.pill-ghost:hover{border-color:var(--ink);}
+.eyebrow{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);background:var(--sky-soft);padding:7px 15px;border-radius:999px;margin-bottom:20px;}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.nav-in{display:flex;align-items:center;gap:28px;height:74px;}
+.nav-in .links{display:flex;gap:26px;margin-left:18px;}
+.nav-in .links a{font-size:15px;font-weight:600;color:var(--muted);}
+.nav-in .links a:hover{color:var(--ink);}
+.nav-in .spacer{margin-left:auto;}
+
+/* hero */
+.hero{padding:72px 0 60px;background:radial-gradient(1100px 500px at 88% -8%,var(--sky-soft),transparent 60%),radial-gradient(900px 500px at -5% 10%,var(--orange-soft),transparent 55%);}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;}
+.hero h1{font-size:clamp(40px,5.4vw,66px);font-weight:800;line-height:1.02;margin-bottom:22px;}
+.hero h1 .hl{color:var(--orange);}
+.hero p.sub{font-size:19px;color:var(--muted);max-width:520px;margin-bottom:30px;}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;}
+/* colorful floating card cluster */
+.cluster{position:relative;height:440px;}
+.tile{position:absolute;border-radius:var(--rs);padding:20px 22px;box-shadow:0 18px 44px rgba(20,40,70,.16);color:#fff;}
+.tile .k{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.85;}
+.tile .v{font-size:20px;font-weight:800;margin-top:4px;line-height:1.15;}
+.tile .d{font-size:13px;opacity:.9;margin-top:6px;line-height:1.4;}
+.t1{top:14px;left:2%;width:230px;background:linear-gradient(150deg,var(--navy),#0a4a86);}
+.t2{top:120px;right:0;width:250px;background:linear-gradient(150deg,var(--sky),#2f7ec4);}
+.t3{bottom:78px;left:10%;width:250px;background:linear-gradient(150deg,var(--orange),var(--orange2));}
+.t4{bottom:6px;right:8%;width:200px;background:linear-gradient(150deg,var(--green),#3c8a24);}
+
+/* strip */
+.strip{background:var(--soft);padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.strip-in{display:flex;flex-wrap:wrap;gap:14px 44px;align-items:center;justify-content:center;}
+.strip-in .s{display:flex;align-items:baseline;gap:8px;}
+.strip-in .n{font-size:26px;font-weight:800;color:var(--navy);}
+.strip-in .l{font-size:14px;color:var(--muted);font-weight:600;}
+
+/* section */
+section.sec{padding:88px 0;}
+.head{text-align:center;max-width:680px;margin:0 auto 52px;}
+.head h2{font-size:clamp(30px,3.6vw,46px);font-weight:800;line-height:1.08;margin-bottom:16px;}
+.head p{font-size:18px;color:var(--muted);}
+
+/* colorful card grid */
+.grid{display:grid;gap:22px;}
+.g4{grid-template-columns:repeat(4,1fr);}
+.g3{grid-template-columns:repeat(3,1fr);}
+.g2{grid-template-columns:repeat(2,1fr);}
+.ccard{border-radius:var(--r);padding:34px 30px;color:#fff;min-height:230px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;box-shadow:0 12px 30px rgba(20,40,70,.10);}
+.ccard:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(20,40,70,.18);}
+.ccard .ic{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;}
+.ccard h3{font-size:21px;font-weight:800;margin-bottom:10px;line-height:1.2;}
+.ccard p{font-size:14.5px;line-height:1.6;opacity:.94;}
+.bg-sky{background:linear-gradient(160deg,var(--sky),#2f7ec4);}
+.bg-green{background:linear-gradient(160deg,var(--green),#3c8a24);}
+.bg-gold{background:linear-gradient(160deg,var(--gold),#a87d08);}
+.bg-orange{background:linear-gradient(160deg,var(--orange),var(--orange2));}
+.bg-navy{background:linear-gradient(160deg,var(--navy),#0a4a86);}
+
+/* soft pastel tiles */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.ptile{border-radius:var(--rs);padding:22px 22px;border:1px solid var(--line);}
+.ptile .th{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+.ptile ul{list-style:none;}
+.ptile li{font-size:14px;color:var(--muted);padding:7px 0;border-top:1px solid rgba(0,0,0,.05);}
+.ptile li:first-child{border-top:none;}
+.pt-sky{background:var(--sky-soft);} .pt-sky .th{color:var(--sky);}
+.pt-green{background:var(--green-soft);} .pt-green .th{color:var(--green);}
+.pt-gold{background:var(--gold-soft);} .pt-gold .th{color:var(--gold);}
+
+/* feature split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.split .visual{border-radius:var(--r);min-height:340px;background:linear-gradient(150deg,var(--sky-soft),#fff 70%);border:1px solid var(--line);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.split .visual .chip{position:absolute;background:#fff;border-radius:14px;box-shadow:0 12px 30px rgba(20,40,70,.12);padding:14px 18px;font-weight:700;font-size:14px;}
+.split .visual .c1{top:34px;left:34px;color:var(--sky);}
+.split .visual .c2{top:120px;right:40px;color:var(--orange);}
+.split .visual .c3{bottom:40px;left:60px;color:var(--green);}
+.split h2{font-size:clamp(28px,3.2vw,40px);font-weight:800;line-height:1.1;margin-bottom:18px;}
+.split p{font-size:17px;color:var(--muted);margin-bottom:14px;}
+
+/* phases */
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.ph{border-radius:var(--rs);padding:26px 22px;border:1px solid var(--line);background:#fff;box-shadow:0 8px 22px rgba(20,40,70,.05);}
+.ph .num{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin-bottom:14px;}
+.ph p{font-size:14.5px;color:var(--muted);font-weight:600;line-height:1.45;}
+
+/* CTA band */
+.cta{padding:96px 0;}
+.cta-card{border-radius:36px;background:linear-gradient(140deg,var(--navy) 0%,#0a4a86 55%,var(--sky) 120%);color:#fff;text-align:center;padding:70px 40px;box-shadow:0 30px 70px rgba(0,51,102,.28);}
+.cta-card h2{font-size:clamp(28px,3.6vw,46px);font-weight:800;line-height:1.15;max-width:860px;margin:0 auto 18px;}
+.cta-card p{font-size:18px;opacity:.9;max-width:560px;margin:0 auto 30px;}
+.cta-card .pill-primary{background:#fff;color:var(--navy);box-shadow:0 10px 26px rgba(0,0,0,.2);}
+
+/* footer */
+footer{padding:52px 0;border-top:1px solid var(--line);}
+.foot-in{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between;}
+.foot-in .tag{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);}
+.foot-in .em{font-size:14px;color:var(--muted);}
+.copy{margin-top:22px;font-size:13px;color:var(--muted);}
+
+@media(max-width:900px){
+  .hero-grid,.split{grid-template-columns:1fr;} .cluster{height:360px;margin-top:10px;}
+  .g4{grid-template-columns:1fr 1fr;} .g3,.tiles,.phases{grid-template-columns:1fr;} .g2{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top"><img src="logo-color.svg" alt="TwoSuns" style="height:46px;display:block;"></a>
+    <div class="links">
+      <a href="#platform">Platform</a>
+      <a href="#who">Who it's for</a>
+      <a href="#how">Approach</a>
+    </div>
+    <div class="spacer"></div>
+    <a href="contact.html" class="pill pill-primary" style="padding:11px 22px;">Contact Us</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Coordination Infrastructure</span>
+      <h1>Coordination infrastructure for <span class="hl">complex enterprises</span></h1>
+      <p class="sub">TwoSuns lets organizations coordinate market activity, operational execution, workflows, and enterprise continuity, all across complex environments.</p>
+      <div class="ctas">
+        <a href="contact.html" class="pill pill-primary">Request a Discovery Session</a>
+        <a href="#platform" class="pill pill-ghost">See how it works</a>
+      </div>
+    </div>
+    <div class="cluster" aria-hidden="true">
+      <div class="tile t1"><div class="k">TwoSuns Core</div><div class="v">Continuity Layer</div><div class="d">Persistent context across the enterprise.</div></div>
+      <div class="tile t2"><div class="k">TwoSuns Horizon</div><div class="v">Market &amp; Revenue</div><div class="d">Coordinate GTM and commercial execution.</div></div>
+      <div class="tile t3"><div class="k">TwoSuns Forge</div><div class="v">Operations</div><div class="d">Industrial workflows and execution.</div></div>
+      <div class="tile t4"><div class="k">Assistant</div><div class="v">Always on</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="wrap strip-in">
+    <div class="s"><span class="n">6</span><span class="l">intelligence domains</span></div>
+    <div class="s"><span class="n">3</span><span class="l">coordination environments</span></div>
+    <div class="s"><span class="n">1</span><span class="l">continuity layer</span></div>
+    <div class="s"><span class="n">100%</span><span class="l">explainable decisions</span></div>
+  </div>
+</div>
+
+<!-- WHAT IS TWOSUNS -->
+<section class="sec" id="what">
+  <div class="wrap">
+    <div class="head">
+      <h2>A persistent coordination layer across the enterprise</h2>
+      <p>One continuous system that aligns workflows, operational activity, positioning, and execution.</p>
+    </div>
+    <div class="grid g4">
+      <div class="ccard bg-sky"><div class="ic">◎</div><h3>Persistent context</h3><p>Understand positioning, explore opportunities, coordinate workflows, and execute using persistent contextual awareness.</p></div>
+      <div class="ccard bg-green"><div class="ic">✦</div><h3>Unified signals</h3><p>Combine internal information, external signals, and organizational context with AI-assisted coordination.</p></div>
+      <div class="ccard bg-gold"><div class="ic">◈</div><h3>Enterprise-grade</h3><p>Secure, permissioned environments that maintain continuity across every layer of the organization.</p></div>
+      <div class="ccard bg-orange"><div class="ic">⇄</div><h3>Fits your stack</h3><p>Incorporates operational inputs, enterprise system outputs, workflows, and live context where it fits.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM STRUCTURE -->
+<section class="sec" id="platform" style="background:var(--soft);">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Platform Structure</span>
+      <h2>Built around enterprise coordination</h2>
+      <p>Three interconnected environments, one persistent continuity layer.</p>
+    </div>
+    <div class="grid g3">
+      <div class="ccard bg-navy" style="min-height:280px;"><div class="ic">●</div><h3>TwoSuns Core</h3><p>The enterprise continuity layer. Maintains alignment across corporate strategy, regions, departments, initiatives, workflows, and users.</p></div>
+      <div class="ccard bg-sky" style="min-height:280px;"><div class="ic">↗</div><h3>TwoSuns Horizon</h3><p>Market and revenue execution. Explore markets, refine positioning, coordinate GTM, and align revenue execution.</p></div>
+      <div class="ccard bg-orange" style="min-height:280px;"><div class="ic">⚙</div><h3>TwoSuns Forge</h3><p>Operational and execution coordination across industrial workflows where execution quality moves performance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE SPLIT -->
+<section class="sec" id="how">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow" style="color:var(--green);background:var(--green-soft);">Continuous by design</span>
+      <h2>Built for continuous coordination and execution</h2>
+      <p>TwoSuns is an active operating environment, not a passive reporting system. Explore scenarios, test assumptions, refine positioning, and execute across evolving conditions.</p>
+      <p>It combines enterprise systems, workflows, market signals, and live context with persistent AI-assisted coordination.</p>
+      <a href="contact.html" class="pill pill-primary" style="margin-top:10px;">Request a Discovery Session</a>
+    </div>
+    <div class="visual">
+      <div class="chip c1">◎ Coordinate</div>
+      <div class="chip c2">⇄ Execute</div>
+      <div class="chip c3">◈ Align</div>
+      <div style="font-size:15px;color:var(--muted);font-weight:700;">Continuous coordination loop</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="sec" id="who" style="background:var(--soft);">
+  <div class="wrap">
+    <div class="head"><h2>Designed for complex enterprise environments</h2><p>A broad coordination and execution platform, not a narrow industry app.</p></div>
+    <div class="tiles">
+      <div class="ptile pt-sky"><div class="th">Enterprise Environments</div><ul><li>Complex operational enterprises</li><li>Multi-stakeholder coordination</li><li>Distributed organizations</li><li>Cross-functional execution</li><li>Enterprise modernization</li></ul></div>
+      <div class="ptile pt-green"><div class="th">Coordination Areas</div><ul><li>Market and revenue coordination</li><li>Operational execution</li><li>Supply chain and logistics</li><li>Procurement and sourcing</li><li>Strategic workflow management</li></ul></div>
+      <div class="ptile pt-gold"><div class="th">Strategic Sectors</div><ul><li>Infrastructure and industrial</li><li>Manufacturing and production</li><li>Enterprise SaaS and AI-native</li><li>Public infrastructure</li><li>Complex B2B ecosystems</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Engagement</span><h2>Designed around measurable outcomes</h2><p>Start focused, prove value, expand intentionally.</p></div>
+    <div class="phases">
+      <div class="ph"><div class="num" style="background:var(--sky);">1</div><p>Targeted operational or commercial Proof of Concept</p></div>
+      <div class="ph"><div class="num" style="background:var(--green);">2</div><p>Focused Decision Pick deployment</p></div>
+      <div class="ph"><div class="num" style="background:var(--gold);">3</div><p>Expanded Decision Pack environment</p></div>
+      <div class="ph"><div class="num" style="background:var(--orange);">4</div><p>Enterprise-wide coordination and continuity</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-card">
+      <h2>AI will not replace organizations. Organizations that coordinate execution will replace those that do not.</h2>
+      <p>TwoSuns helps organizations coordinate workflows, operations, market execution, and continuity across complex environments.</p>
+      <a href="contact.html" class="pill pill-primary">Request a Discovery Session</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <img src="logo-color.svg" alt="TwoSuns" style="height:42px;">
+      <div class="tag">Light on complexity. Power in decisions.</div>
+      <div class="em">info@twosuns.ai</div>
+    </div>
+    <div class="wrap copy" style="padding:0;">© 2026 TwoSuns. All rights reserved. · Layout experiment.</div>
+  </div>
+</footer>
+
+</body>
+</html>
