@@ -601,6 +601,10 @@
 .sf-navlinks a:hover{color:#1E1A14;}
 @media(max-width:900px){.sf-g4{grid-template-columns:1fr 1fr;}.sf-g3,.sf-g2,.tiles,.phases,.split{grid-template-columns:1fr;}.sf-navlinks{display:none;}}
 </style>
+<style>
+  .sun-scene-wrap{line-height:0;margin-bottom:-2px;}
+  .sun-scene{display:block;width:100%;height:auto;}
+</style>
 </head>
 <body>
 
@@ -777,7 +781,37 @@
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <div class="container" style="padding:44px 0;">
+<div class="sun-scene-wrap" aria-hidden="true"><svg class="sun-scene" viewBox="0 0 1440 340" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFBF2"/><stop offset="1" stop-color="#FFEACB"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFD98A" stop-opacity=".55"/><stop offset="100%" stop-color="#FFD98A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="sunG" cx="42%" cy="38%" r="62%"><stop offset="0" stop-color="#FFEBA0"/><stop offset="55%" stop-color="#F0B429"/><stop offset="100%" stop-color="#CC9900"/></radialGradient>
+    <radialGradient id="sunO" cx="42%" cy="38%" r="62%"><stop offset="0" stop-color="#FFC98F"/><stop offset="55%" stop-color="#F5772A"/><stop offset="100%" stop-color="#C45213"/></radialGradient>
+    <linearGradient id="h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE6AE"/><stop offset="1" stop-color="#F5D588"/></linearGradient>
+    <linearGradient id="h2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6BB48"/><stop offset="1" stop-color="#E89C24"/></linearGradient>
+    <linearGradient id="h3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EF8B2E"/><stop offset="1" stop-color="#E0641E"/></linearGradient>
+    <linearGradient id="h4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D0511A"/><stop offset="1" stop-color="#B8420F"/></linearGradient>
+  </defs>
+  <rect width="1440" height="340" fill="url(#sky)"/>
+  <circle cx="650" cy="150" r="230" fill="url(#glow)"/><circle cx="790" cy="165" r="200" fill="url(#glow)"/>
+  <g stroke="#F3C24A" stroke-width="3.5" stroke-linecap="round" opacity=".5">
+    <line x1="650" y1="55" x2="650" y2="30"/><line x1="726" y1="80" x2="744" y2="62"/><line x1="758" y1="150" x2="784" y2="150"/>
+    <line x1="574" y1="80" x2="556" y2="62"/><line x1="542" y1="150" x2="516" y2="150"/><line x1="726" y1="220" x2="744" y2="238"/><line x1="574" y1="220" x2="556" y2="238"/>
+  </g>
+  <circle cx="650" cy="150" r="66" fill="url(#sunG)"/>
+  <circle cx="784" cy="182" r="52" fill="url(#sunO)"/>
+  <path d="M0,236 C 250,182 470,206 720,232 C 980,260 1200,206 1440,238 L1440,340 L0,340 Z" fill="url(#h1)"/>
+  <path d="M0,272 C 300,230 520,256 760,276 C 1040,300 1260,258 1440,280 L1440,340 L0,340 Z" fill="url(#h2)"/>
+  <g fill="#B8420F"><g transform="translate(215,236)"><rect x="-2" y="0" width="4" height="10"/><path d="M0,-20 L11,4 L-11,4 Z"/></g>
+    <g transform="translate(268,246)"><rect x="-2" y="0" width="4" height="9"/><path d="M0,-16 L9,4 L-9,4 Z"/></g>
+    <g transform="translate(1180,232)"><rect x="-2" y="0" width="4" height="10"/><path d="M0,-20 L11,4 L-11,4 Z"/></g>
+    <g transform="translate(1235,244)"><rect x="-2" y="0" width="4" height="8"/><path d="M0,-15 L8,3 L-8,3 Z"/></g></g>
+  <path d="M0,304 C 260,282 560,296 820,308 C 1080,320 1300,290 1440,308 L1440,340 L0,340 Z" fill="url(#h3)"/>
+  <path d="M120,318 C 260,300 380,326 520,314 C 660,302 720,320 860,312" stroke="#FBE6AE" stroke-width="9" fill="none" stroke-linecap="round" opacity=".85"/>
+  <circle cx="300" cy="311" r="9" fill="#E0641E"/><circle cx="470" cy="316" r="8" fill="#F0B429"/><circle cx="980" cy="312" r="9" fill="#4E95D9"/><circle cx="1080" cy="316" r="8" fill="#FBE6AE"/><circle cx="1180" cy="311" r="9" fill="#4EA72E"/>
+  <path d="M0,330 C 300,320 600,330 900,332 C 1140,334 1300,322 1440,330 L1440,340 L0,340 Z" fill="url(#h4)"/>
+</svg></div>
+  <div class="container" style="padding:40px 0 44px;">
     <div style="display:flex;flex-wrap:wrap;gap:22px 40px;align-items:center;justify-content:space-between;">
       <img src="logo-color.svg" alt="TwoSuns" style="height:50px;width:auto;">
       <div style="font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#CC9900;">Light on complexity. Power in decisions.</div>
