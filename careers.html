@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="https://twosuns.ai/og-image.jpg">
   <link rel="icon" type="image/svg+xml" href="logo-mini.svg">
   <link rel="apple-touch-icon" href="logo-mini.svg">
-  <meta name="theme-color" content="#1E1A14">
+  <meta name="theme-color" content="#FFF5DD">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -73,8 +73,8 @@
 
   /* ─── TOPBAR ─── */
   .topbar {
-    background:#474237;
-    border-bottom:1px solid rgba(255,255,255,0.06);
+    background:#F5E7C4;
+    border-bottom:1px solid rgba(140,101,0,0.18);
   }
   .topbar-inner {
     max-width:1200px; margin:0 auto; padding:0 32px;
@@ -84,23 +84,24 @@
   .topbar-inner a {
     font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
     color:#9A7209; text-decoration:none; padding:0 16px; transition:color .2s;
-    border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
+    border-right:1px solid rgba(140,101,0,0.15); line-height:34px;
   }
   .topbar-inner a:last-child { border-right:none; padding-right:0; }
-  .topbar-inner a:hover { color:#FFFFFF; }
+  .topbar-inner a:hover { color:#C45213; }
 
   /* ─── NAV ─── */
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:#474237; backdrop-filter:blur(16px);
+    background:rgba(255,248,236,0.92); backdrop-filter:blur(16px);
     border-bottom:1px solid rgba(224,100,30,0.15);
     box-shadow:0 1px 20px rgba(224,100,30,0.08);
     overflow:visible;
   }
   .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
   .nav-links { display:flex; align-items:center; gap:32px; margin-left:auto; }
-  .nav-links a { font-size:14px; color:#FFFFFF; font-weight:500; transition:color .2s; }
+  .nav-links a { font-size:14px; color:#1E1A14; font-weight:500; transition:color .2s; }
   .nav-links a:hover { color:#9A7209; }
+  .nav-links a.btn-cta, .nav-links a.btn-cta:hover { color:#FFFFFF; }
   .btn-cta {
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
@@ -224,7 +225,7 @@
     background:linear-gradient(90deg,
       transparent 0%,
       #E0641E 18%,
-      #474237 50%,
+      #CC9900 50%,
       #E0641E 82%,
       transparent 100%
     );
@@ -239,14 +240,14 @@
 
   /* ─── BRAND STRIP ─── */
   #brand-strip {
-    background:linear-gradient(135deg,#474237 0%,#2A231B 100%);
-    padding:60px 0; text-align:center;
+    background:linear-gradient(135deg,#FBEFC9 0%,#F6E1B0 100%);
+    padding:60px 0; text-align:center; border-top:1px solid rgba(204,153,0,0.25); border-bottom:1px solid rgba(204,153,0,0.25);
   }
-  #brand-strip h2 { font-size:32px; font-weight:800; color:white; margin-bottom:10px; }
-  #brand-strip p { color:rgba(255,255,255,0.7); font-size:16px; }
+  #brand-strip h2 { font-size:32px; font-weight:800; color:var(--navy); margin-bottom:10px; }
+  #brand-strip p { color:var(--text-muted); font-size:16px; }
   .strip-stats { display:flex; gap:60px; justify-content:center; margin-top:40px; flex-wrap:wrap; }
   .strip-stat .val { font-size:40px; font-weight:900; color:var(--sun-bright); }
-  .strip-stat .lbl { font-size:13px; color:rgba(255,255,255,0.6); margin-top:4px; }
+  .strip-stat .lbl { font-size:13px; color:var(--text-muted); margin-top:4px; }
 
   /* ─── CARDS ─── */
   .card {
@@ -276,25 +277,25 @@
   }
 
             /* ─── FOOTER ─── */
-  footer { background:#413C33; padding:64px 0 32px; border-top:3px solid var(--sun); }
+  footer { background:var(--bg2); padding:64px 0 32px; border-top:3px solid var(--sun); }
   .footer-top {
     display:grid; grid-template-columns:1fr 1fr 1.6fr 1fr;
     gap:40px; margin-bottom:48px; align-items:start;
-    padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.1);
+    padding-bottom:48px; border-bottom:1px solid rgba(30,26,20,0.12);
   }
-  .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; color:var(--sun-bright); }
+  .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; color:var(--sun-deep); }
   .footer-col ul { list-style:none; }
-  .footer-col ul li { padding:5px 0; font-size:14px; color:rgba(255,255,255,0.75); cursor:pointer; transition:color .2s; }
+  .footer-col ul li { padding:5px 0; font-size:14px; color:rgba(30,26,20,0.72); cursor:pointer; transition:color .2s; }
   .footer-col ul li:hover, .footer-col ul li a:hover { color:#9A7209; }
-  .footer-col ul li a { color:rgba(255,255,255,0.75); }
-  .footer-contact-item { font-size:14px; color:rgba(255,255,255,0.75); padding:5px 0; line-height:1.6; }
-  .footer-contact-item a { color:rgba(255,255,255,0.75); }
+  .footer-col ul li a { color:rgba(30,26,20,0.72); }
+  .footer-contact-item { font-size:14px; color:rgba(30,26,20,0.72); padding:5px 0; line-height:1.6; }
+  .footer-contact-item a { color:rgba(30,26,20,0.72); }
   .footer-contact-item a:hover { color:#9A7209; }
   /* Newsletter row */
   .footer-newsletter-row {
     display:grid; grid-template-columns:1fr 1fr; gap:64px;
     padding:40px 48px; border-radius:16px; margin-bottom:48px; align-items:center;
-    background:linear-gradient(135deg,#FEFAE8 0%,#FFF8D6 50%,#FAF0B8 100%);
+    background:linear-gradient(135deg,#FEFAE8 0%,#FFF8D6 50%,#FAF0B8 100%); border:1px solid rgba(204,153,0,0.3);
   }
   .footer-brand { display:flex; flex-direction:column; justify-content:center; }
   .footer-brand p { color:var(--navy); font-size:14px; line-height:1.75; margin:16px 0 8px; }
@@ -312,7 +313,7 @@
   .fn-btn { background:linear-gradient(135deg,var(--sun),var(--sun-deep)); color:#FFFFFF; border:none; border-radius:8px; padding:12px 24px; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer; width:100%; transition:opacity .2s, transform .2s; }
   .fn-btn:hover { opacity:.88; transform:translateY(-1px); }
   .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
-  .footer-bottom p { font-size:12px; color:rgba(255,255,255,0.4); }
+  .footer-bottom p { font-size:12px; color:rgba(30,26,20,0.5); }
   /* ─── NAV DROPDOWN ─── */
   .nav-dropdown { position:relative; display:flex; align-items:center; }
   .nav-dropdown > a { display:flex; align-items:center; gap:4px; cursor:pointer; }
@@ -338,14 +339,14 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:#9A7209; }
-  .nav-dropdown-menu.nav-mega-menu{left:auto;right:0;transform:translateY(-6px);width:540px;max-width:88vw;min-width:0;padding:0;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:#3A352E;border-color:rgba(255,255,255,0.12);}
+  .nav-dropdown-menu.nav-mega-menu{left:auto;right:0;transform:translateY(-6px);width:540px;max-width:88vw;min-width:0;padding:0;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:#FFFDF7;border-color:rgba(224,100,30,0.2);}
   .nav-dropdown:hover .nav-dropdown-menu.nav-mega-menu{transform:translateY(0);}
-  .nav-mega-cats{padding:12px 0;border-right:1px solid rgba(255,255,255,0.1);}
-  .nav-mega-cat{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;font-size:15px;font-weight:500;color:rgba(255,255,255,0.72);cursor:pointer;transition:background .15s,color .15s;}
-  .nav-mega-cat.active{color:#fff;background:rgba(255,255,255,0.05);box-shadow:inset 3px 0 0 #CC9900;}
+  .nav-mega-cats{padding:12px 0;border-right:1px solid rgba(30,26,20,0.1);}
+  .nav-mega-cat{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;font-size:15px;font-weight:500;color:#5A554C;cursor:pointer;transition:background .15s,color .15s;}
+  .nav-mega-cat.active{color:#1E1A14;background:rgba(224,100,30,0.07);box-shadow:inset 3px 0 0 #CC9900;}
   .nav-mega-cat span{opacity:0.45;font-size:18px;}
   .nav-mega-subs{padding:16px 20px;}
-  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a{color:rgba(255,255,255,0.78);padding:10px 8px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a{color:#5A554C;padding:10px 8px;font-size:14px;border-bottom:1px solid rgba(30,26,20,0.08);white-space:nowrap;}
   .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a:hover{background:transparent;color:#CC9900;}
   
   .nav-dropdown-menu .menu-divider { height:1px; background:rgba(224,100,30,0.1); margin:4px 8px; }
@@ -489,12 +490,12 @@
   .hero-stat:nth-child(2) .value { color:var(--logo-green) !important; }
 
   .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
-  .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
+  .footer-legal a { font-size:12px; color:rgba(30,26,20,0.7); text-decoration:none; padding:0 14px; border-right:1px solid rgba(30,26,20,0.15); transition:color .2s; }
   .footer-legal a:last-child { border-right:none; }
-  .footer-legal a:hover { color:rgba(255,255,255,1); }
+  .footer-legal a:hover { color:var(--sun-deep); }
 </style>
   <style>
-    .career-hero { background:linear-gradient(135deg,#413C33 0%,#474237 55%,#2A231B 100%); min-height:520px; padding:130px 0 80px; position:relative; overflow:hidden; display:flex; align-items:center; }
+    .career-hero { background:linear-gradient(160deg,#FFF7E2 0%,#FFEFCE 55%,#FCE7C0 100%); min-height:520px; padding:130px 0 80px; position:relative; overflow:hidden; display:flex; align-items:center; }
     .job-card { background:#FFFFFF; border:1px solid rgba(30,26,20,0.1); border-radius:16px; padding:28px 32px; transition:transform .2s,box-shadow .2s,border-color .2s; cursor:pointer; }
     .job-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(30,26,20,0.12); border-color:rgba(30,26,20,0.25); }
     .job-tag { display:inline-block; font-size:11px; font-weight:700; padding:4px 10px; border-radius:20px; letter-spacing:.5px; }
@@ -503,9 +504,9 @@
     .tag-contract { background:#FFEDD0; color:#C45213; }
     .value-card { background:#FCF9F2; border:1px solid rgba(30,26,20,0.08); border-radius:16px; padding:32px 28px; }
     .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
-    .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
+    .footer-legal a { font-size:12px; color:rgba(30,26,20,0.7); text-decoration:none; padding:0 14px; border-right:1px solid rgba(30,26,20,0.15); transition:color .2s; }
     .footer-legal a:last-child { border-right:none; }
-    .footer-legal a:hover { color:rgba(255,255,255,1); }
+    .footer-legal a:hover { color:var(--sun-deep); }
     .nav-dropdown-menu .menu-label { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:rgba(30,26,20,0.4); padding:8px 16px 4px; cursor:default; }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Careers at TwoSuns","description":"Join the team building Coordination for complex enterprises","url":"https://twosuns.ai/careers.html","isPartOf":{"@type":"WebSite","name":"TwoSuns","url":"https://twosuns.ai"}}</script>
@@ -523,7 +524,7 @@
   </div>
   <div class="nav-inner">
     <a href="index.html">
-      <img src="logo-horizontal-white.svg" alt="TwoSuns" style="height:60px;width:auto;display:block;">
+      <img src="logo-color.svg" alt="TwoSuns" style="height:60px;width:auto;display:block;">
     </a>
     <button class="nav-hamburger" id="nxs-hamburger" onclick="toggleMobNav()" aria-label="Toggle menu"></button>
             <div class="nav-links">
@@ -612,12 +613,12 @@
   <div class="container" style="position:relative;z-index:2;">
     <div style="max-width:780px;">
       <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:#9A7209;">Careers at TwoSuns</div>
-      <h1 style="font-size:clamp(38px,5.5vw,64px);font-weight:900;color:#FFFFFF;line-height:1.08;letter-spacing:-2px;margin:14px 0 24px;">Build the Future of <span style="color:#CC9900;">Operational Intelligence</span></h1>
-      <p style="font-size:18px;color:rgba(255,255,255,0.82);line-height:1.75;max-width:660px;margin-bottom:18px;">We're building the intelligence layer that helps organizations make better decisions, coordinate execution, and unlock the full value of AI. At TwoSuns, you'll work alongside experienced software builders, industry experts, and AI innovators, solving some of the most complex challenges facing industrial organizations.</p>
-      <p style="font-size:18px;color:rgba(255,255,255,0.82);line-height:1.75;max-width:660px;margin-bottom:40px;">Join us in shaping the future of enterprise decision-making.</p>
+      <h1 style="font-size:clamp(38px,5.5vw,64px);font-weight:900;color:var(--navy);line-height:1.08;letter-spacing:-2px;margin:14px 0 24px;">Build the Future of <span style="color:#C45213;">Operational Intelligence</span></h1>
+      <p style="font-size:18px;color:rgba(30,26,20,0.72);line-height:1.75;max-width:660px;margin-bottom:18px;">We're building the intelligence layer that helps organizations make better decisions, coordinate execution, and unlock the full value of AI. At TwoSuns, you'll work alongside experienced software builders, industry experts, and AI innovators, solving some of the most complex challenges facing industrial organizations.</p>
+      <p style="font-size:18px;color:rgba(30,26,20,0.72);line-height:1.75;max-width:660px;margin-bottom:40px;">Join us in shaping the future of enterprise decision-making.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;">
         <a href="mailto:careers@twosuns.ai" style="background:#E0641E;color:#FFFFFF;padding:16px 32px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:opacity .2s,transform .2s;" onmouseover="this.style.opacity='.88';this.style.transform='translateY(-2px)'" onmouseout="this.style.opacity='1';this.style.transform=''">View Open Roles &rarr;</a>
-        <a href="#open-roles" style="background:rgba(255,255,255,0.1);color:#FFFFFF;padding:16px 32px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,0.25);transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">See where you fit</a>
+        <a href="#open-roles" style="background:#FFFFFF;color:var(--navy);padding:16px 32px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid rgba(224,100,30,0.3);transition:background .2s;" onmouseover="this.style.background='#FFF7E2'" onmouseout="this.style.background='#FFFFFF'">See where you fit</a>
       </div>
     </div>
   </div>
@@ -665,10 +666,10 @@
 </section>
 
 <!-- ══ EMPLOYEE PROMISE ══ -->
-<section class="section" style="background:linear-gradient(160deg,#413C33 0%,#474237 100%);color:#FFFFFF;">
+<section class="section" style="background:linear-gradient(160deg,#FFF7E2 0%,#FFEFCE 55%,#FCE7C0 100%);color:var(--navy);">
   <div class="container" style="max-width:880px;text-align:center;">
     <div class="section-tag" style="justify-content:center;margin:0 auto 16px;background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:#9A7209;">Employee Promise</div>
-    <p style="font-size:clamp(20px,2.6vw,30px);font-weight:800;color:#FFFFFF;line-height:1.45;margin:0;">At TwoSuns, you won't be one of thousands of employees. You'll help shape our products, influence our direction, and build technology that changes how organizations operate.</p>
+    <p style="font-size:clamp(20px,2.6vw,30px);font-weight:800;color:var(--navy);line-height:1.45;margin:0;">At TwoSuns, you won't be one of thousands of employees. You'll help shape our products, influence our direction, and build technology that changes how organizations operate.</p>
   </div>
 </section>
 
@@ -816,13 +817,13 @@
         <h3 style="font-size:20px;font-weight:800;color:#1E1A14;margin-bottom:8px;">Don't see the perfect role?</h3>
         <p style="font-size:15px;color:#5A554C;line-height:1.65;max-width:520px;margin:0;">We're always interested in meeting great people. Send your resume to <a href="mailto:careers@twosuns.ai" style="color:#9A7209;font-weight:700;">careers@twosuns.ai</a>.</p>
       </div>
-      <a href="mailto:careers@twosuns.ai" style="background:#474237;color:#FFFFFF;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Send Your Resume &rarr;</a>
+      <a href="mailto:careers@twosuns.ai" style="background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Send Your Resume &rarr;</a>
     </div>
   </div>
 </section>
 
 <!-- ══ FINAL CTA ══ -->
-<section class="section" style="background:linear-gradient(135deg,#413C33,#474237);text-align:center;">
+<section class="section" style="background:linear-gradient(135deg,#0B3A66,#003366);text-align:center;">
   <div class="container">
     <div class="section-tag" style="justify-content:center;margin:0 auto 16px;background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.35);color:#9A7209;">Join Us</div>
     <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;color:#FFFFFF;margin-bottom:16px;letter-spacing:-1px;line-height:1.15;">Help Build the Future of <span style="color:var(--sun-bright);">Enterprise Intelligence</span></h2>

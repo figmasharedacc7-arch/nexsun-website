@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://twosuns.ai/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="logo-mini.svg">
 <link rel="apple-touch-icon" href="logo-mini.svg">
-<meta name="theme-color" content="#1E1A14">
+<meta name="theme-color" content="#FFF5DD">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,8 +89,8 @@
 
   /* TOPBAR */
   .topbar {
-    background:#474237;
-    border-bottom:1px solid rgba(255,255,255,0.06);
+    background:#F5E7C4;
+    border-bottom:1px solid rgba(140,101,0,0.18);
   }
   .topbar-inner {
     max-width:1200px; margin:0 auto; padding:0 32px;
@@ -100,23 +100,24 @@
   .topbar-inner a {
     font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
     color:#9A7209; text-decoration:none; padding:0 16px; transition:color .2s;
-    border-right:1px solid rgba(255,255,255,0.1); line-height:34px;
+    border-right:1px solid rgba(140,101,0,0.15); line-height:34px;
   }
   .topbar-inner a:last-child { border-right:none; padding-right:0; }
-  .topbar-inner a:hover { color:#FFFFFF; }
+  .topbar-inner a:hover { color:#C45213; }
 
   /* NAV */
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:#474237; backdrop-filter:blur(16px);
+    background:rgba(255,248,236,0.92); backdrop-filter:blur(16px);
     border-bottom:1px solid rgba(224,100,30,0.15);
     box-shadow:0 1px 20px rgba(224,100,30,0.08);
     overflow:visible;
   }
   .nav-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; height:70px; }
   .nav-links { display:flex; align-items:center; gap:32px; margin-left:auto; }
-  .nav-links a { font-size:14px; color:#FFFFFF; font-weight:500; transition:color .2s; }
+  .nav-links a { font-size:14px; color:#1E1A14; font-weight:500; transition:color .2s; }
   .nav-links a:hover { color:#9A7209; }
+  .nav-links a.btn-cta, .nav-links a.btn-cta:hover { color:#FFFFFF; }
   .btn-cta {
     background:linear-gradient(135deg,var(--sun),var(--sun-deep));
     color:#FFFFFF; font-weight:700; padding:11px 24px; border-radius:8px;
@@ -150,14 +151,14 @@
     transition:background .15s, color .15s; white-space:nowrap;
   }
   .nav-dropdown-menu a:hover { background:var(--sun-pale); color:#9A7209; }
-  .nav-dropdown-menu.nav-mega-menu{left:auto;right:0;transform:translateY(-6px);width:540px;max-width:88vw;min-width:0;padding:0;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:#3A352E;border-color:rgba(255,255,255,0.12);}
+  .nav-dropdown-menu.nav-mega-menu{left:auto;right:0;transform:translateY(-6px);width:540px;max-width:88vw;min-width:0;padding:0;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:#FFFDF7;border-color:rgba(224,100,30,0.2);}
   .nav-dropdown:hover .nav-dropdown-menu.nav-mega-menu{transform:translateY(0);}
-  .nav-mega-cats{padding:12px 0;border-right:1px solid rgba(255,255,255,0.1);}
-  .nav-mega-cat{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;font-size:15px;font-weight:500;color:rgba(255,255,255,0.72);cursor:pointer;transition:background .15s,color .15s;}
-  .nav-mega-cat.active{color:#fff;background:rgba(255,255,255,0.05);box-shadow:inset 3px 0 0 #CC9900;}
+  .nav-mega-cats{padding:12px 0;border-right:1px solid rgba(30,26,20,0.1);}
+  .nav-mega-cat{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;font-size:15px;font-weight:500;color:#5A554C;cursor:pointer;transition:background .15s,color .15s;}
+  .nav-mega-cat.active{color:#1E1A14;background:rgba(224,100,30,0.07);box-shadow:inset 3px 0 0 #CC9900;}
   .nav-mega-cat span{opacity:0.45;font-size:18px;}
   .nav-mega-subs{padding:16px 20px;}
-  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a{color:rgba(255,255,255,0.78);padding:10px 8px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a{color:#5A554C;padding:10px 8px;font-size:14px;border-bottom:1px solid rgba(30,26,20,0.08);white-space:nowrap;}
   .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a:hover{background:transparent;color:#CC9900;}
   
   .nav-dropdown-menu .menu-label { font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); padding:7px 16px 3px; opacity:0.7; pointer-events:none; }
@@ -189,24 +190,24 @@
   #scroll-top svg { width:18px; height:18px; }
 
   /* FOOTER */
-  footer { background:#413C33; padding:64px 0 32px; border-top:3px solid var(--sun); }
+  footer { background:var(--bg2); padding:64px 0 32px; border-top:3px solid var(--sun); }
   .footer-top {
     display:grid; grid-template-columns:1fr 1fr 1.6fr 1fr;
     gap:40px; margin-bottom:48px; align-items:start;
-    padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.1);
+    padding-bottom:48px; border-bottom:1px solid rgba(30,26,20,0.12);
   }
-  .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; color:var(--sun-bright); }
+  .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; color:var(--sun-deep); }
   .footer-col ul { list-style:none; }
-  .footer-col ul li { padding:5px 0; font-size:14px; color:rgba(255,255,255,0.75); cursor:pointer; transition:color .2s; }
+  .footer-col ul li { padding:5px 0; font-size:14px; color:rgba(30,26,20,0.72); cursor:pointer; transition:color .2s; }
   .footer-col ul li:hover, .footer-col ul li a:hover { color:#9A7209; }
-  .footer-col ul li a { color:rgba(255,255,255,0.75); }
-  .footer-contact-item { font-size:14px; color:rgba(255,255,255,0.75); padding:5px 0; line-height:1.6; }
-  .footer-contact-item a { color:rgba(255,255,255,0.75); }
+  .footer-col ul li a { color:rgba(30,26,20,0.72); }
+  .footer-contact-item { font-size:14px; color:rgba(30,26,20,0.72); padding:5px 0; line-height:1.6; }
+  .footer-contact-item a { color:rgba(30,26,20,0.72); }
   .footer-contact-item a:hover { color:#9A7209; }
   .footer-newsletter-row {
     display:grid; grid-template-columns:1fr 1fr; gap:64px;
     padding:40px 48px; border-radius:16px; margin-bottom:48px; align-items:center;
-    background:linear-gradient(135deg,#FEFAE8 0%,#FFF8D6 50%,#FAF0B8 100%);
+    background:linear-gradient(135deg,#FEFAE8 0%,#FFF8D6 50%,#FAF0B8 100%); border:1px solid rgba(204,153,0,0.3);
   }
   .footer-brand { display:flex; flex-direction:column; justify-content:center; }
   .footer-brand p { color:var(--navy); font-size:14px; line-height:1.75; margin:16px 0 8px; }
@@ -223,16 +224,16 @@
   .fn-btn { background:linear-gradient(135deg,var(--sun),var(--sun-deep)); color:#FFFFFF; border:none; border-radius:8px; padding:12px 24px; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer; width:100%; transition:opacity .2s, transform .2s; }
   .fn-btn:hover { opacity:.88; transform:translateY(-1px); }
   .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
-  .footer-bottom p { font-size:12px; color:rgba(255,255,255,0.4); }
+  .footer-bottom p { font-size:12px; color:rgba(30,26,20,0.5); }
   .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
-  .footer-legal a { font-size:12px; color:rgba(255,255,255,0.75); text-decoration:none; padding:0 14px; border-right:1px solid rgba(255,255,255,0.15); transition:color .2s; }
+  .footer-legal a { font-size:12px; color:rgba(30,26,20,0.7); text-decoration:none; padding:0 14px; border-right:1px solid rgba(30,26,20,0.15); transition:color .2s; }
   .footer-legal a:last-child { border-right:none; }
-  .footer-legal a:hover { color:rgba(255,255,255,1); }
+  .footer-legal a:hover { color:var(--sun-deep); }
 
   /* DIVIDER */
   .sun-divider {
     height:5px;
-    background:linear-gradient(90deg, transparent 0%, #E0641E 18%, #474237 50%, #E0641E 82%, transparent 100%);
+    background:linear-gradient(90deg, transparent 0%, #E0641E 18%, #CC9900 50%, #E0641E 82%, transparent 100%);
     position:relative; z-index:2; overflow:visible;
   }
 
@@ -313,16 +314,17 @@
   .category-card p { font-size:13px; color:var(--text-muted); line-height:1.7; }
   .category-statement {
     margin-top:48px; padding:32px 40px; text-align:center;
-    background:linear-gradient(135deg,#474237 0%,#2A231B 100%);
+    background:linear-gradient(160deg,#FFF7E2 0%,#FFEFCE 55%,#FCE7C0 100%);
+    border:1px solid rgba(224,100,30,0.15);
     border-radius:20px;
   }
-  .category-statement p { font-size:17px; color:rgba(255,255,255,0.85); line-height:1.8; }
-  .category-statement strong { color:var(--sun-bright); font-size:19px; display:block; margin-top:12px; font-weight:800; }
+  .category-statement p { font-size:17px; color:rgba(30,26,20,0.72); line-height:1.8; }
+  .category-statement strong { color:#C45213; font-size:19px; display:block; margin-top:12px; font-weight:800; }
 
   /* DIFFERENTIATOR SECTIONS */
   .diff-section { padding:100px 0; }
   .diff-section.light { background:var(--bg); }
-  .diff-section.dark { background:#413C33; }
+  .diff-section.dark { background:linear-gradient(160deg,#FFF7E2 0%,#FFEFCE 55%,#FCE7C0 100%); }
   .diff-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
   .diff-grid.reverse { direction:rtl; }
   .diff-grid.reverse > * { direction:ltr; }
@@ -360,12 +362,12 @@
   .diff-section.light .diff-visual-label { color:var(--navy); }
 
   /* DARK DIFF */
-  .diff-section.dark .diff-content h2 { color:white; }
-  .diff-section.dark .diff-content p { color:rgba(255,255,255,0.75); }
-  .diff-section.dark .diff-content ul li { color:rgba(255,255,255,0.7); }
+  .diff-section.dark .diff-content h2 { color:var(--navy); }
+  .diff-section.dark .diff-content p { color:var(--text-mid); }
+  .diff-section.dark .diff-content ul li { color:var(--text-mid); }
   .diff-section.dark .diff-content ul li::before { background:var(--sun); }
-  .diff-section.dark .diff-visual { background:rgba(255,255,255,0.04); border:1px solid rgba(224,100,30,0.15); }
-  .diff-section.dark .diff-visual-label { color:rgba(255,255,255,0.6); }
+  .diff-section.dark .diff-visual { background:#FFFFFF; border:1px solid rgba(224,100,30,0.15); box-shadow:0 4px 24px rgba(224,100,30,0.08); }
+  .diff-section.dark .diff-visual-label { color:var(--navy); }
 
   /* VISUAL FEATURE BOXES */
   .feature-boxes { display:flex; flex-direction:column; gap:12px; width:100%; }
@@ -381,36 +383,37 @@
   .diff-section.light .feature-box-text { color:var(--navy); }
 
   /* DARK feature boxes */
-  .diff-section.dark .feature-box { background:rgba(255,255,255,0.06); border:1px solid rgba(224,100,30,0.15); }
-  .diff-section.dark .feature-box-text { color:rgba(255,255,255,0.85); }
+  .diff-section.dark .feature-box { background:#FFFFFF; border:1px solid rgba(224,100,30,0.15); box-shadow:0 4px 24px rgba(224,100,30,0.08); }
+  .diff-section.dark .feature-box-text { color:var(--navy); }
 
   /* COMPARISON TABLE */
-  #comparison { background:#413C33; padding:100px 0; }
-  #comparison .section-heading { color:white; }
-  #comparison .section-sub { color:rgba(255,255,255,0.7); }
+  #comparison { background:linear-gradient(160deg,#FFF7E2 0%,#FFEFCE 55%,#FCE7C0 100%); padding:100px 0; }
+  #comparison .section-heading { color:var(--navy); }
+  #comparison .section-sub { color:rgba(30,26,20,0.72); }
   .comp-table-wrap { overflow-x:auto; margin-top:48px; border-radius:16px; }
   .comp-table {
-    width:100%; border-collapse:collapse; background:rgba(255,255,255,0.03);
+    width:100%; border-collapse:collapse; background:#FFFFFF;
     border:1px solid rgba(224,100,30,0.15); border-radius:16px; overflow:hidden;
+    box-shadow:0 4px 24px rgba(224,100,30,0.08);
   }
   .comp-table th {
     background:rgba(224,100,30,0.12); padding:16px 20px;
     font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-    color:var(--sun-bright); text-align:left; border-bottom:1px solid rgba(224,100,30,0.2);
+    color:#9A7209; text-align:left; border-bottom:1px solid rgba(224,100,30,0.2);
     white-space:nowrap;
   }
-  .comp-table th:first-child { color:rgba(255,255,255,0.5); background:rgba(255,255,255,0.04); }
+  .comp-table th:first-child { color:rgba(30,26,20,0.5); background:rgba(30,26,20,0.04); }
   .comp-table th.highlight { background:rgba(224,100,30,0.2); border-left:2px solid rgba(224,100,30,0.4); }
   .comp-table td {
-    padding:14px 20px; font-size:14px; color:rgba(255,255,255,0.7);
-    border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:top;
+    padding:14px 20px; font-size:14px; color:rgba(30,26,20,0.72);
+    border-bottom:1px solid rgba(30,26,20,0.08); vertical-align:top;
     line-height:1.5;
   }
-  .comp-table td:first-child { font-weight:600; color:rgba(255,255,255,0.85); background:rgba(255,255,255,0.02); }
-  .comp-table td.highlight { background:rgba(224,100,30,0.06); color:rgba(255,255,255,0.9); border-left:2px solid rgba(224,100,30,0.25); }
-  .comp-table td.highlight.strong { color:var(--sun-bright); font-weight:600; }
+  .comp-table td:first-child { font-weight:600; color:rgba(30,26,20,0.85); background:rgba(30,26,20,0.02); }
+  .comp-table td.highlight { background:rgba(224,100,30,0.06); color:#1E1A14; border-left:2px solid rgba(224,100,30,0.25); }
+  .comp-table td.highlight.strong { color:#C45213; font-weight:600; }
   .comp-table tr:last-child td { border-bottom:none; }
-  .comp-table tr:hover td { background:rgba(255,255,255,0.03); }
+  .comp-table tr:hover td { background:rgba(224,100,30,0.04); }
   .comp-table tr:hover td.highlight { background:rgba(224,100,30,0.1); }
 
   /* OUTCOME SECTION */
@@ -426,7 +429,7 @@
 
   /* CLOSING CTA */
   #closing-cta {
-    background:linear-gradient(135deg,#474237 0%,#2A231B 100%);
+    background:linear-gradient(135deg,#0B3A66,#003366);
     padding:100px 0; text-align:center;
   }
   #closing-cta h2 { font-size:clamp(28px,4vw,44px); font-weight:800; color:white; margin-bottom:16px; }
@@ -543,7 +546,7 @@
   </div>
   <div class="nav-inner">
     <a href="index.html">
-      <img src="logo-horizontal-white.svg" alt="TwoSuns" style="height:60px;width:auto;display:block;">
+      <img src="logo-color.svg" alt="TwoSuns" style="height:60px;width:auto;display:block;">
     </a>
     <button class="nav-hamburger" id="nxs-hamburger" onclick="toggleMobNav()" aria-label="Toggle menu"></button>
     <div class="nav-links">
@@ -952,8 +955,8 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:8px;">
       <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.3);color:var(--sun-bright);">How TwoSuns Compares</div>
-      <h2 class="section-heading" style="color:white;text-align:center;">How TwoSuns Compares</h2>
-      <p class="section-sub" style="color:rgba(255,255,255,0.7);margin:0 auto;text-align:center;">Modern enterprise stacks are built around data and transactions. TwoSuns introduces the missing layer: decisions.</p>
+      <h2 class="section-heading" style="color:var(--navy);text-align:center;">How TwoSuns Compares</h2>
+      <p class="section-sub" style="color:rgba(30,26,20,0.72);margin:0 auto;text-align:center;">Modern enterprise stacks are built around data and transactions. TwoSuns introduces the missing layer: decisions.</p>
     </div>
     <div class="comp-table-wrap">
       <table class="comp-table">
@@ -1026,43 +1029,43 @@
 
     <!-- Simplified View -->
     <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;margin-left:auto;margin-right:auto;">
-      <div style="background:rgba(255,255,255,0.06);border-radius:14px;padding:28px;border:1px solid rgba(255,255,255,0.1);">
-        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;">Traditional Stack</div>
-        <p style="color:rgba(255,255,255,0.8);font-size:15px;line-height:1.7;">Data → Reports → Interpretation → Decision</p>
+      <div style="background:#FFFFFF;border-radius:14px;padding:28px;border:1px solid rgba(224,100,30,0.15);box-shadow:0 4px 24px rgba(224,100,30,0.08);">
+        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(30,26,20,0.5);margin-bottom:12px;">Traditional Stack</div>
+        <p style="color:rgba(30,26,20,0.8);font-size:15px;line-height:1.7;">Data → Reports → Interpretation → Decision</p>
       </div>
       <div style="background:rgba(224,100,30,0.1);border-radius:14px;padding:28px;border:1px solid rgba(224,100,30,0.25);">
-        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sun-bright);margin-bottom:12px;">TwoSuns</div>
-        <p style="color:rgba(255,255,255,0.9);font-size:15px;line-height:1.7;">Data → Signals → Structured Decisions → Execution Readiness → Record</p>
+        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A7209;margin-bottom:12px;">TwoSuns</div>
+        <p style="color:#1E1A14;font-size:15px;line-height:1.7;">Data → Signals → Structured Decisions → Execution Readiness → Record</p>
       </div>
     </div>
 
     <!-- Architectural Positioning -->
     <div style="text-align:center;margin-top:40px;">
-      <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.8;">Systems of record manage data.<br>Analytics platforms interpret data.<br><strong style="color:var(--sun-bright);">TwoSuns operationalizes decisions.</strong></p>
+      <p style="color:rgba(30,26,20,0.72);font-size:15px;line-height:1.8;">Systems of record manage data.<br>Analytics platforms interpret data.<br><strong style="color:#C45213;">TwoSuns operationalizes decisions.</strong></p>
     </div>
 
     <!-- What This Means -->
     <div style="margin-top:40px;max-width:700px;margin-left:auto;margin-right:auto;">
-      <h3 style="color:white;font-size:20px;text-align:center;margin-bottom:20px;">What This Means</h3>
+      <h3 style="color:var(--navy);font-size:20px;text-align:center;margin-bottom:20px;">What This Means</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.1);">
-          <p style="color:rgba(255,255,255,0.85);font-size:14px;">Reduced latency between insight and action</p>
+        <div style="background:#FFFFFF;border-radius:12px;padding:20px;border:1px solid rgba(224,100,30,0.15);box-shadow:0 4px 24px rgba(224,100,30,0.08);">
+          <p style="color:rgba(30,26,20,0.85);font-size:14px;">Reduced latency between insight and action</p>
         </div>
-        <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.1);">
-          <p style="color:rgba(255,255,255,0.85);font-size:14px;">Clear linkage between data, strategy, and execution</p>
+        <div style="background:#FFFFFF;border-radius:12px;padding:20px;border:1px solid rgba(224,100,30,0.15);box-shadow:0 4px 24px rgba(224,100,30,0.08);">
+          <p style="color:rgba(30,26,20,0.85);font-size:14px;">Clear linkage between data, strategy, and execution</p>
         </div>
-        <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.1);">
-          <p style="color:rgba(255,255,255,0.85);font-size:14px;">Alignment across teams and stakeholders</p>
+        <div style="background:#FFFFFF;border-radius:12px;padding:20px;border:1px solid rgba(224,100,30,0.15);box-shadow:0 4px 24px rgba(224,100,30,0.08);">
+          <p style="color:rgba(30,26,20,0.85);font-size:14px;">Alignment across teams and stakeholders</p>
         </div>
-        <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.1);">
-          <p style="color:rgba(255,255,255,0.85);font-size:14px;">Decisions that are explainable, traceable, and repeatable</p>
+        <div style="background:#FFFFFF;border-radius:12px;padding:20px;border:1px solid rgba(224,100,30,0.15);box-shadow:0 4px 24px rgba(224,100,30,0.08);">
+          <p style="color:rgba(30,26,20,0.85);font-size:14px;">Decisions that are explainable, traceable, and repeatable</p>
         </div>
       </div>
     </div>
 
     <!-- Engage closing line -->
     <div style="text-align:center;margin-top:40px;">
-      <p style="color:rgba(255,255,255,0.7);font-size:15px;">TwoSuns works with select organizations through structured pilot programs designed to demonstrate value in real operating environments.</p>
+      <p style="color:rgba(30,26,20,0.72);font-size:15px;">TwoSuns works with select organizations through structured pilot programs designed to demonstrate value in real operating environments.</p>
     </div>
   </div>
 </section>
@@ -1129,12 +1132,12 @@
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Internal Stakeholder</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How teams across functions align</p>
       </div>
-      <div style="background:linear-gradient(135deg,#474237,#1A140E);border:1px solid var(--navy);border-radius:14px;padding:22px 18px;text-align:center;color:#FFFFFF;">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(224,100,30,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <div style="background:linear-gradient(135deg,var(--sun),var(--sun-deep));border:1px solid rgba(224,100,30,0.3);border-radius:14px;padding:22px 18px;text-align:center;color:#FFFFFF;">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.22);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
         </div>
-        <strong style="font-size:14px;color:#CC9900;display:block;margin-bottom:4px;">+ Switch Anytime</strong>
-        <p style="font-size:12px;color:rgba(255,255,255,0.7);margin:0;line-height:1.5;">Test the same decision across all lenses</p>
+        <strong style="font-size:14px;color:#FFFFFF;display:block;margin-bottom:4px;">+ Switch Anytime</strong>
+        <p style="font-size:12px;color:rgba(255,255,255,0.85);margin:0;line-height:1.5;">Test the same decision across all lenses</p>
       </div>
     </div>
 
@@ -1309,7 +1312,7 @@ function fnSubmit(){
   if(!e||!e.value.includes('@')){alert('Please enter a valid email address.');return;}
   var btn=document.querySelector('.fn-btn');
   btn.textContent='Subscribed \u2713';
-  btn.style.background='#2A231B';
+  btn.style.background='linear-gradient(135deg,var(--sun),var(--sun-deep))';
   btn.disabled=true;
 }
 

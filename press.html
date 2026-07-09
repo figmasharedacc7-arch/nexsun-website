@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="https://twosuns.ai/og-image.jpg">
   <link rel="icon" type="image/svg+xml" href="logo-mini.svg">
   <link rel="apple-touch-icon" href="logo-mini.svg">
-  <meta name="theme-color" content="#1E1A14">
+  <meta name="theme-color" content="#FFF5DD">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -51,7 +51,7 @@
     background:linear-gradient(90deg,
       transparent 0%,
       #E0641E 18%,
-      #474237 50%,
+      #CC9900 50%,
       #E0641E 82%,
       transparent 100%
     );
@@ -65,18 +65,19 @@
   }
 
   /* ─── TOPBAR ─── */
-  .topbar{background:#474237;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .topbar{background:#F5E7C4;border-bottom:1px solid rgba(140,101,0,0.18);}
   .topbar-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:flex-end;height:34px;gap:0;}
-  .topbar-inner a{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9A7209;text-decoration:none;padding:0 16px;transition:color .2s;border-right:1px solid rgba(255,255,255,0.1);line-height:34px;}
+  .topbar-inner a{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9A7209;text-decoration:none;padding:0 16px;transition:color .2s;border-right:1px solid rgba(140,101,0,0.15);line-height:34px;}
   .topbar-inner a:last-child{border-right:none;padding-right:0;}
-  .topbar-inner a:hover{color:#FFFFFF;}
+  .topbar-inner a:hover{color:#C45213;}
 
   /* ─── NAV ─── */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#474237;backdrop-filter:blur(16px);border-bottom:1px solid rgba(224,100,30,0.15);box-shadow:0 1px 20px rgba(224,100,30,0.08);overflow:visible;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,248,236,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(224,100,30,0.15);box-shadow:0 1px 20px rgba(224,100,30,0.08);overflow:visible;}
   .nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;height:70px;}
   .nav-links{display:flex;align-items:center;gap:32px;margin-left:auto;}
-  .nav-links a{font-size:14px;color:#FFFFFF;font-weight:500;transition:color .2s;}
+  .nav-links a{font-size:14px;color:#1E1A14;font-weight:500;transition:color .2s;}
   .nav-links a:hover{color:#9A7209;}
+  .nav-links a.btn-cta, .nav-links a.btn-cta:hover { color:#FFFFFF; }
   .btn-cta{background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;font-weight:700;padding:11px 24px;border-radius:8px;font-size:14px;border:none;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(224,100,30,0.4);display:inline-block;}
   .btn-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(224,100,30,0.5);}
   .nav-dropdown{position:relative;display:flex;align-items:center;}
@@ -87,34 +88,34 @@
   .nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
   .nav-dropdown-menu a{display:block;padding:9px 16px;border-radius:8px;font-size:13.5px;color:var(--text-mid);font-weight:500;transition:background .15s,color .15s;white-space:nowrap;}
   .nav-dropdown-menu a:hover{background:var(--sun-pale);color:#9A7209;}
-  .nav-dropdown-menu.nav-mega-menu{left:auto;right:0;transform:translateY(-6px);width:540px;max-width:88vw;min-width:0;padding:0;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:#3A352E;border-color:rgba(255,255,255,0.12);}
+  .nav-dropdown-menu.nav-mega-menu{left:auto;right:0;transform:translateY(-6px);width:540px;max-width:88vw;min-width:0;padding:0;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:#FFFDF7;border-color:rgba(224,100,30,0.2);}
   .nav-dropdown:hover .nav-dropdown-menu.nav-mega-menu{transform:translateY(0);}
-  .nav-mega-cats{padding:12px 0;border-right:1px solid rgba(255,255,255,0.1);}
-  .nav-mega-cat{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;font-size:15px;font-weight:500;color:rgba(255,255,255,0.72);cursor:pointer;transition:background .15s,color .15s;}
-  .nav-mega-cat.active{color:#fff;background:rgba(255,255,255,0.05);box-shadow:inset 3px 0 0 #CC9900;}
+  .nav-mega-cats{padding:12px 0;border-right:1px solid rgba(30,26,20,0.1);}
+  .nav-mega-cat{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;font-size:15px;font-weight:500;color:#5A554C;cursor:pointer;transition:background .15s,color .15s;}
+  .nav-mega-cat.active{color:#1E1A14;background:rgba(224,100,30,0.07);box-shadow:inset 3px 0 0 #CC9900;}
   .nav-mega-cat span{opacity:0.45;font-size:18px;}
   .nav-mega-subs{padding:16px 20px;}
-  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a{color:rgba(255,255,255,0.78);padding:10px 8px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap;}
+  .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a{color:#5A554C;padding:10px 8px;font-size:14px;border-bottom:1px solid rgba(30,26,20,0.08);white-space:nowrap;}
   .nav-dropdown-menu.nav-mega-menu .nav-mega-sub a:hover{background:transparent;color:#CC9900;}
   
   .nav-dropdown-menu .menu-divider{height:1px;background:rgba(224,100,30,0.1);margin:4px 8px;}
   .nav-dropdown-menu .menu-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(30,26,20,0.4);padding:8px 16px 4px;cursor:default;}
 
   /* ─── PRESS HERO ─── */
-  .press-hero{background:linear-gradient(135deg,#413C33 0%,#474237 55%,#2A231B 100%);min-height:480px;padding:130px 0 80px;position:relative;overflow:hidden;display:flex;align-items:center;}
+  .press-hero{background:linear-gradient(160deg,#FFF7E2 0%,#FFEFCE 55%,#FCE7C0 100%);min-height:480px;padding:130px 0 80px;position:relative;overflow:hidden;display:flex;align-items:center;}
   .press-hero canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;}
   .press-hero .container{position:relative;z-index:1;}
 
   /* ─── FOOTER ─── */
-  footer{background:#413C33;padding:64px 0 32px;border-top:3px solid var(--sun);}
-  .footer-top{display:grid;grid-template-columns:1fr 1fr 1.6fr 1fr;gap:40px;margin-bottom:48px;align-items:start;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.1);}
-  .footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;color:var(--sun-bright);}
+  footer{background:var(--bg2);padding:64px 0 32px;border-top:3px solid var(--sun);}
+  .footer-top{display:grid;grid-template-columns:1fr 1fr 1.6fr 1fr;gap:40px;margin-bottom:48px;align-items:start;padding-bottom:48px;border-bottom:1px solid rgba(30,26,20,0.12);}
+  .footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;color:var(--sun-deep);}
   .footer-col ul{list-style:none;}
-  .footer-col ul li{padding:5px 0;font-size:14px;color:rgba(255,255,255,0.75);cursor:pointer;transition:color .2s;}
+  .footer-col ul li{padding:5px 0;font-size:14px;color:rgba(30,26,20,0.72);cursor:pointer;transition:color .2s;}
   .footer-col ul li:hover,.footer-col ul li a:hover{color:#9A7209;}
-  .footer-col ul li a{color:rgba(255,255,255,0.75);}
-  .footer-contact-item{font-size:14px;color:rgba(255,255,255,0.75);padding:5px 0;line-height:1.6;}
-  .footer-contact-item a{color:rgba(255,255,255,0.75);}
+  .footer-col ul li a{color:rgba(30,26,20,0.72);}
+  .footer-contact-item{font-size:14px;color:rgba(30,26,20,0.72);padding:5px 0;line-height:1.6;}
+  .footer-contact-item a{color:rgba(30,26,20,0.72);}
   .footer-contact-item a:hover{color:#9A7209;}
   .footer-newsletter-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding:40px 48px;border-radius:16px;margin-bottom:48px;align-items:center;background:linear-gradient(135deg,#FEFAE8 0%,#FFF8D6 50%,#FAF0B8 100%);}
   .footer-brand{display:flex;flex-direction:column;justify-content:center;}
@@ -132,9 +133,9 @@
   .fn-btn{background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;border:none;border-radius:8px;padding:12px 24px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;width:100%;transition:opacity .2s,transform .2s;}
   .fn-btn:hover{opacity:.88;transform:translateY(-1px);}
   .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
-  .footer-bottom p{font-size:12px;color:rgba(255,255,255,0.4);}
+  .footer-bottom p{font-size:12px;color:rgba(30,26,20,0.5);}
   .footer-legal{display:flex;gap:0;flex-wrap:wrap;}
-  .footer-legal a{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;padding:0 14px;border-right:1px solid rgba(255,255,255,0.15);transition:color .2s;}
+  .footer-legal a{font-size:12px;color:rgba(30,26,20,0.7);text-decoration:none;padding:0 14px;border-right:1px solid rgba(30,26,20,0.15);transition:color .2s;}
   .footer-legal a:last-child{border-right:none;}
   .footer-legal a:hover{color:rgba(255,255,255,1);}
 
@@ -238,7 +239,7 @@
   </div>
   <div class="nav-inner">
     <a href="index.html">
-      <img src="logo-horizontal-white.svg" alt="TwoSuns" style="height:60px;width:auto;display:block;">
+      <img src="logo-color.svg" alt="TwoSuns" style="height:60px;width:auto;display:block;">
     </a>
     <button class="nav-hamburger" id="nxs-hamburger" onclick="toggleMobNav()" aria-label="Toggle menu"></button>
             <div class="nav-links">
@@ -308,11 +309,11 @@
   <canvas id="press-canvas"></canvas>
   <div class="container">
     <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(224,100,30,0.15);border:1px solid rgba(224,100,30,0.3);color:#9A7209;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px;">Press &amp; Media</div>
-    <h1 style="font-size:clamp(36px,5vw,64px);font-weight:900;color:#FFFFFF;line-height:1.1;margin-bottom:20px;letter-spacing:-1px;">TwoSuns in the <span style="color:#CC9900;">spotlight.</span></h1>
-    <p style="font-size:17px;color:rgba(255,255,255,0.7);max-width:600px;line-height:1.75;margin-bottom:36px;">Awards, speaking engagements, media coverage, and resources for journalists, analysts, and event organizers.</p>
+    <h1 style="font-size:clamp(36px,5vw,64px);font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:20px;letter-spacing:-1px;">TwoSuns in the <span style="color:#CC9900;">spotlight.</span></h1>
+    <p style="font-size:17px;color:rgba(30,26,20,0.72);max-width:600px;line-height:1.75;margin-bottom:36px;">Awards, speaking engagements, media coverage, and resources for journalists, analysts, and event organizers.</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;">
       <a href="#press-kit" style="background:#E0641E;color:#16120D;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">↓ Download Press Kit</a>
-      <a href="mailto:media@twosuns.ai" style="background:rgba(255,255,255,0.1);color:#FFFFFF;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,0.25);display:inline-flex;align-items:center;gap:8px;">✉ Media Enquiries</a>
+      <a href="mailto:media@twosuns.ai" style="background:#FFFFFF;color:var(--navy);padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(224,100,30,0.3);display:inline-flex;align-items:center;gap:8px;">✉ Media Enquiries</a>
     </div>
   </div>
 </section>
@@ -320,27 +321,27 @@
 <div class="sun-divider"></div>
 
 <!-- ══ STATS STRIP ══ -->
-<section style="background:#413C33;padding:48px 0;">
+<section style="background:linear-gradient(135deg,#FBEFC9 0%,#F6E1B0 100%);padding:48px 0;">
   <div style="max-width:1200px;margin:0 auto;padding:0 32px;display:flex;gap:60px;justify-content:center;flex-wrap:wrap;">
     <div style="text-align:center;">
       <div style="font-size:36px;font-weight:900;color:#9A7209;line-height:1;">1995</div>
-      <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.5px;">Founding Roots</div>
+      <div style="font-size:12px;color:rgba(30,26,20,0.72);margin-top:6px;letter-spacing:.5px;">Founding Roots</div>
     </div>
     <div style="text-align:center;">
       <div style="font-size:36px;font-weight:900;color:#9A7209;line-height:1;">30+</div>
-      <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.5px;">Years in Enterprise Markets</div>
+      <div style="font-size:12px;color:rgba(30,26,20,0.72);margin-top:6px;letter-spacing:.5px;">Years in Enterprise Markets</div>
     </div>
     <div style="text-align:center;">
       <div style="font-size:36px;font-weight:900;color:#9A7209;line-height:1;">$25T+</div>
-      <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.5px;">Global Market Addressed</div>
+      <div style="font-size:12px;color:rgba(30,26,20,0.72);margin-top:6px;letter-spacing:.5px;">Global Market Addressed</div>
     </div>
     <div style="text-align:center;">
       <div style="font-size:36px;font-weight:900;color:#9A7209;line-height:1;">100s</div>
-      <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.5px;">Keynotes Delivered</div>
+      <div style="font-size:12px;color:rgba(30,26,20,0.72);margin-top:6px;letter-spacing:.5px;">Keynotes Delivered</div>
     </div>
     <div style="text-align:center;">
       <div style="font-size:36px;font-weight:900;color:#9A7209;line-height:1;">50+</div>
-      <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.5px;">Pilot Participants</div>
+      <div style="font-size:12px;color:rgba(30,26,20,0.72);margin-top:6px;letter-spacing:.5px;">Pilot Participants</div>
     </div>
   </div>
 </section>
@@ -392,7 +393,7 @@
         <h4 style="font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;">Ryan Arian Joins TwoSuns as Chief Digital Product Officer</h4>
         <p style="font-size:13px;color:var(--text-muted);line-height:1.6;flex:1;">Veteran AI systems architect and enterprise product leader with a track record of building intelligent platforms across enterprise environments and operational ecosystems at scale. Formerly at ZE PowerGroup and Lululemon, co-creator of OmniGTM.ai.</p>
         <div style="display:flex;gap:8px;align-items:center;margin-top:4px;">
-          <a href="https://www.linkedin.com/in/ryan-arian/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:#474237;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;text-decoration:none;">
+          <a href="https://www.linkedin.com/in/ryan-arian/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;text-decoration:none;">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
@@ -414,7 +415,7 @@
         <h4 style="font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;">Belén Welch-Almeida Joins TwoSuns as Chief Growth Officer</h4>
         <p style="font-size:13px;color:var(--text-muted);line-height:1.6;flex:1;">Growth and strategic partnerships leader with 20+ years driving market expansion and investment readiness across technology and sustainability, known for translating complex value propositions into compelling market narratives for corporate leaders, investors, and governments.</p>
         <div style="display:flex;gap:8px;align-items:center;margin-top:4px;">
-          <a href="https://www.linkedin.com/in/belenwelch/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:#474237;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;text-decoration:none;">
+          <a href="https://www.linkedin.com/in/belenwelch/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;text-decoration:none;">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
@@ -436,7 +437,7 @@
         <h4 style="font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;">Michelle Mollineaux Joins TwoSuns as Director of Marketing &amp; Partnerships</h4>
         <p style="font-size:13px;color:var(--text-muted);line-height:1.6;flex:1;">20+ years in technology marketing and enterprise data driving global partnerships with S&amp;P Global Energy, LSEG, ICIS, Microsoft, Snowflake, Oracle, and ION Sectors. Board of Directors, MEND Canada.</p>
         <div style="display:flex;gap:8px;align-items:center;margin-top:4px;">
-          <a href="https://www.linkedin.com/in/michellemollineaux/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:#474237;color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;text-decoration:none;">
+          <a href="https://www.linkedin.com/in/michellemollineaux/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;text-decoration:none;">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
@@ -446,10 +447,10 @@
 
     </div>
 
-    <div style="background:linear-gradient(135deg,#413C33,#474237);border-radius:16px;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div style="background:linear-gradient(160deg,#FFF7E2 0%,#FFEFCE 55%,#FCE7C0 100%);border:1px solid rgba(224,100,30,0.15);border-radius:16px;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
       <div>
-        <h3 style="font-size:20px;font-weight:800;color:#FFFFFF;margin-bottom:8px;">Want to cover TwoSuns?</h3>
-        <p style="font-size:14px;color:rgba(255,255,255,0.65);max-width:480px;line-height:1.6;">We're happy to arrange interviews, product briefings, data, and background for editorial coverage. Reach out to our media team.</p>
+        <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px;">Want to cover TwoSuns?</h3>
+        <p style="font-size:14px;color:rgba(30,26,20,0.72);max-width:480px;line-height:1.6;">We're happy to arrange interviews, product briefings, data, and background for editorial coverage. Reach out to our media team.</p>
       </div>
       <a href="mailto:media@twosuns.ai" style="background:#E0641E;color:#16120D;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">media@twosuns.ai →</a>
     </div>
@@ -482,7 +483,7 @@
               <div style="font-size:11px;color:#5A554C;">Founder &amp; CEO</div>
             </div>
           </div>
-          <a href="https://www.zepowerengineering.com/dr-zak-el-ramly-and-aiman-el-ramly-named-ey-entrepreneur-of-the-year-2026-finalists-in-pacific/" target="_blank" rel="noopener noreferrer" style="background:#474237;color:#FFFFFF;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;margin-left:auto;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Read announcement &rarr;</a>
+          <a href="https://www.zepowerengineering.com/dr-zak-el-ramly-and-aiman-el-ramly-named-ey-entrepreneur-of-the-year-2026-finalists-in-pacific/" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;margin-left:auto;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Read announcement &rarr;</a>
         </div>
       </div>
     </div>
@@ -504,7 +505,7 @@
               <div style="font-size:11px;color:#5A554C;">Director of Marketing &amp; Channel Partnerships</div>
             </div>
           </div>
-          <a href="about.html" style="background:#474237;color:#FFFFFF;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;margin-left:auto;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">View Profile →</a>
+          <a href="about.html" style="background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;margin-left:auto;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">View Profile →</a>
         </div>
       </div>
     </div>
@@ -536,24 +537,24 @@
 <div class="sun-divider"></div>
 
 <!-- ══ UPCOMING EVENTS ══ -->
-<section style="padding:90px 0;background:linear-gradient(135deg,#413C33 0%,#474237 100%);">
+<section style="padding:90px 0;background:linear-gradient(160deg,#FFF7E2 0%,#FFEFCE 55%,#FCE7C0 100%);">
   <div class="container">
     <div class="section-tag" style="background:rgba(224,100,30,0.15);border-color:rgba(224,100,30,0.3);color:#9A7209;">Upcoming</div>
-    <h2 class="section-heading" style="color:#FFFFFF;">Meet Us <span style="color:var(--sun-bright);">At</span></h2>
-    <p class="section-sub" style="color:rgba(255,255,255,0.7);margin-bottom:48px;">We are continuing to build our presence in the rooms where strategy, technology, capital, and market opportunity come together.</p>
+    <h2 class="section-heading" style="color:var(--navy);">Meet Us <span style="color:var(--sun-bright);">At</span></h2>
+    <p class="section-sub" style="color:rgba(30,26,20,0.72);margin-bottom:48px;">We are continuing to build our presence in the rooms where strategy, technology, capital, and market opportunity come together.</p>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
 
       <!-- Web Summit Vancouver -->
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:40px;border-top:4px solid #E0641E;">
+      <div style="background:#FFFFFF;border:1px solid rgba(224,100,30,0.15);box-shadow:0 4px 24px rgba(224,100,30,0.08);border-radius:20px;padding:40px;border-top:4px solid #E0641E;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
           <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(224,100,30,0.2);border:1px solid rgba(224,100,30,0.4);color:#9A7209;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Exhibiting &amp; Speaking</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.5);">May 11-14, 2026</div>
+          <div style="font-size:12px;color:rgba(30,26,20,0.55);">May 11-14, 2026</div>
         </div>
-        <h3 style="font-size:22px;font-weight:800;color:#FFFFFF;margin-bottom:12px;line-height:1.25;">Web Summit Vancouver</h3>
-        <p style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;">Vancouver Convention Centre, Canada</p>
-        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:20px;">We will be at Web Summit Vancouver 2026 as an exhibitor, and our CEO, Aiman El-Ramly, will also be speaking at the conference. Web Summit brings together founders, investors, enterprise leaders, media, and global technology decision-makers in one of the most relevant innovation environments in North America.</p>
-        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:24px;">Having Aiman El-Ramly speaking reflects the continued growth of our market presence and creates an opportunity to contribute directly to broader conversations around innovation, growth, and enterprise value creation.</p>
+        <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;line-height:1.25;">Web Summit Vancouver</h3>
+        <p style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(30,26,20,0.5);margin-bottom:16px;">Vancouver Convention Centre, Canada</p>
+        <p style="font-size:14px;color:rgba(30,26,20,0.72);line-height:1.75;margin-bottom:20px;">We will be at Web Summit Vancouver 2026 as an exhibitor, and our CEO, Aiman El-Ramly, will also be speaking at the conference. Web Summit brings together founders, investors, enterprise leaders, media, and global technology decision-makers in one of the most relevant innovation environments in North America.</p>
+        <p style="font-size:14px;color:rgba(30,26,20,0.72);line-height:1.75;margin-bottom:24px;">Having Aiman El-Ramly speaking reflects the continued growth of our market presence and creates an opportunity to contribute directly to broader conversations around innovation, growth, and enterprise value creation.</p>
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
           <span style="font-size:12px;font-weight:600;color:#9A7209;background:rgba(224,100,30,0.15);padding:6px 14px;border-radius:20px;border:1px solid rgba(224,100,30,0.3);">CEO Speaking</span>
           <span style="font-size:12px;font-weight:600;color:#9A7209;background:rgba(224,100,30,0.12);padding:6px 14px;border-radius:20px;border:1px solid rgba(224,100,30,0.25);">Exhibition Booth</span>
@@ -561,15 +562,15 @@
       </div>
 
       <!-- Commercial Coordination Week Europe -->
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:40px;border-top:4px solid #E0641E;">
+      <div style="background:#FFFFFF;border:1px solid rgba(224,100,30,0.15);box-shadow:0 4px 24px rgba(224,100,30,0.08);border-radius:20px;padding:40px;border-top:4px solid #E0641E;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
           <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(224,100,30,0.15);border:1px solid rgba(224,100,30,0.3);color:#9A7209;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Exhibiting &amp; Speaking</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.5);">September 24-25, 2026</div>
+          <div style="font-size:12px;color:rgba(30,26,20,0.55);">September 24-25, 2026</div>
         </div>
-        <h3 style="font-size:22px;font-weight:800;color:#FFFFFF;margin-bottom:12px;line-height:1.25;">Commercial Coordination Week Europe</h3>
-        <p style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;">London Business Design Centre, UK</p>
-        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:20px;">We will be at Commercial Coordination Week Europe 2026 in London as an exhibitor, and our CEO, Aiman El-Ramly, will also be speaking. The event brings together leaders across commercial coordination, risk, digitalisation, data, AI, and broader operational workflows. It positions itself as Europe's largest dedicated commercial coordination gathering, highlighting AI, risk, sustainability initiatives, and market trends as core themes.</p>
-        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:24px;">Having Aiman El-Ramly speaking gives us the opportunity not only to participate in the market conversation, but to contribute to it directly alongside our exhibition presence.</p>
+        <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;line-height:1.25;">Commercial Coordination Week Europe</h3>
+        <p style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(30,26,20,0.5);margin-bottom:16px;">London Business Design Centre, UK</p>
+        <p style="font-size:14px;color:rgba(30,26,20,0.72);line-height:1.75;margin-bottom:20px;">We will be at Commercial Coordination Week Europe 2026 in London as an exhibitor, and our CEO, Aiman El-Ramly, will also be speaking. The event brings together leaders across commercial coordination, risk, digitalisation, data, AI, and broader operational workflows. It positions itself as Europe's largest dedicated commercial coordination gathering, highlighting AI, risk, sustainability initiatives, and market trends as core themes.</p>
+        <p style="font-size:14px;color:rgba(30,26,20,0.72);line-height:1.75;margin-bottom:24px;">Having Aiman El-Ramly speaking gives us the opportunity not only to participate in the market conversation, but to contribute to it directly alongside our exhibition presence.</p>
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
           <span style="font-size:12px;font-weight:600;color:#9A7209;background:rgba(224,100,30,0.15);padding:6px 14px;border-radius:20px;border:1px solid rgba(224,100,30,0.3);">CEO Speaking</span>
           <span style="font-size:12px;font-weight:600;color:#9A7209;background:rgba(224,100,30,0.12);padding:6px 14px;border-radius:20px;border:1px solid rgba(224,100,30,0.25);">Exhibition Booth</span>
@@ -646,10 +647,10 @@
     </div>
 
     <!-- Invite CTA -->
-    <div style="background:linear-gradient(135deg,#413C33,#474237);border-radius:16px;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-top:16px;">
+    <div style="background:linear-gradient(160deg,#FFF7E2 0%,#FFEFCE 55%,#FCE7C0 100%);border:1px solid rgba(224,100,30,0.15);border-radius:16px;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-top:16px;">
       <div>
-        <h4 style="font-size:18px;font-weight:800;color:#FFFFFF;margin-bottom:6px;">Invite TwoSuns to Your Event</h4>
-        <p style="font-size:14px;color:rgba(255,255,255,0.6);max-width:480px;line-height:1.6;">We're available for panel discussions, startup showcases, and keynotes at enterprise, fintech, and AI-focused conferences worldwide.</p>
+        <h4 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:6px;">Invite TwoSuns to Your Event</h4>
+        <p style="font-size:14px;color:rgba(30,26,20,0.72);max-width:480px;line-height:1.6;">We're available for panel discussions, startup showcases, and keynotes at enterprise, fintech, and AI-focused conferences worldwide.</p>
       </div>
       <a href="mailto:media@twosuns.ai?subject=Event Invitation" style="background:#E0641E;color:#16120D;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">Get in Touch ↗</a>
     </div>
@@ -670,7 +671,7 @@
           "The organizational transition is not a technology problem, it's an intelligence problem. The organisations that will lead it are those that can convert complexity into clear, defensible decisions."
           <div style="margin-top:12px;font-style:normal;font-size:13px;font-weight:600;color:var(--navy);">- Aiman El-Ramly, Founder &amp; CEO, TwoSuns</div>
         </div>
-        <a href="mailto:media@twosuns.ai?subject=Speaking Enquiry" style="display:inline-flex;align-items:center;gap:8px;background:#474237;color:#FFFFFF;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Invite Aiman to Speak →</a>
+        <a href="mailto:media@twosuns.ai?subject=Speaking Enquiry" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#FFFFFF;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Invite Aiman to Speak →</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:16px;">
         <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:24px 28px;display:flex;gap:20px;align-items:flex-start;">
@@ -766,7 +767,7 @@
 <div class="sun-divider"></div>
 
 <!-- ══ MEDIA CONTACT ══ -->
-<section style="background:linear-gradient(135deg,#413C33,#474237);padding:90px 0;text-align:center;">
+<section style="background:linear-gradient(135deg,#0B3A66,#003366);padding:90px 0;text-align:center;">
   <div class="container">
     <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(224,100,30,0.15);border:1px solid rgba(224,100,30,0.3);color:#9A7209;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px;">Media Contact</div>
     <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;color:#FFFFFF;margin-bottom:16px;letter-spacing:-1px;">Get in touch with our media team</h2>
@@ -900,7 +901,7 @@ function fnSubmit(){
   if(!e||!e.value.includes('@')){alert('Please enter a valid email address.');return;}
   var btn=document.querySelector('.fn-btn');
   btn.textContent='Subscribed ✓';
-  btn.style.background='#2A231B';
+  btn.style.background='#4EA72E';
   btn.disabled=true;
 }
 // Hero canvas
