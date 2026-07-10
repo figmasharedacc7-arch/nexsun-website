@@ -312,6 +312,11 @@
   .category-card-icon { font-size:32px; margin-bottom:14px; }
   .category-card h3 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px; }
   .category-card p { font-size:13px; color:var(--text-muted); line-height:1.7; }
+  /* Category cards, secondary palette top bars */
+  .category-cards .category-card{border-top:4px solid transparent;}
+  .category-cards .category-card:nth-child(1){border-top-color:#4E95D9;}
+  .category-cards .category-card:nth-child(2){border-top-color:#4EA72E;}
+  .category-cards .category-card:nth-child(3){border-top-color:#FFC000;}
   .category-statement {
     margin-top:48px; padding:32px 40px; text-align:center;
     background:linear-gradient(160deg,#FFF7E2 0%,#FFEFCE 55%,#FCE7C0 100%);
@@ -426,6 +431,13 @@
   .outcome-card:hover { border-color:rgba(224,100,30,0.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(224,100,30,0.14); }
   .outcome-card-icon { font-size:32px; margin-bottom:12px; }
   .outcome-card h3 { font-size:15px; font-weight:700; color:var(--navy); }
+  /* Outcome cards, secondary palette top bars */
+  .outcome-cards .outcome-card{border-top:4px solid transparent;}
+  .outcome-cards .outcome-card:nth-child(1){border-top-color:#4E95D9;}
+  .outcome-cards .outcome-card:nth-child(2){border-top-color:#4EA72E;}
+  .outcome-cards .outcome-card:nth-child(3){border-top-color:#FFC000;}
+  .outcome-cards .outcome-card:nth-child(4){border-top-color:#E0641E;}
+  .outcome-cards .outcome-card:nth-child(5){border-top-color:#003366;}
 
   /* CLOSING CTA */
   #closing-cta {
@@ -690,19 +702,19 @@
       </div>
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4E95D9;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Continuous data ingestion across global markets</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4EA72E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">High-value signal extraction continuously</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #FFC000;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Direct link from signal to decision structure</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #E0641E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Execution-ready outputs with full decision context</div>
           </div>
@@ -729,19 +741,19 @@
       </div>
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #003366;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">News, policy, logistics, and sentiment data</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4E95D9;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Global, multi-region market coverage</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4EA72E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">AI-powered synthesis and pattern recognition</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #FFC000;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Continuous interpretation, not static dashboards</div>
           </div>
@@ -768,19 +780,19 @@
       </div>
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #E0641E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Full source data traceability</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #003366;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Transparent analytical logic</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4E95D9;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Auditable assumptions and reasoning</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4EA72E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Governance and compliance ready</div>
           </div>
@@ -808,19 +820,19 @@
       </div>
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #FFC000;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Persistent decision logs from signal to outcome</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #E0641E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Full position and strategy version history</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #003366;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Stakeholder collaboration and approval records</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4E95D9;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Institutional memory for future decision-making</div>
           </div>
@@ -848,19 +860,19 @@
       </div>
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4EA72E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Buyer perspective: demand signals and purchase strategy</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #FFC000;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Supplier perspective: capacity, pricing, and risk</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #E0641E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Intermediary perspective: spread and arbitrage dynamics</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #003366;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Regulator perspective: policy and compliance landscape</div>
           </div>
@@ -888,19 +900,19 @@
       </div>
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4E95D9;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Trading and commercial strategy</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4EA72E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Risk and portfolio management</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #FFC000;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Operations and supply chain</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #E0641E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Strategy and capital allocation</div>
           </div>
@@ -926,19 +938,19 @@
       </div>
       <div class="diff-visual sustainability-card-animated">
         <div class="feature-boxes">
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #003366;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Operates alongside ETRM, CTRM, ERP, and data platforms</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4E95D9;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Internal and external collaboration</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #4EA72E;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Full traceability and auditability</div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box" style="border-left:4px solid #FFC000;">
             <div class="feature-box-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><line x1="12" y1="1.8" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.2"/><line x1="1.8" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.2" y2="12"/><line x1="4.6" y1="4.6" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.4" y2="19.4"/><line x1="19.4" y1="4.6" x2="17.9" y2="6.1"/><line x1="6.1" y1="17.9" x2="4.6" y2="19.4"/></svg></div>
             <div class="feature-box-text">Multi-team, multi-region environments</div>
           </div>
@@ -1083,51 +1095,51 @@
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1080px;margin:0 auto 32px;">
-      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);border-top:4px solid #4E95D9;">
+        <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#4E95D9,#2F7EC4);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Customer & Buyer</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How decisions appear from the buying side</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><path d="M2 12h6l3-9 4 18 3-9h4"/></svg>
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);border-top:4px solid #4EA72E;">
+        <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#4EA72E,#336600);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M2 12h6l3-9 4 18 3-9h4"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Competitor</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How rivals will read and respond</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(42,35,27,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A231B" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);border-top:4px solid #FFC000;">
+        <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#FFC000,#B07E00);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Partner & Counterparty</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How partners will engage and align</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(42,35,27,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A231B" stroke-width="2" stroke-linecap="round"><path d="M9 11H5a2 2 0 00-2 2v7h18v-7a2 2 0 00-2-2h-4M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/><path d="M9 7h6v4H9z"/></svg>
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);border-top:4px solid #003366;">
+        <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#0B3A66,#003366);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M9 11H5a2 2 0 00-2 2v7h18v-7a2 2 0 00-2-2h-4M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/><path d="M9 7h6v4H9z"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Regulator</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How policy and oversight will assess</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);border-top:4px solid #E0641E;">
+        <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#E0641E,#C45213);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Operator</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How execution owners will deliver</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);border-top:4px solid #4E95D9;">
+        <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#4E95D9,#2F7EC4);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Investor</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How capital allocators will value</p>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);">
-        <div style="width:40px;height:40px;border-radius:10px;background:rgba(42,35,27,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A231B" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);border-top:4px solid #4EA72E;">
+        <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#4EA72E,#336600);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
         </div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:4px;">Internal Stakeholder</strong>
         <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5;">How teams across functions align</p>

@@ -103,7 +103,11 @@
 
   /* HERO STAT CARDS */
   .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .hero-stat{background:#FFFFFF;border:1px solid rgba(224,100,30,0.15);border-radius:16px;padding:24px 20px;box-shadow:0 4px 24px rgba(224,100,30,0.08);}
+  .hero-stat{background:#FFFFFF;border:1px solid rgba(224,100,30,0.15);border-radius:16px;padding:24px 20px;box-shadow:0 4px 24px rgba(224,100,30,0.08);border-top:4px solid transparent;}
+  .hero-stats .hero-stat:nth-child(1){border-top-color:#4E95D9;}
+  .hero-stats .hero-stat:nth-child(2){border-top-color:#4EA72E;}
+  .hero-stats .hero-stat:nth-child(3){border-top-color:#FFC000;}
+  .hero-stats .hero-stat:nth-child(4){border-top-color:#E0641E;}
   .hero-stat-num{font-size:30px;font-weight:900;color:#CC9900;line-height:1.1;}
   .hero-stat-label{font-size:12px;color:rgba(30,26,20,0.72);margin-top:6px;letter-spacing:.3px;line-height:1.4;}
 
@@ -114,9 +118,9 @@
   .thesis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
   .thesis-card{background:#FFFFFF;border:1px solid var(--border);border-radius:20px;padding:36px 28px;box-shadow:var(--card-shadow);position:relative;overflow:hidden;}
   .thesis-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
-  .thesis-card.tc-navy::before{background:linear-gradient(90deg,var(--sun),var(--sun-deep));}
-  .thesis-card.tc-amber::before{background:linear-gradient(90deg,var(--sun-deep),var(--sun));}
-  .thesis-card.tc-green::before{background:linear-gradient(90deg,var(--green),#E0641E);}
+  .thesis-card.tc-navy::before{background:linear-gradient(90deg,#C00000,#8F0000);}
+  .thesis-card.tc-amber::before{background:linear-gradient(90deg,#4E95D9,#2F7EC4);}
+  .thesis-card.tc-green::before{background:linear-gradient(90deg,#4EA72E,#336600);}
   .thesis-icon{font-size:0;margin-bottom:16px;}
   .thesis-card h3{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;}
   .thesis-card p{font-size:14px;color:var(--text-muted);line-height:1.7;}
@@ -137,6 +141,17 @@
   .traction-icon.ti-navy{background:rgba(71,66,55,0.1);}
   .traction-icon.ti-amber{background:var(--sun-pale);}
   .traction-icon.ti-green{background:var(--green-light);}
+  .traction-grid .traction-card{border-top:4px solid transparent;}
+  .traction-grid .traction-card:nth-child(1){border-top-color:#4E95D9;}
+  .traction-grid .traction-card:nth-child(2){border-top-color:#4EA72E;}
+  .traction-grid .traction-card:nth-child(3){border-top-color:#FFC000;}
+  .traction-grid .traction-card:nth-child(4){border-top-color:#E0641E;}
+  .traction-grid .traction-card:nth-child(5){border-top-color:#003366;}
+  .traction-grid .traction-card:nth-child(1) .traction-icon{background:linear-gradient(135deg,#4E95D9,#2F7EC4);}
+  .traction-grid .traction-card:nth-child(2) .traction-icon{background:linear-gradient(135deg,#4EA72E,#336600);}
+  .traction-grid .traction-card:nth-child(3) .traction-icon{background:linear-gradient(135deg,#FFC000,#B07E00);}
+  .traction-grid .traction-card:nth-child(4) .traction-icon{background:linear-gradient(135deg,#E0641E,#C45213);}
+  .traction-grid .traction-card:nth-child(5) .traction-icon{background:linear-gradient(135deg,#0B3A66,#003366);}
   .traction-card h4{font-size:16px;font-weight:800;color:var(--navy);}
   .traction-card p{font-size:13.5px;color:var(--text-muted);line-height:1.65;}
 
@@ -153,10 +168,10 @@
   .fund-bar{margin-bottom:20px;}
   .fund-label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;}
   .fund-track{height:10px;background:var(--sun-pale);border-radius:8px;overflow:hidden;}
-  .fund-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--sun),var(--sun-deep));}
-  .fund-fill.f-amber{background:linear-gradient(90deg,var(--sun-deep),var(--sun));}
-  .fund-fill.f-green{background:linear-gradient(90deg,var(--green),#E0641E);}
-  .fund-fill.f-light{background:linear-gradient(90deg,#5A554C,#9B938A);}
+  .fund-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,#4E95D9,#2F7EC4);}
+  .fund-fill.f-amber{background:linear-gradient(90deg,#4EA72E,#336600);}
+  .fund-fill.f-green{background:linear-gradient(90deg,#FFC000,#B07E00);}
+  .fund-fill.f-light{background:linear-gradient(90deg,#E0641E,#C45213);}
   .fund-highlights{display:flex;flex-direction:column;gap:16px;}
   .fund-hl{display:flex;gap:14px;align-items:flex-start;}
   .fund-hl-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px;}
@@ -587,37 +602,37 @@
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1080px;margin:0 auto;">
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--card-shadow);">
+      <div style="background:#FFFFFF;border:1px solid var(--border);border-left:4px solid #4E95D9;border-radius:14px;padding:28px;box-shadow:var(--card-shadow);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-          <div style="width:44px;height:44px;border-radius:10px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+          <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#4E95D9,#2F7EC4);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
           </div>
           <strong style="font-size:17px;color:var(--navy);">Market Access</strong>
         </div>
         <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin:0;">Direct relationships with enterprise clients across revenue, operations, strategy, or governance functions.</p>
       </div>
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--card-shadow);">
+      <div style="background:#FFFFFF;border:1px solid var(--border);border-left:4px solid #4EA72E;border-radius:14px;padding:28px;box-shadow:var(--card-shadow);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-          <div style="width:44px;height:44px;border-radius:10px;background:rgba(42,35,27,0.12);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A231B" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#4EA72E,#336600);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
           <strong style="font-size:17px;color:var(--navy);">Domain Expertise</strong>
         </div>
         <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin:0;">Experience in complex environments such as enterprise SaaS, industrial operations, infrastructure, financial services, government, or advisory.</p>
       </div>
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--card-shadow);">
+      <div style="background:#FFFFFF;border:1px solid var(--border);border-left:4px solid #FFC000;border-radius:14px;padding:28px;box-shadow:var(--card-shadow);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-          <div style="width:44px;height:44px;border-radius:10px;background:rgba(224,100,30,0.12);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E0641E" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#FFC000,#B07E00);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <strong style="font-size:17px;color:var(--navy);">Distribution Capability</strong>
         </div>
         <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin:0;">Ability to originate, influence, or scale opportunities across defined markets or client segments.</p>
       </div>
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--card-shadow);">
+      <div style="background:#FFFFFF;border:1px solid var(--border);border-left:4px solid #E0641E;border-radius:14px;padding:28px;box-shadow:var(--card-shadow);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-          <div style="width:44px;height:44px;border-radius:10px;background:rgba(42,35,27,0.12);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A231B" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#E0641E,#C45213);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
           </div>
           <strong style="font-size:17px;color:var(--navy);">Strategic Alignment</strong>
         </div>
@@ -640,10 +655,10 @@
 
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;">
 
-      <div style="background:#FFFFFF;border:1px solid rgba(224,100,30,0.15);box-shadow:0 4px 24px rgba(224,100,30,0.08);border-radius:18px;padding:32px 30px;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(224,100,30,0.15) 0%,transparent 70%);"></div>
+      <div style="background:linear-gradient(180deg,#EFF6FD 0%,#FFFFFF 60%);border:1px solid rgba(78,149,217,0.25);border-top:4px solid #4E95D9;box-shadow:0 4px 24px rgba(78,149,217,0.1);border-radius:18px;padding:32px 30px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(78,149,217,0.15) 0%,transparent 70%);"></div>
         <div style="position:relative;z-index:2;">
-          <div style="display:inline-block;background:rgba(224,100,30,0.12);border:1px solid rgba(224,100,30,0.3);color:#9A7209;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">01 Strategic Investment</div>
+          <div style="display:inline-block;background:rgba(78,149,217,0.12);border:1px solid rgba(78,149,217,0.3);color:#2F7EC4;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">01 Strategic Investment</div>
           <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;">Strategic Investment</h3>
           <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:18px;">Support platform development and market expansion while participating in long-term value, <strong style="color:var(--navy);font-weight:700;">digitalization and impact value creation.</strong></p>
           <ul style="list-style:none;padding:0;margin:0;">
@@ -654,9 +669,9 @@
         </div>
       </div>
 
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:18px;padding:32px 30px;box-shadow:var(--card-shadow);position:relative;overflow:hidden;">
+      <div style="background:linear-gradient(180deg,#F1F8EC 0%,#FFFFFF 60%);border:1px solid var(--border);border-top:4px solid #4EA72E;border-radius:18px;padding:32px 30px;box-shadow:var(--card-shadow);position:relative;overflow:hidden;">
         <div style="position:relative;z-index:2;">
-          <div style="display:inline-block;background:var(--sun-pale);border:1px solid rgba(224,100,30,0.3);color:#9A7209;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">02 Partner-Led</div>
+          <div style="display:inline-block;background:rgba(78,167,46,0.12);border:1px solid rgba(78,167,46,0.3);color:#336600;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">02 Partner-Led</div>
           <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;">Partner-Led Engagement</h3>
           <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:18px;">Introduce TwoSuns into relevant client environments and participate in delivery and expansion.</p>
           <ul style="list-style:none;padding:0;margin:0;">
@@ -667,9 +682,9 @@
         </div>
       </div>
 
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:18px;padding:32px 30px;box-shadow:var(--card-shadow);position:relative;overflow:hidden;">
+      <div style="background:linear-gradient(180deg,#FFF8E1 0%,#FFFFFF 60%);border:1px solid var(--border);border-top:4px solid #FFC000;border-radius:18px;padding:32px 30px;box-shadow:var(--card-shadow);position:relative;overflow:hidden;">
         <div style="position:relative;z-index:2;">
-          <div style="display:inline-block;background:var(--sun-pale);border:1px solid rgba(224,100,30,0.3);color:#9A7209;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">03 Embedded</div>
+          <div style="display:inline-block;background:rgba(255,192,0,0.15);border:1px solid rgba(255,192,0,0.45);color:#B07E00;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">03 Embedded</div>
           <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;">Embedded Partnership</h3>
           <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:18px;">Integrate TwoSuns into existing offerings, services, or platforms.</p>
           <ul style="list-style:none;padding:0;margin:0;">
@@ -680,10 +695,10 @@
         </div>
       </div>
 
-      <div style="background:#FFFFFF;border:1px solid rgba(224,100,30,0.15);box-shadow:0 4px 24px rgba(224,100,30,0.08);border-radius:18px;padding:32px 30px;position:relative;overflow:hidden;">
+      <div style="background:linear-gradient(180deg,#FFF1E8 0%,#FFFFFF 60%);border:1px solid rgba(224,100,30,0.15);border-top:4px solid #E0641E;box-shadow:0 4px 24px rgba(224,100,30,0.08);border-radius:18px;padding:32px 30px;position:relative;overflow:hidden;">
         <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(224,100,30,0.15) 0%,transparent 70%);"></div>
         <div style="position:relative;z-index:2;">
-          <div style="display:inline-block;background:rgba(224,100,30,0.12);border:1px solid rgba(224,100,30,0.3);color:#9A7209;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">04 Joint Development</div>
+          <div style="display:inline-block;background:rgba(224,100,30,0.12);border:1px solid rgba(224,100,30,0.3);color:#C45213;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;">04 Joint Development</div>
           <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;">Joint Development</h3>
           <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:18px;">Collaborate on Decision Packs and use cases aligned to specific industries or environments.</p>
           <ul style="list-style:none;padding:0;margin:0;">
@@ -979,19 +994,19 @@
       </div>
       <div class="fund-highlights">
         <div class="fund-hl">
-          <div class="fund-hl-dot" style="background:var(--sun);"></div>
+          <div class="fund-hl-dot" style="background:#4E95D9;"></div>
           <p><strong>Product &amp; Engineering (40%):</strong> Finalize the product build, deepen module integrations, and strengthen compliance and ESG layers.</p>
         </div>
         <div class="fund-hl">
-          <div class="fund-hl-dot" style="background:var(--sun);"></div>
+          <div class="fund-hl-dot" style="background:#4EA72E;"></div>
           <p><strong>Sales &amp; Go-to-Market (30%):</strong> Expand sales and marketing globally with GTM focus on Canada, Europe, and MENA, and scale co-selling with system and data providers.</p>
         </div>
         <div class="fund-hl">
-          <div class="fund-hl-dot" style="background:var(--green);"></div>
+          <div class="fund-hl-dot" style="background:#FFC000;"></div>
           <p><strong>Data &amp; Infrastructure (20%):</strong> Deepen the multi-signal data layer, invest in proprietary model training, and advance SOC 2 certification (in progress with Ernst &amp; Young).</p>
         </div>
         <div class="fund-hl">
-          <div class="fund-hl-dot" style="background:#9B938A;"></div>
+          <div class="fund-hl-dot" style="background:#E0641E;"></div>
           <p><strong>Operations &amp; Legal (10%):</strong> IP validation and patents, regulatory compliance, and governance frameworks for enterprise and sovereign clients.</p>
         </div>
       </div>
@@ -1038,28 +1053,28 @@
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:32px;">
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:22px 18px;box-shadow:var(--card-shadow);position:relative;">
-        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:#9A7209;margin-bottom:8px;">STEP 01</div>
+      <div style="background:#FFFFFF;border:1px solid var(--border);border-top:4px solid #4E95D9;border-radius:14px;padding:22px 18px;box-shadow:var(--card-shadow);position:relative;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:#2F7EC4;margin-bottom:8px;">STEP 01</div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:6px;">Identify</strong>
         <p style="font-size:12.5px;color:var(--text-muted);line-height:1.6;margin:0;">Identify the decision environment where decision quality impacts performance.</p>
       </div>
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:22px 18px;box-shadow:var(--card-shadow);">
-        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:#9A7209;margin-bottom:8px;">STEP 02</div>
+      <div style="background:#FFFFFF;border:1px solid var(--border);border-top:4px solid #4EA72E;border-radius:14px;padding:22px 18px;box-shadow:var(--card-shadow);">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:#336600;margin-bottom:8px;">STEP 02</div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:6px;">Align</strong>
         <p style="font-size:12.5px;color:var(--text-muted);line-height:1.6;margin:0;">Align on use case, scope, objectives, stakeholders, and success criteria.</p>
       </div>
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:22px 18px;box-shadow:var(--card-shadow);">
-        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:#9A7209;margin-bottom:8px;">STEP 03</div>
+      <div style="background:#FFFFFF;border:1px solid var(--border);border-top:4px solid #FFC000;border-radius:14px;padding:22px 18px;box-shadow:var(--card-shadow);">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:#B07E00;margin-bottom:8px;">STEP 03</div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:6px;">Deploy</strong>
         <p style="font-size:12.5px;color:var(--text-muted);line-height:1.6;margin:0;">Configure Decision Packs to the organization's operating context. Enable TwoSuns Assistant.</p>
       </div>
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:22px 18px;box-shadow:var(--card-shadow);">
-        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:#9A7209;margin-bottom:8px;">STEP 04</div>
+      <div style="background:#FFFFFF;border:1px solid var(--border);border-top:4px solid #E0641E;border-radius:14px;padding:22px 18px;box-shadow:var(--card-shadow);">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:#C45213;margin-bottom:8px;">STEP 04</div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:6px;">Execute</strong>
         <p style="font-size:12.5px;color:var(--text-muted);line-height:1.6;margin:0;">Operate within the real environment. Refine, align, and capture outcomes within TwoSuns Core.</p>
       </div>
-      <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:22px 18px;box-shadow:var(--card-shadow);">
-        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:#9A7209;margin-bottom:8px;">STEP 05</div>
+      <div style="background:#FFFFFF;border:1px solid var(--border);border-top:4px solid #003366;border-radius:14px;padding:22px 18px;box-shadow:var(--card-shadow);">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:#0B3A66;margin-bottom:8px;">STEP 05</div>
         <strong style="font-size:14px;color:var(--navy);display:block;margin-bottom:6px;">Expand</strong>
         <p style="font-size:12.5px;color:var(--text-muted);line-height:1.6;margin:0;">Extend across additional functions, teams, and initiatives. Scale Decision Packs.</p>
       </div>

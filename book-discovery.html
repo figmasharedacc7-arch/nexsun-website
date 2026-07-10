@@ -138,6 +138,15 @@
   .step-card p { font-size:13.5px; color:var(--text-muted); line-height:1.7; }
   .step-connector { position:absolute; top:50px; right:-20px; width:40px; height:2px; background:linear-gradient(90deg,rgba(224,100,30,0.4),rgba(224,100,30,0.1)); z-index:1; }
   .step-card:last-child .step-connector { display:none; }
+  .steps-grid .step-card:nth-child(1) { border-top:4px solid #4E95D9; background:linear-gradient(180deg,#EFF6FD 0%,#FFFFFF 60%); }
+  .steps-grid .step-card:nth-child(1) .step-num { color:#2F7EC4; }
+  .steps-grid .step-card:nth-child(1) .step-num::before { background:linear-gradient(135deg,#4E95D9,#2F7EC4); }
+  .steps-grid .step-card:nth-child(2) { border-top:4px solid #4EA72E; background:linear-gradient(180deg,#F1F8EC 0%,#FFFFFF 60%); }
+  .steps-grid .step-card:nth-child(2) .step-num { color:#336600; }
+  .steps-grid .step-card:nth-child(2) .step-num::before { background:linear-gradient(135deg,#4EA72E,#336600); }
+  .steps-grid .step-card:nth-child(3) { border-top:4px solid #FFC000; background:linear-gradient(180deg,#FFF8E1 0%,#FFFFFF 60%); }
+  .steps-grid .step-card:nth-child(3) .step-num { color:#B07E00; }
+  .steps-grid .step-card:nth-child(3) .step-num::before { background:linear-gradient(135deg,#FFC000,#B07E00); }
 
   /* ─── BOOKING FORM SECTION ─── */
   #booking-form { padding:80px 0 100px; background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%); }
@@ -394,36 +403,36 @@
         <h3>What's included in the Pilot</h3>
         <p class="pilot-sub">Founding partners receive full platform access with white-glove onboarding</p>
 
-        <div class="pilot-item">
-          <div class="pilot-item-icon">🔑</div>
+        <div class="pilot-item" style="border-left:4px solid #4E95D9;padding-left:12px;">
+          <div class="pilot-item-icon" style="background:linear-gradient(135deg,#4E95D9,#2F7EC4);border-color:#2F7EC4;color:#FFFFFF;">🔑</div>
           <div class="pilot-item-text">
             <h4>Full Platform Access</h4>
             <p>Unlimited access to all TwoSuns modules during the pilot window no feature gates.</p>
           </div>
         </div>
-        <div class="pilot-item">
-          <div class="pilot-item-icon">🎯</div>
+        <div class="pilot-item" style="border-left:4px solid #4EA72E;padding-left:12px;">
+          <div class="pilot-item-icon" style="background:linear-gradient(135deg,#4EA72E,#336600);border-color:#336600;color:#FFFFFF;">🎯</div>
           <div class="pilot-item-text">
             <h4>Custom Onboarding</h4>
             <p>Dedicated setup tailored to your market data, workflows, and decision frameworks.</p>
           </div>
         </div>
-        <div class="pilot-item">
-          <div class="pilot-item-icon">🤝</div>
+        <div class="pilot-item" style="border-left:4px solid #FFC000;padding-left:12px;">
+          <div class="pilot-item-icon" style="background:linear-gradient(135deg,#FFC000,#B07E00);border-color:#B07E00;color:#FFFFFF;">🤝</div>
           <div class="pilot-item-text">
             <h4>Direct Line to the Founders</h4>
             <p>Co-development sessions with Aiman and the core team. Your feedback shapes the roadmap.</p>
           </div>
         </div>
-        <div class="pilot-item">
-          <div class="pilot-item-icon">💰</div>
+        <div class="pilot-item" style="border-left:4px solid #E0641E;padding-left:12px;">
+          <div class="pilot-item-icon" style="background:linear-gradient(135deg,#E0641E,#C45213);border-color:#C45213;color:#FFFFFF;">💰</div>
           <div class="pilot-item-text">
             <h4>Founding Partner Pricing</h4>
             <p>Pilot partners lock in preferred rates that carry forward after general availability.</p>
           </div>
         </div>
-        <div class="pilot-item">
-          <div class="pilot-item-icon">📊</div>
+        <div class="pilot-item" style="border-left:4px solid #003366;padding-left:12px;">
+          <div class="pilot-item-icon" style="background:linear-gradient(135deg,#0B3A66,#003366);border-color:#003366;color:#FFFFFF;">📊</div>
           <div class="pilot-item-text">
             <h4>ROI Tracking & Reporting</h4>
             <p>We measure platform impact against your KPIs and deliver a full pilot outcome report.</p>

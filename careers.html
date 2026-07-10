@@ -503,6 +503,17 @@
     .tag-remote { background:#F2EFE7; color:#9A6A0E; }
     .tag-contract { background:#FFEDD0; color:#C45213; }
     .value-card { background:#FCF9F2; border:1px solid rgba(30,26,20,0.08); border-radius:16px; padding:32px 28px; }
+    /* Current opportunities, secondary palette top bars */
+    #open-roles .value-card{border-top:4px solid transparent;}
+    #open-roles .value-card:nth-child(1){border-top-color:#4E95D9;}
+    #open-roles .value-card:nth-child(2){border-top-color:#4EA72E;}
+    #open-roles .value-card:nth-child(3){border-top-color:#FFC000;}
+    #open-roles .value-card:nth-child(4){border-top-color:#E0641E;}
+    #open-roles .value-card:nth-child(5){border-top-color:#003366;}
+    #open-roles .value-card:nth-child(6){border-top-color:#4E95D9;}
+    #open-roles .value-card:nth-child(7){border-top-color:#4EA72E;}
+    #open-roles .value-card:nth-child(8){border-top-color:#FFC000;}
+    #open-roles .value-card:nth-child(9){border-top-color:#E0641E;}
     .footer-legal { display:flex; gap:0; flex-wrap:wrap; }
     .footer-legal a { font-size:12px; color:rgba(30,26,20,0.7); text-decoration:none; padding:0 14px; border-right:1px solid rgba(30,26,20,0.15); transition:color .2s; }
     .footer-legal a:last-child { border-right:none; }
@@ -645,19 +656,19 @@
     <div class="section-tag">Why Join Us Now</div>
     <h2 class="section-heading">Reasons to build <span>with us</span></h2>
     <div class="six-grid" style="grid-template-columns:repeat(2,1fr);margin-top:40px;">
-      <div class="value-card">
+      <div class="value-card" style="border-top:4px solid #4E95D9;">
         <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;">Build Something Meaningful</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin:0;">Help create technology that has real-world impact across mining, manufacturing, cement and construction, logistics, and industrial infrastructure.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card" style="border-top:4px solid #4EA72E;">
         <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;">Work with Exceptional People</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin:0;">Join a team that combines deep software expertise, industry knowledge, and a passion for solving complex problems.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card" style="border-top:4px solid #FFC000;">
         <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;">Learn and Grow</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin:0;">We're building at the intersection of AI, enterprise software, operational intelligence, and industrial transformation.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card" style="border-top:4px solid #E0641E;">
         <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;">Shape the Future</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin:0;">At an early-stage company, your ideas matter. You'll have the opportunity to influence products, customers, and company direction.</p>
       </div>
@@ -679,23 +690,23 @@
     <div class="section-tag">Our Culture</div>
     <h2 class="section-heading">The values that <span>guide us</span></h2>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;">
-      <div class="value-card">
+      <div class="value-card" style="border-top:4px solid #4E95D9;">
         <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;">Curious Minds</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin:0;">We ask questions, challenge assumptions, and continuously learn.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card" style="border-top:4px solid #4EA72E;">
         <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;">Builders</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin:0;">We move quickly, solve hard problems, and turn ideas into outcomes.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card" style="border-top:4px solid #FFC000;">
         <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;">Collaborative</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin:0;">We believe the best solutions come from diverse perspectives and teamwork.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card" style="border-top:4px solid #E0641E;">
         <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;">Customer Obsessed</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin:0;">We focus on solving real problems and creating measurable value.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card" style="border-top:4px solid #003366;">
         <h3 style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px;">Trust and Accountability</h3>
         <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin:0;">We do what we say, own our work, and support each other.</p>
       </div>
@@ -746,28 +757,28 @@
     <div class="section-tag">Who Thrives Here</div>
     <h2 class="section-heading">You may be a <span>great fit if you</span></h2>
     <div style="display:grid;gap:12px;margin-top:36px;">
-      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);border-left:4px solid #4E95D9;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F7EC4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Love solving complex problems.</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);border-left:4px solid #4EA72E;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#336600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Enjoy building new things.</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);border-left:4px solid #FFC000;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B07E00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Are comfortable with ambiguity and change.</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
+      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);border-left:4px solid #E0641E;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Want to have an outsized impact.</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);border-left:4px solid #003366;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B3A66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Believe technology should augment human expertise, not replace it.</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C45213" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+      <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);border-left:4px solid #4E95D9;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F7EC4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
         <span style="font-size:16px;color:var(--text-mid);line-height:1.6;">Are excited about the future of AI and enterprise software.</span>
       </div>
     </div>
