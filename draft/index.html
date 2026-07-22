@@ -702,6 +702,49 @@
 
 <hr class="sf-divider">
 
+<style>
+.arch{max-width:1120px;margin:0 auto;}
+.arch-top{display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:center;margin-bottom:26px;}
+.arch-panel{border-radius:22px;padding:28px;color:#fff;box-shadow:0 16px 40px rgba(60,50,30,.16);}
+.arch-h{background:linear-gradient(155deg,#4E95D9,#2F7EC4);}
+.arch-pu{background:linear-gradient(155deg,#E0641E,#C45213);}
+.arch-tag{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);padding:6px 16px;border-radius:999px;font-weight:800;letter-spacing:.12em;font-size:12px;margin-bottom:14px;}
+.arch-panel ul,.arch-core ul{list-style:none;margin:0;padding:0;}
+.arch-panel li{padding:8px 0;border-top:1px dotted rgba(255,255,255,.3);font-size:14.5px;font-weight:600;}
+.arch-panel li:first-child{border-top:0;}
+.arch-core{width:330px;height:330px;border-radius:50%;background:radial-gradient(circle at 38% 30%,#14528F,#0B3A66 55%,#032347);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;box-shadow:0 24px 60px rgba(3,35,71,.35);position:relative;}
+.arch-core::before{content:"";position:absolute;inset:14px;border:2px dashed rgba(255,255,255,.3);border-radius:50%;}
+.arch-core .arch-tag{background:linear-gradient(135deg,#FFC000,#B07E00);border:0;color:#fff;}
+.arch-core li{padding:5px 0;font-size:13.5px;font-weight:600;}
+.arch-core .inner{position:relative;z-index:1;padding:0 34px;}
+.arch-assist{border-radius:20px;background:linear-gradient(135deg,#D9A800,#B07E00);color:#fff;box-shadow:0 16px 40px rgba(176,126,0,.28);display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:22px 30px;}
+.arch-assist .arch-tag{margin-bottom:0;}
+.arch-assist span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:8px 18px;border-radius:999px;font-size:13.5px;font-weight:700;}
+@media(max-width:1020px){.arch-top{grid-template-columns:1fr;justify-items:center;}.arch-panel{width:100%;}}
+</style>
+<section class="sf-sec" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFF5DD 100%);">
+  <div class="sf-wrap">
+    <div class="sf-head"><span class="sf-eyebrow">Platform Structure</span>
+      <h2>The Coordination and Execution Layer</h2>
+      <p>Three interconnected environments, one persistent continuity layer.</p>
+    </div>
+    <div class="arch">
+      <div class="arch-top">
+        <div class="arch-panel arch-h"><span class="arch-tag">HORIZON</span><ul><li>Revenue and commercial coordination</li><li>Market intelligence</li><li>GTM execution</li></ul></div>
+        <div class="arch-core"><div class="inner"><span class="arch-tag">CORE</span><ul><li>Governance</li><li>Organizational context and logs</li><li>Decision continuity</li></ul></div></div>
+        <div class="arch-panel arch-pu"><span class="arch-tag">PULSE</span><ul><li>Operational execution</li><li>Supply chain and resource coordination</li><li>Performance management</li></ul></div>
+      </div>
+      <div class="arch-assist"><span class="arch-tag">ASSISTANT &middot; RAY</span><span>Persistent enterprise companion</span><span>Contextual continuity</span><span>Enterprise awareness</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="sf-divider">
+
+
+
+
+
 <section class="sf-sec" id="what" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFF5DD 100%);">
   <div class="sf-wrap">
     <div class="sf-head"><span class="sf-eyebrow">What Is TwoSuns</span>
@@ -731,21 +774,7 @@
 
 <hr class="sf-divider">
 
-<section class="sf-sec" id="platform" style="background:linear-gradient(160deg,#FFEFCE 0%,#FFF5DD 100%);">
-  <div class="sf-wrap">
-    <div class="sf-head"><span class="sf-eyebrow">Platform Structure</span>
-      <h2>Built Around Enterprise Coordination</h2>
-      <p>Three interconnected environments, one persistent continuity layer.</p>
-    </div>
-    <div class="sf-grid sf-g3">
-      <div class="ccard bg-navy"><div class="ic">●</div><h3>TwoSuns Core</h3><p>The enterprise continuity layer. Maintains alignment across corporate strategy, regions, departments, initiatives, workflows, and users. Core also hosts Ray, the TwoSuns Assistant.</p></div>
-      <div class="ccard bg-sky"><div class="ic">↗</div><h3>TwoSuns Horizon</h3><p>Market and revenue execution. Explore markets, refine positioning, coordinate GTM, and align revenue execution.</p></div>
-      <div class="ccard bg-orange"><div class="ic">⚙</div><h3>TwoSuns Pulse</h3><p>Operational and execution coordination across industrial workflows where execution quality moves performance.</p></div>
-    </div>
-  </div>
-</section>
 
-<hr class="sf-divider">
 
 
 
