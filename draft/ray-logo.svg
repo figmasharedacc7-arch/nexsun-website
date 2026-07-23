@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 2078 373" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-20.651301,-14.155958)">
+        <g transform="matrix(0.703668,0,0,0.703668,308.527491,-763.734034)">
+            <g transform="matrix(459.331058,0,0,459.331058,698.413336,1622.00044)">
+            </g>
+            <text x="468.299px" y="1622px" style="font-family:'Aptos-SemiBold', 'Aptos', sans-serif;font-weight:600;font-size:459.331px;">s</text>
+        </g>
+        <g transform="matrix(0.703668,0,0,0.703668,-313.137067,-760.893264)">
+            <g transform="matrix(459.331058,0,0,459.331058,624.175748,1622.00044)">
+            </g>
+            <text x="468.299px" y="1622px" style="font-family:'Aptos-SemiBold', 'Aptos', sans-serif;font-weight:600;font-size:459.331px;">t</text>
+        </g>
+        <g transform="matrix(0.703668,0,0,0.703668,936.023006,-763.734034)">
+            <g transform="matrix(459.331058,0,0,459.331058,698.413336,1622.00044)">
+            </g>
+            <text x="468.299px" y="1622px" style="font-family:'Aptos-SemiBold', 'Aptos', sans-serif;font-weight:600;font-size:459.331px;">s</text>
+        </g>
+        <g transform="matrix(0.703668,0,0,0.703668,-163.50141,-760.893264)">
+            <g transform="matrix(459.331058,0,0,459.331058,808.760446,1622.00044)">
+            </g>
+            <text x="468.299px" y="1622px" style="font-family:'Aptos-SemiBold', 'Aptos', sans-serif;font-weight:600;font-size:459.331px;">w</text>
+        </g>
+        <g transform="matrix(0.703668,0,0,0.703668,505.397503,-763.102752)">
+            <g transform="matrix(459.331058,0,0,459.331058,730.037203,1622.00044)">
+            </g>
+            <text x="468.299px" y="1622px" style="font-family:'Aptos-SemiBold', 'Aptos', sans-serif;font-weight:600;font-size:459.331px;">u</text>
+        </g>
+        <g transform="matrix(0.703668,0,0,0.703668,717.501787,-760.893264)">
+            <g transform="matrix(459.331058,0,0,459.331058,727.794376,1622.00044)">
+            </g>
+            <text x="468.299px" y="1622px" style="font-family:'Aptos-SemiBold', 'Aptos', sans-serif;font-weight:600;font-size:459.331px;">n</text>
+        </g>
+        <g transform="matrix(0.46138,0,0,0.46138,53.404428,35.667548)">
+            <circle cx="1014.46" cy="580.544" r="166.755" style="fill:url(#_Radial1);stroke:rgb(255,102,0);stroke-width:27.09px;"/>
+        </g>
+        <g transform="matrix(0.504759,0,0,0.504759,-226.32545,-188.457977)">
+            <circle cx="1014.46" cy="580.544" r="166.755" style="fill:url(#_Radial2);stroke:rgb(204,153,0);stroke-width:24.76px;"/>
+        </g>
+        <g transform="matrix(0.838198,0,0,0.838198,-335.902075,-904.922707)">
+            <g transform="matrix(385.747978,0,0,385.747978,2435.527565,1533.418839)">
+            </g>
+            <text x="2182.569px" y="1533.419px" style="font-family:'Perpetua-Bold', 'Perpetua', serif;font-weight:700;font-size:385.748px;fill:rgb(255,102,0);">R</text>
+        </g>
+        <g transform="matrix(0.838198,0,0,0.838198,-117.166518,-904.922707)">
+            <g transform="matrix(385.747978,0,0,385.747978,2648.178672,1533.418839)">
+            </g>
+            <text x="2182.569px" y="1533.419px" style="font-family:'Perpetua-Bold', 'Perpetua', serif;font-weight:700;font-size:385.748px;fill:rgb(255,102,0);">A<tspan x="2410.853px " y="1533.419px ">Y</tspan></text>
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="_Radial1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-328.531471,328.531471,0,1014.459778,747.299571)"><stop offset="0" style="stop-color:white;stop-opacity:1"/><stop offset="0.32" style="stop-color:rgb(255,137,57);stop-opacity:1"/><stop offset="0.69" style="stop-color:rgb(255,104,3);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(255,102,0);stop-opacity:1"/></radialGradient>
+        <radialGradient id="_Radial2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-333.51053,333.51053,0,1014.459778,747.299571)"><stop offset="0" style="stop-color:white;stop-opacity:1"/><stop offset="0.51" style="stop-color:rgb(217,179,65);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(204,153,0);stop-opacity:1"/></radialGradient>
+    </defs>
+</svg>
