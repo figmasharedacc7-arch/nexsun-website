@@ -199,10 +199,10 @@
     .sol-hero h1{font-size:clamp(42px,5.6vw,68px);font-weight:900;color:var(--navy);line-height:1.08;margin-bottom:20px;letter-spacing:-1px;}
     .sol-hero h1 span{color:#9A7209;}
     .sol-hero p{font-size:18px;color:rgba(30,26,20,0.72);line-height:1.7;max-width:620px;margin-bottom:36px;}
-    .sol-cta-row{display:flex;gap:14px;flex-wrap:wrap;}
-    .sol-btn-primary{background:#E0641E;color:#FFFFFF;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:opacity .2s,transform .2s;border:none;cursor:pointer;}
+    .sol-cta-row{display:flex;gap:11px;flex-wrap:wrap;}
+    .sol-btn-primary{background:#E0641E;color:#FFFFFF;padding:13px 22px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:opacity .2s,transform .2s;border:none;cursor:pointer;}
     .sol-btn-primary:hover{opacity:.88;transform:translateY(-2px);}
-    .sol-btn-secondary{background:#FFFFFF;color:#C45213;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(224,100,30,0.35);transition:background .2s;}
+    .sol-btn-secondary{background:#FFFFFF;color:#C45213;padding:13px 22px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(224,100,30,0.35);transition:background .2s;}
     .sol-btn-secondary:hover{background:#FFF5DD;}
 
     .site-footer{background:var(--bg);border-top:1px solid rgba(204,153,0,.25);padding:56px 0 28px;}
@@ -238,6 +238,16 @@
     .ndrop-menu a:hover{background:var(--sun-pale);color:#9A7209;}
     .ndrop-menu .mdiv{height:1px;background:rgba(224,100,30,0.12);margin:4px 8px;}
     @media(max-width:860px){.mtopbar{display:none;}.mnav-links{gap:16px;}.mnav-links .ndrop{display:none;}}
+@media(max-width:600px){.mnav-in{padding:0 16px;height:62px;}.mnav-in > a img{height:40px;}.mnav .btn-cta{padding:9px 14px;font-size:12.5px;box-shadow:none;white-space:nowrap;}}
+
+    /* hero dashboard panel */
+    .sol-hero .wrap{max-width:1260px;}
+    .sol-hero-grid{display:grid;grid-template-columns:1.18fr 0.82fr;gap:46px;align-items:center;}
+    .sol-hero-grid .sol-hero-inner{max-width:none;}
+    .sol-hero-grid > *{min-width:0;}
+    img{max-width:100%;}
+    .sol-shot{width:100%;height:auto;display:block;border-radius:20px;box-shadow:0 26px 64px rgba(12,34,64,.32);border:1px solid rgba(255,255,255,.55);}
+    @media(max-width:1000px){.sol-hero-grid{grid-template-columns:1fr;gap:38px;}.sol-hero .wrap{max-width:1080px;}}
 </style>
 </head>
 <body>
@@ -285,6 +295,7 @@
 <section class="sol-hero">
   <canvas id="sol-canvas"></canvas>
   <div class="wrap">
+    <div class="sol-hero-grid">
     <div class="sol-hero-inner">
       <div class="sol-tag">&#9733; Cement &amp; Construction</div>
       <h1>Turn Operational Complexity Into Orchestration and Execution.</h1>
@@ -296,6 +307,8 @@
         <a href="https://twosuns.ai/cement/TwoSuns-Cement-Insight-Paper-August-2026.pdf" download class="sol-btn-secondary">Download Insight Paper</a>
         <a href="#book" class="sol-btn-secondary">Book a Discovery Call</a>
       </div>
+    </div>
+    <div><img class="sol-shot" src="cement-dashboard.jpg" alt="TwoSuns cement operations dashboard: kiln availability, energy intensity, fuel mix, CO2, cost per tonne, and maintenance risk"></div>
     </div>
   </div>
 </section>
