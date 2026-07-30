@@ -207,6 +207,15 @@
     .sol-btn-primary:hover{opacity:.88;transform:translateY(-2px);}
     .sol-btn-secondary{background:#FFFFFF;color:#C45213;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(224,100,30,0.35);transition:background .2s;}
     .sol-btn-secondary:hover{background:#FFF5DD;}
+
+    .site-footer{background:var(--bg);border-top:1px solid rgba(204,153,0,.25);padding:56px 0 28px;}
+    .sf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1080px;margin:0 auto;padding:0 24px;}
+    .sf-col h4{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--sun-deep);margin-bottom:16px;}
+    .sf-col a{display:block;font-size:14px;color:rgba(30,26,20,0.72);padding:4px 0;}
+    .sf-col a:hover{color:var(--sun-deep);}
+    .sf-col a.mail{color:#CC9900;}
+    .sf-bottom{max-width:1080px;margin:36px auto 0;padding:20px 24px 0;border-top:1px solid rgba(30,26,20,0.12);font-size:12px;color:rgba(30,26,20,0.5);text-align:center;}
+    @media(max-width:860px){.sf-cols{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
@@ -399,6 +408,39 @@
   </div>
 </section>
 
+
+<div class="site-footer">
+  <div class="sf-cols">
+    <div class="sf-col"><h4>Platform</h4>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/platform.html">Platform Overview</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/how-it-works.html">How It Works</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/modules.html">Capabilities</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/technology.html">Technology</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/trust.html">Trust Centre</a>
+    </div>
+    <div class="sf-col"><h4>Company</h4>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/about.html">About Us</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/why-twosuns.html">Why TwoSuns</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/industries.html">Industries</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/partners.html">Partner Centre</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/investors.html">Investor Centre</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/press.html">Press &amp; Media</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/careers.html">Careers</a>
+    </div>
+    <div class="sf-col"><h4>Resources</h4>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/blog.html">Insights</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/blog.html">Use Cases</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/blog.html">Platform Briefs</a>
+      <a href="https://figmasharedacc7-arch.github.io/nexsun-website/blog.html">Case Studies</a>
+    </div>
+    <div class="sf-col"><h4>Contact Us</h4>
+      <a class="mail" href="mailto:info@twosuns.ai">info@twosuns.ai</a>
+      <a class="mail" href="mailto:invest@twosuns.ai">invest@twosuns.ai</a>
+      <a href="https://twosuns.ai/">TwoSuns &#8599;</a>
+    </div>
+  </div>
+  <div class="sf-bottom">&copy; 2026 TwoSuns. All rights reserved.</div>
+</div>
 
 <script>
 (function(){
