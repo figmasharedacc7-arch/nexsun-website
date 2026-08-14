@@ -258,6 +258,24 @@
       background:linear-gradient(100deg,rgba(255,246,226,.96) 0%,rgba(255,246,226,.93) 34%,rgba(255,246,226,.85) 52%,rgba(255,246,226,.62) 70%,rgba(255,246,226,.30) 86%,rgba(255,246,226,.10) 100%);}
     @media(prefers-reduced-motion:reduce){.vid-sec > video{display:none;}
       .vid-sec{background:url('cement-plant-poster.jpg') center/cover no-repeat;}}
+
+    /* gated download modal */
+    .gm-back{position:fixed;inset:0;background:rgba(30,26,20,.55);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:999;padding:20px;}
+    .gm-back.open{display:flex;}
+    .gm{background:#fff;border-radius:22px;max-width:520px;width:100%;padding:34px;box-shadow:0 30px 80px rgba(30,26,20,.35);position:relative;max-height:92vh;overflow:auto;}
+    .gm h3{font-size:23px;font-weight:800;color:var(--navy);margin-bottom:6px;}
+    .gm .gm-sub{font-size:14.5px;color:var(--muted);margin-bottom:8px;}
+    .gm label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin:14px 0 6px;}
+    .gm input{width:100%;background:#FFFBF2;border:1px solid rgba(30,26,20,.15);border-radius:10px;padding:12px 14px;font-size:14.5px;color:var(--navy);outline:none;font-family:inherit;}
+    .gm input:focus{border-color:var(--sun);}
+    .gm .gm-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .gm button.gm-submit{width:100%;margin-top:20px;background:linear-gradient(135deg,var(--sun),var(--sun-deep));color:#fff;border:0;border-radius:10px;padding:14px;font-size:15px;font-weight:800;cursor:pointer;}
+    .gm button.gm-submit:disabled{opacity:.6;cursor:default;}
+    .gm .gm-x{position:absolute;top:14px;right:16px;background:none;border:0;font-size:26px;line-height:1;color:#9A8F7E;cursor:pointer;}
+    .gm .gm-note{font-size:11.5px;color:rgba(30,26,20,.5);margin-top:12px;text-align:center;}
+    .gm-done{text-align:center;padding:12px 0;}
+    .gm-done .tick{font-size:40px;}
+    @media(max-width:520px){.gm .gm-row{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -563,5 +581,87 @@
   draw();
 })();
 </script>
+
+<div class="gm-back" id="gm-back" role="dialog" aria-modal="true" aria-labelledby="gm-title">
+  <div class="gm">
+    <button class="gm-x" id="gm-x" aria-label="Close">&times;</button>
+    <div id="gm-form-wrap">
+      <h3 id="gm-title">Get the Insight Paper</h3>
+      <p class="gm-sub">Tell us where to send it and the download starts right away.</p>
+      <form id="gm-form">
+        <div class="gm-row">
+          <div><label for="gm-first">First name</label><input id="gm-first" name="first_name" required></div>
+          <div><label for="gm-last">Last name</label><input id="gm-last" name="last_name" required></div>
+        </div>
+        <label for="gm-email">Work email</label>
+        <input id="gm-email" name="email" type="email" required placeholder="you@company.com">
+        <div class="gm-row">
+          <div><label for="gm-company">Company</label><input id="gm-company" name="company" required></div>
+          <div><label for="gm-title-f">Job title</label><input id="gm-title-f" name="job_title"></div>
+        </div>
+        <button type="submit" class="gm-submit" id="gm-submit">Download the Insight Paper &rarr;</button>
+        <div class="gm-note">We use this to send the paper and occasional TwoSuns updates. Unsubscribe any time.</div>
+      </form>
+    </div>
+    <div id="gm-done" class="gm-done" style="display:none;">
+      <div class="tick">&#9728;&#65039;</div>
+      <h3>Your download is starting</h3>
+      <p class="gm-sub">If it does not begin automatically,
+        <a id="gm-manual" href="TwoSuns-Cement-Insight-Paper-August-2026.pdf" download style="color:#C45213;font-weight:700;">click here</a>.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Paste the Google Apps Script web app URL here to write leads into the sheet.
+  var SHEET_ENDPOINT = "";
+  var EMAIL_FALLBACK = "https://formsubmit.co/ajax/info@twosuns.ai";
+  var PDF = "TwoSuns-Cement-Insight-Paper-August-2026.pdf";
+
+  var back=document.getElementById('gm-back'), form=document.getElementById('gm-form'),
+      wrap=document.getElementById('gm-form-wrap'), done=document.getElementById('gm-done'),
+      btn=document.getElementById('gm-submit');
+
+  function open(e){ if(e) e.preventDefault(); back.classList.add('open'); document.body.style.overflow='hidden';
+                    setTimeout(function(){document.getElementById('gm-first').focus();},60); }
+  function close(){ back.classList.remove('open'); document.body.style.overflow=''; }
+
+  document.querySelectorAll('a[href$="'+PDF+'"], a[data-gated]').forEach(function(a){
+    a.removeAttribute('download'); a.addEventListener('click', open);
+  });
+  document.getElementById('gm-x').addEventListener('click', close);
+  back.addEventListener('click', function(e){ if(e.target===back) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && back.classList.contains('open')) close(); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    btn.disabled = true; btn.textContent = 'Sending...';
+    var d = new FormData(form);
+    var payload = {
+      form: 'Insight Paper download',
+      campaign: 'cement-email-2026-07',
+      name: (d.get('first_name')||'') + ' ' + (d.get('last_name')||''),
+      email: d.get('email')||'', company: d.get('company')||'',
+      job_title: d.get('job_title')||'', message: '', page: location.href
+    };
+    var body = new URLSearchParams(payload).toString();
+    var jobs = [];
+    if (SHEET_ENDPOINT) {
+      jobs.push(fetch(SHEET_ENDPOINT, {method:'POST', mode:'no-cors',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: body}).catch(function(){}));
+    }
+    jobs.push(fetch(EMAIL_FALLBACK, {method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(Object.assign({_subject:'Insight Paper download, twosuns.ai'}, payload))}).catch(function(){}));
+
+    Promise.all(jobs).then(function(){
+      wrap.style.display='none'; done.style.display='block';
+      var a=document.createElement('a'); a.href=PDF; a.download=PDF;
+      document.body.appendChild(a); a.click(); a.remove();
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
