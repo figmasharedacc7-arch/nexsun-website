@@ -609,59 +609,105 @@
       <p class="gm-sub">If it does not begin automatically,
         <a id="gm-manual" href="TwoSuns-Cement-Insight-Paper-August-2026.pdf" download style="color:#C45213;font-weight:700;">click here</a>.</p>
     </div>
+    <div id="gm-back-known" class="gm-done" style="display:none;">
+      <div class="tick">&#9728;&#65039;</div>
+      <h3>Welcome back, <span id="gm-known-name"></span></h3>
+      <p class="gm-sub">Your download is starting. If it does not begin automatically,
+        <a id="gm-manual2" href="TwoSuns-Cement-Insight-Paper-August-2026.pdf" download style="color:#C45213;font-weight:700;">click here</a>.</p>
+      <p class="gm-note" style="margin-top:14px;">Not you?
+        <a href="#" id="gm-forget" style="color:#C45213;font-weight:700;">Use a different email</a></p>
+    </div>
   </div>
 </div>
 
 <script>
 (function(){
-  // Paste the Google Apps Script web app URL here to write leads into the sheet.
   var SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbyz4qCsmkMasAHUe8ZZqTva4VvVGo-Q3vy3K_sTMIJY4Q3Mhnq_1HMg_-Z4DF_CUu9z/exec";
   var EMAIL_FALLBACK = "https://formsubmit.co/ajax/info@twosuns.ai";
   var PDF = "TwoSuns-Cement-Insight-Paper-August-2026.pdf";
+  var ASSET = "Insight Paper";
+  var STORE = "twosuns_lead";
 
   var back=document.getElementById('gm-back'), form=document.getElementById('gm-form'),
       wrap=document.getElementById('gm-form-wrap'), done=document.getElementById('gm-done'),
-      btn=document.getElementById('gm-submit');
+      known=document.getElementById('gm-back-known'), btn=document.getElementById('gm-submit');
 
-  function open(e){ if(e) e.preventDefault(); back.classList.add('open'); document.body.style.overflow='hidden';
-                    setTimeout(function(){document.getElementById('gm-first').focus();},60); }
+  function saved(){ try{ return JSON.parse(localStorage.getItem(STORE)||'null'); }catch(e){ return null; } }
+  function save(l){ try{ localStorage.setItem(STORE, JSON.stringify(l)); }catch(e){} }
+
+  function show(panel){
+    wrap.style.display = panel==='form' ? 'block':'none';
+    done.style.display = panel==='done' ? 'block':'none';
+    known.style.display = panel==='known'? 'block':'none';
+  }
+  function openModal(){ back.classList.add('open'); document.body.style.overflow='hidden'; }
   function close(){ back.classList.remove('open'); document.body.style.overflow=''; }
 
+  function record(lead, kind){
+    var payload = {
+      form: ASSET + ' download' + (kind==='returning' ? ' (returning)' : ''),
+      campaign: 'cement-email-2026-07',
+      name: lead.name||'', email: lead.email||'', company: lead.company||'',
+      job_title: lead.job_title||'', message: '', page: location.href
+    };
+    var body = new URLSearchParams(payload).toString();
+    var jobs = [];
+    if (SHEET_ENDPOINT) jobs.push(fetch(SHEET_ENDPOINT, {method:'POST', mode:'no-cors',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: body}).catch(function(){}));
+    if (kind !== 'returning') jobs.push(fetch(EMAIL_FALLBACK, {method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(Object.assign({_subject: ASSET + ' download, twosuns.ai'}, payload))}).catch(function(){}));
+    return Promise.all(jobs);
+  }
+
+  function deliver(){
+    var a=document.createElement('a'); a.href=PDF; a.download=PDF;
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+
+  function onGatedClick(e){
+    e.preventDefault();
+    var lead = saved();
+    if (lead && lead.email){
+      document.getElementById('gm-known-name').textContent = (lead.name||'').split(' ')[0] || '';
+      show('known'); openModal();
+      record(lead,'returning').then(deliver);
+    } else {
+      show('form'); openModal();
+      setTimeout(function(){ document.getElementById('gm-first').focus(); },60);
+    }
+  }
+
   document.querySelectorAll('a[href$="'+PDF+'"], a[data-gated]').forEach(function(a){
-    a.removeAttribute('download'); a.addEventListener('click', open);
+    if (a.id==='gm-manual' || a.id==='gm-manual2') return;
+    a.removeAttribute('download'); a.addEventListener('click', onGatedClick);
   });
   document.getElementById('gm-x').addEventListener('click', close);
   back.addEventListener('click', function(e){ if(e.target===back) close(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && back.classList.contains('open')) close(); });
 
+  document.getElementById('gm-forget').addEventListener('click', function(e){
+    e.preventDefault(); try{ localStorage.removeItem(STORE); }catch(err){}
+    form.reset(); show('form');
+    setTimeout(function(){ document.getElementById('gm-first').focus(); },60);
+  });
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     btn.disabled = true; btn.textContent = 'Sending...';
     var d = new FormData(form);
-    var payload = {
-      form: 'Insight Paper download',
-      campaign: 'cement-email-2026-07',
-      name: (d.get('first_name')||'') + ' ' + (d.get('last_name')||''),
+    var lead = {
+      name: ((d.get('first_name')||'') + ' ' + (d.get('last_name')||'')).trim(),
       email: d.get('email')||'', company: d.get('company')||'',
-      job_title: d.get('job_title')||'', message: '', page: location.href
+      job_title: d.get('job_title')||''
     };
-    var body = new URLSearchParams(payload).toString();
-    var jobs = [];
-    if (SHEET_ENDPOINT) {
-      jobs.push(fetch(SHEET_ENDPOINT, {method:'POST', mode:'no-cors',
-        headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: body}).catch(function(){}));
-    }
-    jobs.push(fetch(EMAIL_FALLBACK, {method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(Object.assign({_subject:'Insight Paper download, twosuns.ai'}, payload))}).catch(function(){}));
-
-    Promise.all(jobs).then(function(){
-      wrap.style.display='none'; done.style.display='block';
-      var a=document.createElement('a'); a.href=PDF; a.download=PDF;
-      document.body.appendChild(a); a.click(); a.remove();
+    save(lead);
+    record(lead,'new').then(function(){
+      show('done'); deliver();
+      btn.disabled = false; btn.textContent = 'Download the Insight Paper \u2192';
     });
   });
-})();
-</script>
+})();</script>
 
 </body>
 </html>
