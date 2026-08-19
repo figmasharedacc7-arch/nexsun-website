@@ -707,6 +707,11 @@
     setTimeout(function(){ document.getElementById('gm-first').focus(); },60);
   });
 
+  // Direct link: ?paper=1 or #insight-paper opens the download form on arrival
+  if (/[?&]paper(=|&|$)/.test(location.search) || location.hash === '#insight-paper') {
+    setTimeout(function(){ onGatedClick({ preventDefault: function(){} }); }, 250);
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     btn.disabled = true; btn.textContent = 'Sending...';
