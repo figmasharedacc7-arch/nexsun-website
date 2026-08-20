@@ -276,6 +276,25 @@
     .gm-done{text-align:center;padding:12px 0;}
     .gm-done .tick{font-size:40px;}
     @media(max-width:520px){.gm .gm-row{grid-template-columns:1fr;}}
+
+    /* image-backed section: cards one side, photo bleeding the other */
+    .imgsec{position:relative;overflow:hidden;isolation:isolate;}
+    .imgsec::before{content:"";position:absolute;inset:0;z-index:-2;background-size:cover;background-repeat:no-repeat;}
+    .imgsec::after{content:"";position:absolute;inset:0;z-index:-1;}
+    .imgsec-r::before{background-position:right center;}
+    .imgsec-r::after{background:linear-gradient(100deg,#FFF6E2 0%,#FFF6E2 34%,rgba(255,246,226,.95) 44%,rgba(255,246,226,.78) 54%,rgba(255,245,222,.50) 64%,rgba(255,244,218,.24) 76%,rgba(255,243,216,.08) 100%);}
+    .imgsec-l::before{background-position:left center;}
+    .imgsec-l::after{background:linear-gradient(260deg,#FFF6E2 0%,#FFF6E2 34%,rgba(255,246,226,.95) 44%,rgba(255,246,226,.78) 54%,rgba(255,245,222,.50) 64%,rgba(255,244,218,.24) 76%,rgba(255,243,216,.08) 100%);}
+    .sec-split{display:block;}
+    .imgsec-r .sec-split{max-width:66%;}
+    .imgsec-l .sec-split{max-width:66%;margin-left:auto;}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px;text-align:left;}
+    @media(max-width:1000px){
+      .imgsec-r .sec-split,.imgsec-l .sec-split{max-width:100%;margin:0;}
+      .imgsec-r::after{background:linear-gradient(175deg,rgba(255,246,226,.96) 0%,rgba(255,246,226,.90) 55%,rgba(255,244,220,.60) 100%);}
+      .imgsec-l::after{background:linear-gradient(175deg,rgba(255,246,226,.96) 0%,rgba(255,246,226,.90) 55%,rgba(255,244,220,.60) 100%);}
+    }
+    @media(max-width:720px){.grid2{grid-template-columns:1fr;}}
 </style>
 <!-- LeadLander -->
 <script>
@@ -422,12 +441,13 @@
 
 <hr class="divider">
 
-<section style="background:#FFFFFF;">
-  <div class="wrap" style="max-width:1320px;text-align:center;">
+<section class="imgsec imgsec-r" style="background:#FFFFFF;">
+  <style>.imgsec-r::before{background-image:url('sec-challenges.jpg');}</style>
+  <div class="wrap" style="max-width:1320px;"><div class="sec-split" style="text-align:left;">
     <span class="eyebrow">Common Challenges</span>
     <h2 class="sec-h">Where Performance Runs in Fragments</h2>
-    <p class="sec-sub" style="margin:0 auto;">Disconnected systems and inconsistent information slow decisions and obscure where profitability is being lost across the enterprise.</p>
-    <div class="grid3">
+    <p class="sec-sub">Disconnected systems and inconsistent information slow decisions and obscure where profitability is being lost across the enterprise.</p>
+    <div class="grid2">
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#4E95D9,#2F7EC4);">&#9678;</span>Operational Silos</h3><p>Production, maintenance, procurement, logistics, quality, finance, and commercial teams often operate from disconnected systems and inconsistent information.</p></div>
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#E0641E,#C45213);">&#8646;</span>Production Variability</h3><p>Small changes in kiln efficiency, fuel consumption, raw mix quality, equipment performance, or throughput can have a significant impact on profitability.</p></div>
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#4EA72E,#336600);">&#9788;</span>Rising Energy Costs</h3><p>Energy represents one of the largest operating expenses for many cement producers and heavy industrial organizations.</p></div>
@@ -435,6 +455,7 @@
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#0B3A66,#003366);">&#9635;</span>Project &amp; Resource Orchestration</h3><p>Construction and infrastructure projects require orchestration across multiple stakeholders, contractors, suppliers, and internal teams.</p></div>
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#C00000,#8F0000);">&#9873;</span>ESG &amp; Regulatory Pressure</h3><p>Organizations face increasing pressure to improve sustainability performance, reduce emissions, manage reporting requirements, and prepare for evolving regulations.</p></div>
     </div>
+  </div>
   </div>
 </section>
 
