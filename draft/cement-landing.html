@@ -282,6 +282,9 @@
     .imgsec::before{content:"";position:absolute;inset:0;z-index:-2;background-size:cover;background-repeat:no-repeat;}
     .imgsec::after{content:"";position:absolute;inset:0;z-index:-1;}
     .imgsec-r::before{background-position:right center;}
+    .imgsec-chal::before{background-image:url('sec-challenges.jpg');}
+    .imgsec-adv::before{background-image:url('sec-advantage.jpg');}
+    .imgsec-out::before{background-image:url('sec-outcomes.jpg');}
     .imgsec-r::after{background:linear-gradient(100deg,#FFF6E2 0%,#FFF6E2 34%,rgba(255,246,226,.95) 44%,rgba(255,246,226,.78) 54%,rgba(255,245,222,.50) 64%,rgba(255,244,218,.24) 76%,rgba(255,243,216,.08) 100%);}
     .imgsec-l::before{background-position:left center;}
     .imgsec-l::after{background:linear-gradient(260deg,#FFF6E2 0%,#FFF6E2 34%,rgba(255,246,226,.95) 44%,rgba(255,246,226,.78) 54%,rgba(255,245,222,.50) 64%,rgba(255,244,218,.24) 76%,rgba(255,243,216,.08) 100%);}
@@ -441,8 +444,7 @@
 
 <hr class="divider">
 
-<section class="imgsec imgsec-r" style="background:#FFFFFF;">
-  <style>.imgsec-r::before{background-image:url('sec-challenges.jpg');}</style>
+<section class="imgsec imgsec-r imgsec-chal" style="background:#FFFFFF;">
   <div class="wrap" style="max-width:1320px;"><div class="sec-split" style="text-align:left;">
     <span class="eyebrow">Common Challenges</span>
     <h2 class="sec-h">Where Performance Runs in Fragments</h2>
@@ -461,12 +463,12 @@
 
 <hr class="divider">
 
-<section>
-  <div class="wrap" style="max-width:1320px;text-align:center;">
+<section class="imgsec imgsec-l imgsec-adv">
+  <div class="wrap" style="max-width:1320px;"><div class="sec-split" style="text-align:left;">
     <span class="eyebrow">The TwoSuns Advantage</span>
     <h2 class="sec-h">From Fragmented Data to Orchestrated Intelligence</h2>
-    <p class="sec-sub" style="margin:0 auto;">A orchestration and execution layer that connects people, processes, and information into one decision environment, without replacing the systems you already run.</p>
-    <div class="grid3">
+    <p class="sec-sub">A orchestration and execution layer that connects people, processes, and information into one decision environment, without replacing the systems you already run.</p>
+    <div class="grid2">
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#4E95D9,#2F7EC4);">&#9678;</span>Orchestrated Operational Intelligence</h3><p>Connect operational, financial, procurement, maintenance, quality, logistics, and market information into a single decision environment.</p></div>
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#4EA72E,#336600);">&#8646;</span>Faster Decisions</h3><p>Reduce time spent collecting and reconciling information so teams can focus on execution and performance improvement.</p></div>
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#FFC000,#B07E00);">&#9672;</span>Explainable Intelligence</h3><p>Every recommendation, assumption, decision, and outcome remains visible, traceable, and auditable.</p></div>
@@ -474,6 +476,7 @@
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#0B3A66,#003366);">&#9635;</span>Institutional Knowledge Retention</h3><p>Preserve operational expertise, historical context, and decision rationale to reduce dependency on individuals and support workforce transitions.</p></div>
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#CC9900,#9A7209);">&#10022;</span>AI-Enhanced Orchestration</h3><p>Help teams evaluate options, align stakeholders, and orchestrate actions across departments without replacing existing systems.</p></div>
     </div>
+  </div>
   </div>
 </section>
 
@@ -496,11 +499,11 @@
 
 <hr class="divider">
 
-<section>
-  <div class="wrap" style="max-width:1320px;text-align:center;">
+<section class="imgsec imgsec-r imgsec-out">
+  <div class="wrap" style="max-width:1320px;"><div class="sec-split" style="text-align:left;">
     <span class="eyebrow">Business Outcomes</span>
     <h2 class="sec-h">What Orchestration and Execution Delivers</h2>
-    <div class="grid3">
+    <div class="grid2">
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#4E95D9,#2F7EC4);">&#9201;</span>Faster Decision-Making</h3><p>Reduce delays caused by fragmented systems and disconnected reporting processes.</p></div>
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#4EA72E,#336600);">&#9650;</span>Improved Operational Performance</h3><p>Identify inefficiencies, optimize production, and improve asset utilization.</p></div>
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#FFC000,#B07E00);">&#9679;</span>Better Cost Visibility</h3><p>Connect operational activity with financial outcomes to understand margin impacts sooner.</p></div>
@@ -508,6 +511,7 @@
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#0B3A66,#003366);">&#9730;</span>Reduced Operational Risk</h3><p>Improve visibility into emerging issues before they impact production, projects, or profitability.</p></div>
       <div class="card"><h3><span class="dot" style="background:linear-gradient(135deg,#CC9900,#9A7209);">&#9878;</span>Stronger Organizational Resilience</h3><p>Preserve institutional knowledge and create continuity across teams, locations, and leadership transitions.</p></div>
     </div>
+  </div>
   </div>
 </section>
 
