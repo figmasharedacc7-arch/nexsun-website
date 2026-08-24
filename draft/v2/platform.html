@@ -123,8 +123,41 @@
   .chip:nth-child(3){bottom:22%;left:-14%;animation-delay:1.4s;}
   .chip:nth-child(4){bottom:4%;right:-14%;animation-delay:.4s;}
   @media(prefers-reduced-motion:reduce){
-    .sun-rays-svg,.sun-gold,.sun-orange,.chip{animation:none;}
+    .sun-rays-svg,.sun-gold,.sun-orange,.chip,.hero{animation:none;}
+    .vidband > video{display:none;}
+    .vidband.vid-plant{background:url('vid-plant-poster.jpg') center/cover no-repeat;}
+    .vidband.vid-aerial{background:url('vid-aerial-poster.jpg') center/cover no-repeat;}
   }
+
+  /* PHOTO AND VIDEO SECTIONS (same system as the cement microsite) */
+  .imgsec{position:relative;overflow:hidden;isolation:isolate;}
+  .imgsec::before{content:"";position:absolute;inset:0;z-index:-2;background-size:cover;background-repeat:no-repeat;}
+  .imgsec::after{content:"";position:absolute;inset:0;z-index:-1;}
+  .imgsec-r::before{background-position:right center;}
+  .imgsec-l::before{background-position:left center;}
+  .imgsec-r::after{background:linear-gradient(100deg,#FFF6E2 0%,#FFF6E2 34%,rgba(255,246,226,.95) 44%,rgba(255,246,226,.78) 54%,rgba(255,245,222,.50) 64%,rgba(255,244,218,.24) 76%,rgba(255,243,216,.08) 100%);}
+  .imgsec-l::after{background:linear-gradient(260deg,#FFF6E2 0%,#FFF6E2 34%,rgba(255,246,226,.95) 44%,rgba(255,246,226,.78) 54%,rgba(255,245,222,.50) 64%,rgba(255,244,218,.24) 76%,rgba(255,243,216,.08) 100%);}
+  .img-construction::before{background-image:url('img-construction.jpg');}
+  .img-industrial::before{background-image:url('img-industrial.jpg');}
+  .img-operations::before{background-image:url('img-operations.jpg');}
+  .sec-split{display:block;}
+  .imgsec-r .sec-split{max-width:66%;}
+  .imgsec-l .sec-split{max-width:66%;margin-left:auto;}
+
+  .vidband{position:relative;overflow:hidden;isolation:isolate;text-align:center;
+    border-top:1px solid rgba(204,153,0,.25);border-bottom:1px solid rgba(204,153,0,.25);
+    background:linear-gradient(135deg,#FBEFC9 0%,#F6E1B0 100%);}
+  .vidband > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+  .vidband::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(180deg,rgba(255,246,226,.90) 0%,rgba(255,246,226,.74) 45%,rgba(255,246,226,.88) 100%);}
+  .vidband h2{font-size:clamp(24px,3.2vw,38px);font-weight:800;color:var(--navy);max-width:840px;margin:0 auto 16px;line-height:1.2;}
+  .vidband p{color:var(--text-muted);font-size:16.5px;max-width:720px;margin:0 auto 28px;line-height:1.75;}
+
+  /* photo wallpaper hero */
+  .hero-photo{animation:none;background-size:cover,cover;background-repeat:no-repeat;
+    background-position:center,center 30%;}
+  .hero-photo.wall-construction{background-image:linear-gradient(100deg,#FFF6E2 0%,#FFF6E2 40%,rgba(255,246,226,.94) 48%,rgba(255,246,226,.74) 56%,rgba(255,245,222,.44) 64%,rgba(255,244,218,.16) 72%,rgba(255,243,216,0) 80%),url('img-construction.jpg');}
+  .hero-photo h1,.hero-photo p.hero-sub{max-width:620px;}
 
   /* CARDS + GRIDS */
   .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:30px;}
@@ -250,6 +283,9 @@
 
   /* RESPONSIVE */
   @media(max-width:1000px){
+    .imgsec-r .sec-split,.imgsec-l .sec-split{max-width:100%;margin:0;}
+    .imgsec-r::after,.imgsec-l::after{background:linear-gradient(175deg,rgba(255,246,226,.96) 0%,rgba(255,246,226,.90) 55%,rgba(255,244,220,.60) 100%);}
+    .hero-photo.wall-construction{background-image:linear-gradient(175deg,rgba(255,246,226,.95) 0%,rgba(255,246,226,.89) 55%,rgba(255,244,220,.58) 80%,rgba(255,242,214,.24) 100%),url('img-construction.jpg');background-position:center,center;}
     .hero-grid{grid-template-columns:1fr;gap:36px;}
     .sun-visual{transform:scale(.86);}
     .grid3,.grid4{grid-template-columns:repeat(2,1fr);}
@@ -357,12 +393,14 @@
     </div>
   </div>
 </section>
-<section>
+<section class="imgsec imgsec-l img-operations">
   <div class="container">
+   <div class="sec-split">
     <div class="section-tag">Inputs</div>
     <h2 class="section-heading">Bring together the inputs that matter</h2>
     <p class="section-sub">A TwoSuns environment can combine internal, external, real-time and human inputs according to the selected use case.</p>
     <div class="grid2"><div class="card"><p style="font-size:15.5px;color:var(--navy);font-weight:600;">Enterprise applications, databases and records</p></div><div class="card"><p style="font-size:15.5px;color:var(--navy);font-weight:600;">Documents, policies, procedures and organizational knowledge</p></div><div class="card"><p style="font-size:15.5px;color:var(--navy);font-weight:600;">Market movement and news, competitor information and external research</p></div><div class="card"><p style="font-size:15.5px;color:var(--navy);font-weight:600;">Product, project, asset, operational and machine inputs</p></div><div class="card"><p style="font-size:15.5px;color:var(--navy);font-weight:600;">Campaign, stakeholder and relationship activity</p></div><div class="card"><p style="font-size:15.5px;color:var(--navy);font-weight:600;">Professional expertise and operating context</p></div></div>
+   </div>
   </div>
 </section>
 <section class="band-alt">
@@ -381,11 +419,13 @@
     <div class="callout"><h3>Decision Packs</h3><p>Decision Packs can provide focused, reusable combinations of inputs, context, intelligence, workflow elements and outputs around a defined business need. These capabilities can become more deeply integrated into the enterprise platform over time.</p></div>
   </div>
 </section>
-<section class="band-warm">
+<section class="imgsec imgsec-r img-industrial">
   <div class="container">
+   <div class="sec-split">
     <div class="section-tag">Governance</div>
     <h2 class="section-heading">Deployment and governance aligned with the organization</h2>
     <p class="lede">The preferred deployment is a shared managed cloud environment. Dedicated and local environments can be evaluated where operating, security, residency or performance requirements support a different arrangement.</p><p class="lede">Roles, permissions, information separation, traceability and governance are configured according to the selected environment and implementation requirements.</p>
+   </div>
   </div>
 </section>
 <section class="cta-band">
