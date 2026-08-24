@@ -230,6 +230,115 @@
   .layer-chip{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:#fff;padding:5px 12px;border-radius:20px;}
   .layer p{color:var(--text-muted);font-size:15.5px;line-height:1.78;}
 
+  /* ARCHITECTURE STAGE (pilot: living product visual) */
+  .a2wrap{margin-top:40px;}
+  .a2row2{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .a2row2 > *{min-width:0;}
+  .a2link{position:relative;height:44px;}
+  .a2link i{position:absolute;top:0;bottom:0;width:4px;border-radius:2px;
+    background:rgba(196,82,19,.30);overflow:hidden;}
+  .a2link i::after{content:'';position:absolute;left:0;right:0;height:44%;border-radius:2px;
+    background:linear-gradient(180deg,transparent,#FF7A22,transparent);
+    animation:a2flow 2.4s linear infinite;}
+  .a2link-2 i:nth-child(1){left:25%;} .a2link-2 i:nth-child(2){left:75%;animation-delay:1.2s;}
+  .a2link-2 i:nth-child(2)::after{animation-delay:1.2s;}
+  .a2link-1 i{left:50%;}
+  .a2{position:relative;background:#fff;border:1px solid rgba(140,101,0,.24);border-radius:18px;
+    box-shadow:0 10px 30px rgba(60,50,30,.10),0 2px 6px rgba(60,50,30,.05);overflow:hidden;
+    transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s,border-color .45s,opacity .45s;}
+  .a2::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;z-index:2;
+    background:var(--lc,transparent);opacity:0;transition:opacity .45s;}
+  .a2.on::before{opacity:1;}
+  .a2-core{--lc:#8C6500;} .a2-ray{--lc:#E0641E;} .a2-horizon{--lc:#CC9900;} .a2-pulse{--lc:#C45213;}
+  .a2.dim{opacity:.68;}
+  .a2.on{transform:translateY(-6px);box-shadow:0 22px 52px rgba(224,100,30,.24);border-color:rgba(224,100,30,.45);}
+
+  .a2-head{display:flex;align-items:center;gap:10px;padding:14px 18px;
+    border-bottom:1px solid rgba(140,101,0,.16);background:linear-gradient(180deg,#FFFAF0,#FFF4E2);}
+  .a2-key{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+  .a2-name{font-size:12.5px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;color:var(--navy);}
+  .a2-sub{font-size:12px;color:var(--text-muted);margin-left:auto;white-space:nowrap;}
+  .a2-body{padding:16px 18px 18px;}
+
+  /* mini product surfaces */
+  .a2-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .a2-stat{background:#FDF4E2;border:1px solid rgba(140,101,0,.18);border-radius:11px;padding:11px 12px;}
+  .a2-stat .k{font-size:10px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:#8C6500;}
+  .a2-stat .v{font-size:21px;font-weight:900;color:var(--navy);margin-top:2px;letter-spacing:-.5px;}
+  .a2-spark{display:flex;align-items:flex-end;gap:3px;height:26px;margin-top:9px;}
+  .a2-spark i{flex:1;min-height:5px;border-radius:2px;
+    background:linear-gradient(180deg,var(--sun),rgba(224,100,30,.45));
+    transform-origin:bottom;animation:a2spark 2.6s ease-in-out infinite;}
+  @keyframes a2spark{0%,100%{transform:scaleY(.62)}50%{transform:scaleY(1)}}
+  .a2-ledger{margin-top:13px;display:grid;gap:7px;}
+  .a2-row{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted);
+    background:#FDF4E2;border:1px solid rgba(140,101,0,.18);border-radius:9px;padding:9px 12px;}
+  .a2-row b{color:var(--navy);font-weight:700;}
+  .a2-row .tail{margin-left:auto;font-weight:800;color:#8C6500;font-size:11.5px;}
+
+  .a2-list{display:grid;gap:9px;}
+  .a2-item{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;
+    background:#FDF4E2;border:1px solid rgba(140,101,0,.18);border-radius:10px;padding:10px 12px;}
+  .a2-item .t{font-size:12.5px;font-weight:700;color:var(--navy);}
+  .a2-chip{font-size:9.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+    padding:3px 8px;border-radius:20px;white-space:nowrap;}
+  .a2-track{grid-column:1/-1;height:6px;border-radius:3px;background:rgba(140,101,0,.20);overflow:hidden;}
+  .a2-track i{display:block;height:100%;border-radius:3px;transform-origin:left;
+    animation:a2fill 2.8s cubic-bezier(.22,1,.36,1) infinite;}
+  @keyframes a2fill{0%{transform:scaleX(.05)}55%,100%{transform:scaleX(1)}}
+
+  /* mini gantt */
+  .a2-gantt{display:grid;gap:9px;}
+  .a2-bar{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:center;}
+  .a2-bar .lbl{font-size:11.5px;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .a2-lane{position:relative;height:17px;border-radius:5px;background:#FDF4E2;border:1px solid rgba(140,101,0,.18);}
+  .a2-lane i{position:absolute;top:2px;bottom:2px;border-radius:4px;
+    background:linear-gradient(90deg,var(--sun),var(--sun-deep));opacity:.85;}
+
+  /* Ray assistant strip */
+  .a2-ray .a2-body{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;}
+  .a2-orb{width:46px;height:46px;border-radius:50%;flex-shrink:0;
+    background:radial-gradient(ellipse at 34% 32%,#FFF7EC 0%,#FFB05C 22%,#FF7A22 52%,#E0641E 78%,#B4470F 100%);
+    box-shadow:0 0 0 5px rgba(224,100,30,.14),0 0 0 13px rgba(224,100,30,.07),0 8px 22px rgba(196,82,19,.42);
+    animation:a2orb 3.4s ease-in-out infinite;}
+  @keyframes a2orb{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+  .a2-ask{font-size:13.5px;color:var(--navy);font-weight:600;line-height:1.5;}
+  .a2-caret{display:inline-block;width:2px;height:15px;background:var(--sun-deep);
+    vertical-align:-3px;margin-left:2px;animation:a2caret 1s step-end infinite;}
+  @keyframes a2caret{0%,50%{opacity:1}51%,100%{opacity:0}}
+  .a2-ans{margin-top:6px;font-size:12.5px;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:7px;align-items:center;}
+  .a2-pill{font-size:10.5px;font-weight:800;letter-spacing:.6px;background:var(--gold-soft);
+    border:1px solid rgba(140,101,0,.3);color:#8C6500;padding:3px 9px;border-radius:20px;}
+
+  /* connectors */
+  @keyframes a2flow{0%{top:-38%}100%{top:100%}}
+
+  /* layer selector */
+  .a2keys{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .a2key{display:flex;align-items:center;gap:9px;background:#fff;border:1.5px solid var(--border-soft);
+    border-radius:12px;padding:10px 15px;cursor:pointer;font-family:inherit;text-align:left;
+    transition:all .25s;box-shadow:var(--shadow);}
+  .a2key:hover{border-color:rgba(224,100,30,.45);transform:translateY(-2px);}
+  .a2key.on{border-color:var(--sun);box-shadow:0 8px 22px rgba(224,100,30,.22);}
+  .a2key .kd{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+  .a2key .kn{font-size:13.5px;font-weight:800;color:var(--navy);}
+  .a2key .kt{font-size:11.5px;color:var(--text-muted);display:block;margin-top:1px;}
+
+  @media(prefers-reduced-motion:reduce){
+    .a2-spark i,.a2-track i,.a2-orb,.a2-caret,.a2link i::after{animation:none;}
+    .a2-track i{transform:scaleX(1);}
+  }
+  @media(max-width:860px){
+    .a2row2{grid-template-columns:1fr;}
+    .a2link{height:26px;}
+    .a2link i{left:50%!important;}
+    .a2link-2 i:nth-child(2){display:none;}
+    .a2-stats{grid-template-columns:repeat(2,1fr);}
+    .a2-ray .a2-body{grid-template-columns:1fr;}
+    .a2.dim{opacity:1;}
+    .a2-sub{display:none;}
+  }
+
   /* ARCHITECTURE DIAGRAM */
   .arch{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px;}
   .arch-core{grid-column:1/-1;text-align:center;background:linear-gradient(135deg,#FFF1D2,#FFE6B4);
@@ -429,22 +538,154 @@
   <div class="container">
     <div class="section-tag">Architecture</div>
     <h2 class="section-heading">One platform across growth and operations</h2>
-    <div class="arch"><div class="arch-core">
-      <div class="layer-name">Core</div>
-      <p class="section-sub" style="margin:8px auto 0;">The shared enterprise context, configuration and continuity layer.</p>
-    </div><div class="arch-ray">
-      <div class="layer-name">Ray</div>
-      <p>Context-aware assistance available throughout the platform.</p>
-    </div><div class="arch-cell" style="border-top:4px solid var(--a3);">
-      <div class="layer-name">Horizon</div>
-      <p style="margin-top:8px;color:var(--text-muted);font-size:15px;line-height:1.7;">Market, growth, relationship and commercial capabilities.</p>
-    </div><div class="arch-cell" style="border-top:4px solid var(--a4);">
-      <div class="layer-name">Pulse</div>
-      <p style="margin-top:8px;color:var(--text-muted);font-size:15px;line-height:1.7;">Product, project, operational and asset capabilities.</p>
-    </div></div>
-    <div style="margin-top:28px;"><a class="btn-ghost" href="platform.html">Explore the Platform</a></div>
+    <p class="section-sub">Core holds the context. Ray works from it. Horizon and Pulse draw on the same organizational picture, and what they produce returns to Core as continuing context.</p>
+
+    <div class="a2wrap">
+      <div class="a2row2">
+        <div class="a2 a2-horizon " data-layer="horizon">
+      <div class="a2-head"><span class="a2-key" style="background:#CC9900"></span>
+        <span class="a2-name">Horizon</span><span class="a2-sub">Opportunities</span></div>
+      <div class="a2-body">
+      <div class="a2-list">
+        <div class="a2-item">
+          <span class="t">Regional expansion, north corridor</span>
+          <span class="a2-chip" style="background:#F7EDC8;color:#8C6500;">Qualified</span>
+          <span class="a2-track"><i style="width:78%;background:linear-gradient(90deg,#CC9900,#B07E00)"></i></span>
+        </div>
+        <div class="a2-item">
+          <span class="t">Precast supply tender</span>
+          <span class="a2-chip" style="background:#FFEDD0;color:#C45213;">Bid</span>
+          <span class="a2-track"><i style="width:54%;background:linear-gradient(90deg,#E0641E,#C45213);animation-delay:.5s"></i></span>
+        </div>
+        <div class="a2-item">
+          <span class="t">Distributor partnership</span>
+          <span class="a2-chip" style="background:#F2EFE7;color:#5A554C;">Discovery</span>
+          <span class="a2-track"><i style="width:31%;background:linear-gradient(90deg,#D9822B,#B07E00);animation-delay:1s"></i></span>
+        </div>
+      </div></div>
+    </div>
+        <div class="a2 a2-pulse " data-layer="pulse">
+      <div class="a2-head"><span class="a2-key" style="background:#C45213"></span>
+        <span class="a2-name">Pulse</span><span class="a2-sub">Delivery schedule</span></div>
+      <div class="a2-body">
+      <div class="a2-gantt">
+        <div class="a2-bar"><span class="lbl">Plant 2 upgrade</span>
+          <span class="a2-lane"><i style="left:2%;width:58%"></i></span></div>
+        <div class="a2-bar"><span class="lbl">Steel procurement</span>
+          <span class="a2-lane"><i style="left:22%;width:34%;background:linear-gradient(90deg,#CC9900,#B07E00)"></i></span></div>
+        <div class="a2-bar"><span class="lbl">Commissioning</span>
+          <span class="a2-lane"><i style="left:52%;width:40%;background:linear-gradient(90deg,#D9822B,#C45213)"></i></span></div>
+        <div class="a2-bar"><span class="lbl">Handover</span>
+          <span class="a2-lane"><i style="left:84%;width:14%;background:linear-gradient(90deg,#8C6500,#B07E00)"></i></span></div>
+      </div></div>
+    </div>
+      </div>
+      <div class="a2link a2link-2"><i></i><i></i></div>
+      <div class="a2 a2-core " data-layer="core">
+      <div class="a2-head"><span class="a2-key" style="background:#8C6500"></span>
+        <span class="a2-name">Core</span><span class="a2-sub">Shared context, configuration, continuity</span></div>
+      <div class="a2-body">
+      <div class="a2-stats">
+        <div class="a2-stat"><div class="k">Organizations</div><div class="v">1,284</div><div class="a2-spark"><i style="height:44%;animation-delay:0.0s"></i><i style="height:62%;animation-delay:0.2s"></i><i style="height:51%;animation-delay:0.4s"></i><i style="height:78%;animation-delay:0.5s"></i><i style="height:66%;animation-delay:0.7s"></i><i style="height:90%;animation-delay:0.9s"></i><i style="height:72%;animation-delay:1.1s"></i></div></div>
+        <div class="a2-stat"><div class="k">Projects</div><div class="v">96</div><div class="a2-spark"><i style="height:70%;animation-delay:0.0s"></i><i style="height:48%;animation-delay:0.2s"></i><i style="height:82%;animation-delay:0.4s"></i><i style="height:60%;animation-delay:0.5s"></i><i style="height:74%;animation-delay:0.7s"></i><i style="height:55%;animation-delay:0.9s"></i><i style="height:88%;animation-delay:1.1s"></i></div></div>
+        <div class="a2-stat"><div class="k">Assets</div><div class="v">3,410</div><div class="a2-spark"><i style="height:52%;animation-delay:0.0s"></i><i style="height:74%;animation-delay:0.2s"></i><i style="height:63%;animation-delay:0.4s"></i><i style="height:46%;animation-delay:0.5s"></i><i style="height:80%;animation-delay:0.7s"></i><i style="height:68%;animation-delay:0.9s"></i><i style="height:58%;animation-delay:1.1s"></i></div></div>
+        <div class="a2-stat"><div class="k">Documents</div><div class="v">12,430</div><div class="a2-spark"><i style="height:61%;animation-delay:0.0s"></i><i style="height:55%;animation-delay:0.2s"></i><i style="height:76%;animation-delay:0.4s"></i><i style="height:84%;animation-delay:0.5s"></i><i style="height:59%;animation-delay:0.7s"></i><i style="height:71%;animation-delay:0.9s"></i><i style="height:92%;animation-delay:1.1s"></i></div></div>
+      </div>
+      <div class="a2-ledger">
+        <div class="a2-row"><b>Roles and permissions</b> scoped by region, business unit and workflow
+          <span class="tail">Configured</span></div>
+        <div class="a2-row"><b>Activity and results log</b> every output from Horizon, Pulse and Ray
+          <span class="tail">Traceable</span></div>
+      </div></div>
+    </div>
+      <div class="a2link a2link-1"><i></i></div>
+      <div class="a2 a2-ray " data-layer="ray">
+      <div class="a2-head"><span class="a2-key" style="background:#E0641E"></span>
+        <span class="a2-name">Ray</span><span class="a2-sub">Working from the context around each user</span></div>
+      <div class="a2-body">
+      <div class="a2-orb"></div>
+      <div>
+        <div class="a2-ask" id="a2ask"></div>
+        <div class="a2-ans" id="a2ans" style="opacity:0;transition:opacity .5s;">
+          <span class="a2-pill">3 opportunities</span>
+          <span class="a2-pill">1 capacity constraint</span>
+          <span class="a2-pill">Sourced from Core</span>
+          <span>traced back to the plan and the log</span>
+        </div>
+      </div></div>
+    </div>
+    </div>
+
+    <div class="a2keys"><button class="a2key" data-key="core" type="button">
+        <span class="kd" style="background:#8C6500"></span>
+        <span><span class="kn">Core</span><span class="kt">The shared context every layer works from</span></span>
+      </button><button class="a2key" data-key="ray" type="button">
+        <span class="kd" style="background:#E0641E"></span>
+        <span><span class="kn">Ray</span><span class="kt">Assistance wherever the work happens</span></span>
+      </button><button class="a2key" data-key="horizon" type="button">
+        <span class="kd" style="background:#CC9900"></span>
+        <span><span class="kn">Horizon</span><span class="kt">Markets, growth and commercial</span></span>
+      </button><button class="a2key" data-key="pulse" type="button">
+        <span class="kd" style="background:#C45213"></span>
+        <span><span class="kn">Pulse</span><span class="kt">Products, projects and operations</span></span>
+      </button></div>
+    <div style="margin-top:26px;"><a class="btn-ghost" href="platform.html">Explore the Platform</a></div>
   </div>
 </section>
+<script>
+(function(){
+  var order=["core","ray","horizon","pulse"];
+  var panels={},keys={},i=0,timer=null,held=false;
+  document.querySelectorAll('.a2[data-layer]').forEach(function(p){panels[p.dataset.layer]=p;});
+  document.querySelectorAll('.a2key').forEach(function(b){
+    keys[b.dataset.key]=b;
+    b.addEventListener('click',function(){held=true;focus(b.dataset.key);stop();});
+    b.addEventListener('mouseenter',function(){focus(b.dataset.key);});
+  });
+  function focus(k){
+    order.forEach(function(o){
+      panels[o].classList.toggle('on',o===k);
+      panels[o].classList.toggle('dim',o!==k);
+      keys[o].classList.toggle('on',o===k);
+    });
+  }
+  function clear(){
+    order.forEach(function(o){
+      panels[o].classList.remove('on','dim'); keys[o].classList.remove('on');
+    });
+  }
+  function stop(){ if(timer){clearInterval(timer);timer=null;} }
+
+  // Ray types its question once the section is on screen
+  var Q="Which regional opportunities depend on Plant 2 capacity?";
+  var ask=document.getElementById('a2ask'),ans=document.getElementById('a2ans'),typed=false;
+  function type(){
+    if(typed) return; typed=true;
+    var n=0;
+    (function step(){
+      ask.innerHTML=Q.slice(0,n)+'<span class="a2-caret"></span>';
+      if(n++<Q.length){ setTimeout(step, 26); }
+      else { ask.innerHTML=Q; ans.style.opacity=1; }
+    })();
+  }
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){ ask.textContent=Q; ans.style.opacity=1; return; }
+
+  var wrap=document.querySelector('.a2wrap');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es,ob){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          type();
+          if(!held && !timer){ timer=setInterval(function(){ focus(order[i%order.length]); i++; }, 2600); }
+        } else { stop(); if(!held) clear(); }
+      });
+    },{threshold:.25}).observe(wrap);
+  } else { type(); }
+
+  wrap.addEventListener('mouseleave',function(){ if(!held) clear(); });
+})();
+</script>
 <section class="imgsec imgsec-r img-construction">
   <div class="container">
    <div class="sec-split">
