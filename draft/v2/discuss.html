@@ -150,6 +150,17 @@
   .area-sec{padding:76px 0;min-height:720px;display:flex;align-items:center;}
   .area-sec > .container{width:100%;}
   .fam-band{min-height:470px;}
+  /* a photo free area section still has to fill its width, or it reads as a missing image */
+  .split2{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;}
+  .split2 > *{min-width:0;}
+  .split2 .section-sub{max-width:none;}
+  .split2-panel{background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px 32px;
+    box-shadow:var(--shadow);position:relative;overflow:hidden;}
+  .split2-panel::after{content:'';position:absolute;top:-70px;right:-50px;width:230px;height:230px;border-radius:50%;
+    background:radial-gradient(ellipse,rgba(204,153,0,.20) 0%,rgba(224,100,30,.08) 45%,transparent 70%);pointer-events:none;}
+  .split2-panel h4{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#8C6500;margin-bottom:14px;}
+  .split2-panel .tick{margin-top:0;}
+  .split2-panel .tick li{font-size:15px;margin-bottom:11px;}
   .area-sec .card-num{margin-bottom:16px;}
   .img-industrial::before{background-image:url('img-industrial.jpg');}
   .img-operations::before{background-image:url('img-operations.jpg');}
@@ -339,6 +350,7 @@
     .container{padding:0 20px;}
     .sun-visual{transform:scale(.62);margin:-46px 0;}
     .area-sec{min-height:0;padding:60px 0;}
+    .split2{grid-template-columns:1fr;gap:28px;}
     .chip{max-width:150px;font-size:11px;}
     section{padding:64px 0;}
     .grid2,.grid3,.grid4,.people,.arch{grid-template-columns:1fr;}
