@@ -321,17 +321,20 @@
   .cardimg:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(224,100,30,.14);
     border-color:rgba(224,100,30,.4);}
   .cardimg .ph{aspect-ratio:16/9;background-size:cover;background-position:center 45%;
-    background-color:#F3E6C8;position:relative;}
+    background-color:#F3E6C8;}
   .cardimg .ph.empty{display:flex;align-items:center;justify-content:center;
-    color:#B9A87E;font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;text-align:center;padding:12px;}
+    color:#B9A87E;font-size:11.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;
+    text-align:center;padding:12px;}
   .cardimg .bd{padding:22px 24px 26px;}
   .cardimg h3{font-size:17.5px;font-weight:800;color:var(--navy);margin-bottom:8px;}
   .cardimg p{font-size:14px;color:var(--text-muted);line-height:1.7;}
   .opt-label{background:var(--navy);color:#fff;font-size:12px;font-weight:800;letter-spacing:2px;
-    text-transform:uppercase;padding:8px 18px;border-radius:6px;display:inline-block;margin-bottom:6px;}
+    text-transform:uppercase;padding:8px 18px;border-radius:6px;display:inline-block;}
   .verdict{background:#fff;border-left:4px solid var(--sun);border-radius:10px;padding:18px 22px;
-    margin-top:18px;font-size:15px;color:var(--text-muted);line-height:1.75;max-width:820px;}
-  .imgsec-mat::before{background-image:url('area-materials.jpg');}
+    margin-top:20px;font-size:15px;color:var(--text-muted);line-height:1.75;max-width:860px;}
+  .verdict.bad{border-left-color:#C00000;}
+  .imgsec-con::before{background-image:url('area-construction.jpg');}
+  .imgsec-dis::before{background-image:url('area-distribution.jpg');}
 </style>
 </head>
 <body>
@@ -348,51 +351,66 @@
     </div>
   </div>
 </nav>
-<section style="padding:56px 0 34px;">
+<section style="padding:52px 0 30px;">
   <div class="container">
     <div class="section-tag">Scratch page</div>
     <h1 class="section-heading" style="font-size:clamp(26px,3.4vw,40px);">Two ways to use the six area photos</h1>
-    <p class="section-sub">Same photo, same page width. Pick the one you prefer and I will build the
-      Built Industry page that way. This page gets deleted afterwards.</p>
+    <p class="section-sub">Your real photos, at real page width. Pick A or B and I will build the
+      Built Industry page that way, then delete this page.</p>
   </div>
 </section>
 <div class="sun-divider"></div>
-<section style="padding:48px 0 10px;">
-  <div class="container"><span class="opt-label">Option A &nbsp;&middot;&nbsp; Full bleed section</span></div>
-</section>
-<section class="imgsec imgsec-l imgsec-mat" style="padding:80px 0;">
+<section style="padding:44px 0 8px;"><div class="container">
+  <span class="opt-label">Option A &nbsp;&middot;&nbsp; Full bleed section</span>
+  <p class="section-sub" style="margin-top:16px;">Works when the photo has a quiet side. The
+    construction shot below has open sky on the right, so the copy sits cleanly on it.</p>
+</div></section>
+<section class="imgsec imgsec-l imgsec-con" style="padding:78px 0;">
   <div class="container">
    <div class="sec-split">
-    <div class="section-tag">Operating area 1</div>
-    <h2 class="section-heading">Materials and Manufacturing</h2>
-    <p class="section-sub">The organizations that develop and produce the materials, equipment, systems and fixtures incorporated into built assets.</p>
-    <ul class="tick"><li>Raw and processed materials</li><li>Building products and assemblies</li><li>Equipment, machinery and controls</li><li>Fixtures, finishes and specialized systems</li><li>Industrial and off-site manufacturing</li></ul>
+    <div class="section-tag">Operating area 4</div>
+    <h2 class="section-heading">Construction and Professional Services</h2>
+    <p class="section-sub">The constructors, specialists and advisers that plan, design, approve and deliver built assets.</p>
+    <ul class="tick"><li>General contractors and trade contractors</li><li>Architects, engineers and technical consultants</li><li>Project, cost and construction managers</li><li>Surveying, testing and inspection services</li><li>Specialist, legal, financial and advisory services</li></ul>
    </div>
   </div>
 </section>
-<section style="padding:24px 0 60px;">
+<section style="padding:30px 0 8px;"><div class="container">
+  <div class="verdict bad"><strong>And when it does not.</strong> The timber yard below is busy edge to
+    edge with the people dead centre, so the copy lands on texture and the three workers end up under
+    the headline. Two of your four photos so far have this shape. Full bleed only flatters photos
+    composed with empty space on one side.</div>
+</div></section>
+<section class="imgsec imgsec-r imgsec-dis" style="padding:78px 0;">
   <div class="container">
-    <div class="verdict"><strong>What this costs.</strong> Each area becomes its own full width section,
-      so the Built Industry page grows to roughly three times its current length, and each photo ships
-      at 2400px, about 800 KB. Six of them is around 4.8 MB on one page. The payoff is that every area
-      gets a cinematic moment.</div>
+   <div class="sec-split">
+    <div class="section-tag">Operating area 2</div>
+    <h2 class="section-heading">Distribution and Logistics</h2>
+    <p class="section-sub">The commercial and physical networks that move products, materials and equipment to the places where they are sold, installed and used.</p>
+    <ul class="tick"><li>Wholesale and distribution</li><li>Retail and dealer networks</li><li>Warehousing and inventory</li><li>Transportation and logistics</li><li>Supply-chain and fulfilment services</li></ul>
+   </div>
   </div>
 </section>
+<section style="padding:26px 0 60px;"><div class="container">
+  <div class="verdict"><strong>What Option A costs.</strong> Each area becomes its own full width
+    section, so the Built Industry page grows to roughly three times its length, and each photo ships
+    at 2400px. Six of them is around 4.5 MB on one page.</div>
+</div></section>
 <div class="sun-divider"></div>
-<section class="band-alt" style="padding:48px 0 80px;">
+<section class="band-alt" style="padding:46px 0 76px;">
   <div class="container">
     <span class="opt-label">Option B &nbsp;&middot;&nbsp; Photo headed cards</span>
     <h2 class="section-heading" style="margin-top:18px;">Six connected operating areas</h2>
-    <div class="grid3"><div class="cardimg"><div class="ph" style="background-image:url('area-materials-card.jpg');"></div><div class="bd"><h3>Materials and Manufacturing</h3><p>The organizations that develop and produce the materials, equipment, systems and fixtures incorporated into built assets.</p></div></div><div class="cardimg"><div class="ph empty">photo 2<br>not downloaded yet</div><div class="bd"><h3>Distribution and Logistics</h3><p>The commercial and physical networks that move products, materials and equipment to the places where they are sold, installed and used.</p></div></div><div class="cardimg"><div class="ph empty">photo 3<br>not downloaded yet</div><div class="bd"><h3>Asset Owners and Investors</h3><p>The private, public and institutional organizations that fund, commission, own and oversee built assets.</p></div></div><div class="cardimg"><div class="ph empty">photo 4<br>not downloaded yet</div><div class="bd"><h3>Construction and Professional Services</h3><p>The constructors, specialists and advisers that plan, design, approve and deliver built assets.</p></div></div><div class="cardimg"><div class="ph empty">photo 5<br>not downloaded yet</div><div class="bd"><h3>Asset Transactions and Operations</h3><p>The organizations and services that commercialize, occupy, operate, maintain and renew completed assets.</p></div></div><div class="cardimg"><div class="ph empty">photo 6<br>not downloaded yet</div><div class="bd"><h3>Industry Institutions and Enablement</h3><p>The organizations that establish requirements, develop capability and represent the interests of participants across the industry.</p></div></div></div>
-    <div class="verdict"><strong>What this costs.</strong> The page keeps its current length and the six
-      areas stay side by side and comparable. Each photo ships at 1000px, about 170 KB, so all six come
-      to roughly 1 MB. Displayed small, they are sharper per pixel than the full bleed version.</div>
+    <div class="grid3"><div class="cardimg"><div class="ph" style="background-image:url('area-materials-card.jpg');"></div><div class="bd"><h3>Materials and Manufacturing</h3><p>The organizations that develop and produce the materials, equipment, systems and fixtures incorporated into built assets.</p></div></div><div class="cardimg"><div class="ph" style="background-image:url('area-distribution-card.jpg');"></div><div class="bd"><h3>Distribution and Logistics</h3><p>The commercial and physical networks that move products, materials and equipment to the places where they are sold, installed and used.</p></div></div><div class="cardimg"><div class="ph" style="background-image:url('area-owners-card.jpg');"></div><div class="bd"><h3>Asset Owners and Investors</h3><p>The private, public and institutional organizations that fund, commission, own and oversee built assets.</p></div></div><div class="cardimg"><div class="ph" style="background-image:url('area-construction-card.jpg');"></div><div class="bd"><h3>Construction and Professional Services</h3><p>The constructors, specialists and advisers that plan, design, approve and deliver built assets.</p></div></div><div class="cardimg"><div class="ph empty">area-operations<br>not downloaded yet</div><div class="bd"><h3>Asset Transactions and Operations</h3><p>The organizations and services that commercialize, occupy, operate, maintain and renew completed assets.</p></div></div><div class="cardimg"><div class="ph empty">area-institutions<br>not downloaded yet</div><div class="bd"><h3>Industry Institutions and Enablement</h3><p>The organizations that establish requirements, develop capability and represent the interests of participants across the industry.</p></div></div></div>
+    <div class="verdict"><strong>What Option B costs.</strong> The page keeps its length, the six areas
+      stay side by side and comparable, and composition stops mattering because no text sits on the
+      photo. Each card image ships at 1000px, roughly 150 KB, so all six come to about 1 MB.</div>
   </div>
 </section>
-<section class="cta-band" style="padding:70px 0;">
+<section class="cta-band" style="padding:66px 0;">
   <div class="container">
-    <h2>Which one?</h2>
-    <p>Tell me A or B and I will build it, then this page goes away.</p>
+    <h2>A or B?</h2>
+    <p>Tell me which and I will build it, then this page goes away.</p>
   </div>
 </section>
 <footer>
