@@ -1,0 +1,8 @@
+# originals stay local, only the processed versions ship
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.mp4
+*.mov
+!README.md
