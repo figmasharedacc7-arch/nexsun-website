@@ -135,8 +135,8 @@
   .imgsec::after{content:"";position:absolute;inset:0;z-index:-1;}
   .imgsec-r::before{background-position:right center;}
   .imgsec-l::before{background-position:left center;}
-  .imgsec-r::after{background:linear-gradient(100deg,#FFF6E2 0%,#FFF6E2 34%,rgba(255,246,226,.95) 44%,rgba(255,246,226,.78) 54%,rgba(255,245,222,.50) 64%,rgba(255,244,218,.24) 76%,rgba(255,243,216,.08) 100%);}
-  .imgsec-l::after{background:linear-gradient(260deg,#FFF6E2 0%,#FFF6E2 34%,rgba(255,246,226,.95) 44%,rgba(255,246,226,.78) 54%,rgba(255,245,222,.50) 64%,rgba(255,244,218,.24) 76%,rgba(255,243,216,.08) 100%);}
+  .imgsec-r::after{background:linear-gradient(100deg,#FFF6E2 0%,#FFF6E2 44%,rgba(255,246,226,.97) 53%,rgba(255,246,226,.86) 62%,rgba(255,245,222,.58) 72%,rgba(255,244,218,.26) 85%,rgba(255,243,216,.05) 100%);}
+  .imgsec-l::after{background:linear-gradient(260deg,#FFF6E2 0%,#FFF6E2 44%,rgba(255,246,226,.97) 53%,rgba(255,246,226,.86) 62%,rgba(255,245,222,.58) 72%,rgba(255,244,218,.26) 85%,rgba(255,243,216,.05) 100%);}
   .img-construction::before{background-image:url('img-construction.jpg');}
   .bg-materials::before{background-image:url('area-materials.jpg');}
   .bg-distribution::before{background-image:url('area-distribution.jpg');}
@@ -147,13 +147,15 @@
   .bg-horizon::before{background-image:url('fam-horizon.jpg');}
   .bg-pulse::before{background-image:url('fam-pulse.jpg');}
   .bg-integration::before{background-image:url('plat-integration.jpg');}
-  .area-sec{padding:76px 0;}
+  .area-sec{padding:76px 0;min-height:720px;display:flex;align-items:center;}
+  .area-sec > .container{width:100%;}
+  .fam-band{min-height:470px;}
   .area-sec .card-num{margin-bottom:16px;}
   .img-industrial::before{background-image:url('img-industrial.jpg');}
   .img-operations::before{background-image:url('img-operations.jpg');}
   .sec-split{display:block;}
-  .imgsec-r .sec-split{max-width:66%;}
-  .imgsec-l .sec-split{max-width:66%;margin-left:auto;}
+  .imgsec-r .sec-split{max-width:58%;}
+  .imgsec-l .sec-split{max-width:58%;margin-left:auto;}
 
   .vidband{position:relative;overflow:hidden;isolation:isolate;text-align:center;
     border-top:1px solid rgba(204,153,0,.25);border-bottom:1px solid rgba(204,153,0,.25);
@@ -248,7 +250,7 @@
   details.acc>summary::after{content:'+';margin-left:auto;font-size:22px;font-weight:400;color:var(--sun-deep);line-height:1;flex-shrink:0;}
   details.acc[open]>summary::after{content:'\2212';}
   .acc-title{font-size:17px;font-weight:800;color:var(--navy);}
-  .acc-desc{font-size:14px;color:var(--text-muted);margin-top:4px;line-height:1.6;}
+  .acc-desc{display:block;font-size:14px;color:var(--text-muted);margin-top:4px;line-height:1.6;}
   .acc-body{padding:0 24px 22px 24px;}
   .acc-bar{width:5px;border-radius:3px;align-self:stretch;flex-shrink:0;min-height:42px;}
 
@@ -336,6 +338,7 @@
   @media(max-width:760px){
     .container{padding:0 20px;}
     .sun-visual{transform:scale(.62);margin:-46px 0;}
+    .area-sec{min-height:0;padding:60px 0;}
     .chip{max-width:150px;font-size:11px;}
     section{padding:64px 0;}
     .grid2,.grid3,.grid4,.people,.arch{grid-template-columns:1fr;}
@@ -376,7 +379,7 @@
   </div>
 </section>
 <div class="sun-divider"></div>
-<section id="horizon" class="imgsec imgsec-r bg-horizon area-sec">
+<section id="horizon" class="imgsec imgsec-r bg-horizon area-sec fam-band">
   <div class="container">
    <div class="sec-split">
     <div class="section-tag">Capability family</div>
@@ -430,13 +433,11 @@
 </details>
 </div>
 </section>
-<section id="pulse" class="imgsec imgsec-l bg-pulse area-sec">
+<section id="pulse" class="band-warm" style="padding:76px 0 40px;">
   <div class="container">
-   <div class="sec-split">
     <div class="section-tag">Capability family</div>
     <h2 class="section-heading">Pulse</h2>
     <p class="section-sub">Product, project, operational and asset capabilities.</p>
-   </div>
   </div>
 </section>
 <section class="band-alt" style="padding:44px 0 88px;">
