@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy | TwoSuns</title>
-<meta name="description" content="How TwoSuns collects, uses, and protects your personal and organisational data. We are committed to transparency, security, and your rights under applicable privacy law.">
+<title>Lifecycle diagram experiment | TwoSuns</title>
+<meta name="description" content="Two takes on the Built Industry visual direction.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="logo-mini.svg">
 <style>
@@ -368,17 +368,73 @@
     .layer{padding:24px;}
   }
 
-  .legal{max-width:860px;}
-  .legal h2{font-size:23px;font-weight:800;color:var(--navy);margin:42px 0 12px;padding-top:20px;
-    border-top:1px solid var(--border-soft);}
-  .legal h3{font-size:17.5px;font-weight:800;color:var(--navy);margin:26px 0 8px;}
-  .legal p{color:var(--text-muted);font-size:15.5px;line-height:1.82;margin-bottom:14px;}
-  .legal ul{margin:0 0 18px 0;list-style:none;}
-  .legal li{position:relative;padding-left:22px;color:var(--text-muted);font-size:15.5px;line-height:1.75;margin-bottom:9px;}
-  .legal li::before{content:'';position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:2px;
-    background:linear-gradient(135deg,var(--sun),var(--gold));}
-  .legal strong{color:var(--navy);font-weight:700;}
-  .legal a{color:var(--sun-deep);font-weight:600;text-decoration:underline;}
+  .lab-note{background:#fff;border-left:4px solid var(--sun);border-radius:10px;padding:16px 20px;
+    margin:18px 0 30px;font-size:15px;color:var(--text-muted);line-height:1.75;max-width:880px;}
+  .lab-tag{background:var(--navy);color:#fff;font-size:12px;font-weight:800;letter-spacing:2px;
+    text-transform:uppercase;padding:8px 18px;border-radius:6px;display:inline-block;}
+
+  /* ---- take one: radial hub ---- */
+  .hub{position:relative;max-width:1000px;margin:34px auto 0;aspect-ratio:1000/780;}
+  .hub svg{position:absolute;inset:0;width:100%;height:100%;}
+  .hub-node{position:absolute;transform:translate(-50%,-50%);width:190px;text-align:center;
+    background:#fff;border:1px solid rgba(140,101,0,.28);border-radius:14px;padding:13px 12px;
+    box-shadow:0 8px 24px rgba(60,50,30,.12);cursor:default;
+    transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s;}
+  .hub-node:hover{transform:translate(-50%,-50%) scale(1.07);box-shadow:0 16px 38px rgba(224,100,30,.24);
+    border-color:rgba(224,100,30,.55);}
+  .hub-node .n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;
+    border-radius:8px;color:#fff;font-size:12px;font-weight:900;margin-bottom:7px;}
+  .hub-node .t{font-size:13px;font-weight:800;color:var(--navy);line-height:1.35;}
+  .hub-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;
+    width:190px;pointer-events:none;}
+  .hub-core .k{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#8C6500;}
+  .hub-core .v{font-size:19px;font-weight:900;color:var(--navy);line-height:1.2;margin-top:4px;}
+  .hub-core .c{font-size:12px;color:var(--text-muted);margin-top:5px;}
+  .stage-lab{position:absolute;transform:translate(-50%,-50%);font-size:10px;font-weight:700;
+    letter-spacing:.3px;color:#7A6A4A;white-space:nowrap;pointer-events:none;}
+  .wire{stroke:rgba(196,82,19,.28);stroke-width:2;fill:none;}
+  .wire-flow{stroke:#E0641E;stroke-width:2.4;fill:none;stroke-linecap:round;
+    stroke-dasharray:7 190;animation:labflow 3.4s linear infinite;}
+  @keyframes labflow{to{stroke-dashoffset:-197;}}
+  .ring{fill:none;stroke:rgba(140,101,0,.22);stroke-width:1.5;}
+  .ring-live{fill:none;stroke:#CC9900;stroke-width:3;stroke-linecap:round;
+    stroke-dasharray:70 674;animation:labring 9s linear infinite;}
+  @keyframes labring{to{stroke-dashoffset:-744;}}
+  .tick{stroke:rgba(140,101,0,.45);stroke-width:2;stroke-linecap:round;}
+
+  /* ---- take two: spine ---- */
+  .spine{margin-top:34px;}
+  .spine-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .spine-card{background:#fff;border:1px solid rgba(140,101,0,.24);border-radius:14px;padding:16px 18px;
+    box-shadow:0 8px 24px rgba(60,50,30,.09);transition:transform .3s,box-shadow .3s;}
+  .spine-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(224,100,30,.20);}
+  .spine-card .t{font-size:14px;font-weight:800;color:var(--navy);line-height:1.35;}
+  .spine-bar{position:relative;margin:26px 0;height:74px;border-radius:14px;
+    background:linear-gradient(90deg,#FFF1D6,#FDE2B4,#FFF1D6);border:1px solid rgba(140,101,0,.28);
+    display:flex;align-items:center;justify-content:space-between;padding:0 22px;overflow:hidden;}
+  .spine-bar::after{content:'';position:absolute;top:0;bottom:0;width:130px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);
+    animation:labsweep 5s linear infinite;}
+  @keyframes labsweep{0%{left:-130px}100%{left:100%}}
+  .spine-stage{position:relative;z-index:2;font-size:10.5px;font-weight:800;letter-spacing:.4px;
+    color:#7A6A4A;text-align:center;line-height:1.25;}
+  .spine-stage span{display:block;width:9px;height:9px;border-radius:50%;background:var(--sun);
+    margin:0 auto 6px;box-shadow:0 0 0 3px rgba(224,100,30,.16);}
+  .spine-legs{display:grid;grid-template-columns:repeat(6,1fr);height:26px;}
+  .spine-legs i{border-left:2px dashed rgba(196,82,19,.35);height:100%;margin:0 auto;width:0;}
+
+  @media(max-width:900px){
+    .hub{display:none;}
+    .hub-fallback{display:block;}
+    .spine-row{grid-template-columns:1fr;}
+    .spine-bar{flex-wrap:wrap;height:auto;padding:16px;gap:12px;justify-content:center;}
+    .spine-legs{display:none;}
+  }
+  .hub-fallback{display:none;}
+  .hub-fallback .card{margin-bottom:12px;}
+  @media(prefers-reduced-motion:reduce){
+    .wire-flow,.ring-live,.spine-bar::after{animation:none;}
+  }
 </style>
 </head>
 <body>
@@ -395,75 +451,67 @@
     </div>
   </div>
 </nav>
-<section class="hero">
-  <div class="hero-glow"></div>
+<section style="padding:52px 0 26px;">
   <div class="container">
-    <div class="hero-eyebrow"><span class="dot"></span>Legal</div>
-    <h1 style="max-width:20ch;">Privacy Policy</h1>
-    <p class="hero-sub">How TwoSuns collects, uses, and protects your personal and organisational data. We are committed to transparency, security, and your rights under applicable privacy law.</p>
+    <div class="section-tag">Experiment</div>
+    <h1 class="section-heading" style="font-size:clamp(26px,3.4vw,40px);">The built-asset lifecycle, two ways</h1>
+    <p class="section-sub">The document asks to place the lifecycle at the centre, arrange the six
+      operating areas around it, and use connecting lines to show continuing exchange. Two takes below.
+      Nothing here touches the Built Industry page. Pick one and I will build it there.</p>
   </div>
 </section>
 <div class="sun-divider"></div>
+
+<section class="band-alt">
+  <div class="container">
+    <span class="lab-tag">Take one &nbsp;&middot;&nbsp; Radial hub</span>
+    <div class="lab-note">Literal reading of the brief. The lifecycle sits at the centre with its eleven
+      stages marked around the disc, the six operating areas orbit it, and pulses travel the connecting
+      lines outward. Strongest argument that the industry is one connected system. Costs vertical space
+      and needs a stacked fallback on phones.</div>
+<div class="hub">
+  <svg viewBox="0 0 1000 780" aria-hidden="true">
+    <path class="wire" d="M500 208 L500 156"/><path class="wire-flow" d="M500 208 L500 156" style="animation-delay:0.0s"/><path class="wire" d="M658 299 L746 273"/><path class="wire-flow" d="M658 299 L746 273" style="animation-delay:0.6s"/><path class="wire" d="M658 481 L746 507"/><path class="wire-flow" d="M658 481 L746 507" style="animation-delay:1.1s"/><path class="wire" d="M500 572 L500 624"/><path class="wire-flow" d="M500 572 L500 624" style="animation-delay:1.7s"/><path class="wire" d="M342 481 L254 507"/><path class="wire-flow" d="M342 481 L254 507" style="animation-delay:2.2s"/><path class="wire" d="M342 299 L254 273"/><path class="wire-flow" d="M342 299 L254 273" style="animation-delay:2.8s"/>
+    <circle class="ring" cx="500" cy="390" r="118"/>
+    <circle class="ring-live" cx="500" cy="390" r="118"/>
+    <line class="tick" x1="500.0" y1="272.0" x2="500.0" y2="262.0"/><line class="tick" x1="563.8" y1="290.7" x2="569.2" y2="282.3"/><line class="tick" x1="607.3" y1="341.0" x2="616.4" y2="336.8"/><line class="tick" x1="616.8" y1="406.8" x2="626.7" y2="408.2"/><line class="tick" x1="589.2" y1="467.3" x2="596.7" y2="473.8"/><line class="tick" x1="533.2" y1="503.2" x2="536.1" y2="512.8"/><line class="tick" x1="466.8" y1="503.2" x2="463.9" y2="512.8"/><line class="tick" x1="410.8" y1="467.3" x2="403.3" y2="473.8"/><line class="tick" x1="383.2" y1="406.8" x2="373.3" y2="408.2"/><line class="tick" x1="392.7" y1="341.0" x2="383.6" y2="336.8"/><line class="tick" x1="436.2" y1="290.7" x2="430.8" y2="282.3"/>
+  </svg>
+  <div class="hub-node" style="left:50.00%;top:13.33%;"><span class="n" style="background:#E0641E">1</span><div class="t">Materials and<br>Manufacturing</div></div><div class="hub-node" style="left:79.62%;top:31.67%;"><span class="n" style="background:#CC9900">2</span><div class="t">Distribution and<br>Logistics</div></div><div class="hub-node" style="left:79.62%;top:68.33%;"><span class="n" style="background:#C45213">3</span><div class="t">Asset Owners<br>and Investors</div></div><div class="hub-node" style="left:50.00%;top:86.67%;"><span class="n" style="background:#B07E00">4</span><div class="t">Construction and<br>Professional Services</div></div><div class="hub-node" style="left:20.38%;top:68.33%;"><span class="n" style="background:#D9822B">5</span><div class="t">Asset Transactions<br>and Operations</div></div><div class="hub-node" style="left:20.38%;top:31.67%;"><span class="n" style="background:#8C6500">6</span><div class="t">Industry Institutions<br>and Enablement</div></div>
+  <div class="hub-core">
+    <div class="k">At the centre</div>
+    <div class="v">The built-asset lifecycle</div>
+    <div class="c">Eleven stages, continuously exchanging</div>
+  </div>
+  <div class="stage-lab" style="left:50.00%;top:30.00%;">Planning</div><div class="stage-lab" style="left:58.43%;top:33.17%;">Investment</div><div class="stage-lab" style="left:64.19%;top:41.69%;">Design</div><div class="stage-lab" style="left:65.44%;top:52.85%;">Supply</div><div class="stage-lab" style="left:61.79%;top:63.10%;">Construction</div><div class="stage-lab" style="left:54.40%;top:69.19%;">Transaction</div><div class="stage-lab" style="left:45.60%;top:69.19%;">Use</div><div class="stage-lab" style="left:38.21%;top:63.10%;">Operation</div><div class="stage-lab" style="left:34.56%;top:52.85%;">Maintenance</div><div class="stage-lab" style="left:35.81%;top:41.69%;">Renewal</div><div class="stage-lab" style="left:41.57%;top:33.17%;">Reuse or retirement</div>
+</div>
+<div class="hub-fallback"><div class="grid3" style="margin-top:24px;"><div class="card"><span class="card-num" style="background:#E0641E;">1</span><h3>Materials and Manufacturing</h3></div><div class="card"><span class="card-num" style="background:#CC9900;">2</span><h3>Distribution and Logistics</h3></div><div class="card"><span class="card-num" style="background:#C45213;">3</span><h3>Asset Owners and Investors</h3></div><div class="card"><span class="card-num" style="background:#B07E00;">4</span><h3>Construction and Professional Services</h3></div><div class="card"><span class="card-num" style="background:#D9822B;">5</span><h3>Asset Transactions and Operations</h3></div><div class="card"><span class="card-num" style="background:#8C6500;">6</span><h3>Industry Institutions and Enablement</h3></div></div></div>
+
+  </div>
+</section>
+
+<div class="sun-divider"></div>
 <section>
   <div class="container">
-    <div class="legal">
-<h2>1. Introduction</h2>
-<p>TwoSuns (operated by AEPG Inc., "we", "us", or "our") is committed to protecting the privacy and security of all personal and organisational data entrusted to us. This Privacy Policy explains what information we collect, why we collect it, how we use it, and the rights available to you under applicable privacy legislation including Canada's <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA) and the European Union's <em>General Data Protection Regulation</em> (GDPR).</p>
-<p>By accessing or using the TwoSuns platform, website, or any related services ("Services"), you agree to the practices described in this Policy. If you do not agree, please discontinue use of the Services and contact us to have your data removed.</p>
-<h2>2. Data We Collect</h2>
-<p>We collect only the data necessary to deliver and improve the TwoSuns Services. This includes:</p>
-<h3>2.1 Account and Identity Information</h3>
-<ul><li>Full name, work email address, job title, and organisation name provided during registration or discovery calls</li><li>Enterprise licence credentials including authorised user accounts managed by your organisation's administrator</li><li>Billing and invoice contact details for enterprise subscription management</li></ul>
-<h3>2.2 Platform Usage Data</h3>
-<ul><li>Log data including IP address, browser type, operating system, referring URLs, and pages visited</li><li>Session duration, feature interaction patterns, and navigation flows used to improve the platform experience</li><li>Error logs and diagnostic data used to identify and resolve technical issues</li></ul>
-<h3>2.3 Market Data Queries</h3>
-<ul><li>Queries submitted to TwoSuns's AI intelligence capabilities, including commodity, energy, and financial market search inputs</li><li>Saved reports, watchlists, and dashboard configurations associated with your account</li><li>Export and download activity of market intelligence outputs</li></ul>
-<h3>2.4 Communications</h3>
-<ul><li>Email correspondence, support requests, demo booking information, and newsletter subscriptions</li><li>Feedback and survey responses submitted voluntarily through the platform or our website</li></ul>
-<h2>3. How We Use Your Data</h2>
-<p>We process personal data only for legitimate, disclosed purposes:</p>
-<ul><li><strong>Service delivery:</strong> Provisioning and maintaining your platform access, processing queries, and delivering AI-generated intelligence outputs</li><li><strong>Account management:</strong> Managing enterprise licences, authorised user roles, billing, and subscription renewals</li><li><strong>Platform improvement:</strong> Aggregated, anonymised analytics are used to improve platform performance, refine AI models, and develop new features</li><li><strong>AI training opt-out:</strong> We do not use your individual query data or proprietary organisational inputs to train our AI models without explicit written consent. You may request confirmation of this at any time by contacting privacy@twosuns.ai</li><li><strong>Communications:</strong> Sending service notifications, security alerts, product updates, and where you have subscribed our market intelligence newsletter</li><li><strong>Legal and compliance:</strong> Maintaining audit records, responding to lawful requests, and meeting our obligations under applicable law</li><li><strong>Security:</strong> Detecting and preventing fraud, unauthorised access, and abuse of the platform</li></ul>
-<h2>4. Data Sharing and Disclosure</h2>
-<p><strong>We do not sell your personal data.</strong> We do not share your data with third parties for advertising purposes. Data may be disclosed only in the following circumstances:</p>
-<h3>4.1 Trusted Processors</h3>
-<p>We engage a limited number of sub-processors to operate our infrastructure and deliver Services. These include cloud hosting providers (AWS), analytics tools, and payment processors. All sub-processors are contractually bound to process data only on our instructions and to maintain appropriate security standards.</p>
-<h3>4.2 Legal Requirements</h3>
-<p>We may disclose personal data where required by law, court order, or regulatory authority, including to respond to lawful requests from Canadian or international authorities. We will notify you where legally permitted to do so.</p>
-<h3>4.3 Business Transfers</h3>
-<p>In the event of a merger, acquisition, or asset sale, personal data may be transferred to the succeeding entity. You will be notified of any such transfer and your rights thereunder.</p>
-<h3>4.4 With Your Consent</h3>
-<p>We may share data with third parties for other purposes only with your explicit prior consent.</p>
-<h2>5. Data Retention</h2>
-<p>We retain personal data for as long as necessary to fulfil the purposes described in this Policy, subject to the following standards:</p>
-<ul><li><strong>Active accounts:</strong> Data is retained for the duration of your enterprise licence agreement plus a reasonable post-termination period for billing reconciliation and dispute resolution</li><li><strong>TwoSuns Core:</strong> Audit records and orchestration logs are retained for a minimum of <strong>7 years</strong> in compliance with our TwoSuns Core archival standards, regulatory audit requirements, and enterprise risk governance obligations</li><li><strong>Marketing communications:</strong> Retained until you unsubscribe or request deletion, whichever is earlier</li><li><strong>Security and fraud logs:</strong> Retained for up to 24 months from the date of collection</li><li><strong>Anonymised aggregates:</strong> May be retained indefinitely for platform analytics and AI model quality assurance</li></ul>
-<p>Upon expiry of the applicable retention period, data is securely deleted or anonymised in accordance with our data lifecycle policy.</p>
-<h2>6. Your Privacy Rights</h2>
-<p>Depending on your jurisdiction, you may have the following rights regarding your personal data:</p>
-<h3>6.1 Under GDPR (EEA residents)</h3>
-<ul><li><strong>Right of access:</strong> Request a copy of all personal data we hold about you</li><li><strong>Right to rectification:</strong> Request correction of inaccurate or incomplete personal data</li><li><strong>Right to erasure:</strong> Request deletion of your personal data where we have no lawful basis to retain it</li><li><strong>Right to restriction:</strong> Request that we limit processing of your data in certain circumstances</li><li><strong>Right to data portability:</strong> Receive your data in a structured, machine-readable format</li><li><strong>Right to object:</strong> Object to processing based on legitimate interests or direct marketing</li><li><strong>Rights related to automated decision-making:</strong> Request human review of any automated decisions that significantly affect you</li></ul>
-<h3>6.2 Under PIPEDA (Canadian residents)</h3>
-<ul><li><strong>Right of access:</strong> Request access to your personal information and be informed of how it is used and disclosed</li><li><strong>Right to correction:</strong> Request amendment of inaccurate or incomplete personal information</li><li><strong>Right to withdraw consent:</strong> Withdraw consent to processing where consent is the lawful basis, subject to legal or contractual limitations</li></ul>
-<p>To exercise any of these rights, submit a written request to privacy@twosuns.ai. We will respond within 30 days. Identity verification may be required before processing your request.</p>
-<h2>7. Security Measures</h2>
-<p>TwoSuns implements enterprise-grade technical and organisational security controls to protect your data:</p>
-<ul><li>TLS 1.2+ encryption for all data in transit; AWS KMS encryption for all data at rest</li><li>Schema-per-tenant PostgreSQL isolation ensuring structural separation of client data</li><li>OIDC authentication and JWT-based authorisation with enterprise Identity Provider (IdP) integration</li><li>Role-based access controls (RBAC) enforced at the application and infrastructure layers</li><li>Immutable event-level audit logging with WORM (Write Once, Read Many) storage compliance</li><li>Regular vulnerability assessments and penetration testing by qualified third-party security auditors</li><li>Incident response procedures with notification protocols compliant with PIPEDA Breach of Security Safeguards Regulations and GDPR Article 33</li></ul>
-<h2>8. International Data Transfers</h2>
-<p>TwoSuns is headquartered in British Columbia, Canada. If you access our Services from the European Economic Area or other jurisdictions with data transfer restrictions, your personal data may be transferred to and processed in Canada, which the European Commission has recognised as providing adequate data protection.</p>
-<p>Where transfers occur to jurisdictions without an adequacy decision, we implement appropriate safeguards including Standard Contractual Clauses (SCCs) or binding corporate rules as applicable.</p>
-<h2>9. Cookies and Tracking Technologies</h2>
-<p>We use cookies and similar tracking technologies to operate and improve our Services. For a full description of the cookies we use and how to manage your preferences, please see our Cookie Policy.</p>
-<h2>10. Children's Privacy</h2>
-<p>The TwoSuns platform is an enterprise B2B service intended exclusively for use by professionals. We do not knowingly collect personal data from individuals under the age of 18. If you believe a minor has provided us with personal data, please contact us immediately at privacy@twosuns.ai.</p>
-<h2>11. Changes to This Policy</h2>
-<p>We may update this Privacy Policy periodically to reflect changes in our practices, legal requirements, or Services. When we make material changes, we will notify you by email (to the address associated with your account) and by posting the updated Policy on this page with a revised "Last Updated" date. Continued use of the Services after the effective date constitutes acceptance of the updated Policy.</p>
-<h3>Privacy Enquiries</h3>
-<p>For any questions, concerns, or requests relating to this Privacy Policy or the handling of your personal data, please contact our Privacy Officer:</p>
-<p><strong>Email:</strong> privacy@twosuns.ai</p>
-<p>You also have the right to lodge a complaint with the Office of the Privacy Commissioner of Canada (OPC) at priv.gc.ca or with your relevant EU supervisory authority.</p>
-<p>Typically replies within 1 business day</p>
-<p>👋 Welcome to <strong>TwoSuns</strong>, the decision layer for traded markets.How can we help you today?</p>
-<p>🍪 We use cookies to improve your experience, analyze site traffic, and personalize content. By clicking <strong>Accept All</strong>, you agree to our use of cookies. Privacy Policy · Cookie Policy</p>
-    </div>
+    <span class="lab-tag">Take two &nbsp;&middot;&nbsp; Lifecycle spine</span>
+    <div class="lab-note">Looser reading. The lifecycle runs as a horizontal spine with the six areas
+      branching above and below, connected by dashed legs. Every stage label stays horizontal and
+      readable, it survives mobile without a fallback, and it fits the page rhythm. Less dramatic, and
+      it reads as a sequence rather than a system.</div>
+<div class="spine">
+  <div class="spine-row"><div class="spine-card"><span class="card-num" style="background:#E0641E;">1</span><div class="t">Materials and Manufacturing</div></div><div class="spine-card"><span class="card-num" style="background:#CC9900;">2</span><div class="t">Distribution and Logistics</div></div><div class="spine-card"><span class="card-num" style="background:#C45213;">3</span><div class="t">Asset Owners and Investors</div></div></div>
+  <div class="spine-legs"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="spine-bar"><div class="spine-stage"><span></span>Planning</div><div class="spine-stage"><span></span>Investment</div><div class="spine-stage"><span></span>Design</div><div class="spine-stage"><span></span>Supply</div><div class="spine-stage"><span></span>Construction</div><div class="spine-stage"><span></span>Transaction</div><div class="spine-stage"><span></span>Use</div><div class="spine-stage"><span></span>Operation</div><div class="spine-stage"><span></span>Maintenance</div><div class="spine-stage"><span></span>Renewal</div><div class="spine-stage"><span></span>Reuse<br>or retirement</div></div>
+  <div class="spine-legs"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="spine-row"><div class="spine-card"><span class="card-num" style="background:#B07E00;">4</span><div class="t">Construction and Professional Services</div></div><div class="spine-card"><span class="card-num" style="background:#D9822B;">5</span><div class="t">Asset Transactions and Operations</div></div><div class="spine-card"><span class="card-num" style="background:#8C6500;">6</span><div class="t">Industry Institutions and Enablement</div></div></div>
+</div>
+
+  </div>
+</section>
+
+<section class="cta-band" style="padding:64px 0;">
+  <div class="container">
+    <h2>One or two?</h2>
+    <p>Tell me which and I will build it into Built Industry, then this page goes away.</p>
   </div>
 </section>
 <footer>
