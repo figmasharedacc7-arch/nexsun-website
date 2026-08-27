@@ -297,6 +297,29 @@
   .acc-body{padding:0 24px 22px 24px;}
   .acc-bar{width:5px;border-radius:3px;align-self:stretch;flex-shrink:0;min-height:42px;}
 
+  /* FILTER ROWS + CROSS LINKS */
+  .uc-filterset{margin-top:26px;display:grid;gap:14px;}
+  .uc-frow{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:start;}
+  .uc-frow > .lab{font-size:10.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;
+    color:#8C6500;padding-top:9px;}
+  .uc-clear{margin-top:16px;font-size:13px;font-weight:700;color:var(--sun-deep);background:none;
+    border:0;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;}
+  .uc-clear[hidden]{display:none;}
+  .uc:target,.uc.flash{border-color:var(--sun);box-shadow:0 0 0 4px rgba(224,100,30,.18),0 12px 40px rgba(224,100,30,.18);}
+  .uc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+  .uc-tag{font-size:10.5px;font-weight:700;letter-spacing:.4px;color:#7A6A4A;
+    border:1px solid rgba(140,101,0,.28);border-radius:20px;padding:3px 10px;}
+  .acc-rel{margin-top:16px;padding-top:14px;border-top:1px solid var(--border-soft);}
+  .acc-rel .k{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#8C6500;}
+  .acc-rel ul{list-style:none;margin-top:9px;display:grid;gap:7px;}
+  .acc-rel a{font-size:14px;font-weight:700;color:var(--sun-deep);display:inline-flex;align-items:center;gap:7px;}
+  .acc-rel a:hover{color:var(--sun);}
+  .acc-rel a::after{content:'\2192';font-weight:400;}
+  @media(max-width:760px){
+    .uc-frow{grid-template-columns:1fr;gap:7px;}
+    .uc-frow > .lab{padding-top:0;}
+  }
+
   /* USE CASE CARDS */
   .uc-filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
   .uc-filter{border:1.5px solid rgba(224,100,30,.35);background:#fff;color:var(--sun-deep);border-radius:20px;
@@ -427,9 +450,11 @@
   <div class="container">
     <div class="section-tag">Filter</div>
     <h2 class="section-heading">Representative workflows</h2>
-    <p class="section-sub">Filter by objective or by the part of the platform involved.</p>
-    <div class="uc-filters"><button class="uc-filter on" data-f="all">All use cases</button><button class="uc-filter" data-f="t0">Strategy, planning and enterprise performance</button><button class="uc-filter" data-f="t1">Markets, revenue and ecosystem intelligence</button><button class="uc-filter" data-f="t2">Campaigns, events and stakeholder engagement</button><button class="uc-filter" data-f="t3">Products, programs and projects</button><button class="uc-filter" data-f="t4">Operations, supply chain and assets</button><button class="uc-filter" data-f="t5">Governance, compliance and organizational coordination</button><button class="uc-filter" data-f="lHorizon">Horizon</button><button class="uc-filter" data-f="lPulse">Pulse</button><button class="uc-filter" data-f="lCore">Core</button><button class="uc-filter" data-f="lRay">Ray</button></div>
-    <div class="uc-grid" id="ucgrid"><article class="uc" data-tags="t0 lHorizon lPulse lCore lRay">
+    <p class="section-sub">Filter by objective, by where you sit in the built industry, by who does
+      the work, or by the part of the platform involved. Filters combine.</p>
+    <div class="uc-filterset"><div class="uc-frow"><div class="lab">Objective</div><div class="uc-filters" style="margin-top:0;"><button class="uc-filter on" data-dim="theme" data-f="all">All</button><button class="uc-filter" data-dim="theme" data-f="t0">Strategy, planning and enterprise performance</button><button class="uc-filter" data-dim="theme" data-f="t1">Markets, revenue and ecosystem intelligence</button><button class="uc-filter" data-dim="theme" data-f="t2">Campaigns, events and stakeholder engagement</button><button class="uc-filter" data-dim="theme" data-f="t3">Products, programs and projects</button><button class="uc-filter" data-dim="theme" data-f="t4">Operations, supply chain and assets</button><button class="uc-filter" data-dim="theme" data-f="t5">Governance, compliance and organizational coordination</button></div></div><div class="uc-frow"><div class="lab">Industry area</div><div class="uc-filters" style="margin-top:0;"><button class="uc-filter on" data-dim="area" data-f="all">All</button><button class="uc-filter" data-dim="area" data-f="a0">Materials and Manufacturing</button><button class="uc-filter" data-dim="area" data-f="a1">Distribution and Logistics</button><button class="uc-filter" data-dim="area" data-f="a2">Asset Owners and Investors</button><button class="uc-filter" data-dim="area" data-f="a3">Construction and Professional Services</button><button class="uc-filter" data-dim="area" data-f="a4">Asset Transactions and Operations</button><button class="uc-filter" data-dim="area" data-f="a5">Industry Institutions and Enablement</button></div></div><div class="uc-frow"><div class="lab">User group</div><div class="uc-filters" style="margin-top:0;"><button class="uc-filter on" data-dim="group" data-f="all">All</button><button class="uc-filter" data-dim="group" data-f="g0">Executive and finance</button><button class="uc-filter" data-dim="group" data-f="g1">Growth and commercial</button><button class="uc-filter" data-dim="group" data-f="g2">Marketing and communications</button><button class="uc-filter" data-dim="group" data-f="g3">Product and engineering</button><button class="uc-filter" data-dim="group" data-f="g4">Project and delivery</button><button class="uc-filter" data-dim="group" data-f="g5">Operations and supply chain</button><button class="uc-filter" data-dim="group" data-f="g6">Asset and facility</button><button class="uc-filter" data-dim="group" data-f="g7">Compliance and quality</button></div></div><div class="uc-frow"><div class="lab">Platform</div><div class="uc-filters" style="margin-top:0;"><button class="uc-filter on" data-dim="lens" data-f="all">All</button><button class="uc-filter" data-dim="lens" data-f="l0">Horizon</button><button class="uc-filter" data-dim="lens" data-f="l1">Pulse</button><button class="uc-filter" data-dim="lens" data-f="l2">Core</button><button class="uc-filter" data-dim="lens" data-f="l3">Ray</button></div></div></div>
+    <button class="uc-clear" id="ucclear" hidden type="button">Clear all filters</button>
+    <div class="uc-grid" id="ucgrid"><article class="uc" id="uc-executive-planning-and-performance-visibility" data-tags="t0 a0 a1 a2 a3 a4 a5 g0 lHorizon lPulse lCore lRay">
   <h3>Executive planning and performance visibility</h3>
   <dl>
     <dt>Typical users</dt><dd>Executives, finance leaders, business-unit leaders and operators</dd>
@@ -438,8 +463,9 @@
     <dt>Outputs and value</dt><dd>A coherent enterprise view with visible supporting context, priorities, performance and follow-through.</dd>
   </dl>
   <span class="uc-lens">Core, Ray, Horizon and Pulse</span>
+  <div class="uc-tags"><span class="uc-tag">Materials and Manufacturing</span><span class="uc-tag">Distribution and Logistics</span><span class="uc-tag">Executive and finance</span></div>
 </article>
-<article class="uc" data-tags="t0 lHorizon lPulse">
+<article class="uc" id="uc-investment-resource-and-initiative-prioritization" data-tags="t0 a2 a0 a3 g0 lHorizon lPulse">
   <h3>Investment, resource and initiative prioritization</h3>
   <dl>
     <dt>Typical users</dt><dd>Executives, finance, portfolio leaders and functional leadership</dd>
@@ -448,8 +474,9 @@
     <dt>Outputs and value</dt><dd>A transparent allocation framework, prioritized roadmap and continuing visibility into implementation.</dd>
   </dl>
   <span class="uc-lens">Horizon with Pulse execution</span>
+  <div class="uc-tags"><span class="uc-tag">Asset Owners and Investors</span><span class="uc-tag">Materials and Manufacturing</span><span class="uc-tag">Executive and finance</span></div>
 </article>
-<article class="uc" data-tags="t1 lHorizon">
+<article class="uc" id="uc-regional-market-expansion" data-tags="t1 a0 a1 g1 lHorizon">
   <h3>Regional market expansion</h3>
   <dl>
     <dt>Typical users</dt><dd>Executives, strategy, growth and business-development teams</dd>
@@ -458,8 +485,9 @@
     <dt>Outputs and value</dt><dd>Focused market priorities, opportunity maps, growth plans and executive visibility.</dd>
   </dl>
   <span class="uc-lens">Horizon</span>
+  <div class="uc-tags"><span class="uc-tag">Materials and Manufacturing</span><span class="uc-tag">Distribution and Logistics</span><span class="uc-tag">Growth and commercial</span></div>
 </article>
-<article class="uc" data-tags="t1 lHorizon">
+<article class="uc" id="uc-commercial-ecosystem-and-relationship-analysis" data-tags="t1 a2 a5 g1 lHorizon">
   <h3>Commercial ecosystem and relationship analysis</h3>
   <dl>
     <dt>Typical users</dt><dd>Growth, partnership, investor-relations and stakeholder teams</dd>
@@ -468,8 +496,9 @@
     <dt>Outputs and value</dt><dd>A living ecosystem view that supports partner, investor, account and stakeholder development.</dd>
   </dl>
   <span class="uc-lens">Horizon</span>
+  <div class="uc-tags"><span class="uc-tag">Asset Owners and Investors</span><span class="uc-tag">Industry Institutions and Enablement</span><span class="uc-tag">Growth and commercial</span></div>
 </article>
-<article class="uc" data-tags="t1 lHorizon lPulse">
+<article class="uc" id="uc-accounts-opportunities-tenders-and-proposals" data-tags="t1 a3 a0 g1 g4 lHorizon lPulse">
   <h3>Accounts, opportunities, tenders and proposals</h3>
   <dl>
     <dt>Typical users</dt><dd>Sales, business development, estimating, commercial and leadership teams</dd>
@@ -478,8 +507,9 @@
     <dt>Outputs and value</dt><dd>Stronger pursuit coordination, reusable knowledge, visible status and commercial continuity.</dd>
   </dl>
   <span class="uc-lens">Horizon with Pulse delivery inputs</span>
+  <div class="uc-tags"><span class="uc-tag">Construction and Professional Services</span><span class="uc-tag">Materials and Manufacturing</span><span class="uc-tag">Growth and commercial</span></div>
 </article>
-<article class="uc" data-tags="t2 lHorizon">
+<article class="uc" id="uc-integrated-campaign-planning-and-execution" data-tags="t2 a0 a1 g2 lHorizon">
   <h3>Integrated campaign planning and execution</h3>
   <dl>
     <dt>Typical users</dt><dd>Marketing, growth, sales, communications and subject experts</dd>
@@ -488,8 +518,9 @@
     <dt>Outputs and value</dt><dd>Aligned campaigns, faster content coordination and clearer connection between activity and growth.</dd>
   </dl>
   <span class="uc-lens">Horizon</span>
+  <div class="uc-tags"><span class="uc-tag">Materials and Manufacturing</span><span class="uc-tag">Distribution and Logistics</span><span class="uc-tag">Marketing and communications</span></div>
 </article>
-<article class="uc" data-tags="t2 lHorizon">
+<article class="uc" id="uc-events-members-and-stakeholder-programs" data-tags="t2 a5 g2 lHorizon">
   <h3>Events, members and stakeholder programs</h3>
   <dl>
     <dt>Typical users</dt><dd>Associations, member organizations, public affairs, partnerships and event teams</dd>
@@ -498,8 +529,9 @@
     <dt>Outputs and value</dt><dd>More coherent programs, stronger follow-up and lasting stakeholder context.</dd>
   </dl>
   <span class="uc-lens">Horizon</span>
+  <div class="uc-tags"><span class="uc-tag">Industry Institutions and Enablement</span><span class="uc-tag">Marketing and communications</span></div>
 </article>
-<article class="uc" data-tags="t3 lHorizon lPulse">
+<article class="uc" id="uc-product-and-research-portfolio-coordination" data-tags="t3 a0 g3 lHorizon lPulse">
   <h3>Product and research portfolio coordination</h3>
   <dl>
     <dt>Typical users</dt><dd>Product, research, engineering, commercialization and executive teams</dd>
@@ -508,8 +540,9 @@
     <dt>Outputs and value</dt><dd>Clearer portfolio priorities, stronger cross-functional coordination and preserved knowledge.</dd>
   </dl>
   <span class="uc-lens">Pulse with Horizon commercialization context</span>
+  <div class="uc-tags"><span class="uc-tag">Materials and Manufacturing</span><span class="uc-tag">Product and engineering</span></div>
 </article>
-<article class="uc" data-tags="t3 lPulse">
+<article class="uc" id="uc-estimating-quantity-take-offs-and-materials" data-tags="t3 a3 a0 g4 lPulse">
   <h3>Estimating, quantity take-offs and materials</h3>
   <dl>
     <dt>Typical users</dt><dd>Estimators, commercial teams, project leaders, procurement and technical specialists</dd>
@@ -518,8 +551,9 @@
     <dt>Outputs and value</dt><dd>Faster estimate development, visible assumptions, reusable benchmarks and stronger handover into delivery.</dd>
   </dl>
   <span class="uc-lens">Pulse</span>
+  <div class="uc-tags"><span class="uc-tag">Construction and Professional Services</span><span class="uc-tag">Materials and Manufacturing</span><span class="uc-tag">Project and delivery</span></div>
 </article>
-<article class="uc" data-tags="t3 lPulse">
+<article class="uc" id="uc-project-planning-resources-and-progress" data-tags="t3 a3 a2 g4 lPulse">
   <h3>Project planning, resources and progress</h3>
   <dl>
     <dt>Typical users</dt><dd>Project executives, project managers, superintendents, planners, trades and owners</dd>
@@ -528,8 +562,9 @@
     <dt>Outputs and value</dt><dd>Earlier constraint awareness, stronger coordination and a continuing record of project activity.</dd>
   </dl>
   <span class="uc-lens">Pulse</span>
+  <div class="uc-tags"><span class="uc-tag">Construction and Professional Services</span><span class="uc-tag">Asset Owners and Investors</span><span class="uc-tag">Project and delivery</span></div>
 </article>
-<article class="uc" data-tags="t4 lPulse">
+<article class="uc" id="uc-procurement-inventory-and-supplier-coordination" data-tags="t4 a1 a0 g5 lPulse">
   <h3>Procurement, inventory and supplier coordination</h3>
   <dl>
     <dt>Typical users</dt><dd>Procurement, supply chain, finance, project and operations teams</dd>
@@ -538,8 +573,9 @@
     <dt>Outputs and value</dt><dd>Improved material visibility, supplier coordination, working-capital context and delivery readiness.</dd>
   </dl>
   <span class="uc-lens">Pulse</span>
+  <div class="uc-tags"><span class="uc-tag">Distribution and Logistics</span><span class="uc-tag">Materials and Manufacturing</span><span class="uc-tag">Operations and supply chain</span></div>
 </article>
-<article class="uc" data-tags="t4 lHorizon lPulse">
+<article class="uc" id="uc-manufacturing-economics-and-production-performance" data-tags="t4 a0 g5 g0 lHorizon lPulse">
   <h3>Manufacturing economics and production performance</h3>
   <dl>
     <dt>Typical users</dt><dd>Executives, finance, production, procurement, inventory and commercial teams</dd>
@@ -548,8 +584,9 @@
     <dt>Outputs and value</dt><dd>Traceable production economics, clearer cost and margin context, and stronger operational coordination.</dd>
   </dl>
   <span class="uc-lens">Pulse with Horizon commercial context</span>
+  <div class="uc-tags"><span class="uc-tag">Materials and Manufacturing</span><span class="uc-tag">Operations and supply chain</span></div>
 </article>
-<article class="uc" data-tags="t4 lPulse">
+<article class="uc" id="uc-asset-operations-maintenance-and-reliability" data-tags="t4 a4 a2 g6 lPulse">
   <h3>Asset operations, maintenance and reliability</h3>
   <dl>
     <dt>Typical users</dt><dd>Asset owners, facility teams, maintenance, operations, finance and service providers</dd>
@@ -558,8 +595,9 @@
     <dt>Outputs and value</dt><dd>Improved reliability, coordinated work, stronger lifecycle knowledge and clearer asset-performance visibility.</dd>
   </dl>
   <span class="uc-lens">Pulse</span>
+  <div class="uc-tags"><span class="uc-tag">Asset Transactions and Operations</span><span class="uc-tag">Asset Owners and Investors</span><span class="uc-tag">Asset and facility</span></div>
 </article>
-<article class="uc" data-tags="t5 lPulse lCore">
+<article class="uc" id="uc-regulatory-quality-and-compliance-workflows" data-tags="t5 a5 a3 g7 lPulse lCore">
   <h3>Regulatory, quality and compliance workflows</h3>
   <dl>
     <dt>Typical users</dt><dd>Compliance, quality, legal, technical, operations and leadership teams</dd>
@@ -568,8 +606,9 @@
     <dt>Outputs and value</dt><dd>More consistent compliance activity, visible accountability and accessible evidence.</dd>
   </dl>
   <span class="uc-lens">Pulse with Core governance</span>
+  <div class="uc-tags"><span class="uc-tag">Industry Institutions and Enablement</span><span class="uc-tag">Construction and Professional Services</span><span class="uc-tag">Compliance and quality</span></div>
 </article>
-<article class="uc" data-tags="t5 lHorizon lPulse lCore lRay">
+<article class="uc" id="uc-document-intelligence-and-organizational-knowledge" data-tags="t5 a0 a1 a2 a3 a4 a5 g7 g3 lHorizon lPulse lCore lRay">
   <h3>Document intelligence and organizational knowledge</h3>
   <dl>
     <dt>Typical users</dt><dd>Technical, project, commercial, operational and knowledge-management teams</dd>
@@ -578,6 +617,7 @@
     <dt>Outputs and value</dt><dd>Faster access to relevant knowledge, stronger continuity and reduced recreation of prior work.</dd>
   </dl>
   <span class="uc-lens">Core, Ray, Horizon and Pulse</span>
+  <div class="uc-tags"><span class="uc-tag">Materials and Manufacturing</span><span class="uc-tag">Distribution and Logistics</span><span class="uc-tag">Compliance and quality</span></div>
 </article>
 </div>
     <p class="form-note" id="uccount"></p>
@@ -599,26 +639,61 @@
 </section>
 <script>
 (function(){
-  var btns=document.querySelectorAll('.uc-filter'),
-      cards=document.querySelectorAll('#ucgrid .uc'),
-      cnt=document.getElementById('uccount');
-  function apply(f){
+  var grid=document.getElementById('ucgrid'),
+      cards=[].slice.call(grid.querySelectorAll('.uc')),
+      cnt=document.getElementById('uccount'),
+      clear=document.getElementById('ucclear'),
+      btns=[].slice.call(document.querySelectorAll('.uc-filter')),
+      picked={theme:'all',area:'all',group:'all',lens:'all'};
+
+  function apply(){
+    var wanted=[];
+    for(var k in picked){ if(picked[k]!=='all') wanted.push(picked[k]); }
     var shown=0;
-    for(var i=0;i<cards.length;i++){
-      var ok = (f==='all') || (' '+cards[i].getAttribute('data-tags')+' ').indexOf(' '+f+' ')>-1;
-      cards[i].style.display = ok ? '' : 'none';
+    cards.forEach(function(c){
+      var tags=' '+c.getAttribute('data-tags')+' ', ok=true;
+      wanted.forEach(function(w){ if(tags.indexOf(' '+w+' ')<0) ok=false; });
+      c.style.display = ok ? '' : 'none';
       if(ok) shown++;
-    }
-    cnt.textContent = 'Showing ' + shown + ' of ' + cards.length + ' use cases.';
-  }
-  for(var i=0;i<btns.length;i++){
-    btns[i].addEventListener('click',function(){
-      for(var j=0;j<btns.length;j++) btns[j].classList.remove('on');
-      this.classList.add('on');
-      apply(this.getAttribute('data-f'));
     });
+    cnt.textContent = shown===cards.length
+      ? 'Showing all ' + cards.length + ' use cases.'
+      : 'Showing ' + shown + ' of ' + cards.length + ' use cases.';
+    clear.hidden = !wanted.length;
   }
-  apply('all');
+
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var dim=b.getAttribute('data-dim');
+      picked[dim]=b.getAttribute('data-f');
+      btns.forEach(function(o){
+        if(o.getAttribute('data-dim')===dim) o.classList.toggle('on', o===b);
+      });
+      apply();
+    });
+  });
+
+  clear.addEventListener('click',function(){
+    for(var k in picked) picked[k]='all';
+    btns.forEach(function(o){ o.classList.toggle('on', o.getAttribute('data-f')==='all'); });
+    apply();
+  });
+
+  apply();
+
+  // arriving from a capability group: reveal that card whatever the filters say
+  function jump(){
+    var id=location.hash.slice(1); if(!id) return;
+    var el=document.getElementById(id); if(!el) return;
+    for(var k in picked) picked[k]='all';
+    btns.forEach(function(o){ o.classList.toggle('on', o.getAttribute('data-f')==='all'); });
+    apply();
+    el.classList.add('flash');
+    setTimeout(function(){ el.scrollIntoView({block:'center',behavior:'smooth'}); }, 60);
+    setTimeout(function(){ el.classList.remove('flash'); }, 2600);
+  }
+  jump();
+  window.addEventListener('hashchange', jump);
 })();
 </script>
 <footer>

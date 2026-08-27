@@ -297,6 +297,29 @@
   .acc-body{padding:0 24px 22px 24px;}
   .acc-bar{width:5px;border-radius:3px;align-self:stretch;flex-shrink:0;min-height:42px;}
 
+  /* FILTER ROWS + CROSS LINKS */
+  .uc-filterset{margin-top:26px;display:grid;gap:14px;}
+  .uc-frow{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:start;}
+  .uc-frow > .lab{font-size:10.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;
+    color:#8C6500;padding-top:9px;}
+  .uc-clear{margin-top:16px;font-size:13px;font-weight:700;color:var(--sun-deep);background:none;
+    border:0;cursor:pointer;font-family:inherit;padding:0;text-decoration:underline;}
+  .uc-clear[hidden]{display:none;}
+  .uc:target,.uc.flash{border-color:var(--sun);box-shadow:0 0 0 4px rgba(224,100,30,.18),0 12px 40px rgba(224,100,30,.18);}
+  .uc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+  .uc-tag{font-size:10.5px;font-weight:700;letter-spacing:.4px;color:#7A6A4A;
+    border:1px solid rgba(140,101,0,.28);border-radius:20px;padding:3px 10px;}
+  .acc-rel{margin-top:16px;padding-top:14px;border-top:1px solid var(--border-soft);}
+  .acc-rel .k{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#8C6500;}
+  .acc-rel ul{list-style:none;margin-top:9px;display:grid;gap:7px;}
+  .acc-rel a{font-size:14px;font-weight:700;color:var(--sun-deep);display:inline-flex;align-items:center;gap:7px;}
+  .acc-rel a:hover{color:var(--sun);}
+  .acc-rel a::after{content:'\2192';font-weight:400;}
+  @media(max-width:760px){
+    .uc-frow{grid-template-columns:1fr;gap:7px;}
+    .uc-frow > .lab{padding-top:0;}
+  }
+
   /* USE CASE CARDS */
   .uc-filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
   .uc-filter{border:1.5px solid rgba(224,100,30,.35);background:#fff;color:var(--sun-deep);border-radius:20px;
@@ -438,42 +461,42 @@
     <span class="acc-bar" style="background:var(--a1);"></span>
     <span><span class="acc-title">Market and competitive intelligence</span><span class="acc-desc">Build a structured view of the markets, participants and conditions that influence growth.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Product market fit</li><li>Market sizing, segmentation and geographic analysis</li><li>Industry, customer and application analysis</li><li>Competitor profiles, positioning and participation</li><li>Owner, consultant, contractor and stakeholder ecosystems</li><li>News, trends and external-source monitoring</li><li>Market models, dashboards and intelligence briefs</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Product market fit</li><li>Market sizing, segmentation and geographic analysis</li><li>Industry, customer and application analysis</li><li>Competitor profiles, positioning and participation</li><li>Owner, consultant, contractor and stakeholder ecosystems</li><li>News, trends and external-source monitoring</li><li>Market models, dashboards and intelligence briefs</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-regional-market-expansion">Regional market expansion</a></li><li><a href="use-cases.html#uc-commercial-ecosystem-and-relationship-analysis">Commercial ecosystem and relationship analysis</a></li></ul></div></div>
 </details>
 <details class="acc">
   <summary>
     <span class="acc-bar" style="background:var(--a2);"></span>
     <span><span class="acc-title">Growth strategy and market expansion</span><span class="acc-desc">Turn market context into focused growth priorities and expansion pathways.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Regional and sector prioritization</li><li>Market-entry and expansion planning</li><li>Opportunity modelling and prioritization</li><li>Product, application and commercialization planning</li><li>Scenario evaluation and growth roadmaps</li><li>Investment frameworks and business cases</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Regional and sector prioritization</li><li>Market-entry and expansion planning</li><li>Opportunity modelling and prioritization</li><li>Product, application and commercialization planning</li><li>Scenario evaluation and growth roadmaps</li><li>Investment frameworks and business cases</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-regional-market-expansion">Regional market expansion</a></li><li><a href="use-cases.html#uc-investment-resource-and-initiative-prioritization">Investment, resource and initiative prioritization</a></li></ul></div></div>
 </details>
 <details class="acc">
   <summary>
     <span class="acc-bar" style="background:var(--a3);"></span>
     <span><span class="acc-title">Accounts, opportunities, tenders and proposals</span><span class="acc-desc">Coordinate the commercial work that moves an opportunity from identification through pursuit.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Strategic account planning and relationship tiers</li><li>Opportunity discovery, qualification and prioritization</li><li>Tender ingestion, comparison and monitoring</li><li>Bid strategy and submission planning</li><li>Proposal development and supporting content</li><li>Pipeline visibility and opportunity follow-through</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Strategic account planning and relationship tiers</li><li>Opportunity discovery, qualification and prioritization</li><li>Tender ingestion, comparison and monitoring</li><li>Bid strategy and submission planning</li><li>Proposal development and supporting content</li><li>Pipeline visibility and opportunity follow-through</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-accounts-opportunities-tenders-and-proposals">Accounts, opportunities, tenders and proposals</a></li><li><a href="use-cases.html#uc-estimating-quantity-take-offs-and-materials">Estimating, quantity take-offs and materials</a></li></ul></div></div>
 </details>
 <details class="acc">
   <summary>
     <span class="acc-bar" style="background:var(--a4);"></span>
     <span><span class="acc-title">Campaigns, communications, events and stakeholders</span><span class="acc-desc">Plan and coordinate engagement across audiences, channels and activities.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Campaign planning, calendars and execution</li><li>Content development and approval workflows</li><li>Event planning, participation and follow-up</li><li>Member, community and stakeholder engagement</li><li>Audience and contact coordination</li><li>Engagement reporting and continuing relationship context</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Campaign planning, calendars and execution</li><li>Content development and approval workflows</li><li>Event planning, participation and follow-up</li><li>Member, community and stakeholder engagement</li><li>Audience and contact coordination</li><li>Engagement reporting and continuing relationship context</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-integrated-campaign-planning-and-execution">Integrated campaign planning and execution</a></li><li><a href="use-cases.html#uc-events-members-and-stakeholder-programs">Events, members and stakeholder programs</a></li></ul></div></div>
 </details>
 <details class="acc">
   <summary>
     <span class="acc-bar" style="background:var(--a5);"></span>
     <span><span class="acc-title">Partnerships, investors, channels and relationships</span><span class="acc-desc">Understand and develop the ecosystems that support growth, capital and market access.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Investor and funding ecosystem analysis</li><li>Strategic partner and counterparty mapping</li><li>Channel and alliance development</li><li>Relationship strength and influence mapping</li><li>Partnership opportunity assessment</li><li>Engagement history, priorities and next actions</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Investor and funding ecosystem analysis</li><li>Strategic partner and counterparty mapping</li><li>Channel and alliance development</li><li>Relationship strength and influence mapping</li><li>Partnership opportunity assessment</li><li>Engagement history, priorities and next actions</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-commercial-ecosystem-and-relationship-analysis">Commercial ecosystem and relationship analysis</a></li><li><a href="use-cases.html#uc-events-members-and-stakeholder-programs">Events, members and stakeholder programs</a></li></ul></div></div>
 </details>
 <details class="acc">
   <summary>
     <span class="acc-bar" style="background:var(--a6);"></span>
     <span><span class="acc-title">Revenue coordination and commercial performance</span><span class="acc-desc">Connect commercial plans, activity and performance across the organization.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Revenue planning and growth targets</li><li>Pricing and commercial analysis</li><li>Sales and business-development coordination</li><li>Forecasts, dashboards and executive visibility</li><li>Commercial-to-operational handoffs</li><li>Performance review and continuing improvement</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Revenue planning and growth targets</li><li>Pricing and commercial analysis</li><li>Sales and business-development coordination</li><li>Forecasts, dashboards and executive visibility</li><li>Commercial-to-operational handoffs</li><li>Performance review and continuing improvement</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-executive-planning-and-performance-visibility">Executive planning and performance visibility</a></li><li><a href="use-cases.html#uc-accounts-opportunities-tenders-and-proposals">Accounts, opportunities, tenders and proposals</a></li></ul></div></div>
 </details>
 </div>
 </section>
@@ -490,42 +513,42 @@
     <span class="acc-bar" style="background:var(--a4);"></span>
     <span><span class="acc-title">Products, portfolios, programs and projects</span><span class="acc-desc">Coordinate the initiatives and work that develop and deliver enterprise value.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Product and research portfolio management</li><li>Program and project structures</li><li>Priorities, milestones and dependencies</li><li>Cross-functional planning and collaboration</li><li>Progress, issues and executive visibility</li><li>Knowledge capture across the lifecycle</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Product and research portfolio management</li><li>Program and project structures</li><li>Priorities, milestones and dependencies</li><li>Cross-functional planning and collaboration</li><li>Progress, issues and executive visibility</li><li>Knowledge capture across the lifecycle</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-product-and-research-portfolio-coordination">Product and research portfolio coordination</a></li><li><a href="use-cases.html#uc-project-planning-resources-and-progress">Project planning, resources and progress</a></li></ul></div></div>
 </details>
 <details class="acc">
   <summary>
     <span class="acc-bar" style="background:var(--a5);"></span>
     <span><span class="acc-title">Estimating, costing and commercial delivery</span><span class="acc-desc">Develop and maintain the commercial foundations required to pursue and deliver work.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Estimate preparation and historical benchmarking</li><li>Cost modelling, pricing and margin analysis</li><li>Quantity take-offs and scope verification</li><li>Bill of materials development</li><li>Design and revision comparison</li><li>Bid profitability and commercial handover</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Estimate preparation and historical benchmarking</li><li>Cost modelling, pricing and margin analysis</li><li>Quantity take-offs and scope verification</li><li>Bill of materials development</li><li>Design and revision comparison</li><li>Bid profitability and commercial handover</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-estimating-quantity-take-offs-and-materials">Estimating, quantity take-offs and materials</a></li><li><a href="use-cases.html#uc-accounts-opportunities-tenders-and-proposals">Accounts, opportunities, tenders and proposals</a></li></ul></div></div>
 </details>
 <details class="acc">
   <summary>
     <span class="acc-bar" style="background:var(--a6);"></span>
     <span><span class="acc-title">Planning, scheduling and resource coordination</span><span class="acc-desc">Connect time, people, equipment, dependencies and constraints across active work.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Schedules, milestones and critical paths</li><li>Labour, crew and specialist planning</li><li>Equipment and resource allocation</li><li>Dependencies, constraints and interdependencies</li><li>Progress monitoring and coordination</li><li>Program, project and executive reporting</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Schedules, milestones and critical paths</li><li>Labour, crew and specialist planning</li><li>Equipment and resource allocation</li><li>Dependencies, constraints and interdependencies</li><li>Progress monitoring and coordination</li><li>Program, project and executive reporting</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-project-planning-resources-and-progress">Project planning, resources and progress</a></li><li><a href="use-cases.html#uc-estimating-quantity-take-offs-and-materials">Estimating, quantity take-offs and materials</a></li></ul></div></div>
 </details>
 <details class="acc">
   <summary>
     <span class="acc-bar" style="background:var(--a1);"></span>
     <span><span class="acc-title">Procurement, materials, inventory and supply chain</span><span class="acc-desc">Coordinate the flow of suppliers, commitments, materials and inventory.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Supplier intelligence and qualification</li><li>Purchase planning and procurement workflows</li><li>Materials comparison and availability</li><li>Inventory movement and position visibility</li><li>Logistics and delivery coordination</li><li>Working-capital and supply-performance context</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Supplier intelligence and qualification</li><li>Purchase planning and procurement workflows</li><li>Materials comparison and availability</li><li>Inventory movement and position visibility</li><li>Logistics and delivery coordination</li><li>Working-capital and supply-performance context</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-procurement-inventory-and-supplier-coordination">Procurement, inventory and supplier coordination</a></li><li><a href="use-cases.html#uc-manufacturing-economics-and-production-performance">Manufacturing economics and production performance</a></li></ul></div></div>
 </details>
 <details class="acc">
   <summary>
     <span class="acc-bar" style="background:var(--a2);"></span>
     <span><span class="acc-title">Manufacturing, operations, assets and maintenance</span><span class="acc-desc">Support the physical systems and operating activities that produce and preserve value.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Production planning and operating economics</li><li>Capacity, output and resource performance</li><li>Operational, machine and real-time inputs</li><li>Asset portfolios and operating context</li><li>Maintenance planning and reliability</li><li>Performance monitoring and exception response</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Production planning and operating economics</li><li>Capacity, output and resource performance</li><li>Operational, machine and real-time inputs</li><li>Asset portfolios and operating context</li><li>Maintenance planning and reliability</li><li>Performance monitoring and exception response</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-manufacturing-economics-and-production-performance">Manufacturing economics and production performance</a></li><li><a href="use-cases.html#uc-asset-operations-maintenance-and-reliability">Asset operations, maintenance and reliability</a></li></ul></div></div>
 </details>
 <details class="acc">
   <summary>
     <span class="acc-bar" style="background:var(--a3);"></span>
     <span><span class="acc-title">Workflows, documents, quality, compliance and performance</span><span class="acc-desc">Create connected operating workflows with visible context, outputs and accountability.</span></span>
   </summary>
-  <div class="acc-body"><ul class="tick"><li>Document ingestion, extraction and comparison</li><li>Tasks, approvals and workflow coordination</li><li>Quality requirements and supporting evidence</li><li>Regulatory and compliance workflows</li><li>Operational reporting and oversight</li><li>Lessons learned and organizational knowledge</li></ul></div>
+  <div class="acc-body"><ul class="tick"><li>Document ingestion, extraction and comparison</li><li>Tasks, approvals and workflow coordination</li><li>Quality requirements and supporting evidence</li><li>Regulatory and compliance workflows</li><li>Operational reporting and oversight</li><li>Lessons learned and organizational knowledge</li></ul><div class="acc-rel"><div class="k">Related use cases</div><ul><li><a href="use-cases.html#uc-regulatory-quality-and-compliance-workflows">Regulatory, quality and compliance workflows</a></li><li><a href="use-cases.html#uc-document-intelligence-and-organizational-knowledge">Document intelligence and organizational knowledge</a></li></ul></div></div>
 </details>
 </div>
 </section>
