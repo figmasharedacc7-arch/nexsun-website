@@ -129,6 +129,36 @@
     .vidband.vid-aerial{background:url('vid-aerial-poster.jpg') center/cover no-repeat;}
   }
 
+
+  /* ECLIPSE: the two suns are the diagram, the overlap is the lifecycle */
+  .ecl{position:relative;width:100%;max-width:1140px;margin:34px auto 0;aspect-ratio:1280/800;
+    container-type:inline-size;}
+  .ecl svg{position:absolute;inset:0;width:100%;height:100%;}
+  .ecl-lab{position:absolute;transform:translateY(-50%);width:15.5%;}
+  .ecl-lab .i{font-size:10px;font-size:.86cqw;font-weight:800;letter-spacing:2px;}
+  .ecl-lab .r{height:1px;opacity:.45;margin:5px 0 6px;}
+  .ecl-lab .t{font-size:13px;font-size:1.12cqw;font-weight:700;color:var(--navy);line-height:1.36;}
+  .ecl-core{position:absolute;left:50%;transform:translate(-50%,-50%);width:20%;text-align:center;
+    background:#FFFBF0;padding:12px 8px 14px;border-radius:8px;}
+  .ecl-core .k{font-size:9.5px;font-size:.82cqw;font-weight:800;letter-spacing:2.6px;
+    text-transform:uppercase;color:#8C6500;}
+  .ecl-core .v{font-size:19px;font-size:1.62cqw;font-weight:900;color:var(--navy);line-height:1.2;margin-top:5px;}
+  .ecl-core .c{font-size:11.5px;font-size:1.0cqw;color:var(--text-muted);margin-top:5px;}
+  .ecl-fallback{display:none;}
+
+  @media(max-width:860px){
+    .ecl{display:none;}
+    .ecl-fallback{display:block;margin-top:26px;}
+    .ecl-mini{position:relative;height:150px;margin:0 auto 22px;max-width:300px;}
+    .ecl-mini svg{width:100%;height:100%;}
+    .ecl-list{display:grid;gap:10px;}
+    .ecl-list li{list-style:none;display:flex;gap:12px;align-items:flex-start;
+      background:#fff;border:1px solid var(--border-soft);border-radius:12px;padding:12px 14px;}
+    .ecl-list .n{flex-shrink:0;width:24px;height:24px;border-radius:8px;color:#fff;font-size:12px;
+      font-weight:900;display:flex;align-items:center;justify-content:center;}
+    .ecl-list .t{font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;}
+  }
+
   /* PHOTO AND VIDEO SECTIONS (same system as the cement microsite) */
   .imgsec{position:relative;overflow:hidden;isolation:isolate;}
   .imgsec::before{content:"";position:absolute;inset:0;z-index:-2;background-size:cover;background-repeat:no-repeat;}

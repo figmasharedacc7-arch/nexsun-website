@@ -1,0 +1,46 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 800,
+      "title": "Eclipse refined"
+    },
+    {
+      "file": "Editorial.dc.html",
+      "x": 1120,
+      "y": 0,
+      "w": 1000,
+      "h": 800
+    },
+    {
+      "file": "Nocturne.dc.html",
+      "x": 0,
+      "y": 920,
+      "w": 1000,
+      "h": 800
+    },
+    {
+      "file": "Eclipse.dc.html",
+      "x": 1120,
+      "y": 920,
+      "w": 1000,
+      "h": 800,
+      "title": "Eclipse (first pass)"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "brief",
+      "x": 0,
+      "y": -190,
+      "w": 470,
+      "text": "Eclipse taken further. The first pass is bottom right for comparison.\n\nEvery version now reads all eleven lifecycle stages inside the overlap, which the first pass only hinted at with ticks."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

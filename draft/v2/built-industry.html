@@ -129,6 +129,36 @@
     .vidband.vid-aerial{background:url('vid-aerial-poster.jpg') center/cover no-repeat;}
   }
 
+
+  /* ECLIPSE: the two suns are the diagram, the overlap is the lifecycle */
+  .ecl{position:relative;width:100%;max-width:1140px;margin:34px auto 0;aspect-ratio:1280/800;
+    container-type:inline-size;}
+  .ecl svg{position:absolute;inset:0;width:100%;height:100%;}
+  .ecl-lab{position:absolute;transform:translateY(-50%);width:15.5%;}
+  .ecl-lab .i{font-size:10px;font-size:.86cqw;font-weight:800;letter-spacing:2px;}
+  .ecl-lab .r{height:1px;opacity:.45;margin:5px 0 6px;}
+  .ecl-lab .t{font-size:13px;font-size:1.12cqw;font-weight:700;color:var(--navy);line-height:1.36;}
+  .ecl-core{position:absolute;left:50%;transform:translate(-50%,-50%);width:20%;text-align:center;
+    background:#FFFBF0;padding:12px 8px 14px;border-radius:8px;}
+  .ecl-core .k{font-size:9.5px;font-size:.82cqw;font-weight:800;letter-spacing:2.6px;
+    text-transform:uppercase;color:#8C6500;}
+  .ecl-core .v{font-size:19px;font-size:1.62cqw;font-weight:900;color:var(--navy);line-height:1.2;margin-top:5px;}
+  .ecl-core .c{font-size:11.5px;font-size:1.0cqw;color:var(--text-muted);margin-top:5px;}
+  .ecl-fallback{display:none;}
+
+  @media(max-width:860px){
+    .ecl{display:none;}
+    .ecl-fallback{display:block;margin-top:26px;}
+    .ecl-mini{position:relative;height:150px;margin:0 auto 22px;max-width:300px;}
+    .ecl-mini svg{width:100%;height:100%;}
+    .ecl-list{display:grid;gap:10px;}
+    .ecl-list li{list-style:none;display:flex;gap:12px;align-items:flex-start;
+      background:#fff;border:1px solid var(--border-soft);border-radius:12px;padding:12px 14px;}
+    .ecl-list .n{flex-shrink:0;width:24px;height:24px;border-radius:8px;color:#fff;font-size:12px;
+      font-weight:900;display:flex;align-items:center;justify-content:center;}
+    .ecl-list .t{font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;}
+  }
+
   /* PHOTO AND VIDEO SECTIONS (same system as the cement microsite) */
   .imgsec{position:relative;overflow:hidden;isolation:isolate;}
   .imgsec::before{content:"";position:absolute;inset:0;z-index:-2;background-size:cover;background-repeat:no-repeat;}
@@ -459,15 +489,71 @@
    </div>
   </div>
 </section>
-<section class="vidband vid-plant" style="text-align:left;padding:92px 0;">
-  <video autoplay muted loop playsinline preload="metadata" poster="vid-plant-poster.jpg" aria-hidden="true">
-    <source src="vid-plant.mp4" type="video/mp4">
-  </video>
+<section class="band-alt">
   <div class="container">
     <div class="section-tag">Lifecycle</div>
     <h2 class="section-heading">The built-asset lifecycle connects them</h2>
     <p class="lede">A built asset moves through planning, investment, design, supply, construction, transaction, use, operation, maintenance, renewal and eventual reuse or retirement. Each stage creates relationships, requirements and information that affect the stages around it.</p>
-    <div style="margin-top:24px;"><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Planning</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Investment</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Design</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Supply</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Construction</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Transaction</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Use</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Operation</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Maintenance</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Renewal</span><span style="display:inline-block;background:#fff;border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--navy);margin:0 8px 10px 0;">Reuse or retirement</span></div>
+    <div class="ecl"><svg viewBox="0 0 1280 800" role="img" aria-label="The built-asset lifecycle at the centre, with the six operating areas around it."><defs>
+    <radialGradient id="eg" cx="34%" cy="30%">
+      <stop offset="0" stop-color="#FFFDF0"/><stop offset=".34" stop-color="#F6E4A4"/>
+      <stop offset=".72" stop-color="#DFC15C"/><stop offset="1" stop-color="#CC9900"/></radialGradient>
+    <radialGradient id="eo" cx="34%" cy="30%">
+      <stop offset="0" stop-color="#FFF4E8"/><stop offset=".32" stop-color="#FFB077"/>
+      <stop offset=".70" stop-color="#F2762A"/><stop offset="1" stop-color="#E0641E"/></radialGradient>
+    <radialGradient id="ec"><stop offset=".55" stop-color="rgba(224,100,30,.20)"/>
+      <stop offset="1" stop-color="rgba(224,100,30,0)"/></radialGradient>
+    <filter id="eng" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="el"><circle cx="544" cy="366" r="236"/></clipPath>
+  </defs><circle cx="640" cy="366" r="420" fill="url(#ec)"/><circle cx="544" cy="366" r="236" fill="url(#eg)"/><circle cx="736" cy="366" r="236" fill="url(#eo)" opacity=".9"/><g clip-path="url(#el)"><circle cx="736" cy="366" r="236" fill="#FFFBF0" opacity=".96"/></g><g clip-path="url(#el)"><circle cx="736" cy="366" r="236" fill="none" stroke="#FFF6DC" stroke-width="3" opacity=".9"/></g><circle cx="544" cy="366" r="236" fill="none" stroke="rgba(140,101,0,.45)"/><circle cx="736" cy="366" r="236" fill="none" stroke="rgba(196,82,19,.45)"/><line x1="614" y1="216" x2="666" y2="216" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Planning</title></line><line x1="614" y1="246" x2="666" y2="246" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Investment</title></line><line x1="614" y1="276" x2="666" y2="276" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Design</title></line><line x1="614" y1="306" x2="666" y2="306" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Supply</title></line><line x1="614" y1="336" x2="666" y2="336" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Construction</title></line><line x1="614" y1="366" x2="666" y2="366" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Transaction</title></line><line x1="614" y1="396" x2="666" y2="396" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Use</title></line><line x1="614" y1="426" x2="666" y2="426" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Operation</title></line><line x1="614" y1="456" x2="666" y2="456" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Maintenance</title></line><line x1="614" y1="486" x2="666" y2="486" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Renewal</title></line><line x1="614" y1="516" x2="666" y2="516" stroke="rgba(140,101,0,.5)" stroke-width="1.5"><title>Reuse or retirement</title></line><line x1="332" y1="263" x2="276" y2="235" stroke="#E0641E" stroke-width="1.5" opacity=".6"/><circle cx="332" cy="263" r="5" fill="#E0641E"/><circle cx="332" cy="263" r="9.5" fill="none" stroke="#E0641E" stroke-width="1" opacity=".4"/><line x1="332" y1="469" x2="276" y2="497" stroke="#CC9900" stroke-width="1.5" opacity=".6"/><circle cx="332" cy="469" r="5" fill="#CC9900"/><circle cx="332" cy="469" r="9.5" fill="none" stroke="#CC9900" stroke-width="1" opacity=".4"/><line x1="441" y1="154" x2="413" y2="98" stroke="#C45213" stroke-width="1.5" opacity=".6"/><circle cx="441" cy="154" r="5" fill="#C45213"/><circle cx="441" cy="154" r="9.5" fill="none" stroke="#C45213" stroke-width="1" opacity=".4"/><line x1="647" y1="154" x2="675" y2="98" stroke="#B07E00" stroke-width="1.5" opacity=".6"/><circle cx="647" cy="154" r="5" fill="#B07E00"/><circle cx="647" cy="154" r="9.5" fill="none" stroke="#B07E00" stroke-width="1" opacity=".4"/><line x1="948" y1="469" x2="1004" y2="497" stroke="#D9822B" stroke-width="1.5" opacity=".6"/><circle cx="948" cy="469" r="5" fill="#D9822B"/><circle cx="948" cy="469" r="9.5" fill="none" stroke="#D9822B" stroke-width="1" opacity=".4"/><line x1="948" y1="263" x2="1004" y2="235" stroke="#8C6500" stroke-width="1.5" opacity=".6"/><circle cx="948" cy="263" r="5" fill="#8C6500"/><circle cx="948" cy="263" r="9.5" fill="none" stroke="#8C6500" stroke-width="1" opacity=".4"/><rect width="1280" height="800" filter="url(#eng)" opacity=".055"/></svg><div class="ecl-core" style="top:45.75%;">
+      <div class="k">Where they overlap</div>
+      <div class="v">The built-asset lifecycle</div>
+      <div class="c">Eleven stages</div>
+    </div><div class="ecl-lab" style="right:79.52%;top:29.42%;text-align:right;">
+        <div class="i" style="color:#E0641E;">01</div>
+        <div class="r" style="background:#E0641E;"></div>
+        <div class="t">Materials and Manufacturing</div>
+      </div><div class="ecl-lab" style="right:79.52%;top:62.08%;text-align:right;">
+        <div class="i" style="color:#CC9900;">02</div>
+        <div class="r" style="background:#CC9900;"></div>
+        <div class="t">Distribution and Logistics</div>
+      </div><div class="ecl-lab" style="right:68.80%;top:12.27%;text-align:right;">
+        <div class="i" style="color:#C45213;">03</div>
+        <div class="r" style="background:#C45213;"></div>
+        <div class="t">Asset Owners and Investors</div>
+      </div><div class="ecl-lab" style="left:53.80%;top:12.27%;text-align:left;">
+        <div class="i" style="color:#B07E00;">04</div>
+        <div class="r" style="background:#B07E00;"></div>
+        <div class="t">Construction and Professional Services</div>
+      </div><div class="ecl-lab" style="left:79.52%;top:62.08%;text-align:left;">
+        <div class="i" style="color:#D9822B;">05</div>
+        <div class="r" style="background:#D9822B;"></div>
+        <div class="t">Asset Transactions and Operations</div>
+      </div><div class="ecl-lab" style="left:79.52%;top:29.42%;text-align:left;">
+        <div class="i" style="color:#8C6500;">06</div>
+        <div class="r" style="background:#8C6500;"></div>
+        <div class="t">Industry Institutions and Enablement</div>
+      </div></div>
+    <div class="ecl-fallback"><div class="ecl-mini"><svg viewBox="0 0 1280 800" aria-hidden="true"><defs>
+    <radialGradient id="egm" cx="34%" cy="30%">
+      <stop offset="0" stop-color="#FFFDF0"/><stop offset=".34" stop-color="#F6E4A4"/>
+      <stop offset=".72" stop-color="#DFC15C"/><stop offset="1" stop-color="#CC9900"/></radialGradient>
+    <radialGradient id="eom" cx="34%" cy="30%">
+      <stop offset="0" stop-color="#FFF4E8"/><stop offset=".32" stop-color="#FFB077"/>
+      <stop offset=".70" stop-color="#F2762A"/><stop offset="1" stop-color="#E0641E"/></radialGradient>
+    <radialGradient id="ecm"><stop offset=".55" stop-color="rgba(224,100,30,.20)"/>
+      <stop offset="1" stop-color="rgba(224,100,30,0)"/></radialGradient>
+    <filter id="engm" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="elm"><circle cx="544" cy="366" r="236"/></clipPath>
+  </defs>
+      <circle cx="544" cy="366" r="236" fill="url(#egm)"/>
+      <circle cx="736" cy="366" r="236" fill="url(#eom)" opacity=".9"/>
+      <g clip-path="url(#elm)"><circle cx="736" cy="366" r="236" fill="#FFFBF0" opacity=".96"/></g>
+    </svg></div><ul class="ecl-list"><li><span class="n" style="background:#E0641E;">1</span><span class="t">Materials and Manufacturing</span></li><li><span class="n" style="background:#CC9900;">2</span><span class="t">Distribution and Logistics</span></li><li><span class="n" style="background:#C45213;">3</span><span class="t">Asset Owners and Investors</span></li><li><span class="n" style="background:#B07E00;">4</span><span class="t">Construction and Professional Services</span></li><li><span class="n" style="background:#D9822B;">5</span><span class="t">Asset Transactions and Operations</span></li><li><span class="n" style="background:#8C6500;">6</span><span class="t">Industry Institutions and Enablement</span></li></ul></div>
   </div>
 </section>
 <section>
